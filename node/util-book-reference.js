@@ -6,17 +6,17 @@ UtilBookReference = {
 		switch (refId) {
 			case "bookref-quick":
 				return [
-					"角色创建",
-					"装备",
-					"游玩游戏",
-					"战斗",
-					"冒险",
+					"角色創建",
+					"裝備",
+					"遊玩遊戲",
+					"戰鬥",
+					"冒險"
 				];
 			case "bookref-dmscreen":
 				return [
-					"运行游戏",
-					"战斗",
-					"派系",
+					"運行遊戲",
+					"戰鬥",
+					"派系"
 				];
 			default:
 				throw new Error(`No sections defined for book id ${refId}`);
@@ -101,7 +101,7 @@ UtilBookReference = {
 			});
 
 			Object.keys(out).sort().forEach(i => {
-				const sects = out[i].sections;// .sort((a, b) => SortUtil.ascSort(a.name, b.name));
+				const sects = out[i].sections;//.sort((a, b) => SortUtil.ascSort(a.name, b.name));
 				const header = outJson.reference[refType.id];
 				header.contents.push({
 					name: out[i].sectName,
