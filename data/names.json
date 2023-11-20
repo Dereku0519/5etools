@@ -1,7 +1,7 @@
 {
 	"name": [
 		{
-			"name": "龙裔",
+			"name": "龍裔",
 			"source": "XGE",
 			"tables": [
 				{
@@ -1617,7 +1617,7 @@
 			"page": 176
 		},
 		{
-			"name": "精灵",
+			"name": "精靈",
 			"source": "XGE",
 			"tables": [
 				{
@@ -4198,7 +4198,7 @@
 			"page": 179
 		},
 		{
-			"name": "半兽人",
+			"name": "半獸人",
 			"source": "XGE",
 			"tables": [
 				{
@@ -5233,7 +5233,7 @@
 					]
 				},
 				{
-					"option": "美德化名",
+					"option": "Virtue",
 					"diceType": 100,
 					"table": [
 						{
@@ -5492,11 +5492,11 @@
 			"page": 180
 		},
 		{
-			"name": "人类",
+			"name": "人類",
 			"source": "XGE",
 			"tables": [
 				{
-					"option": "阿拉伯 - 女性",
+					"option": "Arabic, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -5752,7 +5752,7 @@
 					]
 				},
 				{
-					"option": "阿拉伯 - 男性",
+					"option": "Arabic, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -6008,7 +6008,7 @@
 					]
 				},
 				{
-					"option": "凯尔特 - 女性",
+					"option": "Celtic, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -6264,7 +6264,7 @@
 					]
 				},
 				{
-					"option": "凯尔特 - 男性",
+					"option": "Celtic, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -6520,7 +6520,7 @@
 					]
 				},
 				{
-					"option": "汉 - 女性",
+					"option": "Chinese, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -6776,7 +6776,7 @@
 					]
 				},
 				{
-					"option": "汉 - 男性",
+					"option": "Chinese, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -7032,7 +7032,7 @@
 					]
 				},
 				{
-					"option": "埃及 - 女性",
+					"option": "Egyptian, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -7288,7 +7288,7 @@
 					]
 				},
 				{
-					"option": "埃及 - 男性",
+					"option": "Egyptian, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -7544,7 +7544,7 @@
 					]
 				},
 				{
-					"option": "英吉利 - 女性",
+					"option": "English, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -7800,7 +7800,7 @@
 					]
 				},
 				{
-					"option": "英吉利 - 男性",
+					"option": "English, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -8056,7 +8056,7 @@
 					]
 				},
 				{
-					"option": "法兰西 - 女性",
+					"option": "French, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -8312,7 +8312,7 @@
 					]
 				},
 				{
-					"option": "法兰西 - 男性",
+					"option": "French, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -8568,7 +8568,7 @@
 					]
 				},
 				{
-					"option": "日耳曼 - 女性",
+					"option": "German, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -8824,7 +8824,7 @@
 					]
 				},
 				{
-					"option": "日耳曼 - 男性",
+					"option": "German, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -9080,7 +9080,7 @@
 					]
 				},
 				{
-					"option": "印第安 - 女性",
+					"option": "Indian, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -9336,7 +9336,7 @@
 					]
 				},
 				{
-					"option": "印第安 - 男性",
+					"option": "Indian, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -9592,7 +9592,7 @@
 					]
 				},
 				{
-					"option": "中美洲 - 女性",
+					"option": "Mesoamerican, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -9848,7 +9848,7 @@
 					]
 				},
 				{
-					"option": "中美洲 - 男性",
+					"option": "Mesoamerican, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -10104,7 +10104,7 @@
 					]
 				},
 				{
-					"option": "日本 - 女性",
+					"option": "Japanese, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -10360,7 +10360,7 @@
 					]
 				},
 				{
-					"option": "日本 - 男性",
+					"option": "Japanese, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -10616,7 +10616,7 @@
 					]
 				},
 				{
-					"option": "尼日尔刚果 - 女性",
+					"option": "Niger-Congo, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -10872,7 +10872,7 @@
 					]
 				},
 				{
-					"option": "尼日尔刚果 - 男性",
+					"option": "Niger-Congo, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -11128,7 +11128,7 @@
 					]
 				},
 				{
-					"option": "诺斯 - 女性",
+					"option": "Norse, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -11384,7 +11384,7 @@
 					]
 				},
 				{
-					"option": "诺斯 - 男性",
+					"option": "Norse, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -11640,7 +11640,7 @@
 					]
 				},
 				{
-					"option": "南岛 - 女性",
+					"option": "Polynesian, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -11896,7 +11896,7 @@
 					]
 				},
 				{
-					"option": "南岛 - 男性",
+					"option": "Polynesian, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -12152,7 +12152,7 @@
 					]
 				},
 				{
-					"option": "罗曼 - 女性",
+					"option": "Roman, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -12408,7 +12408,7 @@
 					]
 				},
 				{
-					"option": "罗曼 - 男性",
+					"option": "Roman, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -12664,7 +12664,7 @@
 					]
 				},
 				{
-					"option": "斯拉夫 - 女性",
+					"option": "Slavic, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -12920,7 +12920,7 @@
 					]
 				},
 				{
-					"option": "斯拉夫 - 男性",
+					"option": "Slavic, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -13176,7 +13176,7 @@
 					]
 				},
 				{
-					"option": "西班牙 - 女性",
+					"option": "Spanish, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -13432,7 +13432,7 @@
 					]
 				},
 				{
-					"option": "西班牙 - 男性",
+					"option": "Spanish, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -13688,7 +13688,7 @@
 					]
 				},
 				{
-					"option": "希腊 - 女性",
+					"option": "Greek, Female",
 					"diceType": 100,
 					"table": [
 						{
@@ -13944,7 +13944,7 @@
 					]
 				},
 				{
-					"option": "希腊 - 男性",
+					"option": "Greek, Male",
 					"diceType": 100,
 					"table": [
 						{
@@ -14203,11 +14203,11 @@
 			"page": 181
 		},
 		{
-			"name": "吉斯人",
+			"name": "Gith",
 			"source": "MTF",
 			"tables": [
 				{
-					"option": "吉斯洋基人 - 男性",
+					"option": "Githyanki, Male",
 					"diceType": 10,
 					"table": [
 						{
@@ -14263,7 +14263,7 @@
 					]
 				},
 				{
-					"option": "吉斯洋基人 - 女性",
+					"option": "Githyanki, Female",
 					"diceType": 10,
 					"table": [
 						{
@@ -14319,7 +14319,7 @@
 					]
 				},
 				{
-					"option": "吉斯泽莱人 - 男性",
+					"option": "Githzerai, Male",
 					"diceType": 10,
 					"table": [
 						{
@@ -14375,7 +14375,7 @@
 					]
 				},
 				{
-					"option": "吉斯泽莱人 - 女性",
+					"option": "Githzerai, Female",
 					"diceType": 10,
 					"table": [
 						{

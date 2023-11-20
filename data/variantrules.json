@@ -1,8 +1,7 @@
 {
 	"variantrule": [
 		{
-			"name": "动作选用项",
-			"ENG_name": "Action Options",
+			"name": "Action Options",
 			"source": "DMG",
 			"page": 271,
 			"ruleType": "O",
@@ -30,7 +29,7 @@
 					"type": "entries",
 					"entries": [
 						"This option makes it easier for melee combatants to harry each other with opportunity attacks.",
-						"When a creature makes a melee attack, it can also mark its target. Until the end of the attacker's next turn, any opportunity attack it makes against the marked target has advantage. The opportunity attack doesn't expend the attacker's reaction, but the attacker can't make the attack if anything, such as the {@condition 无力} condition or the shocking grasp spell, is preventing it from taking reactions. The attacker is limited to one opportunity attack per turn."
+						"When a creature makes a melee attack, it can also mark its target. Until the end of the attacker's next turn, any opportunity attack it makes against the marked target has advantage. The opportunity attack doesn't expend the attacker's reaction, but the attacker can't make the attack if anything, such as the {@condition incapacitated} condition or the shocking grasp spell, is preventing it from taking reactions. The attacker is limited to one opportunity attack per turn."
 					]
 				},
 				{
@@ -44,7 +43,7 @@
 					"name": "Shove Aside",
 					"type": "entries",
 					"entries": [
-						"With this option, a creature uses the special {@action 推撞} attack from the Player's Handbook to force a target to the side, rather than away. The attacker has disadvantage on its Strength (Athletics) check when it does so. If that check is successful, the attacker moves the target 5 feet to a different space within its reach."
+						"With this option, a creature uses the special {@action shove} attack from the Player's Handbook to force a target to the side, rather than away. The attacker has disadvantage on its Strength (Athletics) check when it does so. If that check is successful, the attacker moves the target 5 feet to a different space within its reach."
 					]
 				},
 				{
@@ -625,7 +624,7 @@
 								]
 							]
 						},
-						"For example, high elf adventurers have proficiency with longswords, which are martial weapons. Consulting the Proficiency Swaps table, we see that your high elf can swap that proficiency for proficiency with another weapon or a tool. Your elf might be a musician, who chooses proficiency with a musical instrument\u2014a type of tool\u2014instead of with longswords. Similarly, elves start with proficiency in the {@skill 察觉} skill. Your elf might not have the keen senses associated with your kin and could take proficiency in a different skill, such as {@skill 表演}.",
+						"For example, high elf adventurers have proficiency with longswords, which are martial weapons. Consulting the Proficiency Swaps table, we see that your high elf can swap that proficiency for proficiency with another weapon or a tool. Your elf might be a musician, who chooses proficiency with a musical instrument\u2014a type of tool\u2014instead of with longswords. Similarly, elves start with proficiency in the {@skill Perception} skill. Your elf might not have the keen senses associated with your kin and could take proficiency in a different skill, such as {@skill Performance}.",
 						"The \"{@book Equipment|PHB|4}\" chapter of the {@book Player's Handbook|PHB} includes weapons and tools suitable for these swaps, and your DM might allow additional options."
 					]
 				},
@@ -673,7 +672,7 @@
 										{
 											"type": "item",
 											"name": "Variable Trait.",
-											"entry": "You gain one of the following options of your choice: (a) {@sense 黑暗视觉} with a range of 60 feet or (b) proficiency in one skill of your choice."
+											"entry": "You gain one of the following options of your choice: (a) {@sense darkvision} with a range of 60 feet or (b) proficiency in one skill of your choice."
 										},
 										{
 											"type": "item",
@@ -1247,7 +1246,7 @@
 			"entries": [
 				"Magic items are the DM's purview, so you decide how they fall into the party's possession. As an option, you can allow player characters to craft magic items.",
 				"The creation of a magic item is a lengthy, expensive task. To start, a character must have a formula that describes the construction of the item. The character must also be a spellcaster with spell slots and must be able to cast any spells that the item can produce. Moreover, the character must meet a level minimum determined by the item's rarity, as shown in the Crafting Magic Items table. For example, a 3rd-level character could create a wand of magic missiles (an uncommon item), as long as the character has spell slots and can cast magic missile. That same character could make a +1 weapon (another uncommon item), no particular spell required.",
-				"You can decide that certain items also require special materials or locations to be created. For example, a character might need {@item 炼金工具|phb} to brew a particular potion, or the formula for a flame tongue might require that the weapon be forged with lava.",
+				"You can decide that certain items also require special materials or locations to be created. For example, a character might need {@item alchemist's supplies|phb} to brew a particular potion, or the formula for a flame tongue might require that the weapon be forged with lava.",
 				{
 					"type": "table",
 					"caption": "Crafting Magic Items",
@@ -1334,19 +1333,19 @@
 							],
 							"rows": [
 								[
-									"{@item 草药工具|phb}",
+									"{@item Herbalism kit|phb}",
 									"Antitoxin, potion of healing"
 								],
 								[
-									"{@item 皮匠工具|phb}",
+									"{@item Leatherworker's tools|phb}",
 									"Leather armor, boots"
 								],
 								[
-									"{@item 铁匠工具|phb}",
+									"{@item Smith's tools|phb}",
 									"Armor, weapons"
 								],
 								[
-									"{@item 织布工具|phb}",
+									"{@item Weaver's tools|phb}",
 									"Cloaks, robes"
 								]
 							]
@@ -2640,7 +2639,7 @@
 			"page": 131,
 			"ruleType": "V",
 			"entries": [
-				"As a variant rule, you can require characters to spend downtime training or studying before they gain the benefits of a new level. If you choose this option, once a character has earned enough experience points to attain a new level, he or she must train for a number of days before gaining any class features associated with the new level.",
+				"As a variant rule, you can require characters to spend downtime training or studying before they gain the befits of a new level. If you choose this option, once a character has earned enough experience points to attain a new level, he or she must train for a number of days before gaining any class features associated with the new level.",
 				"The training time required depends on the level to be gained, as shown on the Training to Gain Levels table. The training cost is for the total training time.",
 				{
 					"type": "table",
@@ -3461,7 +3460,7 @@
 			"ruleType": "O",
 			"type": "section",
 			"entries": [
-				"Falling from a great height is a significant risk for adventurers and their foes. The rule given in the Player's Handbook is simple: at the end of a fall, you take {@dice 1d6} bludgeoning damage for every 10 feet you fell, to a maximum of {@dice 20d6}. You also land {@condition 伏地}, unless you somehow avoid taking damage from the fall. Here are two optional rules that expand on that simple rule.",
+				"Falling from a great height is a significant risk for adventurers and their foes. The rule given in the Player's Handbook is simple: at the end of a fall, you take {@dice 1d6} bludgeoning damage for every 10 feet you fell, to a maximum of {@dice 20d6}. You also land {@condition prone}, unless you somehow avoid taking damage from the fall. Here are two optional rules that expand on that simple rule.",
 				{
 					"type": "entries",
 					"name": "Rate of Falling",
@@ -3474,9 +3473,9 @@
 					"type": "entries",
 					"name": "Flying Creatures and Falling",
 					"entries": [
-						"A flying creature in flight falls if it is knocked {@condition 伏地}, if its speed is reduced to 0 feet, or if it otherwise loses the ability to move, unless it can hover or it is being held aloft by magic, such as the {@spell 飞行术} spell.",
-						"If you'd like a flying creature to have a better chance of surviving a fall than a non-flying creature does, use this rule: subtract the creature's current flying speed from the distance it fell before calculating falling damage. This rule is helpful to a flier that is knocked {@condition 伏地} but is still conscious and has a current flying speed that is greater than 0 feet. The rule is designed to simulate the creature flapping its wings furiously or taking similar measures to slow the velocity of its fall.",
-						"If you use the rule for rate of falling in the previous section, a flying creature descends 500 feet on the turn when it falls, just as other creatures do. But if that creature starts any of its later turns still falling and is {@condition 伏地}, it can halt the fall on its turn by spending half its flying speed to counter the {@condition 伏地} condition (as if it were standing up in midair)."
+						"A flying creature in flight falls if it is knocked {@condition prone}, if its speed is reduced to 0 feet, or if it otherwise loses the ability to move, unless it can hover or it is being held aloft by magic, such as the {@spell 飛行術} spell.",
+						"If you'd like a flying creature to have a better chance of surviving a fall than a non-flying creature does, use this rule: subtract the creature's current flying speed from the distance it fell before calculating falling damage. This rule is helpful to a flier that is knocked {@condition prone} but is still conscious and has a current flying speed that is greater than 0 feet. The rule is designed to simulate the creature flapping its wings furiously or taking similar measures to slow the velocity of its fall.",
+						"If you use the rule for rate of falling in the previous section, a flying creature descends 500 feet on the turn when it falls, just as other creatures do. But if that creature starts any of its later turns still falling and is {@condition prone}, it can halt the fall on its turn by spending half its flying speed to counter the {@condition prone} condition (as if it were standing up in midair)."
 					]
 				}
 			]
@@ -3487,7 +3486,7 @@
 			"page": 347,
 			"ruleType": "V",
 			"entries": [
-				"Any spellcaster that can cast the {@spell 寻获魔宠} spell (such as an apprentice, warlock, or wizard) is likely to have a familiar. The familiar can be one of the creatures described in the spell (see the {@i Player's Handbook}) or some other {@filter Tiny monster|bestiary|size=T|miscellaneous=!swarm}, such as a {@creature crawling claw}, an {@creature imp}, a {@creature pseudodragon}, or a {@creature quasit}.",
+				"Any spellcaster that can cast the {@spell 尋獲魔寵} spell (such as an apprentice, warlock, or wizard) is likely to have a familiar. The familiar can be one of the creatures described in the spell (see the {@i Player's Handbook}) or some other {@filter Tiny monster|bestiary|size=T|miscellaneous=!swarm}, such as a {@creature crawling claw}, an {@creature imp}, a {@creature pseudodragon}, or a {@creature quasit}.",
 				"{@note This variant is {@link intended for NPCs.|https://twitter.com/JeremyECrawford/status/920714594334654465}}"
 			]
 		},
@@ -3497,7 +3496,7 @@
 			"page": 213,
 			"ruleType": "V",
 			"entries": [
-				"Any spellcaster that can cast the {@spell 寻获魔宠} spell (such as an apprentice, warlock, or wizard) is likely to have a familiar. The familiar can be one of the creatures described in the spell (see the {@i Player's Handbook}) or some other {@filter Tiny monster|bestiary|size=T|miscellaneous=!swarm}, such as a {@creature cranium rat|vgm}, a {@creature crawling claw}, a {@creature gazer|vgm}, an {@creature imp}, a {@creature pseudodragon}, or a {@creature quasit}.",
+				"Any spellcaster that can cast the {@spell 尋獲魔寵} spell (such as an apprentice, warlock, or wizard) is likely to have a familiar. The familiar can be one of the creatures described in the spell (see the {@i Player's Handbook}) or some other {@filter Tiny monster|bestiary|size=T|miscellaneous=!swarm}, such as a {@creature cranium rat|vgm}, a {@creature crawling claw}, a {@creature gazer|vgm}, an {@creature imp}, a {@creature pseudodragon}, or a {@creature quasit}.",
 				"{@note This variant is {@link intended for NPCs.|https://twitter.com/JeremyECrawford/status/920714594334654465}}"
 			]
 		},
@@ -3512,7 +3511,7 @@
 					"name": "Fear",
 					"type": "entries",
 					"entries": [
-						"When adventurers confront threats they have no hope of overcoming, you can call for them to make a Wisdom saving throw. Set the DC according to the circumstances. A character who fails the save becomes {@condition 恐惧} for 1 minute. The character can repeat the saving throw at the end of each of his or her turns, ending the effect on the character on a successful save."
+						"When adventurers confront threats they have no hope of overcoming, you can call for them to make a Wisdom saving throw. Set the DC according to the circumstances. A character who fails the save becomes {@condition frightened} for 1 minute. The character can repeat the saving throw at the end of each of his or her turns, ending the effect on the character on a successful save."
 					]
 				},
 				{
@@ -3605,7 +3604,7 @@
 					"type": "entries",
 					"entries": [
 						"If you regularly use miniatures, flanking gives combatants a simple way to gain advantage on attack rolls against a common enemy.",
-						"A creature can't flank an enemy that it can't see. A creature also can't flank while it is {@condition 无力}. A Large or larger creature is flanking as long as at least one square or hex of its space qualifies for flanking.",
+						"A creature can't flank an enemy that it can't see. A creature also can't flank while it is {@condition incapacitated}. A Large or larger creature is flanking as long as at least one square or hex of its space qualifies for flanking.",
 						{
 							"name": "Flanking on Squares",
 							"type": "entries",
@@ -3798,7 +3797,7 @@
 							"type": "entries",
 							"name": "Creatures Unable to Act",
 							"entries": [
-								"Any creature that is unable to take actions (most likely because it is {@condition 无力}) does not roll initiative. Any effects that such creatures must resolve, such as death saving throws, are resolved at the end of the round."
+								"Any creature that is unable to take actions (most likely because it is {@condition incapacitated}) does not roll initiative. Any effects that such creatures must resolve, such as death saving throws, are resolved at the end of the round."
 							]
 						},
 						{
@@ -4187,19 +4186,19 @@
 					"rows": [
 						[
 							"1",
-							"{@bold Lose an Eye.} You have disadvantage on Wisdom ({@skill 察觉}) checks that rely on sight and on ranged attack rolls. Magic such as the {@spell 再生术} spell can restore the lost eye. If you have no eyes left after sustaining this injury, you're {@condition 目盲}."
+							"{@bold Lose an Eye.} You have disadvantage on Wisdom ({@skill Perception}) checks that rely on sight and on ranged attack rolls. Magic such as the {@spell 再生術} spell can restore the lost eye. If you have no eyes left after sustaining this injury, you're {@condition blinded}."
 						],
 						[
 							"2",
-							"{@bold Lose an Arm or a Hand.} You can no longer hold anything with two hands, and you can hold only a single object at a time. Magic such as the {@spell 再生术} spell can restore the lost appendage."
+							"{@bold Lose an Arm or a Hand.} You can no longer hold anything with two hands, and you can hold only a single object at a time. Magic such as the {@spell 再生術} spell can restore the lost appendage."
 						],
 						[
 							"3",
-							"{@bold Lose a Foot or Leg.} Your speed on foot is halved, and you must use a cane or crutch to move unless you have a peg leg or other prosthesis. You fall {@condition 伏地} after using the Dash action. You have disadvantage on Dexterity checks made to balance. Magic such as the {@spell 再生术} spell can restore the lost appendage."
+							"{@bold Lose a Foot or Leg.} Your speed on foot is halved, and you must use a cane or crutch to move unless you have a peg leg or other prosthesis. You fall {@condition prone} after using the Dash action. You have disadvantage on Dexterity checks made to balance. Magic such as the {@spell 再生術} spell can restore the lost appendage."
 						],
 						[
 							"4",
-							"{@bold Limp.} Your speed on foot is reduced by 5 feet. You must make a DC 10 Dexterity saving throw after using the Dash action. If you fail the save, you fall {@condition 伏地}. Magical healing removes the limp."
+							"{@bold Limp.} Your speed on foot is reduced by 5 feet. You must make a DC 10 Dexterity saving throw after using the Dash action. If you fail the save, you fall {@condition prone}. Magical healing removes the limp."
 						],
 						[
 							"5-7",
@@ -4211,7 +4210,7 @@
 						],
 						[
 							"11-13",
-							"{@bold Horrible Scar.} You are disfigured to the extent that the wound can't be easily concealed. You have disadvantage on Charisma ({@skill 说服}) checks and advantage on Charisma ({@skill 威吓}) checks. Magical healing of 6th level or higher, such as {@spell 治愈术} and {@spell 再生术}, removes the scar."
+							"{@bold Horrible Scar.} You are disfigured to the extent that the wound can't be easily concealed. You have disadvantage on Charisma ({@skill Persuasion}) checks and advantage on Charisma ({@skill Intimidation}) checks. Magical healing of 6th level or higher, such as {@spell 治癒術} and {@spell 再生術}, removes the scar."
 						],
 						[
 							"14-16",
@@ -4219,7 +4218,7 @@
 						],
 						[
 							"17-20",
-							"{@bold Minor Scar.} The scar doesn't have any adverse effect. Magical healing of 6th level or higher, such as {@spell 治愈术} and {@spell 再生术}, removes the scar."
+							"{@bold Minor Scar.} The scar doesn't have any adverse effect. Magical healing of 6th level or higher, such as {@spell 治癒術} and {@spell 再生術}, removes the scar."
 						]
 					]
 				},
@@ -4431,15 +4430,15 @@
 							"rows": [
 								[
 									"01-20",
-									"The character retreats into his or her mind and becomes {@condition 麻痹}. The effect ends if the character takes any damage."
+									"The character retreats into his or her mind and becomes {@condition paralyzed}. The effect ends if the character takes any damage."
 								],
 								[
 									"21-30",
-									"The character becomes {@condition 无力} and spends the duration screaming, laughing, or weeping."
+									"The character becomes {@condition incapacitated} and spends the duration screaming, laughing, or weeping."
 								],
 								[
 									"31-40",
-									"The character becomes {@condition 恐惧} and must use his or her action and movement each round to flee from the source of the fear."
+									"The character becomes {@condition frightened} and must use his or her action and movement each round to flee from the source of the fear."
 								],
 								[
 									"41-50",
@@ -4463,11 +4462,11 @@
 								],
 								[
 									"81-90",
-									"The character is {@condition 震慑}."
+									"The character is {@condition stunned}."
 								],
 								[
 									"91-100",
-									"The character falls {@condition 昏迷}."
+									"The character falls {@condition unconscious}."
 								]
 							]
 						},
@@ -4497,7 +4496,7 @@
 								],
 								[
 									"31-40",
-									"The character regards something (usually the source of madness) with intense revulsion, as if affected by the antipathy effect of the {@spell 嫌恶/共感术} spell."
+									"The character regards something (usually the source of madness) with intense revulsion, as if affected by the antipathy effect of the {@spell 嫌惡/共感術} spell."
 								],
 								[
 									"41-45",
@@ -4509,7 +4508,7 @@
 								],
 								[
 									"56-65",
-									"The character is {@condition 目盲} (25%) or {@condition 耳聋} (75%)."
+									"The character is {@condition blinded} (25%) or {@condition deafened} (75%)."
 								],
 								[
 									"66-75",
@@ -4521,7 +4520,7 @@
 								],
 								[
 									"86-90",
-									"Whenever the character takes damage, he or she must succeed on a DC 15 Wisdom saving throw or be affected as though he or she failed a saving throw against the {@spell 困惑术} spell. The confusion effect lasts for 1 minute."
+									"Whenever the character takes damage, he or she must succeed on a DC 15 Wisdom saving throw or be affected as though he or she failed a saving throw against the {@spell 困惑術} spell. The confusion effect lasts for 1 minute."
 								],
 								[
 									"91-95",
@@ -4529,7 +4528,7 @@
 								],
 								[
 									"96-100",
-									"The character falls {@condition 昏迷}. No amount of jostling or damage can wake the character."
+									"The character falls {@condition unconscious}. No amount of jostling or damage can wake the character."
 								]
 							]
 						},
@@ -4601,7 +4600,7 @@
 					"type": "entries",
 					"name": "Curing Madness",
 					"entries": [
-						"A {@spell 安定心神} spell can suppress the effects of madness, while a {@spell 次级复原术} spell can rid a character of a short-term or long-term madness. Depending on the source of the madness, {@spell 移除诅咒} or {@spell dispel evil and good||dispel evil} might also prove effective. A {@spell 高等复原术} spell or more powerful magic is required to rid a character of indefinite madness."
+						"A {@spell 安定心神} spell can suppress the effects of madness, while a {@spell 次級復原術} spell can rid a character of a short-term or long-term madness. Depending on the source of the madness, {@spell 移除詛咒} or {@spell dispel evil and good||dispel evil} might also prove effective. A {@spell 高等復原術} spell or more powerful magic is required to rid a character of indefinite madness."
 					]
 				}
 			]
@@ -5247,7 +5246,7 @@
 						],
 						[
 							"4-5",
-							"The creature is {@condition 震慑} until the end of its next turn."
+							"The creature is {@condition stunned} until the end of its next turn."
 						],
 						[
 							"6-7",
@@ -5336,7 +5335,7 @@
 						],
 						[
 							"00",
-							"Only one potion works, but its effect is permanent. Choose the simplest effect to make permanent, or the one that seems the most fun. For example, a {@item potion of healing} might increase the drinker's hit point maximum by 4, or {@item oil of etherealness} might permanently trap the user in the Ethereal Plane. At your discretion, an appropriate spell, such as {@spell 解除魔法} or {@spell 移除诅咒}, might end this lasting effect."
+							"Only one potion works, but its effect is permanent. Choose the simplest effect to make permanent, or the one that seems the most fun. For example, a {@item potion of healing} might increase the drinker's hit point maximum by 4, or {@item oil of etherealness} might permanently trap the user in the Ethereal Plane. At your discretion, an appropriate spell, such as {@spell 解除魔法} or {@spell 移除詛咒}, might end this lasting effect."
 						]
 					]
 				}
@@ -5363,7 +5362,7 @@
 					"type": "list",
 					"items": [
 						"All the creatures in the group are surprised.",
-						"The group's leader is reduced to 0 hit points, {@condition 无力}, taken prisoner, or removed from battle.",
+						"The group's leader is reduced to 0 hit points, {@condition incapacitated}, taken prisoner, or removed from battle.",
 						"The group is reduced to half its original size with no losses on the opposing side."
 					]
 				},
@@ -5595,7 +5594,7 @@
 									"name": "Spell Slots",
 									"entries": [
 										"You determine your available spell slots by adding together all your levels in the bard, cleric, druid, sorcerer, and wizard classes, half your levels (rounded down) in the paladin and ranger classes, and a third of your fighter or rogue levels (rounded down) if you have the Eldritch Knight or the Arcane Trickster feature. Use this total to determine your spell slots by consulting the Multiclass Spellcaster table.",
-										"If you have more than one spellcasting class, this table might give you spell slots of a level that is higher than the spells you know or can prepare. You can use those slots, but only to cast your lower-level spells. If a lower-level spell that you cast, like {@spell 燃烧之手}, has an enhanced effect when cast using a higher-level slot, you can use the enhanced effect, even though you don't have any spells of that higher level.",
+										"If you have more than one spellcasting class, this table might give you spell slots of a level that is higher than the spells you know or can prepare. You can use those slots, but only to cast your lower-level spells. If a lower-level spell that you cast, like {@spell 燃燒之手}, has an enhanced effect when cast using a higher-level slot, you can use the enhanced effect, even though you don't have any spells of that higher level.",
 										"For example, if you are the aforementioned ranger 4/wizard 3. you count as a 5th-level character when determining your spell slots: you have four 1st-level slots, three 2nd-level slots, and two 3rd-level slots. However, you don't know any 3rd-level spells, nor do you know any 2nd-level ranger spells. You can use the spell slots of those levels to cast the spells you do know\u2014and potentially enhance their effects."
 									]
 								},
@@ -6067,7 +6066,7 @@
 									"rows": [
 										[
 											"1",
-											"The leader has a {@item spell scroll} of {@spell 完全复活术} among its belongings."
+											"The leader has a {@item spell scroll} of {@spell 完全復活術} among its belongings."
 										],
 										[
 											"2",
@@ -6108,7 +6107,7 @@
 										],
 										[
 											"2",
-											"Creatures that aren't inhabitants of the island must succeed on a Constitution saving throw at the end of each hour they spend on the island. If they fail, they gain one level of {@condition 力竭}. The DC for this check equals 10 + the number of hours spent on the island."
+											"Creatures that aren't inhabitants of the island must succeed on a Constitution saving throw at the end of each hour they spend on the island. If they fail, they gain one level of {@condition exhaustion}. The DC for this check equals 10 + the number of hours spent on the island."
 										],
 										[
 											"3",
@@ -6116,11 +6115,11 @@
 										],
 										[
 											"4",
-											"When a creature that isn't an inhabitant of the island completes a long rest there, it must succeed on a DC 15 Wisdom saving throw or be {@condition 目盲} for 8 hours."
+											"When a creature that isn't an inhabitant of the island completes a long rest there, it must succeed on a DC 15 Wisdom saving throw or be {@condition blinded} for 8 hours."
 										],
 										[
 											"5",
-											"Creatures must succeed on a DC 10 Constitution saving throw at the end of each hour they spend on the island. If they fail, they gain a 1-inch scar in a random place on their body. Only a {@spell 移除诅咒} spell or similar magic removes the scar."
+											"Creatures must succeed on a DC 10 Constitution saving throw at the end of each hour they spend on the island. If they fail, they gain a 1-inch scar in a random place on their body. Only a {@spell 移除詛咒} spell or similar magic removes the scar."
 										],
 										[
 											"6",
@@ -6644,7 +6643,7 @@
 										],
 										[
 											"6",
-											"All beasts on the island have {@sense 真实视觉} out to a range of 120 ft."
+											"All beasts on the island have {@sense truesight} out to a range of 120 ft."
 										]
 									]
 								},
@@ -6756,7 +6755,7 @@
 									"rows": [
 										[
 											"1",
-											"The island hides a spring that restores life to anyone washed in it, as per the {@spell 唤醒死者} spell. A creature can only benefit from the spring once."
+											"The island hides a spring that restores life to anyone washed in it, as per the {@spell 喚醒死者} spell. A creature can only benefit from the spring once."
 										],
 										[
 											"2",
@@ -6976,14 +6975,14 @@
 							"type": "entries",
 							"name": "Currents and Travel",
 							"entries": [
-								"When a vessel or creature travels in the same direction as a current, that current's speed is added to the vessel or creature's travel pace. A creature or vessel traveling against a current has that current's speed subtracted from the vessel or creature's travel pace. If this results in a negative travel pace, the vessel or creature can let the current carry it. Alternatively, the crew of the vessel or the creature can fight against the current by rowing or swimming hard, moving at half the vessel or creature's normal pace. Vessels and creatures fighting against a current must make a Constitution saving throw at the end of every hour traveled, with a bonus equal to the crew's quality (if they have crew). Vessels that fail have their crew's quality score decreased by 1. Creatures that fail gain one level of {@condition 力竭}. The DC for this saving throw is 10 + 1 for every consecutive hour spent fighting the current."
+								"When a vessel or creature travels in the same direction as a current, that current's speed is added to the vessel or creature's travel pace. A creature or vessel traveling against a current has that current's speed subtracted from the vessel or creature's travel pace. If this results in a negative travel pace, the vessel or creature can let the current carry it. Alternatively, the crew of the vessel or the creature can fight against the current by rowing or swimming hard, moving at half the vessel or creature's normal pace. Vessels and creatures fighting against a current must make a Constitution saving throw at the end of every hour traveled, with a bonus equal to the crew's quality (if they have crew). Vessels that fail have their crew's quality score decreased by 1. Creatures that fail gain one level of {@condition exhaustion}. The DC for this saving throw is 10 + 1 for every consecutive hour spent fighting the current."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Submerged in Currents",
 							"entries": [
-								"When a creature without a swimming speed is submerged in a current, the creature must succeed on a Strength ({@skill 运动}) check at the end of its turn or get pulled {@dice 1d4 × 5} feet in the direction of the current. The DC for this check equals 10 + the number of miles per hour the current is moving."
+								"When a creature without a swimming speed is submerged in a current, the creature must succeed on a Strength ({@skill Athletics}) check at the end of its turn or get pulled {@dice 1d4 × 5} feet in the direction of the current. The DC for this check equals 10 + the number of miles per hour the current is moving."
 							]
 						}
 					]
@@ -7160,7 +7159,7 @@
 							"type": "entries",
 							"name": "Ghost Fog",
 							"entries": [
-								"Ghost fog contains the souls of murder victims whose bodies were thrown into the sea. A DC 15 Intelligence ({@skill 奥秘}) check reveals that this mist is ghost fog.",
+								"Ghost fog contains the souls of murder victims whose bodies were thrown into the sea. A DC 15 Intelligence ({@skill Arcana}) check reveals that this mist is ghost fog.",
 								"The souls of the dead want the living to join them. Every hour a ship is immersed in ghost fog, roll any die. On an even number, {@dice 2d4} hostile {@creature Specter||specters} appear and attack those on the ship. If a humanoid creature dies in ghost fog, its spirit rises as a specter that is hostile toward all creatures that aren't undead.",
 								"All non-undead creatures immersed in ghost fog are vulnerable to necrotic damage."
 							]
@@ -7169,7 +7168,7 @@
 							"type": "entries",
 							"name": "Shadowfell Fog",
 							"entries": [
-								"Shadowfell fog seeps into the Material Plane at thin points in the boundary between the two planes. A DC 15 Intelligence ({@skill 奥秘}) check reveals that this mist is Shadowfell fog.",
+								"Shadowfell fog seeps into the Material Plane at thin points in the boundary between the two planes. A DC 15 Intelligence ({@skill Arcana}) check reveals that this mist is Shadowfell fog.",
 								"When a vessel travels through this oppressive, shadow-haunted miasma, its crew and passengers feel despair. Each hour a vessel is immersed in the fog, the crew must make a quality score check by rolling a {@dice d20} and adding their quality score to the number. The DC for this check is 10 + the number of hours the ship has been immersed in the Shadowfell fog. If the crew fails this check, their quality score decreases by 1 while within the Shadowfell fog and for 1 day afterward."
 							]
 						},
@@ -7177,7 +7176,7 @@
 							"type": "entries",
 							"name": "Wild Magic Fog",
 							"entries": [
-								"Few know the origins of wild magic fog, with some claiming it is the creation of capricious gods while others believe it is the result of magical experimentation gone wrong. A DC 15 Intelligence ({@skill 奥秘}) check reveals that this mist is wild magic fog.",
+								"Few know the origins of wild magic fog, with some claiming it is the creation of capricious gods while others believe it is the result of magical experimentation gone wrong. A DC 15 Intelligence ({@skill Arcana}) check reveals that this mist is wild magic fog.",
 								"Whenever a creature in wild magic fog casts a spell of 1st level or higher, roll on the {@table Wild Magic Surge|PHB} table in chapter 3, \"Classes,\" of the {@book Player's Handbook|PHB} to create a magical effect."
 							]
 						}
@@ -7196,7 +7195,7 @@
 					"name": "Kraken's Grave",
 					"entries": [
 						"When krakens die, their bodies often rot on the seafloor. In such cases, the ground absorbs the decaying kraken's supernatural energy, marking the area with a dark stain in the shape of the kraken's body. This stain is called a kraken's grave.",
-						"When a creature moves within 30 feet of a kraken's grave or starts its turn there, that creature must succeed on a DC 14 Dexterity ({@skill 隐匿}) check or it disturbs the grave. If a creature disturbs the grave, a tendril made of lightning stretches from the ground and attacks the creature with a +7 bonus to hit. On a hit, the target takes 10 ({@dice 3d6}) lightning damage, and it must succeed on a DC 14 Constitution saving throw or become {@condition 目盲} for the next {@dice 2d4} hours."
+						"When a creature moves within 30 feet of a kraken's grave or starts its turn there, that creature must succeed on a DC 14 Dexterity ({@skill Stealth}) check or it disturbs the grave. If a creature disturbs the grave, a tendril made of lightning stretches from the ground and attacks the creature with a +7 bonus to hit. On a hit, the target takes 10 ({@dice 3d6}) lightning damage, and it must succeed on a DC 14 Constitution saving throw or become {@condition blinded} for the next {@dice 2d4} hours."
 					]
 				},
 				{
@@ -7204,8 +7203,8 @@
 					"name": "Lure Lights",
 					"entries": [
 						"When aboleths die, their souls sometimes gather in clusters called lure lights. These 100-foot-diameter collections of pale, yellow lights are found in the deep ocean below depths of 1,000 feet. They glow with bright light in a 100-foot radius and dim light for another 100 feet.",
-						"Any creature that can see the lure lights must succeed on a DC 14 Wisdom saving throw or be {@condition 魅惑} by the lights for 24 hours or until the lights are destroyed. A creature that succeeds on the saving throw is immune to the effect of the lure lights for 24 hours.",
-						"While {@condition 魅惑} by the lights, a creature can't willingly move out of line of sight of them and defends them to the death. If forcibly moved away from the lights, the creature tries to find its way back to them. The creature can't take a short or long rest while under this effect. After 24 hours, the {@condition 魅惑} creature gains one level of {@condition 力竭} and must repeat the saving throw if it is within line of sight of the lights, ending the effect on itself on a success. If the lights aren't within line of sight at this time, the creature succeeds automatically.",
+						"Any creature that can see the lure lights must succeed on a DC 14 Wisdom saving throw or be {@condition charmed} by the lights for 24 hours or until the lights are destroyed. A creature that succeeds on the saving throw is immune to the effect of the lure lights for 24 hours.",
+						"While {@condition charmed} by the lights, a creature can't willingly move out of line of sight of them and defends them to the death. If forcibly moved away from the lights, the creature tries to find its way back to them. The creature can't take a short or long rest while under this effect. After 24 hours, the {@condition charmed} creature gains one level of {@condition exhaustion} and must repeat the saving throw if it is within line of sight of the lights, ending the effect on itself on a success. If the lights aren't within line of sight at this time, the creature succeeds automatically.",
 						"Each cluster of lure lights has AC 17, 100 hit points, and immunity to necrotic and poison damage."
 					]
 				},
@@ -7327,7 +7326,7 @@
 							"type": "entries",
 							"name": "Navigating Sandbars",
 							"entries": [
-								"Sandbars make dangerous obstacles for vessels, particularly at high tide when they are less noticeable. The crew of a ship moving toward a sandbar beneath the waves must have a passive Wisdom ({@skill 察觉}) score of 12 or higher or fail to see the sandbar in the way (see \"{@adventure Noticing Threats|GoS|8|Noticing Threats}\"). When a ship passes over a submerged sandbar, the sandbar counts as difficult terrain, and the ship must succeed on a Dexterity saving throw. The DC of this save corresponds with the depth of the sandbar, as listed on the Sandbar DCs table. If the ship fails this save, it gets stuck on the sandbar. A ship can become unstuck by using an action to make a Strength check, with a bonus equal to the crew's quality, against the sandbar's DC.",
+								"Sandbars make dangerous obstacles for vessels, particularly at high tide when they are less noticeable. The crew of a ship moving toward a sandbar beneath the waves must have a passive Wisdom ({@skill Perception}) score of 12 or higher or fail to see the sandbar in the way (see \"{@adventure Noticing Threats|GoS|8|Noticing Threats}\"). When a ship passes over a submerged sandbar, the sandbar counts as difficult terrain, and the ship must succeed on a Dexterity saving throw. The DC of this save corresponds with the depth of the sandbar, as listed on the Sandbar DCs table. If the ship fails this save, it gets stuck on the sandbar. A ship can become unstuck by using an action to make a Strength check, with a bonus equal to the crew's quality, against the sandbar's DC.",
 								{
 									"type": "table",
 									"caption": "Sandbar DCs",
@@ -7487,7 +7486,7 @@
 									"width": 1000,
 									"height": 960
 								},
-								"When a creature moves into a whirlpool or starts its turn there, it must make a Strength ({@skill 运动}) check with a DC determined by the whirlpool's rank. On a success, the creature can move normally. On a failure, the creature is immediately moved toward the vortex's center at the whirlpool's velocity, and the creature is {@condition 束缚} by the whirlpool until the start of its next turn. If the creature reaches the whirlpool's center, the creature is pulled under the surface and either appears at a special location (see \"{@adventure Whirlpool Destinations|GoS|8|Whirlpool Destinations}\" below) or plunges a number of feet underwater equal to the whirlpool's velocity."
+								"When a creature moves into a whirlpool or starts its turn there, it must make a Strength ({@skill Athletics}) check with a DC determined by the whirlpool's rank. On a success, the creature can move normally. On a failure, the creature is immediately moved toward the vortex's center at the whirlpool's velocity, and the creature is {@condition restrained} by the whirlpool until the start of its next turn. If the creature reaches the whirlpool's center, the creature is pulled under the surface and either appears at a special location (see \"{@adventure Whirlpool Destinations|GoS|8|Whirlpool Destinations}\" below) or plunges a number of feet underwater equal to the whirlpool's velocity."
 							]
 						},
 						{
@@ -7515,15 +7514,15 @@
 										],
 										[
 											"First mate",
-											"Charisma ({@skill 威吓})"
+											"Charisma ({@skill Intimidation})"
 										],
 										[
 											"Bosun",
-											"Strength ({@item 木匠工具|PHB})"
+											"Strength ({@item carpenter's tools|PHB})"
 										],
 										[
 											"Quartermaster",
-											"Wisdom ({@skill 自然})"
+											"Wisdom ({@skill Nature})"
 										]
 									]
 								},
@@ -7549,7 +7548,7 @@
 										],
 										[
 											"Failure",
-											"The vessel is immediately moved toward the vortex's center at the whirlpool's velocity, and the vessel is {@condition 束缚} by the whirlpool until the start of its next turn."
+											"The vessel is immediately moved toward the vortex's center at the whirlpool's velocity, and the vessel is {@condition restrained} by the whirlpool until the start of its next turn."
 										],
 										[
 											"Total Failure",
@@ -7629,12 +7628,12 @@
 					"entries": [
 						"If you'd like to explore running a ship, it needs officers to oversee its operations\u2014officers who fill six different roles. Some roles aboard a ship reflect the need for trained experts to direct a crew's efforts. Other roles focus on keeping the crew's health and morale in order. The roles are meant to provide a sense of the types of ability checks useful to managing a ship. Of these, though, captain is the only role that must be filled for the ship to function. A ship needs a single person to issue orders and respond to threats, otherwise a ship risks chaos and confusion during a crisis.",
 						"Each type of officer is described below, along with the abilities and proficiencies that help a character excel in that role:",
-						"{@b Captain}. The captain issues orders. The best captains have high Intelligence and Charisma scores, as well as proficiency with water vehicles and the {@skill 威吓} and {@skill 说服} skills.",
-						"{@b First Mate}. This specialist keeps the crew's morale high by providing supervision, encouragement, and discipline. A first mate benefits from a high Charisma score, as well as proficiency with the {@skill 威吓} and {@skill 说服} skills.",
-						"{@b Bosun}. The bosun (or boatswain) provides technical advice to the captain and crew and leads repair and maintenance efforts. A good bosun has a high Strength score, as well as proficiency with {@item 木匠工具|PHB} and the {@skill 运动} skill.",
-						"{@b Quartermaster}. The quartermaster plots the ship's course, relying on knowledge of nautical charts and a study of weather and sea conditions. A reliable quartermaster tends to have a high Wisdom score, as well as proficiency with {@item 领航工具|PHB} and the {@skill 自然} skill.",
-						"{@b Surgeon}. The ship's surgeon tends to injuries, keeps illnesses from spreading throughout the ship, and oversees sanitation. A capable surgeon benefits from a high Intelligence score, as well as proficiency with {@item 草药工具|PHB|herbalism kits} and the {@skill 医疗} skill.",
-						"{@b Cook}. A ship's cook works with the limited ingredients aboard a ship to make meals. A skilled cook keeps the crew's morale in top shape, while a poor one drags down the entire crew's performance. A talented cook has a high Constitution score, as well as proficiency with {@item 酿酒工具|PHB} and {@item 厨师工具|PHB}."
+						"{@b Captain}. The captain issues orders. The best captains have high Intelligence and Charisma scores, as well as proficiency with water vehicles and the {@skill Intimidation} and {@skill Persuasion} skills.",
+						"{@b First Mate}. This specialist keeps the crew's morale high by providing supervision, encouragement, and discipline. A first mate benefits from a high Charisma score, as well as proficiency with the {@skill Intimidation} and {@skill Persuasion} skills.",
+						"{@b Bosun}. The bosun (or boatswain) provides technical advice to the captain and crew and leads repair and maintenance efforts. A good bosun has a high Strength score, as well as proficiency with {@item carpenter's tools|PHB} and the {@skill Athletics} skill.",
+						"{@b Quartermaster}. The quartermaster plots the ship's course, relying on knowledge of nautical charts and a study of weather and sea conditions. A reliable quartermaster tends to have a high Wisdom score, as well as proficiency with {@item navigator's tools|PHB} and the {@skill Nature} skill.",
+						"{@b Surgeon}. The ship's surgeon tends to injuries, keeps illnesses from spreading throughout the ship, and oversees sanitation. A capable surgeon benefits from a high Intelligence score, as well as proficiency with {@item Herbalism Kit|PHB|herbalism kits} and the {@skill Medicine} skill.",
+						"{@b Cook}. A ship's cook works with the limited ingredients aboard a ship to make meals. A skilled cook keeps the crew's morale in top shape, while a poor one drags down the entire crew's performance. A talented cook has a high Constitution score, as well as proficiency with {@item brewer's supplies|PHB} and {@item cook's utensils|PHB}."
 					]
 				},
 				{
@@ -7654,7 +7653,7 @@
 							"type": "entries",
 							"name": "Mutiny",
 							"entries": [
-								"A poorly led or mistreated crew might turn against its officers. Once per day, if a crew's quality score is lower than 0, the captain must make a Charisma ({@skill 威吓} or {@skill 说服}) check modified by the crew's quality score.",
+								"A poorly led or mistreated crew might turn against its officers. Once per day, if a crew's quality score is lower than 0, the captain must make a Charisma ({@skill Intimidation} or {@skill Persuasion}) check modified by the crew's quality score.",
 								"If the check total is between 1 and 9, the crew's quality score decreases by 1.",
 								"If the check total is 0 or lower, the crew mutinies. They become hostile to the officers and might attempt to kill them, imprison them, or throw them overboard. The crew can be cowed into obedience through violence, combat, or offers of treasure or other rewards.",
 								"When the DM ends the mutiny, the crew's quality score increases by {@dice 1d4}."
@@ -7673,15 +7672,14 @@
 			]
 		},
 		{
-			"name": "可选职业特性",
-			"ENG_name": "Optional Class Features",
+			"name": "Optional Class Features",
 			"source": "TCE",
 			"page": 24,
 			"ruleType": "O",
 			"entries": [
-				"你在你的职业到达特定等级时会获得记录在{@book 《玩家手册》|PHB}中的特性。可选特性是你可以在这些以外获得的额外特性。",
-				"与{@book 《玩家手册》|PHB}中的特性不同的是，你并不是自动获得一项可选特性。咨询你的DM后，你在满足特性描述中的等级要求后，决定是否要获取一项可选特性。这些特性每个都可以单独选择；你可以选择一部分、全选或者全部不选。",
-				"如果你选择了一项替代另一项特性的可选特性，你将不会从被替换的特性中获得任何好处，并且也将不会满足任何游戏中需要这项被替换的特性的条件。"
+				"You gain class features in the {@book Player's Handbook|PHB} when you reach certain levels in your class. An optional feature is an additional feature that you can gain beyond these.",
+				"Unlike the features in the {@book Player's Handbook|PHB}, you don't gain an optional feature automatically. Consulting with your DM, you decide whether to gain an optional feature if you meet the level requirement noted in the feature's description. These features can be selected separately from one another; you can use some, all, or none of them.",
+				"If you take an optional feature that replaces another feature, you gain no benefit from the replaced one and don't qualify for anything in the game that requires it."
 			]
 		},
 		{
@@ -7787,7 +7785,7 @@
 							"name": "Time Warp",
 							"entries": [
 								"While time seems to pass normally in the Feywild, characters might spend a day there and realize, upon leaving the plane, that less or more time has elapsed everywhere else in the multiverse.",
-								"Whenever a creature or group of creatures leaves the Feywild after spending at least 1 day on that plane, you can choose a time change that works best for your campaign, if any, or roll on the Feywild Time Warp table. A wish spell can be used to remove the effect on up to ten creatures. Some powerful fey have the ability to grant such wishes and might do so if the beneficiaries agree to subject themselves to a {@spell 指使术} spell and complete a quest after the {@spell 祈愿术} spell is cast.",
+								"Whenever a creature or group of creatures leaves the Feywild after spending at least 1 day on that plane, you can choose a time change that works best for your campaign, if any, or roll on the Feywild Time Warp table. A wish spell can be used to remove the effect on up to ten creatures. Some powerful fey have the ability to grant such wishes and might do so if the beneficiaries agree to subject themselves to a {@spell 指使術} spell and complete a quest after the {@spell 祈願術} spell is cast.",
 								{
 									"type": "table",
 									"caption": "Feywild Time Warp",
@@ -7870,49 +7868,49 @@
 					"type": "entries",
 					"name": "Outer Planes: Psychic Dissonance",
 					"entries": [
-						"Each of the Outer Planes emanates a psychic dissonance that affects visitors of an incompatible alignment\u2014good creatures on the Lower Planes, evil ones on the Upper Planes\u2014if they spend too much time on the plane. You can reflect this dissonance with this optional rule. At the end of a long rest spent on an incompatible plane, a visitor must make a DC 10 Constitution saving throw. On a failed save, the creature gains one level of {@condition 力竭}. Incompatibility between lawful and chaotic alignments doesn't have the same effect, so Mechanus and Limbo lack this quality."
+						"Each of the Outer Planes emanates a psychic dissonance that affects visitors of an incompatible alignment\u2014good creatures on the Lower Planes, evil ones on the Upper Planes\u2014if they spend too much time on the plane. You can reflect this dissonance with this optional rule. At the end of a long rest spent on an incompatible plane, a visitor must make a DC 10 Constitution saving throw. On a failed save, the creature gains one level of {@condition exhaustion}. Incompatibility between lawful and chaotic alignments doesn't have the same effect, so Mechanus and Limbo lack this quality."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Mount Celestia: Blessed Beneficence",
 					"entries": [
-						"In contrast to the dissonance experienced by evil creatures here, good creatures are literally blessed by the pervasive beneficence of the plane. Creatures of good alignment gain the benefit of the {@spell 祝福术} spell as long as they remain on the plane. In addition, finishing a long rest on the plane grants a good creature the benefit of a {@spell 次级复原术} spell."
+						"In contrast to the dissonance experienced by evil creatures here, good creatures are literally blessed by the pervasive beneficence of the plane. Creatures of good alignment gain the benefit of the {@spell 祝福術} spell as long as they remain on the plane. In addition, finishing a long rest on the plane grants a good creature the benefit of a {@spell 次級復原術} spell."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Bytopia: Pervasive Goodwill",
 					"entries": [
-						"At the end of each long rest taken on this plane, a visitor that is neither lawful good nor neutral good must make a DC 10 Wisdom saving throw. On a failed save, the creature's alignment changes to lawful good or neutral good (whichever is closer to the creature's current alignment). The change becomes permanent if the creature doesn't leave the plane within {@dice 1d4} days. Otherwise, the creature's alignment reverts to normal after one day spent on a plane other than Bytopia. Casting the {@spell 反制善恶} spell on the creature also restores its original alignment."
+						"At the end of each long rest taken on this plane, a visitor that is neither lawful good nor neutral good must make a DC 10 Wisdom saving throw. On a failed save, the creature's alignment changes to lawful good or neutral good (whichever is closer to the creature's current alignment). The change becomes permanent if the creature doesn't leave the plane within {@dice 1d4} days. Otherwise, the creature's alignment reverts to normal after one day spent on a plane other than Bytopia. Casting the {@spell 反制善惡} spell on the creature also restores its original alignment."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Elysium: Overwhelming Joy",
 					"entries": [
-						"Visitors spending any time on this plane risk becoming trapped by overwhelming sensations of contentment and happiness. At the end of each long rest taken on this plane, a visitor must make a DC 10 Wisdom saving throw. On a failed save, the creature is unwilling to leave the plane before taking another long rest. After three failed saving throws, the creature never willingly leaves the plane and, if forcibly removed, does everything in its power to return to the plane. A {@spell 反制善恶} spell removes this effect from the creature."
+						"Visitors spending any time on this plane risk becoming trapped by overwhelming sensations of contentment and happiness. At the end of each long rest taken on this plane, a visitor must make a DC 10 Wisdom saving throw. On a failed save, the creature is unwilling to leave the plane before taking another long rest. After three failed saving throws, the creature never willingly leaves the plane and, if forcibly removed, does everything in its power to return to the plane. A {@spell 反制善惡} spell removes this effect from the creature."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "The Beastlands: Hunter's Paradise",
 					"entries": [
-						"Visitors to the Beastlands find their hunting and stalking capabilities improved, and characters have advantage on Wisdom ({@skill 驯兽}), Wisdom ({@skill 察觉}), and Wisdom ({@skill 生存}) checks while there."
+						"Visitors to the Beastlands find their hunting and stalking capabilities improved, and characters have advantage on Wisdom ({@skill Animal Handling}), Wisdom ({@skill Perception}), and Wisdom ({@skill Survival}) checks while there."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "The Beastlands: Beast Transformation",
 					"entries": [
-						"Whenever a visitor slays a beast native to the plane, the slayer must succeed on a DC 10 Charisma saving throw or become transformed (as the polymorph spell) into the type of beast that was slain. In this form, the creature retains its intelligence and ability to speak. At the end of each long rest, the polymorphed creature can repeat the saving throw. On a successful saving throw, the creature returns to its true form. After three failed saving throws. the transformation can be undone only by a {@spell 移除诅咒} spell or similar magic. "
+						"Whenever a visitor slays a beast native to the plane, the slayer must succeed on a DC 10 Charisma saving throw or become transformed (as the polymorph spell) into the type of beast that was slain. In this form, the creature retains its intelligence and ability to speak. At the end of each long rest, the polymorphed creature can repeat the saving throw. On a successful saving throw, the creature returns to its true form. After three failed saving throws. the transformation can be undone only by a {@spell 移除詛咒} spell or similar magic. "
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Arborea: Intense Yearning",
 					"entries": [
-						"Keep track of how many days a visitor spends on Arborea. When the visitor leaves, it must make a Charisma saving throw against a DC of 5, plus 1 for each day spent on the plane. On a failed save, the creature becomes afflicted with a yearning to return to Arborea. As long as the effect persists the creature has disadvantage on ability checks. At the end of each long rest, the creature can repeat the saving throw, ending the effect on a success. A {@spell 反制善恶} spell removes this effect from the creature."
+						"Keep track of how many days a visitor spends on Arborea. When the visitor leaves, it must make a Charisma saving throw against a DC of 5, plus 1 for each day spent on the plane. On a failed save, the creature becomes afflicted with a yearning to return to Arborea. As long as the effect persists the creature has disadvantage on ability checks. At the end of each long rest, the creature can repeat the saving throw, ending the effect on a success. A {@spell 反制善惡} spell removes this effect from the creature."
 					]
 				},
 				{
@@ -7935,7 +7933,7 @@
 					"type": "entries",
 					"name": "Pandemonium: Mad Winds",
 					"entries": [
-						"A visitor must make a DC 10 Wisdom saving throw after each hour spent among the howling winds. On a failed save, the creature gains one level of {@condition 力竭}. A creature that reaches six levels of {@condition 力竭} while on this plane doesn't die. Instead, the creature gains a random form of indefinite madness, as described in chapter 8, \"Running the Game.\" Finishing a long rest doesn't reduce a creature's {@condition 力竭} level unless the creature can somehow escape the maddening winds."
+						"A visitor must make a DC 10 Wisdom saving throw after each hour spent among the howling winds. On a failed save, the creature gains one level of {@condition exhaustion}. A creature that reaches six levels of {@condition exhaustion} while on this plane doesn't die. Instead, the creature gains a random form of indefinite madness, as described in chapter 8, \"Running the Game.\" Finishing a long rest doesn't reduce a creature's {@condition exhaustion} level unless the creature can somehow escape the maddening winds."
 					]
 				},
 				{
@@ -7944,7 +7942,7 @@
 					"entries": [
 						"A non-evil visitor that finishes a long rest in the Abyss must make a DC 10 Charisma saving throw. On a failure, the creature becomes corrupted. Refer to the Abyssal Corruption table to determine the effects of this corruption. You can substitute different corruption effects of your own creation.",
 						"After finishing a long rest, a corrupted creature can make a DC 15 Charisma saving throw. On a successful save, the corruption effect ends. A dispel evil and good spell or any magic that removes a curse also ends the effect.",
-						"If a corrupted creature doesn't leave the plane within {@dice 1d4 + 2} days, its alignment changes to chaotic evil. Casting the {@spell 反制善恶} spell on the creature restores its original alignment.",
+						"If a corrupted creature doesn't leave the plane within {@dice 1d4 + 2} days, its alignment changes to chaotic evil. Casting the {@spell 反制善惡} spell on the creature restores its original alignment.",
 						{
 							"type": "table",
 							"caption": "Abyssal Corruption",
@@ -7971,7 +7969,7 @@
 								],
 								[
 									"10",
-									"{@bold Demonic Possession.} The character is possessed by a demonic entity until freed by {@spell 反制善恶} or similar magic. Whenever the possessed character rolls a 1 on an attack roll, ability check, or saving throw, the demon takes control of the character and determines the character's behavior. At the end of each of the possessed character's turns, he or she can make a DC 15 Charisma saving throw. On a success, the character regains control until he or she rolls another 1."
+									"{@bold Demonic Possession.} The character is possessed by a demonic entity until freed by {@spell 反制善惡} or similar magic. Whenever the possessed character rolls a 1 on an attack roll, ability check, or saving throw, the demon takes control of the character and determines the character's behavior. At the end of each of the possessed character's turns, he or she can make a DC 15 Charisma saving throw. On a success, the character regains control until he or she rolls another 1."
 								]
 							]
 						}
@@ -7989,7 +7987,7 @@
 					"type": "entries",
 					"name": "Hades: Vile Transformation",
 					"entries": [
-						"At the end of each long rest taken on the plane, a visitor must make a DC 10 Wisdom saving throw. On a failed save, the creature gains one level of {@condition 力竭}, which can't be removed while the creature remains in Hades. If the creature reaches six levels of {@condition 力竭}, it doesn't die. Instead, the creature permanently transforms into a larva, whereupon all levels of {@condition 力竭} afflicting the creature are removed.",
+						"At the end of each long rest taken on the plane, a visitor must make a DC 10 Wisdom saving throw. On a failed save, the creature gains one level of {@condition exhaustion}, which can't be removed while the creature remains in Hades. If the creature reaches six levels of {@condition exhaustion}, it doesn't die. Instead, the creature permanently transforms into a larva, whereupon all levels of {@condition exhaustion} afflicting the creature are removed.",
 						"A larva is a miserable fiend that retains the facial features of its previous form but has the body of a fat worm. A larva has only a few faint memories of its previous life and the statistics in the {@creature larva|dmg} stat block. Hades is crawling with larvae. Night hags, liches, and rakshasas harvest them for use in vile rituals. Other fiends like to feed on them."
 					]
 				},
@@ -8004,7 +8002,7 @@
 					"type": "entries",
 					"name": "The Nine Hells: Pervasive Evil",
 					"entries": [
-						"Evil pervades the Nine Hells, and visitors to this plane feel its influence. At the end of each long rest taken on this plane, a visitor that isn't evil must make a DC 10 Wisdom saving throw. On a failed save, the creature's alignment changes to lawful evil. The change becomes permanent if the creature doesn't leave the plane within {@dice 1d4} days. Otherwise, the creature's alignment reverts to normal after one day spent on a plane other than the Nine Hells. Casting the {@spell 反制善恶} spell on the creature also restores its original alignment."
+						"Evil pervades the Nine Hells, and visitors to this plane feel its influence. At the end of each long rest taken on this plane, a visitor that isn't evil must make a DC 10 Wisdom saving throw. On a failed save, the creature's alignment changes to lawful evil. The change becomes permanent if the creature doesn't leave the plane within {@dice 1d4} days. Otherwise, the creature's alignment reverts to normal after one day spent on a plane other than the Nine Hells. Casting the {@spell 反制善惡} spell on the creature also restores its original alignment."
 					]
 				},
 				{
@@ -8025,14 +8023,14 @@
 					"type": "entries",
 					"name": "Mechanus: Imposing Order",
 					"entries": [
-						"At the end of each long rest taken on this plane, a visitor that isn't lawful neutral must make a DC 10 Wisdom saving throw. On a failed save, the creature's alignment changes to lawful neutral. The creature's alignment reverts to normal after one day spent on a plane other than Mechanus. Casting the {@spell 反制善恶} spell on the creature also restores its original alignment."
+						"At the end of each long rest taken on this plane, a visitor that isn't lawful neutral must make a DC 10 Wisdom saving throw. On a failed save, the creature's alignment changes to lawful neutral. The creature's alignment reverts to normal after one day spent on a plane other than Mechanus. Casting the {@spell 反制善惡} spell on the creature also restores its original alignment."
 					]
 				},
 				{
 					"type": "entries",
 					"name": "Arcadia: Planar Vitality",
 					"entries": [
-						"While on this plane, creatures can't be {@condition 恐惧} or {@condition 中毒}, and they are immune to disease and poisons."
+						"While on this plane, creatures can't be {@condition frightened} or {@condition poisoned}, and they are immune to disease and poisons."
 					]
 				}
 			]
@@ -8041,16 +8039,6 @@
 			"name": "Player Characters as Lycanthropes",
 			"source": "MM",
 			"page": 207,
-			"additionalSources": [
-				{
-					"source": "CoS",
-					"page": 242
-				},
-				{
-					"source": "WDMM",
-					"page": 317
-				}
-			],
 			"entries": [
 				"A character who becomes a lycanthrope retains his or her statistics except as specified by lycanthrope type. The character gains the lycanthrope's speeds in non-humanoid form, damage immunities, traits, and actions that don't involve equipment. The character is proficient with the lycanthrope's natural attacks, such as its bite or claws, which deal damage as shown in the lycanthrope's statistics. The character can't speak while in animal form.",
 				"A non-lycanthrope humanoid hit by an attack that carries the curse of lycanthropy must succeed on a Constitution saving throw (DC 8 + the lycanthrope's proficiency bonus + the lycanthrope's Constitution modifier) or be cursed. If the character embraces the curse, his or her alignment becomes the one defined for the lycanthrope. The DM is free to decide that a change in alignment places the character under DM control until the curse of lycanthropy is removed.",
@@ -8116,7 +8104,7 @@
 			"source": "MM",
 			"page": 295,
 			"entries": [
-				"The game statistics of a player character transformed into a {@creature vampire spawn} and then a {@creature vampire} don't change, except that the character's Strength, Dexterity, and Constitution scores become 18 if they aren't higher. In addition, the character gains the vampire's damage resistances, darkvision, traits, and actions. Attack and damage rolls for the vampire's attacks are based on Strength. The save DC for Charm is 8 + the vampire's proficiency bonus + the vampire's Charisma modifier. The character's alignment becomes lawful evil, and the DM might take control of the character until the vampirism is reversed with a {@spell 祈愿术} spell or the character is killed and brought back to life."
+				"The game statistics of a player character transformed into a {@creature vampire spawn} and then a {@creature vampire} don't change, except that the character's Strength, Dexterity, and Constitution scores become 18 if they aren't higher. In addition, the character gains the vampire's damage resistances, darkvision, traits, and actions. Attack and damage rolls for the vampire's attacks are based on Strength. The save DC for Charm is 8 + the vampire's proficiency bonus + the vampire's Charisma modifier. The character's alignment becomes lawful evil, and the DM might take control of the character until the vampirism is reversed with a {@spell 祈願術} spell or the character is killed and brought back to life."
 			]
 		},
 		{
@@ -9275,7 +9263,7 @@
 					"name": "Identifying Runes",
 					"entries": [
 						"Runes are identified in a manner similar to magic items. Simply handling a master rune causes a strong sense of its rune's identity to echo in a character's mind. For example, touching a master rune item containing the kalt rune (the rune of cold) might cause you to experience a sudden chill as visions of snow and ice flash through your mind.",
-						"The {@spell 鉴定术} spell immediately reveals a master rune's simple properties. You can also learn its simple properties over the course of a short rest while maintaining physical contact with the rune."
+						"The {@spell 鑑定術} spell immediately reveals a master rune's simple properties. You can also learn its simple properties over the course of a short rest while maintaining physical contact with the rune."
 					]
 				},
 				{
@@ -9775,7 +9763,7 @@
 							"name": "Vulnerabilities, Resistances, and Immunities",
 							"entries": [
 								"A ship's vulnerabilities, resistances, and immunities apply to all its components, unless otherwise noted in the stat block.",
-								"Ships are typically immune to poison and psychic damage. Ships are also usually immune to the following conditions: {@condition 目盲}, {@condition 魅惑}, {@condition 耳聋}, {@condition 力竭}, {@condition 恐惧}, {@condition 无力}, {@condition 麻痹}, {@condition 石化}, {@condition 中毒}, {@condition 伏地}, {@condition 震慑}, and {@condition 昏迷}."
+								"Ships are typically immune to poison and psychic damage. Ships are also usually immune to the following conditions: {@condition blinded}, {@condition charmed}, {@condition deafened}, {@condition exhaustion}, {@condition frightened}, {@condition incapacitated}, {@condition paralyzed}, {@condition petrified}, {@condition poisoned}, {@condition prone}, {@condition stunned}, and {@condition unconscious}."
 							]
 						}
 					]
@@ -10043,7 +10031,7 @@
 							"name": "Crew Casualties",
 							"entries": [
 								"Slaying a ship's crew reduces the number of actions most ships can take, making the crew a tempting target in combat. Resolve individual attacks as normal, using the guidelines for resolving many, identical attacks at once from the {@book Dungeon Master's Guide|DMG} as needed.",
-								"In the case of spells that cover an area, such as {@spell 火球术} or {@spell 闪电束}, you might track the exact location of the spell and crew to determine how many sailors it affects. Alternatively, you can roll {@dice 1d6} per level of the spell. The total of the dice is the number of crew members caught in the spell's area."
+								"In the case of spells that cover an area, such as {@spell 火球術} or {@spell 閃電束}, you might track the exact location of the spell and crew to determine how many sailors it affects. Alternatively, you can roll {@dice 1d6} per level of the spell. The total of the dice is the number of crew members caught in the spell's area."
 							]
 						}
 					]
@@ -10194,7 +10182,7 @@
 										"type": "entries",
 										"name": "Cunning Action",
 										"entries": [
-											"On the expert's turn in combat, it can take the Dash, Disengage, or {@action 躲藏} action as a bonus action."
+											"On the expert's turn in combat, it can take the Dash, Disengage, or {@action Hide} action as a bonus action."
 										]
 									}
 								],
@@ -10216,7 +10204,7 @@
 										"type": "entries",
 										"name": "Ability Score Improvement",
 										"entries": [
-											"The expert's Dex. score increases by 2, raising the modifier by 1, so increase the following numbers by 1: the Dex. saving throw bonus; the {@skill 体操}, {@skill 巧手}, and {@skill 隐匿} bonuses; and the bonuses to hit and damage of the expert's weapon attacks."
+											"The expert's Dex. score increases by 2, raising the modifier by 1, so increase the following numbers by 1: the Dex. saving throw bonus; the {@skill Acrobatics}, {@skill Sleight of Hand}, and {@skill Stealth} bonuses; and the bonuses to hit and damage of the expert's weapon attacks."
 										]
 									}
 								],
@@ -10238,7 +10226,7 @@
 										"type": "entries",
 										"name": "Extra Attack",
 										"entries": [
-											"The expert can attack twice, instead of once, whenever it takes the {@action 攻击} action on its turn."
+											"The expert can attack twice, instead of once, whenever it takes the {@action Attack} action on its turn."
 										]
 									}
 								]
@@ -10265,7 +10253,7 @@
 										"type": "entries",
 										"name": "Spellcasting",
 										"entries": [
-											"The spellcaster learns another 1st-level spell: {@spell 祝福术} (healer) or {@spell 燃烧之手} (mage)."
+											"The spellcaster learns another 1st-level spell: {@spell 祝福術} (healer) or {@spell 燃燒之手} (mage)."
 										]
 									}
 								],
@@ -10276,7 +10264,7 @@
 										"type": "entries",
 										"name": "Spellcasting",
 										"entries": [
-											"The spellcaster gains one 1st-level spell slot. The spellcaster also learns another 1st-level spell: {@spell 虔诚护盾} (healer) or {@spell 护盾术} (mage)."
+											"The spellcaster gains one 1st-level spell slot. The spellcaster also learns another 1st-level spell: {@spell 虔誠護盾} (healer) or {@spell 護盾術} (mage)."
 										]
 									}
 								],
@@ -10287,7 +10275,7 @@
 										"type": "entries",
 										"name": "Ability Score Improvement",
 										"entries": [
-											"The spellcaster's Int. (mage) or Wis. (healer) score increases by 2, raising the modifier by 1, so increase the following numbers by 1: the spellcaster's spell save DC and the bonus to hit of spell attacks, the bonuses in the Skills entry of the mage, the Wisdom saving throw bonus of the healer, and the passive Perception of the healer. Spellcasting. The spellcaster learns another cantrip: {@spell 提升抗力} (healer) or {@spell 法师之手} (mage)."
+											"The spellcaster's Int. (mage) or Wis. (healer) score increases by 2, raising the modifier by 1, so increase the following numbers by 1: the spellcaster's spell save DC and the bonus to hit of spell attacks, the bonuses in the Skills entry of the mage, the Wisdom saving throw bonus of the healer, and the passive Perception of the healer. Spellcasting. The spellcaster learns another cantrip: {@spell 提升抗力} (healer) or {@spell 法師之手} (mage)."
 										]
 									}
 								],
@@ -10308,7 +10296,7 @@
 												"type": "entries",
 												"name": "Spellcasting",
 												"entries": [
-													"The spellcaster gains one 1st-level spell slot and two 2nd-level spell slots. The spellcaster also learns one 2nd-level spell: {@spell 援助术} (healer) or {@spell 隐形术} (mage)"
+													"The spellcaster gains one 1st-level spell slot and two 2nd-level spell slots. The spellcaster also learns one 2nd-level spell: {@spell 援助術} (healer) or {@spell 隱形術} (mage)"
 												]
 											}
 										]
@@ -10370,7 +10358,7 @@
 										"type": "entries",
 										"name": "Ability Score Improvement",
 										"entries": [
-											"The warrior's Str. score increases by 2, raising the modifier by 1, so increase the warrior's {@skill 运动} bonus by 1, and increase the bonuses to hit and damage of the warrior's melee weapon attack by 1."
+											"The warrior's Str. score increases by 2, raising the modifier by 1, so increase the warrior's {@skill Athletics} bonus by 1, and increase the bonuses to hit and damage of the warrior's melee weapon attack by 1."
 										]
 									}
 								],
@@ -10392,7 +10380,7 @@
 										"type": "entries",
 										"name": "Extra Attack",
 										"entries": [
-											"The warrior can attack twice, instead of once, whenever it takes the {@action 攻击} action on its turn."
+											"The warrior can attack twice, instead of once, whenever it takes the {@action Attack} action on its turn."
 										]
 									}
 								]
@@ -10569,7 +10557,7 @@
 			"page": 263,
 			"ruleType": "V",
 			"entries": [
-				"A skill dictates the circumstances under which a character can add his or her proficiency bonus to an ability check. Skills define those circumstances by referring to different aspects of the six ability scores. For example, {@skill 体操} and {@skill 隐匿} are two different aspects of Dexterity, and a character can specialize in either or both.",
+				"A skill dictates the circumstances under which a character can add his or her proficiency bonus to an ability check. Skills define those circumstances by referring to different aspects of the six ability scores. For example, {@skill Acrobatics} and {@skill Stealth} are two different aspects of Dexterity, and a character can specialize in either or both.",
 				"You can dispense with skills and use one of the following variants. Choose whichever one best suits your campaign.",
 				{
 					"type": "entries",
@@ -10671,7 +10659,7 @@
 			"page": 175,
 			"ruleType": "V",
 			"entries": [
-				"Normally, your proficiency in a skill applies only to a specific kind of ability check. Proficiency in {@skill 运动}, for example, usually applies to Strength checks. In some situations, though, your proficiency might reasonably apply to a different kind of check. In such cases, the DM might ask for a check using an unusual combination of ability and skill, or you might ask your DM if you can apply a proficiency to a different check. For example, if you have to swim from an offshore island to the mainland, your DM might call for a Constitution check to see if you have the stamina to make it that far. In this case, your DM might allow you to apply your proficiency in Athletics and ask for a Constitution (Athletics) check. So if you're proficient in {@skill 运动}, you apply your proficiency bonus to the Constitution check just as you would normally do for a Strength (Athletics) check. Similarly, when your half-orc barbarian uses a display of raw strength to intimidate an enemy, your DM might ask for a Strength ({@skill 威吓}) check, even though Intimidation is normally associated with Charisma."
+				"Normally, your proficiency in a skill applies only to a specific kind of ability check. Proficiency in {@skill Athletics}, for example, usually applies to Strength checks. In some situations, though, your proficiency might reasonably apply to a different kind of check. In such cases, the DM might ask for a check using an unusual combination of ability and skill, or you might ask your DM if you can apply a proficiency to a different check. For example, if you have to swim from an offshore island to the mainland, your DM might call for a Constitution check to see if you have the stamina to make it that far. In this case, your DM might allow you to apply your proficiency in Athletics and ask for a Constitution (Athletics) check. So if you're proficient in {@skill Athletics}, you apply your proficiency bonus to the Constitution check just as you would normally do for a Strength (Athletics) check. Similarly, when your half-orc barbarian uses a display of raw strength to intimidate an enemy, your DM might ask for a Strength ({@skill Intimidation}) check, even though Intimidation is normally associated with Charisma."
 			]
 		},
 		{
@@ -10681,7 +10669,7 @@
 			"ruleType": "O",
 			"type": "section",
 			"entries": [
-				"Just as in the real world, D&D characters spend many hours sleeping, most often as part of a long rest. Most monsters also need to sleep. While a creature sleeps, it is subjected to the {@condition 昏迷} condition. Here are a few rules that expand on that basic fact.",
+				"Just as in the real world, D&D characters spend many hours sleeping, most often as part of a long rest. Most monsters also need to sleep. While a creature sleeps, it is subjected to the {@condition unconscious} condition. Here are a few rules that expand on that basic fact.",
 				{
 					"type": "entries",
 					"name": "Waking Someone",
@@ -10695,7 +10683,7 @@
 					"name": "Sleeping in Armor",
 					"entries": [
 						"Sleeping in light armor has no adverse effect on the wearer, but sleeping in medium or heavy armor makes it difficult to recover fully during a long rest.",
-						"When you finish a long rest during which you slept in medium or heavy armor, you regain only one quarter of your spent Hit Dice (minimum of one die). If you have any levels of {@condition 力竭}, the rest doesn't reduce your {@condition 力竭} level."
+						"When you finish a long rest during which you slept in medium or heavy armor, you regain only one quarter of your spent Hit Dice (minimum of one die). If you have any levels of {@condition exhaustion}, the rest doesn't reduce your {@condition exhaustion} level."
 					]
 				},
 				{
@@ -10703,8 +10691,8 @@
 					"name": "Going without a Long Rest",
 					"entries": [
 						"A long rest is never mandatory, but going without sleep does have its consequences. If you want to account for the effects of sleep deprivation on characters and creatures, use these rules.",
-						"Whenever you end a 24-hour period without finishing a long rest, you must succeed on a DC 10 Constitution saving throw or suffer one level of {@condition 力竭}.",
-						"It becomes harder to fight off {@condition 力竭} if you stay awake for multiple days. After the first 24 hours, the DC increases by 5 for each consecutive 24-hour period without a long rest. The DC resets to 10 when you finish a long rest."
+						"Whenever you end a 24-hour period without finishing a long rest, you must succeed on a DC 10 Constitution saving throw or suffer one level of {@condition exhaustion}.",
+						"It becomes harder to fight off {@condition exhaustion} if you stay awake for multiple days. After the first 24 hours, the DC increases by 5 for each consecutive 24-hour period without a long rest. The DC resets to 10 when you finish a long rest."
 					]
 				}
 			]
@@ -11280,38 +11268,34 @@
 			]
 		},
 		{
-			"name": "工具熟练项",
-			"ENG_name": "Tool Proficiencies",
+			"name": "Tool Proficiencies",
 			"source": "XGE",
 			"page": 78,
 			"ruleType": "O",
 			"type": "section",
 			"entries": [
-				"工具熟练项是用来突出角色背景和专业水平的有效途径。然而在游戏进行中，工具的使用有时与技能的使用重叠，而且应该在何种情况下如何使用它们也不够明确。本节提供了各种工具可以在游戏中使用的方法。",
+				"Tool proficiencies are a useful way to highlight a character's background and talents. At the game table, though, the use of tools sometimes overlaps with the use of skills, and it can be unclear how to use them together in certain situations. This section offers various ways that tools can be used in the game.",
 				{
 					"type": "entries",
-					"name": "工欲善其事，必先利其器",
-					"ENG_name": "Tools and Skills Together",
+					"name": "Tools and Skills Together",
 					"entries": [
-						"工具相比技能有更明确的应用场景。{@skill 历史}技能适用于对过往任何事件的检定。一把工具，例如{@item 文书伪造工具|phb}用于伪造物件和一些小东西。所以为什么一个角色在能选择的时候，会宁愿选择获取工具熟练项，而不是技能熟练项呢？",
-						"为使工具熟练项看起来对角色们更有吸引力，你可以使用下列的方式。",
+						"Tools have more specific applications than skills. The History skill applies to any event in the past. A tool such as a {@item forgery kit|phb} is used to make fake objects and little else. Thus, why would a character who has the opportunity to acquire one or the other want to gain a tool proficiency instead of proficiency in a skill?",
+						"To make tool proficiencies more attractive choices for the characters, you can use the methods outlined below.",
 						{
 							"type": "entries",
 							"entries": [
 								{
 									"type": "entries",
-									"name": "检定优势",
-									"ENG_name": "Advantage",
+									"name": "Advantage",
 									"entries": [
-										"如果一个工具的使用和一个技能的运用都适用于同一个检定，而一个角色同时具有该工具和该技能的熟练，那么可以考虑允许这个角色在检定时具有优势。这个简单的收益对于鼓励玩家获取工具熟练大有帮助。在下文的工具说明中，这种益处通常被描述为额外的洞察力（或类似的东西），这意味着增加了检定成功的机会。"
+										"If the use of a tool and the use of a skill both apply to a check, and a character is proficient with the tool and the skill, consider allowing the character to make the check with advantage. This simple benefit can go a long way toward encouraging players to pick up tool proficiencies. In the tool descriptions that follow, this benefit is often expressed as additional insight (or something similar), which translates into an increased chance that the check will be a success."
 									]
 								},
 								{
 									"type": "entries",
-									"name": "额外奖励",
-									"ENG_name": "Added Benefit",
+									"name": "Added Benefit",
 									"entries": [
-										"此外，考虑给有相关技能和相关工具熟练的人一个检定成功后的额外奖励。这种奖励可以是提供更详细的信息，或者也可以模拟不同类型的检定成功的效果。例如，一个具有{@item 泥瓦匠工具|phb}熟练的角色成功地通过感知（{@skill 察觉}）检定在石墙中找到一扇密门。这个角色不仅注意到密门的存在，而且你可以决定该角色的工具熟练项使其在一个智力（{@skill 调查}）检定中自动成功，知道这扇密门该如何打开。"
+										"In addition, consider giving characters who have both a relevant skill and a relevant tool proficiency an added benefit on a successful check. This benefit might be in the form of more detailed information or could simulate the effect of a different sort of successful check. For example, a character proficient with {@item mason's tools|phb} makes a successful Wisdom ({@skill Perception}) check to find a secret door in a stone wall. Not only does the character notice the door's presence, but you decide that the tool proficiency entitles the character to an automatic success on an Intelligence ({@skill Investigation}) check to determine how to open the door."
 									]
 								}
 							]
@@ -11320,253 +11304,1710 @@
 				},
 				{
 					"type": "entries",
-					"name": "工具说明",
-					"ENG_name": "Tool Descriptions",
+					"name": "Tool Descriptions",
 					"entries": [
-						"以下各节详细介绍了《玩家手册》中所提供的工具，以及如何在战役中使用这些工具的建议。",
+						"The following sections go into detail about the tools presented in the Player's Handbook, offering advice on how to use them in a campaign.",
 						{
 							"type": "entries",
 							"entries": [
 								{
 									"type": "entries",
-									"name": "组件",
-									"ENG_name": "Components",
+									"name": "Components",
 									"entries": [
-										"以下每项工具说明都会在开头说明这套用品或工具都由什么部件组成。具有工具熟练项的角色知道所有部件的用法。"
+										"The first paragraph in each description gives details on what a set of supplies or tools is made up of. A character who is proficient with a tool knows how to use all of its component parts."
 									]
 								},
 								{
 									"type": "entries",
-									"name": "技能",
-									"ENG_name": "Skills",
+									"name": "Skills",
 									"entries": [
-										"当一个角色具有工具和技能熟练项时，每一种工具都可能在与某些技能配合使用时提供检定的优势。作为DM，你可以允许一个角色在使用指定技能进行检定时具有优势。以技能名称开头的段落描述了这些可选项。但要注意的是，这些好处只适用于具有对应工具熟练项的人，而不是仅仅携带了该工具的人。",
-										"联系到技能时，工具熟练项的意思其实是有些抽象的；具体来讲，它假定了具有相应工具熟练项的角色同时也了解相关行业或专业方面的事情，尽管这些事情不一定跟使用本工具相关。",
-										"此外，你可以考虑给角色进行技能检定时一些额外信息或好处。本文也给出了满足相关条件的例子和建议。"
+										"Every tool potentially provides advantage on a check when used in conjunction with certain skills, provided a character is proficient with the tool and the skill. As DM, you can allow a character to make a check using the indicated skill with advantage. Paragraphs that begin with skill names discuss these possibilities. In each of these paragraphs, the benefits apply only to someone who has proficiency with the tool, not someone who simply owns it.",
+										"With respect to skills, the system is mildly abstract in terms of what a tool proficiency represents; essentially, it assumes that a character who has proficiency with a tool also has learned about facets of the trade or profession that are not necessarily associated with the use of the tool.",
+										"In addition, you can consider giving a character extra information or an added benefit on a skill check. The text provides some examples and ideas when this opportunity is relevant."
 									]
 								},
 								{
 									"type": "entries",
-									"name": "特殊用途",
-									"ENG_name": "Special Use",
+									"name": "Special Use",
 									"entries": [
-										"顾名思义，将具有熟练项的工具用于特殊用途往往会带来特殊的好处。"
+										"Proficiency with a tool usually brings with it a particular benefit in the form of a special use, as described in this paragraph."
 									]
 								},
 								{
 									"type": "entries",
-									"name": "难度示例",
-									"ENG_name": "Sample DCs",
+									"name": "Sample DCs",
 									"entries": [
-										"每一节末尾的表格列出了该工具所适用的一些用途，以及必要能力检定的推荐DC值。"
+										"A table at the end of each section lists activities that a tool can be used to perform, and suggested DCs for the necessary ability checks."
 									]
 								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "炼金工具",
-							"ENG_name": "Alchemist's Supplies",
+							"name": "Alchemist's Supplies",
 							"entries": [
-								"{@item 炼金工具|phb}"
+								"{@item Alchemist's supplies|phb} enable a character to produce useful concoctions, such as acid or alchemist's fire.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item alchemist's supplies|phb} include two glass beakers, a metal frame to hold a beaker in place over an open flame, a glass stirring rod, a small mortar and pestle, and a pouch of common alchemical ingredients, including salt, powdered iron, and purified water."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana",
+									"entries": [
+										"Proficiency with {@item alchemist's supplies|phb} allows you to unlock more information on {@skill Arcana} checks involving potions and similar materials."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"When you inspect an area for clues, proficiency with {@item alchemist's supplies|phb} grants additional insight into any chemicals or other substances that might have been used in the area."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Alchemical Crafting",
+									"entries": [
+										"You can use this tool proficiency to create alchemical items. A character can spend money to collect raw materials, which weigh 1 pound for every 50 gp spent. The DM can allow a character to make a check using the indicated skill with advantage. As part of a long rest, you can use {@item alchemist's supplies|phb} to make one dose of acid, alchemist's fire, antitoxin, oil, perfume, or soap. Subtract half the value of the created item from the total gp worth of raw materials you are carrying."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Alchemist's Supplies",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Create a puff of thick smoke",
+											"10"
+										],
+										[
+											"Identify a poison",
+											"10"
+										],
+										[
+											"Identify a substance",
+											"15"
+										],
+										[
+											"Start a fire",
+											"15"
+										],
+										[
+											"Neutralize acid",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "酿酒工具",
-							"ENG_name": "Brewer's Supplies",
+							"name": "Brewer's Supplies",
 							"entries": [
-								"{@item 酿酒工具|phb}"
+								"Brewing is the art of producing beer. Not only does beer serve as an alcoholic beverage, but the process of brewing purifies water. Crafting beer takes weeks of fermentation, but only a few hours of work.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Brewer's supplies|phb} include a large glass jug, a quantity of hops, a siphon, and several feet of tubing."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"Proficiency with {@item brewer's supplies|phb} gives you additional insight on Intelligence ({@skill History}) checks concerning events that involve alcohol as a significant element."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Medicine",
+									"entries": [
+										"This tool proficiency grants additional insight when you treat anyone suffering from alcohol poisoning or when you can use alcohol to dull pain."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Persuasion",
+									"entries": [
+										"A stiff drink can help soften the hardest heart. Your proficiency with {@item brewer's supplies|phb} can help you ply someone with drink, giving them just enough alcohol to mellow their mood."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Potable Water",
+									"entries": [
+										"Your knowledge of brewing enables you to purify water that would otherwise be undrinkable. As part of a long rest, you can purify up to 6 gallons of water, or 1 gallon as part of a short rest."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Brewer's Supplies",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Detect poison or impurities in a drink",
+											"10"
+										],
+										[
+											"Identify alcohol",
+											"15"
+										],
+										[
+											"Ignore effects of alcohol",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "书法工具",
-							"ENG_name": "Calligrapher's Supplies",
+							"name": "Calligrapher's Supplies",
 							"entries": [
-								"{@item 书法工具|phb}"
+								"Calligraphy treats writing as a delicate, beautiful art. Calligraphers produce text that is pleasing to the eye, using a style that is difficult to forge. Their supplies also give them some ability to examine scripts and determine if they are legitimate, since a calligrapher's training involves long hours of studying writing and attempting to replicate its style and design.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Calligrapher's supplies|phb} include ink, a dozen sheets of parchment, and three quills."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana",
+									"entries": [
+										"Although calligraphy is of little help in deciphering the content of magical writings, proficiency with these supplies can aid in identifying who wrote a script of a magical nature."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"This tool proficiency can augment the benefit of successful checks made to analyze or investigate ancient writings, scrolls, or other texts, including runes etched in stone or messages in frescoes or other displays."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Decipher Treasure Map",
+									"entries": [
+										"This tool proficiency grants you expertise in examining maps. You can make an Intelligence check to determine a map's age, whether a map includes any hidden messages, or similar facts."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Calligrapher's Supplies",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-6",
+										"col-6"
+									],
+									"rows": [
+										[
+											"Identify writer of nonmagical script",
+											"10"
+										],
+										[
+											"Determine writer's state of mind",
+											"15"
+										],
+										[
+											"Spot forged text",
+											"15"
+										],
+										[
+											"Forge a signature",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "木匠工具",
-							"ENG_name": "Carpenter's Tools",
+							"name": "Carpenter's Tools",
 							"entries": [
-								"{@item 木匠工具|phb}"
+								"Skill at carpentry enables a character to construct wooden structures. A carpenter can build a house, a shack, a wooden cabinet, or similar items.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Carpenter's tools|phb} include a saw, a hammer, nails, a hatchet, a square, a ruler, an adze, a plane, and a chisel."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"This tool proficiency aids you in identifying the use and the origin of wooden buildings and other large wooden objects."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"You gain additional insight when inspecting areas within wooden structures, because you know tricks of construction that can conceal areas from discovery."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Perception",
+									"entries": [
+										"You can spot irregularities in wooden walls or floors, making it easier to find trap doors and secret passages."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Stealth",
+									"entries": [
+										"You can quickly assess the weak spots in a wooden floor, making it easier to avoid the places that creak and groan when they're stepped on."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Fortify",
+									"entries": [
+										"With 1 minute of work and raw materials, you can make a door or window harder to force open. Increase the DC needed to open it by 5."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Temporary Shelter",
+									"entries": [
+										"As part of a long rest, you can construct a lean-to or a similar shelter to keep your group dry and in the shade for the duration of the rest. Because it was fashioned quickly from whatever wood was available, the shelter collapses {@dice 1d3} days after being assembled."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Carpenter's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Build a simple wooden structure",
+											"10"
+										],
+										[
+											"Design a complex wooden structure",
+											"15"
+										],
+										[
+											"Find a weak point in a wooden wall",
+											"15"
+										],
+										[
+											"Pry apart a door",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "制图工具",
-							"ENG_name": "Cartographer's Tools",
+							"name": "Cartographer's Tools",
 							"entries": [
-								"{@item 制图工具|phb}"
+								"Using {@item cartographer's tools|phb}, you can create accurate maps to make travel easier for yourself and those who come after you. These maps can range from large-scale depictions of mountain ranges to diagrams that show the layout of a dungeon level.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Cartographer's tools|phb} consist of a quill, ink, parchment, a pair of compasses, calipers, and a ruler."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana, History, Religion.",
+									"entries": [
+										"You can use your knowledge of maps and locations to unearth more detailed information when you use these skills. For instance, you might spot hidden messages in a map, identify when the map was made to determine if geographical features have changed since then, and so forth."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Nature",
+									"entries": [
+										"Your familiarity with physical geography makes it easier for you to answer questions or solve issues relating to the terrain around you."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Survival",
+									"entries": [
+										"Your understanding of geography makes it easier to find paths to civilization, to predict areas where villages or towns might be found, and to avoid becoming lost. You have studied so many maps that common patterns, such as how trade routes evolve and where settlements arise in relation to geographic locations, are familiar to you."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Craft a Map",
+									"entries": [
+										"While traveling, you can draw a map as you go in addition to engaging in other activity."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Cartographer's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Determine a map's age and origin",
+											"10"
+										],
+										[
+											"Estimate direction and distance to a landmark",
+											"15"
+										],
+										[
+											"Discern that a map is fake",
+											"15"
+										],
+										[
+											"Fill in a missing part of a map",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "鞋匠工具",
-							"ENG_name": "Cobbler's Tools",
+							"name": "Cobbler's Tools",
 							"entries": [
-								"{@item 鞋匠工具|phb}"
+								"Although the cobbler's trade might seem too humble for an adventurer, a good pair of boots will see a character across rugged wilderness and through deadly dungeons.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Cobbler's tools|phb} consist of a hammer, an awl, a knife, a shoe stand, a cutter, spare leather, and thread."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana, History",
+									"entries": [
+										"Your knowledge of shoes aids you in identifying the magical properties of enchanted boots or the history of such items."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"Footwear holds a surprising number of secrets. You can learn where someone has recently visited by examining the wear and the dirt that has accumulated on their shoes. Your experience in repairing shoes makes it easier for you to identify where damage might come from."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Maintain Shoes",
+									"entries": [
+										"As part of a long rest, you can repair your companions' shoes. For the next 24 hours, up to six creatures of your choice who wear shoes you worked on can travel up to 10 hours a day without making saving throws to avoid {@condition exhaustion}."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Craft Hidden Compartment",
+									"entries": [
+										"With 8 hours of work, you can add a hidden compartment to a pair of shoes. The compartment can hold an object up to 3 inches long and 1 inch wide and deep. You make an Intelligence check using your tool proficiency to determine the Intelligence (Investigation) check DC needed to find the compartment."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Cobbler's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Determine a shoe's age and origin",
+											"10"
+										],
+										[
+											"Find a hidden compartment in a boot heel",
+											"15"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "厨师工具",
-							"ENG_name": "Cook's Utensils",
+							"name": "Cook's Utensils",
 							"entries": [
-								"{@item 厨师工具|phb}"
+								"Adventuring is a hard life. With a cook along on the journey, your meals will be much better than the typical mix of hardtack and dried fruit.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Cook's utensils|phb} include a metal pot, knives, forks, a stirring spoon, and a ladle."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"Your knowledge of cooking techniques allows you to assess the social patterns involved in a culture's eating habits."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Medicine",
+									"entries": [
+										"When administering treatment, you can transform medicine that is bitter or sour into a pleasing concoction."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Survival",
+									"entries": [
+										"When foraging for food, you can make do with ingredients you scavenge that others would be unable to transform into nourishing meals."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Prepare Meals",
+									"entries": [
+										"As part of a short rest, you can prepare a tasty meal that helps your companions regain their strength. You and up to five creatures of your choice regain 1 extra hit point per Hit Die spent during a short rest, provided you have access to your {@item cook's utensils|phb} and sufficient food."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Cook's Utensils",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Create a typical meal",
+											"10"
+										],
+										[
+											"Duplicate a meal",
+											"10"
+										],
+										[
+											"Spot poison or impurities in food",
+											"15"
+										],
+										[
+											"Create a gourmet meal",
+											"15"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "易容工具",
-							"ENG_name": "Disguise Kit",
+							"name": "Disguise Kit",
 							"entries": [
-								"{@item 易容工具|phb}"
+								"The perfect tool for anyone who wants to engage in trickery, a {@item disguise kit|phb} enables its owner to adopt a false identity.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"A {@item disguise kit|phb} includes cosmetics, hair dye, small props, and a few pieces of clothing."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Deception",
+									"entries": [
+										"In certain cases, a disguise can improve your ability to weave convincing lies."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Intimidation",
+									"entries": [
+										"The right disguise can make you look more fearsome, whether you want to scare someone away by posing as a plague victim or intimidate a gang of thugs by taking the appearance of a bully."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Performance",
+									"entries": [
+										"A cunning disguise can enhance an audience's enjoyment of a performance, provided the disguise is properly designed to evoke the desired reaction."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Persuasion",
+									"entries": [
+										"Folk tend to trust a person in uniform. If you disguise yourself as an authority figure, your efforts to persuade others are often more effective."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Create Disguise",
+									"entries": [
+										"As part of a long rest, you can create a disguise. It takes you 1 minute to don such a disguise once you have created it. You can carry only one such disguise on you at a time without drawing undue attention, unless you have a bag of holding or a similar method to keep them hidden. Each disguise weighs 1 pound.",
+										"At other times, it takes 10 minutes to craft a disguise that involves moderate changes to your appearance, and 30 minutes for one that requires more extensive changes."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Disguise Kit",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Cover injuries or distinguishing marks",
+											"10"
+										],
+										[
+											"Spot a disguise being used by someone else",
+											"15"
+										],
+										[
+											"Copy a humanoid's appearance",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "文书伪造工具",
-							"ENG_name": "Forgery Kit",
+							"name": "Forgery Kit",
 							"entries": [
-								"{@item 文书伪造工具|phb}"
+								"A {@item forgery kit|phb} is designed to duplicate documents and to make it easier to copy a person's seal or signature.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"A {@item forgery kit|phb} includes several different types of ink, a variety of parchments and papers, several quills, seals and sealing wax, gold and silver leaf, and small tools to sculpt melted wax to mimic a seal."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana",
+									"entries": [
+										"A {@item forgery kit|phb} can be used in conjunction with the Arcana skill to determine if a magic item is real or fake."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Deception",
+									"entries": [
+										"A well-crafted forgery, such as papers proclaiming you to be a noble or a writ that grants you safe passage, can lend credence to a lie."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"A {@item forgery kit|phb} combined with your knowledge of history improves your ability to create fake historical documents or to tell if an old document is authentic."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"When you examine objects, proficiency with a {@item forgery kit|phb} is useful for determining how an object was made and whether it is genuine."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Other Tools",
+									"entries": [
+										"Knowledge of other tools makes your forgeries that much more believable. For example, you could combine proficiency with a {@item forgery kit|phb} and proficiency with {@item cartographer's tools|phb} to make a fake map."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Quick Fake",
+									"entries": [
+										"As part of a short rest, you can produce a forged document no more than one page in length. As part of a long rest, you can produce a document that is up to four pages long. Your Intelligence check using a {@item forgery kit|phb} determines the DC for someone else's Intelligence (Investigation) check to spot the fake."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Forgery Kit",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Mimic handwriting",
+											"15"
+										],
+										[
+											"Duplicate a wax seal",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "赌具",
-							"ENG_name": "Gaming Set",
+							"name": "Gaming Set",
 							"entries": [
-								"{@item 赌具|phb}"
+								"Proficiency with a gaming set applies to one type of game, such as Three-Dragon Ante or games of chance that use dice.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"A gaming set has all the pieces needed to play a specific game or type of game, such as a complete deck of cards or a board and tokens."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"Your mastery of a game includes knowledge of its history, as well as of important events it was connected to or prominent historical figures involved with it."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Insight",
+									"entries": [
+										"Playing games with someone is a good way to gain understanding of their personality, granting you a better ability to discern their lies from their truths and read their mood."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Sleight of Hand",
+									"entries": [
+										"Sleight of Hand is a useful skill for cheating at a game, as it allows you to swap pieces, palm cards, or alter a die roll. Alternatively, engrossing a target in a game by manipulating the components with dexterous movements is a great distraction for a pickpocketing attempt."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Gaming Set",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Catch a player cheating",
+											"15"
+										],
+										[
+											"Gain insight into an opponent's personality",
+											"15"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "玻璃匠工具",
-							"ENG_name": "Glassblower's Tools",
+							"name": "Glassblower's Tools",
 							"entries": [
-								"{@item 玻璃匠工具|phb}"
+								"Someone who is proficient with {@item glassblower's tools|phb} has not only the ability to shape glass, but also specialized knowledge of the methods used to produce glass objects.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"The tools include a blowpipe, a small marver, blocks, and tweezers. You need a source of heat to work glass."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana, History",
+									"entries": [
+										"Your knowledge of glassmaking techniques aids you when you examine glass objects, such as potion bottles or glass items found in a treasure hoard. For instance, you can study how a glass potion bottle has been changed by its contents to help determine a potion's effects. (A potion might leave behind a residue, deform the glass, or stain it.)"
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"When you study an area, your knowledge can aid you if the clues include broken glass or glass objects."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Identify Weakness",
+									"entries": [
+										"With 1 minute of study, you can identify the weak points in a glass object. Any damage dealt to the object by striking a weak spot is doubled."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Glassblower's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Identify source of glass",
+											"10"
+										],
+										[
+											"Determine what a glass object once held",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "草药工具",
-							"ENG_name": "Herbalism Kit",
+							"name": "Herbalism Kit",
 							"entries": [
-								"{@item 草药工具|phb}"
+								"Proficiency with an {@item herbalism kit|phb} allows you to identify plants and safely collect their useful elements.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"An {@item herbalism kit|phb} includes pouches to store herbs, clippers and leather gloves for collecting plants, a mortar and pestle, and several glass jars."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana",
+									"entries": [
+										"Your knowledge of the nature and uses of herbs can add insight to your magical studies that deal with plants and your attempts to identify potions."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"When you inspect an area overgrown with plants, your proficiency can help you pick out details and clues that others might miss."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Medicine",
+									"entries": [
+										"Your mastery of herbalism improves your ability to treat illnesses and wounds by augmenting your methods of care with medicinal plants."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Nature and Survival",
+									"entries": [
+										"When you travel in the wild, your skill in herbalism makes it easier to identify plants and spot sources of food that others might overlook."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Identify Plants",
+									"entries": [
+										"You can identify most plants with a quick inspection of their appearance and smell."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Herbalism Kit",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Find plants",
+											"15"
+										],
+										[
+											"Identify poison",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "珠宝匠工具",
-							"ENG_name": "Jeweler's Tools",
+							"name": "Jeweler's Tools",
 							"entries": [
-								"{@item 珠宝匠工具|phb}"
+								"Training with {@item jeweler's tools|phb} includes the basic techniques needed to beautify gems. It also gives you expertise in identifying precious stones.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Jeweler's tools|phb} consist of a small saw and hammer, files, pliers, and tweezers."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana",
+									"entries": [
+										"Proficiency with {@item jeweler's tools|phb} grants you knowledge about the reputed mystical uses of gems. This insight proves handy when you make {@skill Arcana} checks related to gems or gem-encrusted items."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"When you inspect jeweled objects, your proficiency with {@item jeweler's tools|phb} aids you in picking out clues they might hold."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Identify Gems",
+									"entries": [
+										"You can identify gems and determine their value at a glance."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Jeweler's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Modify a gem's appearance",
+											"15"
+										],
+										[
+											"Determine a gem's history",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "陆地/水上载具",
-							"ENG_name": "Land and Water Vehicles",
-							"entries": []
-						},
-						{
-							"type": "entries",
-							"name": "皮匠工具",
-							"ENG_name": "Leatherworker's Tools",
+							"name": "Land and Water Vehicles",
 							"entries": [
-								"{@item 皮匠工具|phb}"
+								"Proficiency with land vehicles covers a wide range of options, from chariots and howdahs to wagons and carts. Proficiency with water vehicles covers anything that navigates waterways. Proficiency with vehicles grants the knowledge needed to handle vehicles of that type, along with knowledge of how to repair and maintain them.",
+								"In addition, a character proficient with water vehicles is knowledgeable about anything a professional sailor would be familiar with, such as information about the sea and islands, tying knots, and assessing weather and sea conditions.",
+								{
+									"type": "entries",
+									"name": "Arcana",
+									"entries": [
+										"When you study a magic vehicle, this tool proficiency aids you in uncovering lore or determining how the vehicle operates."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation, Perception",
+									"entries": [
+										"When you inspect a vehicle for clues or hidden information, your proficiency aids you in noticing things that others might miss."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Vehicle Handling",
+									"entries": [
+										"When piloting a vehicle, you can apply your proficiency bonus to the vehicle's AC and saving throws."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Vehicles",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Navigate rough terrain or waters",
+											"10"
+										],
+										[
+											"Assess a vehicle's condition",
+											"15"
+										],
+										[
+											"Take a tight corner at high speed",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "泥瓦匠工具",
-							"ENG_name": "Mason's Tools",
+							"name": "Leatherworker's Tools",
 							"entries": [
-								"{@item 泥瓦匠工具|phb}"
+								"Knowledge of leatherworking extends to lore concerning animal hides and their properties. It also confers knowledge of leather armor and similar goods.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Leatherworker's tools|phb} include a knife, a small mallet, an edger, a hole punch, thread, and leather scraps."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana",
+									"entries": [
+										"Your expertise in working with leather grants you added insight when you inspect magic items crafted from leather, such as boots and some cloaks."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"You gain added insight when studying leather items or clues related to them, as you draw on your knowledge of leather to pick out details that others would overlook."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Identify Hides",
+									"entries": [
+										"When looking at a hide or a leather item, you can determine the source of the leather and any special techniques used to treat it. For example, you can spot the difference between leather crafted using dwarven methods and leather crafted using halfling methods."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Leatherworker's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Modify a leather item's appearance",
+											"10"
+										],
+										[
+											"Determine a leather item's history",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "乐器",
-							"ENG_name": "Musical Instruments",
+							"name": "Mason's Tools",
 							"entries": [
-								"{@item 乐器|phb}"
+								"{@item Mason's tools|phb} allow you to craft stone structures, including walls and buildings crafted from brick.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Mason's tools|phb} consist of a trowel, a hammer, a chisel, brushes, and a square."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"Your expertise aids you in identifying a stone building's date of construction and purpose, along with insight into who might have built it."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"You gain additional insight when inspecting areas within stone structures."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Perception",
+									"entries": [
+										"You can spot irregularities in stone walls or floors, making it easier to find trap doors and secret passages."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Demolition",
+									"entries": [
+										"Your knowledge of masonry allows you to spot weak points in brick walls. You deal double damage to such structures with your weapon attacks."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Mason's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Chisel a small hole in a stone wall",
+											"10"
+										],
+										[
+											"Find a weak point in a stone wall",
+											"15"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "领航工具",
-							"ENG_name": "Navigator's Tools",
+							"name": "Musical Instruments",
 							"entries": [
-								"{@item 领航工具|phb}"
+								"Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"Your expertise aids you in recalling lore related to your instrument."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Performance",
+									"entries": [
+										"Your ability to put on a good show is improved when you incorporate an instrument into your act."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Compose a Tune",
+									"entries": [
+										"As part of a long rest, you can compose a new tune and lyrics for your instrument. You might use this ability to impress a noble or spread scandalous rumors with a catchy tune."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Musical Instrument",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Identify a tune",
+											"10"
+										],
+										[
+											"Improvise a tune",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "画家工具",
-							"ENG_name": "Painter's Supplies",
+							"name": "Navigator's Tools",
 							"entries": [
-								"{@item 画家工具|phb}"
+								"Proficiency with {@item navigator's tools|phb} helps you determine a true course based on observing the stars. It also grants you insight into charts and maps while developing your sense of direction.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Navigator's tools|phb} include a sextant, a compass, calipers, a ruler, parchment, ink, and a quill."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Survival",
+									"entries": [
+										"Knowledge of {@item navigator's tools|phb} helps you avoid becoming lost and also grants you insight into the most likely location for roads and settlements."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Sighting",
+									"entries": [
+										"By taking careful measurements, you can determine your position on a nautical chart and the time of day."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Navigator's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Plot a course",
+											"10"
+										],
+										[
+											"Discover your position on a nautical chart",
+											"15"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "制毒工具",
-							"ENG_name": "Poisoner's Kit",
+							"name": "Painter's Supplies",
 							"entries": [
-								"{@item 制毒工具|phb}"
+								"Proficiency with {@item painter's supplies|phb} represents your ability to paint and draw. You also acquire an understanding of art history, which can aid you in examining works of art.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Painter's supplies|phb} include an easel, canvas, paints, brushes, charcoal sticks, and a palette."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana, History, Religion",
+									"entries": [
+										"Your expertise aids you in uncovering lore of any sort that is attached to a work of art, such as the magical properties of a painting or the origins of a strange mural found in a dungeon."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation, Perception",
+									"entries": [
+										"When you inspect a painting or a similar work of visual art, your knowledge of the practices behind creating it can grant you additional insight."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Painting and Drawing",
+									"entries": [
+										"As part of a short or long rest, you can produce a simple work of art. Although your work might lack precision, you can capture an image or a scene, or make a quick copy of a piece of art you saw."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Painter's Supplies",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Paint an accurate portrait",
+											"10"
+										],
+										[
+											"Create a painting with a hidden message",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "陶匠工具",
-							"ENG_name": "Potter's Tools",
+							"name": "Poisoner's Kit",
 							"entries": [
-								"{@item 陶匠工具|phb}"
+								"A {@item poisoner's kit|phb} is a favored resource for thieves, assassins, and others who engage in skulduggery. It allows you to apply poisons and create them from various materials. Your knowledge of poisons also helps you treat them.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"A {@item poisoner's kit|phb} includes glass vials, a mortar and pestle, chemicals, and a glass stirring rod."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"Your training with poisons can help you when you try to recall facts about infamous poisonings."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation, Perception",
+									"entries": [
+										"Your knowledge of poisons has taught you to handle those substances carefully, giving you an edge when you inspect {@condition poisoned} objects or try to extract clues from events that involve poison."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Medicine",
+									"entries": [
+										"When you treat the victim of a poison, your knowledge grants you added insight into how to provide the best care to your patient."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Nature, Survival",
+									"entries": [
+										"Working with poisons enables you to acquire lore about which plants and animals are poisonous."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Handle Poison",
+									"entries": [
+										"Your proficiency allows you to handle and apply a poison without risk of exposing yourself to its effects."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Poisoner's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Spot a {@condition poisoned} object",
+											"10"
+										],
+										[
+											"Determine the effects of a poison",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "铁匠工具",
-							"ENG_name": "Smith's Tools",
+							"name": "Potter's Tools",
 							"entries": [
-								"{@item 铁匠工具|phb}"
+								"{@item Potter's tools|phb} are used to create a variety of ceramic objects, most typically pots and similar vessels.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Potter's tools|phb} include potter's needles, ribs, scrapers, a knife, and calipers."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"Your expertise aids you in identifying ceramic objects, including when they were created and their likely place or culture of origin."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation, Perception",
+									"entries": [
+										"You gain additional insight when inspecting ceramics, uncovering clues others would overlook by spotting minor irregularities."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Reconstruction",
+									"entries": [
+										"By examining pottery shards, you can determine an object's original, intact form and its likely purpose."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Potter's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Determine what a vessel once held",
+											"10"
+										],
+										[
+											"Create a serviceable pot",
+											"15"
+										],
+										[
+											"Find a weak point in a ceramic object",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "盗贼工具",
-							"ENG_name": "Thieves' Tools",
+							"name": "Smith's Tools",
 							"entries": [
-								"{@item 盗贼工具|phb}"
+								"{@item Smith's tools|phb} allow you to work metal, heating it to alter its shape, repair damage, or work raw ingots into useful items.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Smith's tools|phb} include hammers, tongs, charcoal, rags, and a whetstone."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana and History",
+									"entries": [
+										"Your expertise lends you additional insight when examining metal objects, such as weapons."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"You can spot clues and make deductions that others might overlook when an investigation involves armor, weapons, or other metalwork."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Repair",
+									"entries": [
+										"With access to your tools and an open flame hot enough to make metal pliable, you can restore 10 hit points to a damaged metal object for each hour of work."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Smith's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Sharpen a dull blade",
+											"10"
+										],
+										[
+											"Repair a suit of armor",
+											"15"
+										],
+										[
+											"Sunder a nonmagical metal object",
+											"15"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "修理工具",
-							"ENG_name": "Tinker's Tools",
+							"name": "Thieves' Tools",
 							"entries": [
-								"{@item 修理工具|phb}"
+								"Perhaps the most common tools used by adventurers, thieves' tools are designed for picking locks and foiling traps. Proficiency with the tools also grants you a general knowledge of traps and locks.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"Thieves' tools include a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"Your knowledge of traps grants you insight when answering questions about locations that are renowned for their traps."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation and Perception",
+									"entries": [
+										"You gain additional insight when looking for traps, because you have learned a variety of common signs that betray their presence."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Set a Trap",
+									"entries": [
+										"Just as you can disable traps, you can also set them. As part of a short rest, you can create a trap using items you have on hand. The total of your check becomes the DC for someone else's attempt to discover or disable the trap. The trap deals damage appropriate to the materials used in crafting it (such as poison or a weapon) or damage equal to half the total of your check, whichever the DM deems appropriate."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Thieves' Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Pick a lock",
+											"Varies"
+										],
+										[
+											"Disable a trap",
+											"Varies"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "织布工具",
-							"ENG_name": "Weaver's Tools",
+							"name": "Tinker's Tools",
 							"entries": [
-								"{@item 织布工具|phb}"
+								"A set of {@item tinker's tools|phb} is designed to enable you to repair many mundane objects. Though you can't manufacture much with {@item tinker's tools|phb}, you can mend torn clothes, sharpen a worn sword, and patch a tattered suit of chain mail.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Tinker's tools|phb} include a variety of hand tools, thread, needles, a whetstone, scraps of cloth and leather, and a small pot of glue."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "History",
+									"entries": [
+										"You can determine the age and origin of objects, even if you have only a few pieces remaining from the original."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"When you inspect a damaged object, you gain knowledge of how it was damaged and how long ago."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Repair",
+									"entries": [
+										"You can restore 10 hit points to a damaged object for each hour of work. For any object, you need access to the raw materials required to repair it. For metal objects, you need access to an open flame hot enough to make the metal pliable."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Tinker's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Temporarily repair a disabled device",
+											"10"
+										],
+										[
+											"Repair an item in half the time",
+											"15"
+										],
+										[
+											"Improvise a temporary item using scraps",
+											"20"
+										]
+									]
+								}
 							]
 						},
 						{
 							"type": "entries",
-							"name": "木雕工具",
-							"ENG_name": "Woodcarver's Tools",
+							"name": "Weaver's Tools",
 							"entries": [
-								"{@item 木雕工具|phb}"
+								"{@item Weaver's tools|phb} allow you to create cloth and tailor it into articles of clothing.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Weaver's tools|phb} include thread, needles, and scraps of cloth. You know how to work a loom, but such equipment is too large to transport."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana, History",
+									"entries": [
+										"Your expertise lends you additional insight when examining cloth objects, including cloaks and robes."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Investigation",
+									"entries": [
+										"Using your knowledge of the process of creating cloth objects, you can spot clues and make deductions that others would overlook when you examine tapestries, upholstery, clothing, and other woven items."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Repair",
+									"entries": [
+										"As part of a short rest, you can repair a single damaged cloth object."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Craft Clothing",
+									"entries": [
+										"Assuming you have access to sufficient cloth and thread, you can create an outfit for a creature as part of a long rest."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Weaver's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Repurpose cloth",
+											"10"
+										],
+										[
+											"Mend a hole in a piece of cloth",
+											"10"
+										],
+										[
+											"Tailor an outfit",
+											"15"
+										]
+									]
+								}
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Woodcarver's Tools",
+							"entries": [
+								"{@item Woodcarver's tools|phb} allow you to craft intricate objects from wood, such as wooden tokens or arrows.",
+								{
+									"type": "entries",
+									"name": "Components",
+									"entries": [
+										"{@item Woodcarver's tools|phb} consist of a knife, a gouge, and a small saw."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Arcana, History",
+									"entries": [
+										"Your expertise lends you additional insight when you examine wooden objects, such as figurines or arrows."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Nature",
+									"entries": [
+										"Your knowledge of wooden objects gives you some added insight when you examine trees."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Repair",
+									"entries": [
+										"As part of a short rest, you can repair a single damaged wooden object."
+									]
+								},
+								{
+									"type": "entries",
+									"name": "Craft Arrows",
+									"entries": [
+										"As part of a short rest, you can craft up to five arrows. As part of a long rest, you can craft up to twenty. You must have enough wood on hand to produce them."
+									]
+								},
+								{
+									"type": "table",
+									"caption": "Woodcarver's Tools",
+									"colLabels": [
+										"Activity",
+										"DC"
+									],
+									"colStyles": [
+										"col-10",
+										"col-2 text-center"
+									],
+									"rows": [
+										[
+											"Craft a small wooden figurine",
+											"10"
+										],
+										[
+											"Carve an intricate pattern in wood",
+											"15"
+										]
+									]
+								}
 							]
 						}
 					]
@@ -11615,35 +13056,35 @@
 							"type": "entries",
 							"name": "Forage",
 							"entries": [
-								"The character casts fishing lines, keeping an eye out for sources of food, making a Wisdom ({@skill 生存}) check when the DM calls for it."
+								"The character casts fishing lines, keeping an eye out for sources of food, making a Wisdom ({@skill Survival}) check when the DM calls for it."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Raise Morale (First Mate Only)",
 							"entries": [
-								"The first mate can manage the crew's time to grant extended breaks, provide instruction, and generally improve the quality of life on the ship. Once every 24 hours, if the crew's quality score is 3 or lower, the first mate can make a DC 15 Charisma ({@skill 说服}) check. On a successful check, the crew's quality score increases by 1."
+								"The first mate can manage the crew's time to grant extended breaks, provide instruction, and generally improve the quality of life on the ship. Once every 24 hours, if the crew's quality score is 3 or lower, the first mate can make a DC 15 Charisma ({@skill Persuasion}) check. On a successful check, the crew's quality score increases by 1."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Navigate (Quartermaster Only)",
 							"entries": [
-								"The quartermaster can try to prevent the ship from becoming lost, making a Wisdom ({@skill 生存}) check when the DM calls for it. (See \"{@book Becoming Lost|DMG|5|Becoming Lost}\" in chapter 5 of the {@book Dungeon Master's Guide|DMG} for more information.)"
+								"The quartermaster can try to prevent the ship from becoming lost, making a Wisdom ({@skill Survival}) check when the DM calls for it. (See \"{@book Becoming Lost|DMG|5|Becoming Lost}\" in chapter 5 of the {@book Dungeon Master's Guide|DMG} for more information.)"
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Noticing Threats",
 							"entries": [
-								"Use the passive Wisdom ({@skill 察觉}) score of the player characters or the crew to determine whether anyone on the ship notices a hidden threat. The crew has a passive Wisdom ({@skill 察觉}) score equal to 10 + the crew's quality score. The DM might decide that a threat can be noticed only by characters in a specific area of the ship. For example, only characters below deck might have a chance to hear or spot a creature hiding on board."
+								"Use the passive Wisdom ({@skill Perception}) score of the player characters or the crew to determine whether anyone on the ship notices a hidden threat. The crew has a passive Wisdom ({@skill Perception}) score equal to 10 + the crew's quality score. The DM might decide that a threat can be noticed only by characters in a specific area of the ship. For example, only characters below deck might have a chance to hear or spot a creature hiding on board."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Repair (Bosun Only)",
 							"entries": [
-								"At the end of the day, the ship's bosun can make a Strength check using {@item 木匠工具|PHB}. On a 15 or higher, each damaged component regains hit points equal to {@dice 1d6} + the crew's quality score (minimum of 1 hit point). A component other than the hull that had 0 hit points becomes functional again."
+								"At the end of the day, the ship's bosun can make a Strength check using {@item carpenter's tools|PHB}. On a 15 or higher, each damaged component regains hit points equal to {@dice 1d6} + the crew's quality score (minimum of 1 hit point). A component other than the hull that had 0 hit points becomes functional again."
 							]
 						},
 						{
@@ -11794,15 +13235,15 @@
 									"rows": [
 										[
 											"Captain",
-											"Charisma ({@skill 威吓})"
+											"Charisma ({@skill Intimidation})"
 										],
 										[
 											"First mate",
-											"Charisma ({@skill 威吓})"
+											"Charisma ({@skill Intimidation})"
 										],
 										[
 											"Cook",
-											"Intelligence ({@item 酿酒工具|PHB})"
+											"Intelligence ({@item brewer's supplies|PHB})"
 										]
 									]
 								},
@@ -11893,15 +13334,15 @@
 										],
 										[
 											"First mate",
-											"Charisma ({@skill 威吓})"
+											"Charisma ({@skill Intimidation})"
 										],
 										[
 											"Bosun",
-											"Strength ({@item 木匠工具|PHB})"
+											"Strength ({@item carpenter's tools|PHB})"
 										],
 										[
 											"Surgeon",
-											"Intelligence ({@skill 医疗})"
+											"Intelligence ({@skill Medicine})"
 										]
 									]
 								},
@@ -11992,7 +13433,7 @@
 										],
 										[
 											"Quartermaster",
-											"Wisdom ({@skill 自然})"
+											"Wisdom ({@skill Nature})"
 										]
 									]
 								},
@@ -12083,15 +13524,15 @@
 										],
 										[
 											"First mate",
-											"Charisma ({@skill 说服})"
+											"Charisma ({@skill Persuasion})"
 										],
 										[
 											"Surgeon",
-											"Intelligence ({@skill 医疗})"
+											"Intelligence ({@skill Medicine})"
 										],
 										[
 											"Cook",
-											"Constitution ({@item 厨师工具|PHB})"
+											"Constitution ({@item cook's utensils|PHB})"
 										]
 									]
 								},
@@ -12182,15 +13623,15 @@
 										],
 										[
 											"First mate",
-											"Charisma ({@skill 威吓})"
+											"Charisma ({@skill Intimidation})"
 										],
 										[
 											"Bosun",
-											"Strength ({@item 木匠工具|PHB})"
+											"Strength ({@item carpenter's tools|PHB})"
 										],
 										[
 											"Quartermaster",
-											"Wisdom ({@skill 自然})"
+											"Wisdom ({@skill Nature})"
 										]
 									]
 								},
@@ -12454,8 +13895,8 @@
 			"type": "section",
 			"entries": [
 				"The rules are purposely open-ended concerning mundane tasks like tying knots, but sometimes knowing how well a knot was fashioned is important in a dramatic scene when someone is trying to untie a knot or slip out of one. Here's an optional rule for determining the effectiveness of a knot.",
-				"The creature who ties the knot makes an Intelligence ({@skill 巧手}) check when doing so. The total of the check becomes the DC for an attempt to untie the knot with an Intelligence ({@skill 巧手}) check or to slip out of it with a Dexterity ({@skill 体操}) check.",
-				"This rule intentionally links {@skill 巧手} with Intelligence, rather than Dexterity. This is an example of how to apply the rule in the {@variantrule Skills with Different Abilities|phb|\"Variant: Skills with Different Abilities\"} section in chapter 7 of the player's handbook."
+				"The creature who ties the knot makes an Intelligence ({@skill Sleight of Hand}) check when doing so. The total of the check becomes the DC for an attempt to untie the knot with an Intelligence ({@skill Sleight of Hand}) check or to slip out of it with a Dexterity ({@skill Acrobatics}) check.",
+				"This rule intentionally links {@skill Sleight of Hand} with Intelligence, rather than Dexterity. This is an example of how to apply the rule in the {@variantrule Skills with Different Abilities|phb|\"Variant: Skills with Different Abilities\"} section in chapter 7 of the player's handbook."
 			]
 		},
 		{
@@ -12519,14 +13960,14 @@
 									"type": "entries",
 									"name": "Slippery Rock",
 									"entries": [
-										"Algae, ocean spray, and blood hawk waste make the rock formation slippery. Moving on the rock requires a successful DC 15 Dexterity ({@skill 体操}) check, and failing this check results in the creature falling into the water."
+										"Algae, ocean spray, and blood hawk waste make the rock formation slippery. Moving on the rock requires a successful DC 15 Dexterity ({@skill Acrobatics}) check, and failing this check results in the creature falling into the water."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Treasure",
 									"entries": [
-										"Each nest holds {@dice 1d4-1} blood hawk eggs. Blood hawks make excellent hunting animals. Nobles are willing to pay 25 gp per intact egg."
+										"Each nest holds {@dice 1d4}\u22121 blood hawk eggs. Blood hawks make excellent hunting animals. Nobles are willing to pay 25 gp per intact egg."
 									]
 								}
 							]
@@ -12540,7 +13981,7 @@
 									"type": "entries",
 									"name": "Glowing Mosaic",
 									"entries": [
-										"Pink, purple, and blue crystals cover the walls in a mosaic that depicts merfolk raising their hands toward an aboleth. These crystals give off dim light that fills the cave. A {@spell 侦测魔法} spell or similar effect reveals an aura of divination magic radiating from the mosaic.",
+										"Pink, purple, and blue crystals cover the walls in a mosaic that depicts merfolk raising their hands toward an aboleth. These crystals give off dim light that fills the cave. A {@spell 偵測魔法} spell or similar effect reveals an aura of divination magic radiating from the mosaic.",
 										"A creature that takes a short or long rest in the cave receives at the end of the rest a vague vision of a danger it might face within the next 10 days. If the creature isn't an aberration, it must succeed on a DC 14 Wisdom saving throw or gain a random form of short-term madness (see \"{@book Madness|DMG|8|Madness}\" in chapter 8 of the {@book Dungeon Master's Guide|DMG}).",
 										"Removing a crystal from the wall causes that crystal to stop glowing and become worthless. Removing all of the crystals from the wall by hand takes 24 hours of work divided by the number of creatures performing the task (rounded down). As long as at least one crystal remains embedded in the wall, the mosaic's magic functions."
 									]
@@ -12557,10 +13998,10 @@
 									"type": "entries",
 									"name": "Stone Clam",
 									"entries": [
-										"A pedestal-like rock near the middle of the reef rises 5 feet above the coral. The rock holds an algae-covered stone statue of an enormous clam. A character who makes a successful DC 20 Intelligence ({@skill 历史}) check knows that the clam is the symbol of the aboleth Ogrorlo.",
-										"A {@spell 侦测魔法} spell or similar effect reveals an aura of enchantment magic emanating from the statue. Every night at midnight the statue sheds bright green light in a 20-foot radius and dim light for another 20 feet for 4 hours.",
-										"A creature that touches the statue feels bolstered and happy, gaining 10 temporary hit points. This feeling also makes the creature more likely to trust others, giving it disadvantage on Wisdom ({@skill 洞悉}) checks and saving throws against being {@condition 魅惑} for the next 24 hours.",
-										"The statue can affect a creature only once every 24 hours. Aberrations and creatures that can't be {@condition 魅惑} are unaffected if they touch the statue."
+										"A pedestal-like rock near the middle of the reef rises 5 feet above the coral. The rock holds an algae-covered stone statue of an enormous clam. A character who makes a successful DC 20 Intelligence ({@skill History}) check knows that the clam is the symbol of the aboleth Ogrorlo.",
+										"A {@spell 偵測魔法} spell or similar effect reveals an aura of enchantment magic emanating from the statue. Every night at midnight the statue sheds bright green light in a 20-foot radius and dim light for another 20 feet for 4 hours.",
+										"A creature that touches the statue feels bolstered and happy, gaining 10 temporary hit points. This feeling also makes the creature more likely to trust others, giving it disadvantage on Wisdom ({@skill Insight}) checks and saving throws against being {@condition charmed} for the next 24 hours.",
+										"The statue can affect a creature only once every 24 hours. Aberrations and creatures that can't be {@condition charmed} are unaffected if they touch the statue."
 									]
 								}
 							]
@@ -12581,7 +14022,7 @@
 									"type": "entries",
 									"name": "Ogrorlo's Coffin",
 									"entries": [
-										"The seastone coffin of Ogrorlo, a cube 10 feet on a side, lies 12 feet beneath the floor of the reef. It is adorned with large clamshell carvings and weighs 2,000 pounds. A character who makes a successful DC 20 Intelligence ({@skill 历史}) check knows that the clam is the symbol of the aboleth Ogrorlo.",
+										"The seastone coffin of Ogrorlo, a cube 10 feet on a side, lies 12 feet beneath the floor of the reef. It is adorned with large clamshell carvings and weighs 2,000 pounds. A character who makes a successful DC 20 Intelligence ({@skill History}) check knows that the clam is the symbol of the aboleth Ogrorlo.",
 										"If the coffin is opened while underwater, it releases a cloud of mucus in a 15-foot sphere that rises 10 feet toward the water's surface every round on initiative count 20. Creatures that touch the cloud must make a DC 14 Constitution saving throw. On a failed save, the creature is diseased for {@dice 1d4} hours. A creature diseased in this way can breathe only underwater. When the cloud reaches the surface, it dissipates immediately. If the coffin is opened outside the water, the mucus dissipates without effect.",
 										"The coffin holds the bones of Ogrorlo and the aboleth's treasure (see \"Treasure\")."
 									]
@@ -12600,7 +14041,7 @@
 							"name": "C5. Giant Anemone",
 							"entries": [
 								"This enormous orange, red, and purple anemone anchored to the side of a boulder is a trap from the time of Ogrorlo meant to guard the cove.",
-								"When a creature starts its turn within 20 feet of the anemone, it must make a DC 14 Wisdom saving throw. On a failure, the creature abandons whatever it is doing and gives in to a sudden overwhelming urge to touch the anemone, attacking creatures that get in its way. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Aberrations, beasts, and creatures that can't be {@condition 魅惑} are immune to this effect. If a creature's saving throw is successful or the effect ends for it, the creature is immune to this effect for the next 24 hours.",
+								"When a creature starts its turn within 20 feet of the anemone, it must make a DC 14 Wisdom saving throw. On a failure, the creature abandons whatever it is doing and gives in to a sudden overwhelming urge to touch the anemone, attacking creatures that get in its way. A creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. Aberrations, beasts, and creatures that can't be {@condition charmed} are immune to this effect. If a creature's saving throw is successful or the effect ends for it, the creature is immune to this effect for the next 24 hours.",
 								"The anemone's tentacles deliver a poisonous sting. A creature that touches the anemone must make a DC 12 Constitution saving throw, taking 11 ({@dice 2d10}) poison damage on a failed save, or half as much damage on a successful one.",
 								"The anemone has AC 10 and 45 hit points."
 							]
@@ -12616,7 +14057,7 @@
 									"type": "list",
 									"items": [
 										"The eel can breathe only underwater, its walking speed is 0 feet, and its swimming speed is 40 feet.",
-										"It has a +4 bonus to Dexterity ({@skill 隐匿}) checks.",
+										"It has a +4 bonus to Dexterity ({@skill Stealth}) checks.",
 										"It doesn't have the Constrict action option."
 									]
 								}
@@ -12705,16 +14146,16 @@
 												"They don't carry longbows."
 											]
 										},
-										"When the merfolk spy the characters, Talnad begs them for help, saying she dropped her seashell necklace in the gorge. The merfolk don't have a light source to search the bottom of the gorge and hope the characters can help. A character who makes a successful Wisdom ({@skill 洞悉}) check contested by Talnad's Charisma ({@skill 欺瞒}) check discerns that she isn't telling the whole truth.",
+										"When the merfolk spy the characters, Talnad begs them for help, saying she dropped her seashell necklace in the gorge. The merfolk don't have a light source to search the bottom of the gorge and hope the characters can help. A character who makes a successful Wisdom ({@skill Insight}) check contested by Talnad's Charisma ({@skill Deception}) check discerns that she isn't telling the whole truth.",
 										"If the characters follow the merfolk into the gorge, Talnad and Valas lead the group to Allero and then attack. If the characters refuse to help, the merfolk whistle for Allero and attack when the octopus arrives. If this battle goes poorly for the merfolk, they dive to the bottom of the gorge toward the chuul, hoping the characters follow.",
-										"A character who captures one or both of the merfolk and makes a successful DC 12 Charisma ({@skill 威吓}) check convinces the merfolk to reveal the truth about the floating bones. Otherwise the merfolk deny knowing anything about the bones."
+										"A character who captures one or both of the merfolk and makes a successful DC 12 Charisma ({@skill Intimidation}) check convinces the merfolk to reveal the truth about the floating bones. Otherwise the merfolk deny knowing anything about the bones."
 									]
 								},
 								{
 									"type": "entries",
 									"name": "Disturbed Grave",
 									"entries": [
-										"If a character examines the merfolk mass grave, a successful DC 12 Intelligence ({@skill 调查}) or Wisdom ({@skill 生存}) check reveals marks in the mud on the ground\u2014some of the bones were recently dug up by webbed humanoid hands."
+										"If a character examines the merfolk mass grave, a successful DC 12 Intelligence ({@skill Investigation}) or Wisdom ({@skill Survival}) check reveals marks in the mud on the ground\u2014some of the bones were recently dug up by webbed humanoid hands."
 									]
 								}
 							]
@@ -12742,7 +14183,7 @@
 									"type": "entries",
 									"name": "Corpses in the Reef",
 									"entries": [
-										"A character who searches the reef ({@adventure area C3|GoS|8|C3. Coral Reef}) and makes a successful DC 12 Intelligence ({@skill 调查}) check finds a shallow grave beneath the reef that holds the remains of six sailors from {@i Jolly Good}. The sailors were obviously killed by the weapons of the kuo-toa (part of the sacrifice to Koolooshidoop)."
+										"A character who searches the reef ({@adventure area C3|GoS|8|C3. Coral Reef}) and makes a successful DC 12 Intelligence ({@skill Investigation}) check finds a shallow grave beneath the reef that holds the remains of six sailors from {@i Jolly Good}. The sailors were obviously killed by the weapons of the kuo-toa (part of the sacrifice to Koolooshidoop)."
 									]
 								}
 							]
@@ -12772,7 +14213,7 @@
 									"type": "entries",
 									"name": "Help from New Friends",
 									"entries": [
-										"If the three {@creature Sea Hag||sea hags} spot the characters, they approach in the guise of three merfolk named Ranna, Caulau, and Vira, who claim that the rest of their tribe was killed by the minions of Granny Nightshade. They try to convince the characters to attack the night hag's fortress. A character who makes a successful Wisdom ({@skill 洞悉}) check contested by the hags' Charisma ({@skill 欺瞒}) checks discerns that the \"merfolk\" aren't telling the truth about their tribe. If called out on their lies, the hags reveal their true nature and ask for the characters' help in overthrowing Granny Nightshade. They agree to give the characters a share of the night hag's treasure when they depose her.",
+										"If the three {@creature Sea Hag||sea hags} spot the characters, they approach in the guise of three merfolk named Ranna, Caulau, and Vira, who claim that the rest of their tribe was killed by the minions of Granny Nightshade. They try to convince the characters to attack the night hag's fortress. A character who makes a successful Wisdom ({@skill Insight}) check contested by the hags' Charisma ({@skill Deception}) checks discerns that the \"merfolk\" aren't telling the truth about their tribe. If called out on their lies, the hags reveal their true nature and ask for the characters' help in overthrowing Granny Nightshade. They agree to give the characters a share of the night hag's treasure when they depose her.",
 										"If the characters attack, the hags fight back until one of them falls, and then the other two flee."
 									]
 								},
@@ -12780,7 +14221,7 @@
 									"type": "entries",
 									"name": "Dalixiateara",
 									"entries": [
-										"Recently the hags captured a female {@creature young bronze dragon} named Dalixiateara. The dragon is chained to the side of the gorge ({@adventure area C7|GoS|8|C7. Cove Gorge}) at a depth of 1,200 feet, muzzled, and {@condition 束缚}. The hags are trying to break the dragon's mind to force it to serve them but have had no luck so far.",
+										"Recently the hags captured a female {@creature young bronze dragon} named Dalixiateara. The dragon is chained to the side of the gorge ({@adventure area C7|GoS|8|C7. Cove Gorge}) at a depth of 1,200 feet, muzzled, and {@condition restrained}. The hags are trying to break the dragon's mind to force it to serve them but have had no luck so far.",
 										"The locked chains have AC 19, 50 hit points, and immunity to poison and psychic damage. Auntie Canker holds the key to the chains. A character who makes a successful DC 17 Dexterity check using thieves' tools can pick the lock, freeing Dalixiateara. If freed, the dragon attacks the hags and rewards the characters who freed her with a {@item cloak of the manta ray} from her hoard."
 									]
 								},
@@ -12788,7 +14229,7 @@
 									"type": "entries",
 									"name": "Polluted Water",
 									"entries": [
-										"At the end of every hour spent immersed in the cove's water, a creature that isn't a hag must succeed on a Constitution saving throw or become {@condition 中毒} for 1 hour. The DC for this saving throw equals 10 + the number of continuous hours spent in the cove's water. If the hags die or leave the cove, this effect ends {@dice 1d10} days later."
+										"At the end of every hour spent immersed in the cove's water, a creature that isn't a hag must succeed on a Constitution saving throw or become {@condition poisoned} for 1 hour. The DC for this saving throw equals 10 + the number of continuous hours spent in the cove's water. If the hags die or leave the cove, this effect ends {@dice 1d10} days later."
 									]
 								}
 							]
@@ -12809,9 +14250,9 @@
 									"type": "entries",
 									"name": "Elkahraal's Test",
 									"entries": [
-										"When the characters first arrive at the cove, Elkahraal, a {@creature marid}, casts {@spell 隐形术} and {@spell 巧舌术}. Elkahraal has a {@creature water elemental} servant that forms the shape of an aboleth above the surface of the water, and the genie speaks to the characters as if he is the ghost of Ogrorlo, saying, \"Find my remains and my pearls in one hour or I will destroy Saltmarsh!\"",
+										"When the characters first arrive at the cove, Elkahraal, a {@creature marid}, casts {@spell 隱形術} and {@spell 巧舌術}. Elkahraal has a {@creature water elemental} servant that forms the shape of an aboleth above the surface of the water, and the genie speaks to the characters as if he is the ghost of Ogrorlo, saying, \"Find my remains and my pearls in one hour or I will destroy Saltmarsh!\"",
 										"If the characters don't find Ogrorlo's remains ({@adventure see area C4|GoS|8|C4. Bleached Reef}) and his pearls ({@adventure see area C7|GoS|8|C7. Cove Gorge}), Elkahraal sends the water elemental to terrorize Saltmarsh. The elemental attacks until it is destroyed, while Elkahraal hopes to draw smarter, stronger heroes out to the cove.",
-										"If the characters find Ogrorlo's remains and the pearls, Elkahraal and his water elemental attack. His plan is to knock as many adventurers as possible {@condition 昏迷} and then use {@spell 异界传送} to bring them back to the Plane of Water. Elkahraal fights until reduced to 80 hit points and then flees, while the elemental fights until it is destroyed."
+										"If the characters find Ogrorlo's remains and the pearls, Elkahraal and his water elemental attack. His plan is to knock as many adventurers as possible {@condition unconscious} and then use {@spell 異界傳送} to bring them back to the Plane of Water. Elkahraal fights until reduced to 80 hit points and then flees, while the elemental fights until it is destroyed."
 									]
 								}
 							]
@@ -12830,7 +14271,7 @@
 					"name": "Wreck Features",
 					"entries": [
 						"The {@i Marshal} has the following features:",
-						"{@b Barnacles}. The outside of the {@i Marshal} is covered in all manner of sharp barnacles. A creature that is pushed against the outside of the ship by magic like the {@spell 雷鸣波} spell, or by a shove attack, or that falls {@condition 伏地} onto a barnacle-covered surface takes 3 ({@dice 1d6}) slashing damage.",
+						"{@b Barnacles}. The outside of the {@i Marshal} is covered in all manner of sharp barnacles. A creature that is pushed against the outside of the ship by magic like the {@spell 雷鳴波} spell, or by a shove attack, or that falls {@condition prone} onto a barnacle-covered surface takes 3 ({@dice 1d6}) slashing damage.",
 						"{@b Ceilings}. The ceilings of the {@i Marshal}'s lower deck are 8 feet high, with 6-foot-high doorways connecting the chambers.",
 						"{@b Depth}. The sea floor is 40 feet below the surface of the water. The {@i Marshal}'s highest point is 5 feet below the surface of the water. The depth of the rocks and various decks of the ship are noted on map A.6.",
 						"{@b Light}. The exposed decks of the {@i Marshal} and areas outside the ship are brightly lit by the sun during the day and dimly lit by the moon at night. The interior of the ship and the sea cave are concealed in darkness.",
@@ -12894,7 +14335,7 @@
 									"type": "entries",
 									"name": "Cudgel Ram",
 									"entries": [
-										"A {@spell 侦测魔法} spell or similar effect reveals an aura of evocation magic around the 1,000-pound naval ram. A ship with the naval ram attached has advantage on all saving throws relating to crashing when it crashes into a creature or object. The ship and the ram suffer no damage in the crash. These benefits don't apply if another vessel crashes into the ship with the naval ram attached."
+										"A {@spell 偵測魔法} spell or similar effect reveals an aura of evocation magic around the 1,000-pound naval ram. A ship with the naval ram attached has advantage on all saving throws relating to crashing when it crashes into a creature or object. The ship and the ram suffer no damage in the crash. These benefits don't apply if another vessel crashes into the ship with the naval ram attached."
 									]
 								}
 							]
@@ -12918,8 +14359,8 @@
 									"name": "Statue of St. Cuthbert",
 									"entries": [
 										"The missionaries of St. Cuthbert planned to stay for months or years in most ports, so they brought along a statue of their sacred deity to display at each stop. The statue weighs 1,500 pounds.",
-										"A {@spell 侦测魔法} spell or similar effect reveals auras of enchantment and necromancy magic radiating from the statue. A creature of any nonchaotic alignment that prays to St. Cuthbert for 1 minute while within 10 feet of the statue is affected as if it just drank a {@item potion of heroism}. The statue grants this benefit to no more than one creature every 24 hours.",
-										"A creature of any chaotic alignment that prays to St. Cuthbert for 1 minute while within 10 feet of the statue must succeed on a DC 15 Constitution saving throw or become {@condition 目盲} for 1 hour."
+										"A {@spell 偵測魔法} spell or similar effect reveals auras of enchantment and necromancy magic radiating from the statue. A creature of any nonchaotic alignment that prays to St. Cuthbert for 1 minute while within 10 feet of the statue is affected as if it just drank a {@item potion of heroism}. The statue grants this benefit to no more than one creature every 24 hours.",
+										"A creature of any chaotic alignment that prays to St. Cuthbert for 1 minute while within 10 feet of the statue must succeed on a DC 15 Constitution saving throw or become {@condition blinded} for 1 hour."
 									]
 								}
 							]
@@ -12935,7 +14376,7 @@
 									"type": "entries",
 									"name": "Altar",
 									"entries": [
-										"A {@spell 侦测魔法} spell or similar effect reveals an aura of divination magic radiating from the altar. A character who examines the altar and succeeds on a DC 15 Intelligence ({@skill 调查}) check finds a hidden lid that allows the altar to open. The inside of the lid is mirrored. The altar's inner compartment holds a carved indentation of a holy symbol of St. Cuthbert and a coiled {@creature iron cobra|MTF} that attacks any creature not wearing a symbol of St. Cuthbert.",
+										"A {@spell 偵測魔法} spell or similar effect reveals an aura of divination magic radiating from the altar. A character who examines the altar and succeeds on a DC 15 Intelligence ({@skill Investigation}) check finds a hidden lid that allows the altar to open. The inside of the lid is mirrored. The altar's inner compartment holds a carved indentation of a holy symbol of St. Cuthbert and a coiled {@creature iron cobra|MTF} that attacks any creature not wearing a symbol of St. Cuthbert.",
 										"When a creature places the {@i symbol of St. Cuthbert's knowledge} (see {@adventure area M8|GoS|8|M8. Brig}) in the indentation, that creature can touch the mirrored lid and cast a {@spell 探知} spell (DC 17) with the altar. The altar can be used to cast this spell only once every 24 hours."
 									]
 								}
@@ -12950,7 +14391,7 @@
 									"type": "entries",
 									"name": "Treasure",
 									"entries": [
-										"A character who succeeds on a DC 13 Wisdom ({@skill 察觉}) check while searching the room finds a set of gilded navigator's tools (100 gp) amid a great deal of ruined paper and deteriorated clothing."
+										"A character who succeeds on a DC 13 Wisdom ({@skill Perception}) check while searching the room finds a set of gilded navigator's tools (100 gp) amid a great deal of ruined paper and deteriorated clothing."
 									]
 								}
 							]
@@ -12964,7 +14405,7 @@
 									"type": "entries",
 									"name": "Crab of Cuthbert",
 									"entries": [
-										"The day before the {@i Marshal} sank, Clergol of the Viola, a bard and a follower of St. Cuthbert, cast the {@spell 启蒙术} spell on a crab he named Barnacle Bess. Bess has the statistics of a {@creature giant crab}, with the following changes:",
+										"The day before the {@i Marshal} sank, Clergol of the Viola, a bard and a follower of St. Cuthbert, cast the {@spell 啟蒙術} spell on a crab he named Barnacle Bess. Bess has the statistics of a {@creature giant crab}, with the following changes:",
 										{
 											"type": "list",
 											"items": [
@@ -13001,7 +14442,7 @@
 									"type": "entries",
 									"name": "Symbol of St. Cuthbert's Knowledge",
 									"entries": [
-										"One of the skeletons is that of Uzol Telmock, a high priest of St. Cuthbert. It still carries the {@i symbol of St. Cuthbert's magic} inside its robes. A {@spell 侦测魔法} spell or similar effect reveals an aura of divination magic emanating from this jade symbol of St. Cuthbert. The symbol can activate the altar in area M4."
+										"One of the skeletons is that of Uzol Telmock, a high priest of St. Cuthbert. It still carries the {@i symbol of St. Cuthbert's magic} inside its robes. A {@spell 偵測魔法} spell or similar effect reveals an aura of divination magic emanating from this jade symbol of St. Cuthbert. The symbol can activate the altar in area M4."
 									]
 								}
 							]
@@ -13083,9 +14524,9 @@
 									"type": "entries",
 									"name": "Cursed Dagger",
 									"entries": [
-										"The cursed dagger, decorated with the hand and eye symbol of Vecna, is hidden beneath the statue of St. Cuthbert in {@adventure area M3|GoS|8|M3. Cargo Hold}. A character can spot it with a successful DC 17 Wisdom ({@skill 察觉}) check. A {@spell 侦测魔法} spell or similar effect reveals an aura of necromancy magic radiating from the dagger.",
-										"Whenever an undead creature is destroyed within 500 feet of the dagger, the creature's essence is trapped in the blade, and {@dice 1d10} days later the creature re-forms with all its hit points in a space within 10 feet of the dagger. When a creature that is not undead and does not worship Vecna touches the dagger, that creature must succeed on a DC 12 Constitution saving throw or become {@condition 麻痹} for 1 hour. If the creature is still touching the dagger when the condition ends, that creature must repeat the saving throw, becoming subject to the effect again on a failure.",
-										"A character who examines the dagger and succeeds on a DC 15 Intelligence ({@skill 奥秘}) check discerns that casting {@spell 解除魔法} on the dagger or striking the dagger with a magic or adamantine weapon will cause the dagger to break. The ghosts in area M9 know how to destroy the dagger. If the dagger is destroyed, the undead it created are destroyed, and their souls return to the afterlife."
+										"The cursed dagger, decorated with the hand and eye symbol of Vecna, is hidden beneath the statue of St. Cuthbert in {@adventure area M3|GoS|8|M3. Cargo Hold}. A character can spot it with a successful DC 17 Wisdom ({@skill Perception}) check. A {@spell 偵測魔法} spell or similar effect reveals an aura of necromancy magic radiating from the dagger.",
+										"Whenever an undead creature is destroyed within 500 feet of the dagger, the creature's essence is trapped in the blade, and {@dice 1d10} days later the creature re-forms with all its hit points in a space within 10 feet of the dagger. When a creature that is not undead and does not worship Vecna touches the dagger, that creature must succeed on a DC 12 Constitution saving throw or become {@condition paralyzed} for 1 hour. If the creature is still touching the dagger when the condition ends, that creature must repeat the saving throw, becoming subject to the effect again on a failure.",
+										"A character who examines the dagger and succeeds on a DC 15 Intelligence ({@skill Arcana}) check discerns that casting {@spell 解除魔法} on the dagger or striking the dagger with a magic or adamantine weapon will cause the dagger to break. The ghosts in area M9 know how to destroy the dagger. If the dagger is destroyed, the undead it created are destroyed, and their souls return to the afterlife."
 									]
 								},
 								{
@@ -13150,7 +14591,7 @@
 									"name": "Wizards",
 									"entries": [
 										"When the characters approach the wreck, they notice a keelboat, the {@i Bat Guano}, anchored in the distance. The boat belongs to the twins Arla and Vengi Carmaclo (LN human {@creature Mage||mages}), devout followers of St. Cuthbert on a mission to recover the statue, which was carved by their father, Fergos. They sent their iron golem to claim the work of art so they could avoid the harpies and are waiting for the construct to return.",
-										"If the characters are polite, the wizards happily share their mission. A character who succeeds on a DC 18 Charisma ({@skill 欺瞒} or {@skill 说服}) check convinces the mages to allow the characters to recover the statue for them. The wizards are willing to give 500 gp to the characters if they help with the recovery.",
+										"If the characters are polite, the wizards happily share their mission. A character who succeeds on a DC 18 Charisma ({@skill Deception} or {@skill Persuasion}) check convinces the mages to allow the characters to recover the statue for them. The wizards are willing to give 500 gp to the characters if they help with the recovery.",
 										"If the characters recover the statue without talking to the wizards, the mages attack the characters, demanding the statue be given to them. The mages fight until one of them falls."
 									]
 								},
@@ -13188,8 +14629,8 @@
 									"type": "entries",
 									"name": "Xalatamos",
 									"entries": [
-										"The {@creature dragon turtle} spends most of its time within 60 feet of the wreck, watching the {@i Marshal}. When the characters enter the area, the dragon turtle approaches, demanding to know what they are doing in its domain. A character who succeeds on a DC 15 Charisma ({@skill 说服}) check convinces Xalatamos to speak with them. Otherwise, Xalatamos demands tribute in the form of coins and gems worth no less than 500 gp before speaking further with the characters.",
-										"If the tribute is forthcoming, Xalatamos tells the characters that it kept a {@item staff of power} in the crew quarters ({@adventure area M5|GoS|8|M5. Crew Quarters}), but the item went missing ten days ago. The creature is certain a thief from Saltmarsh took the staff, and it intends to make the fishers of the town pay until the item is returned. A character who succeeds on a DC 13 Charisma ({@skill 说服}) check convinces Xalatamos to let the characters explore the wreck for clues of where the lost staff could be.",
+										"The {@creature dragon turtle} spends most of its time within 60 feet of the wreck, watching the {@i Marshal}. When the characters enter the area, the dragon turtle approaches, demanding to know what they are doing in its domain. A character who succeeds on a DC 15 Charisma ({@skill Persuasion}) check convinces Xalatamos to speak with them. Otherwise, Xalatamos demands tribute in the form of coins and gems worth no less than 500 gp before speaking further with the characters.",
+										"If the tribute is forthcoming, Xalatamos tells the characters that it kept a {@item staff of power} in the crew quarters ({@adventure area M5|GoS|8|M5. Crew Quarters}), but the item went missing ten days ago. The creature is certain a thief from Saltmarsh took the staff, and it intends to make the fishers of the town pay until the item is returned. A character who succeeds on a DC 13 Charisma ({@skill Persuasion}) check convinces Xalatamos to let the characters explore the wreck for clues of where the lost staff could be.",
 										"If the characters try to explore the wreck without its permission, Xalatamos attacks. It fights until reduced to 100 hit points and then flees."
 									]
 								},
@@ -13205,7 +14646,7 @@
 									"name": "Finding the Staff",
 									"entries": [
 										"If the characters search the crew quarters ({@adventure area M5|GoS|8|M5. Crew Quarters}), they find an important piece of evidence among the debris: the moldy remains of what was once an ornate wooden case meant to hold a staff. Where the head of the staff would rest, the outside of the case is sculpted in the image of a beholder.",
-										"If the characters take this knowledge (or the item itself) back to Saltmarsh and ask around, someone who makes a successful DC 14 Charisma ({@skill 调查}) check finds out that Keledek has been sporting a new staff recently\u2014and the head of the staff is a miniature sculpture of a beholder. If Keledek is confronted about the item, a successful DC 15 Charisma ({@skill 威吓} or {@skill 说服}) check convinces Keledek to give the staff to the characters so that they can return it to its rightful owner.",
+										"If the characters take this knowledge (or the item itself) back to Saltmarsh and ask around, someone who makes a successful DC 14 Charisma ({@skill Investigation}) check finds out that Keledek has been sporting a new staff recently\u2014and the head of the staff is a miniature sculpture of a beholder. If Keledek is confronted about the item, a successful DC 15 Charisma ({@skill Intimidation} or {@skill Persuasion}) check convinces Keledek to give the staff to the characters so that they can return it to its rightful owner.",
 										"If the staff is given back to Xalatamos, he stops harassing the fishers and hides the staff in a more secure location."
 									]
 								}
@@ -13265,7 +14706,7 @@
 							"type": "entries",
 							"name": "W1. Warthalkeel Cliffs",
 							"entries": [
-								"These cliffs once held the town of Warthalkeel. Climbing the walls of the cliffs without equipment requires a DC 15 Strength ({@skill 运动}) check."
+								"These cliffs once held the town of Warthalkeel. Climbing the walls of the cliffs without equipment requires a DC 15 Strength ({@skill Athletics}) check."
 							]
 						},
 						{
@@ -13361,7 +14802,7 @@
 									"type": "entries",
 									"name": "W5b. Vault",
 									"entries": [
-										"The door to the vault is locked with an {@spell 秘法锁} spell. A character can pick the lock with a successful DC 25 Dexterity check using thieves' tool or force the door open with a successful DC 30 Strength check. Touching the door with a bone from the high priest's skeleton (in {@adventure area W7d|GoS|8| W7d. High Priest's Chambers. The door to these chambers is locked. A character can pick the door's lock with a successful DC 15 Dexterity check using thieves' tool or force the door open with a successful DC 20 Strength check.}) unlocks the door.",
+										"The door to the vault is locked with an {@spell 祕法鎖} spell. A character can pick the lock with a successful DC 25 Dexterity check using thieves' tool or force the door open with a successful DC 30 Strength check. Touching the door with a bone from the high priest's skeleton (in {@adventure area W7d|GoS|8| W7d. High Priest's Chambers. The door to these chambers is locked. A character can pick the door's lock with a successful DC 15 Dexterity check using thieves' tool or force the door open with a successful DC 20 Strength check.}) unlocks the door.",
 										"If a creature touches or attacks the door while it is locked, the door produces a spectral tendril that makes an attack against the creature with a +7 bonus. If the tendril hits, it deals 11 ({@dice 2d6 + 4}) psychic damage.",
 										"Most of the vault's treasures were removed from the vault when Warthalkeel's citizens converted to the worship of Procan, but a stone chest in the vault contains 1,232 gp and 213 pp."
 									]
@@ -13401,7 +14842,7 @@
 									"name": "W6d. Priest's Room",
 									"entries": [
 										"Broken wood furniture and rusty mattress springs cover the floor.",
-										"A character notices the outline of a secret compartment in the wall with a successful DC 15 Wisdom ({@skill 察觉}) check. The compartment holds an iron holy symbol of Erythnul."
+										"A character notices the outline of a secret compartment in the wall with a successful DC 15 Wisdom ({@skill Perception}) check. The compartment holds an iron holy symbol of Erythnul."
 									]
 								},
 								{
@@ -13454,7 +14895,7 @@
 											]
 										},
 										"Yalaga was a loyal priestess of Vaalastroth until the end of her life and continues to be so in undeath. She meditates in this chamber trying to hear the voice of Vaalastroth, which has been silent for her since Warthalkeel's destruction.",
-										"If she notices the characters, Yalaga immediately begins asking why they have come to Warthalkeel. A character who succeeds on a DC 14 Charisma ({@skill 欺瞒} or {@skill 说服}) check convinces her they mean no harm. If convinced, Yalaga shares Warthalkeel's history and allows the characters to explore the temple as long as she can escort them.",
+										"If she notices the characters, Yalaga immediately begins asking why they have come to Warthalkeel. A character who succeeds on a DC 14 Charisma ({@skill Deception} or {@skill Persuasion}) check convinces her they mean no harm. If convinced, Yalaga shares Warthalkeel's history and allows the characters to explore the temple as long as she can escort them.",
 										"If the characters can't convince Yalaga they mean no harm, or if she catches them stealing or defacing any property in the temple, she attacks and fights to the death (though she doesn't leave the temple to follow the characters if they flee)."
 									]
 								},
@@ -13484,7 +14925,7 @@
 									"type": "entries",
 									"name": "W7g. Grand Staircase",
 									"entries": [
-										"This staircase's stone railing is carved to look like a long tentacle. A {@creature giant octopus} lives under the stairs and attacks only if disturbed. {@creature Yalaga Maladwyn|GoS} (see {@adventure area W7c|GoS|8| W7c. Meditation Chamber. Tattered tapestries and cold, rusty braziers decorate this chamber. {@creature Yalaga Maladwyn|GoS} sits cross-legged in the center of the room. She is a drow priestess of Lolth, with the following changes:}) feeds this octopus and considers it a friend. A character can peacefully coax the octopus from its nest with a successful DC 15 Wisdom ({@skill 驯兽}) check.",
+										"This staircase's stone railing is carved to look like a long tentacle. A {@creature giant octopus} lives under the stairs and attacks only if disturbed. {@creature Yalaga Maladwyn|GoS} (see {@adventure area W7c|GoS|8| W7c. Meditation Chamber. Tattered tapestries and cold, rusty braziers decorate this chamber. {@creature Yalaga Maladwyn|GoS} sits cross-legged in the center of the room. She is a drow priestess of Lolth, with the following changes:}) feeds this octopus and considers it a friend. A character can peacefully coax the octopus from its nest with a successful DC 15 Wisdom ({@skill Animal Handling}) check.",
 										"A gold kraken statuette (100 gp) lies amid the waste in the octopus's nest."
 									]
 								},
@@ -13584,7 +15025,7 @@
 									"type": "entries",
 									"name": "Green Conch Shell",
 									"entries": [
-										"The green conch shell was dropped into {@adventure area W7f|GoS|8|W7f. Crumbling Hall. A crumbling mosaic depicts a kraken devouring an entire planet on the ceiling of this chamber. A creature that touches the walls, floor, or ceiling of this chamber must succeed on a DC 12 Dexterity saving throw or take 3 (1d6) damage from falling debris.} of the Temple of Vaalastroth. A {@spell 侦测魔法} spell or similar effect reveals an aura of conjuration magic around the shell. If the shell is destroyed, the portal closes."
+										"The green conch shell was dropped into {@adventure area W7f|GoS|8|W7f. Crumbling Hall. A crumbling mosaic depicts a kraken devouring an entire planet on the ceiling of this chamber. A creature that touches the walls, floor, or ceiling of this chamber must succeed on a DC 12 Dexterity saving throw or take 3 (1d6) damage from falling debris.} of the Temple of Vaalastroth. A {@spell 偵測魔法} spell or similar effect reveals an aura of conjuration magic around the shell. If the shell is destroyed, the portal closes."
 									]
 								},
 								{
@@ -13623,8 +15064,8 @@
 									"entries": [
 										"Wynce, a {@creature lizardfolk shaman}, six of her finest {@creature lizardfolk} warriors, and thirty {@creature Lizardfolk Commoner|GoS|lizardfolk commoners} (see {@adventure appendix C|GoS|10}) are gathered in twelve canoes on the surface of the water when the characters arrive. Wynce welcomes the characters and explains why the Black Claw tribe is congregating. Not one to let a chance for a challenge go by, Wynce invites the characters to participate in the games.",
 										"Wynce oversees the games. She is a fair judge and allows the use of magic in the following contests:",
-										"{@b Turtle Shell Toss}. The participants in this game hurl a sea turtle shell across the water. All those participating make Strength ({@skill 运动}) checks. The participant with the highest check total makes the farthest toss and wins. The winner keeps the impressive shell as a trophy.",
-										"{@b Driftwood Surfing}. The players of this game stand on a large piece of driftwood, keeping their balance on the shifting waters. All those participating make Dexterity ({@skill 体操}) checks. The highest check total wins. The winner keeps the driftwood as a trophy.",
+										"{@b Turtle Shell Toss}. The participants in this game hurl a sea turtle shell across the water. All those participating make Strength ({@skill Athletics}) checks. The participant with the highest check total makes the farthest toss and wins. The winner keeps the impressive shell as a trophy.",
+										"{@b Driftwood Surfing}. The players of this game stand on a large piece of driftwood, keeping their balance on the shifting waters. All those participating make Dexterity ({@skill Acrobatics}) checks. The highest check total wins. The winner keeps the driftwood as a trophy.",
 										"{@b Quipper Wrestling}. Wynce casts [spell] to conjure eight {@creature Quipper||quippers}. The winner of the game is the one who grapples and holds onto a quipper longer than any of the other players and is rewarded with a crown made of quipper bones.",
 										"{@b Water Sparring}. Each competing character battles a lizardfolk in the water. The battle continues until a creature submits or is defeated. The lizardfolk submit when reduced to 5 hit points, and if they reduce a character to 0 hit points with a weapon attack, the character is automatically stabilized. The winner of each match gets a pearl worth 10 gp as a prize."
 									]
@@ -13699,7 +15140,7 @@
 										"{@creature Yalaga Maladwyn|GoS} (in {@adventure area W7c|GoS|8|W7. Temple of Vaalastroth}) knows she can't kill the giant, so she allows him to do whatever he wants. She would agree to ally with the characters in a plan to evict Brinecane.",
 										"When the characters find Brinecane, the giant tells them of his plight. He is scared to die, but he knows that without the magic of Warthalkeel he would succumb to old age.",
 										"If the characters offer to help Brinecane, he tells them he would agree to move to a new location touched with magic that would allow him to continue to extend his life. One such location that would put the storm far from Saltmarsh is Granny Nightshade's fortress, Castle Spiral, in the Dreadwood. Of course, Brinecane requires that Granny Nightshade and her minions be removed before he takes possession of the castle.",
-										"A character can comfort Brinecane and convince the storm giant to accept the inevitable, end the storm, and move out of the area with a successful DC 22 Charisma ({@skill 说服}) check. If this check fails, Brinecane is insulted and attacks the characters.",
+										"A character can comfort Brinecane and convince the storm giant to accept the inevitable, end the storm, and move out of the area with a successful DC 22 Charisma ({@skill Persuasion}) check. If this check fails, Brinecane is insulted and attacks the characters.",
 										"If combat breaks out, the giant fights until reduced to 30 hit points and then flees."
 									]
 								}
@@ -13720,7 +15161,7 @@
 				"Each character has a pool of vitality in addition to hit points. A character's maximum vitality equals the character's Constitution score. Whenever a character takes 10 or more damage from an attack or effect, the character loses vitality. Divide the damage by 10 and round down. The result is how much vitality a character loses. In other words, a character loses 1 vitality for every 10 points of damage dealt by an attack or effect.",
 				"If a character suffers a critical hit, double the vitality lost, so that the character loses 2 vitality for every 10 points of damage. If a critical hit deals less than 10 damage, it still reduces vitality by 1.",
 				"Losing vitality causes a character's hit point maximum to drop. Calculate the character's current maximum using vitality instead of Constitution. Thus, as vitality drops, a character's Constitution modifier for determining hit points also drops.",
-				"A character reduced to 0 vitality is immediately reduced to 0 hit points. If a character is reduced to 0 hit points but his or her vitality remains above 0, any additional damage is applied instead to the character's vitality. A character is not {@condition 昏迷} until both hit points and vitality reach 0.",
+				"A character reduced to 0 vitality is immediately reduced to 0 hit points. If a character is reduced to 0 hit points but his or her vitality remains above 0, any additional damage is applied instead to the character's vitality. A character is not {@condition unconscious} until both hit points and vitality reach 0.",
 				"Completing a long rest increases a character's vitality by 1 + the character's Constitution modifier, up to the character's maximum vitality. Effects that restore hit points have no effect on vitality. However, a character with maximum hit points who receives healing instead restores 1 vitality for every 10 points of healing."
 			]
 		},

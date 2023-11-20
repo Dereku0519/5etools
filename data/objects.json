@@ -7,14 +7,14 @@
 			"page": 255,
 			"size": "L",
 			"objectType": "SW",
-			"ac": 15,
-			"hp": 50,
+			"ac": "15",
+			"hp": "50",
 			"immune": [
 				"poison",
 				"psychic"
 			],
 			"entries": [
-				"弩砲是一副发射重型弩矢的巨型十字弩。其攻击发射前必须先进行装填和瞄准作业。使用该武器时，进行装填、瞄准以及攻击发射三项作业需要分别花费一个动作。"
+				"弩砲是一副發射重型弩矢的巨型十字弩。其攻擊發射前必須先進行裝填和瞄準作業。使用該武器時，進行裝填、瞄準以及攻擊發射三項作業需要分別花費一個動作。"
 			],
 			"actionEntries": [
 				{
@@ -25,10 +25,10 @@
 							"type": "attack",
 							"attackType": "RW",
 							"attackEntries": [
-								"命中 {@hit +6} , 射程 120/480 尺., 单一目标。"
+								"命中 {@hit +6} , 射程 120/480 呎., 單一目標。"
 							],
 							"hitEntries": [
-								"16 ({@dice 3d10}) 穿刺伤害。"
+								"16 ({@dice 3d10}) 穿刺傷害。"
 							]
 						}
 					]
@@ -43,29 +43,29 @@
 			"page": 255,
 			"size": "L",
 			"objectType": "SW",
-			"ac": 19,
-			"hp": 75,
+			"ac": "19",
+			"hp": "75",
 			"immune": [
 				"poison",
 				"psychic"
 			],
 			"entries": [
-				"火砲使用火药推动重型铁球，使其以毁灭性的速度从空中划过进行政击。在没有火药设置的战役中，火砲可以设置为由聪明的侏儒或是工程法师所设计的奥法驱动设备。",
-				"火砲通常安装在带轮的木质砲台上。其攻击发射前必须先进行装填和瞄准作业。使用该武器时，进行装填、瞄准以及攻击发射三项作业需要分别花费一个动作。"
+				"火砲使用火藥推動重型鐵球，使其以毀滅性的速度從空中劃過進行政擊。在沒有火藥設定的戰役中，火砲可以設定為由聰明的侏儒或是工程法師所設計的奧法驅動設備。",
+				"火砲通常安裝在帶輪的木質砲台上。其攻擊發射前必須先進行裝填和瞄準作業。使用該武器時，進行裝填、瞄準以及攻擊發射三項作業需要分別花費一個動作。"
 			],
 			"actionEntries": [
 				{
 					"type": "actions",
-					"name": "砲弹",
+					"name": "砲彈",
 					"entries": [
 						{
 							"type": "attack",
 							"attackType": "RW",
 							"attackEntries": [
-								"命中 {@hit +6} , 射程 600/2,400 尺., 单一目标。"
+								"命中 {@hit +6} , 射程 600/2,400 呎., 單一目標。"
 							],
 							"hitEntries": [
-								"44 ({@dice 8d10}) 钝击伤害。"
+								"44 ({@dice 8d10}) 鈍擊傷害。"
 							]
 						}
 					]
@@ -80,8 +80,8 @@
 			"page": 21,
 			"size": "L",
 			"objectType": "U",
-			"ac": 17,
-			"hp": 50,
+			"ac": "17",
+			"hp": "50",
 			"speed": 0,
 			"str": 14,
 			"dex": 10,
@@ -104,16 +104,43 @@
 							"type": "attack",
 							"attackType": "RW",
 							"attackEntries": [
-								"命中 {@hit +5} , 射程 200/800 尺. (无法命中 60 尺内目标), 单一目标。"
+								"命中 {@hit +5} , 射程 200/800 呎. (無法命中 60 呎內目標), 單一目標。"
 							],
 							"hitEntries": [
-								"27 ({@dice 5d10}) 钝击伤害。"
+								"27 ({@dice 5d10}) 鈍擊傷害。"
 							]
 						}
 					]
 				}
 			],
 			"hasToken": true
+		},
+		{
+			"name": "吊掛大鍋",
+			"ENG_name": "Cauldron, Suspended",
+			"source": "DMG",
+			"page": 255,
+			"size": "L",
+			"objectType": "SW",
+			"ac": "19",
+			"hp": "20",
+			"immune": [
+				"poison",
+				"psychic"
+			],
+			"entries": [
+				"大鍋的主體是一口吊掛起來的鋼鐵鍋，以方便使之側翻並倒出內裡所裝載物質。大鍋一日倒空，則必須重新裝填物質進鍋內，通常還需要對新加入物質進行加熱才可再次使用。裝填大鍋需要花費三個動作，傾倒大鍋需要花費一個動作。",
+				"大鍋可以裝填其他液體，比如強酸或者{@hazard 綠軟泥}，並依不同物質具有不同效應。"
+			],
+			"actionEntries": [
+				{
+					"type": "entries",
+					"name": "滾油",
+					"entries": [
+						"大鍋向其正下方10尺方形區域倒出滾油。在區域內的生物必須進行一次DC15的敏捷豁免，豁免失敗者將受到10({@dice 3d6})的火焰傷害，豁免成功則傷害減半。"
+					]
+				}
+			]
 		},
 		{
 			"name": "Generic Object",
@@ -123,12 +150,8 @@
 			"srd": true,
 			"size": "V",
 			"objectType": "GEN",
-			"ac": {
-				"special": "Varies (see below)"
-			},
-			"hp": {
-				"special": "Varies (see below)"
-			},
+			"ac": "Varies (see below)",
+			"hp": "Varies (see below)",
 			"immune": [
 				{
 					"special": "Varies (see below)"
@@ -237,21 +260,21 @@
 							"type": "entries",
 							"name": "Huge and Gargantuan Objects",
 							"entries": [
-								"Normal weapons are of little use against many Huge and Gargantuan objects, such as a colossal statue, towering column of stone, or massive boulder. That said, one torch can burn a Huge tapestry, and an earthquake spell can reduce a colossus to rubble. You can track a Huge or Gargantuan object's hit points if you like, or you can simply decide how long the object can withstand whatever weapon or force is acting against it. If you track hit points for the object, divide it into Large or smaller sections, and track each section's hit points separately. Destroying one of those sections could ruin the entire object. For example, a Gargantuan statue of a human might topple over when one of its Large legs is reduced to 0 hit points."
+								" Normal weapons are of little use against many Huge and Gargantuan objects, such as a colossal statue, towering column of stone, or massive boulder. That said, one torch can burn a Huge tapestry, and an earthquake spell can reduce a colossus to rubble. You can track a Huge or Gargantuan object's hit points if you like, or you can simply decide how long the object can withstand whatever weapon or force is acting against it. If you track hit points for the object, divide it into Large or smaller sections, and track each section's hit points separately. Destroying one of those sections could ruin the entire object. For example, a Gargantuan statue of a human might topple over when one of its Large legs is reduced to 0 hit points."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Objects and Damage Types",
 							"entries": [
-								"Objects are immune to poison and psychic damage. You might decide that some damage types are more effective against a particular object or substance than others. For example, bludgeoning damage works well for smashing things but not for cutting through rope or leather. Paper or cloth objects might be vulnerable to fire and lightning damage. A pick can chip away stone but can't effectively cut down a tree. As always, use your best judgment."
+								" Objects are immune to poison and psychic damage. You might decide that some damage types are more effective against a particular object or substance than others. For example, bludgeoning damage works well for smashing things but not for cutting through rope or leather. Paper or cloth objects might be vulnerable to fire and lightning damage. A pick can chip away stone but can't effectively cut down a tree. As always, use your best judgment."
 							]
 						},
 						{
 							"type": "entries",
 							"name": "Damage Threshold",
 							"entries": [
-								"Big objects such as castle walls often have extra resilience represented by a damage threshold. An object with a damage threshold has immunity to all damage unless it takes an amount of damage from a single attack or effect equal to or greater than its damage threshold, in which case it takes damage as normal. Any damage that fails to meet or exceed the object's damage threshold is considered superficial and doesn't reduce the object's hit points."
+								" Big objects such as castle walls often have extra resilience represented by a damage threshold. An object with a damage threshold has immunity to all damage unless it takes an amount of damage from a single attack or effect equal to or greater than its damage threshold, in which case it takes damage as normal. Any damage that fails to meet or exceed the object's damage threshold is considered superficial and doesn't reduce the object's hit points."
 							]
 						}
 					]
@@ -265,8 +288,8 @@
 			"page": 31,
 			"size": "G",
 			"objectType": "U",
-			"ac": 10,
-			"hp": 35,
+			"ac": "10",
+			"hp": "35",
 			"immune": [
 				"necrotic",
 				"poison",
@@ -284,7 +307,7 @@
 					"name": "Fruit",
 					"entries": [
 						"Two magical fruits (evocation school) ripen on the tree each year. Each fruit resembles an apple, but it slowly extrudes from the tree like a cyst.",
-						"Up to a week before the summer solstice, a ruby red fruit grows. Someone other than a construct who eats a quarter or more of it regains 70 hit points. In addition, any {@condition 目盲||blindness}, {@condition 耳聋||deafness}, and diseases affecting the eater end.",
+						"Up to a week before the summer solstice, a ruby red fruit grows. Someone other than a construct who eats a quarter or more of it regains 70 hit points. In addition, any {@condition blinded||blindness}, {@condition deafened||deafness}, and diseases affecting the eater end.",
 						"Up to a week before the winter solstice, a sickly white fruit grows. Someone who eats a quarter or more of it takes 70 necrotic damage. Each fruit has {@dice 1d4} seeds that, if planted, grow leafless woody shrubs that animate as twig blights after one year."
 					]
 				},
@@ -318,8 +341,8 @@
 			"page": 294,
 			"size": "T",
 			"objectType": "U",
-			"ac": 13,
-			"hp": 4,
+			"ac": "13",
+			"hp": "4",
 			"immune": [
 				"acid",
 				"bludgeoning",
@@ -344,7 +367,7 @@
 							"type": "list",
 							"items": [
 								"A creature that eats the heart gains the ability to regenerate for the next 24 hours, regaining 5 hit points at the start of each of its turns. If the creature takes acid or fire damage, this trait doesn't function at the start of its next turn. The creature dies only if it starts its turn with 0 hit points and doesn't regenerate.",
-								"If buried in the ground under a foot or more of earth, the heart melts away and summons a blizzard like that created by the {@spell 操控天气} spell. It takes 10 minutes for the heart to melt and the blizzard to form. The blizzard lasts for 8 hours.",
+								"If buried in the ground under a foot or more of earth, the heart melts away and summons a blizzard like that created by the {@spell 操控天氣} spell. It takes 10 minutes for the heart to melt and the blizzard to form. The blizzard lasts for 8 hours.",
 								"A hag or similar creature can perform a ritual that turns the heart into a magical talisman that acts like a patch of brown mold (see \"{@hazard Brown Mold}\" in the {@book Dungeon Master's Guide|DMG}). This effect lasts until the heart is destroyed.",
 								"A creature proficient with alchemist's supplies can squeeze enough residual fluid out of the heart to mix with other alchemical ingredients, creating one {@item Potion of Cold Resistance||potion of resistance (cold)}. It takes 1 hour to create this potion. "
 							]
@@ -354,36 +377,36 @@
 			]
 		},
 		{
-			"name": "弹射投石机",
+			"name": "彈射投石機",
 			"ENG_name": "Mangonel",
 			"source": "DMG",
 			"page": 255,
 			"size": "L",
 			"objectType": "SW",
-			"ac": 15,
-			"hp": 100,
+			"ac": "15",
+			"hp": "100",
 			"immune": [
 				"poison",
 				"psychic"
 			],
 			"entries": [
-				"弹射投石机是一种以弧线抛射重型投石的弹道武器，其投出的石弹可以击中身处掩护的目标。弹射投石机进行攻击前必须先进行装填和瞄准作业。装填该武器需要花费两个动作，瞄准需要花费两个动作，而发射则需要花费一个动作。",
-				"弹射投石机可以投掷标准的重型石弹，它也可以投掷其他弹药并依不同种类而产生不同的效果。"
+				"彈射投石機是一種以弧線拋射重型投石的彈道武器，其投出的石彈可以擊中身處掩護的目標。彈射投石機進行攻擊前必須先進行裝填和瞄準作業。裝填該武器需要花費兩個動作，瞄準需要花費兩個動作，而發射則需要花費一個動作。",
+				"彈射投石機可以投擲標準的重型石彈，它也可以投擲其他彈藥並依不同種類而產生不同的效果。"
 			],
 			"actionEntries": [
 				{
 					"type": "actions",
-					"name": "弹射投石",
+					"name": "彈射投石",
 					"ENG_name": "Mangonel Stone",
 					"entries": [
 						{
 							"type": "attack",
 							"attackType": "RW",
 							"attackEntries": [
-								"命中 {@hit +5} , 射程 200/800 尺. (无法命中 60 尺内目标), 单一目标。"
+								"命中 {@hit +5} , 射程 200/800 呎. (無法命中 60 呎內目標), 單一目標。"
 							],
 							"hitEntries": [
-								"27 ({@dice 5d10}) 钝击伤害。"
+								"27 ({@dice 5d10}) 鈍擊傷害。"
 							]
 						}
 					]
@@ -398,15 +421,15 @@
 			"page": 255,
 			"size": "L",
 			"objectType": "SW",
-			"ac": 15,
-			"hp": 100,
+			"ac": "15",
+			"hp": "100",
 			"immune": [
 				"poison",
 				"psychic"
 			],
 			"entries": [
-				"攻城槌的底座是一个可移动的框架，一根粗圆木作为其主体，用铁链装架在两个带盖顶的横梁上。圆木前端镶裱着铁皮外壳，用以击穿大门与路障。",
-				"攻城槌需要至少四名中型体型的生物进行操作。由于两边的横梁带有盖顶，操作者对来自前方的攻击处于全身掩护。"
+				"攻城槌的底座是一個可移動的框架，一根粗圓木作為其主體，用鐵鍊裝架在兩個帶蓋頂的橫樑上。圓木前端鑲裱著鐵皮外殼，用以擊穿大門與路障。",
+				"攻城槌需要至少四名中型體型的生物進行操作。由於兩邊的橫梁帶有蓋頂，操作者對來自前方的攻擊處於全身掩護。"
 			],
 			"actionEntries": [
 				{
@@ -417,10 +440,10 @@
 							"type": "attack",
 							"attackType": "MW",
 							"attackEntries": [
-								"命中 {@hit +8} , 触及 5 尺., 单一目标。"
+								"命中 {@hit +8} , 觸及 5 呎., 單一目標。"
 							],
 							"hitEntries": [
-								"16 ({@dice 3d10}) 钝击伤害。"
+								"16 ({@dice 3d10}) 鈍擊傷害。"
 							]
 						}
 					]
@@ -435,61 +458,33 @@
 			"page": 256,
 			"size": "G",
 			"objectType": "SW",
-			"ac": 15,
-			"hp": 200,
+			"ac": "15",
+			"hp": "200",
 			"immune": [
 				"poison",
 				"psychic"
 			],
 			"entries": [
-				"攻城塔是一个可移动的木质建筑，其主体由框架结构组成墙身上设置着百叶窗孔。塔底设置了大型的木轮或滚轴，让其可被士兵或负重牲畜进行推拉进而进行移动。中型或更小体型的生物可以使用攻城塔直接到达40尺高的城墙上。攻城塔内的生物对来自塔外的攻击处于全身掩护。"
+				"攻城塔是一個可移動的木質建築，其主體由框架結構組成牆身上設置著百葉窗孔。塔底設置了大型的木輪或滾軸，讓其可被士兵或負重牲畜進行推拉進而進行移動。中型或更小體型的生物可以使用攻城塔直接到達40尺高的城墻上。攻城塔內的生物對來自塔外的攻擊處於全身掩護。"
 			],
 			"hasToken": true
 		},
 		{
-			"name": "吊挂大锅",
-			"ENG_name": "Suspended Cauldron",
-			"source": "DMG",
-			"page": 255,
-			"size": "L",
-			"objectType": "SW",
-			"ac": 19,
-			"hp": 20,
-			"immune": [
-				"poison",
-				"psychic"
-			],
-			"entries": [
-				"A cauldron is an iron pot suspended so that it can be tipped easily, spilling its contents. Once emptied, a cauldron must be refilled-and its contents must usually be reheated-before it can be used again. It takes three actions to fill a cauldron and one action to tip it.",
-				"Cauldrons can be filled with other liquids, such as acid or {@hazard green slime}, with different effects."
-			],
-			"actionEntries": [
-				{
-					"type": "entries",
-					"name": "Boiling Oil",
-					"entries": [
-						"The cauldron pours boiling oil onto a 10-foot-square area directly below it. Any creature in the area must make a DC 15 Dexterity saving throw, taking 10 ({@damage 3d6}) fire damage on a failed save, or half as much damage on a successful one."
-					]
-				}
-			],
-			"hasToken": true
-		},
-		{
-			"name": "配重投石机",
+			"name": "配重投石機",
 			"ENG_name": "Trebuchet",
 			"source": "DMG",
 			"page": 256,
 			"size": "H",
 			"objectType": "SW",
-			"ac": 15,
-			"hp": 150,
+			"ac": "15",
+			"hp": "150",
 			"immune": [
 				"poison",
 				"psychic"
 			],
 			"entries": [
-				"配重投石机是一种以弧线投掷重载石弹的弹道武器，其投出的石弹可以击中身处掩护的目标。配重投石机进行攻击前必须先进行装填和瞄准作业。装填该武器需要花费两个动作，瞄准需要花费两个动作，而发射则需要花费一个动作。",
-				"配重投石机可以投掷标准的重型石弹，它也可以投掷其他弹药，比如油桶或者污物，并依不同弹药而产生不同的效果。"
+				"配重投石機是一種以弧線投擲重載石彈的彈道武器，其投出的石彈可以擊中身處掩護的目標。配重投石機進行攻擊前必須先進行裝填和瞄準作業。裝填該武器需要花費兩個動作，瞄準需要花費兩個動作，而發射則需要花費一個動作。",
+				"配重投石機可以投擲標準的重型石彈，它也可以投擲其他彈藥，比如油桶或者污物，並依不同彈藥而產生不同的效果。"
 			],
 			"actionEntries": [
 				{
@@ -501,10 +496,10 @@
 							"type": "attack",
 							"attackType": "RW",
 							"attackEntries": [
-								"命中 {@hit +5} , 射程 300/1,200 尺. (无法命中 60 尺内目标), 单一目标。"
+								"命中 {@hit +5} , 射程 300/1,200 呎. (無法命中 60 呎內目標), 單一目標。"
 							],
 							"hitEntries": [
-								"44 ({@dice 8d10}) 钝击伤害。"
+								"44 ({@dice 8d10}) 鈍擊傷害。"
 							]
 						}
 					]
