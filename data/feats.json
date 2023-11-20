@@ -24,7 +24,7 @@
 				{
 					"ability": "con",
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								{
 									"choose": "level=0|class=Sorcerer"
@@ -126,13 +126,18 @@
 					"dex": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"acrobatics": true
+				}
+			],
 			"entries": [
 				"You become more nimble, gaining the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Acrobatics} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"As a bonus action, you can make a DC 15 Dexterity ({@skill Acrobatics}) check. If you succeed, difficult terrain doesn't cost you extra movement until the end of the current turn."
+						"You gain proficiency in the {@skill 體操} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"As a bonus action, you can make a DC 15 Dexterity ({@skill 體操}) check. If you succeed, difficult terrain doesn't cost you extra movement until the end of the current turn."
 					]
 				}
 			]
@@ -152,7 +157,7 @@
 					"type": "list",
 					"items": [
 						"當你試圖將自己裝扮成另一個人時，你的魅力（{@skill 欺瞞}）和魅力（{@skill 表演}）檢定獲得優勢。",
-						"你可以模仿另一個人的口音或其他生物發出的聲音。你必須聽過被模仿者說話或發聲至少1分鐘。一次與你的魅力（{@skill 欺瞞}）檢定對抗成功的睿知（{@skill 察言觀色}），可以讓聆聽者辨識出這個聲音效果是假的。"
+						"你可以模仿另一個人的口音或其他生物發出的聲音。你必須聽過被模仿者說話或發聲至少1分鐘。一次與你的魅力（{@skill 欺瞞}）檢定對抗成功的感知（{@skill 洞悉}），可以讓聆聽者辨識出這個聲音效果是假的。"
 					]
 				}
 			],
@@ -167,14 +172,19 @@
 					"int": 1
 				}
 			],
+			"toolProficiencies": [
+				{
+					"alchemist's supplies": true
+				}
+			],
 			"entries": [
 				"You have studied the secrets of alchemy and are an expert in its practice, gaining the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency with {@item alchemist's supplies|phb}. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.",
+						"You gain proficiency with {@item 鍊金工具|phb}. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.",
 						"As an action, you can identify one potion within 5 feet of you, as if you had tasted it. You must see the liquid for this benefit to work.",
-						"Over the course of any short rest, you can temporarily improve the potency of one potion of healing of any rarity. To use this benefit, you must have {@item alchemist's supplies|phb} with you, and the potion must be within reach. If the potion is drunk no more than 1 hour after the short rest ends, the creature drinking the potion can forgo the potion's die roll and regains the maximum number of hit points that the potion can restore."
+						"Over the course of any short rest, you can temporarily improve the potency of one potion of healing of any rarity. To use this benefit, you must have {@item 鍊金工具|phb} with you, and the potion must be within reach. If the potion is drunk no more than 1 hour after the short rest ends, the creature drinking the potion can forgo the potion's die roll and regains the maximum number of hit points that the potion can restore."
 					]
 				}
 			]
@@ -190,7 +200,7 @@
 					"items": [
 						"你的先攻獲得+5加值。",
 						"當你意識清醒時不會被突襲。",
-						"其他生物對你進行的攻擊檢定並不會因為你看不到它而獲得優勢。"
+						"其他生物對你進行的攻擊檢定並不會因爲你看不到它而獲得優勢。"
 					]
 				}
 			],
@@ -205,12 +215,17 @@
 					"wis": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"animal handling": true
+				}
+			],
 			"entries": [
 				"You master the techniques needed to train and handle animals. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Animal Handling} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You gain proficiency in the {@skill 馴獸} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
 						"You can use a bonus action on your turn to command one friendly beast within 60 feet of you that can hear you and that isn't currently following the command of someone else. You decide now what action the beast will take and where it will move during its next turn, or you issue a general command that lasts for 1 minute, such as to guard a particular area."
 					]
 				}
@@ -225,10 +240,15 @@
 					"int": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"arcana": true
+				}
+			],
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								"prestidigitation"
 							],
@@ -246,21 +266,27 @@
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Arcana} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You gain proficiency in the {@skill 奧祕} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
 						"You learn the {@spell 魔法技倆} and {@spell 偵測魔法} spells. You can cast detect magic once without expending a spell slot, and you regain the ability to do so when you finish a long rest."
 					]
 				}
 			]
 		},
 		{
-			"name": "Artificer Initiate",
+			"name": "奇械學徒",
+			"ENG_name": "Artificer Initiate",
 			"source": "TCE",
 			"page": 79,
+			"toolProficiencies": [
+				{
+					"artisan's tools": true
+				}
+			],
 			"additionalSpells": [
 				{
 					"ability": "int",
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								{
 									"choose": "level=0|class=Artificer"
@@ -278,13 +304,13 @@
 				}
 			],
 			"entries": [
-				"You've learned some of an artificer's inventiveness:",
+				"你已習得些許奇械師的創造力：",
 				{
 					"type": "list",
 					"items": [
-						"You learn one cantrip of your choice from the {@filter artificer spell list|spells|level=0;1|class=artificer}, and you learn one 1st-level spell of your choice from {@filter that list|spells|level=0;1|class=artificer}. Intelligence is your spellcasting ability for these spells.",
-						"You can cast this feat's 1st-level spell without a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have.",
-						"You gain proficiency with one type of {@filter artisan's tools|items|type=artisan's tools} of your choice, and you can use that type of tool as a spellcasting focus for any spell you cast that uses Intelligence as its spellcasting ability."
+						"你從{@filter 奇械師法術列表|spells|level=0;1|class=artificer}中選擇並習得一個戲法。此外，你從該法術列表中選擇並習得一個一環法術。智力是你施展這些法術的施法關鍵屬性。",
+						"你可以在不消耗法術位的情況下施展一次來自此專長的一環法術。你必須在完成一次長休後才能再次這樣做。你也可以正常消耗法術位來施展該法術。",
+						"你獲得你所選的一項{@filter 工匠工具|items|type=artisan's tools}熟練，並且你可以將該工具作爲施展任何以智力爲施法關鍵屬性的法術的法器。"
 					]
 				}
 			]
@@ -293,11 +319,16 @@
 			"name": "Artificer Initiate",
 			"source": "UA2020Feats",
 			"page": 1,
+			"toolProficiencies": [
+				{
+					"artisan's tools": true
+				}
+			],
 			"additionalSpells": [
 				{
 					"ability": "int",
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								{
 									"choose": "level=0|class=Artificer"
@@ -346,9 +377,9 @@
 				{
 					"type": "list",
 					"items": [
-						"當你{@condition 伏地}時，起身只需要花費5呎移動速度。",
+						"當你{@condition 伏地}時，起身只需要花費5尺移動速度。",
 						"攀爬不會消耗額外的移動速度。",
-						"你只需要徒步移動5呎就可以進行跳高和跳遠，而非原本的10呎。"
+						"你只需要徒步移動5尺就可以進行跳高和跳遠，而非原本的10尺。"
 					]
 				}
 			],
@@ -378,13 +409,18 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"intimidation": true
+				}
+			],
 			"entries": [
 				"One of your ancestors was a barbed devil or other spiky fiend. Barbs protrude from your head. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"As a bonus action, you can cause small barbs to protrude all over your body or cause them to retract. At the start of each of your turns while the barbs are out, you deal {@damage 1d6} piercing damage to any creature grappling you or any creature {@condition grappled} by you.",
-						"You gain proficiency in the {@skill Intimidation} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it."
+						"As a bonus action, you can cause small barbs to protrude all over your body or cause them to retract. At the start of each of your turns while the barbs are out, you deal {@damage 1d6} piercing damage to any creature grappling you or any creature {@condition 被擒} by you.",
+						"You gain proficiency in the {@skill 威嚇} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it."
 					]
 				}
 			]
@@ -419,8 +455,8 @@
 				}
 			],
 			"entries": [
-				"你的族人們有著非同尋常的好運氣，而你也學習過如何在看到同伴陷入困境時神秘地把好運借給他們。你也不確定你是怎麽做到的；你只是想想，它就實現了。這無疑是你受到命運眷顧的象徵！",
-				"當一個與你距離30呎內，你能看見的隊友在攻擊檢定、能力檢定、或豁免檢定的d20中骰出了1，你可以使用你的反應來讓該隊友重新擲骰。該隊友必須使用新的擲骰結果。",
+				"你的族人們有着非同尋常的好運氣，而你也學習過如何在看到同伴陷入困境時神祕地把好運借給他們。你也不確定你是怎麼做到的；你只是想想，它就實現了。這無疑是你受到命運眷顧的象徵！",
+				"當一個與你距離30尺內，你能看見的隊友在攻擊檢定、能力檢定、或豁免檢定的d20中骰出了1，你可以使用你的反應來讓該隊友重新擲骰。該隊友必須使用新的擲骰結果。",
 				"當你使用這個能力，直到你的下個回合結束之前，你都不能使用你的幸運種族特性。"
 			],
 			"ENG_name": "Bountiful Luck"
@@ -439,8 +475,8 @@
 				}
 			],
 			"entries": [
-				"你的族人們有著非同尋常的好運氣，而你也學習過如何在看到同伴陷入困境時神秘地把好運借給他們。你也不確定你是怎麽做到的；你只是想想，它就實現了。這無疑是你受到命運眷顧的象徵！",
-				"當一個與你距離30呎內，你能看見的隊友在攻擊檢定、能力檢定、或豁免檢定的d20中骰出了1，你可以使用你的反應來讓該隊友重新擲骰。該隊友必須使用新的擲骰結果。",
+				"你的族人們有着非同尋常的好運氣，而你也學習過如何在看到同伴陷入困境時神祕地把好運借給他們。你也不確定你是怎麼做到的；你只是想想，它就實現了。這無疑是你受到命運眷顧的象徵！",
+				"當一個與你距離30尺內，你能看見的隊友在攻擊檢定、能力檢定、或豁免檢定的d20中骰出了1，你可以使用你的反應來讓該隊友重新擲骰。該隊友必須使用新的擲骰結果。",
 				"當你使用這個能力，直到你的下個回合結束之前，你都不能使用你的幸運種族特性。"
 			],
 			"ENG_name": "Bountiful Luck"
@@ -454,12 +490,17 @@
 					"str": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"athletics": true
+				}
+			],
 			"entries": [
 				"You become stronger, gaining the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Athletics} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You gain proficiency in the {@skill 運動} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
 						"You count as if you were one size larger for the purpose of determining your carrying capacity."
 					]
 				}
@@ -474,12 +515,17 @@
 					"dex": 1
 				}
 			],
+			"toolProficiencies": [
+				{
+					"thieves' tools": true
+				}
+			],
 			"entries": [
 				"You pride yourself on your quickness and your close study of certain clandestine activities. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency with {@item thieves' tools|phb}. If you are already proficient with them, you add double your proficiency bonus to checks you make with them."
+						"You gain proficiency with {@item 盜賊工具|phb}. If you are already proficient with them, you add double your proficiency bonus to checks you make with them."
 					]
 				}
 			]
@@ -490,12 +536,13 @@
 			"page": 165,
 			"entries": [
 				"當你使用動作進行疾走時，你可以使用附贈動作來進行一次近戰武器攻擊或推撞一個生物。",
-				"若你直線移動至少10呎後馬上進行該附贈動作，則（若你選擇近戰攻擊且命中）該攻擊的傷害獲得+5加值，或（若你選擇推撞且成功）目標被推離你最多10呎。"
+				"若你直線移動至少10尺後馬上進行該附贈動作，則（若你選擇近戰攻擊且命中）該攻擊的傷害獲得+5加值，或（若你選擇推撞且成功）目標被推離你最多10尺。"
 			],
 			"ENG_name": "Charger"
 		},
 		{
-			"name": "Chef",
+			"name": "大廚",
+			"ENG_name": "Chef",
 			"source": "TCE",
 			"page": 79,
 			"ability": [
@@ -509,14 +556,19 @@
 					}
 				}
 			],
+			"toolProficiencies": [
+				{
+					"cook's utensils": true
+				}
+			],
 			"entries": [
-				"Time spent mastering the culinary arts has paid off, granting you the following benefits:",
+				"花費在專研廚藝上的工夫已然有了回報，使你獲得了以下增益：",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency with {@item cook's utensils|phb} if you don't already have it.",
-						"As part of a short rest, you can cook special food, provided you have ingredients and {@item cook's utensils|phb} on hand. You can prepare enough of this food for a number of creatures equal to 4 + your proficiency bonus. At the end of the short rest, any creature who eats the food and spends one or more Hit Dice to regain hit points regains an extra {@dice 1d8} hit points.",
-						"With one hour of work or when you finish a long rest, you can cook a number of treats equal to your proficiency bonus. These special treats last 8 hours after being made. A creature can use a bonus action to eat one of those treats to gain temporary hit points equal to your proficiency bonus."
+						"如果你還沒有獲得{@item 廚師工具|phb}的熟練項，獲得之。",
+						"作爲短休的一部分，只要你手上有原料和{@item 廚師工具|phb}，你便可以烹飪特製料理。你可以爲特定數量的生物準備這種食物，其數量等同於4 + 你的熟練加值。在本次短休結束時，任何食用了料理並且花費了一個或更多生命骰來恢復生命值的生物恢復額外{@dice 1d8}點生命值。",
+						"在花費一小時精心製作後，或者在完成一次長休時，你可以製作等同於你熟練加值個數的餐點。這些餐點在製作完成後持續八小時。任何食用餐點的生物都能獲得等同於你熟練加值的臨時生命值。"
 					]
 				}
 			]
@@ -536,13 +588,18 @@
 					}
 				}
 			],
+			"toolProficiencies": [
+				{
+					"cook's utensils": true
+				}
+			],
 			"entries": [
 				"Time and effort spent mastering the culinary arts has paid off. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency with {@item cook's utensils|phb} if you don't already have it.",
-						"As part of a short rest, you can cook special food, provided you have ingredients and {@item cook's utensils|phb} on hand. You can prepare enough of this food for a number of creatures equal to 4 + your proficiency bonus. At the end of the short rest, any creature who eats the food and spends one or more Hit Dice to regain hit points regains an extra {@dice 1d8} hit points.",
+						"You gain proficiency with {@item 廚師工具|phb} if you don't already have it.",
+						"As part of a short rest, you can cook special food, provided you have ingredients and {@item 廚師工具|phb} on hand. You can prepare enough of this food for a number of creatures equal to 4 + your proficiency bonus. At the end of the short rest, any creature who eats the food and spends one or more Hit Dice to regain hit points regains an extra {@dice 1d8} hit points.",
 						"With one hour of work or when you finish a long rest, you can cook a number of treats equal to your proficiency bonus. These special treats last 8 hours after being made. A creature can use a bonus action to eat one of those treats to gain temporary hit points equal to your proficiency bonus."
 					]
 				}
@@ -562,11 +619,16 @@
 					]
 				}
 			],
+			"skillProficiencies": [
+				{
+					"animal handling": true
+				}
+			],
 			"additionalSpells": [
 				{
 					"ability": "int",
 					"innate": {
-						"1": {
+						"_": {
 							"will": [
 								"speak with animals"
 							],
@@ -584,8 +646,8 @@
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Animal Handling} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"You learn the {@spell 動物交談術} spell and can cast it at will, without expending a spell slot. You also learn the {@spell 化獸為友} spell, and you can cast it once with this feat, without expending a spell slot. You regain the ability to cast it in this way when you finish a long rest. Intelligence is your spellcasting ability for these spells."
+						"You gain proficiency in the {@skill 馴獸} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You learn the {@spell 動物交談術} spell and can cast it at will, without expending a spell slot. You also learn the {@spell 化獸爲友} spell, and you can cast it once with this feat, without expending a spell slot. You regain the ability to cast it in this way when you finish a long rest. Intelligence is your spellcasting ability for these spells."
 					]
 				}
 			]
@@ -600,7 +662,7 @@
 					"type": "list",
 					"items": [
 						"你忽略你所熟練的弩上的裝填屬性。",
-						"處於敵對生物5呎距離內並不會讓你的遠程攻擊獲得劣勢。",
+						"處於敵對生物5尺距離內並不會讓你的遠程攻擊獲得劣勢。",
 						"當你採取攻擊動作並且以單手武器攻擊，你可以使用附贈動作以一把你持握的{@item 手弩|phb}進行攻擊。"
 					]
 				}
@@ -608,7 +670,8 @@
 			"ENG_name": "Crossbow Expert"
 		},
 		{
-			"name": "Crusher",
+			"name": "粉碎者",
+			"ENG_name": "Crusher",
 			"source": "TCE",
 			"page": 79,
 			"ability": [
@@ -623,12 +686,12 @@
 				}
 			],
 			"entries": [
-				"You are practiced in the art of crushing your enemies, granting you the following benefits:",
+				"你擅長於碾碎敵人的技藝，你獲得了以下增益：",
 				{
 					"type": "list",
 					"items": [
-						"Once per turn, when you hit a creature with an attack that deals bludgeoning damage, you can move it 5 feet to an unoccupied space, provided the target is no more than one size larger than you.",
-						"When you score a critical hit that deals bludgeoning damage to a creature, attack rolls against that creature are made with advantage until the start of your next turn."
+						"每回合一次，當你用造成鈍擊傷害的攻擊命中一個生物時，只要目標的體型並未比你大一級以上，你就可以將目標移動五尺至一個未被佔據的空間。",
+						"當你用造成鈍擊傷害的攻擊命中一個生物並造成重擊時，直至你的下一回合開始，所有針對該生物的攻擊檢定具有優勢。"
 					]
 				}
 			]
@@ -686,13 +749,18 @@
 					"cha": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"persuasion": true
+				}
+			],
 			"entries": [
 				"You master the arts of diplomacy, gaining the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Persuasion} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"If you spend 1 minute talking to someone who can understand what you say, you can make a Charisma ({@skill Persuasion}) check contested by the creature's Wisdom ({@skill Insight}) check. If you or your companions are fighting the creature, your check automatically fails. If your check succeeds, the target is {@condition charmed} by you as long as it remains within 60 feet of you and for 1 minute thereafter."
+						"You gain proficiency in the {@skill 說服} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"If you spend 1 minute talking to someone who can understand what you say, you can make a Charisma ({@skill 說服}) check contested by the creature's Wisdom ({@skill 洞悉}) check. If you or your companions are fighting the creature, your check automatically fails. If your check succeeds, the target is {@condition 魅惑} by you as long as it remains within 60 feet of you and for 1 minute thereafter."
 					]
 				}
 			]
@@ -726,7 +794,7 @@
 				{
 					"type": "list",
 					"items": [
-						"你可以花費一次你噴吐武器特性的使用額度，並非噴吐出毀滅性的能量，而是發出咆嘯以強迫距離你30呎內每個你所選擇的生物進行一次感知豁免檢定（DC8+你的熟練加值+你的魅力調整值）。如果目標不能聽見或看見你，則目標將自動通過豁免。若豁免失敗，則目標將對你感到{@condition 恐懼}持續1分鐘。如果因此陷入{@condition 恐懼}的目標受到任何傷害，它可以重複進行這個豁免檢定，並在豁免成功時終止此能力對自己的效果。"
+						"你可以花費一次你噴吐武器特性的使用額度，並非噴吐出毀滅性的能量，而是發出咆嘯以強迫距離你30尺內每個你所選擇的生物進行一次感知豁免檢定（DC爲8 + 你的熟練加值 + 你的魅力調整值）。如果目標不能聽見或看見你，則目標將自動通過豁免。若豁免失敗，則目標將對你感到{@condition 恐懼}持續1分鐘。如果因此陷入{@condition 恐懼}的目標受到任何傷害，它可以重複進行這個豁免檢定，並在豁免成功時終止此能力對自己的效果。"
 					]
 				}
 			],
@@ -762,7 +830,7 @@
 				{
 					"type": "list",
 					"items": [
-						"你可以花費一次你噴吐武器特性的使用額度，並非噴吐出毀滅性的能量，而是發出咆嘯以強迫距離你30呎內每個你所選擇的生物進行一次感知豁免檢定（DC8+你的熟練加值+你的魅力調整值）。如果目標不能聽見或看見你，則目標將自動通過豁免。若豁免失敗，則目標將對你感到{@condition 恐懼}持續1分鐘。如果因此陷入{@condition 恐懼}的目標受到任何傷害，它可以重複進行這個豁免檢定，並在豁免成功時終止此能力對自己的效果。"
+						"你可以花費一次你噴吐武器特性的使用額度，並非噴吐出毀滅性的能量，而是發出咆嘯以強迫距離你30尺內每個你所選擇的生物進行一次感知豁免檢定（DC爲8 + 你的熟練加值 + 你的魅力調整值）。如果目標不能聽見或看見你，則目標將自動通過豁免。若豁免失敗，則目標將對你感到{@condition 恐懼}持續1分鐘。如果因此陷入{@condition 恐懼}的目標受到任何傷害，它可以重複進行這個豁免檢定，並在豁免成功時終止此能力對自己的效果。"
 					]
 				}
 			],
@@ -797,8 +865,8 @@
 				{
 					"type": "list",
 					"items": [
-						"你的鱗片變的堅硬。當你未穿著護甲，你可以使用13+你的敏捷調整值來算出你的AC。你可以在使用盾牌時而仍獲得這個好處。",
-						"你的指尖長出可伸縮的爪子。這對爪子是你可以用來進行徒手打擊的天生武器。如果你用它們命中目標，你造成等同於{@dice 1d4}+你的力量調整值的劈砍傷害，而非原本徒手打擊的鈍擊傷害。"
+						"你的鱗片變的堅硬。當你未穿着護甲，你可以使用13 + 你的敏捷調整值來算出你的AC。你可以在使用盾牌時而仍獲得這個好處。",
+						"你的指尖長出可伸縮的爪子。這對爪子是你可以用來進行徒手打擊的天生武器。如果你用它們命中目標，你造成等同於{@dice 1d4} + 你的力量調整值的揮砍傷害，而非原本徒手打擊的鈍擊傷害。"
 					]
 				}
 			],
@@ -834,8 +902,8 @@
 				{
 					"type": "list",
 					"items": [
-						"你的鱗片變的堅硬。當你未穿著護甲，你可以使用13+你的敏捷調整值來算出你的AC。你可以在使用盾牌時而仍獲得這個好處。",
-						"你的指尖長出可伸縮的爪子。這對爪子是你可以用來進行徒手打擊的天生武器。如果你用它們命中目標，你造成等同於{@dice 1d4}+你的力量調整值的劈砍傷害，而非原本徒手打擊的鈍擊傷害。"
+						"你的鱗片變的堅硬。當你未穿着護甲，你可以使用13 + 你的敏捷調整值來算出你的AC。你可以在使用盾牌時而仍獲得這個好處。",
+						"你的指尖長出可伸縮的爪子。這對爪子是你可以用來進行徒手打擊的天生武器。如果你用它們命中目標，你造成等同於{@dice 1d4} + 你的力量調整值的揮砍傷害，而非原本徒手打擊的鈍擊傷害。"
 					]
 				}
 			],
@@ -874,16 +942,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"detect magic"
-								]
-							},
-							"_": [
-								"mage hand"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -897,6 +955,16 @@
 									"clairvoyance"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"detect magic"
+								]
+							},
+							"_": [
+								"mage hand"
+							]
 						}
 					},
 					"ability": "wis"
@@ -948,16 +1016,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"identify"
-								]
-							},
-							"_": [
-								"mage hand"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -971,6 +1029,16 @@
 									"clairvoyance"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"identify"
+								]
+							},
+							"_": [
+								"mage hand"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1018,16 +1086,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"speak with animals"
-								]
-							},
-							"_": [
-								"druidcraft"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1041,6 +1099,16 @@
 									"conjure animals"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"speak with animals"
+								]
+							},
+							"_": [
+								"druidcraft"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1088,16 +1156,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"cure wounds"
-								]
-							},
-							"_": [
-								"spare the dying"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1111,6 +1169,16 @@
 									"revivify"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"cure wounds"
+								]
+							},
+							"_": [
+								"spare the dying"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1158,16 +1226,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"unseen servant"
-								]
-							},
-							"_": [
-								"friends"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1181,6 +1239,16 @@
 									"Leomund's tiny hut"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"unseen servant"
+								]
+							},
+							"_": [
+								"friends"
+							]
 						}
 					},
 					"ability": "cha"
@@ -1228,16 +1296,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"identify"
-								]
-							},
-							"_": [
-								"mending"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1251,6 +1309,16 @@
 									"fabricate"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"identify"
+								]
+							},
+							"_": [
+								"mending"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1298,16 +1366,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"expeditious retreat"
-								]
-							},
-							"_": [
-								"light"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1321,6 +1379,16 @@
 									"teleportation circle"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"expeditious retreat"
+								]
+							},
+							"_": [
+								"light"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1368,16 +1436,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"comprehend languages"
-								]
-							},
-							"_": [
-								"message"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1391,6 +1449,16 @@
 									"tongues"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"comprehend languages"
+								]
+							},
+							"_": [
+								"message"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1438,16 +1506,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"compelled duel"
-								]
-							},
-							"_": [
-								"blade ward"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1461,6 +1519,16 @@
 									"protection from energy"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"compelled duel"
+								]
+							},
+							"_": [
+								"blade ward"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1508,16 +1576,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"dancing lights"
-								]
-							},
-							"_": [
-								"disguise self"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1531,6 +1589,16 @@
 									"nondetection"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"dancing lights"
+								]
+							},
+							"_": [
+								"disguise self"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1578,16 +1646,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"fog cloud"
-								]
-							},
-							"_": [
-								"shocking grasp"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1601,6 +1659,16 @@
 									"sleet storm"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"fog cloud"
+								]
+							},
+							"_": [
+								"shocking grasp"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1648,16 +1716,6 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
-							"daily": {
-								"1": [
-									"alarm"
-								]
-							},
-							"_": [
-								"resistance"
-							]
-						},
 						"5": {
 							"daily": {
 								"1": [
@@ -1671,6 +1729,16 @@
 									"magic circle"
 								]
 							}
+						},
+						"_": {
+							"daily": {
+								"1": [
+									"alarm"
+								]
+							},
+							"_": [
+								"resistance"
+							]
 						}
 					},
 					"ability": "wis"
@@ -1720,7 +1788,7 @@
 				{
 					"ability": "cha",
 					"innate": {
-						"1": {
+						"_": {
 							"will": [
 								"detect magic"
 							],
@@ -1757,7 +1825,7 @@
 				{
 					"ability": "cha",
 					"innate": {
-						"1": {
+						"_": {
 							"will": [
 								"detect magic"
 							],
@@ -1802,10 +1870,10 @@
 				{
 					"type": "list",
 					"items": [
-						"你在搜尋密門時所進行的睿知（{@skill 感知}）和智力（{@skill 調查}）檢定中有優勢。",
+						"你在搜索密門時所進行的感知（{@skill 察覺}）和智力（{@skill 調查}）檢定中有優勢。",
 						"你在躲避或抵抗陷阱時的豁免檢定中有優勢。",
 						"對於陷阱所造成的傷害具有抗性。",
-						"以快速步速旅行並不會對你的被動睿知（{@skill 感知}）數值造成原本的-5減值。"
+						"以快速步速旅行並不會對你的被動感知（{@skill 察覺}）數值造成原本的-5減值。"
 					]
 				}
 			],
@@ -1825,7 +1893,7 @@
 				{
 					"type": "list",
 					"items": [
-						"當你骰生命骰來恢復生命值時，每顆生命骰恢復的生命值最少等於你體質調整值的兩倍（最少為2）。"
+						"當你骰生命骰來恢復生命值時，每顆生命骰恢復的生命值最少等於你體質調整值的兩倍（最少爲2）。"
 					]
 				}
 			],
@@ -1854,7 +1922,7 @@
 				{
 					"type": "list",
 					"items": [
-						"Whenever you take the {@action Dodge} action in combat, you can spend one Hit Die to heal yourself. Roll the die, add your Constitution modifier, and regain a number of hit points equal to the total (minimum of 1)."
+						"Whenever you take the {@action 閃避} action in combat, you can spend one Hit Die to heal yourself. Roll the die, add your Constitution modifier, and regain a number of hit points equal to the total (minimum of 1)."
 					]
 				}
 			]
@@ -1878,18 +1946,19 @@
 				}
 			],
 			"entries": [
-				"你的體內流淌著矮人英雄的血脈。你獲得下列好處：",
+				"你的體內流淌着矮人英雄的血脈。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"每當你在戰鬥中採取{@action 閃避}動作時，你可以消耗一顆生命骰以治療你自己。骰該生命骰，加上你的體質調整值，並回復等同於其總和數值的生命值（最少為1）。"
+						"每當你在戰鬥中採取{@action 閃避}動作時，你可以消耗一顆生命骰以治療你自己。骰該生命骰，加上你的體質調整值，並回復等同於其總和數值的生命值（最少爲1）。"
 					]
 				}
 			],
 			"ENG_name": "Dwarven Fortitude"
 		},
 		{
-			"name": "Eldritch Adept",
+			"name": "魔能導師",
+			"ENG_name": "Eldritch Adept",
 			"source": "TCE",
 			"page": 79,
 			"prerequisite": [
@@ -1898,8 +1967,8 @@
 				}
 			],
 			"entries": [
-				"Studying occult lore, you have unlocked eldritch power within yourself: you learn one {@filter Eldritch Invocation|optionalfeatures|Feature Type=EI} option of your choice from the warlock class. If the invocation has a prerequisite of any kind, you can choose that invocation only if you're a warlock who meets the prerequisite.",
-				"Whenever you gain a level, you can replace the invocation with another one from the warlock class."
+				"對神祕學的研究使你解鎖了體內的祕法能量。你從契術師職業中選擇並獲得一項{@filter 魔能祈喚|optionalfeatures|Feature Type=EI}。如果該祈喚具有任何先決條件，則僅當你是一位滿足該條件的契術師時才能選擇該祈喚。",
+				"當你升級時，你可以將該祈喚更換爲契術師職業中的另一個魔能祈喚。"
 			]
 		},
 		{
@@ -1926,8 +1995,8 @@
 				}
 			],
 			"entries": [
-				"當你獲得此專長時，選擇下列一種傷害類型：酸蝕、寒冰、火焰、閃電、雷鳴。",
-				"你施放的法術忽視你所選擇傷害類型的抗性。此外，當你施放法術造成所選類型的傷害時，你可以將所有傷害骰骰出的1視為2。",
+				"當你獲得此專長時，選擇下列一種傷害類型：強酸、冷凍、火焰、閃電、雷鳴。",
+				"你施放的法術忽視你所選擇傷害類型的抗性。此外，當你施放法術造成所選類型的傷害時，你可以將所有傷害骰骰出的1視爲2。",
 				"你可以多次選擇獲得此專長。每次你這麼做，都必須選擇一種不同的傷害類型。"
 			],
 			"ENG_name": "Elemental Adept"
@@ -1954,11 +2023,11 @@
 				}
 			],
 			"entries": [
-				"精靈的準確性是眾所周知的，尤其是精靈弓箭手和施法者。你在依賴精確度而非蠻力的攻擊中有著不可思議的準頭。你獲得下列好處：",
+				"精靈的準確性是衆所周知的，尤其是精靈弓箭手和施法者。你在依賴精確度而非蠻力的攻擊中有着不可思議的準頭。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"每當你在使用敏捷、智力、睿知、或魅力的攻擊檢定中具有優勢，你可以重骰其中一顆骰子一次。"
+						"每當你在使用敏捷、智力、感知、或魅力的攻擊檢定中具有優勢，你可以重骰其中一顆骰子一次。"
 					]
 				}
 			],
@@ -1994,11 +2063,11 @@
 				}
 			],
 			"entries": [
-				"精靈的準確性是眾所周知的，尤其是精靈弓箭手和施法者。你在依賴精確度而非蠻力的攻擊中有著不可思議的準頭。你獲得下列好處：",
+				"精靈的準確性是衆所周知的，尤其是精靈弓箭手和施法者。你在依賴精確度而非蠻力的攻擊中有着不可思議的準頭。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"每當你在使用敏捷、智力、睿知、或魅力的攻擊檢定中具有優勢，你可以重骰其中一顆骰子一次。"
+						"每當你在使用敏捷、智力、感知、或魅力的攻擊檢定中具有優勢，你可以重骰其中一顆骰子一次。"
 					]
 				}
 			],
@@ -2013,13 +2082,18 @@
 					"wis": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"insight": true
+				}
+			],
 			"entries": [
 				"You possess keen insight into how other people think and feel. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Insight} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"You can use your action to try to get uncanny insight about one humanoid you can see within 30 feet of you. Make a Wisdom ({@skill Insight}) check contested by the target's Charisma ({@skill Deception}) check. If your check succeeds, you have advantage on attack rolls and ability checks against the target until the end of your next turn."
+						"You gain proficiency in the {@skill 洞悉} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You can use your action to try to get uncanny insight about one humanoid you can see within 30 feet of you. Make a Wisdom ({@skill 洞悉}) check contested by the target's Charisma ({@skill 欺瞞}) check. If your check succeeds, you have advantage on attack rolls and ability checks against the target until the end of your next turn."
 					]
 				}
 			]
@@ -2042,12 +2116,18 @@
 					"cha": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"deception": true,
+					"persuasion": true
+				}
+			],
 			"entries": [
 				"You develop your magnetic personality to ease your way through the world. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Deception} and {@skill Persuasion} skills. If you're already proficient in either skill, your proficiency bonus is doubled for any check you make with that skill."
+						"You gain proficiency in the {@skill 欺瞞} and {@skill 說服} skills. If you're already proficient in either skill, your proficiency bonus is doubled for any check you make with that skill."
 					]
 				}
 			]
@@ -2126,9 +2206,9 @@
 					"type": "list",
 					"items": [
 						"You gain a +1 bonus to attack rolls you make with the weapon.",
-						"Whenever you have advantage on a melee attack roll you make with the weapon and hit, you can knock the target {@condition prone} if the lower of the two {@dice d20} rolls would also hit the target.",
+						"Whenever you have advantage on a melee attack roll you make with the weapon and hit, you can knock the target {@condition 伏地} if the lower of the two {@dice d20} rolls would also hit the target.",
 						"Whenever you have disadvantage on a melee attack roll you make with the weapon, the target takes bludgeoning damage equal to your Strength modifier (minimum of 0) if the attack misses but the higher of the two {@dice d20} rolls would have hit.",
-						"If you use the {@action Help} action to aid an ally's melee attack while you're wielding the weapon, you knock the target's shield aside momentarily. In addition to the ally gaining advantage on the attack roll, the ally gains a +2 bonus to the roll if the target is using a shield."
+						"If you use the {@action 協助} action to aid an ally's melee attack while you're wielding the weapon, you knock the target's shield aside momentarily. In addition to the ally gaining advantage on the attack roll, the ally gains a +2 bonus to the roll if the target is using a shield."
 					]
 				}
 			]
@@ -2156,7 +2236,7 @@
 				{
 					"ability": "int",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									"misty step"
@@ -2203,11 +2283,16 @@
 					}
 				}
 			],
+			"languageProficiencies": [
+				{
+					"sylvan": true
+				}
+			],
 			"additionalSpells": [
 				{
 					"ability": "int",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									"misty step"
@@ -2230,7 +2315,8 @@
 			"ENG_name": "Fey Teleportation"
 		},
 		{
-			"name": "Fey Touched",
+			"name": "精類觸碰",
+			"ENG_name": "Fey Touched",
 			"source": "TCE",
 			"page": 79,
 			"ability": [
@@ -2249,7 +2335,7 @@
 				{
 					"ability": "inherit",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1e": [
 									"misty step",
@@ -2263,11 +2349,11 @@
 				}
 			],
 			"entries": [
-				"Your exposure to the Feywild's magic has changed you, granting you the following benefits:",
+				"暴露在妖精荒野的魔法之下的經歷已經改變了你，使你獲得了以下增益：",
 				{
 					"type": "list",
 					"items": [
-						"You learn the {@spell 迷蹤步} spell and one {@filter 1st-level spell|spells|level=1|school=E;D} of your choice. The 1st-level spell must be from the divination or enchantment school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can't cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is the ability increased by this feat."
+						"你習得{@spell 迷蹤步}以及一個由你選擇的{@filter 一環法術|spells|level=1|school=E;D}。該一環法術必須是預言系或者惑控系法術。你可以在不消耗法術位的情況下施展這些法術各一次。當你以此法施展某個法術後，你不能再次以此法施展該法術，直至你完成一次長休。你也可以消耗合適的法術位來施展這些法術。這些法術的施法關鍵屬性是你由此專長提升的屬性。"
 					]
 				}
 			]
@@ -2292,7 +2378,7 @@
 				{
 					"ability": "inherit",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1e": [
 									"misty step",
@@ -2316,7 +2402,8 @@
 			]
 		},
 		{
-			"name": "Fighting Initiate",
+			"name": "戰鬥學徒",
+			"ENG_name": "Fighting Initiate",
 			"source": "TCE",
 			"page": 80,
 			"prerequisite": [
@@ -2329,8 +2416,8 @@
 				}
 			],
 			"entries": [
-				"Your martial training has helped you develop a particular style of fighting. As a result, you learn one {@filter Fighting Style|optionalfeatures|Feature Type=FS:F} option of your choice from the fighter class. If you already have a style, the one you choose must be different.",
-				"Whenever you reach a level that grants the Ability Score Improvement feature, you can replace this feat's fighting style with another one from the fighter class that you don't have."
+				"你的軍事訓練幫助你養成了一種特定的戰術風格。因此，你可以從戰士職業中選擇並習得一項{@filter 戰鬥風格|optionalfeatures|Feature Type=FS:F}。如果你已經有一項戰鬥風格，你不能選擇相同的戰鬥風格。",
+				"每當你升級並達到獲得屬性值提升特性的等級時，你可以來自此專長的戰鬥風格替換爲戰士職業中的另一項你未習得的戰鬥風格。"
 			]
 		},
 		{
@@ -2362,7 +2449,7 @@
 					"items": [
 						"You gain a +1 bonus to attack rolls you make with a flail.",
 						"As a bonus action on your turn, you can prepare yourself to extend your flail to sweep over targets' {@item shield|phb|shields}. Until the end of this turn, your attack rolls with a flail gain a +2 bonus against any target using a {@item shield|phb}.",
-						"When you hit with an opportunity attack using a flail, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + your Strength modifier) or be knocked {@condition prone}."
+						"When you hit with an opportunity attack using a flail, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + your Strength modifier) or be knocked {@condition 伏地}."
 					]
 				}
 			]
@@ -2396,8 +2483,8 @@
 				{
 					"type": "list",
 					"items": [
-						"當你為你所施放的法術擲骰決定火焰傷害時，你可以重骰任何你在火焰傷害骰中骰出的1，但你必須使用新的擲骰結果，即使其結果仍然是1。",
-						"每當你施放一個造成火焰傷害的法術時，你可以使烈焰環繞著你直到你的下個回合結束。這團烈焰不會傷害你或你的所有物，且會散發30呎範圍的明亮光照和再延伸30呎的微光光照。當這團烈焰存在時，任何距離你5呎內且以近戰攻擊命中你的生物將受到{@dice 1d4}火焰傷害。"
+						"當你爲你所施放的法術擲骰決定火焰傷害時，你可以重骰任何你在火焰傷害骰中骰出的1，但你必須使用新的擲骰結果，即使其結果仍然是1。",
+						"每當你施放一個造成火焰傷害的法術時，你可以使烈焰環繞着你直到你的下個回合結束。這團烈焰不會傷害你或你的所有物，且會散發30尺範圍的明亮光照和再延伸30尺的微光光照。當這團烈焰存在時，任何距離你5尺內且以近戰攻擊命中你的生物將受到{@dice 1d4}火焰傷害。"
 					]
 				}
 			],
@@ -2432,12 +2519,88 @@
 				{
 					"type": "list",
 					"items": [
-						"當你為你所施放的法術擲骰決定火焰傷害時，你可以重骰任何你在火焰傷害骰中骰出的1，但你必須使用新的擲骰結果，即使其結果仍然是1。",
-						"每當你施放一個造成火焰傷害的法術時，你可以使烈焰環繞著你直到你的下個回合結束。這團烈焰不會傷害你或你的所有物，且會散發30呎範圍的明亮光照和再延伸30呎的微光光照。當這團烈焰存在時，任何距離你5呎內且以近戰攻擊命中你的生物將受到{@dice 1d4}火焰傷害。"
+						"當你爲你所施放的法術擲骰決定火焰傷害時，你可以重骰任何你在火焰傷害骰中骰出的1，但你必須使用新的擲骰結果，即使其結果仍然是1。",
+						"每當你施放一個造成火焰傷害的法術時，你可以使烈焰環繞着你直到你的下個回合結束。這團烈焰不會傷害你或你的所有物，且會散發30尺範圍的明亮光照和再延伸30尺的微光光照。當這團烈焰存在時，任何距離你5尺內且以近戰攻擊命中你的生物將受到{@dice 1d4}火焰傷害。"
 					]
 				}
 			],
 			"ENG_name": "Flames of Phlegethos"
+		},
+		{
+			"name": "Gift of the Chromatic Dragon",
+			"source": "UA2021DraconicOptions",
+			"page": 4,
+			"entries": [
+				"You've manifested some of the power of chromatic dragons, granting you the following benefits:",
+				{
+					"type": "list",
+					"items": [
+						"As a bonus action, you can touch a simple or martial weapon and infuse it with one of the following damage types: acid, cold, fire, lightning, or poison. For the next minute, the weapon deals an extra {@dice 1d4} damage of the chosen type when it hits. After you use this ability, you can't do so again until you finish a long rest.",
+						"When you take acid, cold, fire, lightning, or poison damage, you can use your reaction to give yourself resistance to that instance of damage. You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+					]
+				}
+			]
+		},
+		{
+			"name": "Gift of the Gem Dragon",
+			"source": "UA2021DraconicOptions",
+			"page": 5,
+			"ability": [
+				{
+					"choose": {
+						"from": [
+							"int",
+							"wis",
+							"cha"
+						],
+						"amount": 1
+					}
+				}
+			],
+			"entries": [
+				"You've manifested some of the power of gem dragons, granting you the following benefits:",
+				{
+					"type": "list",
+					"items": [
+						"When you take damage from a creature that is within 10 feet of you, you can use your reaction to emanate telekinetic energy. The creature that dealt damage to you must succeed on a Strength saving throw (DC equals 8 + your proficiency bonus + the ability modifier of the score increased by this feat) or take {@dice 2d8} force damage and be pushed 10 feet away from you. You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+					]
+				}
+			]
+		},
+		{
+			"name": "Gift of the Metallic Dragon",
+			"source": "UA2021DraconicOptions",
+			"page": 4,
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"innate": {
+						"_": {
+							"daily": {
+								"1": [
+									"cure wounds"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				"You've manifested some of the power of metallic dragons, granting you the following benefits:",
+				{
+					"type": "list",
+					"items": [
+						"You learn the {@spell cure wounds} spell. You can cast this spell without expending a spell slot. Once you cast this spell in this way, you can't do so again until you finish a long rest. You can also cast this spell using spell slots you have. The spell's spellcasting ability is Intelligence, Wisdom, or Charisma when you cast it with this feat (choose when you gain this feat).",
+						"You can manifest protective wings that can shield you or others from attacks. When you or another creature you can see within 5 feet of you is hit by an attack roll, you can use your reaction to manifest spectral wings from your back for a moment. Roll a {@dice d4} and grant a bonus to the target's AC equal to the number rolled against that attack roll, potentially causing it to miss. You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+					]
+				}
+			]
 		},
 		{
 			"name": "Gourmand",
@@ -2448,14 +2611,19 @@
 					"con": 1
 				}
 			],
+			"toolProficiencies": [
+				{
+					"cook's utensils": true
+				}
+			],
 			"entries": [
 				"You have mastered a variety of special recipes, allowing you to prepare exotic dishes with useful effects. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency with {@item cook's utensils|phb}. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.",
-						"As an action, you can inspect a drink or plate of food within 5 feet of you and determine whether it is {@condition poisoned}, provided that you can see and smell it.",
-						"During a long rest, you can prepare and serve a meal that helps you and your allies recover from the rigors of adventuring, provided you have suitable food, {@item cook's utensils|phb}, and other supplies on hand. The meal serves up to six people, and each person who eats it regains two additional Hit Dice at the end of the long rest. In addition, those who partake of the meal have advantage on Constitution saving throws against disease for the next 24 hours."
+						"You gain proficiency with {@item 廚師工具|phb}. If you are already proficient with them, you add double your proficiency bonus to checks you make with them.",
+						"As an action, you can inspect a drink or plate of food within 5 feet of you and determine whether it is {@condition 中毒}, provided that you can see and smell it.",
+						"During a long rest, you can prepare and serve a meal that helps you and your allies recover from the rigors of adventuring, provided you have suitable food, {@item 廚師工具|phb}, and other supplies on hand. The meal serves up to six people, and each person who eats it regains two additional Hit Dice at the end of the long rest. In addition, those who partake of the meal have advantage on Constitution saving throws against disease for the next 24 hours."
 					]
 				}
 			]
@@ -2475,7 +2643,7 @@
 				}
 			],
 			"entries": [
-				"你著重磨練了如何保持近距離擒抱的技巧。你獲得下列好處：",
+				"你着重磨練瞭如何保持近距離擒抱的技巧。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
@@ -2491,7 +2659,7 @@
 			"source": "PHB",
 			"page": 167,
 			"entries": [
-				"你學會了如何將武器重量轉化為優勢，利用其動量來增強你的打擊。你獲得下列好處：",
+				"你學會瞭如何將武器重量轉化爲優勢，利用其動量來增強你的打擊。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
@@ -2534,13 +2702,14 @@
 					"items": [
 						"During the first round of any combat against your chosen foes, your attack rolls against any of them have advantage.",
 						"When any of your chosen foes makes an opportunity attack against you, it makes the attack roll with disadvantage.",
-						"Whenever you make an Intelligence ({@skill Arcana}, {@skill History}, {@skill Nature}, or {@skill Religion}) check to recall information about your chosen foes, you add double your proficiency bonus to the check, even if you're not normally proficient."
+						"Whenever you make an Intelligence ({@skill 奧祕}, {@skill 歷史}, {@skill 自然}, or {@skill 宗教}) check to recall information about your chosen foes, you add double your proficiency bonus to the check, even if you're not normally proficient."
 					]
 				}
 			]
 		},
 		{
-			"name": "Gunner",
+			"name": "槍手",
+			"ENG_name": "Gunner",
 			"source": "TCE",
 			"page": 80,
 			"ability": [
@@ -2548,14 +2717,19 @@
 					"dex": 1
 				}
 			],
+			"weaponProficiencies": [
+				{
+					"firearms": true
+				}
+			],
 			"entries": [
-				"You have a quick hand and keen eye when employing firearms, granting you the following benefits:",
+				"你持槍時的手快眼明使你獲得了以下增益：",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency with firearms (see \"{@variantrule Firearms|DMG}\" in the Dungeon Master's Guide).",
-						"You ignore the loading property of firearms.",
-						"Being within 5 feet of a hostile creature doesn't impose disadvantage on your ranged attack rolls."
+						"你獲得槍械的熟練項（見城主指南的\"{@variantrule Firearms|DMG}\"欄目）。",
+						"你忽略槍械的裝填屬性。",
+						"你在敵對生物５尺範圍內發動遠程攻擊檢定時，不會因此而具有劣勢。"
 					]
 				}
 			]
@@ -2567,6 +2741,11 @@
 			"ability": [
 				{
 					"dex": 1
+				}
+			],
+			"weaponProficiencies": [
+				{
+					"firearms": true
 				}
 			],
 			"entries": [
@@ -2586,19 +2765,19 @@
 			"source": "PHB",
 			"page": 167,
 			"entries": [
-				"你是名嫻熟的醫者，能夠快速地治療傷口並讓隊友們重返戰場。你獲得下列好處：",
+				"你是名嫺熟的醫者，能夠快速地治療傷口並讓隊友們重返戰場。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
 						"當你使用{@item 醫療工具組|phb}穩定瀕死生物的傷勢時，該生物同時恢復1點生命值。",
-						"以一個動作，你可以消耗醫療工具組的一次使用額度照顧一個生物，並恢復他{@dice 1d6+4}加上等同該生物最大生命骰數量的生命值。直到完成短休或長休之前，該生物都不能再透過此專長恢復生命值。"
+						"以一個動作，你可以消耗醫療工具組的一次使用額度照顧一個生物，並恢復他{@dice 1d6+4}加上等同該生物最大生命骰數量的生命值。直到完成短休或長休之前，該生物都不能再通過此專長恢復生命值。"
 					]
 				}
 			],
 			"ENG_name": "Healer"
 		},
 		{
-			"name": "重度著甲",
+			"name": "重度着甲",
 			"source": "PHB",
 			"page": 167,
 			"prerequisite": [
@@ -2613,6 +2792,11 @@
 			"ability": [
 				{
 					"str": 1
+				}
+			],
+			"armorProficiencies": [
+				{
+					"heavy": true
 				}
 			],
 			"entries": [
@@ -2649,7 +2833,7 @@
 				{
 					"type": "list",
 					"items": [
-						"當你穿著重甲時，非魔法武器對你造成的鈍擊、穿刺、劈砍傷害減少3點。"
+						"當你穿着重甲時，非魔法武器對你造成的鈍擊、穿刺、揮砍傷害減少3點。"
 					]
 				}
 			],
@@ -2664,13 +2848,18 @@
 					"int": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"history": true
+				}
+			],
 			"entries": [
 				"Your study of history rewards you with the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill History} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"When you take the {@action Help} action to aid another creature's ability check, you can make a DC 15 Intelligence ({@skill History}) check. On a success, that creature's check gains a bonus equal to your proficiency bonus, as you share pertinent advice and historical examples. To receive this bonus, the creature must be able to understand what you're saying."
+						"You gain proficiency in the {@skill 歷史} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"When you take the {@action 協助} action to aid another creature's ability check, you can make a DC 15 Intelligence ({@skill 歷史}) check. On a success, that creature's check gains a bonus equal to your proficiency bonus, as you share pertinent advice and historical examples. To receive this bonus, the creature must be able to understand what you're saying."
 					]
 				}
 			]
@@ -2736,7 +2925,7 @@
 				{
 					"type": "list",
 					"items": [
-						"你擁有對寒冰和毒素傷害的抗性。",
+						"你擁有對冷凍和毒素傷害的抗性。",
 						"你在對抗{@condition 中毒}的豁免檢定中具有優勢。"
 					]
 				}
@@ -2766,7 +2955,7 @@
 				{
 					"type": "list",
 					"items": [
-						"你擁有對寒冰和毒素傷害的抗性。",
+						"你擁有對冷凍和毒素傷害的抗性。",
 						"你在對抗{@condition 中毒}的豁免檢定中具有優勢。"
 					]
 				}
@@ -2787,7 +2976,7 @@
 				}
 			],
 			"entries": [
-				"你可以花費10分鐘來激勵你的同伴，鼓舞他們對戰鬥的信心。若你這麼做，選擇30呎內最多6個可以看到或聽到你且理解你的友善生物（可以包括你自己）。每個生物可以獲得等同你的等級加上你的魅力調整值的臨時生命值。直到完成短休或長休之前，受影響的生物都不能再透過此專長獲得臨時生命值。"
+				"你可以花費10分鐘來激勵你的同伴，鼓舞他們對戰鬥的信心。若你這麼做，選擇30尺內最多6個可以看到或聽到你且理解你的友善生物（可以包括你自己）。每個生物可以獲得等同你的等級加上你的魅力調整值的臨時生命值。直到完成短休或長休之前，受影響的生物都不能再通過此專長獲得臨時生命值。"
 			],
 			"ENG_name": "Inspiring Leader"
 		},
@@ -2800,13 +2989,18 @@
 					"int": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"investigation": true
+				}
+			],
 			"entries": [
 				"You have an eye for detail and can pick out the smallest clues. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Investigation} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"You can take the {@action Search} action as a bonus action."
+						"You gain proficiency in the {@skill 調查} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You can take the {@action 搜尋} action as a bonus action."
 					]
 				}
 			]
@@ -2821,7 +3015,7 @@
 				}
 			],
 			"entries": [
-				"你擁有著能以不可思議的精確度牢牢追蹤時間、方位、以及細節的大腦。你獲得下列好處：",
+				"你擁有着能以不可思議的精確度牢牢追蹤時間、方位、以及細節的大腦。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
@@ -2834,7 +3028,7 @@
 			"ENG_name": "Keen Mind"
 		},
 		{
-			"name": "輕度著甲",
+			"name": "輕度着甲",
 			"source": "PHB",
 			"page": 167,
 			"ability": [
@@ -2846,6 +3040,11 @@
 						],
 						"amount": 1
 					}
+				}
+			],
+			"armorProficiencies": [
+				{
+					"light": true
 				}
 			],
 			"entries": [
@@ -2868,13 +3067,18 @@
 					"int": 1
 				}
 			],
+			"languageProficiencies": [
+				{
+					"any": 3
+				}
+			],
 			"entries": [
 				"你致力研究於語言和密碼。獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
 						"你習得三種自選語言。",
-						"你能夠巧妙地創造出書寫密碼。其他人無法破譯你創造的密碼，除非你教導他們、他們成功通過一次智力檢定（DC等於你的智力值+你的熟練加值）、或是他們使用魔法破譯。"
+						"你能夠巧妙地創造出書寫密碼。其他人無法破譯你創造的密碼，除非你教導他們、他們成功通過一次智力檢定（DC等於你的智力值 + 你的熟練加值）、或是他們使用魔法破譯。"
 					]
 				}
 			],
@@ -2885,7 +3089,7 @@
 			"source": "PHB",
 			"page": 167,
 			"entries": [
-				"你的離奇運氣讓你可以在最危險的時刻化險為夷。",
+				"你的離奇運氣讓你可以在最危險的時刻化險爲夷。",
 				"你獲得3點幸運點。當你進行攻擊檢定、屬性檢定、或豁免檢定時，你可以花費一點幸運點以再骰一顆額外的d20。你可以選擇在你擲骰之後，但決定結果之前才花費幸運點。你選擇要使用哪一顆d20以用在該攻擊檢定、屬性檢定、或豁免檢定。",
 				"你也可以在一次對你的攻擊檢定被進行時選擇花費一點幸運點。骰一顆d20，然後選擇該次攻擊要使用攻擊者還是你的骰子。如果有超過一個生物花費幸運點以影響一次擲骰的結果，則幸運點將彼此抵消；不需要擲任何額外的骰子。",
 				"你在完成一次長休後恢復所有你花費掉的幸運點。"
@@ -2901,9 +3105,9 @@
 				{
 					"type": "list",
 					"items": [
-						"當一個處於你5呎範圍內的生物施展法術，你可以使用你的反應對該生物進行一次近戰武器攻擊。",
+						"當一個處於你5尺範圍內的生物施展法術，你可以使用你的反應對該生物進行一次近戰武器攻擊。",
 						"當你傷害了一個正專注於法術的生物，該生物在維持專注的豁免檢定中獲得劣勢。",
-						"你在對抗處於你5呎範圍內的生物所施展的法術時的豁免檢定中獲得優勢。"
+						"你在對抗處於你5尺範圍內的生物所施展的法術時的豁免檢定中獲得優勢。"
 					]
 				}
 			],
@@ -2915,9 +3119,10 @@
 			"page": 168,
 			"additionalSpells": [
 				{
+					"name": "Bard Spells",
 					"ability": "cha",
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								{
 									"choose": "level=0|class=Bard",
@@ -2935,9 +3140,10 @@
 					}
 				},
 				{
+					"name": "Cleric Spells",
 					"ability": "wis",
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								{
 									"choose": "level=0|class=Cleric",
@@ -2955,9 +3161,10 @@
 					}
 				},
 				{
+					"name": "Druid Spells",
 					"ability": "wis",
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								{
 									"choose": "level=0|class=Druid",
@@ -2975,9 +3182,10 @@
 					}
 				},
 				{
+					"name": "Sorcerer Spells",
 					"ability": "cha",
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								{
 									"choose": "level=0|class=Sorcerer",
@@ -2995,9 +3203,10 @@
 					}
 				},
 				{
+					"name": "Warlock Spells",
 					"ability": "cha",
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								{
 									"choose": "level=0|class=Warlock",
@@ -3015,9 +3224,10 @@
 					}
 				},
 				{
+					"name": "Wizard Spells",
 					"ability": "int",
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								{
 									"choose": "level=0|class=Wizard",
@@ -3036,9 +3246,9 @@
 				}
 			],
 			"entries": [
-				"選擇一個職業：{@filter 吟遊詩人|spells|level=0;1|class=bard}、 {@filter 牧師|spells|level=0;1|class=cleric}、{@filter 德魯伊|spells|level=0;1|class=druid}、{@filter 術士|spells|level=0;1|class=sorcerer}、{@filter 契術師|spells|level=0;1|class=warlock}、或{@filter 法師|spells|level=0;1|class=wizard}。你從你所選職業的法術列表中習得兩個戲法。",
-				"此外，從同一個列表中選擇一個1環法術。你習得該法術，並可以用最低環階來施展它。一旦你施展它，則直到你完成一次長休之前，你都無法再藉由這個專長來施展它。",
-				"這些法術的施法屬性取決於你所選的職業：{@filter 吟遊詩人|spells|level=0;1|class=bard}、{@filter 術士|spells|level=0;1|class=sorcerer}、{@filter 契術師|spells|level=0;1|class=warlock}使用魅力；{@filter 牧師|spells|level=0;1|class=cleric}、{@filter 德魯伊|spells|level=0;1|class=druid}使用睿知；{@filter 法師|spells|level=0;1|class=wizard}則使用智力。"
+				"選擇一個職業：{@filter 吟遊詩人|spells|level=0;1|class=bard}、 {@filter 牧師|spells|level=0;1|class=cleric}、{@filter 德魯伊|spells|level=0;1|class=druid}、{@filter 術士|spells|level=0;1|class=sorcerer}、{@filter 契術師|spells|level=0;1|class=warlock}或{@filter 法師|spells|level=0;1|class=wizard}。你從你所選職業的法術列表中習得兩個戲法。",
+				"此外，從同一個列表中選擇一個1環法術。你習得該法術，並可以用最低環階來施展它。一旦你施展它，則直到你完成一次長休之前，你都無法再借由這個專長來施展它。",
+				"這些法術的施法屬性取決於你所選的職業：{@filter 吟遊詩人|spells|level=0;1|class=bard}、{@filter 術士|spells|level=0;1|class=sorcerer}、{@filter 契術師|spells|level=0;1|class=warlock}使用魅力；{@filter 牧師|spells|level=0;1|class=cleric}、{@filter 德魯伊|spells|level=0;1|class=druid}使用感知；{@filter 法師|spells|level=0;1|class=wizard}則使用智力。"
 			],
 			"ENG_name": "Magic Initiate"
 		},
@@ -3051,8 +3261,8 @@
 				{
 					"type": "list",
 					"items": [
-						"你習得二個{@filter 戰技|optionalfeatures|feature type=MV:B}，從戰士 {@class 戰士|phb|戰鬥大師|Battle Master|phb|2-0} 範型的戰技列表中選擇。若你使用的戰技要求你的目標進行一次豁免檢定以抵抗戰技的效果，則豁免檢定的DC等同8+你的熟練加值+你的力量或敏捷調整值（由你選擇）。",
-						"你獲得一顆卓越骰（這顆骰將被加到任何你從其他來源獲得的卓越骰池中），若你沒有其他卓越骰，則這顆卓越骰為d6。這顆骰被用來啟動你的戰技。卓越骰將在你使用戰技時被花費。你在完成一次短休或長休後恢復你花費掉的卓越骰。"
+						"你習得二個{@filter 戰技|optionalfeatures|feature type=MV:B}，從戰士{@class 戰士|phb|戰鬥大師|Battle Master|phb|2-0}範型的戰技列表中選擇。若你使用的戰技要求你的目標進行一次豁免檢定以抵抗戰技的效果，則豁免檢定的DC等同8 + 你的熟練加值 + 你的力量或敏捷調整值（由你選擇）。",
+						"你獲得一顆卓越骰（這顆骰將被加到任何你從其他來源獲得的卓越骰池中），若你沒有其他卓越骰，則這顆卓越骰爲d6。這顆骰被用來啓動你的戰技。卓越骰將在你使用戰技時被花費。你在完成一次短休或長休後恢復你花費掉的卓越骰。"
 					]
 				}
 			],
@@ -3067,13 +3277,18 @@
 					"cha": 1
 				}
 			],
+			"toolProficiencies": [
+				{
+					"disguise kit": true
+				}
+			],
 			"entries": [
 				"You have honed your ability to shape your personality and to read the personalities of others. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency with the {@item disguise kit|phb}. If you are already proficient with it, you add double your proficiency bonus to checks you make with it.",
-						"If you spend 1 hour observing a creature, you can then spend 8 hours crafting a disguise you can quickly don to mimic that creature. Making the disguise requires a {@item disguise kit|PHB}. You must make checks as normal to disguise yourself, but you can assume the disguise as an action."
+						"You gain proficiency with the {@item 易容工具|phb}. If you are already proficient with it, you add double your proficiency bonus to checks you make with it.",
+						"If you spend 1 hour observing a creature, you can then spend 8 hours crafting a disguise you can quickly don to mimic that creature. Making the disguise requires a {@item 易容工具|PHB}. You must make checks as normal to disguise yourself, but you can assume the disguise as an action."
 					]
 				}
 			]
@@ -3087,13 +3302,18 @@
 					"wis": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"medicine": true
+				}
+			],
 			"entries": [
 				"You master the physician's arts, gaining the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Medicine} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"During a short rest, you can clean and bind the wounds of up to six willing beasts and humanoids. Make a DC 15 Wisdom ({@skill Medicine}) check for each creature. On a success, if a creature spends a Hit Die during this rest, that creature can forgo the roll and instead regain the maximum number of hit points the die can restore. A creature can do so only once per rest, regardless of how many Hit Dice it spends."
+						"You gain proficiency in the {@skill 醫療} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"During a short rest, you can clean and bind the wounds of up to six willing beasts and humanoids. Make a DC 15 Wisdom ({@skill 醫療}) check for each creature. On a success, if a creature spends a Hit Die during this rest, that creature can forgo the roll and instead regain the maximum number of hit points the die can restore. A creature can do so only once per rest, regardless of how many Hit Dice it spends."
 					]
 				}
 			]
@@ -3112,12 +3332,12 @@
 				}
 			],
 			"entries": [
-				"你精通於在穿著中甲時行動，獲得下列好處：",
+				"你精通於在穿着中甲時行動，獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"穿著中甲不會讓你的敏捷（{@skill 隱匿}）檢定獲得劣勢。",
-						"當你穿著中甲時，如果你的敏捷為16或以上，你的AC可以增加3點，而非2點。"
+						"穿着中甲不會讓你的敏捷（{@skill 隱匿}）檢定獲得劣勢。",
+						"當你穿着中甲時，如果你的敏捷爲16或以上，你的AC可以增加3點，而非2點。"
 					]
 				}
 			],
@@ -3132,13 +3352,18 @@
 					"cha": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"intimidation": true
+				}
+			],
 			"entries": [
 				"You become fearsome to others, gaining the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Intimidation} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"When you take the {@action Attack} action on your turn, you can replace one attack with an attempt to demoralize one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma ({@skill Intimidation}) check contested by the target's Wisdom ({@skill Insight}) check. If your check succeeds, the target is {@condition frightened} until the end of your next turn. If your check fails, the target can't be {@condition frightened} by you in this way for 1 hour."
+						"You gain proficiency in the {@skill 威嚇} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"When you take the {@action 攻擊} action on your turn, you can replace one attack with an attempt to demoralize one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma ({@skill 威嚇}) check contested by the target's Wisdom ({@skill 洞悉}) check. If your check succeeds, the target is {@condition 恐懼} until the end of your next turn. If your check fails, the target can't be {@condition 恐懼} by you in this way for 1 hour."
 					]
 				}
 			]
@@ -3176,7 +3401,8 @@
 			]
 		},
 		{
-			"name": "Metamagic Adept",
+			"name": "超魔法導師",
+			"ENG_name": "Metamagic Adept",
 			"source": "TCE",
 			"page": 80,
 			"prerequisite": [
@@ -3185,12 +3411,12 @@
 				}
 			],
 			"entries": [
-				"You've learned how to exert your will on your spells to alter how they function:",
+				"你習得如何往你的法術上施加你的意志，從而改變它們的功能：",
 				{
 					"type": "list",
 					"items": [
-						"You learn two {@filter Metamagic|optionalfeatures|Feature Type=MM} options of your choice from the sorcerer class. You can use only one Metamagic option on a spell when you cast it, unless the option says otherwise. Whenever you reach a level that grants the Ability Score Improvement feature, you can replace one of these Metamagic options with another one from the sorcerer class.",
-						"You gain 2 sorcery points to spend on Metamagic (these points are added to any sorcery points you have from another source but can be used only on Metamagic). You regain all spent sorcery points when you finish a long rest."
+						"你從術士職業中選擇並習得兩項{@filter 超魔法|optionalfeatures|Feature Type=MM}選項。除非特別說明，否則一個法術施展時只能應用一種超魔法選項。當你升級並達到獲得屬性值提升特性的等級時，你可以將其中一項超魔法選項替換爲術士職業中的另一項超魔法選項。",
+						"你獲得2點術法點，用於施展超魔法（這些術法點和任何其他來源的術法點疊加，但只能用於超魔法）。你在完成長休後重獲所有已消耗的術法點。"
 					]
 				}
 			]
@@ -3224,7 +3450,7 @@
 				{
 					"type": "list",
 					"items": [
-						"你的移動速度增加10呎。",
+						"你的移動速度增加10尺。",
 						"當你採取疾走動作時，該回合內的困難地形不會消耗你額外的移動速度。",
 						"當你對一個生物進行近戰攻擊後，無論你命中與否，你在該回合都不會再引發該生物的藉機攻擊。"
 					]
@@ -3233,7 +3459,7 @@
 			"ENG_name": "Mobile"
 		},
 		{
-			"name": "中度著甲",
+			"name": "中度着甲",
 			"source": "PHB",
 			"page": 168,
 			"prerequisite": [
@@ -3254,6 +3480,12 @@
 						],
 						"amount": 1
 					}
+				}
+			],
+			"armorProficiencies": [
+				{
+					"medium": true,
+					"shield|phb": true
 				}
 			],
 			"entries": [
@@ -3277,7 +3509,7 @@
 					"type": "list",
 					"items": [
 						"你對任何體型比你坐騎還小，且非騎乘的生物所進行的近戰攻擊檢定中獲得優勢。",
-						"你可以強迫以你坐騎為目標的攻擊轉為以你為目標。",
+						"你可以強迫以你坐騎爲目標的攻擊轉爲以你爲目標。",
 						"若你的坐騎受到需要進行敏捷豁免來減半傷害的效果影響，則牠在豁免成功時可以不承受傷害，且即使豁免失敗也只承受一半的傷害。"
 					]
 				}
@@ -3293,10 +3525,15 @@
 					"int": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"nature": true
+				}
+			],
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								"druidcraft"
 							],
@@ -3314,7 +3551,7 @@
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Nature} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You gain proficiency in the {@skill 自然} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
 						"You learn the {@spell 德魯伊伎倆} and {@spell 偵測毒素或疾病} spells. You can cast {@spell 偵測毒素或疾病} once without expending a spell slot, and you regain the ability to do so when you finish a long rest."
 					]
 				}
@@ -3340,8 +3577,8 @@
 				{
 					"type": "list",
 					"items": [
-						"若你可以在一個生物正以你理解的語言說話時看見它的嘴巴，你就可以透過讀唇語來理解目標正在說什麼。",
-						"你的被動睿知（{@skill 感知}）和被動智力（{@skill 調查}）獲得+5加值。"
+						"若你可以在一個生物正以你理解的語言說話時看見它的嘴巴，你就可以通過讀脣語來理解目標正在說什麼。",
+						"你的被動感知（{@skill 察覺}）和被動智力（{@skill 調查}）獲得+5加值。"
 					]
 				}
 			],
@@ -3393,7 +3630,7 @@
 				{
 					"type": "list",
 					"items": [
-						"當你使用一把簡易或軍用武器的攻擊命中時，你可以再額外骰一顆該武器的傷害骰，並將它做為具有該武器傷害類型的額外傷害加入。一旦你使用此能力，直到你完成一次短休或長休之前都無法再使用此能力。",
+						"當你使用一把簡易或軍用武器的攻擊命中時，你可以再額外骰一顆該武器的傷害骰，並將它作爲具有該武器傷害類型的額外傷害加入。一旦你使用此能力，直到你完成一次短休或長休之前都無法再使用此能力。",
 						"緊接在你使用你的頑強耐性特性後，你可以使用你的反應以進行一次武器攻擊。"
 					]
 				}
@@ -3429,7 +3666,7 @@
 				{
 					"type": "list",
 					"items": [
-						"當你使用一把簡易或軍用武器的攻擊命中時，你可以再額外骰一顆該武器的傷害骰，並將它做為具有該武器傷害類型的額外傷害加入。一旦你使用此能力，直到你完成一次短休或長休之前都無法再使用此能力。",
+						"當你使用一把簡易或軍用武器的攻擊命中時，你可以再額外骰一顆該武器的傷害骰，並將它作爲具有該武器傷害類型的額外傷害加入。一旦你使用此能力，直到你完成一次短休或長休之前都無法再使用此能力。",
 						"緊接在你使用你的頑強耐性特性後，你可以使用你的反應以進行一次武器攻擊。"
 					]
 				}
@@ -3445,13 +3682,18 @@
 					"wis": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
 			"entries": [
 				"You hone your senses until they become razor sharp. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Perception} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"Being in a lightly obscured area doesn't impose disadvantage on your Wisdom ({@skill Perception}) checks if you can both see and hear."
+						"You gain proficiency in the {@skill 察覺} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"Being in a lightly obscured area doesn't impose disadvantage on your Wisdom ({@skill 察覺}) checks if you can both see and hear."
 					]
 				}
 			]
@@ -3465,19 +3707,25 @@
 					"cha": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"performance": true
+				}
+			],
 			"entries": [
 				"You master performance so that you can command any stage. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Performance} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"While performing, you can try to distract one humanoid you can see who can see and hear you. Make a Charisma ({@skill Performance}) check contested by the humanoid's Wisdom ({@skill Insight}) check. If your check succeeds, you grab the humanoid's attention enough that it makes Wisdom ({@skill Perception}) and Intelligence ({@skill Investigation}) checks with disadvantage until you stop performing."
+						"You gain proficiency in the {@skill 表演} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"While performing, you can try to distract one humanoid you can see who can see and hear you. Make a Charisma ({@skill 表演}) check contested by the humanoid's Wisdom ({@skill 洞悉}) check. If your check succeeds, you grab the humanoid's attention enough that it makes Wisdom ({@skill 察覺}) and Intelligence ({@skill 調查}) checks with disadvantage until you stop performing."
 					]
 				}
 			]
 		},
 		{
-			"name": "Piercer",
+			"name": "穿刺者",
+			"ENG_name": "Piercer",
 			"source": "TCE",
 			"page": 80,
 			"ability": [
@@ -3492,12 +3740,12 @@
 				}
 			],
 			"entries": [
-				"You have achieved a penetrating precision in combat, granting you the following benefits:",
+				"你已經可以在戰鬥中造成精準的穿刺。你獲得以下好處:",
 				{
 					"type": "list",
 					"items": [
-						"Once per turn, when you hit a creature with an attack that deals piercing damage, you can reroll one of the attack's damage dice, and you must use the new roll.",
-						"When you score a critical hit that deals piercing damage to a creature, you can roll one additional damage die when determining the extra piercing damage the target takes."
+						"每回合一次，當你用造成穿刺傷害的攻擊命中一個生物時，你可以重擲其中一個傷害骰，並且你必須使用重投的結果。",
+						"當你用造成穿刺傷害的攻擊命中一個生物並且造成重擊時，你可以在計算重擊傷害時投一個額外的傷害骰。"
 					]
 				}
 			]
@@ -3529,17 +3777,23 @@
 			]
 		},
 		{
-			"name": "Poisoner",
+			"name": "毒師",
+			"ENG_name": "Poisoner",
 			"source": "TCE",
 			"page": 80,
+			"toolProficiencies": [
+				{
+					"poisoner's kit": true
+				}
+			],
 			"entries": [
-				"You can prepare and deliver deadly poisons, granting you the following benefits:",
+				"你可以準備並使用致命的毒藥。你獲得以下好處：",
 				{
 					"type": "list",
 					"items": [
-						"When you make a damage roll that deals poison damage, it ignores resistance to poison damage.",
-						"You can apply poison to a weapon or piece of ammunition as a bonus action, instead of an action.",
-						"You gain proficiency with the {@item poisoner's kit|phb} if you don't already have it. With one hour of work using a {@item poisoner's kit|phb} and expending 50 gp worth of materials, you can create a number of doses of potent poison equal to your proficiency bonus. Once applied to a weapon or piece of ammunition, the poison retains its potency for 1 minute or until you hit with the weapon or ammunition. When a creature takes damage from the coated weapon or ammunition, that creature must succeed on a DC 14 Constitution saving throw or take {@damage 2d8} poison damage and become {@condition poisoned} until the end of your next turn."
+						"當你投造成毒素傷害的傷害骰時，無視目標的傷害抗性。",
+						"你可以以一個附贈動作爲一把武器或一枚彈藥塗毒，而不是一個動作。",
+						"你獲得{@item 製毒工具|phb}的熟練項，如果你還沒有的話。花費一小時使用{@item 製毒工具|phb}進行製作，並且消耗價值 50gp 的材料後，你可以製造一定數量的猛毒，其數量等同於你的熟練加值。當被用於一把武器或一枚彈藥後，猛毒的毒性持續一分鐘或直至你用該武器或彈藥攻擊命中後。當一個生物受到來自塗毒武器或彈藥的傷害後，該生物必須成功通過DC 14的體質豁免，否則將受到{@damage 2d8}毒素傷害並陷入{@condition 中毒}狀態，直至你的下回合結束。"
 					]
 				}
 			]
@@ -3548,6 +3802,11 @@
 			"name": "Poisoner",
 			"source": "UA2020Feats",
 			"page": 2,
+			"toolProficiencies": [
+				{
+					"poisoner's kit": true
+				}
+			],
 			"entries": [
 				"You can prepare and deliver deadly poisons, gaining the following benefits:",
 				{
@@ -3555,7 +3814,7 @@
 					"items": [
 						"When you make a damage roll, you ignore resistance to poison damage.",
 						"You can coat a weapon in poison as a bonus action, instead of an action.",
-						"You gain proficiency with the {@item poisoner's kit|phb} if you don't already have it. With one hour of work using a {@item poisoner's kit|PHB} and expending 50 gp worth of materials, you can create a number of doses of potent poison equal to your proficiency bonus. Once applied, the poison retains potency for 1 minute, or until you hit with the weapon. When a weapon coated in this poison deals damage to a creature, that creature must succeed on a DC 14 Constitution saving throw or take {@damage 2d8} poison damage and become {@condition poisoned} until the end of your next turn."
+						"You gain proficiency with the {@item 製毒工具|phb} if you don't already have it. With one hour of work using a {@item 製毒工具|PHB} and expending 50 gp worth of materials, you can create a number of doses of potent poison equal to your proficiency bonus. Once applied, the poison retains potency for 1 minute, or until you hit with the weapon. When a weapon coated in this poison deals damage to a creature, that creature must succeed on a DC 14 Constitution saving throw or take {@damage 2d8} poison damage and become {@condition 中毒} until the end of your next turn."
 					]
 				}
 			]
@@ -3569,8 +3828,8 @@
 				{
 					"type": "list",
 					"items": [
-						"當你採取攻擊動作且只使用{@item 長柄刀|phb}、{@item 斧槍|phb}、{@item 長棍|phb}、或{@item 矛|phb}進行攻擊時，你可以使用附贈動作以利用該武器的另一端進行一次近戰攻擊；這個攻擊使用和主要攻擊相同的屬性調整值。這個攻擊所使用的武器傷害骰為d4，且該攻擊造成鈍擊傷害。",
-						"當你持握{@item 長柄刀|phb}、{@item 斧槍|phb}、{@item 長柄槍|phb}、{@item 長棍|phb}、或{@item 矛|phb}時，其他生物將在進入你的觸及範圍時觸發你的藉機攻擊。"
+						"當你採取攻擊動作且只使用{@item 長柄刀|phb}、{@item 斧槍|phb}、{@item 長棍|phb}或{@item 矛|phb}進行攻擊時，你可以使用附贈動作以利用該武器的另一端進行一次近戰攻擊；這個攻擊使用和主要攻擊相同的屬性調整值。這個攻擊所使用的武器傷害骰爲d4，且該攻擊造成鈍擊傷害。",
+						"當你持握{@item 長柄刀|phb}、{@item 斧槍|phb}、{@item 長柄槍|phb}、{@item 長棍|phb}或{@item 矛|phb}時，其他生物將在進入你的觸及範圍時觸發你的藉機攻擊。"
 					]
 				}
 			],
@@ -3592,6 +3851,35 @@
 							"cha"
 						],
 						"amount": 1
+					}
+				}
+			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion",
+							{
+								"tool": true
+							}
+						]
 					}
 				}
 			],
@@ -3637,13 +3925,47 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion",
+							{
+								"tool": true
+							}
+						]
+					}
+				}
+			],
+			"languageProficiencies": [
+				{
+					"any": 1
+				}
+			],
 			"entries": [
-				"你掌握著學習新事物的訣竅。你獲得下列好處：",
+				"你掌握着學習新事物的訣竅。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"你獲得一個你所選擇的技能熟練、一個你所選擇的工具熟練、並能流暢的使用一種你所選擇的語言。",
-						"選擇一個你所熟練的技能。你獲得對該技能的專精，這代表你的熟練加值在任何你使用它進行的屬性檢定中變為兩倍。你所選擇的技能必須尚未得益於其他可以將熟練加值翻倍的效果，像是專精特性。"
+						"你獲得一個你所選擇的{@table skills|phb|技能熟練}、一個你所選擇的{@filter 工具熟練|items|type=tool;artisan's tools}、並能流暢的使用一種你所選擇的語言。",
+						"選擇一個你所熟練的技能。你獲得對該技能的專精，這代表你的熟練加值在任何你使用它進行的屬性檢定中變爲兩倍。你所選擇的技能必須尚未得益於其他可以將熟練加值翻倍的效果，像是專精特性。"
 					]
 				}
 			],
@@ -3668,13 +3990,49 @@
 					]
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion"
+						]
+					}
+				}
+			],
+			"languageProficiencies": [
+				{
+					"any": 1
+				}
+			],
+			"toolProficiencies": [
+				{
+					"any": 1
+				}
+			],
 			"entries": [
-				"你掌握著學習新事物的訣竅。你獲得下列好處：",
+				"你掌握着學習新事物的訣竅。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"你獲得一個你所選擇的技能熟練、一個你所選擇的工具熟練、並能流暢的使用一種你所選擇的語言。",
-						"選擇一個你所熟練的技能。你獲得對該技能的專精，這代表你的熟練加值在任何你使用它進行的屬性檢定中變為兩倍。你所選擇的技能必須尚未得益於其他可以將熟練加值翻倍的效果，像是專精特性。"
+						"你獲得一個你所選擇的{@table skills|phb|技能熟練}、一個你所選擇的{@filter 工具熟練|items|type=tool;artisan's tools}、並能流暢的使用一種你所選擇的語言。",
+						"選擇一個你所熟練的技能。你獲得對該技能的專精，這代表你的熟練加值在任何你使用它進行的屬性檢定中變爲兩倍。你所選擇的技能必須尚未得益於其他可以將熟練加值翻倍的效果，像是專精特性。"
 					]
 				}
 			],
@@ -3689,13 +4047,18 @@
 					"dex": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"sleight of hand": true
+				}
+			],
 			"entries": [
 				"Your nimble fingers and agility let you perform sleight of hand. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Sleight of Hand} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"As a bonus action, you can make a Dexterity ({@skill Sleight of Hand}) check to plant something on someone else, conceal an object on a creature, lift a purse, or take something from a pocket."
+						"You gain proficiency in the {@skill 巧手} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"As a bonus action, you can make a Dexterity ({@skill 巧手}) check to plant something on someone else, conceal an object on a creature, lift a purse, or take something from a pocket."
 					]
 				}
 			]
@@ -3713,11 +4076,16 @@
 					]
 				}
 			],
+			"toolProficiencies": [
+				{
+					"artisan's tools": true
+				}
+			],
 			"entries": [
 				"You have mastered the art of on-the-fly invention, improvement, and jury-rigging. You can use your talents to create immediate, short-term magical effects similar to spells, given time and an adequate supply of aether.",
 				"When you choose this feat, you master two magical effects, each of which recreates the effect of a 1st-level spell that has the ritual tag. These spells can come from any class list, but Intelligence is your spellcasting ability for them.",
 				"If you come across a schematic geared toward quicksmithing or study with another quicksmith, you might be able to add another spell to the effects you have mastered. The spell's level can be no higher than half your level (rounded up), and it must have the ritual tag. The process of mastering the spell takes 2 hours per level of the spell, and costs 50 gp per level. The cost represents aether you use as you experiment with the spell effect to master it.",
-				"In addition, you have proficiency with {@item artisan's tools|PHB} (quicksmith's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours unless you spend 1 hour repairing it to keep it functioning. You can use your action to dismantle the device, at which point you can reclaim the materials used to create it. You can have up to three such devices active at a time.",
+				"In addition, you have proficiency with {@item 工匠工具|phb} (quicksmith's tools). Using those tools, you can spend 1 hour and 10 gp worth of materials to construct a Tiny clockwork device (AC 5, 1 hp). The device ceases to function after 24 hours unless you spend 1 hour repairing it to keep it functioning. You can use your action to dismantle the device, at which point you can reclaim the materials used to create it. You can have up to three such devices active at a time.",
 				"When you create a device, choose one of the following options:",
 				{
 					"type": "entries",
@@ -3832,9 +4200,10 @@
 			],
 			"additionalSpells": [
 				{
+					"name": "Bard Spells",
 					"ability": "cha",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									{
@@ -3847,9 +4216,10 @@
 					}
 				},
 				{
+					"name": "Cleric Spells",
 					"ability": "wis",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									{
@@ -3862,9 +4232,10 @@
 					}
 				},
 				{
+					"name": "Druid Spells",
 					"ability": "wis",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									{
@@ -3877,9 +4248,10 @@
 					}
 				},
 				{
+					"name": "Sorcerer Spells",
 					"ability": "cha",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									{
@@ -3892,9 +4264,10 @@
 					}
 				},
 				{
+					"name": "Warlock Spells",
 					"ability": "cha",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									{
@@ -3907,9 +4280,10 @@
 					}
 				},
 				{
+					"name": "Wizard Spells",
 					"ability": "int",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									{
@@ -3924,7 +4298,7 @@
 			],
 			"entries": [
 				"你已學會一些能夠以儀式施放的法術。這些法術被寫在一本儀式書中，當你施展其中一個法術時你必須將儀式書拿在手中。",
-				"當你選擇此專長時，你獲得一本記載著兩個自選1環法術的儀式書。從以下職業中選擇一個：{@filter 吟遊詩人|spells|level=1|class=bard|components & miscellaneous=ritual}、{@filter 牧師|spells|level=1|class=cleric|components & miscellaneous=ritual}、{@filter 德魯伊|spells|level=1|class=druid|components & miscellaneous=ritual}、{@filter 術士|spells|level=1|class=sorcerer|components & miscellaneous=ritual}、{@filter 契術師|spells|level=1|class=warlock|components & miscellaneous=ritual}、或{@filter 法師|spells|level=1|class=wizard|components & miscellaneous=ritual}。你必須從該職業的法術列表中選擇你的法術，且你所選的法術必須要具有儀式標籤。你所選的職業同時會決定你在使用這些法術時的施法屬性：吟遊詩人、術士、契術師使用魅力；牧師、德魯伊使用睿知；法師則使用智力。",
+				"當你選擇此專長時，你獲得一本記載着兩個自選1環法術的儀式書。從以下職業中選擇一個：{@filter 吟遊詩人|spells|level=1|class=bard|components & miscellaneous=ritual}、{@filter 牧師|spells|level=1|class=cleric|components & miscellaneous=ritual}、{@filter 德魯伊|spells|level=1|class=druid|components & miscellaneous=ritual}、{@filter 術士|spells|level=1|class=sorcerer|components & miscellaneous=ritual}、{@filter 契術師|spells|level=1|class=warlock|components & miscellaneous=ritual}或{@filter 法師|spells|level=1|class=wizard|components & miscellaneous=ritual}。你必須從該職業的法術列表中選擇你的法術，且你所選的法術必須要具有儀式標籤。你所選的職業同時會決定你在使用這些法術時的施法屬性：吟遊詩人、術士、契術師使用魅力；牧師、德魯伊使用感知；法師則使用智力。",
 				"若你遇到某個以書寫形式存在的法術，像是魔法法術卷軸或法師的法術書，你就有可能可以將它加到你的儀式書中。該法術必須要在你所選職業的法術列表上，該法術的環階不能超過你等級的一半（小數點進位），且它必須要具有儀式標籤。將法術抄寫到你的儀式書的過程需要耗費每環2小時的時間、以及每環50金幣的代價。這個代價代表了你在研究如何掌握該法術時所消耗的材料構材、以及你在抄寫時所需要的優質墨水。"
 			],
 			"ENG_name": "Ritual Caster"
@@ -3934,7 +4308,7 @@
 			"source": "PHB",
 			"page": 169,
 			"entries": [
-				"每回合一次，當你為一次近戰武器攻擊骰傷害時，你可以重骰該武器傷害骰，並任選其中一個結果使用"
+				"每回合一次，當你爲一次近戰武器攻擊骰傷害時，你可以重骰該武器傷害骰，並任選其中一個結果使用"
 			],
 			"ENG_name": "Savage Attacker"
 		},
@@ -3964,7 +4338,7 @@
 				}
 			],
 			"entries": [
-				"命運在某人嘗試攻擊你時眷顧著你。你獲得下列好處：",
+				"命運在某人嘗試攻擊你時眷顧着你。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
@@ -4000,7 +4374,7 @@
 				}
 			],
 			"entries": [
-				"命運在某人嘗試攻擊你時眷顧著你。你獲得下列好處：",
+				"命運在某人嘗試攻擊你時眷顧着你。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
@@ -4015,13 +4389,13 @@
 			"source": "PHB",
 			"page": 169,
 			"entries": [
-				"你精通在敵人防禦時占盡優勢的技巧，獲得下列好處：",
+				"你精通在敵人防禦時佔盡優勢的技巧，獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"當你以藉機攻擊命中一個生物時，該生物在該回合剩下時間的移動速度變為0。",
+						"當你以藉機攻擊命中一個生物時，該生物在該回合剩下時間的移動速度變爲0。",
 						"離開你觸及範圍的生物即使採取了撤離動作，仍然會觸發你的藉機攻擊。",
-						"當一個與你距離5呎內的生物對你以外的目標進行了一次攻擊（且該目標不具有此專長），你可以使用你的反應對該攻擊者進行一次近戰武器攻擊。"
+						"當一個與你距離5尺內的生物對你以外的目標進行了一次攻擊（且該目標不具有此專長），你可以使用你的反應對該攻擊者進行一次近戰武器攻擊。"
 					]
 				}
 			],
@@ -4043,7 +4417,7 @@
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
+						"_": {
 							"ritual": [
 								"find familiar"
 							]
@@ -4054,11 +4428,12 @@
 			"entries": [
 				"You are skilled in the creation of servos\u2014tiny constructs that function as personal assistants. You can cast the {@spell 尋獲魔寵} spell as a ritual, creating a servo to serve as your familiar instead of an animal. A servo's statistics appear in the \"Artifact Creatures\" section of this document. In every other way, a servo familiar functions as described in the {@spell 尋獲魔寵} spell.",
 				"You can communicate telepathically with your servo familiar and perceive through its senses as long as you are on the same plane of existence. You can speak through your servo in your own voice.",
-				"Additionally, when you take the {@action Attack} action, you can forgo one of your own attacks to allow your servo familiar to make one attack of its own."
+				"Additionally, when you take the {@action 攻擊} action, you can forgo one of your own attacks to allow your servo familiar to make one attack of its own."
 			]
 		},
 		{
-			"name": "Shadow Touched",
+			"name": "影界觸碰",
+			"ENG_name": "Shadow Touched",
 			"source": "TCE",
 			"page": 80,
 			"ability": [
@@ -4077,7 +4452,7 @@
 				{
 					"ability": "inherit",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1e": [
 									"invisibility",
@@ -4091,11 +4466,11 @@
 				}
 			],
 			"entries": [
-				"Your exposure to the Shadowfell's magic has changed you, granting you the following benefits:",
+				"暴露在墮影冥界的魔法之下的經歷已經改變了你，使你獲得了以下增益：",
 				{
 					"type": "list",
 					"items": [
-						"You learn the {@spell 隱形術} spell and one 1st-level spell of your choice. The {@filter 1st-level spell|spells|level=1|school=I;N} must be from the illusion or necromancy school of magic. You can cast each of these spells without expending a spell slot. Once you cast either of these spells in this way, you can't cast that spell in this way again until you finish a long rest. You can also cast these spells using spell slots you have of the appropriate level. The spells' spellcasting ability is the ability increased by this feat."
+						"你習得{@spell 隱形術}以及一個由你選擇的{@filter 一環法術|spells|level=1|school=I;N}。該一環法術必須是幻術系或死靈系法術。你可以在不消耗法術位的情況下施展這些法術各一次。當你以此法施展某個法術後，你不能再次以此法施展該法術，直至你完成一次長休。你也可以消耗合適的法術位來施展這些法術。這些法術的施法關鍵屬性是你由此專長提升的屬性。"
 					]
 				}
 			]
@@ -4120,7 +4495,7 @@
 				{
 					"ability": "inherit",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1e": [
 									"invisibility",
@@ -4165,12 +4540,12 @@
 			"source": "PHB",
 			"page": 170,
 			"entries": [
-				"你的盾牌不僅僅是為了防禦、更能被用來進攻。當你持握{@item 盾牌|phb}時，你獲得下列好處：",
+				"你的盾牌不僅僅是爲了防禦、更能被用來進攻。當你持握{@item 盾牌|phb}時，你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"如果你在你的回合採取攻擊動作，你可以使用附贈動作利用你的盾牌嘗試推撞一個與你距離5呎內的生物。",
-						"如果你不處於{@condition 無力}，你可以將你盾牌的AC加值加到用以對抗只以你為目標的法術或其他有害效果的敏捷豁免檢定上。",
+						"如果你在你的回合採取攻擊動作，你可以使用附贈動作利用你的盾牌嘗試推撞一個與你距離5尺內的生物。",
+						"如果你不處於{@condition 無力}，你可以將你盾牌的AC加值加到用以對抗只以你爲目標的法術或其他有害效果的敏捷豁免檢定上。",
 						"如果你受到了某個效果允許你進行敏捷豁免檢定以減半傷害，你可以使用你的反應以在你成功通過豁免檢定時，將你的盾牌插入你和效果源頭之間，好讓你不受傷害。"
 					]
 				}
@@ -4191,6 +4566,11 @@
 						],
 						"amount": 1
 					}
+				}
+			],
+			"armorProficiencies": [
+				{
+					"shield|phb": true
 				}
 			],
 			"entries": [
@@ -4214,19 +4594,25 @@
 					"cha": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"deception": true
+				}
+			],
 			"entries": [
 				"You develop your conversational skill to better deceive others. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Deception} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
-						"When you take the {@action Attack} action on your turn, you can replace one attack with an attempt to deceive one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma ({@skill Deception}) check contested by the target's Wisdom ({@skill Insight}) check. If your check succeeds, your movement doesn't provoke opportunity attacks from the target and your attack rolls against it have advantage; both benefits last until the end of your next turn or until you use this ability on a different target. If your check fails, the target can't be deceived by you in this way for 1 hour."
+						"You gain proficiency in the {@skill 欺瞞} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"When you take the {@action 攻擊} action on your turn, you can replace one attack with an attempt to deceive one humanoid you can see within 30 feet of you that can see and hear you. Make a Charisma ({@skill 欺瞞}) check contested by the target's Wisdom ({@skill 洞悉}) check. If your check succeeds, your movement doesn't provoke opportunity attacks from the target and your attack rolls against it have advantage; both benefits last until the end of your next turn or until you use this ability on a different target. If your check fails, the target can't be deceived by you in this way for 1 hour."
 					]
 				}
 			]
 		},
 		{
-			"name": "Skill Expert",
+			"name": "技藝專家",
+			"ENG_name": "Skill Expert",
 			"source": "TCE",
 			"page": 80,
 			"ability": [
@@ -4244,23 +4630,79 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion"
+						]
+					}
+				}
+			],
 			"entries": [
-				"You have honed your proficiency with particular skills, granting you the following benefits:",
+				"你已磨練了自身的特定技藝，並獲得了以下好處：",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in one skill of your choice.",
-						"Choose one skill in which you have proficiency. You gain expertise with that skill, which means your proficiency bonus is doubled for any ability check you make with it. The skill you choose must be one that isn't already benefiting from a feature, such as Expertise, that doubles your proficiency bonus."
+						"你選擇並獲得一項技能的熟練項。",
+						"選擇一項你熟練的技能，你獲得該技能的專精，可以將兩倍的熟練加值加到使用該技能進行的屬性檢定上。你選擇的技能必須未受益於其他使熟練加值翻倍的特性，例如專精特性。"
 					]
 				}
 			]
 		},
 		{
-			"name": "技巧嫻熟",
+			"name": "技巧嫺熟",
 			"source": "PHB",
 			"page": 170,
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics",
+							"sleight of hand",
+							"stealth",
+							"arcana",
+							"history",
+							"investigation",
+							"nature",
+							"religion",
+							"animal handling",
+							"insight",
+							"medicine",
+							"perception",
+							"survival",
+							"deception",
+							"intimidation",
+							"performance",
+							"persuasion",
+							{
+								"tool": true
+							}
+						],
+						"count": 3
+					}
+				}
+			],
 			"entries": [
-				"你獲得總共3種的自選{@book 技能|phb|7|skills}或{@filter 工具|items|type=tool;artisan tool}的熟練。"
+				"你獲得總共3種的自選{@book 技能|phb|7|skills}或{@filter 工具|items|type=tool;artisan tool;instrument;gaming set;vehicle (land);vehicle (water)}的熟練。"
 			],
 			"ENG_name": "Skilled"
 		},
@@ -4284,14 +4726,15 @@
 					"items": [
 						"當你對於你想躲避的生物而言處於輕度遮蔽時，你可以嘗試躲藏。",
 						"當你對某個生物而言躲藏狀態，且你對它進行的遠程武器攻擊失手，則進行該攻擊並不會因此暴露你的位置。",
-						"微光不會對你依賴於視覺的睿知（{@skill 感知}）檢定造成劣勢。"
+						"微光不會對你依賴於視覺的感知（{@skill 察覺}）檢定造成劣勢。"
 					]
 				}
 			],
 			"ENG_name": "Skulker"
 		},
 		{
-			"name": "Slasher",
+			"name": "劈砍者",
+			"ENG_name": "Slasher",
 			"source": "TCE",
 			"page": 81,
 			"ability": [
@@ -4306,12 +4749,12 @@
 				}
 			],
 			"entries": [
-				"You've learned where to cut to have the greatest results, granting you the following benefits:",
+				"你已熟知該砍向何處以造成最重的傷害。你獲得以下好處：",
 				{
 					"type": "list",
 					"items": [
-						"Once per turn when you hit a creature with an attack that deals slashing damage, you can reduce the speed of the target by 10 feet until the start of your next turn.",
-						"When you score a critical hit that deals slashing damage to a creature, you grievously wound it. Until the start of your next turn, the target has disadvantage on all attack rolls."
+						"每回合一次，當你用造成揮砍傷害的攻擊命中一個生物時，你可以使其速度降低10尺，直到你的下回合開始。",
+						"當你用造成揮砍傷害的攻擊命中一個生物並造成重擊時，你將其重傷，使其所作的攻擊檢定具有劣勢，直至你的下回合開始。"
 					]
 				}
 			]
@@ -4353,7 +4796,7 @@
 					"items": [
 						"You gain a +1 bonus to attack rolls you make with a spear.",
 						"When you use a spear, its damage die changes from a {@dice d6} to a {@dice d8}, and from a {@dice d8} to a {@dice d10} when wielded with two hands. (This benefit has no effect if another feature has already improved the weapon's die.)",
-						"You can set your spear to receive a charge. As a bonus action, choose a creature you can see that is at least 20 feet away from you. If that creature moves within your spear's reach on its next turn, you can make a melee attack against it with your spear as a reaction. If the attack hits, the target takes an extra {@damage 1d8} piercing damage, or an extra {@damage 1d10} piercing damage if you wield the spear with two hands. You can't use this ability if the creature used the {@action Disengage} action before moving.",
+						"You can set your spear to receive a charge. As a bonus action, choose a creature you can see that is at least 20 feet away from you. If that creature moves within your spear's reach on its next turn, you can make a melee attack against it with your spear as a reaction. If the attack hits, the target takes an extra {@damage 1d8} piercing damage, or an extra {@damage 1d10} piercing damage if you wield the spear with two hands. You can't use this ability if the creature used the {@action 撤離} action before moving.",
 						"As a bonus action on your turn, you can increase your reach with a spear by 5 feet for the rest of your turn."
 					]
 				}
@@ -4370,6 +4813,7 @@
 			],
 			"additionalSpells": [
 				{
+					"name": "Bard Spells",
 					"ability": "cha",
 					"innate": {
 						"1": [
@@ -4381,6 +4825,7 @@
 					}
 				},
 				{
+					"name": "Cleric Spells",
 					"ability": "wis",
 					"innate": {
 						"1": [
@@ -4392,6 +4837,7 @@
 					}
 				},
 				{
+					"name": "Druid Spells",
 					"ability": "wis",
 					"innate": {
 						"1": [
@@ -4403,6 +4849,7 @@
 					}
 				},
 				{
+					"name": "Sorcerer Spells",
 					"ability": "cha",
 					"innate": {
 						"1": [
@@ -4414,6 +4861,7 @@
 					}
 				},
 				{
+					"name": "Warlock Spells",
 					"ability": "cha",
 					"innate": {
 						"1": [
@@ -4425,6 +4873,7 @@
 					}
 				},
 				{
+					"name": "Wizard Spells",
 					"ability": "int",
 					"innate": {
 						"1": [
@@ -4443,7 +4892,7 @@
 					"items": [
 						"當你施放一個需要你進行一次攻擊檢定的法術時，該法術的射程加倍。",
 						"你的遠程法術攻擊忽略半掩護和四分之三掩護。",
-						"你學會一個需要一次攻擊檢定的戲法。從{@filter 吟遊詩人|spells|level=0|class=bard|spell attack=m;r;o}、{@filter 牧師|spells|level=0|class=cleric|spell attack=m;r;o}、{@filter 德魯伊|spells|level=0|class=druid|spell attack=m;r;o}、{@filter 術士|spells|level=0|class=sorcerer|spell attack=m;r;o}、{@filter 契術師|spells|level=0|class=warlock|spell attack=m;r;o}、或{@filter 法師|spells|level=0|class=wizard|spell attack=m;r;o}法術列表中選擇該戲法。該戲法的施法屬性取決於你所選的法術列表：吟遊詩人、術士、契術師使用魅力；牧師、德魯伊使用睿知；法師則使用智力。"
+						"你學會一個需要一次攻擊檢定的戲法。從{@filter 吟遊詩人|spells|level=0|class=bard|spell attack=m;r;o}、{@filter 牧師|spells|level=0|class=cleric|spell attack=m;r;o}、{@filter 德魯伊|spells|level=0|class=druid|spell attack=m;r;o}、{@filter 術士|spells|level=0|class=sorcerer|spell attack=m;r;o}、{@filter 契術師|spells|level=0|class=warlock|spell attack=m;r;o}或{@filter 法師|spells|level=0|class=wizard|spell attack=m;r;o}法術列表中選擇該戲法。該戲法的施法屬性取決於你所選的法術列表：吟遊詩人、術士、契術師使用魅力；牧師、德魯伊使用感知；法師則使用智力。"
 					]
 				}
 			],
@@ -4479,14 +4928,24 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"athletics",
+							"acrobatics"
+						]
+					}
+				}
+			],
 			"entries": [
-				"你有著以你種族來說也相當不尋常的靈巧。你獲得下列好處：",
+				"你有着以你種族來說也相當不尋常的靈巧。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"你的步行速度增加5呎。",
-						"你獲得{@skill 特技}或{@skill 運動}其中之一的熟練（由你選擇）。",
-						"你在掙脫{@condition 被擒}時所進行的力量（運動）或敏捷（特技）檢定有優勢。"
+						"你的步行速度增加5尺。",
+						"你獲得{@skill 體操}或{@skill 運動}其中之一的熟練（由你選擇）。",
+						"你在掙脫{@condition 被擒}時所進行的力量（運動）或敏捷（體操）檢定有優勢。"
 					]
 				}
 			],
@@ -4520,14 +4979,24 @@
 					}
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"acrobatics",
+							"athletics"
+						]
+					}
+				}
+			],
 			"entries": [
-				"你有著以你種族來說也相當不尋常的靈巧。你獲得下列好處：",
+				"你有着以你種族來說也相當不尋常的靈巧。你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
-						"你的步行速度增加5呎。",
-						"你獲得{@skill 特技}或{@skill 運動}其中之一的熟練（由你選擇）。",
-						"你在掙脫{@condition 被擒}時所進行的力量（運動）或敏捷（特技）檢定有優勢。"
+						"你的步行速度增加5尺。",
+						"你獲得{@skill 體操}或{@skill 運動}其中之一的熟練（由你選擇）。",
+						"你在掙脫{@condition 被擒}時所進行的力量（運動）或敏捷（體操）檢定有優勢。"
 					]
 				}
 			],
@@ -4542,12 +5011,17 @@
 					"dex": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"stealth": true
+				}
+			],
 			"entries": [
 				"You know how best to hide. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Stealth} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You gain proficiency in the {@skill 隱匿} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
 						"If you are hidden, you can move up to 10 feet in the open without revealing yourself if you end the move in a position where you're not clearly visible."
 					]
 				}
@@ -4562,10 +5036,15 @@
 					"wis": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"survival": true
+				}
+			],
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									"alarm"
@@ -4580,7 +5059,7 @@
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Survival} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You gain proficiency in the {@skill 生存} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
 						"You learn the {@spell 警報術} spell. You can cast it once without expending a spell slot, and you regain the ability to do so when you finish a long rest."
 					]
 				}
@@ -4614,7 +5093,7 @@
 				{
 					"ability": "int",
 					"innate": {
-						"1": {
+						"_": {
 							"will": [
 								"nondetection"
 							],
@@ -4630,7 +5109,7 @@
 				}
 			],
 			"entries": [
-				"你繼承了來自你先祖的天生施法能力。此能力允許你對自己隨意施放{@spell 迴避偵測}，且無須材料構材。你也可以透過此能力各自施放下列法術一次：{@spell 目盲/耳聾術}、{@spell 朦朧術}、和{@spell 易容術}。當你完成一次長休，你將重新獲得施放這些法術的能力。",
+				"你繼承了來自你先祖的天生施法能力。此能力允許你對自己隨意施放{@spell 迴避偵測}，且無須材料構材。你也可以通過此能力各自施放下列法術一次：{@spell 目盲/耳聾術}、{@spell 朦朧術}、和{@spell 易容術}。當你完成一次長休，你將重新獲得施放這些法術的能力。",
 				"這些法術的施法屬性是智力，你只能以它們的最低環階施放它們。"
 			],
 			"ENG_name": "Svirfneblin Magic"
@@ -4644,8 +5123,8 @@
 				{
 					"type": "list",
 					"items": [
-						"You can use the {@action Help} action as a bonus action.",
-						"When you use the {@action Help} action to aid an ally in attacking a creature, increase the range of the {@action Help} action by 10 feet. Additionally, you can help two allies targeting the same creature within range when you use the {@action Help} action this way."
+						"You can use the {@action 協助} action as a bonus action.",
+						"When you use the {@action 協助} action to aid an ally in attacking a creature, increase the range of the {@action 協助} action by 10 feet. Additionally, you can help two allies targeting the same creature within range when you use the {@action 協助} action this way."
 					]
 				}
 			]
@@ -4671,7 +5150,7 @@
 					"type": "list",
 					"items": [
 						"你熟練於臨時武器。",
-						"你的徒手打擊使用d4作為傷害骰。",
+						"你的徒手打擊使用d4作爲傷害骰。",
 						"當你在你的回合使用徒手打擊或臨時武器命中一個生物，你可以使用附贈動作以嘗試擒抱該目標。"
 					]
 				}
@@ -4679,7 +5158,8 @@
 			"ENG_name": "Tavern Brawler"
 		},
 		{
-			"name": "Telekinetic",
+			"name": "念動力",
+			"ENG_name": "Telekinetic",
 			"source": "TCE",
 			"page": 81,
 			"ability": [
@@ -4705,12 +5185,12 @@
 				}
 			],
 			"entries": [
-				"You learn to move things with your mind, granting you the following benefits:",
+				"你習得用你的意念移動物體的能力。你獲得以下好處：",
 				{
 					"type": "list",
 					"items": [
-						"You learn the {@spell 法師之手} cantrip. You can cast it without verbal or somatic components, and you can make the spectral hand {@condition invisible}. If you already know this spell, its range increases by 30 feet when you cast it. Its spellcasting ability is the ability increased by this feat.",
-						"As a bonus action, you can try to telekinetically shove one creature you can see within 30 feet of you. When you do so, the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + the ability modifier of the score increased by this feat) or be moved 5 feet toward you or away from you. A creature can willingly fail this save."
+						"你習得{@spell 法師之手}戲法，你施展它無需語言構材或材料構材，並且你可以讓該幽靈手{@condition 隱形}。如果你已經習得該戲法，你施展該戲法時其施法距離提升30尺。該戲法的施法關鍵屬性是你由此專長提升的屬性。",
+						"以一個附贈動作，你可以嘗試以念動力推撞30尺內的一個你可見的生物。當你這樣做時，目標必須成功通過一次力量豁免（DC爲8 + 你的熟練加值 + 你由此專長提升的屬性的屬性調整值），否則將被你拉近或推離五尺。目標生物可以自願放棄豁免。"
 					]
 				}
 			]
@@ -4751,7 +5231,7 @@
 				{
 					"type": "list",
 					"items": [
-						"You learn the {@spell 法師之手} cantrip. You can cast it without verbal or somatic components, and you can make the spectral hand {@condition invisible}. If you already know this spell, its range increases by 30 feet when you cast it. Its spellcasting ability is the ability increased by this feat.",
+						"You learn the {@spell 法師之手} cantrip. You can cast it without verbal or somatic components, and you can make the spectral hand {@condition 隱形}. If you already know this spell, its range increases by 30 feet when you cast it. Its spellcasting ability is the ability increased by this feat.",
 						"As a bonus action, you can try to telekinetically shove one creature you can see within 30 feet of you. When you do so, roll your Psionic Talent die, and the target must succeed on a Strength saving throw (DC 8 + your proficiency bonus + the ability modifier of the score increased by this feat) or be moved toward you or away from you a number of feet equal to 5 times the number you rolled. A creature can willingly fail this save."
 					]
 				}
@@ -4787,7 +5267,8 @@
 			]
 		},
 		{
-			"name": "Telepathic",
+			"name": "心電感應",
+			"ENG_name": "Telepathic",
 			"source": "TCE",
 			"page": 81,
 			"ability": [
@@ -4806,7 +5287,7 @@
 				{
 					"ability": "inherit",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									"detect thoughts"
@@ -4817,12 +5298,12 @@
 				}
 			],
 			"entries": [
-				"You awaken the ability to mentally connect with others, granting you the following benefits:",
+				"你覺醒了用意念與其他生物交流的能力。你獲得以下好處：",
 				{
 					"type": "list",
 					"items": [
-						"You can speak telepathically to any creature you can see within 60 feet of you. Your telepathic utterances are in a language you know, and the creature understands you only if it knows that language. Your communication doesn't give the creature the ability to respond to you telepathically.",
-						"You can cast the {@spell 偵測思想} spell, requiring no spell slot or components, and you must finish a long rest before you can cast it this way again. Your spellcasting ability for the spell is the ability increased by this feat. If you have spell slots of 2nd level or higher, you can cast this spell with them."
+						"你可以和60尺內任何你可見的生物用心靈感應進行交流。你的心電溝通以一種你已知的語言的形式進行，該生物必須懂得該語言才能理解你。你的主動溝通並未給予該生物以心靈感應的形式回覆你的能力。",
+						"你可以施展{@spell 偵測思想}法術，無需法術位和構材。以此法施法後，你在完成一次長休前不能再這樣做。該法術的施法關鍵屬性是你由此專長提升的屬性。如果你擁有二環或更高的法術位，你可以消耗這些法術位施展該法術。"
 					]
 				}
 			]
@@ -4852,7 +5333,7 @@
 				{
 					"ability": "inherit",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									"detect thoughts"
@@ -4882,12 +5363,24 @@
 					"int": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"insight",
+							"deception",
+							"intimidation",
+							"persuasion"
+						]
+					}
+				}
+			],
 			"entries": [
 				"You awaken the ability to mentally connect with others. You gain the following benefits:",
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in one skill of your choice from the following list: {@skill Deception}, {@skill Insight}, {@skill Intimidation}, or {@skill Persuasion}.",
+						"You gain proficiency in one skill of your choice from the following list: {@skill 欺瞞}, {@skill 洞悉}, {@skill 威嚇}, or {@skill 說服}.",
 						"You can communicate telepathically with any creature you can see within 30 feet of you. If it understands at least one language, it can respond to you telepathically."
 					]
 				}
@@ -4902,10 +5395,15 @@
 					"int": 1
 				}
 			],
+			"skillProficiencies": [
+				{
+					"religion": true
+				}
+			],
 			"additionalSpells": [
 				{
 					"innate": {
-						"1": {
+						"_": {
 							"_": [
 								"thaumaturgy"
 							],
@@ -4923,7 +5421,7 @@
 				{
 					"type": "list",
 					"items": [
-						"You gain proficiency in the {@skill Religion} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
+						"You gain proficiency in the {@skill 宗教} skill. If you are already proficient in the skill, you add double your proficiency bonus to checks you make with it.",
 						"You learn the {@spell 奇術} and {@spell 偵測善惡} spells. You can cast {@spell 偵測善惡} once without expending a spell slot, and you regain the ability to do so when you finish a long rest."
 					]
 				}
@@ -4964,7 +5462,7 @@
 				{
 					"ability": "wis",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1": [
 									"hunter's mark"
@@ -4980,7 +5478,7 @@
 					"type": "list",
 					"items": [
 						"You learn the {@spell 獵人印記} spell. You can cast it once without expending a spell slot, and you must finish a long rest before you can cast it in this way again. You can also cast the spell using any spell slots you have. Wisdom is your spellcasting ability for this spell.",
-						"You have advantage on Wisdom ({@skill Survival}) checks to track creatures"
+						"You have advantage on Wisdom ({@skill 生存}) checks to track creatures"
 					]
 				}
 			]
@@ -5016,9 +5514,9 @@
 				{
 					"type": "list",
 					"items": [
-						"當你受到傷害時，你在為維持法術專注而進行的體質豁免檢定上有優勢。",
+						"當你受到傷害時，你在爲維持法術專注而進行的體質豁免檢定上有優勢。",
 						"即使你單手或雙手持有武器或{@item 盾牌|phb}，你也可以做出法術所要求的姿勢構材。",
-						"當一個敵意生物的移動觸發了你的藉機攻擊，你可以使用你的反應以對該生物施展法術，而非進行一次藉機攻擊。該法術的施法時間必須為1個動作，且只能以該生物為目標。"
+						"當一個敵意生物的移動觸發了你的藉機攻擊，你可以使用你的反應以對該生物施展法術，而非進行一次藉機攻擊。該法術的施法時間必須爲1個動作，且只能以該生物爲目標。"
 					]
 				}
 			],
@@ -5030,7 +5528,7 @@
 			"page": 2,
 			"entries": [
 				"{@note This feat is presented as an illustrative example of a poorly-designed feat, and is not intended to be used in play. The {@feat Fell Handed|UAFeats} feat is presented as a well-designed implementation of the same ideas, and should be used instead.}",
-				"When you hit a creature with a {@item warhammer|phb}, the  creature must succeed on a Strength saving  throw (DC 8 + your proficiency bonus + your  Strength modifier) or be knocked {@condition prone}.",
+				"When you hit a creature with a {@item warhammer|phb}, the  creature must succeed on a Strength saving  throw (DC 8 + your proficiency bonus + your  Strength modifier) or be knocked {@condition 伏地}.",
 				"In addition, you can use your warhammer to  knock away a foe's shield. If you hit a creature  that's using a shield, you can have the attack deal  no damage and force the creature to drop its  shield."
 			]
 		},
@@ -5046,6 +5544,14 @@
 							"dex"
 						],
 						"amount": 1
+					}
+				}
+			],
+			"weaponProficiencies": [
+				{
+					"choose": {
+						"from": "type=martial weapon;mundane weapon|miscellaneous=mundane",
+						"count": 4
 					}
 				}
 			],
@@ -5154,7 +5660,7 @@
 				{
 					"type": "list",
 					"items": [
-						"When you make a check using your proficiency with {@item tinker's tools|phb}, you add double your proficiency bonus to the check.",
+						"When you make a check using your proficiency with {@item 修理工具|phb}, you add double your proficiency bonus to the check.",
 						"When you make a device with your Tinker trait, you have the following additional options for what you make:",
 						{
 							"type": "entries",
@@ -5213,7 +5719,7 @@
 				{
 					"ability": "wis",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1e": [
 									"longstrider",
@@ -5225,7 +5731,7 @@
 				}
 			],
 			"entries": [
-				"你學會來自你族人們守護和尊崇的原初森林的魔法。你學會一個自選的德魯伊戲法。你也學會{@spell 大步奔行}和{@spell 行蹤無跡}法術，你可以各施放它們一次而無須消耗法術位。當你完成一次長休，你將重新獲得透過這個方式施放這兩個法術的能力。這三個法術的施法屬性是睿知。"
+				"你學會來自你族人們守護和尊崇的原初森林的魔法。你學會一個自選的德魯伊戲法。你也學會{@spell 大步奔行}和{@spell 行蹤無跡}法術，你可以各施放它們一次而無須消耗法術位。當你完成一次長休，你將重新獲得通過這個方式施放這兩個法術的能力。這三個法術的施法屬性是感知。"
 			],
 			"ENG_name": "Wood Elf Magic"
 		},
@@ -5247,7 +5753,7 @@
 				{
 					"ability": "wis",
 					"innate": {
-						"1": {
+						"_": {
 							"daily": {
 								"1e": [
 									"longstrider",
@@ -5259,7 +5765,7 @@
 				}
 			],
 			"entries": [
-				"你學會來自你族人們守護和尊崇的原初森林的魔法。你學會一個自選的德魯伊戲法。你也學會{@spell 大步奔行}和{@spell 行蹤無跡}法術，你可以各施放它們一次而無須消耗法術位。當你完成一次長休，你將重新獲得透過這個方式施放這兩個法術的能力。這三個法術的施法屬性是睿知。"
+				"你學會來自你族人們守護和尊崇的原初森林的魔法。你學會一個自選的德魯伊戲法。你也學會{@spell 大步奔行}和{@spell 行蹤無跡}法術，你可以各施放它們一次而無須消耗法術位。當你完成一次長休，你將重新獲得通過這個方式施放這兩個法術的能力。這三個法術的施法屬性是感知。"
 			],
 			"ENG_name": "Wood Elf Magic"
 		}
