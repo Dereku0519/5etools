@@ -14,6 +14,8 @@
 	<title>Optional, Variant, and Expanded Rules - 5etools</title>
 
 	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/jquery-ui-slider-pips.css">
 	<link rel="stylesheet" href="css/main.css">
 
 	<!-- Favicons -->
@@ -61,8 +63,8 @@
 
 	<header class="hidden-xs hidden-sm page__header">
 		<div class="container">
-			<h1 class="page__title">可选/变体规则</h1>
-			<p class="page__subtitle">使用左侧的名称搜索，点击名称以在右侧显示。</p>
+			<h1 class="page__title">Optional/etc. Rules</h1>
+			<p class="page__subtitle">Search by name on the left, click a name to display on the right.</p>
 		</div>
 	</header>
 
@@ -78,13 +80,13 @@
 						<div id="lst__search-glass" class="lst__wrp-search-glass no-events flex-vh-center"><span class="glyphicon glyphicon-search"></span></div>
 						<div class="lst__wrp-search-visible no-events flex-vh-center"></div>
 					</div>
-					<button class="btn btn-default" id="reset">重置</button>
+					<button class="btn btn-default" id="reset">Reset</button>
 				</div>
 
 				<div id="filtertools" class="input-group input-group--bottom flex no-shrink">
-					<button class="col-7 sort btn btn-default btn-xs" data-sort="name">名称 <span class="caret_wrp"></span></button>
-					<button class="col-3 sort btn btn-default btn-xs" data-sort="ruleType">类型 <span class="caret_wrp"></span></button>
-					<button class="sort btn btn-default btn-xs ve-grow" data-sort="source">资源 <span class="caret_wrp"></span></button>
+					<button class="col-7 sort btn btn-default btn-xs" data-sort="name">Name <span class="caret_wrp"></span></button>
+					<button class="col-3 sort btn btn-default btn-xs" data-sort="ruleType">Type <span class="caret_wrp"></span></button>
+					<button class="sort btn btn-default btn-xs ve-grow" data-sort="source">Source <span class="caret_wrp"></span></button>
 				</div>
 
 				<div class="list list--stats variantrules">
@@ -94,8 +96,8 @@
 			<div id="contentwrapper" class="view-col">
 				<div id="sublistcontainer" class="sublist sublist--resizable">
 					<div id="sublistsort" class="btn-group sublist__wrp-cols">
-						<button class="col-9 sort btn btn-default btn-xs" data-sort="name">名称 <span class="caret_wrp"></span></button>
-						<button class="col-3 sort btn btn-default btn-xs" data-sort="ruleType">类型 <span class="caret_wrp"></span></button>
+						<button class="col-9 sort btn btn-default btn-xs" data-sort="name">Name <span class="caret_wrp"></span></button>
+						<button class="col-3 sort btn btn-default btn-xs" data-sort="ruleType">Type <span class="caret_wrp"></span></button>
 					</div>
 					<div class="list subvariantrules">
 						<!-- populate with JS -->
@@ -109,13 +111,13 @@
 				<div class="wrp-stats-table">
 					<table id="pagecontent" class="stats">
 						<tr><th class="border" colspan="6"></th></tr>
-						<tr><td colspan="6" class="initial-message">从列表中选择一条规则以在此处查看</td></tr>
+						<tr><td colspan="6" class="initial-message">Select a rule from the list to view it here</td></tr>
 						<tr><th class="border" colspan="6"></th></tr>
 					</table>
 				</div>
 
 				<div class="text-center mt-2 no-print">
-					<button class="btn btn-xs btn-info" id="manage-brew">管理自制内容</button>
+					<button class="btn btn-xs btn-info" id="manage-brew">Manage Homebrew</button>
 				</div>
 			</div>
 		</div>
@@ -123,6 +125,8 @@
 </div>    <!--5ETOOLS_SCRIPT_ANCHOR-->
 <!--5ETOOLS_AD_ADHESION-->
 <script type="text/javascript" src="lib/jquery.js"></script>
+<script type="text/javascript" src="lib/jquery-ui.js"></script>
+<script type="text/javascript" src="lib/jquery-ui-slider-pip.js"></script>
 <script type="text/javascript" src="js/parser.js"></script>
 <script type="text/javascript" src="js/utils.js"></script>
 <script type="text/javascript" src="js/utils-list.js"></script>
@@ -141,10 +145,6 @@
 <script type="text/javascript" src="js/variantrules.js"></script>
 <script type="text/javascript" src="js/list2.js"></script>
 <script type="text/javascript" src="lib/elasticlunr.js"></script>
-<script type="text/javascript" src="lib/lunr.min.js"></script>
-<script type="text/javascript" src="lib/tinyseg.js"></script>
-<script type="text/javascript" src="lib/lunr.stemmer.support.min.js"></script>
-<script type="text/javascript" src="lib/lunr.ja.min.js"></script>
 </body>
 
 </html>

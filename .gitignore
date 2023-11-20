@@ -12,7 +12,3 @@ node_modules
 sitemap.xml
 js/sw-files.js
 *.DS_Store
-
-# Misc dev/scripting files
-trash
-trash_in
