@@ -34,48 +34,6 @@ class PageFilter {
 		await this._filterBox.pDoLoadState();
 		return this._filterBox;
 	}
-
-	// region Helpers
-	static _getClassFilterItem ({className, classSource, isVariantClass, definedInSource}) {
-		const nm = className.split("(")[0].trim();
-		const variantSuffix = isVariantClass ? ` [${definedInSource ? Parser.sourceJsonToAbv(definedInSource) : "Unknown"}]` : ""
-		const sourceSuffix = (SourceUtil.isNonstandardSource(classSource || SRC_PHB) || BrewUtil.hasSourceJson(classSource || SRC_PHB))
-			? ` (${Parser.sourceJsonToAbv(classSource)})` : ""
-		const name = `${nm}${variantSuffix}${sourceSuffix}`;
-
-		const opts = {
-			item: name,
-			userData: {
-				group: SourceUtil.getFilterGroup(classSource || SRC_PHB),
-			},
-		};
-
-		if (isVariantClass) {
-			opts.nest = definedInSource ? Parser.sourceJsonToFull(definedInSource) : "Unknown";
-			opts.userData.equivalentClassName = `${nm}${sourceSuffix}`
-			opts.userData.definedInSource = definedInSource;
-		}
-
-		return new FilterItem(opts);
-	}
-
-	static _getSubclassFilterItem ({className, classSource, subclassShortName, subclassSource, subSubclassName, isVariantClass, definedInSource}) {
-		const group = SourceUtil.isSubclassReprinted(className, classSource, subclassShortName, subclassSource) || Parser.sourceJsonToFull(subclassSource).startsWith(UA_PREFIX) || Parser.sourceJsonToFull(subclassSource).startsWith(PS_PREFIX);
-
-		const classFilterItem = this._getClassFilterItem({
-			className: subclassShortName,
-			classSource: subclassSource,
-		});
-
-		return new FilterItem({
-			item: `${className}: ${classFilterItem.item}${subSubclassName ? `, ${subSubclassName}` : ""}`,
-			nest: className,
-			userData: {
-				group,
-			},
-		});
-	}
-	// endregion
 }
 
 class ModalFilter {
@@ -105,11 +63,7 @@ class ModalFilter {
 
 	get pageFilter () { return this._pageFilter; }
 
-	_$getWrpList () { return $(`<div class="list ui-list__wrp overflow-x-hidden overflow-y-auto h-100 min-h-0"></div>`); }
-
-	_$getColumnHeaderPreviewAll (opts) {
-		return $(`<button class="btn btn-default btn-xs ${opts.isBuildUi ? "col-1" : "col-0-5"}">${ListUiUtil.HTML_GLYPHICON_EXPAND}</button>`);
-	}
+	_$getWrpList () { return $(`<div class="list ui-list__wrp overflow-x-hidden overflow-y-auto mb-2 h-100 min-h-0"></div>`); }
 
 	/**
 	 * @param $wrp
@@ -126,9 +80,9 @@ class ModalFilter {
 
 		await this._pInit();
 
-		const $ovlLoading = $(`<div class="w-100 h-100 flex-vh-center"><i class="dnd-font ve-muted">加载中...</i></div>`).appendTo($wrp);
+		const $ovlLoading = $(`<div class="w-100 h-100 flex-vh-center"><i class="dnd-font ve-muted">Loading...</i></div>`).appendTo($wrp);
 
-		const $iptSearch = opts.$iptSearch || $(`<input class="form-control" type="search" placeholder="搜索...">`);
+		const $iptSearch = opts.$iptSearch || $(`<input class="form-control" type="search" placeholder="Search...">`);
 		const $btnReset = opts.$btnReset || $(`<button class="btn btn-default">重置</button>`);
 		const $wrpFormTop = $$`<div class="flex input-group btn-group w-100 lst__form-top">${$iptSearch}${$btnReset}</div>`;
 
@@ -139,13 +93,9 @@ class ModalFilter {
 		const $btnSendAllToRight = opts.isBuildUi ? $(`<button class="btn btn-xxs btn-default col-1" title="Add All"><span class="glyphicon glyphicon-arrow-right"></span></button>`) : null;
 
 		if (!opts.isBuildUi) {
-			if (this._isRadio) $wrpFormHeaders.append(`<label class="btn btn-default btn-xs col-0-5 flex-vh-center" disabled></label>`);
-			else $$`<label class="btn btn-default btn-xs col-0-5 flex-vh-center">${$cbSelAll}</label>`.appendTo($wrpFormHeaders);
+			if (this._isRadio) $wrpFormHeaders.append(`<label class="btn btn-default col-1 flex-vh-center" disabled></label>`);
+			else $$`<label class="btn btn-default col-1 flex-vh-center">${$cbSelAll}</label>`.appendTo($wrpFormHeaders);
 		}
-
-		const $btnTogglePreviewAll = this._$getColumnHeaderPreviewAll(opts)
-			.appendTo($wrpFormHeaders);
-
 		this._$getColumnHeaders().forEach($ele => $wrpFormHeaders.append($ele));
 		if (opts.isBuildUi) $btnSendAllToRight.appendTo($wrpFormHeaders);
 
@@ -161,7 +111,6 @@ class ModalFilter {
 		});
 
 		if (!opts.isBuildUi && !this._isRadio) ListUiUtil.bindSelectAllCheckbox($cbSelAll, this._list);
-		ListUiUtil.bindPreviewAllButton($btnTogglePreviewAll, this._list);
 		SortUtil.initBtnSortHandlers($wrpFormHeaders, this._list);
 
 		this._allData = this._allData || await this._pLoadAllData();
@@ -205,7 +154,6 @@ class ModalFilter {
 		const $wrpInner = $$`<div class="flex-col h-100">
 			${$wrpForm}
 			${$wrpList}
-			<hr class="hr-1">
 			${opts.isBuildUi ? null : $$`<div class="flex-vh-center">${$btnConfirm}</div>`}
 		</div>`.appendTo($wrp.empty());
 
@@ -224,14 +172,28 @@ class ModalFilter {
 	 * @param [opts]
 	 * @param [opts.filterExpression] A filter expression, as usually found in @filter tags, which will be applied.
 	 */
-	async pGetUserSelection ({filterExpression = null} = {}) {
+	async pGetUserSelection (opts) {
+		opts = opts || {};
+
 		// eslint-disable-next-line no-async-promise-executor
 		return new Promise(async resolve => {
-			const {$modalInner, doClose} = this._getShowModal(resolve);
+			const {$modalInner, doClose} = UiUtil.getShowModal({
+				isHeight100: true,
+				title: `Filter/Search for ${this._modalTitle}`,
+				cbClose: (isDataEntered) => {
+					this._filterCache.$wrpModalInner.detach();
+					if (!isDataEntered) resolve([]);
+				},
+				isUncappedHeight: true,
+			});
 
 			await this.pPreloadHidden($modalInner);
 
-			this._doApplyFilterExpression(filterExpression);
+			if (opts.filterExpression) {
+				const filterSubhashMeta = Renderer.getFilterSubhashes(Renderer.splitTagByPipe(opts.filterExpression), this._namespace);
+				const subhashes = filterSubhashMeta.subhashes.map(it => `${it.key}${HASH_SUB_KV_SEP}${it.value}`);
+				this.pageFilter.filterBox.setFromSubHashes(subhashes, true);
+			}
 
 			this._filterCache.$btnConfirm.off("click").click(async () => {
 				const checked = this._filterCache.list.visibleItems.filter(it => it.data.cbSel.checked);
@@ -251,31 +213,6 @@ class ModalFilter {
 			this._filterCache.$iptSearch.focus();
 		});
 	}
-
-	_getShowModal (resolve) {
-		const {$modalInner, doClose} = UiUtil.getShowModal({
-			isHeight100: true,
-			isWidth100: true,
-			title: `Filter/Search for ${this._modalTitle}`,
-			cbClose: (isDataEntered) => {
-				this._filterCache.$wrpModalInner.detach();
-				if (!isDataEntered) resolve([]);
-			},
-			isUncappedHeight: true,
-		});
-
-		return {$modalInner, doClose};
-	}
-
-	_doApplyFilterExpression (filterExpression) {
-		if (!filterExpression) return;
-
-		const filterSubhashMeta = Renderer.getFilterSubhashes(Renderer.splitTagByPipe(filterExpression), this._namespace);
-		const subhashes = filterSubhashMeta.subhashes.map(it => `${it.key}${HASH_SUB_KV_SEP}${it.value}`);
-		this.pageFilter.filterBox.setFromSubHashes(subhashes, true);
-	}
-
-	_getNameStyle () { return `bold`; }
 
 	/**
 	 * Pre-heat the modal, thus allowing access to the filter box underneath.
@@ -350,7 +287,7 @@ class FilterBox extends ProxyBase {
 		this._isCompact = opts.isCompact;
 		this._namespace = opts.namespace;
 
-		this._doSaveStateThrottled = MiscUtil.throttle(() => this._pDoSaveState(), 50);
+		this._doSaveStateDebounced = MiscUtil.debounce(() => this._pDoSaveState(), 50);
 		this.__meta = this._getDefaultMeta();
 		if (this._isCompact) this.__meta.isSummaryHidden = true;
 
@@ -393,7 +330,7 @@ class FilterBox extends ProxyBase {
 	}
 
 	fireChangeEvent () {
-		this._doSaveStateThrottled();
+		this._doSaveStateDebounced();
 		this.fireEvent(FilterBox.EVNT_VALCHANGE);
 	}
 
@@ -491,7 +428,7 @@ class FilterBox extends ProxyBase {
 		this._$btnToggleSummaryHidden
 			.click(() => {
 				this._meta.isSummaryHidden = !this._meta.isSummaryHidden;
-				this._doSaveStateThrottled();
+				this._doSaveStateDebounced();
 			});
 		const summaryHiddenHook = () => {
 			this._$btnToggleSummaryHidden.toggleClass("active", !!this._meta.isSummaryHidden);
@@ -501,7 +438,7 @@ class FilterBox extends ProxyBase {
 		summaryHiddenHook();
 
 		if (!this._$btnOpen) {
-			this._$btnOpen = $(`<button class="btn btn-default ${this._isCompact ? "px-2" : ""}">筛选</button>`)
+			this._$btnOpen = $(`<button class="btn btn-default ${this._isCompact ? "px-2" : ""}">篩選</button>`)
 				.prependTo(this._$wrpFormTop);
 		} else if (!this._$btnOpen.parent().length) {
 			this._$btnOpen.prependTo(this._$wrpFormTop);
@@ -540,16 +477,16 @@ class FilterBox extends ProxyBase {
 
 		const metaIptSearch = ComponentUiUtil.$getIptStr(
 			this._compSearch, "search",
-			{decorationRight: "clear", asMeta: true, html: `<input class="form-control input-xs" placeholder="搜索...">`},
+			{decorationRight: "clear", asMeta: true, html: `<input class="form-control input-xs" placeholder="Search...">`},
 		);
 		this._compSearch._addHookBase("search", () => {
 			const searchTerm = this._compSearch._state.search.toLowerCase();
 			this._filters.forEach(f => f.handleSearch(searchTerm));
 		});
 
-		const $btnShowAllFilters = $(`<button class="btn btn-xs btn-default">显示全部</button>`)
+		const $btnShowAllFilters = $(`<button class="btn btn-xs btn-default">顯示全部</button>`)
 			.click(() => this.showAllFilters());
-		const $btnHideAllFilters = $(`<button class="btn btn-xs btn-default">隐藏全部</button>`)
+		const $btnHideAllFilters = $(`<button class="btn btn-xs btn-default">隱藏全部</button>`)
 			.click(() => this.hideAllFilters());
 
 		const $btnReset = $(`<button class="btn btn-xs btn-default mr-3" title="Reset filters. SHIFT to reset everything.">重置</button>`)
@@ -569,15 +506,15 @@ class FilterBox extends ProxyBase {
 			.appendTo($wrpBtnCombineFilters)
 			.click(() => this._meta.modeCombineFilters = FilterBox._COMBINE_MODES.getNext(this._meta.modeCombineFilters));
 		const hook = () => {
-			$btnCombineFiltersAs.text(this._meta.modeCombineFilters === "custom" ? "自定义" : this._meta.modeCombineFilters.toUpperCase());
+			$btnCombineFiltersAs.text(this._meta.modeCombineFilters === "custom" ? this._meta.modeCombineFilters.uppercaseFirst() : this._meta.modeCombineFilters.toUpperCase());
 			if (this._meta.modeCombineFilters === "custom") $wrpBtnCombineFilters.append($btnCombineFilterSettings);
 			else $btnCombineFilterSettings.detach();
-			this._doSaveStateThrottled();
+			this._doSaveStateDebounced();
 		};
 		this._addHook("meta", "modeCombineFilters", hook);
 		hook();
 
-		const $btnSave = $(`<button class="btn btn-primary fltr__btn-close mr-2">保存</button>`)
+		const $btnSave = $(`<button class="btn btn-primary fltr__btn-close mr-2">儲存</button>`)
 			.click(() => this._modalMeta.doClose(true));
 
 		const $btnCancel = $(`<button class="btn btn-default fltr__btn-close">取消</button>`)
@@ -585,12 +522,12 @@ class FilterBox extends ProxyBase {
 
 		$$(this._modalMeta.$modal)`<div class="split mb-2 mt-2 flex-v-center mobile__flex-col">
 			<div class="flex-v-baseline mobile__flex-col">
-				<h4 class="m-0 mr-2 mobile__mb-2" style="white-space:nowrap;">筛选</h4>
+				<h4 class="m-0 mr-2 mobile__mb-2">篩選</h4>
 				${metaIptSearch.$wrp.addClass("mobile__mb-2")}
 			</div>
 			<div class="flex-v-center mobile__flex-col">
 				<div class="flex-v-center mobile__m-1">
-					<div class="mr-2">合并方式</div>
+					<div class="mr-2">Combine as</div>
 					${$wrpBtnCombineFilters}
 				</div>
 				<div class="flex-v-center mobile__m-1">
@@ -615,36 +552,36 @@ class FilterBox extends ProxyBase {
 	}
 
 	_openSettingsModal () {
-		const {$modalInner} = UiUtil.getShowModal({title: "设置"});
+		const {$modalInner} = UiUtil.getShowModal({title: "Settings"});
 
-		UiUtil.$getAddModalRowCb($modalInner, "默认反选自制资源", this._meta, "isBrewDefaultHidden");
+		UiUtil.$getAddModalRowCb($modalInner, "Deselect Homebrew Sources by Default", this._meta, "isBrewDefaultHidden");
 
 		UiUtil.addModalSep($modalInner);
 
-		UiUtil.$getAddModalRowHeader($modalInner, "概览隐藏筛选器...", {helpText: "概览是在搜索框下显示的小的蓝色、红色按钮板。"});
-		this._filters.forEach(f => UiUtil.$getAddModalRowCb($modalInner, f.headerName ?? f.header, this._minisHidden, f.header));
+		UiUtil.$getAddModalRowHeader($modalInner, "Hide summary for filter...", {helpText: "The summary is the small red and blue button panel which appear below the search bar."});
+		this._filters.forEach(f => UiUtil.$getAddModalRowCb($modalInner, f.header, this._minisHidden, f.header));
 
 		UiUtil.addModalSep($modalInner);
 
 		const $rowResetAlwaysSave = UiUtil.$getAddModalRow($modalInner, "div").addClass("pr-2");
-		$rowResetAlwaysSave.append(`<span>始终在关闭时保存</span>`);
-		$(`<button class="btn btn-xs btn-default">重置</button>`)
+		$rowResetAlwaysSave.append(`<span>Always Save on Close</span>`);
+		$(`<button class="btn btn-xs btn-default">Reset</button>`)
 			.appendTo($rowResetAlwaysSave)
 			.click(async () => {
 				await StorageUtil.pRemove(FilterBox._STORAGE_KEY_ALWAYS_SAVE_UNCHANGED);
-				JqueryUtil.doToast("已保存！");
+				JqueryUtil.doToast("Saved!");
 			});
 	}
 
 	_openCombineAsModal () {
-		const {$modalInner} = UiUtil.getShowModal({title: "筛选器合并逻辑"});
-		const $btnReset = $(`<button class="btn btn-xs btn-default">重置</button>`)
+		const {$modalInner} = UiUtil.getShowModal({title: "Filter Combination Logic"});
+		const $btnReset = $(`<button class="btn btn-xs btn-default">Reset</button>`)
 			.click(() => {
 				Object.keys(this._combineAs).forEach(k => this._combineAs[k] = "and");
 				$sels.forEach($sel => $sel.val("0"));
 			});
-		UiUtil.$getAddModalRowHeader($modalInner, "合并筛选器方式...", {$eleRhs: $btnReset});
-		const $sels = this._filters.map(f => UiUtil.$getAddModalRowSel($modalInner, f.headerName ?? f.header, this._combineAs, f.header, ["and", "or"], {fnDisplay: (it) => it.toUpperCase()}));
+		UiUtil.$getAddModalRowHeader($modalInner, "Combine filters as...", {$eleRhs: $btnReset});
+		const $sels = this._filters.map(f => UiUtil.$getAddModalRowSel($modalInner, f.header, this._combineAs, f.header, ["and", "or"], {fnDisplay: (it) => it.toUpperCase()}));
 	}
 
 	getValues () {
@@ -693,10 +630,10 @@ class FilterBox extends ProxyBase {
 
 			if (hasChanges) {
 				const isSave = await InputUiUtil.pGetUserBoolean({
-					title: "未保存更改",
-					textYesRemember: "始终保存",
-					textYes: "保存",
-					textNo: "放弃",
+					title: "Unsaved Changes",
+					textYesRemember: "Always Save",
+					textYes: "Save",
+					textNo: "Discard",
 					storageKey: FilterBox._STORAGE_KEY_ALWAYS_SAVE_UNCHANGED,
 					isGlobal: true,
 				});
@@ -957,7 +894,7 @@ class FilterBox extends ProxyBase {
 }
 FilterBox.EVNT_VALCHANGE = "valchange";
 FilterBox.SOURCE_HEADER = "Source";
-FilterBox.SOURCE_HEADER_NAME = "资源";
+FilterBox.SOURCE_HEADER_NAME = "資源";
 FilterBox._PILL_STATES = ["ignore", "yes", "no"];
 FilterBox._COMBINE_MODES = ["and", "or", "custom"];
 FilterBox._STORAGE_KEY = "filterBoxState";
@@ -1024,7 +961,7 @@ class FilterBase extends BaseComponent {
 	}
 
 	_getRenderedHeader () {
-		return `<span ${this._headerHelp ? `title="${this._headerHelp.escapeQuotes()}" class="help-subtle"` : ""}>${this.headerName ? this.headerName : this.header}</span>`;
+		return `<span ${this._headerHelp ? `title="${this._headerHelp.escapeQuotes()}" class="help--subtle"` : ""}>${this.headerName? this.headerName: this.header}</span>`;
 	}
 
 	set filterBox (it) { this._filterBox = it; }
@@ -1370,7 +1307,7 @@ class Filter extends FilterBase {
 	_getDefaultState (k) { return this._deselFn && this._deselFn(k) ? 2 : this._selFn && this._selFn(k) ? 1 : 0; }
 
 	_getPill (item) {
-		const displayText = this._displayFn ? this._displayFn(item.item, item) : item.item;
+		const displayText = this._displayFn ? this._displayFn(item.item) : item.item;
 
 		const btnPill = e_({
 			tag: "div",
@@ -1421,13 +1358,13 @@ class Filter extends FilterBase {
 	}
 
 	_getBtnMini (item) {
-		const toDisplay = this._displayFnMini ? this._displayFnMini(item.item, item) : this._displayFn ? this._displayFn(item.item, item) : item.item;
+		const toDisplay = this._displayFnMini ? this._displayFnMini(item.item) : this._displayFn ? this._displayFn(item.item) : item.item;
 
 		const btnMini = e_({
 			tag: "div",
 			clazz: `fltr__mini-pill ${this._filterBox.isMinisHidden(this.header) ? "ve-hidden" : ""} ${this._deselFn && this._deselFn(item.item) ? "fltr__mini-pill--default-desel" : ""} ${this._selFn && this._selFn(item.item) ? "fltr__mini-pill--default-sel" : ""}`,
 			html: toDisplay,
-			title: `${this._displayFnTitle ? `${this._displayFnTitle(item.item, item)} (` : ""}Filter: ${this.header}${this._displayFnTitle ? ")" : ""}`,
+			title: `${this._displayFnTitle ? `${this._displayFnTitle(item.item)} (` : ""}Filter: ${this.header}${this._displayFnTitle ? ")" : ""}`,
 			click: () => {
 				this._state[item.item] = 0;
 				this._filterBox.fireChangeEvent();
@@ -1470,7 +1407,7 @@ class Filter extends FilterBase {
 			tag: "button",
 			clazz: `btn btn-default ${opts.isMulti ? "btn-xxs" : "btn-xs"} fltr__h-btn--all w-100`,
 			click: () => this._doSetPillsAll(),
-			html: "全选",
+			html: "全選",
 		});
 		const btnClear = e_({
 			tag: "button",
@@ -1482,13 +1419,13 @@ class Filter extends FilterBase {
 			tag: "button",
 			clazz: `btn btn-default ${opts.isMulti ? "btn-xxs" : "btn-xs"} fltr__h-btn--none w-100`,
 			click: () => this._doSetPillsNone(),
-			html: "全无",
+			html: "全無",
 		});
 		const btnDefault = e_({
 			tag: "button",
 			clazz: `btn btn-default ${opts.isMulti ? "btn-xxs" : "btn-xs"} w-100`,
 			click: () => this._doSetPinsDefault(),
-			html: "缺省",
+			html: "預設",
 		});
 
 		const wrpStateBtnsOuter = e_({
@@ -1515,7 +1452,7 @@ class Filter extends FilterBase {
 			tag: "button",
 			clazz: `btn btn-default ${opts.isMulti ? "btn-xxs" : "btn-xs"} fltr__h-btn-logic--blue fltr__h-btn-logic w-100`,
 			click: () => this._meta.combineBlue = Filter._getNextCombineMode(this._meta.combineBlue),
-			title: `使该筛选器使用正向匹配模式。AND 要求所有蓝色选项都匹配，OR 要求至少有一条蓝色选项匹配，XOR 要求有且仅有一条蓝色选项匹配。`,
+			title: `Positive matches mode for this filter. AND requires all blues to match, OR requires at least one blue to match, XOR requires exactly one blue to match.`,
 		});
 		const hookCombineBlue = () => e_({ele: btnCombineBlue, text: `${this._meta.combineBlue}`.toUpperCase()});
 		this._addHook("meta", "combineBlue", hookCombineBlue);
@@ -1525,7 +1462,7 @@ class Filter extends FilterBase {
 			tag: "button",
 			clazz: `btn btn-default ${opts.isMulti ? "btn-xxs" : "btn-xs"} fltr__h-btn-logic--red fltr__h-btn-logic w-100`,
 			click: () => this._meta.combineRed = Filter._getNextCombineMode(this._meta.combineRed),
-			title: `使该筛选器使用反向匹配模式。AND 要求所有红色选项都匹配，OR 要求至少有一条红色选项匹配，XOR 要求有且仅有一条红色选项匹配。`,
+			title: `Negative match mode for this filter. AND requires all reds to match, OR requires at least one red to match, XOR requires exactly one red to match.`,
 		});
 		const hookCombineRed = () => e_({ele: btnCombineRed, text: `${this._meta.combineRed}`.toUpperCase()});
 		this._addHook("meta", "combineRed", hookCombineRed);
@@ -1535,7 +1472,7 @@ class Filter extends FilterBase {
 			tag: "button",
 			clazz: `btn btn-default ${opts.isMulti ? "btn-xxs" : "btn-xs"} ml-2`,
 			click: () => this._meta.isHidden = !this._meta.isHidden,
-			html: "隐藏",
+			html: "隱藏",
 		});
 		const hookShowHide = () => {
 			e_({ele: btnShowHide}).toggleClass("active", this._meta.isHidden);
@@ -1687,9 +1624,6 @@ class Filter extends FilterBase {
 		if (isResetAll) {
 			this.resetBase();
 			this._resetNestsHidden();
-		} else {
-			// Always reset "AND/OR" states
-			Object.assign(this._meta, {combineBlue: Filter._DEFAULT_META.combineBlue, combineRed: Filter._DEFAULT_META.combineRed});
 		}
 		Object.keys(this._state).forEach(k => delete this._state[k]);
 		this._items.forEach(it => this._defaultItemState(it));
@@ -1698,7 +1632,7 @@ class Filter extends FilterBase {
 	resetShallow () { return this.reset(); }
 
 	_doRenderPills () {
-		if (this._itemSortFn) this._items.sort(this._isSortByDisplayItems && this._displayFn ? (a, b) => this._itemSortFn(this._displayFn(a.item, a), this._displayFn(b.item, b)) : this._itemSortFn);
+		if (this._itemSortFn) this._items.sort(this._isSortByDisplayItems && this._displayFn ? (a, b) => this._itemSortFn(this._displayFn(a.item), this._displayFn(b.item)) : this._itemSortFn);
 
 		this._items.forEach(it => {
 			if (!it.rendered) {
@@ -1737,13 +1671,15 @@ class Filter extends FilterBase {
 			.sort((a, b) => SortUtil.ascSortLower(a[0], b[0]))
 			.forEach(([groupKey, groupMeta], i) => {
 				groupMeta.hrDivider.appendTo(this.__wrpPills);
-				groupMeta.hrDivider.toggleVe(!this._isGroupDividerHidden(groupKey, i));
+				groupMeta.hrDivider.toggleVe(!(i === 0 && this._nests == null));
 				groupMeta.wrpPills.appendTo(this.__wrpPills);
 			});
 
 		if (this._nests) {
 			this._pillGroupsMeta[group].toggleDividerFromNestVisibility = () => {
-				this._pillGroupsMeta[group].hrDivider.toggleVe(!this._isGroupDividerHidden(group));
+				const groupItems = this._items.filter(it => this._groupFn(it) === group);
+				const hiddenGroupItems = groupItems.filter(it => this._nestsHidden[it.nest]);
+				this._pillGroupsMeta[group].hrDivider.toggleVe(groupItems.length !== hiddenGroupItems.length);
 			};
 
 			// bind group dividers to show/hide depending on nest visibility state
@@ -1756,18 +1692,6 @@ class Filter extends FilterBase {
 		}
 	}
 
-	_isGroupDividerHidden (group, ixSortedGroups) {
-		if (!this._nests) {
-			// When not nested, always hide the first divider
-			if (ixSortedGroups === undefined) return `${group}` === `${Object.keys(this._pillGroupsMeta).sort((a, b) => SortUtil.ascSortLower(a, b))[0]}`;
-			return ixSortedGroups === 0;
-		}
-
-		const groupItems = this._items.filter(it => this._groupFn(it) === group);
-		const hiddenGroupItems = groupItems.filter(it => this._nestsHidden[it.nest]);
-		return groupItems.length === hiddenGroupItems.length;
-	}
-
 	_doRenderPills_doRenderWrpGroup_getHrDivider () { return e_({tag: "hr", clazz: `fltr__dropdown-divider--sub hr-2 mx-3`}); }
 	_doRenderPills_doRenderWrpGroup_getWrpPillsSub () { return e_({tag: "div", clazz: `fltr__wrp-pills--sub`}); }
 
@@ -1776,7 +1700,7 @@ class Filter extends FilterBase {
 		const view = this._items.slice(0);
 		if (this._itemSortFnMini || this._itemSortFn) {
 			const fnSort = this._itemSortFnMini || this._itemSortFn;
-			view.sort(this._isSortByDisplayItems && this._displayFn ? (a, b) => fnSort(this._displayFn(a.item, a), this._displayFn(b.item, b)) : fnSort);
+			view.sort(this._isSortByDisplayItems && this._displayFn ? (a, b) => fnSort(this._displayFn(a.item), this._displayFn(b.item)) : fnSort);
 		}
 
 		view.forEach(it => {
@@ -1916,10 +1840,8 @@ class Filter extends FilterBase {
 		return entryVal;
 	}
 
-	_toDisplay_getFilterState (boxState) { return boxState[this.header]; }
-
 	toDisplay (boxState, entryVal) {
-		const filterState = this._toDisplay_getFilterState(boxState);
+		const filterState = boxState[this.header];
 		if (!filterState) return true;
 
 		const totals = filterState._totals;
@@ -1976,7 +1898,7 @@ class Filter extends FilterBase {
 				break;
 			}
 			case "xor": {
-				// if exactly one is 2 (red) exclude if it matches
+				// if exactl one is 2 (red) exclude if it matches
 				hide = hide || entryVal.filter(fi => !fi.isIgnoreRed).filter(fi => filterState[fi.item] === 2).length === 1;
 
 				break;
@@ -2120,23 +2042,23 @@ class SourceFilter extends Filter {
 		const btnSupplements = e_({
 			tag: "button",
 			clazz: `btn btn-default w-100 ${opts.isMulti ? "btn-xxs" : "btn-xs"}`,
-			title: `按住 SHIFT 包含 UA 等内容。`,
-			html: `核心/资源`,
+			title: `SHIFT to include UA/etc.`,
+			html: `Core/Supplements`,
 			click: evt => this._doSetPinsSupplements(evt.shiftKey),
 		});
 
 		const btnAdventures = e_({
 			tag: "button",
 			clazz: `btn btn-default w-100 ${opts.isMulti ? "btn-xxs" : "btn-xs"}`,
-			title: `按住 SHIFT 包含 UA 等内容。`,
-			html: `冒险`,
+			title: `SHIFT to include UA/etc.`,
+			html: `Adventures`,
 			click: evt => this._doSetPinsAdventures(evt.shiftKey),
 		});
 
 		const btnHomebrew = e_({
 			tag: "button",
 			clazz: `btn btn-default w-100 ${opts.isMulti ? "btn-xxs" : "btn-xs"}`,
-			html: `自制`,
+			html: `Homebrew`,
 			click: () => this._doSetPinsHomebrew(),
 		});
 
@@ -2149,31 +2071,31 @@ class SourceFilter extends Filter {
 
 		const menu = ContextUtil.getMenu([
 			new ContextUtil.Action(
-				"选择所有标准资源",
+				"Select All Standard Sources",
 				() => this._doSetPinsStandard(),
 			),
 			new ContextUtil.Action(
-				"选择所有非标准资源",
+				"Select All Non-Standard Sources",
 				() => this._doSetPinsNonStandard(),
 			),
 			new ContextUtil.Action(
-				"选择所有自制资源",
+				"Select All Homebrew Sources",
 				() => this._doSetPinsHomebrew(),
 			),
 			null,
 			new ContextUtil.Action(
-				`选择“寻常”资源`,
+				`Select "Vanilla" Sources`,
 				() => this._doSetPinsVanilla(),
-				{title: `选择适用于任何战役的标准资源集。`},
+				{title: `Select a baseline set of sources suitable for any campaign.`},
 			),
 			null,
 			new ContextUtil.Action(
-				"选择 SRD 资源",
+				"Select SRD Sources",
 				() => this._doSetPinsSrd(),
 			),
 			null,
 			new ContextUtil.Action(
-				"反转选择",
+				"Invert Selection",
 				() => this._doInvertPins(),
 			),
 		]);
@@ -2187,8 +2109,8 @@ class SourceFilter extends Filter {
 		const btnOnlyPrimary = e_({
 			tag: "button",
 			clazz: `btn btn-default w-100 ${opts.isMulti ? "btn-xxs" : "btn-xs"}`,
-			html: `包含引用`,
-			title: `除条目所在的主要资源以外，条目出现过的资源都算作被其包含在内（比如重印）`,
+			html: `Include References`,
+			title: `Consider entities as belonging to every source they appear in (i.e. reprints) as well as their primary source`,
 			click: () => this._meta.isIncludeOtherSources = !this._meta.isIncludeOtherSources,
 		});
 		const hkIsIncludeOtherSources = () => {
@@ -2316,7 +2238,7 @@ class SourceFilter extends Filter {
 		const btnShowSlider = e_({
 			tag: "button",
 			clazz: `btn btn-xxs btn-default px-1`,
-			html: "按日期选择",
+			html: "Select by Date",
 			click: () => {
 				grpBtnsInactive.hideVe();
 				wrpWrpSlider.showVe();
@@ -2346,7 +2268,7 @@ class SourceFilter extends Filter {
 		const btnClear = e_({
 			tag: "button",
 			clazz: `btn btn-xxs btn-default px-1`,
-			html: "清除",
+			html: "Clear",
 			click: () => {
 				const nxtState = {};
 				Object.keys(this._state)
@@ -2608,17 +2530,17 @@ class RangeFilter extends FilterBase {
 			this,
 			"isUseDropdowns",
 			{
-				$ele: $(`<button class="btn btn-default btn-xs mr-2">以下拉菜单形式显示</button>`),
+				$ele: $(`<button class="btn btn-default btn-xs mr-2">Show as Dropdowns</button>`),
 				stateName: "meta",
 				stateProp: "_meta",
 			},
 		);
-		const $btnReset = $(`<button class="btn btn-default btn-xs">重置</button>`).click(() => this.reset());
+		const $btnReset = $(`<button class="btn btn-default btn-xs">Reset</button>`).click(() => this.reset());
 		const $wrpBtns = $$`<div>${$btnForceMobile}${$btnReset}</div>`;
 
 		const $wrpSummary = $(`<div class="flex-v-center fltr__summary_item fltr__summary_item--include"></div>`).hideVe();
 
-		const $btnShowHide = $(`<button class="btn btn-default btn-xs ml-2 ${this._meta.isHidden ? "active" : ""}">隐藏</button>`)
+		const $btnShowHide = $(`<button class="btn btn-default btn-xs ml-2 ${this._meta.isHidden ? "active" : ""}">Hide</button>`)
 			.click(() => this._meta.isHidden = !this._meta.isHidden);
 		const hkIsHidden = () => {
 			$btnShowHide.toggleClass("active", this._meta.isHidden);
@@ -3167,7 +3089,7 @@ class OptionsFilter extends FilterBase {
 
 		const $wrpSummary = $(`<div class="flex-v-center fltr__summary_item fltr__summary_item--include"></div>`).hideVe();
 
-		const $btnShowHide = $(`<button class="btn btn-default btn-xs ml-2 ${this._meta.isHidden ? "active" : ""}">隐藏</button>`)
+		const $btnShowHide = $(`<button class="btn btn-default btn-xs ml-2 ${this._meta.isHidden ? "active" : ""}">隱藏</button>`)
 			.click(() => this._meta.isHidden = !this._meta.isHidden);
 		const hkIsHidden = () => {
 			$btnShowHide.toggleClass("active", this._meta.isHidden);
@@ -3255,7 +3177,6 @@ class MultiFilter extends FilterBase {
 		this._state = this._getProxy("state", this.__state);
 
 		this.__$wrpFilter = null;
-		this._$wrpChildren = null;
 	}
 
 	getChildFilters () {
@@ -3321,17 +3242,23 @@ class MultiFilter extends FilterBase {
 		this._filters.forEach(it => it.setFromValues(values));
 	}
 
-	_getHeaderControls (opts) {
-		const wrpSummary = e_({
-			tag: "div",
-			clazz: "fltr__summary_item",
-		}).hideVe();
+	$render (opts) {
+		const $btnAndOr = $(`<div class="fltr__group-comb-toggle ve-muted"></div>`)
+			.click(() => this._state.mode = this._state.mode === "and" ? "or" : "and");
+		const hookAndOr = () => $btnAndOr.text(`(group ${this._state.mode.toUpperCase()})`);
+		this._addHook("state", "mode", hookAndOr);
+		hookAndOr();
 
-		const btnForceMobile = this._isAddDropdownToggle ? ComponentUiUtil.getBtnBool(
+		const $children = this._filters.map((it, i) => it.$render({...opts, isMulti: true, isFirst: i === 0}));
+		const $wrpChildren = $$`<div>${$children}</div>`;
+
+		const $wrpSummary = $(`<div class="fltr__summary_item"></div>`).hideVe();
+
+		const $btnForceMobile = this._isAddDropdownToggle ? ComponentUiUtil.$getBtnBool(
 			this,
 			"isUseDropdowns",
 			{
-				$ele: $(`<button class="btn btn-default btn-xs ml-2">以下拉菜单形式显示</button>`),
+				$ele: $(`<button class="btn btn-default btn-xs ml-2">Show as Dropdowns</button>`),
 				stateName: "meta",
 				stateProp: "_meta",
 			},
@@ -3345,54 +3272,31 @@ class MultiFilter extends FilterBase {
 		this._addHook("meta", "isUseDropdowns", hkChildrenDropdowns);
 		hkChildrenDropdowns();
 
-		const btnResetAll = e_({
-			tag: "button",
-			clazz: "btn btn-default btn-xs ml-2",
-			text: "重置全部",
-			click: () => this._filters.forEach(it => it.reset()),
-		});
+		const $btnResetAll = $(`<button class="btn btn-default btn-xs ml-2">Reset All</button>`)
+			.click(() => this._filters.forEach(it => it.reset()));
+		const $wrpBtns = $$`<div>${$btnForceMobile}${$btnResetAll}</div>`;
 
-		const wrpBtns = e_({tag: "div", clazz: "flex", children: [btnForceMobile, btnResetAll].filter(Boolean)});
-		this._getHeaderControls_addExtraStateBtns(opts, wrpBtns);
-
-		const btnShowHide = e_({
-			tag: "button",
-			clazz: `btn btn-default btn-xs ml-2 ${this._meta.isHidden ? "active" : ""}`,
-			text: "隐藏",
-			click: () => this._meta.isHidden = !this._meta.isHidden,
-		});
-		const wrpControls = e_({tag: "div", clazz: "flex-v-center", children: [wrpSummary, wrpBtns, btnShowHide]});
+		const $btnShowHide = $(`<button class="btn btn-default btn-xs ml-2 ${this._meta.isHidden ? "active" : ""}">Hide</button>`)
+			.click(() => this._meta.isHidden = !this._meta.isHidden);
+		const $wrpControls = $$`<div class="flex-v-center">
+			${$wrpSummary}${$wrpBtns}${$btnShowHide}
+		</div>`;
 
 		const hookShowHide = () => {
-			wrpBtns.toggleVe(!this._meta.isHidden);
-			btnShowHide.toggleClass("active", this._meta.isHidden);
-			this._$wrpChildren.toggleVe(!this._meta.isHidden);
-			wrpSummary.toggleVe(this._meta.isHidden);
+			$wrpBtns.toggleVe(!this._meta.isHidden);
+			$btnShowHide.toggleClass("active", this._meta.isHidden);
+			$wrpChildren.toggleVe(!this._meta.isHidden);
+			$wrpSummary.toggleVe(this._meta.isHidden);
 
 			const numActive = this._filters.map(it => it.getValues()[it.header]._isActive).filter(Boolean).length;
 			if (numActive) {
-				e_({ele: wrpSummary, title: `${numActive} hidden active filter${numActive === 1 ? "" : "s"}`, text: `(${numActive})`});
+				$wrpSummary
+					.title(`${numActive} hidden active filter${numActive === 1 ? "" : "s"}`)
+					.text(`(${numActive})`);
 			}
 		};
 		this._addHook("meta", "isHidden", hookShowHide);
 		hookShowHide();
-
-		return wrpControls;
-	}
-
-	_getHeaderControls_addExtraStateBtns (opts, wrpStateBtnsOuter) {}
-
-	$render (opts) {
-		const $btnAndOr = $(`<div class="fltr__group-comb-toggle ve-muted"></div>`)
-			.click(() => this._state.mode = this._state.mode === "and" ? "or" : "and");
-		const hookAndOr = () => $btnAndOr.text(`（组合 ${this._state.mode.toUpperCase()}）`);
-		this._addHook("state", "mode", hookAndOr);
-		hookAndOr();
-
-		const $children = this._filters.map((it, i) => it.$render({...opts, isMulti: true, isFirst: i === 0}));
-		this._$wrpChildren = $$`<div>${$children}</div>`;
-
-		const wrpControls = this._getHeaderControls(opts);
 
 		return this.__$wrpFilter = $$`<div class="flex-col">
 			${opts.isFirst ? "" : `<div class="fltr__dropdown-divider mb-1"></div>`}
@@ -3401,9 +3305,9 @@ class MultiFilter extends FilterBase {
 					<div class="mr-2">${this._getRenderedHeader()}</div>
 					${$btnAndOr}
 				</div>
-				${wrpControls}
+				${$wrpControls}
 			</div>
-			${this._$wrpChildren}
+			${$wrpChildren}
 		</div>`;
 	}
 

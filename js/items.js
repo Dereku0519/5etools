@@ -1,16 +1,8 @@
 "use strict";
 
-class ItemsPage extends ListPage {
+class ItemsPage {
 	constructor () {
-		super({
-			dataSource: Renderer.item.pBuildList({isAddGroups: true, isBlacklistVariants: true}),
-
-			pageFilter: new PageFilterItems(),
-
-			sublistClass: "subitems",
-
-			dataProps: ["item"],
-		})
+		this._pageFilter = new PageFilterItems();
 
 		this._sublistCurrencyConversion = null;
 		this._sublistCurrencyDisplayMode = null;
@@ -21,6 +13,11 @@ class ItemsPage extends ListPage {
 
 		this._mundaneList = null;
 		this._magicList = null;
+
+		this._itemList = [];
+		this._itI = 0;
+
+		this._subList = null;
 	}
 
 	getListItem (item, itI, isExcluded) {
@@ -57,8 +54,6 @@ class ItemsPage extends ListPage {
 					type,
 					cost: item.value || 0,
 					weight: Parser.weightValueToNumber(item.weight),
-					ENG_name: item.ENG_name,
-					ENG_hash: UrlUtil.autoEncodeEngHash(item),
 				},
 				{
 					uniqueId: item.uniqueId ? item.uniqueId : itI,
@@ -89,8 +84,6 @@ class ItemsPage extends ListPage {
 					rarity: item.rarity,
 					attunement: item._attunementCategory !== VeCt.STR_NO_ATTUNEMENT,
 					weight: Parser.weightValueToNumber(item.weight),
-					ENG_name: item.ENG_name,
-					ENG_hash: UrlUtil.autoEncodeEngHash(item),
 				},
 				{uniqueId: item.uniqueId ? item.uniqueId : itI},
 			);
@@ -103,12 +96,12 @@ class ItemsPage extends ListPage {
 	handleFilterChange () {
 		const f = this._pageFilter.filterBox.getValues();
 		function listFilter (li) {
-			const it = this._dataList[li.ix];
+			const it = this._itemList[li.ix];
 			return this._pageFilter.toDisplay(f, it);
 		}
 		this._mundaneList.filter(listFilter.bind(this));
 		this._magicList.filter(listFilter.bind(this));
-		FilterBox.selectFirstVisible(this._dataList);
+		FilterBox.selectFirstVisible(this._itemList);
 	}
 
 	getSublistItem (item, pinId, addCount) {
@@ -137,8 +130,6 @@ class ItemsPage extends ListPage {
 				weight: Parser.weightValueToNumber(item.weight),
 				cost: item.value || 0,
 				count,
-				ENG_name: item.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(item),
 			},
 			{
 				$elesCount: [$dispCount],
@@ -150,7 +141,7 @@ class ItemsPage extends ListPage {
 	doLoadHash (id) {
 		Renderer.get().setFirstSection(true);
 		const $content = $(`#pagecontent`).empty();
-		const item = this._dataList[id];
+		const item = this._itemList[id];
 
 		function buildStatsTab () {
 			$content.append(RenderItems.$getRenderedItem(item));
@@ -172,14 +163,14 @@ class ItemsPage extends ListPage {
 				isVisible: true,
 			}),
 			new Renderer.utils.TabButton({
-				label: "信息",
+				label: "資訊",
 				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(item, "itemFluff"),
+				isVisible: Renderer.utils.hasFluffText(item),
 			}),
 			new Renderer.utils.TabButton({
-				label: "图片",
+				label: "圖片",
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(item, "itemFluff"),
+				isVisible: Renderer.utils.hasFluffImages(item),
 			}),
 		];
 
@@ -207,7 +198,7 @@ class ItemsPage extends ListPage {
 
 		const availConversions = new Set();
 		ListUtil.sublist.items.forEach(it => {
-			const item = this._dataList[it.ix];
+			const item = this._itemList[it.ix];
 			if (item.currencyConversion) availConversions.add(item.currencyConversion);
 			const count = it.values.count;
 			cntItems += it.values.count;
@@ -283,7 +274,7 @@ class ItemsPage extends ListPage {
 		await ExcludeUtil.pInitialise();
 		await this._pageFilter.pInitFilterBox({
 			$iptSearch: $(`#lst__search`),
-			$wrpFormTop: $(`#filter-search-group`),
+			$wrpFormTop: $(`#filter-search-group`).title("Hotkey: f"),
 			$btnReset: $(`#reset`),
 		});
 
@@ -294,13 +285,10 @@ class ItemsPage extends ListPage {
 		this._mundaneList = ListUtil.initList({
 			listClass: "mundane",
 			fnSort: PageFilterItems.sortItems,
-			syntax: this._listSyntax,
-			isBindFindHotkey: true,
 		});
 		this._magicList = ListUtil.initList({
 			listClass: "magic",
 			fnSort: PageFilterItems.sortItems,
-			syntax: this._listSyntax,
 		});
 		this._mundaneList.nextList = this._magicList;
 		this._magicList.prevList = this._mundaneList;
@@ -364,13 +352,13 @@ class ItemsPage extends ListPage {
 		SortUtil.initBtnSortHandlers($("#filtertools-mundane"), this._mundaneList);
 		SortUtil.initBtnSortHandlers($("#filtertools-magic"), this._magicList);
 
-		this._listSub = ListUtil.initSublist({
+		this._subList = ListUtil.initSublist({
 			listClass: "subitems",
 			fnSort: PageFilterItems.sortItems,
 			getSublistRow: itemsPage.getSublistItem.bind(itemsPage),
 			onUpdate: itemsPage.onSublistChange.bind(itemsPage),
 		});
-		SortUtil.initBtnSortHandlers($("#sublistsort"), this._listSub);
+		SortUtil.initBtnSortHandlers($("#sublistsort"), this._subList);
 		ListUtil.initGenericAddable();
 
 		this._addItems(data);
@@ -388,7 +376,7 @@ class ItemsPage extends ListPage {
 				ListUtil.bindShowTableButton(
 					"btn-show-table",
 					"Items",
-					this._dataList,
+					this._itemList,
 					{
 						name: {name: "Name", transform: true},
 						source: {name: "Source", transform: (it) => `<span class="${Parser.sourceJsonToColor(it)}" title="${Parser.sourceJsonToFull(it)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${Parser.sourceJsonToAbv(it)}</span>`},
@@ -406,35 +394,35 @@ class ItemsPage extends ListPage {
 
 				this._mundaneList.init();
 				this._magicList.init();
-				this._listSub.init();
+				this._subList.init();
 
 				Hist.init(true);
-				ExcludeUtil.checkShowAllExcluded(this._dataList, $(`#pagecontent`));
+				ExcludeUtil.checkShowAllExcluded(this._itemList, $(`#pagecontent`));
 
 				window.dispatchEvent(new Event("toolsLoaded"));
 			});
 	}
 
 	async _pHandleBrew (homebrew) {
-		const itemList = await Renderer.item.pGetItemsFromHomebrew(homebrew);
+		const itemList = await Renderer.item.getItemsFromHomebrew(homebrew);
 		this._addItems({item: itemList});
 	}
 
 	_addItems (data) {
 		if (!data.item || !data.item.length) return;
 
-		this._dataList.push(...data.item);
+		this._itemList.push(...data.item);
 
-		for (; this._ixData < this._dataList.length; this._ixData++) {
-			const item = this._dataList[this._ixData];
-			const listItem = itemsPage.getListItem(item, this._ixData);
+		for (; this._itI < this._itemList.length; this._itI++) {
+			const item = this._itemList[this._itI];
+			const listItem = itemsPage.getListItem(item, this._itI);
 			if (!listItem) continue;
 			if (listItem.mundane) this._mundaneList.addItem(listItem.mundane);
 			if (listItem.magic) this._magicList.addItem(listItem.magic);
 		}
 
 		// populate table labels
-		$(`h3.ele-mundane span.side-label`).text("寻常物品");
+		$(`h3.ele-mundane span.side-label`).text("尋常物品");
 		$(`h3.ele-magic span.side-label`).text("魔法物品");
 
 		this._mundaneList.update();
@@ -444,14 +432,14 @@ class ItemsPage extends ListPage {
 		itemsPage.handleFilterChange();
 
 		ListUtil.setOptions({
-			itemList: this._dataList,
+			itemList: this._itemList,
 			getSublistRow: itemsPage.getSublistItem.bind(itemsPage),
 			primaryLists: [this._mundaneList, this._magicList],
 		});
 		ListUtil.bindAddButton();
 		ListUtil.bindSubtractButton();
 		const $btnPop = ListUtil.getOrTabRightButton(`btn-popout`, `new-window`);
-		Renderer.hover.bindPopoutButton($btnPop, this._dataList);
+		Renderer.hover.bindPopoutButton($btnPop, this._itemList);
 		UrlUtil.bindLinkExportButton(itemsPage._pageFilter.filterBox);
 		ListUtil.bindOtherButtons({
 			download: true,

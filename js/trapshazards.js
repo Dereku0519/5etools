@@ -34,6 +34,7 @@ class TrapsHazardsPage extends ListPage {
 			<span class="col-3 pl-0 text-center">${trapType}</span>
 			<span class="bold col-7">${it.name}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(it.source)} pr-0" title="${Parser.sourceJsonToFull(it.source)}" ${BrewUtil.sourceJsonToStyle(it.source)}>${source}</span>
+			<span class="eng_name hidden">${it.ENG_name ? it.ENG_name : it.name}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -44,8 +45,6 @@ class TrapsHazardsPage extends ListPage {
 				hash,
 				source,
 				trapType,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				uniqueId: it.uniqueId ? it.uniqueId : thI,
@@ -86,8 +85,6 @@ class TrapsHazardsPage extends ListPage {
 			{
 				hash,
 				trapType,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 		);
 		return listItem;
@@ -105,16 +102,6 @@ class TrapsHazardsPage extends ListPage {
 	async pDoLoadSubHash (sub) {
 		sub = this._filterBox.setFromSubHashes(sub);
 		await ListUtil.pSetFromSubHashes(sub);
-	}
-
-	_getSearchCache (entity) {
-		if (!entity.effect && !entity.trigger && !entity.countermeasures && !entity.entries) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "effect", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "trigger", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "countermeasures", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
-		return ptrOut._;
 	}
 }
 

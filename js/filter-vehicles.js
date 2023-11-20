@@ -51,10 +51,8 @@ class PageFilterVehicles extends PageFilter {
 			it._fAc = it.hull.ac;
 		} else if (it.vehicleType === "INFWAR") {
 			it._fAc = 19 + Parser.getAbilityModNumber(it.dex == null ? 10 : it.dex);
-		} else if (it.ac instanceof Array) {
-			it._fAc = it.ac.map(it => it.special ? null : (it.ac || it)).filter(it => it !== null);
 		} else if (it.ac) {
-			it._fAc = it.ac;
+			it._fAc = it.ac.map(it => it.special ? null : (it.ac || it)).filter(it => it !== null);
 		}
 
 		it._fCreatureCapacity = (it.capCrew || 0) + (it.capPassenger || 0) + (it.capCreature || 0);

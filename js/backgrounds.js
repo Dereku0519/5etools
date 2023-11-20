@@ -41,8 +41,6 @@ class BackgroundPage extends ListPage {
 				hash,
 				source,
 				skills: bg._skillDisplay,
-				ENG_name: bg.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(bg),
 			},
 			{
 				uniqueId: bg.uniqueId || bgI,
@@ -84,8 +82,6 @@ class BackgroundPage extends ListPage {
 				hash,
 				source: Parser.sourceJsonToAbv(bg.source),
 				skills,
-				ENG_name: bg.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(bg),
 			},
 		);
 		return listItem;
@@ -116,14 +112,14 @@ class BackgroundPage extends ListPage {
 				isVisible: true,
 			}),
 			new Renderer.utils.TabButton({
-				label: "信息",
+				label: "資訊",
 				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(bg, "backgroundFluff"),
+				isVisible: Renderer.utils.hasFluffText(bg),
 			}),
 			new Renderer.utils.TabButton({
-				label: "图片",
+				label: "Images",
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(bg, "backgroundFluff"),
+				isVisible: Renderer.utils.hasFluffImages(bg),
 			}),
 		];
 

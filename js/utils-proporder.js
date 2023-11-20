@@ -615,12 +615,6 @@ PropOrder._FEAT = [
 	"prerequisite",
 	"ability",
 
-	"skillProficiencies",
-	"languageProficiencies",
-	"toolProficiencies",
-	"weaponProficiencies",
-	"armorProficiencies",
-
 	"additionalSpells",
 
 	"entries",
@@ -668,7 +662,6 @@ PropOrder._VEHICLE = [
 	"weapon",
 	"other",
 
-	"entries",
 	"trait",
 	"actionThresholds",
 	"action",
@@ -773,7 +766,6 @@ PropOrder._ITEM = [
 
 	"ac",
 	"strength",
-	"dexterityMax",
 
 	"crew",
 	"crewMin",
@@ -800,7 +792,6 @@ PropOrder._ITEM = [
 	"bonusSpellSaveDc",
 	"bonusAc",
 	"bonusSavingThrow",
-	"bonusAbilityCheck",
 	"bonusProficiencyBonus",
 
 	"recharge",
@@ -920,14 +911,6 @@ PropOrder._OPTIONALFEATURE = [
 
 	"prerequisite",
 
-	"skillProficiencies",
-	"languageProficiencies",
-	"toolProficiencies",
-	"weaponProficiencies",
-	"armorProficiencies",
-
-	"additionalSpells",
-
 	"entries",
 ];
 PropOrder._PSIONIC = [
@@ -1001,11 +984,9 @@ PropOrder._RACE = [
 	"darkvision",
 	"feats",
 
-	new PropOrder._ArrayKey("traitTags", {fnSort: SortUtil.ascSortLower}),
-	"skillProficiencies",
+	"traitTags",
 	"languageProficiencies",
-	"weaponProficiencies",
-	"armorProficiencies",
+	"skillProficiencies",
 
 	"resist",
 	"immune",
@@ -1051,7 +1032,6 @@ PropOrder._TRAP = [
 
 	"source",
 	"page",
-	"srd",
 
 	"trapHazType",
 
@@ -1077,7 +1057,6 @@ PropOrder._HAZARD = [
 
 	"source",
 	"page",
-	"srd",
 
 	"trapHazType",
 

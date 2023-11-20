@@ -40,8 +40,6 @@ class ObjectsPage extends ListPage {
 				hash,
 				source,
 				size,
-				ENG_name: obj.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(obj),
 			},
 			{
 				uniqueId: obj.uniqueId ? obj.uniqueId : obI,
@@ -81,8 +79,6 @@ class ObjectsPage extends ListPage {
 			{
 				hash,
 				size,
-				ENG_name: obj.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(obj),
 			},
 		);
 		return listItem;
@@ -102,8 +98,8 @@ class ObjectsPage extends ListPage {
 
 		const hasToken = obj.tokenUrl || obj.hasToken;
 		if (hasToken) {
-			const imgLink = Renderer.object.getTokenUrl(obj);
-			$floatToken.append(`<a href="${imgLink}" target="_blank" rel="noopener noreferrer"><img src="${imgLink}" id="token_image" class="token" alt="${obj.name || obj.ENG_name}"></a>`);
+			const imgLink = obj.tokenUrl || UrlUtil.link(`${Renderer.get().baseMediaUrls["img"] || Renderer.get().baseUrl}img/objects/${(obj.ENG_name ?? obj.name).replace(/"/g, "")}.png`);
+			$floatToken.append(`<a href="${imgLink}" target="_blank" rel="noopener noreferrer"><img src="${imgLink}" id="token_image" class="token" alt="${obj.ENG_name ?? obj.name}"></a>`);
 		}
 
 		ListUtil.updateSelected();
@@ -112,14 +108,6 @@ class ObjectsPage extends ListPage {
 	async pDoLoadSubHash (sub) {
 		sub = this._filterBox.setFromSubHashes(sub);
 		await ListUtil.pSetFromSubHashes(sub);
-	}
-
-	_getSearchCache (entity) {
-		if (!entity.entries && !entity.actionEntries) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "actionEntries", ptrOut);
-		return ptrOut._;
 	}
 }
 

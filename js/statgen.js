@@ -43,9 +43,9 @@ class StatGenPage {
 				buttons: [
 					{
 						html: `<span class="glyphicon glyphicon-download"></span>`,
-						title: "保存到文件",
+						title: "Save to File",
 						pFnClick: () => {
-							DataUtil.userDownload("statgen", this._statGenUi.getSaveableState(), {fileType: "statgen"});
+							DataUtil.userDownload("statgen", this._statGenUi.getSaveableState());
 						},
 					},
 				],
@@ -55,11 +55,10 @@ class StatGenPage {
 				buttons: [
 					{
 						html: `<span class="glyphicon glyphicon-upload"></span>`,
-						title: "从文件加载",
+						title: "Load from File",
 						pFnClick: async () => {
-							const jsons = await DataUtil.pUserUpload({fileType: "statgen"});
-							if (!jsons?.length) return;
-							this._statGenUi.setStateFrom(jsons[0]);
+							const json = await DataUtil.pUserUpload();
+							this._statGenUi.setStateFrom(json);
 						},
 					},
 				],
@@ -69,7 +68,7 @@ class StatGenPage {
 				buttons: [
 					{
 						html: `<span class="glyphicon glyphicon-magnet"></span>`,
-						title: "复制链接",
+						title: "Copy Link",
 						pFnClick: async (evt, $btn) => {
 							const encoded = `${window.location.href.split("#")[0]}#pointbuy${HASH_PART_SEP}${encodeURIComponent(JSON.stringify(this._statGenUi.getSaveableState()))}`;
 							await MiscUtil.pCopyTextToClipboard(encoded);

@@ -52,9 +52,9 @@ class MultiSource {
 		const defaultSel = sources.filter(s => PageFilter.defaultSourceSelFn(s));
 		const hashSourceRaw = Hist.getHashSource();
 		const hashSource = hashSourceRaw ? Object.keys(src2UrlMap).find(it => it.toLowerCase() === hashSourceRaw.toLowerCase()) : null;
-		const filterSel = await filterBox.pGetStoredActiveSources() || defaultSel;
-		const listSel = await ListUtil.pGetSelectedSources() || [];
-		const userSel = [...new Set([...filterSel, ...listSel, hashSource].filter(Boolean))];
+		const userSel = [...new Set(
+			(await filterBox.pGetStoredActiveSources() || []).concat(await ListUtil.pGetSelectedSources() || []).concat(hashSource ? [hashSource] : []),
+		)];
 
 		const allSources = [];
 
@@ -88,7 +88,6 @@ class MultiSource {
 		const toLoads = allSources.map(src => ({src: src, url: jsonDir + src2UrlMap[src]}));
 
 		// load the sources
-		let list, listSub;
 		if (toLoads.length > 0) {
 			const dataStack = (await Promise.all(toLoads.map(async toLoad => {
 				const data = await DataUtil.loadJSON(toLoad.url);
@@ -96,17 +95,13 @@ class MultiSource {
 				return data;
 			}))).flat();
 
-			const listPair = await pPageInit(this._loadedSources);
-			list = listPair.list;
-			listSub = listPair.listSub;
+			await pPageInit(this._loadedSources);
 
 			let toAdd = [];
 			dataStack.forEach(d => toAdd = toAdd.concat(d[this._prop]));
 			addFn(toAdd);
 		} else {
-			const listPair = await pPageInit(this._loadedSources);
-			list = listPair.list;
-			listSub = listPair.listSub;
+			await pPageInit(this._loadedSources);
 		}
 
 		if (pOptional) await pOptional();
@@ -115,7 +110,7 @@ class MultiSource {
 		ListUtil.addListShowHide();
 
 		list.init();
-		listSub.init();
+		subList.init();
 
 		Hist.init(true);
 	}

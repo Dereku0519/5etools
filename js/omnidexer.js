@@ -90,16 +90,15 @@ class Omnidexer {
 
 		const pHandleItem = async (it, i, name) => {
 			if (it.noDisplay) return;
-			if (name) name = name.toAscii();
 
-			let obj = {};
-			obj.n = it.ENG_name ?? name;
-			obj.cn = name;
+			var obj = {};
+			if(it.ENG_name){ obj.cn = name; obj.n = it.ENG_name; }
+			else {			 obj.n = name;}
 			const toAdd = getToAdd(it, obj, i);
 
 			if ((options.isNoFilter || (!arbiter.include && !(arbiter.filter && arbiter.filter(it))) || (!arbiter.filter && (!arbiter.include || arbiter.include(it)))) && !arbiter.isOnlyDeep) index.push(toAdd);
 
-			const primary = {it: it, ix: i, parentName: name, parentName_ENG: it.ENG_name};
+			const primary = {it: it, ix: i, parentName: name};
 			const deepItems = await arbiter.pGetDeepIndex(this, primary, it);
 			deepItems.forEach(item => {
 				const toAdd = getToAdd(it, item);
@@ -246,8 +245,7 @@ class IndexableDirectorySubclass extends IndexableDirectory {
 		if (!it.subclasses) return [];
 		return it.subclasses.map(sc => ({
 			b: sc.name,
-			cn: `${sc.name} (${primary.parentName})`,
-			n: `${sc.ENG_name ?? sc.name} (${primary.parentName_ENG ?? primary.parentName})`,
+			n: `${sc.name} (${primary.parentName})`,
 			s: indexer.getMetaId("s", sc.source),
 			u: `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES](it)}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({subclass: sc})}`,
 			p: sc.page,
@@ -308,8 +306,7 @@ class IndexableDirectoryClassFeature extends IndexableDirectory {
 		const classPageHash = `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: it.className, source: it.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart({feature: {ixLevel: it.level - 1, ixFeature}})}`;
 		return [
 			{
-				cn: `${Parser.ClassToDisplay(it.className)} ${it.level}; ${it.name}`,
-				n: `${it.className} ${it.level}; ${it.ENG_name ?? it.name}`,
+				n: `${it.className} ${it.level}; ${it.name}`,
 				s: it.source,
 				u: UrlUtil.URL_TO_HASH_BUILDER["classFeature"](it),
 				uh: classPageHash,
@@ -342,8 +339,7 @@ class IndexableDirectorySubclassFeature extends IndexableDirectory {
 		const classPageHash = `${UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: it.className, source: it.classSource})}${HASH_PART_SEP}${UrlUtil.getClassesPageStatePart(pageStateOpts)}`;
 		return [
 			{
-				cn: `${Parser.SubclassToDisplay(it.subclassShortName.toLowerCase() === "shadow" && it.className.toLowerCase() === "monk" ? "shadow_monk" : it.subclassShortName)} ${Parser.ClassToDisplay(it.className)} ${it.level}; ${it.name}`,
-				n: `${it.subclassShortName} ${it.className} ${it.level}; ${it.ENG_name ?? it.name}`,
+				n: `${it.subclassShortName} ${it.className} ${it.level}; ${it.name}`,
 				s: it.source,
 				u: UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](it),
 				uh: classPageHash,
@@ -380,7 +376,6 @@ class IndexableFile {
 	 * @param [opts.postLoad] a function which takes the data set, does some post-processing, and runs a callback when done (synchronously)
 	 * @param opts.isOnlyDeep
 	 * @param opts.additionalIndexes
-	 * @param opts.isSkipBrew
 	 */
 	constructor (opts) {
 		this.category = opts.category;
@@ -398,7 +393,6 @@ class IndexableFile {
 		this.postLoad = opts.postLoad;
 		this.isOnlyDeep = opts.isOnlyDeep;
 		this.additionalIndexes = opts.additionalIndexes;
-		this.isSkipBrew = opts.isSkipBrew;
 	}
 
 	/**
@@ -784,10 +778,10 @@ class IndexableFileRaces extends IndexableFile {
 
 		const subs = Renderer.race._mergeSubraces(it);
 		out.push(...subs.map(r => ({
-			n: r.ENG_name ?? r.name,
+			n: r.ENG_name? r.ENG_name: r.name,
 			s: indexer.getMetaId("s", r.source),
 			u: UrlUtil.URL_TO_HASH_BUILDER["races.html"](r),
-			cn: r.name,
+			cn: r.ENG_name? r.name: null
 		})));
 
 		return out;
@@ -826,7 +820,6 @@ class IndexableFileVariantRulesGenerated extends IndexableFile {
 			listProp: "variantrule",
 			baseUrl: "variantrules.html",
 			isHover: true,
-			isSkipBrew: true,
 		});
 	}
 }

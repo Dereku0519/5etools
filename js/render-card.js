@@ -281,7 +281,8 @@ class RendererCard {
 	*/
 
 	_renderLink (entry, textStack, meta, options) {
-		this._recursiveRender(entry.text, textStack, meta);
+		const href = this._renderLink_getHref(entry);
+		textStack[0] += `<a href="${href}" rel="noopener noreferrer">${this.render(entry.text)}</a>`;
 	}
 
 	/*
@@ -404,21 +405,12 @@ class RendererCard {
 
 	// region primitives
 	_renderString (entry, textStack, meta, options) {
-		const tagSplit = Renderer.splitByTags(entry);
-		const len = tagSplit.length;
-		for (let i = 0; i < len; ++i) {
-			const s = tagSplit[i];
-			if (!s) continue;
-			if (s.startsWith("{@")) {
-				const [tag, text] = Renderer.splitFirstSpace(s.slice(1, -1));
-				this._renderString_renderTag(textStack, meta, options, tag, text);
-			} else {
-				if (textStack[0].last() === "\n" || !textStack[0].last()) textStack[0] += `text | `;
-				textStack[0] += s;
-			}
-		}
+		// Render strings as HTML
+		const renderer = Renderer.get().setAddHandlers(false);
+		if (textStack[0].last() === "\n" || !textStack[0].last()) textStack[0] += `text | `;
+		textStack[0] += renderer.render(entry);
+		renderer.setAddHandlers(true);
 	}
-
 	_renderPrimitive (entry, textStack, meta, options) {
 		if (textStack[0].last() === "\n" || !textStack[0].last()) textStack[0] += `text | `;
 		textStack[0] += `${entry}`

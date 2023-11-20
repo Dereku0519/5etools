@@ -10,7 +10,6 @@ class StatGenUi extends BaseComponent {
 	 * @param [opts.isFvttMode]
 	 * @param [opts.modalFilterRaces]
 	 * @param [opts.modalFilterFeats]
-	 * @param [opts.existingScores]
 	 */
 	constructor (opts) {
 		super();
@@ -32,9 +31,6 @@ class StatGenUi extends BaseComponent {
 		this._modalFilterRaces = opts.modalFilterRaces || new ModalFilterRaces({namespace: "statgen.races", isRadio: true, allData: this._races});
 		this._modalFilterFeats = opts.modalFilterFeats || new ModalFilterFeats({namespace: "statgen.feats", isRadio: true, allData: this._feats});
 
-		this._isLevelUp = !!opts.existingScores;
-		this._existingScores = opts.existingScores;
-
 		// region Rolled
 		this._$rollIptFormula = null;
 		// endregion
@@ -53,19 +49,8 @@ class StatGenUi extends BaseComponent {
 	addHookPulseAsi (hook) { this._addHookBase("common_pulseAsi", hook); }
 	getFormDataAsi () { return this._compAsi.getFormData(); }
 
-	getMode (ix, namespace) {
-		const {propMode} = this.getPropsAsi(ix, namespace);
-		return this._state[propMode];
-	}
-
 	setIxFeat (ix, namespace, ixFeat) {
 		const {propMode, propIxFeat} = this.getPropsAsi(ix, namespace);
-
-		if (ixFeat == null && (this._state[propMode] === "asi" || this._state[propMode] == null)) {
-			this._state[propIxFeat] = null;
-			return;
-		}
-
 		this._state[propMode] = "feat";
 		this._state[propIxFeat] = ixFeat;
 	}
@@ -91,15 +76,6 @@ class StatGenUi extends BaseComponent {
 	// endregion
 
 	getTotals () {
-		if (this._isLevelUp) {
-			return {
-				mode: "levelUp",
-				totals: {
-					levelUp: this._getTotals_levelUp(),
-				},
-			};
-		}
-
 		return {
 			mode: StatGenUi.MODES[this._meta.ixActiveTab || 0],
 			totals: {
@@ -115,7 +91,6 @@ class StatGenUi extends BaseComponent {
 	_getTotals_array () { return Parser.ABIL_ABVS.mergeMap(ab => ({[ab]: this._array_getTotalScore(ab)})); }
 	_getTotals_pb () { return Parser.ABIL_ABVS.mergeMap(ab => ({[ab]: this._pb_getTotalScore(ab)})); }
 	_getTotals_manual () { return Parser.ABIL_ABVS.mergeMap(ab => ({[ab]: this._manual_getTotalScore(ab)})); }
-	_getTotals_levelUp () { return Parser.ABIL_ABVS.mergeMap(ab => ({[ab]: this._levelUp_getTotalScore(ab)})); }
 
 	addHook (hookProp, prop, hook) { return this._addHook(hookProp, prop, hook); }
 	addHookAll (hookProp, hook) {
@@ -158,38 +133,32 @@ class StatGenUi extends BaseComponent {
 	render ($parent) {
 		$parent.empty().addClass("statgen");
 
-		const iptTabMetas = this._isLevelUp
-			? [
+		const tabMetas = this._renderTabs(
+			$parent,
+			"meta",
+			[
 				{
-					name: "Existing",
-					icon: this._isFvttMode ? `fas fa-user` : `far fa-user`,
-				},
-				...this._tabMetasAdditional || [],
-			]
-			: [
-				{
-					name: "掷骰",
+					name: "Roll",
 					icon: this._isFvttMode ? `fas fa-dice` : `far fa-dice`,
 				},
 				{
-					name: "标准数组",
+					name: "Standard Array",
 					icon: this._isFvttMode ? `fas fa-signal` : `far fa-signal-alt`,
 				},
 				{
-					name: "购点",
+					name: "Point Buy",
 					icon: this._isFvttMode ? `fas fa-chart-bar` : `far fa-chart-bar`,
 				},
 				{
-					name: "手动",
+					name: "Manual",
 					icon: this._isFvttMode ? `fas fa-tools` : `far fa-tools`,
 				},
-				...this._tabMetasAdditional || [],
-			]
-
-		const tabMetas = this._renderTabs($parent, "meta", iptTabMetas);
+				...(this._tabMetasAdditional || []),
+			],
+		);
 
 		const $wrpAll = $(`<div class="flex-col w-100 h-100"></div>`);
-		this._render_all($wrpAll);
+		this._render_pointBuy($wrpAll);
 
 		const hkTab = () => {
 			tabMetas[this._meta.ixActiveTab || 0].$wrpTab.append($wrpAll);
@@ -216,19 +185,9 @@ class StatGenUi extends BaseComponent {
 			})
 			.change(() => this._$rollIptFormula.removeClass("form-control--error"));
 
-		const $btnRoll = $(`<button class="btn btn-primary bold">掷骰</button>`)
+		const $btnRoll = $(`<button class="btn btn-primary bold">Roll</button>`)
 			.click(() => {
 				this._state.rolled_rolls = this._roll_getRolledStats();
-			});
-
-		const $btnRandom = $(`<button class="btn btn-xs btn-default mt-2">随机分配</button>`)
-			.hideVe()
-			.click(() => {
-				const abs = [...Parser.ABIL_ABVS].shuffle();
-				abs.forEach((ab, i) => {
-					const {propAbilSelectedRollIx} = this.constructor._rolled_getProps(ab);
-					this._state[propAbilSelectedRollIx] = i;
-				});
 			});
 
 		const $wrpRolled = $(`<div class="flex-v-center mr-auto statgen-rolled__wrp-results py-1"></div>`);
@@ -236,12 +195,8 @@ class StatGenUi extends BaseComponent {
 
 		const hkRolled = () => {
 			$wrpRolledOuter.toggleVe(this._state.rolled_rolls.length);
-			$btnRandom.toggleVe(this._state.rolled_rolls.length);
 
-			$wrpRolled.html(this._state.rolled_rolls.map((it, i) => {
-				const cntPrevRolls = this._state.rolled_rolls.slice(0, i).filter(r => r.total === it.total).length;
-				return `<div class="px-3 py-1 help-subtle flex-vh-center" title="${it.text}"><div class="ve-muted">[</div><div class="flex-vh-center statgen-rolled__disp-result">${it.total}${cntPrevRolls ? Parser.numberToSubscript(cntPrevRolls) : ""}</div><div class="ve-muted">]</div></div>`;
-			}));
+			$wrpRolled.html(this._state.rolled_rolls.map(r => `<div class="px-3 py-1 help--subtle flex-vh-center" title="${r.text}"><div class="ve-muted">[</div><div class="flex-vh-center statgen-rolled__disp-result">${r.total}</div><div class="ve-muted">]</div></div>`));
 		};
 		this._addHookBase("rolled_rolls", hkRolled);
 		hkRolled();
@@ -249,45 +204,31 @@ class StatGenUi extends BaseComponent {
 		return $$`<div class="flex-col mb-3 mr-auto">
 			<div class="flex mb-2">
 				<div class="flex-col flex-h-center mr-3">
-					<label class="flex-v-center"><div class="mr-2 no-shrink w-100p">公式：</div>${this._$rollIptFormula}</label>
+					<label class="flex-v-center"><div class="mr-2 no-shrink w-100p">Formula:</div>${this._$rollIptFormula}</label>
 
-					${this._isCharacterMode ? null : $$`<label class="flex-v-center mt-2"><div class="mr-2 no-shrink w-100p">掷骰次数：</div>${$iptRollCount}</label>`}
+					${this._isCharacterMode ? null : $$`<label class="flex-v-center mt-2"><div class="mr-2 no-shrink w-100p">Number of rolls:</div>${$iptRollCount}</label>`}
 				</div>
 				${$btnRoll}
 			</div>
 
 			${$wrpRolledOuter}
-
-			<div class="flex-v-center">${$btnRandom}</div>
 		</div>`;
 	}
 
 	_render_$getStgArrayHeader () {
-		const $btnRandom = $(`<button class="btn btn-xs btn-default">随机分配</button>`)
-			.click(() => {
-				const abs = [...Parser.ABIL_ABVS].shuffle();
-				abs.forEach((ab, i) => {
-					const {propAbilSelectedScoreIx} = this.constructor._array_getProps(ab);
-					this._state[propAbilSelectedScoreIx] = i;
-				});
-			});
-
 		return $$`<div class="flex-col mb-3 mr-auto">
-			<div class="mb-2">将这些数值任意分配到你的属性点上：</div>
-			<div class="bold mb-2">${StatGenUi._STANDARD_ARRAY.join(", ")}</div>
-			<div class="flex">${$btnRandom}</div>
+			<div class="mb-2">Assign these numbers to your abilities as desired:</div>
+			<div class="bold">${StatGenUi._STANDARD_ARRAY.join(", ")}</div>
 		</div>`;
 	}
 
 	_render_$getStgManualHeader () {
 		return $$`<div class="flex-col mb-3 mr-auto">
-			<div>在下方的&quot;基础&quot;列中输入你想要的属性值。</div>
+			<div>Enter your desired ability scores in the &quot;Base&quot; column below.</div>
 		</div>`;
 	}
 
 	_doReset () {
-		if (this._isLevelUp) return; // Should never occur
-
 		const nxtState = this._getDefaultStateCommonResettable();
 
 		switch (this._meta.ixActiveTab) {
@@ -335,10 +276,10 @@ class StatGenUi extends BaseComponent {
 		this._addHookAll("state", hkPoints);
 		hkPoints();
 
-		const $btnReset = $(`<button class="btn btn-default">重置</button>`)
+		const $btnReset = $(`<button class="btn btn-default">Reset</button>`)
 			.click(() => this._doReset());
 
-		const $btnRandom = $(`<button class="btn btn-default">随机</button>`)
+		const $btnRandom = $(`<button class="btn btn-default">Random</button>`)
 			.click(() => {
 				this._doReset();
 
@@ -377,12 +318,12 @@ class StatGenUi extends BaseComponent {
 				<div class="statgen-pb__cell mr-4 mobile__hidden"></div>
 
 				<label class="flex-col mr-2">
-					<div class="mb-1 text-center">总点数</div>
+					<div class="mb-1 text-center">Budget</div>
 					${$iptBudget}
 				</label>
 
 				<label class="flex-col mr-2">
-					<div class="mb-1 text-center">剩余点</div>
+					<div class="mb-1 text-center">Remain</div>
 					${$iptRemaining}
 				</label>
 			</div>
@@ -402,7 +343,7 @@ class StatGenUi extends BaseComponent {
 	}
 
 	_render_$getStgPbCustom () {
-		const $btnAddLower = $(`<button class="btn btn-default btn-xs">添加更低的属性值</button>`)
+		const $btnAddLower = $(`<button class="btn btn-default btn-xs">Add Lower Score</button>`)
 			.click(() => {
 				const prevLowest = this._state.pb_rules[0];
 				const score = prevLowest.entity.score - 1;
@@ -410,7 +351,7 @@ class StatGenUi extends BaseComponent {
 				this._state.pb_rules = [this._getDefaultState_pb_rule(score, cost), ...this._state.pb_rules];
 			});
 
-		const $btnAddHigher = $(`<button class="btn btn-default btn-xs">添加更高的属性值</button>`)
+		const $btnAddHigher = $(`<button class="btn btn-default btn-xs">Add Higher Score</button>`)
 			.click(() => {
 				const prevHighest = this._state.pb_rules.last();
 				const score = prevHighest.entity.score + 1;
@@ -418,7 +359,7 @@ class StatGenUi extends BaseComponent {
 				this._state.pb_rules = [...this._state.pb_rules, this._getDefaultState_pb_rule(score, cost)];
 			});
 
-		const $btnResetRules = $(`<button class="btn btn-default btn-xs">重置</button>`)
+		const $btnResetRules = $(`<button class="btn btn-default btn-xs">Reset</button>`)
 			.click(() => {
 				this._state.pb_rules = this._getDefaultStatePointBuyCosts().pb_rules;
 			});
@@ -462,15 +403,15 @@ class StatGenUi extends BaseComponent {
 		hkIsCustomReset();
 
 		return $$`<div class="flex-col">
-			<h4>属性值点数花费</h4>
+			<h4>Ability Score Point Cost</h4>
 
 			<div class="flex-col">
 				<div class="flex mobile__flex-col">
 					<div class="flex-col mr-3mobile__mr-0">
 						<div class="flex-v-center mb-1">
-							<div class="statgen-pb__col-cost flex-vh-center bold">属性值</div>
-							<div class="statgen-pb__col-cost flex-vh-center bold">调整值</div>
-							<div class="statgen-pb__col-cost flex-vh-center bold">花费点数</div>
+							<div class="statgen-pb__col-cost flex-vh-center bold">Score</div>
+							<div class="statgen-pb__col-cost flex-vh-center bold">Modifier</div>
+							<div class="statgen-pb__col-cost flex-vh-center bold">Point Cost</div>
 							<div class="statgen-pb__col-cost-delete"></div>
 						</div>
 
@@ -484,18 +425,13 @@ class StatGenUi extends BaseComponent {
 			<hr class="hr-4 mb-2">
 
 			<label class="flex-v-center">
-				<div class="mr-2">自定规则</div>
+				<div class="mr-2">Custom Rules</div>
 				${ComponentUiUtil.$getCbBool(this, "pb_isCustom")}
 			</label>
 		</div>`;
 	}
 
-	_render_all ($wrpTab) {
-		if (this._isLevelUp) return this._render_isLevelUp($wrpTab);
-		this._render_isLevelOne($wrpTab);
-	}
-
-	_render_isLevelOne ($wrpTab) {
+	_render_pointBuy ($wrpTab) {
 		const $elesRolled = [];
 		const $elesArray = [];
 		const $elesPb = [];
@@ -676,13 +612,55 @@ class StatGenUi extends BaseComponent {
 			</label>`
 		});
 
-		const $wrpsUser = this._render_$getWrpsUser();
+		const $wrpsUser = Parser.ABIL_ABVS.map(ab => {
+			const {propUserBonus} = this.constructor._common_getProps(ab);
+			const $ipt = ComponentUiUtil.$getIptInt(
+				this,
+				propUserBonus,
+				0,
+				{
+					fallbackOnNaN: 0,
+					html: `<input class="form-control form-control--minimal statgen-shared__ipt text-right" type="number">`,
+				},
+			);
+			return $$`<label class="my-1 statgen-pb__cell">${$ipt}</label>`
+		});
 
-		const metasTotalAndMod = this._render_getMetasTotalAndMod();
+		const metasTotalAndMod = Parser.ABIL_ABVS.map(ab => {
+			const $iptTotal = $(`<input class="form-control form-control--minimal statgen-shared__ipt text-center" type="text" readonly>`);
+			const $iptMod = $(`<input class="form-control form-control--minimal statgen-shared__ipt text-center" type="text" readonly>`);
+
+			const $wrpIptTotal = $$`<label class="my-1 statgen-pb__cell">${$iptTotal}</label>`;
+			const $wrpIptMod = $$`<label class="my-1 statgen-pb__cell">${$iptMod}</label>`;
+
+			const exportedStateProp = `common_export_${ab}`;
+
+			const hk = () => {
+				const totalScore = this._meta.ixActiveTab === StatGenUi._IX_TAB_ROLLED
+					? this._rolled_getTotalScore(ab)
+					: this._meta.ixActiveTab === StatGenUi._IX_TAB_ARRAY
+						? this._array_getTotalScore(ab)
+						: this._meta.ixActiveTab === StatGenUi._IX_TAB_PB
+							? this._pb_getTotalScore(ab)
+							: this._manual_getTotalScore(ab);
+				$iptTotal.val(totalScore);
+				$iptMod.val(Parser.getAbilityModifier(totalScore));
+
+				this._state[exportedStateProp] = totalScore;
+			};
+			this._addHookAll("state", hk);
+			this._addHook("meta", "ixActiveTab", hk);
+			hk();
+
+			return {
+				$wrpIptTotal,
+				$wrpIptMod,
+			}
+		});
 
 		const $wrpRace = $(`<div class="flex"></div>`);
 		const $wrpRaceOuter = $$`<div class="flex-col">
-			<div class="my-1 statgen-pb__header statgen-pb__header--group mr-3 text-center italic">种族</div>
+			<div class="my-1 statgen-pb__header statgen-pb__header--group mr-3 text-center italic">Race</div>
 
 			${$wrpRace}
 		</div>`;
@@ -723,7 +701,7 @@ class StatGenUi extends BaseComponent {
 		this._modalFilterRaces.pageFilter.filterBox.on(FilterBox.EVNT_VALCHANGE, () => doApplyFilterToSelRace());
 		doApplyFilterToSelRace();
 
-		const $btnFilterForRace = $(`<button class="btn btn-xs btn-default br-0 pr-2" title="筛选种族"><span class="glyphicon glyphicon-filter"></span> 筛选</button>`)
+		const $btnFilterForRace = $(`<button class="btn btn-xs btn-default bl-0" title="Filter for Race"><span class="glyphicon glyphicon-filter"></span></button>`)
 			.click(async () => {
 				const selected = await this._modalFilterRaces.pGetUserSelection();
 				if (selected == null || !selected.length) return;
@@ -734,30 +712,6 @@ class StatGenUi extends BaseComponent {
 				this._state.common_ixRace = ixRace;
 			});
 
-		const $btnPreviewRace = ComponentUiUtil.$getBtnBool(
-			this,
-			"common_isPreviewRace",
-			{
-				html: `<button class="btn btn-xs btn-default" title="Toggle Race Preview"><span class="glyphicon glyphicon-eye-open"></span></button>`,
-			},
-		);
-		const hkBtnPreviewRace = () => $btnPreviewRace.toggleVe(this._state.common_ixRace != null);
-		this._addHookBase("common_ixRace", hkBtnPreviewRace)
-		hkBtnPreviewRace();
-
-		const $dispPreviewRace = $(`<div class="flex-col mb-2"></div>`);
-		const hkPreviewRace = () => {
-			if (!this._state.common_isPreviewRace) return $dispPreviewRace.hideVe();
-
-			const race = this._state.common_ixRace != null ? this._races[this._state.common_ixRace] : null;
-			if (!race) return $dispPreviewRace.hideVe();
-
-			$dispPreviewRace.empty().showVe().append(Renderer.hover.$getHoverContent_stats(UrlUtil.PG_RACES, race));
-		};
-		this._addHookBase("common_ixRace", hkPreviewRace);
-		this._addHookBase("common_isPreviewRace", hkPreviewRace);
-		hkPreviewRace();
-
 		const $btnToggleTashasPin = ComponentUiUtil.$getBtnBool(
 			this,
 			"common_isShowTashasRules",
@@ -766,7 +720,7 @@ class StatGenUi extends BaseComponent {
 			},
 		);
 
-		const $dispTashas = $(`<div class="flex-col"><div class="italic ve-muted">加载中...</div></div>`);
+		const $dispTashas = $(`<div class="flex-col"><div class="italic ve-muted">Loading...</div></div>`);
 		Renderer.hover.pCacheAndGet(UrlUtil.PG_VARIANTRULES, SRC_TCE, UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_VARIANTRULES]({name: "Customizing Your Origin", source: SRC_TCE}))
 			.then(rule => {
 				$$($dispTashas.empty())`${Renderer.hover.$getHoverContent_stats(UrlUtil.PG_VARIANTRULES, rule)}<hr class="hr-3">`;
@@ -774,16 +728,13 @@ class StatGenUi extends BaseComponent {
 		const hkIsShowTashas = () => {
 			$dispTashas.toggleVe(this._state.common_isShowTashasRules);
 		};
-		this._addHookBase("common_isShowTashasRules", hkIsShowTashas);
+		this._addHookBase("common_isShowTashasRules", hkIsShowTashas)
 		hkIsShowTashas();
 
-		const $hrPreviewRaceTashas = $(`<hr class="hr-3">`);
-		const hkPreviewAndTashas = () => $hrPreviewRaceTashas.toggleVe(this._state.common_isPreviewRace && this._state.common_isShowTashasRules);
-		this._addHookBase("common_isPreviewRace", hkPreviewAndTashas);
-		this._addHookBase("common_isShowTashasRules", hkPreviewAndTashas);
-		hkPreviewAndTashas();
-
-		const $wrpAsi = this._render_$getWrpAsi();
+		// region ASIs
+		const $wrpAsi = $(`<div class="flex-col w-100"></div>`);
+		this._compAsi.render($wrpAsi)
+		// endregion
 
 		hkElesMode();
 
@@ -796,7 +747,7 @@ class StatGenUi extends BaseComponent {
 				<div class="flex-col">
 					${$stgPbHeader}
 
-					<div class="flex">
+					<div class="flex mb-4">
 						<div class="flex-col mr-3">
 							<div class="my-1 statgen-pb__header"></div>
 							<div class="my-1 statgen-pb__header flex-h-right">${$btnResetRolledOrArrayOrManual}</div>
@@ -806,7 +757,7 @@ class StatGenUi extends BaseComponent {
 
 						<div class="flex-col mr-3">
 							<div class="my-1 statgen-pb__header"></div>
-							<div class="my-1 bold statgen-pb__header flex-vh-center">基础</div>
+							<div class="my-1 bold statgen-pb__header flex-vh-center">Base</div>
 							${$wrpsBase}
 						</div>
 
@@ -814,37 +765,34 @@ class StatGenUi extends BaseComponent {
 
 						<div class="flex-col mr-3">
 							<div class="my-1 statgen-pb__header"></div>
-							<div class="my-1 statgen-pb__header flex-vh-center help text-muted" title="此处输入额外/自定义的加值">用户</div>
+							<div class="my-1 statgen-pb__header flex-vh-center help text-muted" title="Input any additional/custom bonuses here">User</div>
 							${$wrpsUser}
 						</div>
 
 						<div class="flex-col mr-3">
 							<div class="my-1 statgen-pb__header"></div>
-							<div class="my-1 statgen-pb__header flex-vh-center">总计</div>
+							<div class="my-1 statgen-pb__header flex-vh-center">Total</div>
 							${metasTotalAndMod.map(it => it.$wrpIptTotal)}
 						</div>
 
 						<div class="flex-col mr-3">
 							<div class="my-1 statgen-pb__header"></div>
-							<div class="my-1 statgen-pb__header flex-vh-center" title="调整值">调整值</div>
+							<div class="my-1 statgen-pb__header flex-vh-center" title="Modifier">Mod.</div>
 							${metasTotalAndMod.map(it => it.$wrpIptMod)}
 						</div>
 					</div>
 
 					<div class="flex-col">
-						<div class="mb-1">选择种族</div>
-						<div class="flex-v-center mb-2">
-							<div class="flex-v-center btn-group w-100 mr-2">${$btnFilterForRace}${$selRace}</div>
-							<div>${$btnPreviewRace}</div>
-						</div>
+						<div class="mb-1">Select a Race</div>
+						<div class="flex-v-center btn-group w-100 mb-2">${$selRace}${$btnFilterForRace}</div>
 						<label class="flex-v-center mb-1">
-							<div class="mr-1">允许起源自定义</div>
+							<div class="mr-1">Allow Origin Customization</div>
 							${ComponentUiUtil.$getCbBool(this, "common_isTashas")}
 						</label>
 						<div class="flex">
-							<div class="ve-small ve-muted italic mr-1">${Renderer.get().render(`一条{@variantrule Customizing Your Origin|TCE|可选规则}`)}</div>
+							<div class="ve-small ve-muted italic mr-1">${Renderer.get().render(`An {@variantrule Customizing Your Origin|TCE|optional rule}`)}</div>
 							${$btnToggleTashasPin}
-							<div class="ve-small ve-muted italic ml-1">${Renderer.get().render(`来自塔莎的万象坩埚，第 8 页。`)}</div>
+							<div class="ve-small ve-muted italic ml-1">${Renderer.get().render(`from Tasha's Cauldron of Everything, page 8.`)}</div>
 						</div>
 					</div>
 				</div>
@@ -857,130 +805,10 @@ class StatGenUi extends BaseComponent {
 
 			<hr class="hr-3">
 
-			${$dispPreviewRace}
-			${$hrPreviewRaceTashas}
 			${$dispTashas}
 
 			${$wrpAsi}
 		`;
-	}
-
-	_render_isLevelUp ($wrpTab) {
-		const $wrpsExisting = Parser.ABIL_ABVS.map(ab => {
-			const $iptExisting = $(`<input class="form-control form-control--minimal statgen-shared__ipt text-right" type="number" readonly>`)
-				.val(this._existingScores[ab]);
-
-			return $$`<label class="my-1 statgen-pb__cell">
-				${$iptExisting}
-			</label>`
-		});
-
-		const $wrpsUser = this._render_$getWrpsUser();
-
-		const metasTotalAndMod = this._render_getMetasTotalAndMod();
-
-		const $wrpAsi = this._render_$getWrpAsi();
-
-		$$($wrpTab)`
-			<div class="flex mobile-ish__flex-col w-100 px-3">
-				<div class="flex-col">
-					<div class="flex">
-						<div class="flex-col mr-3">
-							<div class="my-1 statgen-pb__header"></div>
-
-							${Parser.ABIL_ABVS.map(it => `<div class="my-1 bold statgen-pb__cell flex-v-center flex-h-right" title="${Parser.attAbvToFull(it)}">${it.toUpperCase()}</div>`)}
-						</div>
-
-						<div class="flex-col mr-3">
-							<div class="my-1 bold statgen-pb__header flex-vh-center" title="当前">当前</div>
-							${$wrpsExisting}
-						</div>
-
-						<div class="flex-col mr-3">
-							<div class="my-1 statgen-pb__header flex-vh-center help text-muted" title="此处输入额外/自定义的加值">用户</div>
-							${$wrpsUser}
-						</div>
-
-						<div class="flex-col mr-3">
-							<div class="my-1 statgen-pb__header flex-vh-center">总计</div>
-							${metasTotalAndMod.map(it => it.$wrpIptTotal)}
-						</div>
-
-						<div class="flex-col mr-3">
-							<div class="my-1 statgen-pb__header flex-vh-center" title="调整值">调整值</div>
-							${metasTotalAndMod.map(it => it.$wrpIptMod)}
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<hr class="hr-3">
-
-			${$wrpAsi}
-		`;
-	}
-
-	_render_$getWrpsUser () {
-		return Parser.ABIL_ABVS.map(ab => {
-			const {propUserBonus} = this.constructor._common_getProps(ab);
-			const $ipt = ComponentUiUtil.$getIptInt(
-				this,
-				propUserBonus,
-				0,
-				{
-					fallbackOnNaN: 0,
-					html: `<input class="form-control form-control--minimal statgen-shared__ipt text-right" type="number">`,
-				},
-			);
-			return $$`<label class="my-1 statgen-pb__cell">${$ipt}</label>`
-		});
-	}
-
-	_render_getMetasTotalAndMod () {
-		return Parser.ABIL_ABVS.map(ab => {
-			const $iptTotal = $(`<input class="form-control form-control--minimal statgen-shared__ipt text-center" type="text" readonly>`);
-			const $iptMod = $(`<input class="form-control form-control--minimal statgen-shared__ipt text-center" type="text" readonly>`);
-
-			const $wrpIptTotal = $$`<label class="my-1 statgen-pb__cell">${$iptTotal}</label>`;
-			const $wrpIptMod = $$`<label class="my-1 statgen-pb__cell">${$iptMod}</label>`;
-
-			const exportedStateProp = `common_export_${ab}`;
-
-			const hk = () => {
-				const totalScore = this._isLevelUp
-					? this._levelUp_getTotalScore(ab)
-					: this._meta.ixActiveTab === StatGenUi._IX_TAB_ROLLED
-						? this._rolled_getTotalScore(ab)
-						: this._meta.ixActiveTab === StatGenUi._IX_TAB_ARRAY
-							? this._array_getTotalScore(ab)
-							: this._meta.ixActiveTab === StatGenUi._IX_TAB_PB
-								? this._pb_getTotalScore(ab)
-								: this._manual_getTotalScore(ab);
-
-				const isOverLimit = totalScore > 20;
-				$iptTotal
-					.val(totalScore)
-					.toggleClass("form-control--error", isOverLimit)
-					.title(isOverLimit ? `In general, you can't increase an ability score above 20.` : "");
-				$iptMod.val(Parser.getAbilityModifier(totalScore));
-
-				this._state[exportedStateProp] = totalScore;
-			};
-			this._addHookAll("state", hk);
-			this._addHook("meta", "ixActiveTab", hk);
-			hk();
-
-			return {
-				$wrpIptTotal,
-				$wrpIptMod,
-			}
-		});
-	}
-
-	_render_$getWrpAsi () {
-		const $wrpAsi = $(`<div class="flex-col w-100"></div>`);
-		this._compAsi.render($wrpAsi);
-		return $wrpAsi;
 	}
 
 	static _common_getProps (ab) {
@@ -1079,7 +907,7 @@ class StatGenUi extends BaseComponent {
 			});
 
 			$ptBase = $$`<div class="flex-col mr-3">
-				<div class="my-1 statgen-pb__header flex-vh-center">静态</div>
+				<div class="my-1 statgen-pb__header flex-vh-center">Static</div>
 				${$wrpsRace}
 			</div>`
 		}
@@ -1204,32 +1032,25 @@ class StatGenUi extends BaseComponent {
 		return (this._state[propAbilValue] || 0) + this._state[propUserBonus] + this._getTotalScore_getBonuses(ab);
 	}
 
-	_levelUp_getTotalScore (ab) {
-		const {propUserBonus} = this.constructor._common_getProps(ab);
-		return (this._existingScores[ab] || 0) + this._state[propUserBonus] + this._getTotalScore_getBonuses(ab);
-	}
-
 	_getTotalScore_getBonuses (ab) {
 		let total = 0;
 
-		if (!this._isLevelUp) {
-			const fromRace = this._pb_getRacialAbility();
-			if (fromRace) {
-				if (fromRace[ab]) total += fromRace[ab];
+		const fromRace = this._pb_getRacialAbility();
+		if (fromRace) {
+			if (fromRace[ab]) total += fromRace[ab];
 
-				if (fromRace.choose && fromRace.choose.from) {
-					total += this._state.common_raceChoiceMetasFrom
-						.filter(it => it.ability === ab)
-						.map(it => it.amount)
-						.reduce((a, b) => a + b, 0);
-				}
+			if (fromRace.choose && fromRace.choose.from) {
+				total += this._state.common_raceChoiceMetasFrom
+					.filter(it => it.ability === ab)
+					.map(it => it.amount)
+					.reduce((a, b) => a + b, 0);
+			}
 
-				if (fromRace.choose && fromRace.choose.weighted && fromRace.choose.weighted.weights) {
-					total += this._state.common_raceChoiceMetasWeighted
-						.filter(it => it.ability === ab)
-						.map(it => it.amount)
-						.reduce((a, b) => a + b, 0);
-				}
+			if (fromRace.choose && fromRace.choose.weighted && fromRace.choose.weighted.weights) {
+				total += this._state.common_raceChoiceMetasWeighted
+					.filter(it => it.ability === ab)
+					.map(it => it.amount)
+					.reduce((a, b) => a + b, 0);
 			}
 		}
 
@@ -1366,7 +1187,6 @@ class StatGenUi extends BaseComponent {
 	_getDefaultState () {
 		return {
 			// region Common
-			common_isPreviewRace: false,
 			common_isTashas: false,
 			common_isShowTashasRules: false,
 			common_ixRace: null,
@@ -1446,28 +1266,27 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 	_render_renderAsiFeatSection (propCnt, namespace, $wrpRows) {
 		const hk = () => {
-			let ix = 0;
+			let i = 0;
 
-			for (; ix < this._parent.state[propCnt]; ++ix) {
-				const ix_ = ix;
-				const {propMode, propIxFeat, propIxAsiPointOne, propIxAsiPointTwo, propIxFeatAbility, propFeatAbilityChooseFrom} = this._parent.getPropsAsi(ix_, namespace);
+			for (; i < this._parent.state[propCnt]; ++i) {
+				const {propMode, propIxFeat, propIxAsiPointOne, propIxAsiPointTwo, propIxFeatAbility, propFeatAbilityChooseFrom} = this._parent.getPropsAsi(i, namespace);
 
-				if (!this._metasAsi[namespace][ix_]) {
+				if (!this._metasAsi[namespace][i]) {
 					this._parent.state[propMode] = this._parent.state[propMode] || (namespace === "ability" ? "asi" : "feat");
 
-					const $btnAsi = namespace !== "ability" ? null : $(`<button class="btn btn-xs btn-default w-60p">属性增长</button>`)
+					const $btnAsi = namespace !== "ability" ? null : $(`<button class="btn btn-xs btn-default w-50p">ASI</button>`)
 						.click(() => {
 							this._parent.state[propMode] = "asi";
 							this._doPulse();
 						});
 
-					const $btnFeat = namespace !== "ability" ? $(`<div class="w-100p text-center">专长</div>`) : $(`<button class="btn btn-xs btn-default w-50p">专长</button>`)
+					const $btnFeat = namespace !== "ability" ? $(`<div class="w-100p text-center">Feat</div>`) : $(`<button class="btn btn-xs btn-default w-50p">Feat</button>`)
 						.click(() => {
 							this._parent.state[propMode] = "feat";
 							this._doPulse();
 						});
 
-					const $btnChooseFeat = $(`<button class="btn btn-xxs btn-default mr-2" title="选择一项专长"><span class="glyphicon glyphicon-search"></span></button>`)
+					const $btnChooseFeat = $(`<button class="btn btn-xxs btn-default mr-2" title="Choose a Feat"><span class="glyphicon glyphicon-search"></span></button>`)
 						.click(async () => {
 							const selecteds = await this._parent.modalFilterFeats.pGetUserSelection();
 							if (selecteds == null || !selecteds.length) return;
@@ -1559,7 +1378,7 @@ StatGenUi.CompAsi = class extends BaseComponent {
 					const $dispFeat = $(`<div class="flex-v-center mr-2"></div>`)
 					const $stgSelectAbilitySet = $$`<div class="flex-v-center mr-2"></div>`
 					const $stgFeatNoChoice = $$`<div class="flex-v-center mr-2"></div>`
-					const $stgFeatChooseAsiFrom = $$`<div class="flex-v-end"></div>`;
+					const $stgFeatChooseAsiFrom = $$`<div class="flex-v-bottom"></div>`;
 					const $stgFeatChooseAsiWeighted = $$`<div class="flex-v-center"></div>`;
 
 					const $stgFeat = $$`<div class="flex-v-center">
@@ -1577,21 +1396,21 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 						const feat = this._parent.feats[this._parent.state[propIxFeat]];
 
-						$stgFeat.removeClass("flex-v-end").addClass("flex-v-center");
+						$stgFeat.removeClass("flex-v-bottom").addClass("flex-v-center");
 						$dispFeat.toggleClass("italic ve-muted", !feat);
-						$dispFeat.html(feat ? Renderer.get().render(`{@feat ${feat.name.toLowerCase()}|${feat.source}}`) : `（选择一项专长）`);
+						$dispFeat.html(feat ? Renderer.get().render(`{@feat ${feat.name.toLowerCase()}|${feat.source}}`) : `(Choose a feat)`);
 
-						if (this._lastMetasFeatsFnsCleanup[namespace][ix_]) this._lastMetasFeatsFnsCleanup[namespace][ix_].forEach(fn => fn());
-						this._lastMetasFeatsFnsCleanup[namespace][ix_] = null;
+						if (this._lastMetasFeatsFnsCleanup[namespace][i]) this._lastMetasFeatsFnsCleanup[namespace][i].forEach(fn => fn());
+						this._lastMetasFeatsFnsCleanup[namespace][i] = null;
 
-						if (this._lastMetasFeatsAsiChooseFrom[namespace][ix_]) this._lastMetasFeatsAsiChooseFrom[namespace][ix_].cleanup();
-						this._lastMetasFeatsAsiChooseFrom[namespace][ix_] = null;
+						if (this._lastMetasFeatsAsiChooseFrom[namespace][i]) this._lastMetasFeatsAsiChooseFrom[namespace][i].cleanup();
+						this._lastMetasFeatsAsiChooseFrom[namespace][i] = null;
 
 						this._parent.state[propIxFeatAbility] = 0;
 
 						$stgSelectAbilitySet.hideVe();
 						if (feat) {
-							this._lastMetasFeatsFnsCleanup[namespace][ix_] = [];
+							this._lastMetasFeatsFnsCleanup[namespace][i] = [];
 
 							if (feat.ability && feat.ability.length > 1) {
 								const metaChooseAbilitySet = ComponentUiUtil.$getSelEnum(
@@ -1606,12 +1425,12 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 								$stgSelectAbilitySet.showVe().append(metaChooseAbilitySet.$sel);
 								metaChooseAbilitySet.$sel.change(() => this._doPulse());
-								this._lastMetasFeatsFnsCleanup[namespace][ix_].push(() => metaChooseAbilitySet.unhook());
+								this._lastMetasFeatsFnsCleanup[namespace][i].push(() => metaChooseAbilitySet.unhook());
 							}
 
 							const hkAbilitySet = () => {
-								if (this._lastMetasFeatsAsiChooseFrom[namespace][ix_]) this._lastMetasFeatsAsiChooseFrom[namespace][ix_].cleanup();
-								this._lastMetasFeatsAsiChooseFrom[namespace][ix_] = null;
+								if (this._lastMetasFeatsAsiChooseFrom[namespace][i]) this._lastMetasFeatsAsiChooseFrom[namespace][i].cleanup();
+								this._lastMetasFeatsAsiChooseFrom[namespace][i] = null;
 
 								if (!feat.ability) {
 									$stgFeatNoChoice.empty().hideVe();
@@ -1628,14 +1447,13 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 								// region Choices
 								if (abilitySet.choose && abilitySet.choose.from) {
-									$stgFeat.removeClass("flex-v-center").addClass("flex-v-end")
+									$stgFeat.removeClass("flex-v-center").addClass("flex-v-bottom")
 									$stgFeatChooseAsiFrom.showVe().empty();
-									$stgFeatChooseAsiWeighted.empty().hideVe();
 
 									const count = abilitySet.choose.count || 1;
 									const amount = abilitySet.choose.amount || 1;
 
-									this._lastMetasFeatsAsiChooseFrom[namespace][ix_] = ComponentUiUtil.getMetaWrpMultipleChoice(
+									this._lastMetasFeatsAsiChooseFrom[namespace][i] = ComponentUiUtil.getMetaWrpMultipleChoice(
 										this._parent,
 										propFeatAbilityChooseFrom,
 										{
@@ -1647,7 +1465,7 @@ StatGenUi.CompAsi = class extends BaseComponent {
 
 									$stgFeatChooseAsiFrom.append(`<div><span class="mr-2">\u2014</span>choose ${count > 1 ? `${count} ` : ""}${UiUtil.intToBonus(amount)}</div>`);
 
-									this._lastMetasFeatsAsiChooseFrom[namespace][ix_].rowMetas.forEach(meta => {
+									this._lastMetasFeatsAsiChooseFrom[namespace][i].rowMetas.forEach(meta => {
 										meta.$cb.change(() => this._doPulse());
 
 										$$`<label class="flex-col no-select">
@@ -1657,21 +1475,15 @@ StatGenUi.CompAsi = class extends BaseComponent {
 									});
 								} else if (abilitySet.choose && abilitySet.choose.weighted) {
 									// TODO(Future) unsupported, for now
-									$stgFeatChooseAsiFrom.empty().hideVe();
-									$stgFeatChooseAsiWeighted.showVe().html(`<i class="ve-muted">The selected ability score format is currently unsupported. Please check back later!</i>`);
+									$stgFeatChooseAsiFrom.showVe().html(`<i class="ve-muted">The selected ability score format is currently unsupported. Please check back later!</i>`);
 								} else {
 									$stgFeatChooseAsiFrom.empty().hideVe();
-									$stgFeatChooseAsiWeighted.empty().hideVe();
 								}
 								// endregion
 							};
-							this._lastMetasFeatsFnsCleanup[namespace][ix_].push(() => this._parent.removeHookBase(propIxFeatAbility, hkAbilitySet));
+							this._lastMetasFeatsFnsCleanup[namespace][i].push(() => this._parent.removeHookBase(propIxFeatAbility, hkAbilitySet));
 							this._parent.addHookBase(propIxFeatAbility, hkAbilitySet);
 							hkAbilitySet();
-						} else {
-							$stgFeatNoChoice.empty().hideVe();
-							$stgFeatChooseAsiFrom.empty().hideVe();
-							$stgFeatChooseAsiWeighted.empty().hideVe();
 						}
 					};
 					this._parent.addHookBase(propIxFeat, hkIxFeat);
@@ -1693,27 +1505,27 @@ StatGenUi.CompAsi = class extends BaseComponent {
 					this._parent.addHookBase(propMode, hkMode);
 					hkMode();
 
-					const $row = $$`<div class="flex-v-end py-3 px-1">
+					const $row = $$`<div class="flex-v-bottom py-3 px-1">
 						<div class="btn-group">${$btnAsi}${$btnFeat}</div>
 						<div class="vr-4"></div>
 						${$stgAsi}
 						${$stgFeat}
 					</div>`.appendTo($wrpRows);
 
-					this._metasAsi[namespace][ix_] = {
+					this._metasAsi[namespace][i] = {
 						$row,
 					};
 				}
 
-				this._metasAsi[namespace][ix_].$row.showVe().addClass("statgen-asi__row");
+				this._metasAsi[namespace][i].$row.showVe().addClass("statgen-asi__row");
 			}
 
 			// Remove border styling from the last visible row
-			if (this._metasAsi[namespace][ix - 1]) this._metasAsi[namespace][ix - 1].$row.removeClass("statgen-asi__row");
+			if (this._metasAsi[namespace][i - 1]) this._metasAsi[namespace][i - 1].$row.removeClass("statgen-asi__row");
 
-			for (; ix < this._metasAsi[namespace].length; ++ix) {
-				if (!this._metasAsi[namespace][ix]) continue;
-				this._metasAsi[namespace][ix].$row.hideVe().removeClass("statgen-asi__row");
+			for (; i < this._metasAsi[namespace].length; ++i) {
+				if (!this._metasAsi[namespace][i]) continue;
+				this._metasAsi[namespace][i].$row.hideVe().removeClass("statgen-asi__row");
 			}
 		};
 		this._parent.addHookBase(propCnt, hk);
@@ -1745,16 +1557,16 @@ StatGenUi.CompAsi = class extends BaseComponent {
 			.addClass("w-100p text-center");
 
 		$$($wrpAsi)`
-			<h4 class="my-2 bold">属性值增长</h4>
+			<h4 class="my-2 bold">Ability Score Increases</h4>
 			${this._render_$getStageCntAsi()}
 			${$wrpRowsAsi}
 
 			${$stgRace}
 
 			<hr class="hr-3 hr--dotted">
-			<h4 class="my-2 bold">额外特性</h4>
+			<h4 class="my-2 bold">Additional Feats</h4>
 			<label class="w-100 flex-v-center mb-2">
-				<div class="mr-2 no-shrink">额外特性个数：</div>${$iptCountFeatsCustom}
+				<div class="mr-2 no-shrink">Number of additional feats:</div>${$iptCountFeatsCustom}
 			</label>
 			${$wrpRowsCustom}
 		`;
@@ -1764,7 +1576,7 @@ StatGenUi.CompAsi = class extends BaseComponent {
 		if (!this._parent.isCharacterMode) {
 			const $iptCountAsi = ComponentUiUtil.$getIptInt(this._parent, "common_cntAsi", 0, {min: 0, max: 20})
 				.addClass("w-100p text-center");
-			return $$`<label class="w-100 flex-v-center mb-2"><div class="mr-2 no-shrink">属性值增长应用次数：</div>${$iptCountAsi}</label>`;
+			return $$`<label class="w-100 flex-v-center mb-2"><div class="mr-2 no-shrink">Number of Ability Score Increases to apply:</div>${$iptCountAsi}</label>`;
 		}
 
 		const $out = $$`<div class="w-100 flex-v-center mb-2 italic ve-muted">No ability score increases available.</div>`;
@@ -1873,7 +1685,7 @@ StatGenUi.RenderableCollectionPbRules = class extends RenderableCollectionBase {
 		comp._addHookBase("cost", hkCost);
 		hkCost();
 
-		const $iptCost = ComponentUiUtil.$getIptInt(comp, "cost", 0, {html: `<input class="form-control input-xs form-control--minimal text-center">`, fallbackOnNaN: 0});
+		const $iptCost = ComponentUiUtil.$getIptInt(comp, "cost", 0, {html: `<input class="form-control input-xs form-control--minimal text-center">`, fallbackOnNaN: 0, min: 0});
 
 		const hkIsCustom = () => {
 			$dispCost.toggleVe(!parentComp.state.pb_isCustom);

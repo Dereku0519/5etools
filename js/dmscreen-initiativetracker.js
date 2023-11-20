@@ -100,8 +100,8 @@ class InitiativeTracker {
 			new ContextUtil.Action(
 				"From Bestiary Encounter File",
 				async () => {
-					const jsons = await DataUtil.pUserUpload();
-					if (jsons?.length) await pConvertAndLoadBestiaryList(jsons[0]);
+					const json = await DataUtil.pUserUpload();
+					if (json) await pConvertAndLoadBestiaryList(json);
 				},
 			),
 			null,
@@ -117,14 +117,14 @@ class InitiativeTracker {
 		const $wrpHeader = $(`
 			<div class="dm-init-wrp-header">
 				<div class="dm-init-row-lhs dm-init-header">
-					<div class="w-100">生物/状态</div>
+					<div class="w-100">生物/狀態</div>
 				</div>
 
 				<div class="dm-init-row-mid"/>
 
 				<div class="dm-init-row-rhs">
 					<div class="dm-init-header dm-init-header--input dm-init-header--input-wide" title="生命值">HP</div>
-					<div class="dm-init-header dm-init-header--input" title="先攻数值">先攻</div>
+					<div class="dm-init-header dm-init-header--input" title="先攻數值">先攻</div>
 					<div style="width: 43px;"/>
 				</div>
 			</div>
@@ -138,7 +138,7 @@ class InitiativeTracker {
 		const $wrpAdd = $(`<div class="btn-group flex"/>`).appendTo($wrpAddNext);
 		const $btnAdd = $(`<button class="btn btn-primary btn-xs dm-init-lockable" title="添加玩家"><span class="glyphicon glyphicon-plus"/></button>`).appendTo($wrpAdd);
 		const $btnAddMonster = $(`<button class="btn btn-success btn-xs dm-init-lockable mr-2" title="添加怪物"><span class="glyphicon glyphicon-print"/></button>`).appendTo($wrpAdd);
-		$(`<button class="btn btn-default btn-xs mr-2" title="下个回合"><span class="glyphicon glyphicon-step-forward"/></button>`).appendTo($wrpAddNext)
+		$(`<button class="btn btn-default btn-xs mr-2" title="下個回合"><span class="glyphicon glyphicon-step-forward"/></button>`).appendTo($wrpAddNext)
 			.click(() => setNextActive());
 		const $iptRound = $(`<input class="form-control ipt-sm dm_init__rounds" type="number" min="1" title="Round">`)
 			.val(state.n || 1)
@@ -146,7 +146,7 @@ class InitiativeTracker {
 			.appendTo($wrpAddNext);
 
 		const $wrpSort = $(`<div class="btn-group flex"/>`).appendTo($wrpControls);
-		$(`<button title="照名称排序" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-sort-by-alphabet"/></button>`).appendTo($wrpSort)
+		$(`<button title="照名稱排序" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-sort-by-alphabet"/></button>`).appendTo($wrpSort)
 			.click(() => {
 				if (cfg.sort === ALPHA) flipDir();
 				else cfg.sort = ALPHA;
@@ -217,7 +217,7 @@ class InitiativeTracker {
 		};
 
 		const $wrpUtils = $(`<div class="flex"/>`).appendTo($wrpControls);
-		$(`<button class="btn btn-primary btn-xs mr-2" title="玩家窗口"><span class="glyphicon glyphicon-user"/></button>`)
+		$(`<button class="btn btn-primary btn-xs mr-2" title="玩家視窗"><span class="glyphicon glyphicon-user"/></button>`)
 			.appendTo($wrpUtils)
 			.click(() => {
 				const {$modalInner} = UiUtil.getShowModal({
@@ -302,7 +302,7 @@ class InitiativeTracker {
 		});
 
 		const $wrpLockSettings = $(`<div class="btn-group flex"/>`).appendTo($wrpUtils);
-		const $btnLock = $(`<button class="btn btn-danger btn-xs" title="锁定追踪器"><span class="glyphicon glyphicon-lock"></span></button>`).appendTo($wrpLockSettings);
+		const $btnLock = $(`<button class="btn btn-danger btn-xs" title="鎖定追蹤器"><span class="glyphicon glyphicon-lock"></span></button>`).appendTo($wrpLockSettings);
 		$btnLock.on("click", () => {
 			if (cfg.isLocked) {
 				$btnLock.removeClass("btn-success").addClass("btn-danger").title("Lock Tracker");
@@ -321,7 +321,7 @@ class InitiativeTracker {
 			.appendTo($wrpLockSettings)
 			.click(() => {
 				const {$modalInner} = UiUtil.getShowModal({
-					title: "先攻追踪器 设置",
+					title: "先攻追蹤器 設置",
 					cbClose: () => {
 						handleStatColsChange();
 						doUpdateExternalStates();
@@ -329,7 +329,7 @@ class InitiativeTracker {
 				});
 				UiUtil.addModalSep($modalInner);
 				UiUtil.$getAddModalRowCb($modalInner, "Roll initiative", cfg, "isRollInit");
-				UiUtil.$getAddModalRowCb($modalInner, "掷骰决定生命值", cfg, "isRollHp");
+				UiUtil.$getAddModalRowCb($modalInner, "擲骰決定生命值", cfg, "isRollHp");
 				UiUtil.addModalSep($modalInner);
 				UiUtil.$getAddModalRowCb($modalInner, "Player View: Show exact player HP", cfg, "playerInitShowExactPlayerHp");
 				UiUtil.$getAddModalRowCb($modalInner, "Player View: Show exact monster HP", cfg, "playerInitShowExactMonsterHp");
@@ -338,7 +338,7 @@ class InitiativeTracker {
 				UiUtil.$getAddModalRowCb($modalInner, "Player View: Shorten server tokens", cfg, "playerInitShortTokens", "Server tokens will be roughly half as many characters, but will contain non-standard characters.");
 				UiUtil.addModalSep($modalInner);
 
-				const $cbStats = UiUtil.$getAddModalRowCb($modalInner, "添加额外字段", cfg, "statsAddColumns");
+				const $cbStats = UiUtil.$getAddModalRowCb($modalInner, "添加額外欄位", cfg, "statsAddColumns");
 				const $wrpTblStatsHead = UiUtil.$getAddModalRow($modalInner, "div")
 					.addClass("ui-modal__row--stats-header")
 					// intentional difference in column widths compared to the rows, to position the long header
@@ -346,9 +346,9 @@ class InitiativeTracker {
 					.append(`
 						<div class="row dm_init__stats_row">
 							<div class="col-1-3"/>
-							<div class="col-4-9">自动填入...</div>
-							<div class="col-2-5">缩写</div>
-							<div class="col-1-7 text-center help" title="Only affects creatures. Players are always editable.">可否编辑?</div>
+							<div class="col-4-9">自動填入...</div>
+							<div class="col-2-5">縮寫</div>
+							<div class="col-1-7 text-center help" title="Only affects creatures. Players are always editable.">可否編輯?</div>
 						</div>
 					`);
 				const $wrpTblStats = UiUtil.$getAddModalRow($modalInner, "div").addClass("ui-modal__row--stats");
@@ -375,7 +375,7 @@ class InitiativeTracker {
 
 						const $selPre = $(`
 								<select class="form-control input-xs">
-									<option value="">(无)</option>
+									<option value="">(無)</option>
 									${Object.entries(InitiativeTracker.STAT_COLUMNS).map(([k, v]) => v.isHr ? `<option disabled>\u2014</option>` : `<option value="${k}">${v.name}</option>`)}
 								</select>
 							`).change(() => {
@@ -475,7 +475,7 @@ class InitiativeTracker {
 			});
 
 		const $wrpLoadReset = $(`<div class="btn-group"/>`).appendTo($wrpUtils);
-		const $btnLoad = $(`<button title="从怪物图鉴导入遭遇" class="btn btn-success btn-xs dm-init-lockable"><span class="glyphicon glyphicon-upload"/></button>`).appendTo($wrpLoadReset)
+		const $btnLoad = $(`<button title="從怪物圖鑑導入遭遇" class="btn btn-success btn-xs dm-init-lockable"><span class="glyphicon glyphicon-upload"/></button>`).appendTo($wrpLoadReset)
 			.click((evt) => {
 				if (cfg.isLocked) return;
 				ContextUtil.pOpenMenu(evt, menu);
@@ -483,7 +483,7 @@ class InitiativeTracker {
 		$(`<button title="重置" class="btn btn-danger btn-xs dm-init-lockable"><span class="glyphicon glyphicon-trash"/></button>`).appendTo($wrpLoadReset)
 			.click(() => {
 				if (cfg.isLocked) return;
-				confirm("你确定吗？") && doReset();
+				confirm("你確定嗎？") && doReset();
 			});
 
 		$btnAdd.on("click", async () => {
@@ -503,10 +503,10 @@ class InitiativeTracker {
 			const {$modalInner, doClose} = UiUtil.getShowModal();
 
 			const $controls = $(`<div class="split" style="flex-shrink: 0"/>`).appendTo($modalInner);
-			const $iptSearch = $(`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="搜索...">`).blurOnEsc().appendTo($controls);
+			const $iptSearch = $(`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="搜尋...(只能搜尋英文)">`).blurOnEsc().appendTo($controls);
 			const $wrpCount = $(`
 				<div class="ui-search__ipt-search-sub-wrp" style="padding-right: 0;">
-					<div style="margin-right: 7px;">添加</div>
+					<div style="margin-right: 7px;">Add</div>
 					<label class="ui-search__ipt-search-sub-lbl"><input type="radio" name="mon-count" class="ui-search__ipt-search-sub-ipt" value="1" checked> 1</label>
 					<label class="ui-search__ipt-search-sub-lbl"><input type="radio" name="mon-count" class="ui-search__ipt-search-sub-ipt" value="2"> 2</label>
 					<label class="ui-search__ipt-search-sub-lbl"><input type="radio" name="mon-count" class="ui-search__ipt-search-sub-ipt" value="3"> 3</label>
@@ -547,11 +547,10 @@ class InitiativeTracker {
 				const srch = $iptSearch.val().trim();
 				const MAX_RESULTS = 75; // hard cap results
 
-				const index = board.availContent["生物"];
+				const index = board.availContent["生物(Creature)"];
 				const results = index.search(srch, {
 					fields: {
 						n: {boost: 5, expand: true},
-						cn: {boost: 5, expand: true},
 						s: {expand: true},
 					},
 					bool: "AND",
@@ -592,7 +591,7 @@ class InitiativeTracker {
 					const $getRow = (r) => {
 						return $(`
 							<div class="ui-search__row" tabindex="0">
-								<span>${r.doc.cn || r.doc.n}</span>
+								<span>${r.doc.n}</span>
 								<span>${r.doc.s ? `<i title="${Parser.sourceJsonToFull(r.doc.s)}">${Parser.sourceJsonToAbv(r.doc.s)}${r.doc.p ? ` p${r.doc.p}` : ""}</i>` : ""}</span>
 							</div>
 						`);
@@ -614,7 +613,7 @@ class InitiativeTracker {
 
 					if (resultCount > MAX_RESULTS) {
 						const diff = resultCount - MAX_RESULTS;
-						$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} 条结果被隐藏。完善你的搜索！</div>`);
+						$results.append(`<div class="ui-search__row ui-search__row--readonly">...${diff} more result${diff === 1 ? " was" : "s were"} hidden. Refine your search!</div>`);
 					}
 				} else {
 					if (!srch.trim()) showMsgIpt();
@@ -835,7 +834,7 @@ class InitiativeTracker {
 			const $wrpRow = $(`<div class="dm-init-row ${isActive ? "dm-init-row-active" : ""}"/>`);
 
 			const $wrpLhs = $(`<div class="dm-init-row-lhs"/>`).appendTo($wrpRow);
-			const $iptName = $(`<input class="form-control input-sm name dm-init-name dm-init-lockable dm-init-row-input ${isMon ? "hidden" : ""}" placeholder="名称">`)
+			const $iptName = $(`<input class="form-control input-sm name dm-init-name dm-init-lockable dm-init-row-input ${isMon ? "hidden" : ""}" placeholder="名稱">`)
 				.val(name)
 				.appendTo($wrpLhs);
 			$iptName.on("change", () => {
@@ -925,7 +924,7 @@ class InitiativeTracker {
 
 			const $wrpConds = $(`<div class="split"/>`).appendTo($wrpLhs);
 			const $conds = $(`<div class="init__wrp_conds"/>`).appendTo($wrpConds);
-			$(`<button class="btn btn-warning btn-xs dm-init-row-btn dm-init-row-btn-flag" title="添加异常状态" tabindex="-1"><span class="glyphicon glyphicon-flag"/></button>`)
+			$(`<button class="btn btn-warning btn-xs dm-init-row-btn dm-init-row-btn-flag" title="添加異常狀態" tabindex="-1"><span class="glyphicon glyphicon-flag"/></button>`)
 				.appendTo($wrpConds)
 				.on("click", () => {
 					const {$modalInner, doClose} = UiUtil.getShowModal({isMinHeight0: true});
@@ -950,9 +949,9 @@ class InitiativeTracker {
 					$wrpRows.append(`<hr>`);
 
 					$(`<div class="row mb-2">
-						<div class="col-5">名称 (选填)</div>
-						<div class="col-2 text-center">颜色</div>
-						<div class="col-5">持续时间 (选填)</div>
+						<div class="col-5">名稱 (選填)</div>
+						<div class="col-2 text-center">顏色</div>
+						<div class="col-5">持續時間 (選填)</div>
 					</div>`).appendTo($wrpRows);
 					const $controls = $(`<div class="row mb-2"/>`).appendTo($wrpRows);
 					const [$wrpName, $wrpColor, $wrpTurns] = [...new Array(3)].map((it, i) => $(`<div class="col-${i === 1 ? 2 : 5} text-center"/>`).appendTo($controls));
@@ -962,14 +961,14 @@ class InitiativeTracker {
 						})
 						.appendTo($wrpName);
 					const $iptColor = $(`<input class="form-control" type="color" value="${MiscUtil.randomColor()}">`).appendTo($wrpColor);
-					const $iptTurns = $(`<input class="form-control" type="number" step="1" min="1" placeholder="无限制">`)
+					const $iptTurns = $(`<input class="form-control" type="number" step="1" min="1" placeholder="無限制">`)
 						.on("keydown", (e) => {
 							if (e.which === 13) $btnAdd.click();
 						})
 						.appendTo($wrpTurns);
 					const $wrpAdd = $(`<div class="row">`).appendTo($wrpRows);
 					const $wrpAddInner = $(`<div class="col-12 text-center">`).appendTo($wrpAdd);
-					const $btnAdd = $(`<button class="btn btn-primary">设置状态</button>`)
+					const $btnAdd = $(`<button class="btn btn-primary">設置狀態</button>`)
 						.click(() => {
 							addCondition($iptName.val().trim(), $iptColor.val(), $iptTurns.val());
 							doClose();
@@ -1076,7 +1075,7 @@ class InitiativeTracker {
 			InitiativeTracker.get$btnPlayerVisible(isVisible, doUpdateExternalStates, false, "dm-init-row-btn", "dm_init__btn_eye")
 				.appendTo($wrpRhs);
 
-			$(`<button class="btn btn-danger btn-xs dm-init-row-btn dm-init-lockable" title="删除" tabindex="-1"><span class="glyphicon glyphicon-trash"/></button>`)
+			$(`<button class="btn btn-danger btn-xs dm-init-row-btn dm-init-lockable" title="刪除" tabindex="-1"><span class="glyphicon glyphicon-trash"/></button>`)
 				.appendTo($wrpRhs)
 				.on("click", () => {
 					if (cfg.isLocked) return;
@@ -1428,8 +1427,7 @@ class InitiativeTracker {
 							} else return null;
 						} else return null;
 					})();
-					const source = UrlUtil.decodeHash(hash)[1];
-					if (!source) return null;
+					const source = decodeURIComponent(hash.split(HASH_LIST_SEP)[1]);
 					return new Promise(resolve => {
 						Renderer.hover.pCacheAndGet(UrlUtil.PG_BESTIARY, source, hash)
 							.then(mon => {
@@ -1449,7 +1447,7 @@ class InitiativeTracker {
 							});
 					})
 				}));
-				await Promise.all(toAdd.filter(Boolean).map(async it => {
+				await Promise.all(toAdd.map(async it => {
 					const groupInit = cfg.importIsRollGroups && cfg.isRollInit ? await pRollInitiative(it.monster) : null;
 					const groupHp = cfg.importIsRollGroups ? await pGetOrRollHp(it.monster) : null;
 
@@ -1485,7 +1483,7 @@ class InitiativeTracker {
 	static get$btnPlayerVisible (isVisible, fnOnClick, isTriState, ...additionalClasses) {
 		let isVisNum = Number(isVisible || false);
 
-		const getTitle = () => isVisNum === 0 ? `Hidden in player view` : isVisNum === 1 ? `在玩家查看页显示` : `Shown in player view on player characters, hidden in player view on monsters`;
+		const getTitle = () => isVisNum === 0 ? `Hidden in player view` : isVisNum === 1 ? `在玩家檢視頁顯示` : `Shown in player view on player characters, hidden in player view on monsters`;
 		const getClasses = () => `${isVisNum === 0 ? `btn-default` : isVisNum === 1 ? `btn-primary` : `btn-primary btn-primary--half`} btn btn-xs ${additionalClasses.join(" ")}`;
 		const getIconClasses = () => isVisNum === 0 ? `glyphicon glyphicon-eye-close` : `glyphicon glyphicon-eye-open`;
 
@@ -1521,24 +1519,24 @@ InitiativeTracker.STAT_COLUMNS = {
 		get: mon => (mon.hp || {}).formula,
 	},
 	armorClass: {
-		name: "护甲等级",
+		name: "護甲等級",
 		abv: "AC",
 		get: mon => mon.ac[0] ? (mon.ac[0].ac || mon.ac[0]) : null,
 	},
 	passivePerception: {
-		name: "被动感知",
+		name: "被動感知",
 		abv: "PP",
 		get: mon => mon.passive,
 	},
 	speed: {
-		name: "移动速度",
+		name: "移動速度",
 		abv: "SPD",
 		get: mon => Math.max(0, ...Object.values(mon.speed || {})
 			.map(it => it.number ? it.number : it)
 			.filter(it => typeof it === "number")),
 	},
 	spellDc: {
-		name: "法术豁免DC",
+		name: "法術豁免DC",
 		abv: "DC",
 		get: mon => Math.max(0, ...(mon.spellcasting || [])
 			.filter(it => it.headerEntries)
@@ -1551,7 +1549,7 @@ InitiativeTracker.STAT_COLUMNS = {
 			})),
 	},
 	legendaryActions: {
-		name: "传奇动作",
+		name: "傳奇動作",
 		abv: "LA",
 		get: mon => mon.legendaryActions || mon.legendary ? 3 : null,
 	},
@@ -1572,7 +1570,7 @@ InitiativeTracker.STAT_COLUMNS = {
 		const out = {};
 		Parser.ABIL_ABVS.forEach(it => {
 			out[`${it}Bonus`] = {
-				name: `${Parser.attAbvToFull(it)}调整值`,
+				name: `${Parser.attAbvToFull(it)}調整值`,
 				abv: it.toUpperCase(),
 				get: mon => Parser.getAbilityModifier(mon[it]),
 			};
@@ -1584,7 +1582,7 @@ InitiativeTracker.STAT_COLUMNS = {
 		const out = {};
 		Parser.ABIL_ABVS.forEach(it => {
 			out[`${it}Score`] = {
-				name: `${Parser.attAbvToFull(it)}属性值`,
+				name: `${Parser.attAbvToFull(it)}屬性值`,
 				abv: it.toUpperCase(),
 				get: mon => mon[it],
 			};

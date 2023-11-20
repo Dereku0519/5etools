@@ -84,7 +84,7 @@ Renderer.dice = {
 		if (Renderer.dice._$wrpRoll.css("display") !== "flex") {
 			Renderer.dice._$minRoll.hide();
 			Renderer.dice._$wrpRoll.css("display", "flex");
-			Renderer.dice._$iptRoll.prop("placeholder", `${Renderer.dice._getRandomPlaceholder()} 或 "/help"`);
+			Renderer.dice._$iptRoll.prop("placeholder", `${Renderer.dice._getRandomPlaceholder()} or "/help"`);
 		}
 	},
 
@@ -110,7 +110,7 @@ Renderer.dice = {
 			Renderer.dice._showBox();
 			Renderer.dice._$iptRoll.focus();
 		});
-		const $head = $(`<div class="head-roll"><span class="hdr-roll">掷骰</span><span class="delete-icon glyphicon glyphicon-remove"></span></div>`)
+		const $head = $(`<div class="head-roll"><span class="hdr-roll">Dice Roller</span><span class="delete-icon glyphicon glyphicon-remove"></span></div>`)
 			.on("click", () => {
 				if (!Renderer.dice._panel) Renderer.dice._hideBox();
 			});
@@ -301,19 +301,18 @@ Renderer.dice = {
 		return wrpTree.tree.evl({});
 	},
 
-	_pRollerClick_getMsgBug (total) { return `<span class="message">No result found matching roll ${total}?! <span class="help-subtle" title="Bug!">🐛</span></span>`; },
+	_pRollerClick_getMsgBug (total) { return `<span class="message">No result found matching roll ${total}?! <span class="help--subtle" title="Bug!">🐛</span></span>`; },
 
 	async pRollerClick (evtMock, ele, packed, name) {
 		const $ele = $(ele);
 		const entry = JSON.parse(packed);
-		// Aka "getTableName", probably
 		function attemptToGetNameOfRoll () {
 			// try use table caption
 			let titleMaybe = $(ele).closest(`table:not(.stats)`).children(`caption`).text();
 			if (titleMaybe) return titleMaybe.trim();
 
 			// try use list item title
-			titleMaybe = $(ele).parent().children(`.rd__list-item-name`).text();
+			titleMaybe = $(ele).parent().children(`.list-item-title`).text();
 			if (titleMaybe) return titleMaybe.trim();
 
 			// use the section title, where applicable
@@ -547,7 +546,7 @@ Renderer.dice = {
 			const userPb = await InputUiUtil.pGetUserNumber({
 				min: 0,
 				int: true,
-				title: "输入熟练加值",
+				title: "Enter Proficiency Bonus",
 				default: 2,
 				storageKey_default: "dice.playerProficiencyBonus",
 				isGlobal_default: true,

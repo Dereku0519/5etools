@@ -45,8 +45,6 @@ class VariantRulesPage extends ListPage {
 				search: searchStack.join(","),
 				source,
 				ruleType: rule.ruleType || "",
-				ENG_name: rule.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(rule),
 			},
 			{
 				uniqueId: rule.uniqueId ? rule.uniqueId : rlI,
@@ -83,8 +81,6 @@ class VariantRulesPage extends ListPage {
 			{
 				hash,
 				ruleType: it.ruleType || "",
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 		);
 		return listItem;

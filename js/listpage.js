@@ -59,18 +59,14 @@ class ListPage {
 		this._list = ListUtil.initList({
 			$wrpList: $(`.list.${this._listClass}`),
 			isPreviewable: this._isPreviewable,
-			syntax: this._listSyntax,
-			isBindFindHotkey: true,
 			...this._listOptions,
 		});
 		ListUtil.setOptions({primaryLists: [this._list]});
-		const $wrpBtnsSort = $("#filtertools");
-		SortUtil.initBtnSortHandlers($wrpBtnsSort, this._list);
-		if (this._isPreviewable) this._doBindPreviewAllButton($wrpBtnsSort.find(`[name="list-toggle-all-previews"]`));
+		SortUtil.initBtnSortHandlers($("#filtertools"), this._list);
 
 		this._filterBox = await this._pageFilter.pInitFilterBox({
 			$iptSearch: $(`#lst__search`),
-			$wrpFormTop: $(`#filter-search-group`),
+			$wrpFormTop: $(`#filter-search-group`).title("Hotkey: f"),
 			$btnReset: $(`#reset`),
 		});
 
@@ -184,23 +180,11 @@ class ListPage {
 		}
 	}
 
-	_doBindPreviewAllButton ($btn) {
-		$btn
-			.click(() => {
-				const isExpand = $btn.html() === `[+]`;
-				$btn.html(isExpand ? `[\u2012]` : "[+]");
-
-				this._list.visibleItems.forEach(listItem => {
-					const {btnToggleExpand, dispExpandedOuter, dispExpandedInner} = this._getPreviewEles(listItem);
-					if (isExpand) this._doPreviewExpand({listItem, dispExpandedOuter, btnToggleExpand, dispExpandedInner});
-					else this._doPreviewCollapse({dispExpandedOuter, btnToggleExpand, dispExpandedInner});
-				});
-			})
-	}
-
 	/** Requires a "[+]" button as the first list column, and the item to contain a second hidden display element. */
 	_doBindPreview (listItem) {
-		const {btnToggleExpand, dispExpandedOuter, dispExpandedInner} = this._getPreviewEles(listItem);
+		const btnToggleExpand = listItem.ele.firstElementChild.firstElementChild;
+		const dispExpandedOuter = listItem.ele.lastElementChild;
+		const dispExpandedInner = dispExpandedOuter.lastElementChild;
 
 		dispExpandedOuter.addEventListener("click", evt => {
 			evt.stopPropagation();
@@ -210,73 +194,17 @@ class ListPage {
 			evt.stopPropagation();
 			evt.preventDefault();
 
-			this._doPreviewToggle({listItem, btnToggleExpand, dispExpandedInner, dispExpandedOuter});
+			dispExpandedOuter.classList.toggle("ve-hidden");
+
+			const isExpand = btnToggleExpand.innerHTML === `[+]`;
+			if (isExpand) {
+				btnToggleExpand.innerHTML = `[\u2012]`;
+				Renderer.hover.$getHoverContent_stats(UrlUtil.getCurrentPage(), this._dataList[listItem.ix]).appendTo(dispExpandedInner);
+			} else {
+				btnToggleExpand.innerHTML = `[+]`;
+				dispExpandedInner.innerHTML = "";
+			}
 		});
-	}
-
-	_getPreviewEles (listItem) {
-		const btnToggleExpand = listItem.ele.firstElementChild.firstElementChild;
-		const dispExpandedOuter = listItem.ele.lastElementChild;
-		const dispExpandedInner = dispExpandedOuter.lastElementChild;
-
-		return {
-			btnToggleExpand,
-			dispExpandedOuter,
-			dispExpandedInner,
-		};
-	}
-
-	_doPreviewToggle ({listItem, btnToggleExpand, dispExpandedInner, dispExpandedOuter}) {
-		const isExpand = btnToggleExpand.innerHTML === `[+]`;
-		if (isExpand) this._doPreviewExpand({listItem, dispExpandedOuter, btnToggleExpand, dispExpandedInner});
-		else this._doPreviewCollapse({dispExpandedOuter, btnToggleExpand, dispExpandedInner});
-	}
-
-	_doPreviewExpand ({listItem, dispExpandedOuter, btnToggleExpand, dispExpandedInner}) {
-		dispExpandedOuter.classList.remove("ve-hidden");
-		btnToggleExpand.innerHTML = `[\u2012]`;
-		Renderer.hover.$getHoverContent_stats(UrlUtil.getCurrentPage(), this._dataList[listItem.ix]).appendTo(dispExpandedInner);
-	}
-
-	_doPreviewCollapse ({dispExpandedOuter, btnToggleExpand, dispExpandedInner}) {
-		dispExpandedOuter.classList.add("ve-hidden");
-		btnToggleExpand.innerHTML = `[+]`;
-		dispExpandedInner.innerHTML = "";
-	}
-
-	get _listSyntax () {
-		return {
-			text: {
-				help: `"text: <文本>" 以在文本中搜索。`,
-				fn: (listItem, searchTerm) => {
-					if (listItem.data._textCache == null) listItem.data._textCache = this._getSearchCache(this._dataList[listItem.ix]);
-					return listItem.data._textCache && listItem.data._textCache.includes(searchTerm);
-				},
-			},
-		}
-	}
-
-	// TODO(Future) the ideal solution to this is to render every entity to plain text (or failing that, Markdown) and
-	//   indexing that text with e.g. elasticlunr.
-	_getSearchCache (entity) {
-		if (!entity.entries) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
-		return ptrOut._;
-	}
-
-	_getSearchCache_handleEntryProp (entity, prop, ptrOut) {
-		if (!entity[prop]) return;
-		ListPage._READONLY_WALKER.walk(
-			entity[prop],
-			{
-				string: (str) => this._getSearchCache_handleString(ptrOut, str),
-			},
-		);
-	}
-
-	_getSearchCache_handleString (ptrOut, str) {
-		ptrOut._ += `${Renderer.stripTags(str).toLowerCase()} -- `;
 	}
 
 	getListItem () { throw new Error(`Unimplemented!`); }
@@ -285,7 +213,3 @@ class ListPage {
 	doLoadHash () { throw new Error(`Unimplemented!`); }
 	pDoLoadSubHash () { throw new Error(`Unimplemented!`); }
 }
-ListPage._READONLY_WALKER = MiscUtil.getWalker({
-	keyBlacklist: new Set(["type", "colStyles", "style"]),
-	isNoModification: true,
-});

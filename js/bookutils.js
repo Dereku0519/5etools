@@ -209,14 +209,11 @@ class BookUtil {
 
 		if (sectionHeader && ~BookUtil.curRender.chapter) {
 			const $allSects = $(`.${Renderer.HEAD_NEG_1}`);
-			const cleanSectionHead = sectionHeader.trim().toLowerCase();
 			const $toShow = $allSects.filter((i, e) => {
 				const $e = $(e);
+				const cleanSectionHead = sectionHeader.trim().toLowerCase();
 				const $match = $e.children(`.rd__h`).find(`span.entry-title-inner`).filter(`:textEquals("${cleanSectionHead}")`);
-				const $matchChnOnly = $e.children(`.rd__h`).find(`span.entry-title-inner`).filter(function () {
-					return $(this).contents().get(0).nodeValue.toLowerCase().trim() === cleanSectionHead;
-				});
-				return $match.length + $matchChnOnly.length;
+				return $match.length;
 			});
 
 			if ($toShow.length) {
@@ -269,10 +266,10 @@ class BookUtil {
 		BookUtil.curRender.controls.$btnsPrv = BookUtil.curRender.controls.$btnsPrv || [];
 		let $btnPrev;
 		if (BookUtil.referenceId) {
-			$btnPrev = $(`<button class="btn btn-xs btn-default bk__nav-head-foot-item"><span class="glyphicon glyphicon-chevron-left"/>上一章</button>`)
+			$btnPrev = $(`<button class="btn btn-xs btn-default bk__nav-head-foot-item"><span class="glyphicon glyphicon-chevron-left"/>Previous</button>`)
 				.click(() => this._showBookContent_goToPage({mod: -1, bookId, ixChapter}));
 		} else {
-			$btnPrev = $(`<a href="#${this._showBookContent_goToPage({mod: -1, isGetHref: true, bookId, ixChapter})}" class="btn btn-xs btn-default bk__nav-head-foot-item"><span class="glyphicon glyphicon-chevron-left"/>上一章</a>`)
+			$btnPrev = $(`<a href="#${this._showBookContent_goToPage({mod: -1, isGetHref: true, bookId, ixChapter})}" class="btn btn-xs btn-default bk__nav-head-foot-item"><span class="glyphicon glyphicon-chevron-left"/>Previous</a>`)
 				.click(() => MiscUtil.scrollPageTop());
 		}
 		$btnPrev
@@ -289,7 +286,7 @@ class BookUtil {
 			const href = ~BookUtil.curRender.chapter
 				? this._getHrefShowAll(bookId)
 				: `#${UrlUtil.encodeForHash(bookId)}`;
-			const $btnEntireBook = $(`<a href="${href}" class="btn btn-xs btn-default no-print ${~BookUtil.curRender.chapter ? "" : "active"}" title="警告：速度较慢">查看整本${this._getTypeTitleInCn(BookUtil.contentType)}</a>`);
+			const $btnEntireBook = $(`<a href="${href}" class="btn btn-xs btn-default no-print ${~BookUtil.curRender.chapter ? "" : "active"}" title="Warning: Slow">View Entire ${BookUtil.contentType.uppercaseFirst()}</a>`);
 
 			if (BookUtil._isNarrow == null) {
 				const saved = StorageUtil.syncGetForPage("narrowMode");
@@ -301,7 +298,7 @@ class BookUtil {
 				$btnToggleNarrow.toggleClass("active", BookUtil._isNarrow);
 				$(`#pagecontent`).toggleClass(`bk__stats--narrow`, BookUtil._isNarrow);
 			};
-			const $btnToggleNarrow = $(`<button class="btn btn-xs btn-default" title="切换窄框阅读宽度"><span class="glyphicon glyphicon-resize-small"/></button>`)
+			const $btnToggleNarrow = $(`<button class="btn btn-xs btn-default" title="Toggle Narrow Reading Width"><span class="glyphicon glyphicon-resize-small"/></button>`)
 				.click(() => {
 					BookUtil._isNarrow = !BookUtil._isNarrow;
 					hdlNarrowUpdate();
@@ -310,16 +307,16 @@ class BookUtil {
 			hdlNarrowUpdate();
 
 			$$`<div class="no-print flex-v-center btn-group">${$btnEntireBook}${$btnToggleNarrow}</div>`.appendTo($wrpControls);
-		} else $(`<button class="btn btn-xs btn-default no-print">回到顶端</button>`).click(() => MiscUtil.scrollPageTop()).appendTo($wrpControls);
+		} else $(`<button class="btn btn-xs btn-default no-print">Back to Top</button>`).click(() => MiscUtil.scrollPageTop()).appendTo($wrpControls);
 
 		const showNxt = ~ixChapter && ixChapter < data.length - 1;
 		BookUtil.curRender.controls.$btnsNxt = BookUtil.curRender.controls.$btnsNxt || [];
 		let $btnNext;
 		if (BookUtil.referenceId) {
-			$btnNext = $(`<button class="btn btn-xs btn-default bk__nav-head-foot-item">下一章<span class="glyphicon glyphicon-chevron-right"/></button>`)
+			$btnNext = $(`<button class="btn btn-xs btn-default bk__nav-head-foot-item">Next<span class="glyphicon glyphicon-chevron-right"/></button>`)
 				.click(() => this._showBookContent_goToPage({mod: 1, bookId, ixChapter}))
 		} else {
-			$btnNext = $(`<a href="#${this._showBookContent_goToPage({mod: 1, isGetHref: true, bookId, ixChapter})}" class="btn btn-xs btn-default bk__nav-head-foot-item">下一章<span class="glyphicon glyphicon-chevron-right"/></a>`)
+			$btnNext = $(`<a href="#${this._showBookContent_goToPage({mod: 1, isGetHref: true, bookId, ixChapter})}" class="btn btn-xs btn-default bk__nav-head-foot-item">Next<span class="glyphicon glyphicon-chevron-right"/></a>`)
 				.click(() => MiscUtil.scrollPageTop());
 		}
 		$btnNext
@@ -346,7 +343,7 @@ class BookUtil {
 			$btnPrev
 				.toggle(showPrev)
 				.appendTo(BookUtil.$wrpFloatControls)
-				.title("上一章");
+				.title("Previous Chapter");
 			BookUtil.curRender.controls.$btnsPrv.push($btnPrev);
 
 			let $btnNext;
@@ -360,7 +357,7 @@ class BookUtil {
 			$btnNext
 				.toggle(showNxt)
 				.appendTo(BookUtil.$wrpFloatControls)
-				.title("下一章");
+				.title("Next Chapter");
 			BookUtil.curRender.controls.$btnsNxt.push($btnNext);
 
 			BookUtil.$wrpFloatControls.toggleClass("btn-group", showPrev && showNxt);
@@ -435,7 +432,8 @@ class BookUtil {
 		});
 		$body.on(`click`, `.entry-title-inner`, async function (evt) {
 			const $this = $(this);
-			const text = $this.text().trim().replace(/\.$/, "");
+			const mod_text = $this.html().replace(/<st .+>/,"");
+			const text = mod_text.trim().replace(/\.$/, "");
 
 			if (evt.shiftKey) {
 				await MiscUtil.pCopyTextToClipboard(text);
@@ -533,7 +531,7 @@ class BookUtil {
 	static async _booksHashChange_pHandleFound ({fromIndex, homebrewData, bookId, hashParts, $contents}) {
 		document.title = `${fromIndex.name} - 5etools`;
 		$(`.book-head-header`).html(this._booksHashChange_getCleanName(fromIndex.name));
-		$(`.book-head-message`).html("浏览内容。按下F以搜索，按下G以前往指定页数。");
+		$(`.book-head-message`).html("瀏覽內容。按下F以搜尋，按下G以前往指定頁數。");
 		await this._pLoadChapter(fromIndex, bookId, hashParts, homebrewData, $contents);
 		NavBar.highlightCurrentPage();
 	}
@@ -583,17 +581,8 @@ class BookUtil {
 
 	static _getAllTitle () {
 		switch (BookUtil.contentType) {
-			case "adventure": return "所有冒险";
-			case "book": return "所有书籍";
-			default: throw new Error(`Unhandled book content type: "${BookUtil.contentType}"`);
-		}
-	}
-
-	static _getTypeTitleInCn () {
-		switch (BookUtil.contentType) {
-			case "adventure": return "冒险";
-			case "book": return "书籍";
-			case "document": return "文档";
+			case "adventure": return "All Adventures";
+			case "book": return "All Books";
 			default: throw new Error(`Unhandled book content type: "${BookUtil.contentType}"`);
 		}
 	}
@@ -613,8 +602,9 @@ class BookUtil {
 		});
 
 		$(document.body)
+			.off("keypress")
 			.on("keypress", (e) => {
-				if ((e.key !== "f" && e.key !== "g") || !EventUtil.noModifierKeys(e)) return;
+				if (!((e.key === "f" || e.key === "g") && EventUtil.noModifierKeys(e))) return;
 				if (EventUtil.isInInput(e)) return;
 				e.preventDefault();
 				BookUtil._showSearchBox(indexData, bookId, e.key === "g");
@@ -648,7 +638,7 @@ class BookUtil {
 			});
 
 		const $results = $(`<div class="f-all-out">`);
-		const $srch = $(`<input class="form-control" placeholder="${isPageMode ? "跳转到页码..." : "搜寻文本..."}">`)
+		const $srch = $(`<input class="form-control" placeholder="${isPageMode ? "Go to page number..." : "Find text..."}">`)
 			.on("keydown", (e) => {
 				e.stopPropagation();
 
@@ -738,7 +728,7 @@ class BookUtil {
 		BookUtil.curRender.$lnksChapter = [];
 		BookUtil.curRender.$lnksHeader = {};
 
-		BookUtil.curRender.$btnToggleExpandAll = $(`<span title="Expand All" class="px-2 bold py-1p no-select clickable">${BookUtil.isDefaultExpandedContents ? `[\u2012]` : `[+]`}</span>`)
+		BookUtil.curRender.$btnToggleExpandAll = $(`<span title="Expand All" class="px-2 bold py-1px no-select clickable">${BookUtil.isDefaultExpandedContents ? `[\u2012]` : `[+]`}</span>`)
 			.click(() => {
 				const isExpanded = BookUtil.curRender.$btnToggleExpandAll.text() !== `[+]`;
 				BookUtil.curRender.$btnToggleExpandAll.text(isExpanded ? `[+]` : `[\u2012]`).title(isExpanded ? `Collapse All` : `Expand All`);
@@ -779,7 +769,7 @@ class BookUtil {
 					<span class="name">${book.name}</span>
 				</a>
 				<div class="flex-v-center">
-					<a href="${this._getHrefShowAll(book.id)}" class="bk__contents_show_all px-2 py-1p flex-v-center lst__wrp-cells lst__row-inner" title="查看整本${this._getTypeTitleInCn(BookUtil.contentType)} （警告：速度较慢）">
+					<a href="${this._getHrefShowAll(book.id)}" class="bk__contents_show_all px-2 py-1px flex-v-center lst__wrp-cells lst__row-inner" title="View Entire ${BookUtil.contentType.uppercaseFirst()} (Warning: Slow)">
 						<span class="glyphicon glyphicon glyphicon-book" style="top: 0;"/>
 					</a>
 					${BookUtil.curRender.$btnToggleExpandAll}
@@ -793,9 +783,7 @@ class BookUtil {
 
 	static getContentsSectionHeader (header) {
 		// handle entries with depth
-		if (header.depth) return `<span class="bk-contents__sub_spacer--1">\u2013</span>${header.header}`;
-		if (header.header) return header.header;
-		return header;
+		return header.header ? `<span class="bk-contents__sub_spacer--1">\u2013</span>${header.header}` : header;
 	}
 
 	static $getContentsChapterBlock (bookId, ixChapter, chapter, addPrefix) {
@@ -810,14 +798,11 @@ class BookUtil {
 			const headerPos = headerCounts[headerTextClean] || 0;
 			headerCounts[headerTextClean] = (headerCounts[headerTextClean] || 0) + 1;
 
-			// (Prefer the user-specified `h.index` over the auto-calculated headerPos)
-			const headerIndex = h.index ?? headerPos;
-
 			const displayText = this.getContentsSectionHeader(h);
 
-			const $lnk = $$`<a href="${addPrefix || ""}#${UrlUtil.encodeForHash(bookId)},${ixChapter},${UrlUtil.encodeForHash(headerText)}${headerIndex > 0 ? `,${headerIndex}` : ""}" data-book="${bookId}" data-chapter="${ixChapter}" data-header="${headerText.escapeQuotes()}" class="lst__row lst--border lst__row-inner lst__wrp-cells">${displayText}</a>`
+			const $lnk = $$`<a href="${addPrefix || ""}#${UrlUtil.encodeForHash(bookId)},${ixChapter},${UrlUtil.encodeForHash(headerText)}${headerPos > 0 ? `,${headerPos}` : ""}" data-book="${bookId}" data-chapter="${ixChapter}" data-header="${headerText.escapeQuotes()}" class="lst__row lst--border lst__row-inner lst__wrp-cells">${displayText}</a>`
 				.click(() => {
-					BookUtil.scrollClick(ixChapter, headerText, headerIndex);
+					BookUtil.scrollClick(ixChapter, headerText, headerPos);
 				});
 
 			const $ele = $$`<div class="flex-col">

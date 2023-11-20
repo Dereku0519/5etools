@@ -109,8 +109,6 @@ class PsionicsPage extends ListPage {
 				type: typeMeta.full,
 				order: p._fOrder,
 				searchModeList: getHiddenModeList(p),
-				ENG_name: p.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(p),
 			},
 			{
 				uniqueId: p.uniqueId ? p.uniqueId : psI,
@@ -152,8 +150,6 @@ class PsionicsPage extends ListPage {
 				hash,
 				type: typeMeta.full,
 				order: p._fOrder,
-				ENG_name: p.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(p),
 			},
 		);
 		return listItem;
@@ -172,15 +168,6 @@ class PsionicsPage extends ListPage {
 		await ListUtil.pSetFromSubHashes(sub);
 
 		await this._bookView.pHandleSub(sub);
-	}
-
-	_getSearchCache (entity) {
-		if (!entity.entries && !entity.modes && !entity.focus) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "entries", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "modes", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "focus", ptrOut);
-		return ptrOut._;
 	}
 }
 

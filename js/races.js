@@ -55,8 +55,8 @@ class RacesPage extends ListPage {
 		eleLi.className = `lst__row flex-col ${isExcluded ? "lst__row--blacklisted" : ""}`;
 
 		const hash = UrlUtil.autoEncodeHash(race);
-		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "无"};
-		const size = (race.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/");
+		const ability = race.ability ? Renderer.getAbilityData(race.ability) : {asTextShort: "無"};
+		const size = Parser.sizeAbvToFull(race.size || SZ_VARIES);
 		const source = Parser.sourceJsonToAbv(race.source);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
@@ -64,6 +64,7 @@ class RacesPage extends ListPage {
 			<span class="col-4">${ability.asTextShort}</span>
 			<span class="col-2 text-center">${size}</span>
 			<span class="col-2 text-center ${Parser.sourceJsonToColor(race.source)} pr-0" title="${Parser.sourceJsonToFull(race.source)}" ${BrewUtil.sourceJsonToStyle(race.source)}>${source}</span>
+			<span class="eng_name hidden">${race.ENG_name ? race.ENG_name : race.name}</span>
 		</a>`;
 
 		const listItem = new ListItem(
@@ -77,8 +78,7 @@ class RacesPage extends ListPage {
 				source,
 				cleanName: PageFilterRaces.getInvertedName(race.name) || "",
 				alias: PageFilterRaces.getListAliases(race),
-				ENG_name: race.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(race),
+				eng_name: race.ENG_name ? race.ENG_name : race.name,
 			},
 			{
 				uniqueId: race.uniqueId ? race.uniqueId : rcI,
@@ -105,7 +105,7 @@ class RacesPage extends ListPage {
 				<a href="#${UrlUtil.autoEncodeHash(race)}" class="lst--border lst__row-inner">
 					<span class="bold col-5 pl-0">${race.name}</span>
 					<span class="col-5">${race._slAbility}</span>
-					<span class="col-2 text-center pr-0">${(race.size || [SZ_VARIES]).map(sz => Parser.sizeAbvToFull(sz)).join("/")}</span>
+					<span class="col-2 text-center pr-0">${Parser.sizeAbvToFull(race.size || SZ_VARIES)}</span>
 				</a>
 			</div>
 		`)
@@ -119,8 +119,6 @@ class RacesPage extends ListPage {
 			{
 				hash,
 				ability: race._slAbility,
-				ENG_name: race.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(race),
 			},
 		);
 		return listItem;
@@ -152,14 +150,14 @@ class RacesPage extends ListPage {
 				isVisible: true,
 			}),
 			new Renderer.utils.TabButton({
-				label: "信息",
+				label: "資訊",
 				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(race, "raceFluff"),
+				isVisible: Renderer.utils.hasFluffText(race),
 			}),
 			new Renderer.utils.TabButton({
-				label: "图片",
+				label: "圖片",
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(race, "raceFluff"),
+				isVisible: Renderer.utils.hasFluffImages(race),
 			}),
 		];
 

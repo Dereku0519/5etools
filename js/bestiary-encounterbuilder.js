@@ -75,16 +75,16 @@ class EncounterBuilder extends ProxyBase {
 			await MiscUtil.pCopyTextToClipboard(parts.join(HASH_PART_SEP));
 			JqueryUtil.showCopiedEffect($btnSvUrl);
 		});
-		$(`.ecgen__sv_file`).click(() => DataUtil.userDownload(`encounter`, this.getSaveableState(), {fileType: "encounter"}));
+		$(`.ecgen__sv_file`).click(() => DataUtil.userDownload(`encounter`, this.getSaveableState()));
 		$(`.ecgen__ld_file`).click(async () => {
-			const jsons = await DataUtil.pUserUpload({expectedFileType: "encounter"});
-			if (jsons?.length && jsons[0].items && jsons[0].sources) { // if it's a bestiary sublist
-				jsons.l = {
-					items: jsons.items,
-					sources: jsons.sources,
+			const json = await DataUtil.pUserUpload();
+			if (json.items && json.sources) { // if it's a bestiary sublist
+				json.l = {
+					items: json.items,
+					sources: json.sources,
 				}
 			}
-			this.pDoLoadState(jsons[0]);
+			this.pDoLoadState(json);
 		});
 		$(`.ecgen__reset`).title(`SHIFT-click to reset players`).click(evt => confirm("Are you sure?") && encounterBuilder.pReset({isNotResetPlayers: !evt.shiftKey, isNotAddInitialPlayers: !evt.shiftKey}));
 
@@ -97,7 +97,7 @@ class EncounterBuilder extends ProxyBase {
 					xpTotal += Parser.crToXpNumber(it.cr) * it.count;
 					return `${it.count}× ${it.name}`;
 				})
-				.join("、");
+				.join(", ");
 			MiscUtil.pCopyTextToClipboard(`${toCopyCreatures} (${xpTotal.toLocaleString()} XP)`);
 			JqueryUtil.showCopiedEffect($btnSvTxt);
 		});
@@ -274,7 +274,7 @@ class EncounterBuilder extends ProxyBase {
 		if (this._cache == null) {
 			this._cache = (() => {
 				const out = {};
-				bestiaryPage._list.visibleItems.map(it => bestiaryPage._dataList[it.ix]).filter(m => !m.isNpc).forEach(m => {
+				list.visibleItems.map(it => monsters[it.ix]).filter(m => !m.isNpc).forEach(m => {
 					const mXp = Parser.crToXpNumber(m.cr);
 					if (mXp) (out[mXp] = out[mXp] || []).push(m);
 				});
@@ -637,7 +637,7 @@ class EncounterBuilder extends ProxyBase {
 		return Hist.getSubHash(EncounterBuilder.HASH_KEY) === "true";
 	}
 
-	showBuilder () {
+	show () {
 		this._cachedTitle = this._cachedTitle || document.title;
 		document.title = "Encounter Builder - 5etools";
 		$(`body`).addClass("ecgen_active");
@@ -646,7 +646,7 @@ class EncounterBuilder extends ProxyBase {
 		ListUtil.doSublistDeselectAll();
 	}
 
-	hideBuilder () {
+	hide () {
 		if (this._cachedTitle) {
 			document.title = this._cachedTitle;
 			this._cachedTitle = null;
@@ -664,7 +664,7 @@ class EncounterBuilder extends ProxyBase {
 		await this._lock.pLock();
 
 		try {
-			const mon = bestiaryPage._dataList[ix];
+			const mon = monsters[ix];
 			const xp = Parser.crToXpNumber(mon.cr);
 			if (!xp) return; // if Unknown/etc
 
@@ -711,8 +711,8 @@ class EncounterBuilder extends ProxyBase {
 
 	handleSubhash () {
 		// loading state from the URL is instead handled as part of EncounterUtil.pGetInitialState
-		if (Hist.getSubHash(EncounterBuilder.HASH_KEY) === "true") this.showBuilder();
-		else this.hideBuilder();
+		if (Hist.getSubHash(EncounterBuilder.HASH_KEY) === "true") this.show();
+		else this.hide();
 	}
 
 	removeAdvancedPlayerRow (ele) {
@@ -765,15 +765,15 @@ class EncounterBuilder extends ProxyBase {
 	updateDifficulty () {
 		const {partyMeta, encounter} = this.calculateXp();
 
-		const $elEasy = $(`.ecgen__easy`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_EASY}">Easy:</span> ${partyMeta.easy.toLocaleString()} XP`);
-		const $elmed = $(`.ecgen__medium`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_MEDIUM}">Medium:</span> ${partyMeta.medium.toLocaleString()} XP`);
-		const $elHard = $(`.ecgen__hard`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_HARD}">Hard:</span> ${partyMeta.hard.toLocaleString()} XP`);
-		const $elDeadly = $(`.ecgen__deadly`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_DEADLY}">Deadly:</span> ${partyMeta.deadly.toLocaleString()} XP`);
+		const $elEasy = $(`.ecgen__easy`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_EASY}">Easy:</span> ${partyMeta.easy.toLocaleString()} XP`);
+		const $elmed = $(`.ecgen__medium`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_MEDIUM}">Medium:</span> ${partyMeta.medium.toLocaleString()} XP`);
+		const $elHard = $(`.ecgen__hard`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_HARD}">Hard:</span> ${partyMeta.hard.toLocaleString()} XP`);
+		const $elDeadly = $(`.ecgen__deadly`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_DEADLY}">Deadly:</span> ${partyMeta.deadly.toLocaleString()} XP`);
 		const $elAbsurd = $(`.ecgen__absurd`).removeClass("bold").html(`<span class="help" title="${EncounterBuilder._TITLE_ABSURD}">Absurd:</span> ${partyMeta.absurd.toLocaleString()} XP`);
 
 		$(`.ecgen__ttk`).html(`<span class="help" title="${EncounterBuilder._TITLE_TTK}">TTK:</span> ${this._getApproxTurnsToKill().toFixed(2)}`);
 
-		$(`.ecgen__daily_budget`).removeClass("bold").html(`<span class="help-subtle" title="${EncounterBuilder._TITLE_BUDGET_DAILY}">Daily Budget:</span> ${partyMeta.dailyBudget.toLocaleString()} XP`);
+		$(`.ecgen__daily_budget`).removeClass("bold").html(`<span class="help--subtle" title="${EncounterBuilder._TITLE_BUDGET_DAILY}">Daily Budget:</span> ${partyMeta.dailyBudget.toLocaleString()} XP`);
 
 		let difficulty = "Trivial";
 		if (encounter.adjustedXp >= partyMeta.absurd) {
@@ -911,7 +911,7 @@ class EncounterBuilder extends ProxyBase {
 	}
 
 	static async doStatblockMouseOver (evt, ele, ixMon, scaledTo) {
-		const mon = bestiaryPage._dataList[ixMon];
+		const mon = monsters[ixMon];
 
 		const hash = UrlUtil.autoEncodeHash(mon);
 		const preloadId = scaledTo != null ? `${VeCt.HASH_SCALED}:${scaledTo}` : null;
@@ -938,7 +938,7 @@ class EncounterBuilder extends ProxyBase {
 		// We'll rebuild the mouseover handler with whatever we load
 		$ele.off("mouseover");
 
-		const mon = bestiaryPage._dataList[ixMon];
+		const mon = monsters[ixMon];
 
 		const handleNoImages = () => {
 			const hoverMeta = Renderer.hover.getMakePredefinedHover(
@@ -990,7 +990,7 @@ class EncounterBuilder extends ProxyBase {
 		if (!$iptCr) return; // Should never occur, but if the creature has a non-adjustable CR, this field will not exist
 
 		try {
-			const mon = bestiaryPage._dataList[ixMon];
+			const mon = monsters[ixMon];
 			const baseCr = mon.cr.cr || mon.cr;
 			if (baseCr == null) return;
 			const baseCrNum = Parser.crToNumber(baseCr);

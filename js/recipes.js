@@ -81,8 +81,6 @@ class RecipesPage extends ListPage {
 				hash,
 				source,
 				type: it.type,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				uniqueId: it.uniqueId ? it.uniqueId : rpI,
@@ -124,8 +122,6 @@ class RecipesPage extends ListPage {
 			{
 				hash,
 				type: it.type,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				uniqueId: data.uniqueId || "",
@@ -142,19 +138,19 @@ class RecipesPage extends ListPage {
 
 		const tabMetas = [
 			new Renderer.utils.TabButton({
-				label: "特征",
+				label: "Traits",
 				fnPopulate: this._renderStats.bind(this, it),
 				isVisible: true,
 			}),
 			new Renderer.utils.TabButton({
-				label: "信息",
+				label: "Info",
 				fnPopulate: this._renderFluff.bind(this, it),
-				isVisible: Renderer.utils.hasFluffText(it, "recipeFluff"),
+				isVisible: Renderer.utils.hasFluffText(it),
 			}),
 			new Renderer.utils.TabButton({
-				label: "图片",
+				label: "Images",
 				fnPopulate: this._renderFluff.bind(this, it, true),
-				isVisible: Renderer.utils.hasFluffImages(it, "recipeFluff"),
+				isVisible: Renderer.utils.hasFluffImages(it),
 			}),
 		];
 
@@ -206,14 +202,6 @@ class RecipesPage extends ListPage {
 			const r = this._dataList[Hist.lastLoadedId];
 			this._renderStats(r, scaleTo);
 		}
-	}
-
-	_getSearchCache (entity) {
-		if (!entity.ingredients && !entity.instructions) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "ingredients", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "instructions", ptrOut);
-		return ptrOut._;
 	}
 }
 

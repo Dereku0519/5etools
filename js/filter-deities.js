@@ -15,44 +15,25 @@ class PageFilterDeities extends PageFilter {
 	constructor () {
 		super();
 		this._sourceFilter = new SourceFilter();
-		this._pantheonFilter = new Filter({
-			header: "Pantheon",
-			headerName: "神系",
-			items: [],
-			displayFn: Parser.PantheonToDisplay,
-		});
-		this._categoryFilter = new Filter({
-			header: "Category",
-			headerName: "类别",
-			items: [VeCt.STR_NONE],
-			displayFn: Parser.PantheonCategoryToDisplay,
-		});
+		this._pantheonFilter = new Filter({header: "Pantheon", headerName: "神系", items: []});
+		this._categoryFilter = new Filter({header: "Category", items: [VeCt.STR_NONE]});
 		this._alignmentFilter = new Filter({
 			header: "Alignment",
-			headerName: "阵营",
+			headerName: "陣營",
 			items: ["L", "NX", "C", "G", "NY", "E", "N"],
-			displayFn: it => Parser.alignmentAbvToFull(it).toTitleCase(),
+			displayFn: Parser.alignmentAbvToFull,
 			itemSortFn: null,
 		});
 		this._domainFilter = new Filter({
 			header: "Domain",
-			headerName: "领域",
+			headerName: "領域",
 			items: ["Death", "Knowledge", "Life", "Light", "Nature", VeCt.STR_NONE, "Tempest", "Trickery", "War"],
-			displayFn: Parser.SubclassToDisplay,
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
-			headerName: "杂项",
+			headerName: "雜項",
 			items: ["Grants Piety Features", "Has Info", PageFilterDeities._STR_REPRINTED, "SRD"],
-			displayFn: (it) => {
-				switch (it) {
-					case "Grants Piety Features": return "提供虔诚特性";
-					case "Has Info": return "包含信息";
-					case PageFilterDeities._STR_REPRINTED: return "重印";
-					case "SRD": return "SRD";
-					default: return it;
-				}
-			},
+			displayFn: StrUtil.uppercaseFirst,
 			deselFn: (it) => { return it === PageFilterDeities._STR_REPRINTED },
 			isSrdFilter: true,
 		});

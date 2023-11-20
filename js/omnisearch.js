@@ -6,7 +6,7 @@ class Omnisearch {
 
 		const $nav = $(`#navbar`);
 
-		this._$iptSearch = $(`<input class="form-control search omni__input" placeholder="${this._PLACEHOLDER_TEXT}" title="快捷键：F. 免责声明：不一定真的达到全域搜索，请谨慎使用。">`).disableSpellcheck();
+		this._$iptSearch = $(`<input class="form-control search omni__input" placeholder="${this._PLACEHOLDER_TEXT}" title="Hotkey: F. 免責聲明：不一定真的達到全域搜尋，請謹慎使用。">`).disableSpellcheck();
 		const $searchSubmit = $(`<button class="btn btn-default omni__submit" tabindex="-1"><span class="glyphicon glyphicon-search"></span></button>`);
 
 		this._$searchInputWrapper = $$`
@@ -78,9 +78,11 @@ class Omnisearch {
 
 		$(document.body).on("keypress", (e) => {
 			if (!EventUtil.noModifierKeys(e) || EventUtil.isInInput(e)) return;
-			if (e.key !== "F") return;
-			e.preventDefault();
-			this._$iptSearch.select().focus();
+			if (e.key === "f" || e.key === "F") {
+				const toSel = e.key === "F" ? this._$iptSearch : $(`#filter-search-group`).find(`.search`);
+				// defer, otherwise the "f" will be input into the search field
+				setTimeout(() => toSel.select().focus(), 0);
+			}
 		});
 	}
 
@@ -106,8 +108,6 @@ class Omnisearch {
 	}
 
 	static async pGetResults (searchTerm) {
-		searchTerm = (searchTerm || "").toAscii();
-
 		await this.pInit();
 
 		const basicTokens = searchTerm.split(/\s+/g);
@@ -184,7 +184,6 @@ class Omnisearch {
 				{
 					fields: {
 						n: {boost: 5, expand: true},
-						cn: {boost: 5, expand: true},
 						s: {expand: true},
 					},
 					bool: "AND",
@@ -226,7 +225,7 @@ class Omnisearch {
 
 	static $getResultLink (r) {
 		const href = r.c === Parser.CAT_ID_PAGE ? r.u : `${Renderer.get().baseUrl}${UrlUtil.categoryToPage(r.c)}#${r.uh || r.u}`;
-		return $(`<a href="${href}" ${r.h ? this._renderLink_getHoverString(r.c, r.u, r.s) : ""} class="omni__lnk-name">${r.cf}: ${r.cn ?? r.n}</a>`);
+		return $(`<a href="${href}" ${r.h ? this._renderLink_getHoverString(r.c, r.u, r.s) : ""} class="omni__lnk-name">${r.cf}: ${r.n}</a>`);
 	}
 
 	static _pDoSearch_renderLinks (results, page = 0) {
@@ -234,7 +233,7 @@ class Omnisearch {
 
 		if (this._$btnToggleUa) this._$btnToggleUa.detach();
 		else {
-			this._$btnToggleUa = $(`<button class="btn btn-default btn-xs mr-2" title="筛选 UA 及其他非官方资源结果" tabindex="-1">包括 UA 等资源</button>`)
+			this._$btnToggleUa = $(`<button class="btn btn-default btn-xs mr-2" title="Filter Unearthed Arcana and other unofficial source results" tabindex="-1">Include UA/etc.</button>`)
 				.on("click", () => this._state.isShowUa = !this._state.isShowUa);
 
 			const hkIsUa = () => {
@@ -247,7 +246,7 @@ class Omnisearch {
 
 		if (this._$btnToggleBlacklisted) this._$btnToggleBlacklisted.detach();
 		else {
-			this._$btnToggleBlacklisted = $(`<button class="btn btn-default btn-xs mr-2" title="筛选已被拉入黑名单的内容结果" tabindex="-1">包括黑名单资源</button>`)
+			this._$btnToggleBlacklisted = $(`<button class="btn btn-default btn-xs mr-2" title="Filter blacklisted content results" tabindex="-1">Include Blacklisted</button>`)
 				.on("click", async () => this._state.isShowBlacklisted = !this._state.isShowBlacklisted);
 
 			const hkIsBlacklisted = () => {
@@ -261,7 +260,7 @@ class Omnisearch {
 
 		this._$searchOut.empty();
 
-		const $btnHelp = $(`<button class="btn btn-default btn-xs" title="帮助"><span class="glyphicon glyphicon-info-sign"></span></button>`)
+		const $btnHelp = $(`<button class="btn btn-default btn-xs" title="Help"><span class="glyphicon glyphicon-info-sign"></span></button>`)
 			.click(() => this.doShowHelp());
 
 		this._$searchOut.append($(`<div class="text-right"/>`).append([this._$btnToggleUa, this._$btnToggleBlacklisted, $btnHelp]));
@@ -304,7 +303,7 @@ class Omnisearch {
 				});
 				$pgControls.append($prv);
 			} else ($pgControls.append(`<span class="omni__paginate-left">`));
-			$pgControls.append(`<span class="paginate-count">${page + 1}/${Math.ceil(results.length / this._MAX_RESULTS)} 页 （${results.length} 条结果）</span>`);
+			$pgControls.append(`<span class="paginate-count">Page ${page + 1}/${Math.ceil(results.length / this._MAX_RESULTS)} (${results.length} results)</span>`);
 			if (results.length - (page * this._MAX_RESULTS) > this._MAX_RESULTS) {
 				const $nxt = $(`<span class="omni__paginate-right has-results-right omni__paginate-ctrl"><span class="glyphicon glyphicon-chevron-right"></span></span>`).on("click", () => {
 					page++;
@@ -361,9 +360,7 @@ class Omnisearch {
 
 		elasticlunr.clearStopWords();
 		this._searchIndex = elasticlunr(function () {
-			this.use(lunr.ja);
 			this.addField("n");
-			this.addField("cn");
 			this.addField("cf");
 			this.addField("s");
 			this.setRef("id");
@@ -482,12 +479,12 @@ class Omnisearch {
 
 	static doShowHelp () {
 		const {$modalInner} = UiUtil.getShowModal({
-			title: "帮助",
+			title: "Help",
 			isMinHeight0: true,
 		});
 
 		$modalInner.append(`
-			<p>支持以下搜索语法：</p>
+			<p>The following search syntax is available:</p>
 			<ul>
 				<li><code>in:&lt;category&gt;</code> where <code>&lt;category&gt;</code> can be &quot;spell&quot;, &quot;item&quot;, &quot;bestiary&quot;, etc.</li>
 				<li><code>source:&lt;abbreviation&gt;</code> where <code>&lt;abbreviation&gt;</code> is an abbreviated source/book name (&quot;PHB&quot;, &quot;MM&quot;, etc.)</li>
@@ -496,7 +493,7 @@ class Omnisearch {
 		`);
 	}
 }
-Omnisearch._PLACEHOLDER_TEXT = "全域搜索...";
+Omnisearch._PLACEHOLDER_TEXT = "全域搜尋...";
 Omnisearch._searchIndex = null;
 Omnisearch._adventureBookLookup = null; // A map of `<sourceLower>: (adventureCatId|bookCatId)`
 Omnisearch._pLoadSearch = null;

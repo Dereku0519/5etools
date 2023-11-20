@@ -107,99 +107,92 @@ class PageFilterClassesRaw extends PageFilterClasses {
 		});
 		data.class.sort((a, b) => SortUtil.ascSortLower(a.name, b.name) || SortUtil.ascSortLower(a.source, b.source));
 
-		// Expand class/subclass feature references to "object" form
-		data.class.forEach(cls => {
-			cls.classFeatures = (cls.classFeatures || []).map(cf => typeof cf === "string" ? {classFeature: cf} : cf);
-
-			(cls.subclasses || []).forEach(sc => {
-				sc.subclassFeatures = (sc.subclassFeatures || []).map(cf => typeof cf === "string" ? {subclassFeature: cf} : cf);
-			});
+		// Load linked features
+		const walker = MiscUtil.getWalker({
+			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+			isDepthFirst: true,
+			isNoModification: true,
 		});
 
-		// Load linked features
 		// Load the data once before diving into nested promises, to avoid needless context switching
 		await this._pPreloadSideData();
 
 		await Promise.all(data.class.map(async cls => {
-			await Promise.all((cls.classFeatures || []).map(cf => this.pInitClassFeatureLoadeds({classFeature: cf, className: cls.name})));
+			cls.classFeatures = (cls.classFeatures || []).map(cf => typeof cf === "string" ? {classFeature: cf} : cf);
+
+			await Promise.all((cls.classFeatures || []).map(async cf => {
+				const unpacked = DataUtil.class.unpackUidClassFeature(cf.classFeature);
+
+				cf.hash = UrlUtil.URL_TO_HASH_BUILDER["classFeature"](unpacked);
+
+				const {name, level, source} = unpacked;
+				cf.name = name;
+				cf.level = level;
+				cf.source = source;
+
+				const entityRoot = await Renderer.hover.pCacheAndGet("raw_classFeature", cf.source, cf.hash, {isCopy: true});
+				const loadedRoot = {
+					type: "classFeature",
+					entity: entityRoot,
+					page: "classFeature",
+					source: cf.source,
+					hash: cf.hash,
+					className: cls.name,
+				};
+
+				const isIgnored = await this._pGetIgnoredAndApplySideData(entityRoot, "classFeature");
+				if (isIgnored) {
+					cf.isIgnored = true;
+					return;
+				}
+
+				const subLoadeds = await this._pLoadSubEntries(walker, entityRoot, cls.name);
+
+				cf.loadeds = [loadedRoot, ...subLoadeds];
+			}));
 
 			if (cls.classFeatures) cls.classFeatures = cls.classFeatures.filter(it => !it.isIgnored);
 
 			await Promise.all((cls.subclasses || []).map(async sc => {
-				await Promise.all((sc.subclassFeatures || []).map(scf => this.pInitSubclassFeatureLoadeds({subclassFeature: scf, className: cls.name, subclassName: sc.name})));
+				sc.subclassFeatures = (sc.subclassFeatures || []).map(cf => typeof cf === "string" ? {subclassFeature: cf} : cf);
+
+				await Promise.all((sc.subclassFeatures || []).map(async scf => {
+					const unpacked = DataUtil.class.unpackUidSubclassFeature(scf.subclassFeature);
+
+					scf.hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](unpacked);
+
+					const {name, level, source} = unpacked;
+					scf.name = name;
+					scf.level = level;
+					scf.source = source;
+
+					const entityRoot = await Renderer.hover.pCacheAndGet("raw_subclassFeature", scf.source, scf.hash, {isCopy: true});
+					const loadedRoot = {
+						type: "subclassFeature",
+						entity: entityRoot,
+						page: "subclassFeature",
+						source: scf.source,
+						hash: scf.hash,
+						className: cls.name,
+						subclassName: sc.name,
+					};
+
+					const isIgnored = await this._pGetIgnoredAndApplySideData(entityRoot, "subclassFeature");
+					if (isIgnored) {
+						scf.isIgnored = true;
+						return;
+					}
+
+					const subLoadeds = await this._pLoadSubEntries(walker, entityRoot, cls.name, sc.name);
+
+					scf.loadeds = [loadedRoot, ...subLoadeds];
+				}));
 
 				if (sc.subclassFeatures) sc.subclassFeatures = sc.subclassFeatures.filter(it => !it.isIgnored);
 			}));
 		}));
 
 		return data.class;
-	}
-
-	static async pInitClassFeatureLoadeds ({classFeature, className}) {
-		if (typeof classFeature !== "object") throw new Error(`Expected an object of the form {classFeature: "<UID>"}`);
-
-		const unpacked = DataUtil.class.unpackUidClassFeature(classFeature.classFeature);
-
-		classFeature.hash = UrlUtil.URL_TO_HASH_BUILDER["classFeature"](unpacked);
-
-		const {name, level, source} = unpacked;
-		classFeature.name = name;
-		classFeature.level = level;
-		classFeature.source = source;
-
-		const entityRoot = await Renderer.hover.pCacheAndGet("raw_classFeature", classFeature.source, classFeature.hash, {isCopy: true});
-		const loadedRoot = {
-			type: "classFeature",
-			entity: entityRoot,
-			page: "classFeature",
-			source: classFeature.source,
-			hash: classFeature.hash,
-			className,
-		};
-
-		const isIgnored = await this._pGetIgnoredAndApplySideData(entityRoot, "classFeature");
-		if (isIgnored) {
-			classFeature.isIgnored = true;
-			return;
-		}
-
-		const subLoadeds = await this._pLoadSubEntries(this._getPostLoadWalker(), entityRoot, className);
-
-		classFeature.loadeds = [loadedRoot, ...subLoadeds];
-	}
-
-	static async pInitSubclassFeatureLoadeds ({subclassFeature, className, subclassName}) {
-		if (typeof subclassFeature !== "object") throw new Error(`Expected an object of the form {subclassFeature: "<UID>"}`);
-
-		const unpacked = DataUtil.class.unpackUidSubclassFeature(subclassFeature.subclassFeature);
-
-		subclassFeature.hash = UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](unpacked);
-
-		const {name, level, source} = unpacked;
-		subclassFeature.name = name;
-		subclassFeature.level = level;
-		subclassFeature.source = source;
-
-		const entityRoot = await Renderer.hover.pCacheAndGet("raw_subclassFeature", subclassFeature.source, subclassFeature.hash, {isCopy: true});
-		const loadedRoot = {
-			type: "subclassFeature",
-			entity: entityRoot,
-			page: "subclassFeature",
-			source: subclassFeature.source,
-			hash: subclassFeature.hash,
-			className,
-			subclassName,
-		};
-
-		const isIgnored = await this._pGetIgnoredAndApplySideData(entityRoot, "subclassFeature");
-		if (isIgnored) {
-			subclassFeature.isIgnored = true;
-			return;
-		}
-
-		const subLoadeds = await this._pLoadSubEntries(this._getPostLoadWalker(), entityRoot, className, subclassName);
-
-		subclassFeature.loadeds = [loadedRoot, ...subLoadeds];
 	}
 
 	/**
@@ -217,17 +210,16 @@ class PageFilterClassesRaw extends PageFilterClasses {
 	 */
 	static async _pGetIgnoredAndApplySideData (entity, type) {
 		switch (type) {
-			case "classFeature":
-			case "subclassFeature":
-			case "optionalfeature": {
-				const sideData = await this._pGetSideData(entity, type);
-
-				if (!sideData) return false;
-				if (sideData.isIgnored) return true;
-
-				if (sideData.entries) entity.entries = MiscUtil.copy(sideData.entries);
-				if (sideData.entryData) entity.entryData = MiscUtil.copy(sideData.entryData);
-
+			case "classFeature": {
+				const sideData = await this._pGetSideData(entity, "classFeature");
+				if (sideData && sideData.isIgnored) return true;
+				if (sideData && sideData.entries) entity.entries = MiscUtil.copy(sideData.entries);
+				break;
+			}
+			case "subclassFeature": {
+				const sideData = await this._pGetSideData(entity, "subclassFeature");
+				if (sideData && sideData.isIgnored) return true;
+				if (sideData && sideData.entries) entity.entries = MiscUtil.copy(sideData.entries);
 				break;
 			}
 			default: throw new Error(`Unhandled type "${type}"`);
@@ -275,12 +267,7 @@ class PageFilterClassesRaw extends PageFilterClasses {
 							}
 
 							const parentName = MiscUtil.get(path.last(), "name");
-							if (parentName) {
-								obj.entries.forEach(ent => {
-									if (typeof ent !== "object") return;
-									ent._displayNamePrefix = `${parentName}: `;
-								});
-							}
+							if (parentName) obj.entries.forEach(ent => ent._displayNamePrefix = `${parentName}: `);
 						}
 
 						if (obj.name) path.push(obj);
@@ -381,9 +368,6 @@ class PageFilterClassesRaw extends PageFilterClasses {
 							continue;
 						}
 
-						const isIgnored = await this._pGetIgnoredAndApplySideData(entity, "optionalfeature");
-						if (isIgnored) continue;
-
 						this.populateEntityTempData({
 							entity,
 							// Cache this so we can determine if this optional feature is from a "classFeature" or a "subclassFeature"
@@ -443,18 +427,8 @@ class PageFilterClassesRaw extends PageFilterClasses {
 	static _handleReferenceError (msg) {
 		JqueryUtil.doToast({type: "danger", content: msg});
 	}
-
-	static _getPostLoadWalker () {
-		PageFilterClassesRaw._WALKER = PageFilterClassesRaw._WALKER || MiscUtil.getWalker({
-			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
-			isDepthFirst: true,
-			isNoModification: true,
-		});
-		return PageFilterClassesRaw._WALKER;
-	}
 	// endregion
 }
-PageFilterClassesRaw._WALKER = null;
 
 class ModalFilterClasses extends ModalFilter {
 	/**
@@ -473,10 +447,6 @@ class ModalFilterClasses extends ModalFilter {
 
 		this._pLoadingAllData = null;
 		this._allData = null;
-
-		this._ixPrevSelectedClass = null;
-		this._isClassDisabled = false;
-		this._isSubclassDisabled = false;
 	}
 
 	get pageFilter () { return this._pageFilter; }
@@ -514,18 +484,23 @@ class ModalFilterClasses extends ModalFilter {
 		return out;
 	}
 
-	async pGetUserSelection ({filterExpression = null, selectedClass = null, selectedSubclass = null, isClassDisabled = false, isSubclassDisabled = false} = {}) {
+	async pGetUserSelection () {
 		// eslint-disable-next-line no-async-promise-executor
 		return new Promise(async resolve => {
-			const {$modalInner, doClose} = this._getShowModal(resolve);
+			const {$modalInner, doClose} = UiUtil.getShowModal({
+				isHeight100: true,
+				title: `Filter/Search for ${this._modalTitle}`,
+				cbClose: (isDataEntered) => {
+					this._filterCache.$wrpModalInner.detach();
+					if (!isDataEntered) resolve(null);
+				},
+				isUncappedHeight: true,
+			});
 
 			await this.pPreloadHidden($modalInner);
 
-			this._doApplyFilterExpression(filterExpression);
-
 			this._filterCache.$btnConfirm.off("click").click(async () => {
-				// Note: use invisible items, as this might be the parent class of a selected subclass
-				const checked = this._filterCache.list.items.filter(it => it.data.tglSel.classList.contains("active"));
+				const checked = this._filterCache.list.visibleItems.filter(it => it.data.tglSel.classList.contains("active"));
 				const out = {};
 				checked.forEach(it => {
 					if (it.data.ixSubclass == null) out.class = this._filterCache.allData[it.data.ixClass];
@@ -537,45 +512,6 @@ class ModalFilterClasses extends ModalFilter {
 
 				ModalFilterClasses._doListDeselectAll(this._filterCache.list);
 			});
-
-			// Since the UI gets moved to a new filter window on every call to this method, this state modification is correct.
-			this._ixPrevSelectedClass = selectedClass != null
-				? this._filterCache.allData.findIndex(it => it.name === selectedClass.name && it.source === selectedClass.source)
-				: null;
-			this._isClassDisabled = isClassDisabled;
-			this._isSubclassDisabled = isSubclassDisabled;
-			this._filterCache.list.items.forEach(li => {
-				const isScLi = li.data.ixSubclass != null;
-				if (isScLi) {
-					li.data.tglSel.classList.toggle("disabled", this._isSubclassDisabled || (this._isClassDisabled && li.data.ixClass !== this._ixPrevSelectedClass));
-				} else {
-					li.data.tglSel.classList.toggle("disabled", this._isClassDisabled)
-				}
-			});
-
-			// region Restore selection
-			if (selectedClass != null) {
-				const ixSubclass = ~this._ixPrevSelectedClass && selectedSubclass != null ? this._filterCache.allData[this._ixPrevSelectedClass].subclasses.findIndex(it => it.name === selectedSubclass.name && it.source === selectedSubclass.source) : -1
-
-				if (~this._ixPrevSelectedClass) {
-					ModalFilterClasses._doListDeselectAll(this._filterCache.list);
-
-					const clsItem = this._filterCache.list.items.find(it => it.data.ixClass === this._ixPrevSelectedClass && it.data.ixSubclass == null);
-					if (clsItem) {
-						clsItem.data.tglSel.classList.add("active");
-						clsItem.ele.classList.add("list-multi-selected");
-					}
-
-					if (~ixSubclass && clsItem) {
-						const scItem = this._filterCache.list.items.find(it => it.data.ixClass === this._ixPrevSelectedClass && it.data.ixSubclass === ixSubclass);
-						scItem.data.tglSel.classList.add("active");
-						scItem.ele.classList.add("list-multi-selected");
-					}
-				}
-			}
-			// endregion
-
-			this._filterCache.$iptSearch.focus();
 		});
 	}
 
@@ -588,9 +524,9 @@ class ModalFilterClasses extends ModalFilter {
 		} else {
 			await this._pInit();
 
-			const $ovlLoading = $(`<div class="w-100 h-100 flex-vh-center"><i class="dnd-font ve-muted">加载中...</i></div>`).appendTo($modalInner);
+			const $ovlLoading = $(`<div class="w-100 h-100 flex-vh-center"><i class="dnd-font ve-muted">Loading...</i></div>`).appendTo($modalInner);
 
-			const $iptSearch = $(`<input class="form-control" type="search" placeholder="搜索...">`);
+			const $iptSearch = $(`<input class="form-control" type="search" placeholder="Search...">`);
 			const $btnReset = $(`<button class="btn btn-default">Reset</button>`);
 			const $wrpFormTop = $$`<div class="flex input-group btn-group w-100 lst__form-top">${$iptSearch}${$btnReset}</div>`;
 
@@ -628,24 +564,9 @@ class ModalFilterClasses extends ModalFilter {
 			allData.forEach((it, i) => {
 				pageFilter.mutateAndAddToFilters(it);
 				const filterListItems = this._getListItems(pageFilter, it, i);
-				filterListItems.forEach(li => {
-					list.addItem(li);
-					li.ele.addEventListener("click", evt => {
-						const isScLi = li.data.ixSubclass != null;
-
-						if (isScLi) {
-							if (this._isSubclassDisabled) return;
-							if (this._isClassDisabled && li.data.ixClass !== this._ixPrevSelectedClass) return;
-						} else {
-							if (this._isClassDisabled) return;
-						}
-
-						this._handleSelectClick({list,
-							filterListItems,
-							filterListItem: li,
-							evt,
-						});
-					});
+				filterListItems.forEach((filterListItem, i) => {
+					list.addItem(filterListItem);
+					filterListItem.ele.addEventListener("click", evt => ModalFilterClasses.handleSelectClick(list, filterListItems, filterListItem, i === 0, evt));
 				});
 			});
 
@@ -682,44 +603,32 @@ class ModalFilterClasses extends ModalFilter {
 				<div class="flex-vh-center">${$btnConfirm}</div>
 			</div>`.appendTo($modalInner);
 
-			this._filterCache = {$wrpModalInner, $btnConfirm, pageFilter, list, allData, $iptSearch};
+			this._filterCache = {$wrpModalInner, $btnConfirm, pageFilter, list, allData};
 		}
 	}
 
-	static _doListDeselectAll (list, {isSubclassItemsOnly = false} = {}) {
+	static _doListDeselectAll (list) {
 		list.items.forEach(it => {
-			if (isSubclassItemsOnly && it.data.ixSubclass == null) return;
-
 			if (it.data.tglSel) it.data.tglSel.classList.remove("active");
 			it.ele.classList.remove("list-multi-selected");
 		});
 	}
 
-	_handleSelectClick ({list, filterListItems, filterListItem, evt}) {
+	static handleSelectClick (list, filterListItems, filterListItem, isClassItem, evt) {
 		evt.preventDefault();
 		evt.stopPropagation();
 
-		const isScLi = filterListItem.data.ixSubclass != null;
-
-		// When only allowing subclass to be changed, avoid de-selecting the entire list
-		if (this._isClassDisabled && this._ixPrevSelectedClass != null && isScLi) {
-			if (!filterListItem.data.tglSel.classList.contains("active")) this.constructor._doListDeselectAll(list, {isSubclassItemsOnly: true});
-			filterListItem.data.tglSel.classList.toggle("active");
-			filterListItem.ele.classList.toggle("list-multi-selected");
-			return;
-		}
-
 		// region De-selecting the currently-selected item
 		if (filterListItem.data.tglSel.classList.contains("active")) {
-			this.constructor._doListDeselectAll(list);
+			this._doListDeselectAll(list);
 			return;
 		}
 		// endregion
 
 		// region Selecting an item
-		this.constructor._doListDeselectAll(list);
+		this._doListDeselectAll(list);
 
-		if (isScLi) {
+		if (!isClassItem) {
 			const classItem = filterListItems[0];
 			classItem.data.tglSel.classList.add("active");
 			classItem.ele.classList.add("list-multi-selected");
@@ -772,8 +681,6 @@ class ModalFilterClasses extends ModalFilter {
 			`${cls.name} -- ${cls.source}`,
 			{
 				source: `${source} -- ${cls.name}`,
-				ENG_name: cls.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(cls),
 			},
 			{
 				ixClass: clsI,
@@ -798,8 +705,6 @@ class ModalFilterClasses extends ModalFilter {
 			`${cls.name} -- ${cls.source} -- ${sc.name} -- ${sc.source}`,
 			{
 				source: `${cls.source} -- ${cls.name} -- ${source} -- ${sc.name}`,
-				ENG_name: cls.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(cls),
 			},
 			{
 				ixClass: clsI,

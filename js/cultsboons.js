@@ -44,8 +44,6 @@ class CultsBoonsPage extends ListPage {
 				source,
 				type: it._lType,
 				subType: it._lSubType,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				uniqueId: it.uniqueId ? it.uniqueId : bcI,
@@ -86,8 +84,6 @@ class CultsBoonsPage extends ListPage {
 				hash,
 				type: it._lType,
 				subType: it._lSubType,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 		);
 		return listItem;

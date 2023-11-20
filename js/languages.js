@@ -42,8 +42,6 @@ class LanguagesPage extends ListPage {
 				dialects: it.dialects || [],
 				type: it.type || "",
 				script: it.script || "",
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				uniqueId: it.uniqueId ? it.uniqueId : anI,
@@ -84,8 +82,6 @@ class LanguagesPage extends ListPage {
 				hash,
 				type: it.type || "",
 				script: it.script || "",
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 		);
 		return listItem;
@@ -110,22 +106,22 @@ class LanguagesPage extends ListPage {
 
 		const tabMetas = [
 			new Renderer.utils.TabButton({
-				label: "特征",
+				label: "Traits",
 				fnPopulate: buildStatsTab,
 				isVisible: true,
 			}),
 			new Renderer.utils.TabButton({
-				label: "信息",
+				label: "Info",
 				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(it, "languageFluff"),
+				isVisible: Renderer.utils.hasFluffText(it),
 			}),
 			new Renderer.utils.TabButton({
-				label: "图片",
+				label: "Images",
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(it, "languageFluff"),
+				isVisible: Renderer.utils.hasFluffImages(it),
 			}),
 			new Renderer.utils.TabButton({
-				label: "字体",
+				label: "Fonts",
 				fnPopulate: () => {
 					$content.append(Renderer.utils.getBorderTr());
 					$content.append(Renderer.utils.getNameTr(it));

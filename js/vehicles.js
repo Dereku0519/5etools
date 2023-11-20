@@ -41,8 +41,6 @@ class VehiclesPage extends ListPage {
 				source,
 				vehicleType: it.vehicleType,
 				upgradeType: it.upgradeType,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				uniqueId: it.uniqueId ? it.uniqueId : vhI,
@@ -80,8 +78,6 @@ class VehiclesPage extends ListPage {
 				hash,
 				vehicleType: it.vehicleType,
 				upgradeType: it.upgradeType,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 		);
 		return listItem;
@@ -118,22 +114,22 @@ class VehiclesPage extends ListPage {
 
 		const tabMetas = [
 			new Renderer.utils.TabButton({
-				label: "物件",
+				label: "Item",
 				fnChange: () => $floatToken.show(),
 				fnPopulate: buildStatsTab,
 				isVisible: true,
 			}),
 			new Renderer.utils.TabButton({
-				label: "信息",
+				label: "Info",
 				fnChange: () => $floatToken.hide(),
 				fnPopulate: buildFluffTab,
-				isVisible: Renderer.utils.hasFluffText(veh, "vehicleFluff"),
+				isVisible: Renderer.utils.hasFluffText(veh),
 			}),
 			new Renderer.utils.TabButton({
-				label: "图片",
+				label: "Images",
 				fnChange: () => $floatToken.hide(),
 				fnPopulate: buildFluffTab.bind(null, true),
-				isVisible: Renderer.utils.hasFluffImages(veh, "vehicleFluff"),
+				isVisible: Renderer.utils.hasFluffImages(veh),
 			}),
 		];
 
@@ -149,27 +145,7 @@ class VehiclesPage extends ListPage {
 		sub = this._filterBox.setFromSubHashes(sub);
 		await ListUtil.pSetFromSubHashes(sub);
 	}
-
-	_getSearchCache (entity) {
-		if (this.constructor._INDEXABLE_PROPS.every(it => !entity[it])) return "";
-		const ptrOut = {_: ""};
-		this.constructor._INDEXABLE_PROPS.forEach(it => this._getSearchCache_handleEntryProp(entity, it, ptrOut));
-		return ptrOut._;
-	}
 }
-VehiclesPage._INDEXABLE_PROPS = [
-	"control",
-	"movement",
-	"weapon",
-	"other",
-	"entries",
-
-	"actionStation",
-
-	"action",
-	"trait",
-	"reaction",
-];
 
 const vehiclesPage = new VehiclesPage();
 window.addEventListener("load", () => vehiclesPage.pOnLoad());

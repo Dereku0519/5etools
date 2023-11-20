@@ -103,8 +103,6 @@ class ItemParser extends BaseParser {
 			stats.entries = SkillTag.tryRun(stats.entries);
 			stats.entries = ActionTag.tryRun(stats.entries);
 			stats.entries = SenseTag.tryRun(stats.entries);
-
-			if (/is a (tiny|small|medium|large|huge|gargantuan) object/.test(JSON.stringify(stats.entries))) options.cbWarning(`${stats.name ? `(${stats.name}) ` : ""}Item may be an object!`);
 		}
 		this._doItemPostProcess_addTags(stats, options);
 		BasicTextClean.tryRun(stats);
@@ -236,12 +234,11 @@ class ItemParser extends BaseParser {
 				continue;
 			}
 
-			const mBaseWeapon = /^(weapon|staff) \(([^)]+)\)$/i.exec(part);
+			const mBaseWeapon = /^weapon \(([^)]+)\)$/i.exec(part);
 			const mBaseArmor = /^armor \(([^)]+)\)$/i.exec(part);
 			if (mBaseWeapon) {
-				if (mBaseWeapon[1].toLowerCase() === "staff") stats.staff = true;
-				baseItem = ItemParser.getItem(mBaseWeapon[2]);
-				if (!baseItem) throw new Error(`Could not find base item "${mBaseWeapon[2]}"`);
+				baseItem = ItemParser.getItem(mBaseWeapon[1]);
+				if (!baseItem) throw new Error(`Could not find base item "${mBaseWeapon[1]}"`);
 				continue;
 			} else if (mBaseArmor) {
 				baseItem = ItemParser.getItem(mBaseArmor[1]);

@@ -43,8 +43,6 @@ class TablesPage extends ListPage {
 				hash,
 				sortName,
 				source,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 			{
 				uniqueId: it.uniqueId ? it.uniqueId : tbI,
@@ -77,8 +75,6 @@ class TablesPage extends ListPage {
 			it.name,
 			{
 				hash,
-				ENG_name: it.ENG_name,
-				ENG_hash: UrlUtil.autoEncodeEngHash(it),
 			},
 		);
 		return listItem;
@@ -96,14 +92,6 @@ class TablesPage extends ListPage {
 	async pDoLoadSubHash (sub) {
 		sub = this._filterBox.setFromSubHashes(sub);
 		await ListUtil.pSetFromSubHashes(sub);
-	}
-
-	_getSearchCache (entity) {
-		if (!entity.rows && !entity.tables) return "";
-		const ptrOut = {_: ""};
-		this._getSearchCache_handleEntryProp(entity, "rows", ptrOut);
-		this._getSearchCache_handleEntryProp(entity, "tables", ptrOut);
-		return ptrOut._;
 	}
 }
 
