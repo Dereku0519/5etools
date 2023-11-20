@@ -35,7 +35,7 @@
 								{
 									"type": "entries",
 									"entries": [
-										"The stove was given a semblance of life through an {@spell 活化物体} spell made permanent by a {@spell 祈愿术} spell."
+										"The stove was given a semblance of life through an {@spell 活化物體} spell made permanent by a {@spell 祈願術} spell."
 									]
 								}
 							]
@@ -186,7 +186,7 @@
 								{
 									"type": "entries",
 									"entries": [
-										"This creature used to be two separate duergar, a male named Blork and a female named Muatha. Arcturia fused them together into a single creature by using magic that only a {@spell 祈愿术} spell can undo. Both skulls merged into one bulbous head that has three ears, three eyes, two noses, and two mouths. It has a third arm on the right side of its body, and its left leg splits into two at the knee, giving it three feet. The transformation drove the poor creature insane, and it regards all other creatures as threats that must be destroyed."
+										"This creature used to be two separate duergar, a male named Blork and a female named Muatha. Arcturia fused them together into a single creature by using magic that only a {@spell 祈願術} spell can undo. Both skulls merged into one bulbous head that has three ears, three eyes, two noses, and two mouths. It has a third arm on the right side of its body, and its left leg splits into two at the knee, giving it three feet. The transformation drove the poor creature insane, and it regards all other creatures as threats that must be destroyed."
 									]
 								}
 							]
@@ -391,7 +391,7 @@
 									"type": "entries",
 									"name": "Magical Essence",
 									"entries": [
-										"The process that creates a living spell changes the nature of its magic. A living spell isn't subject to {@spell 解除魔法} and isn't affected by an {@spell 反魔法结界}."
+										"The process that creates a living spell changes the nature of its magic. A living spell isn't subject to {@spell 解除魔法} and isn't affected by an {@spell 反魔法結界}."
 									]
 								}
 							]
@@ -399,7 +399,7 @@
 						{
 							"type": "entries",
 							"entries": [
-								"Like an overzealous butler or maid, a living {@spell 隐形仆役} spell busies itself with tasks in hopes of pleasing its creator. It can wield simple weapons but prefers not to. {@spell 识破隐形}, {@spell 真知术}, and similar effects reveal that the servant has a shape similar to that of a slender humanoid adult."
+								"Like an overzealous butler or maid, a living {@spell 隱形僕役} spell busies itself with tasks in hopes of pleasing its creator. It can wield simple weapons but prefers not to. {@spell 識破隱形}, {@spell 真知術}, and similar effects reveal that the servant has a shape similar to that of a slender humanoid adult."
 							]
 						}
 					]
@@ -500,7 +500,7 @@
 								{
 									"type": "entries",
 									"entries": [
-										"The floating skull and hanging skeletal arms are all that remain of him; they move like they're attached to an {@condition 隐形} body."
+										"The floating skull and hanging skeletal arms are all that remain of him; they move like they're attached to an {@condition invisible} body."
 									]
 								}
 							]
@@ -603,7 +603,7 @@
 								{
 									"type": "entries",
 									"entries": [
-										"A drow priestess of Lolth placed a curse on Shunn and forced him into exile after he displeased her. The curse partially transformed him into a spider, giving him eight red arachnid eyes, a mouth full of fangs, and black bristles sprouting from his slender limbs. A remove curse or {@spell 高等复原术} spell restores Shunn's natural form, but Shunn doesn't want the curse lifted. His horrific appearance strikes fear into the hearts of his comrades-in-arms and has earned him favor with Xanathar. Shunn believes that returning to his normal form might weaken his influence over his gang and diminish his status in the Xanathar Guild."
+										"A drow priestess of Lolth placed a curse on Shunn and forced him into exile after he displeased her. The curse partially transformed him into a spider, giving him eight red arachnid eyes, a mouth full of fangs, and black bristles sprouting from his slender limbs. A remove curse or {@spell 高等復原術} spell restores Shunn's natural form, but Shunn doesn't want the curse lifted. His horrific appearance strikes fear into the hearts of his comrades-in-arms and has earned him favor with Xanathar. Shunn believes that returning to his normal form might weaken his influence over his gang and diminish his status in the Xanathar Guild."
 									]
 								}
 							]
@@ -784,27 +784,6 @@
 									"type": "entries",
 									"entries": [
 										"A werebat is a humanoid afflicted with a rare form of lycanthropy that enables it to transform into a giant bat or a bat-humanoid hybrid. (See the {@i Monster Manual} for more information on{@i lycanthropy}.) Most werebats are of goblin stock."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Deep Dwellers",
-									"entries": [
-										"Werebats are shunned even by goblin society because of their need to feed on blood to survive. They prefer to lair in dark places, such as attics and caves, and typically adopt nocturnal hunting habits."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Blood Drinkers",
-									"entries": [
-										"A werebat must consume at least 1 pint of fresh blood each night, or it weakens and gains one level of {@condition exhaustion} that no amount of rest alone can remove. Each pint of blood the werebat consumes removes one level of {@condition exhaustion} gained in this fashion."
-									]
-								},
-								{
-									"type": "entries",
-									"name": "Werebat Lycanthropy",
-									"entries": [
-										"A player character who becomes a werebat gains a Dexterity of 17 if their score isn't already higher. {@action Attack} and damage rolls for the werebat's bite attack are based on the character's Strength or Dexterity score, whichever is higher."
 									]
 								}
 							]

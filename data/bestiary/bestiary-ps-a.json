@@ -112,7 +112,7 @@
 						"items": {
 							"name": "Staff",
 							"entries": [
-								"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 4}) bludgeoning damage plus 18 ({@damage 4d8}) radiant damage, and the target is {@condition 被擒} (escape DC 17). Until this grapple ends, the target is {@condition 束缚}, and the angel can't attack another target with its staff."
+								"{@atk mw} {@hit 8} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 4}) bludgeoning damage plus 18 ({@damage 4d8}) radiant damage, and the target is {@condition grappled} (escape DC 17). Until this grapple ends, the target is {@condition restrained}, and the angel can't attack another target with its staff."
 							]
 						}
 					}
@@ -197,7 +197,7 @@
 				{
 					"ac": 18,
 					"from": [
-						"天生护甲"
+						"natural armor"
 					]
 				}
 			],
@@ -232,7 +232,7 @@
 						"piercing",
 						"slashing"
 					],
-					"preNote": "非魔法攻击所造成的",
+					"note": "from nonmagical attacks",
 					"cond": true
 				}
 			],
@@ -435,7 +435,7 @@
 				{
 					"ac": 15,
 					"from": [
-						"天生护甲"
+						"natural armor"
 					]
 				}
 			],
@@ -606,13 +606,13 @@
 				{
 					"name": "Keen Smell",
 					"entries": [
-						"The serpopard has advantage on Wisdom ({@skill 察觉}) checks that rely on smell."
+						"The serpopard has advantage on Wisdom ({@skill Perception}) checks that rely on smell."
 					]
 				},
 				{
 					"name": "Pounce",
 					"entries": [
-						"If the serpopard moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 14} Strength saving throw or be knocked {@condition 伏地}. If the target is {@condition 伏地}, the serpopard can make one bite attack against it as a bonus action."
+						"If the serpopard moves at least 20 feet straight toward a creature and then hits it with a claw attack on the same turn, that target must succeed on a {@dc 14} Strength saving throw or be knocked {@condition prone}. If the target is {@condition prone}, the serpopard can make one bite attack against it as a bonus action."
 					]
 				}
 			],
