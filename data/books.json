@@ -645,7 +645,7 @@
 			]
 		},
 		{
-			"name": "Xanathar's Guide to Everything",
+			"name": "珊娜薩的萬事指南",
 			"id": "XGE",
 			"source": "XGE",
 			"coverUrl": "img/covers/XGE.png",
@@ -653,10 +653,10 @@
 			"author": "Wizards RPG Team",
 			"contents": [
 				{
-					"name": "Introduction",
+					"name": "介紹",
 					"headers": [
-						"Using this Book",
-						"The Core Rules"
+						"使用本書",
+						"核心規則"
 					]
 				},
 				{
