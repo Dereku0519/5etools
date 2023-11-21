@@ -5,12 +5,37 @@ const ListUtil = {
 
 	_firstInit: true,
 	_isPreviewable: false,
+	_isFindHotkeyBound: false,
 	initList (listOpts) {
 		const $iptSearch = $("#lst__search");
 		const $wrpList = $(`.list.${listOpts.listClass}`);
 		const list = new List({$iptSearch, $wrpList, ...listOpts});
 
 		if (listOpts.isPreviewable) ListUtil._isPreviewable = true;
+
+		const helpText = [];
+
+		if (listOpts.isBindFindHotkey && !ListUtil._isFindHotkeyBound) {
+			helpText.push(`快捷鍵：f.`);
+
+			$(document.body).on("keypress", (e) => {
+				if (!EventUtil.noModifierKeys(e) || EventUtil.isInInput(e)) return;
+				if (e.key === "f") {
+					e.preventDefault();
+					$iptSearch.select().focus();
+				}
+			});
+		}
+
+		if (listOpts.syntax) {
+			Object.values(listOpts.syntax)
+				.filter(({help}) => help)
+				.forEach(({help}) => {
+					helpText.push(help);
+				});
+		}
+
+		if (helpText.length) $iptSearch.title(helpText.join(" "));
 
 		$("#reset").click(function () {
 			$iptSearch.val("");
@@ -33,7 +58,7 @@ const ListUtil = {
 		if (ListUtil._firstInit) {
 			ListUtil._firstInit = false;
 			const $headDesc = $(`.page__subtitle`);
-			$headDesc.html(`${$headDesc.html()} 按下J/K以巡覽列${ListUtil._isPreviewable ? `, M to expand` : ""}.`);
+			$headDesc.html(`${$headDesc.html()}按下J/K以巡覽列${ListUtil._isPreviewable ? `，按下M以擴展顯示` : ""}。`);
 			ListUtil._initList_bindWindowHandlers();
 		}
 
@@ -313,7 +338,8 @@ const ListUtil = {
 						await MiscUtil.pCopyTextToClipboard(parts.join(HASH_PART_SEP));
 						JqueryUtil.showCopiedEffect($btnOptions);
 					} else {
-						DataUtil.userDownload(ListUtil._getDownloadName(), JSON.stringify(ListUtil.getExportableSublist(), null, "\t"));
+						const fileType = ListUtil._getDownloadName();
+						DataUtil.userDownload(fileType, ListUtil.getExportableSublist(), {fileType});
 					}
 				},
 			);
@@ -323,26 +349,14 @@ const ListUtil = {
 		if (opts.upload) {
 			const action = new ContextUtil.Action(
 				"Upload Pinned List (SHIFT for Add Only)",
-				evt => {
-					function pHandleIptChange (event, additive) {
-						const input = event.target;
+				async evt => {
+					const files = await DataUtil.pUserUpload({expectedFileType: ListUtil._getDownloadName()});
+					if (!files?.length) return;
 
-						const reader = new FileReader();
-						reader.onload = async () => {
-							const text = reader.result;
-							const json = JSON.parse(text);
-							$iptAdd.remove();
-							if (typeof opts.upload === "object" && opts.upload.pFnPreLoad) await opts.upload.pFnPreLoad(json);
-							await ListUtil.pDoJsonLoad(json, additive);
-						};
-						reader.readAsText(input.files[0]);
-					}
+					const json = files[0];
 
-					const additive = evt.shiftKey;
-					const $iptAdd = $(`<input type="file" accept=".json" style="position: fixed; top: -100px; left: -100px; display: none;">`)
-						.on("change", (evt) => pHandleIptChange(evt, additive))
-						.appendTo($(`body`));
-					$iptAdd.click();
+					if (typeof opts.upload === "object" && opts.upload.pFnPreLoad) await opts.upload.pFnPreLoad(json);
+					await ListUtil.pDoJsonLoad(json, evt.shiftKey);
 				},
 			);
 			contextOptions.push(action);
@@ -681,14 +695,14 @@ const ListUtil = {
 
 		const subActions = [
 			new ContextUtil.Action(
-				"Popout",
+				"彈窗",
 				(evt, userData) => {
 					const {ele, selection} = userData;
 					ListUtil._handleGenericContextMenuClick_pDoMassPopout(evt, ele, selection)
 				},
 			),
 			new ContextUtil.Action(
-				"Remove",
+				"移除",
 				(evt, userData) => {
 					const {selection} = userData;
 					selection.forEach(item => {
@@ -698,28 +712,28 @@ const ListUtil = {
 				},
 			),
 			new ContextUtil.Action(
-				"Clear List",
+				"清空列表",
 				() => ListUtil.pDoSublistRemoveAll(),
 			),
 			null,
 			new ContextUtil.Action(
-				"Roll on List",
+				"列表擲骰",
 				() => ListUtil._rollSubListed(),
 			),
 			null,
 			new ContextUtil.Action(
-				"Send to DM Screen",
+				"發送到 DM 帷幕",
 				() => ListUtil._pDoSendSublistToDmScreen(),
 			),
 			ExtensionUtil.ACTIVE
 				? new ContextUtil.Action(
-					"Send to Foundry",
+					"發送到 Foundry",
 					() => ListUtil._pDoSendSublistToFoundry(),
 				)
 				: undefined,
 			null,
 			new ContextUtil.Action(
-				"Download JSON Data",
+				"下載 JSON 數據",
 				() => ListUtil._handleJsonDownload(),
 			),
 		].filter(it => it !== undefined);
@@ -731,9 +745,9 @@ const ListUtil = {
 			const list = ListUtil.getExportableSublist();
 			const len = list.items.length;
 			await StorageUtil.pSet(VeCt.STORAGE_DMSCREEN_TEMP_SUBLIST, {page: UrlUtil.getCurrentPage(), list});
-			JqueryUtil.doToast(`${len} pin${len === 1 ? "" : "s"} will be loaded into the DM Screen on your next visit.`)
+			JqueryUtil.doToast(`${len} 個標註內容將在你下次訪問時載入 DM 帷幕。`)
 		} catch (e) {
-			JqueryUtil.doToast(`Failed! ${VeCt.STR_SEE_CONSOLE}`);
+			JqueryUtil.doToast(`失敗！ ${VeCt.STR_SEE_CONSOLE}`);
 			setTimeout(() => { throw e; })
 		}
 	},
@@ -759,7 +773,7 @@ const ListUtil = {
 			await ExtensionUtil._doSend("entity", {page, entity: toSend});
 		}
 
-		JqueryUtil.doToast(`Attepmted to send ${len} item${len === 1 ? "" : "s"} to Foundry.`);
+		JqueryUtil.doToast(`嘗試發送 ${len} 條項目到 Foundry 之中。`);
 	},
 
 	async _handleGenericContextMenuClick_pDoMassPopout (evt, ele, selection) {
@@ -818,7 +832,7 @@ const ListUtil = {
 
 			if ($eles.length <= 1) {
 				JqueryUtil.doToast({
-					content: "Not enough entries to roll!",
+					content: "條目數量不足以擲骰！",
 					type: "danger",
 				});
 				return ListUtil._isRolling = false;
@@ -920,10 +934,10 @@ const ListUtil = {
 			});
 			return DataUtil.getCsv(headers, rows);
 		}
-		const $btnCsv = $(`<button class="btn btn-primary mr-3">Download CSV</button>`).click(() => {
+		const $btnCsv = $(`<button class="btn btn-primary mr-3">下載 CSV</button>`).click(() => {
 			DataUtil.userDownloadText(`${title}.csv`, getAsCsv());
 		}).appendTo($pnlBtns);
-		const $btnCopy = $(`<button class="btn btn-primary">Copy CSV to Clipboard</button>`).click(async () => {
+		const $btnCopy = $(`<button class="btn btn-primary">複製 CSV 到剪貼板</button>`).click(async () => {
 			await MiscUtil.pCopyTextToClipboard(getAsCsv());
 			JqueryUtil.showCopiedEffect($btnCopy);
 		}).appendTo($pnlBtns);
@@ -948,12 +962,12 @@ const ListUtil = {
 
 	addListShowHide () {
 		$(`#filter-search-group`).find(`#reset`).before(`<button class="btn btn-default" id="hidesearch">隱藏</button>`);
-		$(`#contentwrapper`).prepend(`<div class="col-12" id="showsearch"><button class="btn btn-block btn-default btn-xs" type="button">Show Filter</button><br></div>`);
+		$(`#contentwrapper`).prepend(`<div class="col-12" id="showsearch"><button class="btn btn-block btn-default btn-xs" type="button">顯示篩選器</button><br></div>`);
 
 		const $wrpList = $(`#listcontainer`);
 		const $wrpBtnShowSearch = $("div#showsearch");
 		const $btnHideSearch = $("button#hidesearch");
-		$btnHideSearch.title("Hide Search Bar and Entry List");
+		$btnHideSearch.title("隱藏搜索欄和條目列表");
 		// collapse/expand search button
 		$btnHideSearch.click(function () {
 			$wrpList.hide();
