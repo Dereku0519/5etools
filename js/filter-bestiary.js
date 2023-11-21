@@ -54,6 +54,7 @@ class PageFilterBestiary extends PageFilter {
 		});
 		this._sizeFilter = new Filter({
 			header: "Size",
+			headerName: "體型",
 			items: [
 				SZ_TINY,
 				SZ_SMALL,
@@ -68,20 +69,20 @@ class PageFilterBestiary extends PageFilter {
 		});
 		this._speedFilter = new RangeFilter({header: "Speed", headerName: "速度", min: 30, max: 30});
 		this._speedTypeFilter = new Filter({header: "Speed Type", headerName: "速度類型", items: ["walk", "burrow", "climb", "fly", "hover", "swim"], displayFn: Parser.SpeedToDisplay});
-		this._strengthFilter = new RangeFilter({header: "Strength",headerName:"力量", min: 1, max: 30});
-		this._dexterityFilter = new RangeFilter({header: "Dexterity",headerName:"敏捷", min: 1, max: 30});
-		this._constitutionFilter = new RangeFilter({header: "Constitution",headerName:"體質", min: 1, max: 30});
-		this._intelligenceFilter = new RangeFilter({header: "Intelligence",headerName:"智力", min: 1, max: 30});
-		this._wisdomFilter = new RangeFilter({header: "Wisdom",headerName:"睿知", min: 1, max: 30});
-		this._charismaFilter = new RangeFilter({header: "Charisma",headerName:"魅力",min: 1, max: 30});
+		this._strengthFilter = new RangeFilter({header: "Strength", headerName: "力量", min: 1, max: 30});
+		this._dexterityFilter = new RangeFilter({header: "Dexterity", headerName: "敏捷", min: 1, max: 30});
+		this._constitutionFilter = new RangeFilter({header: "Constitution", headerName: "體質", min: 1, max: 30});
+		this._intelligenceFilter = new RangeFilter({header: "Intelligence", headerName: "智力", min: 1, max: 30});
+		this._wisdomFilter = new RangeFilter({header: "Wisdom", headerName: "感知", min: 1, max: 30});
+		this._charismaFilter = new RangeFilter({header: "Charisma", headerName: "魅力", min: 1, max: 30});
 		this._abilityScoreFilter = new MultiFilter({
 			header: "Ability Scores",
 			headerName: "屬性值",
 			filters: [this._strengthFilter, this._dexterityFilter, this._constitutionFilter, this._intelligenceFilter, this._wisdomFilter, this._charismaFilter],
 			isAddDropdownToggle: true,
 		});
-		this._acFilter = new RangeFilter({header: "Armor Class", headerName:"護甲等級"});
-		this._averageHpFilter = new RangeFilter({header: "Average Hit Points", headerName:"平均生命值"});
+		this._acFilter = new RangeFilter({header: "Armor Class", headerName: "護甲等級"});
+		this._averageHpFilter = new RangeFilter({header: "Average Hit Points", headerName: "平均生命值"});
 		this._typeFilter = new Filter({
 			header: "Type",
 			headerName: "生物類型",
@@ -93,7 +94,7 @@ class PageFilterBestiary extends PageFilter {
 		this._alignmentFilter = new Filter({
 			header: "Alignment",
 			headerName: "陣營",
-			items: ["L", "NX", "C", "G", "NY", "E", "N", "U", "A"],
+			items: ["L", "NX", "C", "G", "NY", "E", "N", "U", "A", "No Alignment"],
 			displayFn: alignment => Parser.alignmentAbvToFull(alignment).toTitleCase(),
 			itemSortFn: null,
 		});
@@ -106,32 +107,34 @@ class PageFilterBestiary extends PageFilter {
 		});
 		this._damageTypeFilter = new Filter({
 			header: "Damage Inflicted",
-			headerName: "語言",
+			headerName: "造成傷害",
 			displayFn: (it) => Parser.dmgTypeToFull(it).toTitleCase(),
 			items: Object.keys(Parser.DMGTYPE_JSON_TO_FULL),
 		});
 		this._conditionsInflictedFilterBase = new Filter({
 			header: "By Traits/Actions",
-			displayFn: StrUtil.toTitleCase,
+			headerName: "通過特性/動作",
+			displayFn: Parser.ConditionToDisplay,
 			items: [...Parser.CONDITIONS],
 		});
 		this._conditionsInflictedFilterLegendary = new Filter({
-			header: "By Lair Actions/Regional Effects",
-			displayFn: StrUtil.toTitleCase,
+			header: "通過巢穴動作/區域效應",
+			displayFn: Parser.ConditionToDisplay,
 			items: [...Parser.CONDITIONS],
 		});
 		this._conditionsInflictedFilterSpells = new Filter({
 			header: "By Spells",
-			headerName: "施法類性",
-			displayFn: StrUtil.toTitleCase,
+			headerName: "通過法術",
+			displayFn: Parser.ConditionToDisplay,
 			items: [...Parser.CONDITIONS],
 		});
-		this._conditionsInflictedFilter = new MultiFilter({header: "Conditions Inflicted", filters: [this._conditionsInflictedFilterBase, this._conditionsInflictedFilterLegendary, this._conditionsInflictedFilterSpells]});
+		this._conditionsInflictedFilter = new MultiFilter({header: "Conditions Inflicted", headerName: "造成狀態", filters: [this._conditionsInflictedFilterBase, this._conditionsInflictedFilterLegendary, this._conditionsInflictedFilterSpells]});
 		this._senseFilter = new Filter({
 			header: "Senses",
 			headerName: "感官能力",
 			displayFn: (it) => Parser.monSenseTagToFull(it).toTitleCase(),
 			items: ["B", "D", "SD", "T", "U"],
+			itemSortFn: SortUtil.ascSortLower,
 		});
 		this._skillFilter = new Filter({
 			header: "Skills",
@@ -184,8 +187,8 @@ class PageFilterBestiary extends PageFilter {
 			items: [
 				"Aggressive", "Ambusher", "Amorphous", "Amphibious", "Antimagic Susceptibility", "Brute", "Charge", "Damage Absorption", "Death Burst", "Devil's Sight", "False Appearance", "Fey Ancestry", "Flyby", "Hold Breath", "Illumination", "Immutable Form", "Incorporeal Movement", "Keen Senses", "Legendary Resistances", "Light Sensitivity", "Magic Resistance", "Magic Weapons", "Pack Tactics", "Pounce", "Rampage", "Reckless", "Regeneration", "Rejuvenation", "Shapechanger", "Siege Monster", "Sneak Attack", "Spider Climb", "Sunlight Sensitivity", "Turn Immunity", "Turn Resistance", "Undead Fortitude", "Water Breathing", "Web Sense", "Web Walker",
 			],
-			displayFn: function(t){
-				switch(t){
+			displayFn: function (t) {
+				switch (t) {
 					case "Aggressive": return "侵略性";
 					case "Ambusher": return "伏擊者";
 					case "Amorphous": return "無定形";
@@ -208,7 +211,7 @@ class PageFilterBestiary extends PageFilter {
 					case "Light Sensitivity": return "光線敏感";
 					case "Magic Resistance": return "魔法抗性";
 					case "Magic Weapons": return "魔法武器";
-					case "Pack Tactics": return "群體戰術";
+					case "Pack Tactics": return "羣體戰術";
 					case "Pounce": return "猛撲";
 					case "Reckless": return "魯莽";
 					case "Regeneration": return "再生";
@@ -226,7 +229,8 @@ class PageFilterBestiary extends PageFilter {
 					case "Web Sense": return "蛛網感知";
 					case "Web Walker": return "蛛網行者";
 					default: return t;
-			};},
+				}
+			},
 		});
 		this._actionReactionFilter = new Filter({
 			header: "Actions & Reactions",
@@ -234,8 +238,8 @@ class PageFilterBestiary extends PageFilter {
 			items: [
 				"Frightful Presence", "Multiattack", "Parry", "Swallow", "Teleport", "Tentacles",
 			],
-			displayFn: function(a){
-				switch(a){
+			displayFn: function (a) {
+				switch (a) {
 					case "Frightful Presence": return "駭人威儀";
 					case "Multiattack": return "多重攻擊";
 					case "Parry": return "格擋";
@@ -243,34 +247,49 @@ class PageFilterBestiary extends PageFilter {
 					case "Teleport": return "傳送";
 					case "Tentacles": return "觸手";
 					default: return a;
-			};}
+				}
+			},
 		});
 		this._miscFilter = new Filter({
 			header: "Miscellaneous",
 			headerName: "雜項",
 			items: ["Familiar", ...Object.keys(Parser.MON_MISC_TAG_TO_FULL), "Bonus Actions", "Lair Actions", "Legendary", "Mythic", "Adventure NPC", "Spellcaster", ...Object.values(Parser.ATB_ABV_TO_FULL).map(it => `${PageFilterBestiary.MISC_FILTER_SPELLCASTER}${it}`), "Regional Effects", "Reactions", "Swarm", "Has Variants", "Modified Copy", "Has Alternate Token", "Has Info", "Has Images", "Has Token", "SRD", "AC from Item(s)", "AC from Natural Armor", "AC from Unarmored Defense"],
-			displayFn: function(m){
-				switch(m){
+			displayFn: function (m) {
+				switch (m) {
 					case "Familiar": return "魔寵";
+					case "Bonus Actions": return "附贈動作";
 					case "Lair Actions": return "巢穴動作";
 					case "Legendary": return "傳奇";
 					case "Named NPC": return "具名NPC";
 					case "Spellcaster": return "施法者";
-					case "Spellcaster, int": return "施法者,智力";
-					case "Spellcaster, wis": return "施法者,睿知";
-					case "Spellcaster, cha": return "施法者,魅力";
+					case "Spellcaster, 力量": return "施法者，力量";
+					case "Spellcaster, 敏捷": return "施法者，敏捷";
+					case "Spellcaster, 體質": return "施法者，體質";
+					case "Spellcaster, 智力": return "施法者，智力";
+					case "Spellcaster, 感知": return "施法者，感知";
+					case "Spellcaster, 魅力": return "施法者，魅力";
 					case "Regional Effects": return "區域效應";
-					case "Swarm": return "集群";
+					case "Swarm": return "集羣";
 					case "Has Variants": return "擁有變體";
+					case "Has Images": return "擁有圖片";
+					case "Has Info": return "擁有信息";
+					case "Has Token": return "擁有指示物";
+					case "Has Alternate Token": return "擁有差分指示物";
 					case "Reactions": return "反應";
+					case "Adventure NPC": return "冒險NPC";
+					case "AC from Unarmored Defense": return "無甲防禦";
+					case "AC from Natural Armor": return "天生護甲";
+					case "AC from Item(s)": return "物品提供AC";
 					default: return m;
-				};},
+				}
+			},
 			deselFn: (it) => it === "Adventure NPC",
 			itemSortFn: PageFilterBestiary.ascSortMiscFilter,
 			isSrdFilter: true,
 		});
 		this._spellcastingTypeFilter = new Filter({
 			header: "Spellcasting Type",
+			headerName: "施法類型",
 			items: ["F", "I", "P", "S", "CA", "CB", "CC", "CD", "CP", "CR", "CS", "CL", "CW"],
 			displayFn: Parser.monSpellcastingTagToFull,
 		});
@@ -301,7 +320,7 @@ class PageFilterBestiary extends PageFilter {
 			else if (tempAlign.length === 1 && tempAlign.includes("N")) Array.prototype.push.apply(tempAlign, PageFilterBestiary._NEUT_ALIGNS);
 			mon._fAlign = tempAlign;
 		} else {
-			mon._fAlign = null;
+			mon._fAlign = ["No Alignment"];
 		}
 		mon._fVuln = mon.vulnerable ? PageFilterBestiary.getAllImmRest(mon.vulnerable, "vulnerable") : [];
 		mon._fRes = mon.resist ? PageFilterBestiary.getAllImmRest(mon.resist, "resist") : [];
@@ -339,9 +358,9 @@ class PageFilterBestiary extends PageFilter {
 		if (mon.hasFluffImages) mon._fMisc.push("Has Images");
 		(mon.ac || []).forEach(it => {
 			if (!it.from) return;
-			if (it.from.includes("natural armor")) mon._fMisc.push("AC from Natural Armor");
+			if (it.from.includes("natural armor") || it.from.includes("天生護甲")) mon._fMisc.push("AC from Natural Armor");
 			if (it.from.some(x => x.startsWith("{@item "))) mon._fMisc.push("AC from Item(s)");
-			if (it.from.includes("Unarmored Defense")) mon._fMisc.push("AC from Unarmored Defense");
+			if (it.from.includes("Unarmored Defense") || it.from.includes("無甲防禦")) mon._fMisc.push("AC from Unarmored Defense");
 		});
 	}
 
@@ -366,6 +385,7 @@ class PageFilterBestiary extends PageFilter {
 		this._vulnerableFilter.addItem(mon._fVuln);
 		this._resistFilter.addItem(mon._fRes);
 		this._immuneFilter.addItem(mon._fImm);
+		this._senseFilter.addItem(mon.senseTags);
 	}
 
 	async _pPopulateBoxOptions (opts) {
@@ -480,7 +500,7 @@ class ModalFilterBestiary extends ModalFilter {
 		opts = opts || {};
 		super({
 			...opts,
-			modalTitle: "Creatures",
+			modalTitle: `Creature${opts.isRadio ? "" : "s"}`,
 			pageFilter: new PageFilterBestiary(),
 			fnSort: PageFilterBestiary.sortMonsters,
 		})
@@ -507,23 +527,32 @@ class ModalFilterBestiary extends ModalFilter {
 		Renderer.monster.initParsed(mon);
 		pageFilter.mutateAndAddToFilters(mon);
 
-		const eleLabel = document.createElement("label");
-		eleLabel.className = "w-100 flex-vh-center lst--border no-select lst__wrp-cells";
+		const eleRow = document.createElement("div");
+		eleRow.className = "px-0 w-100 flex-col no-shrink";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY](mon);
 		const source = Parser.sourceJsonToAbv(mon.source);
 		const type = mon._pTypes.asText.uppercaseFirst();
 		const cr = mon._pCr;
 
-		eleLabel.innerHTML = `<div class="col-1 pl-0 flex-vh-center"><input type="checkbox" class="no-events"></div>
-		<div class="col-4 bold">${mon.name}</div>
-		<div class="col-4">${type}</div>
-		<div class="col-2 text-center">${cr}</div>
-		<div class="col-1 text-center ${Parser.sourceJsonToColor(mon.source)} pr-0" title="${Parser.sourceJsonToFull(mon.source)}" ${BrewUtil.sourceJsonToStyle(mon.source)}>${source}</div>`;
+		eleRow.innerHTML = `<div class="w-100 flex-vh-center lst--border no-select lst__wrp-cells">
+			<div class="col-0-5 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 
-		return new ListItem(
+			<div class="col-0-5 px-1 flex-vh-center">
+				<div class="ui-list__btn-inline px-2" title="Toggle Preview">[+]</div>
+			</div>
+
+			<div class="col-4 ${this._getNameStyle()}">${mon.name}</div>
+			<div class="col-4">${type}</div>
+			<div class="col-2 text-center">${cr}</div>
+			<div class="col-1 text-center ${Parser.sourceJsonToColor(mon.source)} pr-0" title="${Parser.sourceJsonToFull(mon.source)}" ${BrewUtil.sourceJsonToStyle(mon.source)}>${source}</div>
+		</div>`;
+
+		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
+
+		const listItem = new ListItem(
 			itI,
-			eleLabel,
+			eleRow,
 			mon.name,
 			{
 				hash,
@@ -531,10 +560,17 @@ class ModalFilterBestiary extends ModalFilter {
 				sourceJson: mon.source,
 				type,
 				cr,
+				ENG_name: mon.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(mon),
 			},
 			{
-				cbSel: eleLabel.firstElementChild.firstElementChild,
+				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
+				btnShowHidePreview,
 			},
 		);
+
+		ListUiUtil.bindPreviewButton(UrlUtil.PG_BESTIARY, this._allData, listItem, btnShowHidePreview);
+
+		return listItem;
 	}
 }
