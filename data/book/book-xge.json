@@ -180,190 +180,190 @@
 					],
 					"rows": [
 						[
-							"Barbarian",
-							"{@class 野蠻人|phb|先祖守衛道途|Ancestral Guardian|xge}",
-							"3rd",
-							"Calls on the spirits of honored ancestors to protect others"
+							"野蠻人",
+							"先祖守衛道途",
+							"等級3",
+							"呼喚受尊敬的祖先之靈來保護他人"
 						],
 						[
-							"Barbarian",
-							"{@class Barbarian|phb|Path of the Storm Herald|Storm Herald|xge}",
-							"3rd",
-							"Filled with a rage that channels the primal magic of the storm"
+							"野蠻人",
+							"風暴先驅",
+							"等級3",
+							"充滿怒火，引導著風暴的原始魔法"
 						],
 						[
-							"Barbarian",
-							"{@class Barbarian|phb|Path of the Zealot|Zealot|xge}",
-							"3rd",
-							"Fueled by a religious zeal that visits destruction on foes"
+							"野蠻人",
+							"狂熱者",
+							"等級3",
+							"受宗教狂熱驅使，向敵人帶來毀滅"
+						],
+						[
+							"吟遊詩人",
+							"迷惑學院",
+							"等級3",
+							"操控令人陶醉、輝煌的妖界魔法"
+						],
+						[
+							"吟遊詩人",
+							"劍舞學院",
+							"等級3",
+							"以武器高超技能的大膽壯舉娛樂並斬殺對手"
 						],
 						[
 							"Bard",
-							"{@class Bard|phb|College of Glamour|Glamour|xge}",
-							"3rd",
-							"Wields the beguiling, glorious magic of the Feywild"
+							"低語學院",
+							"等級3",
+							"在他人心中灌輸恐懼和疑慮"
 						],
 						[
-							"Bard",
-							"{@class Bard|phb|College of Swords|Swords|xge}",
-							"3rd",
-							"Entertains and slays with daring feats of weapon prowess"
+							"牧師",
+							"鍛造領域",
+							"等級1",
+							"身著沉重盔甲，事奉鍛造或創造之神"
 						],
 						[
-							"Bard",
-							"{@class Bard|phb|College of Whispers|Whispers|xge}",
-							"3rd",
-							"Plants fear and doubt in the minds of others "
+							"牧師",
+							"墳墓領域",
+							"等級1",
+							"反對不死之災禍"
 						],
 						[
-							"Cleric",
-							"{@class Cleric|phb|Forge Domain|Forge|XGE}",
-							"1st",
-							"Clad in heavy armor, serves a god of the forge or creation"
+							"德魯伊",
+							"夢境結社",
+							"等級2",
+							"修補傷口，守護疲憊者，穿越夢境"
 						],
 						[
-							"Cleric",
-							"{@class Cleric|phb|Grave Domain|Grave|XGE}",
-							"1st",
-							"Opposes the blight of undeath"
+							"德魯伊",
+							"牧人結社",
+							"等級2",
+							"召喚自然精靈以增強盟友並困擾敵人"
 						],
 						[
-							"Druid",
-							"{@class Druid|phb|Circle of Dreams|Dreams|xge}",
-							"2nd",
-							"Mends wounds, guards the weary, and strides through dreams"
+							"戰士",
+							"魔射手",
+							"等級3",
+							"賦予箭矢驚人的魔法效果"
 						],
 						[
-							"Druid",
-							"{@class Druid|phb|Circle of the Shepherd|Shepherd|xge}",
-							"2nd",
-							"Summons nature spirits to bolster friends and harry foes"
+							"戰士",
+							"騎兵",
+							"等級3",
+							"保衛盟友並擊倒敵人，通常騎在馬背上"
 						],
 						[
-							"Fighter",
-							"{@class Fighter|phb|Arcane Archer|Arcane Archer|xge}",
-							"3rd",
-							"Imbues arrows with spectacular magical effects"
+							"戰士",
+							"武士",
+							"等級3",
+							"結合了堅韌不拔、宮廷優雅和強大的攻擊"
 						],
 						[
-							"Fighter",
-							"{@class Fighter|phb|Cavalier|Cavalier|xge}",
-							"3rd",
-							"Defends allies and knocks down enemies, often on horseback"
+							"武僧",
+							"醉拳宗",
+							"等級3",
+							"透過受醉酒者搖擺啟發的武術傳統，使敵人困惑不已"
 						],
 						[
-							"Fighter",
-							"{@class Fighter|phb|Samurai|Samurai|xge}",
-							"3rd",
-							"Combines resilience with courtly elegance and mighty strikes"
+							"武僧",
+							"劍聖宗",
+							"等級3",
+							"透過一套精通的武器引導氣"
 						],
 						[
-							"Monk",
-							"{@class Monk|phb|Way of the Drunken Master|Drunken Master|xge}",
-							"3rd",
-							"Confounds foes through a martial arts tradition inspired by the swaying of a drunkard"
+							"武僧",
+							"日魂宗",
+							"等級3",
+							"將氣轉化為火焰爆裂和灼熱的光箭"
 						],
 						[
-							"Monk",
-							"{@class Monk|phb|Way of the Kensei|Kensei|xge}",
-							"3rd",
-							"Channels ki through a set of mastered weapons"
+							"聖騎士",
+							"征服之誓",
+							"等級3",
+							"在敵人心中灌輸恐懼，粉碎混亂的勢力"
 						],
 						[
-							"Monk",
-							"{@class Monk|phb|Way of the Sun Soul|Sun Soul|xge}",
-							"3rd",
-							"Transforms ki into bursts of fire and searing bolts of light"
+							"聖騎士",
+							"救贖之誓",
+							"等級3",
+							"對值得救贖者提供救贖，對拒絕憐憫或正義的人提供毀滅"
 						],
 						[
-							"Paladin",
-							"{@class Paladin|phb|Oath of Conquest|Conquest|xge}",
-							"3rd",
-							"Strikes terror in enemies and crushes the forces of chaos"
+							"遊俠",
+							"幽域追蹤者",
+							"等級3",
+							"不畏黑暗，無情地追蹤並伏擊敵人"
 						],
 						[
-							"Paladin",
-							"{@class Paladin|phb|Oath of Redemption|Redemption|xge}",
-							"3rd",
-							"Offers redemption to the worthy and destruction to those who refuse mercy or righteousness"
+							"遊俠",
+							"境界行者",
+							"等級3",
+							"尋找通往其他世界的門戶並引導領域魔法"
 						],
 						[
-							"Ranger",
-							"{@class Ranger|phb|Gloom Stalker|Gloom Stalker|xge}",
-							"3rd",
-							"Unafraid of the dark, relentlessly stalks and ambushes foes"
+							"遊俠",
+							"怪物殺手",
+							"等級3",
+							"追捕夜晚的生物和邪惡魔法的行使者"
 						],
 						[
-							"Ranger",
-							"{@class Ranger|phb|Horizon Walker|Horizon Walker|xge}",
-							"3rd",
-							"Finds portals to other worlds and channels planar magic"
-						],
-						[
-							"Ranger",
-							"{@class Ranger|phb|Monster Slayer|Monster Slayer|xge}",
-							"3rd",
-							"Hunts down creatures of the night and wielders of grim magic"
-						],
-						[
-							"Rogue",
-							"{@class Rogue|phb|Inquisitive|Inquisitive|xge}",
-							"3rd",
+							"盜賊",
+							"審訊者",
+							"等級3",
 							"Roots out secrets, akin to a masterful detective"
 						],
 						[
-							"Rogue",
-							"{@class Rogue|phb|Mastermind|Mastermind|xge}",
-							"3rd",
-							"A master tactician, manipulates others"
+							"盜賊",
+							"策士",
+							"等級3",
+							"精湛的策士，操控他人"
 						],
 						[
-							"Rogue",
-							"{@class Rogue|phb|Scout|Scout|xge}",
-							"3rd",
-							"Combines stealth with a knack for survival"
+							"盜賊",
+							"斥侯",
+							"等級3",
+							"結合潛行技能與對生存的天賦"
 						],
 						[
-							"Rogue",
-							"{@class Rogue|phb|Swashbuckler|Swashbuckler|xge}",
-							"3rd",
-							"Delivers deadly strikes with speed and panache "
+							"盜賊",
+							"風流劍客",
+							"等級3",
+							"以迅疾和華麗的風格交付致命打擊"
 						],
 						[
-							"Sorcerer",
-							"{@class Sorcerer|phb|Divine Soul|Divine Soul|xge}",
-							"1st",
-							"Harnesses magic bestowed by a god or other divine source"
+							"術士",
+							"神聖之魂",
+							"等級1",
+							"利用由神或其他神聖來源賜予的魔法"
 						],
 						[
-							"Sorcerer",
-							"{@class Sorcerer|phb|Shadow Magic|Shadow|xge}",
-							"1st",
-							"Wields the grim magic of the Shadowfell"
+							"術士",
+							"幽影魔法",
+							"等級1",
+							"揮舞來自影界的陰森魔法"
 						],
 						[
-							"Sorcerer",
-							"{@class Sorcerer|phb|Storm Sorcery|Storm|xge}",
-							"1st",
-							"Crackles with the power of the storm"
+							"術士",
+							"暴風術法",
+							"等級1",
+							"充滿風暴之力的爆裂"
 						],
 						[
-							"Warlock",
-							"{@class Warlock|phb|The Celestial|Celestial|xge}",
-							"1st",
-							"Forges a pact with a being from celestial realms"
+							"契術師",
+							"天界宗主",
+							"等級1",
+							"與來自天界的存在締結契約"
 						],
 						[
-							"Warlock",
-							"{@class Warlock|phb|The Hexblade|Hexblade|xge}",
-							"1st",
-							"Serves a shadowy entity that bestows dread curses"
+							"契術師",
+							"咒劍士",
+							"等級1",
+							"服侍一個陰影實體，賜予可怕的詛咒"
 						],
 						[
-							"Wizard",
-							"{@class Wizard|phb|War Magic|War|xge}",
-							"2nd",
-							"Mixes evocation and abjuration magic to dominate the battlefield"
+							"法師",
+							"戰爭魔法",
+							"等級2",
+							"結合召喚和結界魔法，以主宰戰場"
 						]
 					]
 				},
