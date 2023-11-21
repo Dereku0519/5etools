@@ -9,18 +9,18 @@
 				"{@i 姍納薩的萬事指南} 是 D&D 第五版的第一個主要規則擴展，為遊戲提供了大量新選項。 珊娜薩可能無法實現其了解一切的夢想，但這本書確實深入研究了遊戲的每個主要部分：冒險家、他們的冒險以及他們所使用的魔法。",
 				{
 					"type": "section",
-					"name": "Using this Book",
+					"name": "使用本書",
 					"page": 4,
 					"entries": [
-						"Written for both players and Dungeon Masters, this book offers options to enhance campaigns in any world, whether you're adventuring in the Forgotten Realms, another official D&D setting, or a world of your own creation. The options here build on the official rules contained within the player's handbook, the monster manual, and the dungeon master's guide. Think of this book as the companion to those volumes. It builds on their foundation, exploring pathways first laid in those publications. Nothing herein is required for a D&D campaign\u2014this is not a fourth core rulebook\u2014but we hope it will provide you new ways to enjoy the game.",
-						"Chapter 1 offers character options that expand on those offered in the player's handbook. Chapter 2 is a toolkit for the DM that provides new resources for running the game and designing adventures, all of it building on the Monster Manual and the Dungeon Master's Guide. Chapter 3 presents new spells for player characters and spellcasting monsters to unleash.",
-						"Appendix A provides guidance on running a shared campaign, similar to the activities staged by the D&D Adventurers League, and appendix B contains a host of tables that allow you to quickly generate names for the characters in your D&D stories.",
-						"As you peruse the many options herein, you'll come across observations from Xanathar itself. Like the beholder's roving mind, your reading will take you to places in the game familiar and new. May you enjoy the journey!",
+						"這本書是為玩家和地下城主而寫的，它提供了增強任何世界中戰役的選項，無論你是在被遺忘的國度、另一個官方D&D 設定，還是你自己創造的世界中冒險。這裡的選項建立在官方的基礎上玩家手冊、怪物手冊和地下城主指南中包含的規則。將本書與這些手冊一起使用。它建立在這些手冊的基礎上，將這些規則延伸出去。遊玩D&D 這本書的任何內容不是必要的\u2014這不是第四本核心規則手冊\u2014但我們希望它能為您提供享受遊戲的新方式。",
+						"第一章提供了對玩家手冊中提供的內容進行擴展的角色選項。 第 2 章是 DM 的工具包，為運行遊戲和設計冒險提供了新的資源，所有這些都建立在《怪物手冊》和《地下城主指南》的基礎上。 第 3 章介紹了供玩家角色和施法怪物使用的新法術。",
+						"附錄 A 提供了運行共享活動的指南，類似於 D&D 冒險家聯盟舉辦的活動，附錄 B 包含大量表格，可讓您快速為 D&D 故事中的角色產生名稱。",
+						"當您仔細閱讀本文中的許多選項時，您會透過珊娜薩本身的觀察。 就像魔眼的游移思維一樣，你的閱讀將帶你到遊戲中熟悉和陌生的地方。 祝您旅途愉快！",
 						{
 							"type": "inset",
-							"name": "Unearthed Arcana",
+							"name": "出土的奧秘",
 							"entries": [
-								"Much of the material in this book originally appeared in Unearthed Arcana, a series of online articles we publish to explore rules that might officially become part of the game. Some Unearthed Arcana offerings don't end up resonating with fans and are set aside for the time being. The Unearthed Arcana material that inspired the options in the following chapters was well received and, thanks to feedback from thousands of you, has been refined into the official forms presented here."
+								"本書中的大部分內容最初出現在出土的奧秘中，這是我們發布的一系列線上文章，旨在探索可能正式成為遊戲一部分的規則。 一些出土的奧秘項目最終沒有引起粉絲的共鳴，因此暫時被擱置。 後續章節中的選項提供靈感的出土的奧秘受到了好評，並且由於成千上萬的反饋，已被完善為此處呈現的官方形式。"
 							],
 							"id": "002"
 						}
@@ -29,7 +29,7 @@
 				},
 				{
 					"type": "section",
-					"name": "The Core Rules",
+					"name": "核心規則",
 					"page": 5,
 					"entries": [
 						"This book relies on the rules in the three core rulebooks. The game especially makes frequent use of the rules in chapters 7-10 of the player's handbook: \"Using Ability Scores,\" \"Adventuring,\" \"Combat,\" and \"Spellcasting.\" That book's appendix A is also crucial; it contains definitions of conditions, like {@condition invisible} and {@condition prone}. You don't need to know the rules by heart, but it's helpful to know where to find them when you need them.",
