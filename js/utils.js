@@ -7,7 +7,7 @@ if (IS_NODE) require("./parser.js");
 
 // in deployment, `IS_DEPLOYED = "<version number>";` should be set below.
 IS_DEPLOYED = undefined;
-VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.122.8"/* 5ETOOLS_VERSION__CLOSE */;
+VERSION_NUMBER = /* 5ETOOLS_VERSION__OPEN */"1.129.0"/* 5ETOOLS_VERSION__CLOSE */;
 DEPLOYED_STATIC_ROOT = ""; // "https://static.5etools.com/"; // FIXME re-enable this when we have a CDN again
 // for the roll20 script to set
 IS_VTT = false;
@@ -204,7 +204,14 @@ String.prototype.toChunks = String.prototype.toChunks || function (size) {
 	return chunks
 };
 
-Array.prototype.joinConjunct = Array.prototype.joinConjunct || function (joiner, lastJoiner, nonOxford) {
+String.prototype.toAscii = String.prototype.toAscii || function () {
+	return this
+		.normalize("NFD") // replace diacritics with their individual graphemes
+		.replace(/[\u0300-\u036f]/g, "") // remove accent graphemes
+		.replace(/Æ/g, "AE").replace(/æ/g, "ae");
+};
+
+Array.prototype.joinConjunct = Array.prototype.joinConjunct || function (joiner, lastJoiner, nonOxford = true) {
 	if (this.length === 0) return "";
 	if (this.length === 1) return this[0];
 	if (this.length === 2) return this.join(lastJoiner);
@@ -285,6 +292,7 @@ CleanUtil = {
 };
 CleanUtil.SHARED_REPLACEMENTS = {
 	"’": "'",
+	"": "'",
 	"…": "...",
 	" ": " ", // non-breaking space
 	"ﬀ": "ff",
@@ -328,6 +336,9 @@ SourceUtil = {
 		const fromLookup = MiscUtil.get(SourceUtil._subclassReprintLookup, classSource, className, subclassSource, subclassShortName);
 		return fromLookup ? fromLookup.isReprinted : false;
 	},
+
+	/** I.e., not homebrew. */
+	isSiteSource (source) { return !!Parser.SOURCE_JSON_TO_FULL[source]; },
 
 	isAdventure (source) {
 		if (source instanceof FilterItem) source = source.item;
@@ -712,8 +723,9 @@ ElementUtil = {
 		ele,
 		title,
 		children,
+		outer,
 	}) {
-		ele = ele || document.createElement(tag);
+		ele = ele || (outer ? (new DOMParser()).parseFromString(outer, "text/html").body.childNodes[0] : document.createElement(tag));
 
 		if (clazz) ele.className = clazz;
 		if (style) ele.setAttribute("style", style);
@@ -723,9 +735,9 @@ ElementUtil = {
 		if (mousedown) ele.addEventListener("mousedown", mousedown);
 		if (mouseup) ele.addEventListener("mouseup", mouseup);
 		if (mousemove) ele.addEventListener("mousemove", mousemove);
-		if (html) ele.innerHTML = html;
-		if (text) ele.innerHTML = `${text}`.qq();
-		if (title) ele.setAttribute("title", title);
+		if (html != null) ele.innerHTML = html;
+		if (text != null) ele.innerHTML = `${text}`.qq();
+		if (title != null) ele.setAttribute("title", title);
 		if (children) for (let i = 0, len = children.length; i < len; ++i) ele.append(children[i]);
 
 		ele.appends = ele.appends || ElementUtil._appends.bind(ele);
@@ -742,6 +754,8 @@ ElementUtil = {
 		ele.attr = ele.attr || ElementUtil._attr.bind(ele);
 		ele.val = ele.val || ElementUtil._val.bind(ele);
 		ele.html = ele.html || ElementUtil._html.bind(ele);
+		ele.onClick = ele.onClick || ElementUtil._onClick.bind(ele);
+		ele.onContextmenu = ele.onContextmenu || ElementUtil._onContextmenu.bind(ele);
 
 		return ele;
 	},
@@ -812,6 +826,11 @@ ElementUtil = {
 		this.innerHTML = html;
 		return this;
 	},
+
+	_onClick (fn) { return ElementUtil._onX(this, "click", fn); },
+	_onContextmenu (fn) { return ElementUtil._onX(this, "contextmenu", fn); },
+
+	_onX (ele, evtName, fn) { ele.addEventListener(evtName, fn); return ele; },
 
 	_val (val) {
 		if (val !== undefined) {
@@ -1240,7 +1259,7 @@ MiscUtil = {
 	 * @param [opts]
 	 * @param [opts.keyBlacklist]
 	 * @param [opts.isAllowDeleteObjects] If returning `undefined` from an object handler should be treated as a delete.
-	 * @param [opts.isAllowDeleteArrays] (Unimplemented) // TODO
+	 * @param [opts.isAllowDeleteArrays] If returning `undefined` from an array handler should be treated as a delete.
 	 * @param [opts.isAllowDeleteBooleans] (Unimplemented) // TODO
 	 * @param [opts.isAllowDeleteNumbers] (Unimplemented) // TODO
 	 * @param [opts.isAllowDeleteStrings] (Unimplemented) // TODO
@@ -1251,23 +1270,9 @@ MiscUtil = {
 		opts = opts || {};
 		const keyBlacklist = opts.keyBlacklist || new Set();
 
-		function applyHandlers (handlers, obj, lastKey, stack) {
-			if (!(handlers instanceof Array)) handlers = [handlers];
-			handlers.forEach(h => {
-				const out = h(obj, lastKey, stack);
-				if (!opts.isNoModification) obj = out;
-			});
-			return obj;
-		}
-
-		function runHandlers (handlers, obj, lastKey, stack) {
-			if (!(handlers instanceof Array)) handlers = [handlers];
-			handlers.forEach(h => h(obj, lastKey, stack));
-		}
-
 		const fn = (obj, primitiveHandlers, lastKey, stack) => {
 			if (obj == null) {
-				if (primitiveHandlers.null) return applyHandlers(primitiveHandlers.null, obj, lastKey, stack);
+				if (primitiveHandlers.null) return MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.null, obj, lastKey, stack});
 				return obj;
 			}
 
@@ -1284,40 +1289,40 @@ MiscUtil = {
 			const to = typeof obj;
 			switch (to) {
 				case undefined:
-					if (primitiveHandlers.preUndefined) runHandlers(primitiveHandlers.preUndefined, obj, lastKey, stack);
+					if (primitiveHandlers.preUndefined) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preUndefined, obj, lastKey, stack});
 					if (primitiveHandlers.undefined) {
-						const out = applyHandlers(primitiveHandlers.undefined, obj, lastKey, stack);
+						const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.undefined, obj, lastKey, stack});
 						if (!opts.isNoModification) obj = out;
 					}
-					if (primitiveHandlers.postUndefined) runHandlers(primitiveHandlers.postUndefined, obj, lastKey, stack);
+					if (primitiveHandlers.postUndefined) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postUndefined, obj, lastKey, stack});
 					return obj;
 				case "boolean":
-					if (primitiveHandlers.preBoolean) runHandlers(primitiveHandlers.preBoolean, obj, lastKey, stack);
+					if (primitiveHandlers.preBoolean) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preBoolean, obj, lastKey, stack});
 					if (primitiveHandlers.boolean) {
-						const out = applyHandlers(primitiveHandlers.boolean, obj, lastKey, stack);
+						const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.boolean, obj, lastKey, stack});
 						if (!opts.isNoModification) obj = out;
 					}
-					if (primitiveHandlers.postBoolean) runHandlers(primitiveHandlers.postBoolean, obj, lastKey, stack);
+					if (primitiveHandlers.postBoolean) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postBoolean, obj, lastKey, stack});
 					return obj;
 				case "number":
-					if (primitiveHandlers.preNumber) runHandlers(primitiveHandlers.preNumber, obj, lastKey, stack);
+					if (primitiveHandlers.preNumber) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preNumber, obj, lastKey, stack});
 					if (primitiveHandlers.number) {
-						const out = applyHandlers(primitiveHandlers.number, obj, lastKey, stack);
+						const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.number, obj, lastKey, stack});
 						if (!opts.isNoModification) obj = out;
 					}
-					if (primitiveHandlers.postNumber) runHandlers(primitiveHandlers.postNumber, obj, lastKey, stack);
+					if (primitiveHandlers.postNumber) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postNumber, obj, lastKey, stack});
 					return obj;
 				case "string":
-					if (primitiveHandlers.preString) runHandlers(primitiveHandlers.preString, obj, lastKey, stack);
+					if (primitiveHandlers.preString) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preString, obj, lastKey, stack});
 					if (primitiveHandlers.string) {
-						const out = applyHandlers(primitiveHandlers.string, obj, lastKey, stack);
+						const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.string, obj, lastKey, stack});
 						if (!opts.isNoModification) obj = out;
 					}
-					if (primitiveHandlers.postString) runHandlers(primitiveHandlers.postString, obj, lastKey, stack);
+					if (primitiveHandlers.postString) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postString, obj, lastKey, stack});
 					return obj;
 				case "object": {
 					if (obj instanceof Array) {
-						if (primitiveHandlers.preArray) runHandlers(primitiveHandlers.preArray, obj, lastKey, stack);
+						if (primitiveHandlers.preArray) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preArray, obj, lastKey, stack});
 						if (opts.isDepthFirst) {
 							if (stack) stack.push(obj);
 							const out = obj.map(it => fn(it, primitiveHandlers, lastKey, stack));
@@ -1325,28 +1330,35 @@ MiscUtil = {
 							if (stack) stack.pop();
 
 							if (primitiveHandlers.array) {
-								const out = applyHandlers(primitiveHandlers.array, obj, lastKey, stack);
+								const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.array, obj, lastKey, stack});
 								if (!opts.isNoModification) obj = out;
+							}
+							if (obj == null) {
+								if (!opts.isAllowDeleteArrays) throw new Error(`Array handler(s) returned null!`);
 							}
 						} else {
 							if (primitiveHandlers.array) {
-								const out = applyHandlers(primitiveHandlers.array, obj, lastKey, stack);
+								const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.array, obj, lastKey, stack});
 								if (!opts.isNoModification) obj = out;
 							}
-							const out = obj.map(it => fn(it, primitiveHandlers, lastKey, stack));
-							if (!opts.isNoModification) obj = out;
+							if (obj != null) {
+								const out = obj.map(it => fn(it, primitiveHandlers, lastKey, stack));
+								if (!opts.isNoModification) obj = out;
+							} else {
+								if (!opts.isAllowDeleteArrays) throw new Error(`Array handler(s) returned null!`);
+							}
 						}
-						if (primitiveHandlers.postArray) runHandlers(primitiveHandlers.postArray, obj, lastKey, stack);
+						if (primitiveHandlers.postArray) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postArray, obj, lastKey, stack});
 						return obj;
 					} else {
-						if (primitiveHandlers.preObject) runHandlers(primitiveHandlers.preObject, obj, lastKey, stack);
+						if (primitiveHandlers.preObject) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.preObject, obj, lastKey, stack});
 						if (opts.isDepthFirst) {
 							if (stack) stack.push(obj);
 							doObjectRecurse();
 							if (stack) stack.pop();
 
 							if (primitiveHandlers.object) {
-								const out = applyHandlers(primitiveHandlers.object, obj, lastKey, stack);
+								const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.object, obj, lastKey, stack});
 								if (!opts.isNoModification) obj = out;
 							}
 							if (obj == null) {
@@ -1354,7 +1366,7 @@ MiscUtil = {
 							}
 						} else {
 							if (primitiveHandlers.object) {
-								const out = applyHandlers(primitiveHandlers.object, obj, lastKey, stack);
+								const out = MiscUtil._getWalker_applyHandlers({opts, handlers: primitiveHandlers.object, obj, lastKey, stack});
 								if (!opts.isNoModification) obj = out;
 							}
 							if (obj == null) {
@@ -1363,7 +1375,7 @@ MiscUtil = {
 								doObjectRecurse();
 							}
 						}
-						if (primitiveHandlers.postObject) runHandlers(primitiveHandlers.postObject, obj, lastKey, stack);
+						if (primitiveHandlers.postObject) MiscUtil._getWalker_runHandlers({handlers: primitiveHandlers.postObject, obj, lastKey, stack});
 						return obj;
 					}
 				}
@@ -1372,6 +1384,164 @@ MiscUtil = {
 		};
 
 		return {walk: fn};
+	},
+
+	_getWalker_applyHandlers ({opts, handlers, obj, lastKey, stack}) {
+		handlers = handlers instanceof Array ? handlers : [handlers];
+		handlers.forEach(h => {
+			const out = h(obj, lastKey, stack);
+			if (!opts.isNoModification) obj = out;
+		});
+		return obj;
+	},
+
+	_getWalker_runHandlers ({handlers, obj, lastKey, stack}) {
+		handlers = handlers instanceof Array ? handlers : [handlers];
+		handlers.forEach(h => h(obj, lastKey, stack));
+	},
+
+	/**
+	 * @param [opts]
+	 * @param [opts.keyBlacklist]
+	 * @param [opts.isAllowDeleteObjects] If returning `undefined` from an object handler should be treated as a delete.
+	 * @param [opts.isAllowDeleteArrays] If returning `undefined` from an array handler should be treated as a delete.
+	 * @param [opts.isAllowDeleteBooleans] (Unimplemented) // TODO
+	 * @param [opts.isAllowDeleteNumbers] (Unimplemented) // TODO
+	 * @param [opts.isAllowDeleteStrings] (Unimplemented) // TODO
+	 * @param [opts.isDepthFirst] If array/object recursion should occur before array/object primitive handling.
+	 * @param [opts.isNoModification] If the walker should not attempt to modify the data.
+	 */
+	getAsyncWalker (opts) {
+		opts = opts || {};
+		const keyBlacklist = opts.keyBlacklist || new Set();
+
+		const pFn = async (obj, primitiveHandlers, lastKey, stack) => {
+			if (obj == null) {
+				if (primitiveHandlers.null) return MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.null, obj, lastKey, stack});
+				return obj;
+			}
+
+			const pDoObjectRecurse = async () => {
+				await Object.keys(obj).pSerialAwaitMap(async k => {
+					const v = obj[k];
+					if (keyBlacklist.has(k)) return;
+					const out = await pFn(v, primitiveHandlers, k, stack);
+					if (!opts.isNoModification) obj[k] = out;
+				});
+			};
+
+			const to = typeof obj;
+			switch (to) {
+				case undefined:
+					if (primitiveHandlers.preUndefined) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preUndefined, obj, lastKey, stack});
+					if (primitiveHandlers.undefined) {
+						const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.undefined, obj, lastKey, stack});
+						if (!opts.isNoModification) obj = out;
+					}
+					if (primitiveHandlers.postUndefined) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postUndefined, obj, lastKey, stack});
+					return obj;
+				case "boolean":
+					if (primitiveHandlers.preBoolean) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preBoolean, obj, lastKey, stack});
+					if (primitiveHandlers.boolean) {
+						const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.boolean, obj, lastKey, stack});
+						if (!opts.isNoModification) obj = out;
+					}
+					if (primitiveHandlers.postBoolean) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postBoolean, obj, lastKey, stack});
+					return obj;
+				case "number":
+					if (primitiveHandlers.preNumber) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preNumber, obj, lastKey, stack});
+					if (primitiveHandlers.number) {
+						const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.number, obj, lastKey, stack});
+						if (!opts.isNoModification) obj = out;
+					}
+					if (primitiveHandlers.postNumber) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postNumber, obj, lastKey, stack});
+					return obj;
+				case "string":
+					if (primitiveHandlers.preString) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preString, obj, lastKey, stack});
+					if (primitiveHandlers.string) {
+						const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.string, obj, lastKey, stack});
+						if (!opts.isNoModification) obj = out;
+					}
+					if (primitiveHandlers.postString) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postString, obj, lastKey, stack});
+					return obj;
+				case "object": {
+					if (obj instanceof Array) {
+						if (primitiveHandlers.preArray) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preArray, obj, lastKey, stack});
+						if (opts.isDepthFirst) {
+							if (stack) stack.push(obj);
+							const out = await obj.pSerialAwaitMap(it => pFn(it, primitiveHandlers, lastKey, stack));
+							if (!opts.isNoModification) obj = out;
+							if (stack) stack.pop();
+
+							if (primitiveHandlers.array) {
+								const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.array, obj, lastKey, stack});
+								if (!opts.isNoModification) obj = out;
+							}
+							if (obj == null) {
+								if (!opts.isAllowDeleteArrays) throw new Error(`Array handler(s) returned null!`);
+							}
+						} else {
+							if (primitiveHandlers.array) {
+								const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.array, obj, lastKey, stack});
+								if (!opts.isNoModification) obj = out;
+							}
+							if (obj != null) {
+								const out = await obj.pSerialAwaitMap(it => pFn(it, primitiveHandlers, lastKey, stack));
+								if (!opts.isNoModification) obj = out;
+							} else {
+								if (!opts.isAllowDeleteArrays) throw new Error(`Array handler(s) returned null!`);
+							}
+						}
+						if (primitiveHandlers.postArray) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postArray, obj, lastKey, stack});
+						return obj;
+					} else {
+						if (primitiveHandlers.preObject) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.preObject, obj, lastKey, stack});
+						if (opts.isDepthFirst) {
+							if (stack) stack.push(obj);
+							await pDoObjectRecurse();
+							if (stack) stack.pop();
+
+							if (primitiveHandlers.object) {
+								const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.object, obj, lastKey, stack});
+								if (!opts.isNoModification) obj = out;
+							}
+							if (obj == null) {
+								if (!opts.isAllowDeleteObjects) throw new Error(`Object handler(s) returned null!`);
+							}
+						} else {
+							if (primitiveHandlers.object) {
+								const out = await MiscUtil._getAsyncWalker_pApplyHandlers({opts, handlers: primitiveHandlers.object, obj, lastKey, stack});
+								if (!opts.isNoModification) obj = out;
+							}
+							if (obj == null) {
+								if (!opts.isAllowDeleteObjects) throw new Error(`Object handler(s) returned null!`);
+							} else {
+								await pDoObjectRecurse();
+							}
+						}
+						if (primitiveHandlers.postObject) await MiscUtil._getAsyncWalker_pRunHandlers({handlers: primitiveHandlers.postObject, obj, lastKey, stack});
+						return obj;
+					}
+				}
+				default: throw new Error(`Unhandled type "${to}"`);
+			}
+		};
+
+		return {pWalk: pFn};
+	},
+
+	async _getAsyncWalker_pApplyHandlers ({opts, handlers, obj, lastKey, stack}) {
+		handlers = handlers instanceof Array ? handlers : [handlers];
+		await handlers.pSerialAwaitMap(async pH => {
+			const out = await pH(obj, lastKey, stack);
+			if (!opts.isNoModification) obj = out;
+		});
+		return obj;
+	},
+
+	async _getAsyncWalker_pRunHandlers ({handlers, obj, lastKey, stack}) {
+		handlers = handlers instanceof Array ? handlers : [handlers];
+		await handlers.pSerialAwaitMap(pH => pH(obj, lastKey, stack));
 	},
 
 	pDefer (fn) {
@@ -1559,6 +1729,18 @@ UrlUtil = {
 		const encoder = UrlUtil.URL_TO_HASH_BUILDER[curPage];
 		if (!encoder) throw new Error(`No encoder found for page ${curPage}`);
 		return encoder(obj);
+	},
+
+	autoEncodeEngHash (obj) {
+		if (!obj.ENG_name) return null;
+		const curPage = UrlUtil.getCurrentPage();
+		const encoder = UrlUtil.URL_TO_ENG_HASH_BUILDER[curPage];
+		if (!encoder) throw new Error(`No encoder found for page ${curPage}`);
+		return encoder(obj);
+	},
+
+	decodeHash (hash) {
+		return hash.split(HASH_LIST_SEP).map(it => decodeURIComponent(it));
 	},
 
 	getCurrentPage () {
@@ -1804,6 +1986,7 @@ UrlUtil.PG_TEXT_CONVERTER = "converter.html";
 UrlUtil.PG_CHANGELOG = "changelog.html";
 UrlUtil.PG_CHAR_CREATION_OPTIONS = "charcreationoptions.html";
 UrlUtil.PG_RECIPES = "recipes.html";
+UrlUtil.PG_CLASS_SUBCLASS_FEATURES = "classfeatures.html";
 
 UrlUtil.URL_TO_HASH_BUILDER = {};
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_BESTIARY] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
@@ -1830,6 +2013,7 @@ UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ACTIONS] = (it) => UrlUtil.encodeForHash(
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_LANGUAGES] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CHAR_CREATION_OPTIONS] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_RECIPES] = (it) => `${UrlUtil.encodeForHash([it.name, it.source])}${it._scaleFactor ? `${HASH_PART_SEP}${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}${it._scaleFactor}` : ""}`;
+UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_CLASS_SUBCLASS_FEATURES] = (it) => (it.__prop === "subclassFeature" || it.subclassSource) ? UrlUtil.URL_TO_HASH_BUILDER["subclassFeature"](it) : UrlUtil.URL_TO_HASH_BUILDER["classFeature"](it);
 // region Fake pages (props)
 UrlUtil.URL_TO_HASH_BUILDER["subclass"] = it => {
 	const hashParts = [
@@ -1844,6 +2028,47 @@ UrlUtil.URL_TO_HASH_BUILDER["legendaryGroup"] = (it) => UrlUtil.encodeForHash([i
 UrlUtil.URL_TO_HASH_BUILDER["legendarygroup"] = UrlUtil.URL_TO_HASH_BUILDER["legendaryGroup"];
 UrlUtil.URL_TO_HASH_BUILDER["itemEntry"] = (it) => UrlUtil.encodeForHash([it.name, it.source]);
 UrlUtil.URL_TO_HASH_BUILDER["itementry"] = UrlUtil.URL_TO_HASH_BUILDER["itemEntry"];
+
+UrlUtil.URL_TO_ENG_HASH_BUILDER = {};
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BESTIARY] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_SPELLS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BACKGROUNDS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ITEMS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CLASSES] = (it) => UrlUtil.encodeForHash([Parser.ClassToDisplay(it.ENG_name), it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CONDITIONS_DISEASES] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_FEATS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_OPT_FEATURES] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_PSIONICS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_RACES] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_REWARDS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_VARIANTRULES] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ADVENTURE] = (it) => UrlUtil.encodeForHash(it.id);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_BOOK] = (it) => UrlUtil.encodeForHash(it.id);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_DEITIES] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.pantheon, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CULTS_BOONS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_OBJECTS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TRAPS_HAZARDS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_TABLES] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_VEHICLES] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_ACTIONS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_STATGEN] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_LANGUAGES] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CHAR_CREATION_OPTIONS] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_RECIPES] = (it) => `${UrlUtil.encodeForHash([it.ENG_name, it.source])}${it._scaleFactor ? `${HASH_PART_SEP}${VeCt.HASH_SCALED}${HASH_SUB_KV_SEP}${it._scaleFactor}` : ""}`;
+// region Fake pages (props)
+UrlUtil.URL_TO_ENG_HASH_BUILDER["subclass"] = it => {
+	const hashParts = [
+		UrlUtil.URL_TO_ENG_HASH_BUILDER[UrlUtil.PG_CLASSES]({name: it.className, source: it.classSource}),
+		UrlUtil.packSubHash("state", [`${UrlUtil.getStateKeySubclass(it)}=${UrlUtil.mini.compress(true)}`]),
+	].filter(Boolean);
+	return Hist.util.getCleanHash(hashParts.join(HASH_PART_SEP));
+};
+UrlUtil.URL_TO_ENG_HASH_BUILDER["classFeature"] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.className, it.classSource, it.level, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["subclassFeature"] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.className, it.classSource, it.subclassShortName, it.subclassSource, it.level, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["legendaryGroup"] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["legendarygroup"] = UrlUtil.URL_TO_ENG_HASH_BUILDER["legendaryGroup"];
+UrlUtil.URL_TO_ENG_HASH_BUILDER["itemEntry"] = (it) => UrlUtil.encodeForHash([it.ENG_name, it.source]);
+UrlUtil.URL_TO_ENG_HASH_BUILDER["itementry"] = UrlUtil.URL_TO_ENG_HASH_BUILDER["itemEntry"];
 // endregion
 
 UrlUtil.PG_TO_NAME = {};
@@ -1885,6 +2110,7 @@ UrlUtil.PG_TO_NAME[UrlUtil.PG_TEXT_CONVERTER] = "Text Converter";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_CHANGELOG] = "Changelog";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_CHAR_CREATION_OPTIONS] = "Other Character Creation Options";
 UrlUtil.PG_TO_NAME[UrlUtil.PG_RECIPES] = "Recipes";
+UrlUtil.PG_TO_NAME[UrlUtil.PG_CLASS_SUBCLASS_FEATURES] = "Class & Subclass Features";
 
 UrlUtil.CAT_TO_PAGE = {};
 UrlUtil.CAT_TO_PAGE[Parser.CAT_ID_CREATURE] = UrlUtil.PG_BESTIARY;
@@ -2000,6 +2226,7 @@ SortUtil = {
 	},
 
 	_ascSort: (a, b) => {
+		if (typeof a === "string" && typeof b === "string") return a.localeCompare(b);
 		if (b === a) return 0;
 		return b < a ? 1 : -1;
 	},
@@ -2012,7 +2239,10 @@ SortUtil = {
 		return SortUtil.ascSortDate(new Date(a || "1970-01-0"), new Date(b || "1970-01-0"));
 	},
 
-	compareListNames (a, b) { return SortUtil._ascSort(a.name.toLowerCase(), b.name.toLowerCase()); },
+	compareListNames (a, b) {
+		if (!!a.data?.entity?.ENG_name && !!b.data?.entity?.ENG_name) return SortUtil._ascSort(a.data.entity.ENG_name.toLowerCase(), b.data.entity.ENG_name.toLowerCase());
+		return SortUtil._ascSort(a.name.toLowerCase(), b.name.toLowerCase());
+	},
 
 	listSort (a, b, opts) {
 		opts = opts || {sortBy: "name"};
@@ -2193,13 +2423,20 @@ DataUtil = {
 
 	async _pDoMetaMerge (ident, data, options) {
 		if (data._meta) {
+			const loadedSourceIds = new Set();
+
 			if (data._meta.dependencies) {
 				await Promise.all(Object.entries(data._meta.dependencies).map(async ([dataProp, sourceIds]) => {
+					sourceIds.forEach(sourceId => loadedSourceIds.add(sourceId));
+
 					if (!data[dataProp]) return; // if e.g. monster dependencies are declared, but there are no monsters to merge with, bail out
 
+					const isHasInternalCopies = (data._meta.internalCopies || []).includes(dataProp);
+
 					const dependencyData = await Promise.all(sourceIds.map(sourceId => DataUtil.pLoadByMeta(dataProp, sourceId)));
+
 					const flatDependencyData = dependencyData.map(dd => dd[dataProp]).flat();
-					await Promise.all(data[dataProp].map(entry => DataUtil._pDoMetaMerge_handleCopyProp(dataProp, flatDependencyData, entry, options)));
+					await Promise.all(data[dataProp].map(entry => DataUtil._pDoMetaMerge_handleCopyProp(dataProp, flatDependencyData, entry, {...options, isErrorOnMissing: !isHasInternalCopies})));
 				}));
 				delete data._meta.dependencies;
 			}
@@ -2208,10 +2445,32 @@ DataUtil = {
 				for (const prop of data._meta.internalCopies) {
 					if (!data[prop]) continue;
 					for (const entry of data[prop]) {
-						await DataUtil._pDoMetaMerge_handleCopyProp(prop, data[prop], entry, options);
+						await DataUtil._pDoMetaMerge_handleCopyProp(prop, data[prop], entry, {...options, isErrorOnMissing: true});
 					}
 				}
 				delete data._meta.internalCopies;
+			}
+
+			// Load any other included data
+			if (data._meta.includes) {
+				const includesData = await Promise.all(Object.entries(data._meta.includes).map(async ([dataProp, sourceIds]) => {
+					// Avoid re-loading any sources we already loaded as dependencies
+					sourceIds = sourceIds.filter(it => !loadedSourceIds.has(it));
+
+					sourceIds.forEach(sourceId => loadedSourceIds.add(sourceId));
+
+					// This loads the brew as a side-effect
+					const includesData = await Promise.all(sourceIds.map(sourceId => DataUtil.pLoadByMeta(dataProp, sourceId)));
+
+					const flatIncludesData = includesData.map(dd => dd[dataProp]).flat();
+					return {dataProp, flatIncludesData};
+				}));
+				delete data._meta.includes;
+
+				// Add the includes data to our current data
+				includesData.forEach(({dataProp, flatIncludesData}) => {
+					data[dataProp] = [...data[dataProp] || [], ...flatIncludesData];
+				});
 			}
 		}
 
@@ -2248,9 +2507,13 @@ DataUtil = {
 		return `${toCsv(headers)}\n${rows.map(r => toCsv(r)).join("\n")}`;
 	},
 
-	userDownload (filename, data) {
-		if (typeof data !== "string") data = JSON.stringify(data, null, "\t");
-		return DataUtil._userDownload(`${filename}.json`, data, "text/json");
+	userDownload (filename, data, {fileType = null, isSipAdditionalMetadata = false} = {}) {
+		filename = `${filename}.json`
+		if (isSipAdditionalMetadata || data instanceof Array) return DataUtil._userDownload(filename, JSON.stringify(data, null, "\t"), "text/json");
+
+		data = {siteVersion: VERSION_NUMBER, ...data};
+		if (fileType != null) data = {fileType, ...data};
+		return DataUtil._userDownload(filename, JSON.stringify(data, null, "\t"), "text/json");
 	},
 
 	userDownloadText (filename, string) {
@@ -2269,20 +2532,41 @@ DataUtil = {
 		document.body.removeChild(a);
 	},
 
-	pUserUpload () {
+	/** Always returns an array of files, even in "single" mode. */
+	pUserUpload ({isMultiple = false, expectedFileType = null} = {}) {
 		return new Promise(resolve => {
-			const $iptAdd = $(`<input type="file" accept=".json" style="position: fixed; top: -100px; left: -100px; display: none;">`).on("change", (evt) => {
+			const $iptAdd = $(`<input type="file" ${isMultiple ? "multiple" : ""} accept=".json" style="position: fixed; top: -100px; left: -100px; display: none;">`).on("change", (evt) => {
 				const input = evt.target;
 
 				const reader = new FileReader();
-				reader.onload = () => {
+				let readIndex = 0;
+				const out = [];
+				reader.onload = async () => {
+					const name = input.files[readIndex - 1].name;
+
 					const text = reader.result;
 					const json = JSON.parse(text);
-					resolve(json);
+
+					const isSkipFile = expectedFileType != null && json.fileType && json.fileType !== expectedFileType && !(await InputUiUtil.pGetUserBoolean({
+						textYes: "Yes",
+						textNo: "Cancel",
+						title: "File Type Mismatch",
+						htmlDescription: `The file "${name}" has the type "${json.fileType}" when the expected file type was "${expectedFileType}".<br>Are you sure you want to upload this file?`,
+					}));
+
+					if (!isSkipFile) {
+						delete json.fileType;
+						delete json.siteVersion;
+
+						out.push(json);
+					}
+
+					if (input.files[readIndex]) reader.readAsText(input.files[readIndex++]);
+					else resolve(out);
 				};
 
-				reader.readAsText(input.files[0]);
-			}).appendTo($(`body`));
+				reader.readAsText(input.files[readIndex++]);
+			}).appendTo(document.body);
 			$iptAdd.click();
 		});
 	},
@@ -2308,21 +2592,21 @@ DataUtil = {
 		}
 	},
 
-	async pLoadByMeta (key, value) {
+	async pLoadByMeta (prop, source) {
 		// TODO(future) allow value to be e.g. a string (assumed to be an official data's source); an object e.g. `{type: external, url: <>}`,...
 		// TODO(future) expand support
 
-		switch (key) {
+		switch (prop) {
 			// region Multi-source
 			case "monster":
 			case "spell":
 			case "monsterFluff":
 			case "spellFluff": {
-				const baseUrlPart = `${Renderer.get().baseUrl}data/${(key === "monster" || key === "monsterFluff") ? "bestiary" : "spells"}`;
-				const index = await DataUtil.loadJSON(`${baseUrlPart}/${key === "monster" || key === "spell" ? "index.json" : "fluff-index.json"}`);
-				if (index[value]) return DataUtil.loadJSON(`${baseUrlPart}/${index[value]}`);
+				const baseUrlPart = `${Renderer.get().baseUrl}data/${(prop === "monster" || prop === "monsterFluff") ? "bestiary" : "spells"}`;
+				const index = await DataUtil.loadJSON(`${baseUrlPart}/${prop === "monster" || prop === "spell" ? "index.json" : "fluff-index.json"}`);
+				if (index[source]) return DataUtil.loadJSON(`${baseUrlPart}/${index[source]}`);
 
-				return DataUtil._pLoadByMeta_pGetFromBrew(key, value);
+				return DataUtil.pLoadBrewBySource(source);
 			}
 			// endregion
 
@@ -2330,17 +2614,19 @@ DataUtil = {
 			// case "itemFluff":
 			// case "deity":
 			case "background":
+			case "optionalfeature":
 			case "raceFluff": {
 				let url;
-				switch (key) {
+				switch (prop) {
 					case "background": url = `${Renderer.get().baseUrl}data/backgrounds.json`; break;
+					case "optionalfeature": url = `${Renderer.get().baseUrl}data/optionalfeatures.json`; break;
 					case "raceFluff": url = `${Renderer.get().baseUrl}data/fluff-races.json`; break;
 				}
 
 				const data = await DataUtil.loadJSON(url);
-				if (data[key] && data[key].some(it => it.source === value)) return data;
+				if (data[prop] && data[prop].some(it => it.source === source)) return data;
 
-				return DataUtil._pLoadByMeta_pGetFromBrew(key, value);
+				return DataUtil.pLoadBrewBySource(source);
 			}
 			// endregion
 
@@ -2348,20 +2634,26 @@ DataUtil = {
 			// case "item":
 			case "race": {
 				const data = await DataUtil.race.loadJSON({isAddBaseRaces: true});
-				if (data[key] && data[key].some(it => it.source === value)) return data;
-				return DataUtil._pLoadByMeta_pGetFromBrew(key, value);
+				if (data[prop] && data[prop].some(it => it.source === source)) return data;
+				return DataUtil.pLoadBrewBySource(source);
 			}
 			// endregion
 
-			default: throw new Error(`Could not get loadable URL for \`${JSON.stringify({key, value})}\``);
+			default: throw new Error(`Could not get loadable URL for \`${JSON.stringify({key: prop, value: source})}\``);
 		}
 	},
 
-	async _pLoadByMeta_pGetFromBrew (key, value) {
+	// TODO(Future) Note that a case-insensitive variant of this is built into the renderer, which could be factored out
+	//   to this level if required.
+	async pLoadBrewBySource (source, {isSilent = true} = {}) {
 		const brewIndex = await DataUtil.brew.pLoadSourceIndex();
-		if (!brewIndex[value]) throw new Error(`Neither base nor brew index contained source "${value}"`);
+		if (!brewIndex[source]) {
+			if (isSilent) return null;
+			throw new Error(`Neither base nor brew index contained source "${source}"`);
+		}
+
 		const urlRoot = await StorageUtil.pGet(`HOMEBREW_CUSTOM_REPO_URL`);
-		const brewUrl = DataUtil.brew.getFileUrl(brewIndex[value], urlRoot);
+		const brewUrl = DataUtil.brew.getFileUrl(brewIndex[source], urlRoot);
 		await BrewUtil.pDoHandleBrewJson((await DataUtil.loadJSON(brewUrl)), UrlUtil.getCurrentPage());
 		return DataUtil.loadJSON(brewUrl);
 	},
@@ -2401,7 +2693,15 @@ DataUtil = {
 			if (entry._copy) {
 				const hash = UrlUtil.URL_TO_HASH_BUILDER[page](entry._copy);
 				const it = impl._mergeCache[hash] || DataUtil.generic._pMergeCopy_search(impl, page, entryList, entry, options);
-				if (!it) return;
+
+				if (!it) {
+					if (options.isErrorOnMissing) {
+						// In development/script mode, throw an exception
+						if (!IS_DEPLOYED && !IS_VTT) throw new Error(`Could not find ${page} entity ${entry._copy.name} (${entry._copy.source}) to copy in copier ${entry.name} (${entry.source})`);
+					}
+					return;
+				}
+
 				if (DataUtil.dbg.isTrackCopied) it.dbg_isCopied = true;
 				// Handle recursive copy
 				if (it._copy) await DataUtil.generic._pMergeCopy(impl, page, entryList, it, options);
@@ -2414,20 +2714,15 @@ DataUtil = {
 			return entryList.find(it => {
 				const hash = UrlUtil.URL_TO_HASH_BUILDER[page](it);
 				impl._mergeCache[hash] = it;
-				if (hash === entryHash)
-				{
+				if (hash === entryHash) {
 					return true;
-				}
-				else if (it.ENG_name != undefined) // for ENG_name
-				{
-					var it2 = Object.assign({}, it);
+				} else if (it.ENG_name !== undefined) {
+					const it2 = Object.assign({}, it);
 					it2.name = it.ENG_name;
 					const eng_hash = UrlUtil.URL_TO_HASH_BUILDER[page](it2);
 					impl._mergeCache[eng_hash] = it;
 					return eng_hash === entryHash;
-				}
-				else
-				{
+				} else {
 					return false;
 				}
 			});
@@ -2471,9 +2766,9 @@ DataUtil = {
 
 			const copyToRootProps = new Set(Object.keys(copyTo));
 
-			if(!copyFrom){
+			if (!copyFrom) {
 				console.warn("not found", copyTo._copy);
-				return ;
+				return;
 			}
 			// copy over required values
 			Object.keys(copyFrom).forEach(k => {
@@ -2481,8 +2776,7 @@ DataUtil = {
 				if (copyTo[k] == null) {
 					if (impl._MERGE_REQUIRES_PRESERVE[k]) {
 						if (copyTo._copy._preserve && copyTo._copy._preserve[k]) copyTo[k] = copyFrom[k];
-					}
-					else copyTo[k] = copyFrom[k];
+					} else copyTo[k] = copyFrom[k];
 				}
 			});
 
@@ -2547,10 +2841,9 @@ DataUtil = {
 			function doMod_appendIfNotExistsArr (modInfo, prop) {
 				doEnsureArray(modInfo, "items");
 				if (!copyTo[prop]) return copyTo[prop] = modInfo.items;
-				// 	copyTo[prop] = copyTo[prop].concat(modInfo.items.filter(it => !copyTo[prop].some(x => CollectionUtil.deepEquals(it, x)))); 不懂原本的寫法為什麼會一直顯示錯誤...
+				// 	copyTo[prop] = copyTo[prop].concat(modInfo.items.filter(it => !copyTo[prop].some(x => CollectionUtil.deepEquals(it, x)))); 不懂原本的寫法爲什麼會一直顯示錯誤...
 				copyTo[prop] = copyTo[prop].concat(modInfo.items.filter(it => {
-					for (var x in copyTo[prop])
-					{
+					for (let x in copyTo[prop]) {
 						if (CollectionUtil.deepEquals(it, x)) return false;
 					}
 					return true;
@@ -2579,8 +2872,8 @@ DataUtil = {
 					copyTo[prop].splice(ixOld, 1, ...modInfo.items);
 					return true;
 				} else if (isThrow) {
-					console.warn("cannot find "+prop+" item with name "+modInfo.replace+" to replace");
-					//throw new Error(`Could not find "${prop}" item with name "${modInfo.replace}" to replace`);
+					console.warn(`Could not find "${prop}" item with name "${modInfo.replace}" to replace`);
+					// throw new Error(`Could not find "${prop}" item with name "${modInfo.replace}" to replace`);
 				}
 				return false;
 			}
@@ -2603,8 +2896,7 @@ DataUtil = {
 						const ixOld = copyTo[prop].findIndex(it => it.name === nameToRemove || it.ENG_name === nameToRemove);
 						if (~ixOld) copyTo[prop].splice(ixOld, 1);
 						else {
-							if (!modInfo.force)
-							{
+							if (!modInfo.force) {
 								throw new Error(`Could not find "${prop}" item with name "${nameToRemove}" to remove`);
 							}
 						}
@@ -2964,8 +3256,7 @@ DataUtil = {
 		populateMetaReference (data) {
 			(data.legendaryGroup || []).forEach(it => {
 				(DataUtil.monster.metaGroupMap[it.source] =
-					DataUtil.monster.metaGroupMap[it.source] || {})[it.name] =
-					DataUtil.monster.metaGroupMap[it.source][it.name] || it;
+					DataUtil.monster.metaGroupMap[it.source] || {})[it.name] = it;
 			});
 		},
 	},
@@ -3151,6 +3442,22 @@ DataUtil = {
 			};
 		},
 
+		isValidClassFeatureUid (uid) {
+			const {name, className, level} = DataUtil.class.unpackUidClassFeature(uid);
+			return !(!name || !className || isNaN(level));
+		},
+
+		packUidClassFeature (f) {
+			// <name>|<className>|<classSource>|<level>|<source>
+			return [
+				f.name,
+				f.className,
+				f.classSource === SRC_PHB ? "" : f.classSource, // assume the class has PHB source
+				f.level,
+				f.source === f.classSource ? "" : f.source, // assume the class feature has the class source
+			].join("|").replace(/\|+$/, ""); // Trim trailing pipes
+		},
+
 		/**
 		 * @param uid
 		 * @param [opts]
@@ -3174,6 +3481,24 @@ DataUtil = {
 				source,
 				displayText,
 			};
+		},
+
+		isValidSubclassFeatureUid (uid) {
+			const {name, className, subclassShortName, level} = DataUtil.class.unpackUidSubclassFeature(uid);
+			return !(!name || !className || !subclassShortName || isNaN(level));
+		},
+
+		packUidSubclassFeature (f) {
+			// <name>|<className>|<classSource>|<subclassShortName>|<subclassSource>|<level>|<source>
+			return [
+				f.name,
+				f.className,
+				f.classSource === SRC_PHB ? "" : f.classSource, // assume the class has the PHB source
+				f.subclassShortName,
+				f.subclassSource === SRC_PHB ? "" : f.subclassSource, // assume the subclass has the PHB source
+				f.level,
+				f.source === f.subclassSource ? "" : f.source, // assume the feature has the same source as the subclass
+			].join("|").replace(/\|+$/, ""); // Trim trailing pipes
 		},
 
 		_mutEntryNestLevel (feature) {
@@ -3281,6 +3606,43 @@ DataUtil = {
 
 			return sc;
 		},
+
+		// region Subclass lookup
+		_CACHE_SUBCLASS_LOOKUP_PROMISE: null,
+		_CACHE_SUBCLASS_LOOKUP: null,
+		async pGetSubclassLookup () {
+			DataUtil.class._CACHE_SUBCLASS_LOOKUP_PROMISE = DataUtil.class._CACHE_SUBCLASS_LOOKUP_PROMISE || (async () => {
+				const subclassLookup = {};
+				Object.assign(subclassLookup, await DataUtil.loadJSON(`${Renderer.get().baseUrl}data/generated/gendata-subclass-lookup.json`));
+				const homebrew = await BrewUtil.pAddBrewData();
+				DataUtil.class.mergeHomebrewSubclassLookup(subclassLookup, homebrew);
+				DataUtil.class._CACHE_SUBCLASS_LOOKUP = subclassLookup;
+			})();
+			await DataUtil.class._CACHE_SUBCLASS_LOOKUP_PROMISE;
+			return DataUtil.class._CACHE_SUBCLASS_LOOKUP;
+		},
+
+		mergeHomebrewSubclassLookup (subclassLookup, homebrew) {
+			(homebrew.class || [])
+				.filter(it => it.subclasses)
+				.forEach(c => {
+					const target = MiscUtil.getOrSet(subclassLookup, c.source, c.name, {});
+					c.subclasses.forEach(sc => {
+						sc.source = sc.source || c.source;
+						sc.shortName = sc.shortName || sc.name;
+						MiscUtil.getOrSet(target, sc.source, sc.shortName, {name: sc.name});
+					});
+				});
+
+			(homebrew.subclass || [])
+				.forEach(sc => {
+					const clSrc = sc.classSource || SRC_PHB;
+					sc.shortName = sc.shortName || sc.name;
+					const target = MiscUtil.getOrSet(subclassLookup, clSrc, sc.className, {});
+					MiscUtil.set(target, sc.source, sc.shortName, {name: sc.name});
+				});
+		},
+		// endregion
 	},
 
 	deity: {
@@ -3400,7 +3762,10 @@ DataUtil = {
 					"col-2 text-center",
 					"col-10",
 				],
-				rows: tableRaw.table.map(it => [`${it.min}${it.max && it.max !== it.min ? `-${it.max}` : ""}`, it.result]),
+				rows: tableRaw.table.map(it => [
+					`${it.min}${it.max && it.max !== it.min ? `-${it.max}` : ""}`,
+					it.result.replace(RollerUtil.DICE_REGEX, (...m) => `{@dice ${m[0]}}`),
+				]),
 			};
 		},
 	},
@@ -3940,23 +4305,15 @@ BrewUtil = {
 
 		await BrewUtil._pRenderBrewScreen_pRefreshBrewList($brewList);
 
-		const $iptAdd = $(`<input multiple type="file" accept=".json" style="display: none;">`)
-			.change(evt => {
-				const input = evt.target;
-
-				let readIndex = 0;
-				const reader = new FileReader();
-				reader.onload = async () => {
-					const json = JSON.parse(reader.result);
-
+		const $btnLoadFromFile = $(`<button class="btn btn-default btn-sm mr-2">Upload File</button>`)
+			.click(async () => {
+				const files = await DataUtil.pUserUpload({isMultiple: true});
+				if (!files) return;
+				for (const json of files) {
 					await DataUtil.pDoMetaMerge(CryptUtil.uid(), json);
 
 					await BrewUtil.pDoHandleBrewJson(json, page, BrewUtil._pRenderBrewScreen_pRefreshBrewList.bind(this, $brewList));
-
-					if (input.files[readIndex]) reader.readAsText(input.files[readIndex++]);
-					else $(evt.target).val(""); // reset the input
-				};
-				reader.readAsText(input.files[readIndex++]);
+				}
 			});
 
 		const $btnLoadFromUrl = $(`<button class="btn btn-default btn-sm mr-2">Load from URL</button>`)
@@ -4007,7 +4364,7 @@ BrewUtil = {
 					${$btnGet}
 					${$btnCustomUrl}
 				</div>
-				<label role="button" class="btn btn-default btn-sm mr-2">Upload File${$iptAdd}</label>
+				${$btnLoadFromFile}
 				${$btnLoadFromUrl}
 			</div>
 			<div class="flex-v-center">
@@ -4030,7 +4387,7 @@ BrewUtil = {
 			let cached;
 			if ($ele) {
 				cached = $ele.html();
-				$ele.text("Loading...");
+				$ele.text("加載中...");
 			}
 			if (doUnescape) jsonUrl = jsonUrl.unescapeQuotes();
 			const data = await DataUtil.loadJSON(`${jsonUrl}?${(new Date()).getTime()}`);
@@ -4047,7 +4404,7 @@ BrewUtil = {
 
 		const $btnAll = $(`<button class="btn btn-default btn-xs" disabled title="(Excluding samples)">Add All</button>`);
 
-		const $wrpRows = $$`<div class="list"><div class="lst__row flex-col"><div class="lst__wrp-cells lst--border lst__row-inner flex w-100"><span style="font-style: italic;">Loading...</span></div></div></div>`;
+		const $wrpRows = $$`<div class="list"><div class="lst__row flex-col"><div class="lst__wrp-cells lst--border lst__row-inner flex w-100"><span style="font-style: italic;">加載中...</span></div></div></div>`;
 
 		const $iptSearch = $(`<input type="search" class="search manbrew__search form-control w-100" placeholder="Find homebrew...">`)
 			.keydown(evt => {
@@ -4220,7 +4577,13 @@ BrewUtil = {
 
 		list.init();
 
-		$btnAll.prop("disabled", false).click(() => list.visibleItems.filter(it => !it.data.isSample).forEach(it => it.data.$btnAdd.click()));
+		$btnAll
+			.prop("disabled", false)
+			.click(async () => {
+				const toAdd = list.visibleItems.filter(it => !it.data.isSample);
+				if (toAdd.length > 10 && !await InputUiUtil.pGetUserBoolean({title: "Are you sure?", htmlDescription: `<div>You area about to load ${toAdd.length} homebrew files.<br>Loading large quantities of homebrew can lead to performance and stability issues.</div>`, textYes: "Continue"})) return;
+				toAdd.forEach(it => it.data.$btnAdd.click());
+			});
 
 		if ($btnToggleDisplayNonPageBrews) {
 			$btnToggleDisplayNonPageBrews
@@ -4552,6 +4915,7 @@ BrewUtil = {
 			case UrlUtil.PG_LANGUAGES: return ["language", "languageScript"];
 			case UrlUtil.PG_CHAR_CREATION_OPTIONS: return ["charoption"];
 			case UrlUtil.PG_RECIPES: return ["recipe"];
+			case UrlUtil.PG_CLASS_SUBCLASS_FEATURES: return ["classFeature", "subclassFeature"];
 			default: throw new Error(`No homebrew properties defined for category ${page}`);
 		}
 	},
@@ -4737,7 +5101,7 @@ BrewUtil = {
 		const {$modalInner} = UiUtil.getShowModal({
 			isHeight100: true,
 			isWidth100: true,
-			title: `Manage Homebrew`,
+			title: `管理自制內容`,
 			isUncappedHeight: true,
 			$titleSplit: BrewUtil._$getBtnDeleteAll(true),
 			isHeaderBorder: true,
@@ -4932,6 +5296,7 @@ BrewUtil = {
 			case UrlUtil.PG_LANGUAGES:
 			case UrlUtil.PG_CHAR_CREATION_OPTIONS:
 			case UrlUtil.PG_RECIPES:
+			case UrlUtil.PG_CLASS_SUBCLASS_FEATURES:
 				await (BrewUtil._pHandleBrew || handleBrew)(MiscUtil.copy(toAdd));
 				break;
 			case UrlUtil.PG_MAKE_BREW:
@@ -5127,6 +5492,7 @@ BrewUtil = {
 			// Run these in serial, to prevent any ID race condition antics
 			for (const IX_DEF of INDEX_DEFINITIONS) {
 				for (const arbiter of IX_DEF) {
+					if (arbiter.isSkipBrew) continue;
 					if (!(BrewUtil.homebrew[arbiter.brewProp || arbiter.listProp] || []).length) continue;
 
 					if (arbiter.pFnPreProcBrew) {
@@ -5520,11 +5886,17 @@ Array.prototype.mergeMap = Array.prototype.mergeMap || function (fnMap) {
 	return this.map((...args) => fnMap(...args)).reduce((a, b) => Object.assign(a, b), {});
 };
 
+Array.prototype.first = Array.prototype.first || function (fnMapFind) {
+	for (let i = 0, len = this.length; i < len; ++i) {
+		const result = fnMapFind(this[i], i, this);
+		if (result) return result;
+	}
+};
+
 /** Map each item via an async function, awaiting for each to complete before starting the next. */
 Array.prototype.pSerialAwaitMap = Array.prototype.pSerialAwaitMap || async function (fnMap) {
 	const out = [];
-	const len = this.length;
-	for (let i = 0; i < len; ++i) out.push(await fnMap(this[i], i));
+	for (let i = 0, len = this.length; i < len; ++i) out.push(await fnMap(this[i], i, this));
 	return out;
 };
 
@@ -5725,7 +6097,7 @@ function BookModeView (opts) {
 			$selColumns.change();
 
 			$wrpControlsToPass = $$`<div class="w-100 flex">
-				<div class="flex-vh-center"><div class="mr-2 no-wrap help--subtle" title="Applied when printing the page.">Print columns:</div>${$selColumns}</div>
+				<div class="flex-vh-center"><div class="mr-2 no-wrap help-subtle" title="Applied when printing the page.">Print columns:</div>${$selColumns}</div>
 			</div>`.appendTo($wrpControls);
 		}
 		// endregion
@@ -5922,7 +6294,7 @@ EncounterUtil = {
 	getEncounterName (encounter) {
 		if (encounter.l && encounter.l.items && encounter.l.items.length) {
 			const largestCount = encounter.l.items.sort((a, b) => SortUtil.ascSort(Number(b.c), Number(a.c)))[0];
-			const name = decodeURIComponent(largestCount.h.split(HASH_LIST_SEP)[0]).toTitleCase();
+			const name = (UrlUtil.decodeHash(largestCount.h)[0] || "(Unnamed)").toTitleCase();
 			return `Encounter with ${name} ×${largestCount.c}`;
 		} else return "(Unnamed Encounter)"
 	},
@@ -6111,23 +6483,25 @@ _Donate = {
 	// endregion
 };
 
-//==================
+// ==================
 // Haz code
 Parser.keyToDisplay = {};
 Parser.languageKeyToDisplay = {};
 Parser.itemKeyToDisplay = {};
 
-Parser.translateKeyInMapToDisplay = function(map, key){
-	if(typeof key === "string" || key instanceof String){
+Parser.translateKeyInMapToDisplay = function (map, key) {
+	if (typeof key === "string" || key instanceof String) {
 		let lowercase_key = key.toLowerCase();
-		if(map[lowercase_key]!=null)	return map[lowercase_key];
+		if (map[lowercase_key]) {
+			return map[lowercase_key];
+		}
 	}
 	return key;
 }
-Parser.translateKeyToDisplay = function(common_key){
+Parser.translateKeyToDisplay = function (common_key) {
 	return Parser.translateKeyInMapToDisplay(Parser.keyToDisplay, common_key);
 }
-Parser.translateItemKeyToDisplay = function(item_key){
+Parser.translateItemKeyToDisplay = function (item_key) {
 	return Parser.translateKeyInMapToDisplay(Parser.itemKeyToDisplay, item_key);
 }
 
@@ -6136,291 +6510,403 @@ Parser.keyToDisplay["str"] = "力量";
 Parser.keyToDisplay["dex"] = "敏捷";
 Parser.keyToDisplay["con"] = "體質";
 Parser.keyToDisplay["int"] = "智力";
-Parser.keyToDisplay["wis"] = "睿知";
+Parser.keyToDisplay["wis"] = "感知";
 Parser.keyToDisplay["cha"] = "魅力";
-Parser.AtrAbvToDisplay = function(atr_abv){
+Parser.AtrAbvToDisplay = function (atr_abv) {
 	return Parser.translateKeyToDisplay(atr_abv);
 }
-//Race
+// Race
 Parser.raceKeyToDisplay = {};
-Parser.raceKeyToDisplay["aasimar"]  	= "阿斯莫";
-Parser.raceKeyToDisplay["dragonborn"]  	= "龍裔";
-Parser.raceKeyToDisplay["dwarf"]  		= "矮人";
-Parser.raceKeyToDisplay["elf"]  		= "精靈";
-Parser.raceKeyToDisplay["gnome"]  		= "地侏";
-Parser.raceKeyToDisplay["genasi"]  		= "元素裔";
-Parser.raceKeyToDisplay["triton"]  		= "梭螺魚人";
-Parser.raceKeyToDisplay["firbolg"]  	= "費爾伯格";
-Parser.raceKeyToDisplay["siren"]  		= "賽壬";
-Parser.raceKeyToDisplay["half-elf"]  	= "半精靈";
-Parser.raceKeyToDisplay["half-orc"]  	= "半獸人";
-Parser.raceKeyToDisplay["halfling"]  	= "半身人";
-Parser.raceKeyToDisplay["human"]  		= "人類";
-Parser.raceKeyToDisplay["tiefling"]  	= "提夫林";
-Parser.raceKeyToDisplay["gith"]  		= "吉斯人";
+Parser.raceKeyToDisplay["aasimar"] = "阿斯莫";
+Parser.raceKeyToDisplay["dragonborn"] = "龍裔";
+Parser.raceKeyToDisplay["dwarf"] = "矮人";
+Parser.raceKeyToDisplay["elf"] = "精靈";
+Parser.raceKeyToDisplay["gnome"] = "侏儒";
+Parser.raceKeyToDisplay["genasi"] = "元素裔";
+Parser.raceKeyToDisplay["triton"] = "梭螺魚人";
+Parser.raceKeyToDisplay["firbolg"] = "費爾伯格";
+Parser.raceKeyToDisplay["siren"] = "賽壬";
+Parser.raceKeyToDisplay["half-elf"] = "半精靈";
+Parser.raceKeyToDisplay["half-orc"] = "半獸人";
+Parser.raceKeyToDisplay["halfling"] = "半身人";
+Parser.raceKeyToDisplay["human"] = "人類";
+Parser.raceKeyToDisplay["tiefling"] = "提夫林";
+Parser.raceKeyToDisplay["gith"] = "吉斯人";
 Parser.raceKeyToDisplay["orc"] 			= "獸人";
 Parser.raceKeyToDisplay["kobold"] 		= "狗頭人";
-Parser.raceKeyToDisplay["a small race"]  	= "小體型種族";
-Parser.raceKeyToDisplay["small race"]  	= "小體型種族";
-Parser.raceKeyToDisplay["yuan-ti pureblood"]= "純血蛇人";
-Parser.raceKeyToDisplay["vampire (ixalan)"] = "吸血鬼(依夏蘭)";
-Parser.raceKeyToDisplay["elf (zendikar)"]	= "精靈(贊迪卡)";
+Parser.raceKeyToDisplay["a small race"] = "小體型種族";
+Parser.raceKeyToDisplay["small race"] = "小體型種族";
+Parser.raceKeyToDisplay["yuan-ti pureblood"] = "純血蛇人";
+Parser.raceKeyToDisplay["vampire (ixalan)"] = "吸血鬼 (依夏蘭)";
+Parser.raceKeyToDisplay["elf (zendikar)"]	= "精靈 (贊迪卡)";
 
-//Subrace
+// Subrace
 Parser.subraceKeyToDisplay = {};
 Parser.subraceKeyToDisplay["earth"] = "土"; // 元素裔
-Parser.subraceKeyToDisplay["air"]   = "氣";
+Parser.subraceKeyToDisplay["air"] = "氣";
 Parser.subraceKeyToDisplay["water"] = "水";
-Parser.subraceKeyToDisplay["fire"]  = "火";
-Parser.subraceKeyToDisplay["drow"]  = "卓爾"; // 精靈
-Parser.subraceKeyToDisplay["eladrin"]= "雅靈";
-Parser.subraceKeyToDisplay["high"]  = "高等";
-Parser.subraceKeyToDisplay["wood"]  = "木";
-Parser.subraceKeyToDisplay["avariel"]   = "翼精靈";
-Parser.subraceKeyToDisplay["grugach"]   = "野精靈";
-Parser.subraceKeyToDisplay["sea"]       = "海";
-Parser.subraceKeyToDisplay["shadar-kai"]= "影靈";
-Parser.subraceKeyToDisplay["aereni"]    = "艾瑞尼";
-Parser.subraceKeyToDisplay["Valenar"]   = "維歐諾爾";
-Parser.subraceKeyToDisplay["mark of shadow"]= "影龍紋";
-Parser.subraceKeyToDisplay["mul daya nation"]  = "慕達雅族"; // 精靈贊迪卡
-Parser.subraceKeyToDisplay["forest"]= "林"; // 地侏
-Parser.subraceKeyToDisplay["rock"]  = "岩";
-Parser.subraceKeyToDisplay["deep"]  = "地底";
-Parser.subraceKeyToDisplay["fallen"]= "墮落"; // 阿斯莫
-Parser.subraceKeyToDisplay["scourge"]= "天譴";
-Parser.subraceKeyToDisplay["protector"]= "守護者";
-Parser.subraceKeyToDisplay["duergar"]= "灰"; // 矮人
-Parser.subraceKeyToDisplay["githyanki"]= "吉斯洋基"; // 吉斯人
-Parser.subraceKeyToDisplay["githzerai"]= "吉斯澤萊";
-Parser.subraceKeyToDisplay["drow descent"]= "卓爾血統"; // 半精靈
-Parser.subraceKeyToDisplay["variant"]= "變體"; // 提夫林
-Parser.subraceKeyToDisplay["asmodeus"]= "阿斯莫德";
-Parser.subraceKeyToDisplay["levistus"]= "萊維斯圖斯";
-Parser.subraceKeyToDisplay["fierna"]= "菲爾娜";
-Parser.subraceKeyToDisplay["mammon"]= "瑪門";
-Parser.subraceKeyToDisplay["dispater"]= "狄斯帕特";
-Parser.subraceKeyToDisplay["mephistopheles"]= "梅菲斯托費勒斯";
-Parser.subraceKeyToDisplay["glasya"]= "格萊希亞";
-Parser.subraceKeyToDisplay["zariel"]= "扎瑞爾";
-Parser.subraceKeyToDisplay["baalzebul"]= "巴力西卜";
-Parser.subraceKeyToDisplay[""]= "";
+Parser.subraceKeyToDisplay["fire"] = "火";
+Parser.subraceKeyToDisplay["drow"] = "卓爾"; // 精靈
+Parser.subraceKeyToDisplay["eladrin"] = "雅靈";
+Parser.subraceKeyToDisplay["high"] = "高等";
+Parser.subraceKeyToDisplay["wood"] = "木";
+Parser.subraceKeyToDisplay["avariel"] = "翼精靈";
+Parser.subraceKeyToDisplay["grugach"] = "野精靈";
+Parser.subraceKeyToDisplay["sea"] = "海";
+Parser.subraceKeyToDisplay["shadar-kai"] = "影靈";
+Parser.subraceKeyToDisplay["aereni"] = "艾瑞尼";
+Parser.subraceKeyToDisplay["Valenar"] = "維歐諾爾";
+Parser.subraceKeyToDisplay["mark of shadow"] = "陰影龍紋";
+Parser.subraceKeyToDisplay["mul daya nation"] = "慕達雅族"; // 精靈贊迪卡
+Parser.subraceKeyToDisplay["forest"] = "林"; // 侏儒
+Parser.subraceKeyToDisplay["rock"] = "巖";
+Parser.subraceKeyToDisplay["deep"] = "地底";
+Parser.subraceKeyToDisplay["fallen"] = "墮落"; // 阿斯莫
+Parser.subraceKeyToDisplay["scourge"] = "天譴";
+Parser.subraceKeyToDisplay["protector"] = "守護者";
+Parser.subraceKeyToDisplay["duergar"] = "灰"; // 矮人
+Parser.subraceKeyToDisplay["githyanki"] = "吉斯洋基"; // 吉斯人
+Parser.subraceKeyToDisplay["githzerai"] = "吉斯澤萊";
+Parser.subraceKeyToDisplay["drow descent"] = "卓爾血統"; // 半精靈
+Parser.subraceKeyToDisplay["variant"] = "變體"; // 提夫林
+Parser.subraceKeyToDisplay["asmodeus"] = "阿斯莫德";
+Parser.subraceKeyToDisplay["levistus"] = "萊維斯圖斯";
+Parser.subraceKeyToDisplay["fierna"] = "菲爾娜";
+Parser.subraceKeyToDisplay["mammon"] = "瑪門";
+Parser.subraceKeyToDisplay["dispater"] = "狄斯帕特";
+Parser.subraceKeyToDisplay["mephistopheles"] = "梅菲斯托費勒斯";
+Parser.subraceKeyToDisplay["glasya"] = "格萊希亞";
+Parser.subraceKeyToDisplay["zariel"] = "扎瑞爾";
+Parser.subraceKeyToDisplay["baalzebul"] = "巴力西卜";
 
-Parser.RaceToDisplay = function(race){
+Parser.RaceToDisplay = function (race) {
 	let trans_race = Parser.translateKeyInMapToDisplay(Parser.raceKeyToDisplay, race);
-	if(race===trans_race){
+	if (race === trans_race) {
 		let r_match = race.match(/(.*)( ?\(([^(]*)\))$/);
-		if(r_match && r_match[2]){
-			let main_race = Parser.translateKeyInMapToDisplay(Parser.raceKeyToDisplay, r_match[1].replace(/ *$/,""));
-			let sub_race  = Parser.translateKeyInMapToDisplay(Parser.subraceKeyToDisplay, r_match[3]);
-			return main_race + "(" + sub_race + ")";
+		if (r_match && r_match[2]) {
+			let main_race = Parser.translateKeyInMapToDisplay(Parser.raceKeyToDisplay, r_match[1].replace(/ *$/, ""));
+			let sub_race = Parser.translateKeyInMapToDisplay(Parser.subraceKeyToDisplay, r_match[3]);
+			return `${main_race} (${sub_race})`;
 		}
 		return race;
-	}
-	else{
+	} else {
 		return trans_race;
 	}
 }
-Parser.SubraceToDisplay = function(sub_race){
+Parser.SubraceToDisplay = function (sub_race) {
 	return Parser.translateKeyInMapToDisplay(Parser.subraceKeyToDisplay, sub_race);
 }
-//classes
+// classes
 Parser.classKeyToDisplay = {};
-Parser.classKeyToDisplay["wizard"]   = "法師";
+Parser.classKeyToDisplay["wizard"] = "法師";
 Parser.classKeyToDisplay["sorcerer"] = "術士";
-Parser.classKeyToDisplay["warlock"]  = "契術師";
-Parser.classKeyToDisplay["ranger"]   = "遊俠";
-Parser.classKeyToDisplay["paladin"]  = "聖騎士";
-Parser.classKeyToDisplay["druid"]    = "德魯伊";
-Parser.classKeyToDisplay["cleric"]   = "牧師";
-Parser.classKeyToDisplay["bard"]     = "吟遊詩人";
-Parser.classKeyToDisplay["barbarian"]= "野蠻人";
-Parser.classKeyToDisplay["fighter"]  = "戰士";
-Parser.classKeyToDisplay["rogue"]    = "遊蕩者";
-Parser.classKeyToDisplay["artificer"]= "奇械師";
-Parser.classKeyToDisplay["ranger (revised)"]   = "遊俠(修訂)";
-Parser.classKeyToDisplay["artificer revisited"]= "奇械師(再製)";
-Parser.ClassToDisplay = function(c){
+Parser.classKeyToDisplay["warlock"] = "契術師";
+Parser.classKeyToDisplay["ranger"] = "遊俠";
+Parser.classKeyToDisplay["paladin"] = "聖武士";
+Parser.classKeyToDisplay["druid"] = "德魯伊";
+Parser.classKeyToDisplay["cleric"] = "牧師";
+Parser.classKeyToDisplay["bard"] = "吟遊詩人";
+Parser.classKeyToDisplay["barbarian"] = "野蠻人";
+Parser.classKeyToDisplay["fighter"] = "戰士";
+Parser.classKeyToDisplay["monk"] = "武僧";
+Parser.classKeyToDisplay["rogue"] = "遊蕩者";
+Parser.classKeyToDisplay["artificer"] = "奇械師";
+Parser.classKeyToDisplay["ranger (revised)"] = "遊俠 (修訂)";
+Parser.classKeyToDisplay["artificer revisited"] = "奇械師 (再製)";
+Parser.classKeyToDisplay["expert sidekick"] = "專家協力者";
+Parser.classKeyToDisplay["spellcaster sidekick"] = "施法協力者";
+Parser.classKeyToDisplay["warrior sidekick"] = "武者協力者";
+Parser.ClassToDisplay = function (c) {
 	let c_match = c.match(/([^()]*)( ?\((.*)\))?/);
-	if(c_match && c_match[2]){
-		let c_name = Parser.translateKeyInMapToDisplay(Parser.classKeyToDisplay, c_match[1].replace(/ *$/,""));
-		let source = c_match[3]=='Revised'? '(修訂)': c_match[2];
-		return c_name + " " + source;
+	if (c_match && c_match[2]) {
+		let c_name = Parser.translateKeyInMapToDisplay(Parser.classKeyToDisplay, c_match[1].replace(/ *$/, ""));
+		let source = c_match[3] === "Revised" ? "(修訂)" : c_match[2];
+		return `${c_name} ${source}`;
 	}
 	return Parser.translateKeyInMapToDisplay(Parser.classKeyToDisplay, c);
 }
-//subclass
+// subclass
 Parser.subclassKeyToDisplay = {};
-Parser.subclassKeyToDisplay["arcane trickster"] = "詭術師";
+Parser.subclassKeyToDisplay["alchemist"] = "鍊金師";
+Parser.subclassKeyToDisplay["armorer"] = "裝甲師";
+Parser.subclassKeyToDisplay["artillerist"] = "魔炮師";
+Parser.subclassKeyToDisplay["battle smith"] = "戰地匠師";
+
+Parser.subclassKeyToDisplay["ancestral guardian"] = "先祖守衛";
+Parser.subclassKeyToDisplay["battlerager"] = "戰狂";
+Parser.subclassKeyToDisplay["beast"] = "野獸";
+Parser.subclassKeyToDisplay["berserker"] = "狂戰士";
+Parser.subclassKeyToDisplay["storm herald"] = "風暴先驅";
 Parser.subclassKeyToDisplay["totem warrior"] = "圖騰勇士";
-Parser.subclassKeyToDisplay["eldritch knight"] = "魔能騎士";
+Parser.subclassKeyToDisplay["wild magic"] = "狂野魔法";
+Parser.subclassKeyToDisplay["zealot"] = "狂熱者";
+
+Parser.subclassKeyToDisplay["creation"] = "創造";
+Parser.subclassKeyToDisplay["eloquence"] = "雄辯";
+Parser.subclassKeyToDisplay["glamour"] = "迷惑";
+Parser.subclassKeyToDisplay["lore"] = "軼聞";
+Parser.subclassKeyToDisplay["swords"] = "劍舞";
+Parser.subclassKeyToDisplay["valor"] = "勇氣";
+Parser.subclassKeyToDisplay["whispers"] = "低語";
+
+Parser.subclassKeyToDisplay["arcana"] = "奧祕";
+Parser.subclassKeyToDisplay["death"] = "死亡";
+Parser.subclassKeyToDisplay["forge"] = "鍛造";
+Parser.subclassKeyToDisplay["grave"] = "墳墓";
+Parser.subclassKeyToDisplay["knowledge"] = "知識";
+Parser.subclassKeyToDisplay["life"] = "生命";
+Parser.subclassKeyToDisplay["light"] = "光明";
+Parser.subclassKeyToDisplay["nature"] = "自然";
+Parser.subclassKeyToDisplay["order"] = "秩序";
+Parser.subclassKeyToDisplay["peace"] = "和平";
+Parser.subclassKeyToDisplay["tempest"] = "暴風";
+Parser.subclassKeyToDisplay["trickery"] = "詭術";
+Parser.subclassKeyToDisplay["twilight"] = "暮光";
+Parser.subclassKeyToDisplay["war"] = "戰爭";
+
+Parser.subclassKeyToDisplay["dreams"] = "夢境";
+Parser.subclassKeyToDisplay["land"] = "大地";
+Parser.subclassKeyToDisplay["moon"] = "月亮";
+Parser.subclassKeyToDisplay["shepherd"] = "牧人";
+Parser.subclassKeyToDisplay["spores"] = "孢子";
+Parser.subclassKeyToDisplay["stars"] = "星辰";
+Parser.subclassKeyToDisplay["wildfire"] = "野火";
+
 Parser.subclassKeyToDisplay["arcane archer"] = "魔射手";
-Parser.subclassKeyToDisplay["divine soul"] = "神聖之魂";
-Parser.subclassKeyToDisplay["celestial"] = "天界宗主";
-Parser.subclassKeyToDisplay["undying"] = "不朽者";
-Parser.subclassKeyToDisplay["fiend"] = "邪魔宗主";
-Parser.subclassKeyToDisplay["great old one"] = "舊日支配者";
-Parser.subclassKeyToDisplay["archfey"] = "至高妖精";
-Parser.subclassKeyToDisplay["hexblade"] = "咒劍士";
-Parser.subclassKeyToDisplay["kraken"] = "克拉肯";
-Parser.subclassKeyToDisplay["raven queen"] = "鴉后";
-Parser.subclassKeyToDisplay["seeker"] = "探求者";
-Parser.subclassKeyToDisplay["land"] = "大地結社";
-Parser.subclassKeyToDisplay["knowledge"]  = "知識";
-Parser.subclassKeyToDisplay["life"]       = "生命";
-Parser.subclassKeyToDisplay["light"]      = "光明";
-Parser.subclassKeyToDisplay["nature"]     = "自然";
-Parser.subclassKeyToDisplay["tempest"]    = "暴風";
-Parser.subclassKeyToDisplay["trickery"]   = "詭術";
-Parser.subclassKeyToDisplay["war"]        = "戰爭";
-Parser.subclassKeyToDisplay["death"]      = "死亡";
-Parser.subclassKeyToDisplay["arcana"]     = "奧秘";
-Parser.subclassKeyToDisplay["forge"]      = "鍛造";
-Parser.subclassKeyToDisplay["grave"]      = "墳墓";
-Parser.subclassKeyToDisplay["beauty"]     = "美麗";
-Parser.subclassKeyToDisplay["darkness"]   = "黑暗";
-Parser.subclassKeyToDisplay["destruction"]= "毀滅";
-Parser.subclassKeyToDisplay["order"]      = "秩序";
+Parser.subclassKeyToDisplay["battle master"] = "戰鬥大師";
+Parser.subclassKeyToDisplay["cavalier"] = "騎兵";
+Parser.subclassKeyToDisplay["champion"] = "勇士";
+Parser.subclassKeyToDisplay["eldritch knight"] = "魔能騎士";
+Parser.subclassKeyToDisplay["psi warrior"] = "靈能武士";
+Parser.subclassKeyToDisplay["purple dragon knight (banneret)"] = "紫龍騎士（旗將）";
+Parser.subclassKeyToDisplay["rune knight"] = "符文騎士";
+Parser.subclassKeyToDisplay["samurai"] = "武士";
+Parser.subclassKeyToDisplay["echo knight"] = "迴音騎士";
+
+Parser.subclassKeyToDisplay["astral self"] = "星我宗";
+Parser.subclassKeyToDisplay["drunken master"] = "醉拳宗";
+Parser.subclassKeyToDisplay["four elements"] = "四象宗";
+Parser.subclassKeyToDisplay["kensei"] = "劍聖宗";
+Parser.subclassKeyToDisplay["long death"] = "永亡宗";
+Parser.subclassKeyToDisplay["mercy"] = "命流宗";
+Parser.subclassKeyToDisplay["open hand"] = "散打宗";
+Parser.subclassKeyToDisplay["shadow_monk"] = "暗影宗";
+Parser.subclassKeyToDisplay["sun soul"] = "日魂宗";
+
+Parser.subclassKeyToDisplay["ancients"] = "遠古";
+Parser.subclassKeyToDisplay["conquest"] = "征服";
+Parser.subclassKeyToDisplay["crown"] = "王冠";
+Parser.subclassKeyToDisplay["devotion"] = "奉獻";
+Parser.subclassKeyToDisplay["glory"] = "榮耀";
+Parser.subclassKeyToDisplay["oathbreaker"] = "破誓者";
+Parser.subclassKeyToDisplay["redemption"] = "救贖";
+Parser.subclassKeyToDisplay["vengeance"] = "復仇";
+Parser.subclassKeyToDisplay["watchers"] = "守望";
+
+Parser.subclassKeyToDisplay["beast master"] = "獸王";
+Parser.subclassKeyToDisplay["fey wanderer"] = "妖精漫遊者";
 Parser.subclassKeyToDisplay["gloom stalker"] = "幽域追蹤者";
 Parser.subclassKeyToDisplay["horizon walker"] = "境界行者";
+Parser.subclassKeyToDisplay["hunter"] = "獵人";
 Parser.subclassKeyToDisplay["monster slayer"] = "怪物殺手";
-Parser.subclassKeyToDisplay["ancients"] = "遠古";
-Parser.subclassKeyToDisplay["devotion"] = "奉獻";
-Parser.subclassKeyToDisplay["vengeance"] = "復仇";
-Parser.subclassKeyToDisplay["oathbreaker"] = "破誓者";
-Parser.subclassKeyToDisplay["crown"] = "王冠";
-Parser.subclassKeyToDisplay["conquest"] = "征服";
-Parser.subclassKeyToDisplay["redemption"] = "救贖";
-Parser.SubclassToDisplay = function(sc){
+Parser.subclassKeyToDisplay["swarmkeeper"] = "集羣守衛";
+
+Parser.subclassKeyToDisplay["arcane trickster"] = "詭術師";
+Parser.subclassKeyToDisplay["assassin"] = "刺客";
+Parser.subclassKeyToDisplay["inquisitive"] = "審訊者";
+Parser.subclassKeyToDisplay["mastermind"] = "策士";
+Parser.subclassKeyToDisplay["phantom"] = "鬼魅";
+Parser.subclassKeyToDisplay["scout"] = "斥候";
+Parser.subclassKeyToDisplay["soulknife"] = "魂刃";
+Parser.subclassKeyToDisplay["swashbuckler"] = "風流劍客";
+Parser.subclassKeyToDisplay["thief"] = "竊賊";
+
+Parser.subclassKeyToDisplay["aberrant mind"] = "畸變心智";
+Parser.subclassKeyToDisplay["clockwork soul"] = "時械之魂";
+Parser.subclassKeyToDisplay["divine soul"] = "神聖之魂";
+Parser.subclassKeyToDisplay["draconic"] = "龍族血脈";
+Parser.subclassKeyToDisplay["shadow"] = "幽影魔法";
+Parser.subclassKeyToDisplay["storm"] = "暴風術法";
+Parser.subclassKeyToDisplay["wild"] = "狂野魔法";
+
+Parser.subclassKeyToDisplay["archfey"] = "至高妖精";
+Parser.subclassKeyToDisplay["celestial"] = "天界";
+Parser.subclassKeyToDisplay["fathomless"] = "深海意志";
+Parser.subclassKeyToDisplay["fiend"] = "邪魔";
+Parser.subclassKeyToDisplay["genie"] = "巨靈";
+Parser.subclassKeyToDisplay["great old one"] = "舊日支配者";
+Parser.subclassKeyToDisplay["hexblade"] = "咒劍";
+Parser.subclassKeyToDisplay["undying"] = "不朽者";
+
+Parser.subclassKeyToDisplay["abjuration"] = "防護";
+Parser.subclassKeyToDisplay["bladesinging"] = "劍詠";
+Parser.subclassKeyToDisplay["conjuration"] = "咒法";
+Parser.subclassKeyToDisplay["divination"] = "預言";
+Parser.subclassKeyToDisplay["enchantment"] = "惑控";
+Parser.subclassKeyToDisplay["evocation"] = "塑能";
+Parser.subclassKeyToDisplay["illusion"] = "幻術";
+Parser.subclassKeyToDisplay["necromancy"] = "死靈";
+Parser.subclassKeyToDisplay["scribes"] = "書士會";
+Parser.subclassKeyToDisplay["transmutation"] = "變化";
+Parser.subclassKeyToDisplay["war"] = "戰爭";
+Parser.subclassKeyToDisplay["graviturgy"] = "重力";
+Parser.subclassKeyToDisplay["chronurgy"] = "時間";
+Parser.SubclassToDisplay = function (sc) {
 	let sc_match = sc.match(/([^()]*)( ?\((.*)\))?/);
-	if(sc_match && sc_match[2]){
-		let sc_name = Parser.translateKeyInMapToDisplay(Parser.subclassKeyToDisplay, sc_match[1].replace(/ *$/,""));
-		return sc_name + " " + sc_match[2];
+	if (sc_match && sc_match[2]) {
+		let sc_name = Parser.translateKeyInMapToDisplay(Parser.subclassKeyToDisplay, sc_match[1].replace(/ *$/, ""));
+		return `${sc_name} ${sc_match[2]}`;
 	}
 	return Parser.translateKeyInMapToDisplay(Parser.subclassKeyToDisplay, sc);
 }
 
-//Skill
+// Skill
 Parser.skillKeyToDisplay = {};
-Parser.skillKeyToDisplay["athletics"]  	   = "運動";
-Parser.skillKeyToDisplay["acrobatics"]     = "特技";
-Parser.skillKeyToDisplay["sleight of hand"]= "手上把戲";
-Parser.skillKeyToDisplay["stealth"]  	   = "隱匿";
-Parser.skillKeyToDisplay["arcana"]  	   = "奧秘";
-Parser.skillKeyToDisplay["history"]  	   = "歷史";
-Parser.skillKeyToDisplay["investigation"]  = "調查";
-Parser.skillKeyToDisplay["nature"]  	   = "自然";
-Parser.skillKeyToDisplay["religion"]  	   = "宗教";
-Parser.skillKeyToDisplay["animal handling"]= "動物馴養";
-Parser.skillKeyToDisplay["insight"]  	   = "察言觀色";
-Parser.skillKeyToDisplay["medicine"]  	   = "醫藥";
-Parser.skillKeyToDisplay["perception"]     = "感知";
-Parser.skillKeyToDisplay["survival"]  	   = "求生";
-Parser.skillKeyToDisplay["deception"]  	   = "欺瞞";
-Parser.skillKeyToDisplay["intimidation"]   = "威嚇";
-Parser.skillKeyToDisplay["performance"]    = "表演";
-Parser.skillKeyToDisplay["persuasion"]     = "說服";
-Parser.SkillToDisplay = function(sk){
+Parser.skillKeyToDisplay["athletics"] = "運動";
+Parser.skillKeyToDisplay["acrobatics"] = "體操";
+Parser.skillKeyToDisplay["sleight of hand"] = "巧手";
+Parser.skillKeyToDisplay["stealth"] = "隱匿";
+Parser.skillKeyToDisplay["arcana"] = "奧祕";
+Parser.skillKeyToDisplay["history"] = "歷史";
+Parser.skillKeyToDisplay["investigation"] = "調查";
+Parser.skillKeyToDisplay["nature"] = "自然";
+Parser.skillKeyToDisplay["religion"] = "宗教";
+Parser.skillKeyToDisplay["animal handling"] = "馴獸";
+Parser.skillKeyToDisplay["insight"] = "洞悉";
+Parser.skillKeyToDisplay["medicine"] = "醫療";
+Parser.skillKeyToDisplay["perception"] = "察覺";
+Parser.skillKeyToDisplay["survival"] = "生存";
+Parser.skillKeyToDisplay["deception"] = "欺瞞";
+Parser.skillKeyToDisplay["intimidation"] = "威嚇";
+Parser.skillKeyToDisplay["performance"] = "表演";
+Parser.skillKeyToDisplay["persuasion"] = "說服";
+Parser.SkillToDisplay = function (sk) {
 	return Parser.translateKeyInMapToDisplay(Parser.skillKeyToDisplay, sk);
 }
-//Speed
+// Speed
 Parser.speedKeyToDisplay = {};
 Parser.speedKeyToDisplay["climb"] = "攀爬";
-Parser.speedKeyToDisplay["burrow"]= "掘地";
-Parser.speedKeyToDisplay["fly"]   = "飛行";
-Parser.speedKeyToDisplay["swim"]  = "游泳";
-Parser.speedKeyToDisplay["walk"]  = "步行";
+Parser.speedKeyToDisplay["burrow"] = "掘地";
+Parser.speedKeyToDisplay["fly"] = "飛行";
+Parser.speedKeyToDisplay["swim"] = "游泳";
+Parser.speedKeyToDisplay["walk"] = "步行";
 Parser.speedKeyToDisplay["hover"] = "浮空";
-Parser.SpeedToDisplay = function(sp){
+Parser.SpeedToDisplay = function (sp) {
 	let sp_match = sp.match(/([^()]*)(\((.*)\))?/);
-	if(sp_match && sp_match[2]){
-		let main_sp = Parser.translateKeyInMapToDisplay(Parser.speedKeyToDisplay, sp_match[1].replace(/ *$/,""));
+	if (sp_match && sp_match[2]) {
+		let main_sp = Parser.translateKeyInMapToDisplay(Parser.speedKeyToDisplay, sp_match[1].replace(/ *$/, ""));
 		sp_match[3] = sp_match[3].toLowerCase();
-		let deco    = sp_match[3]=="fast"? "快": sp_match[3]=="slow"? "慢": sp_match[3];
-		return main_sp + "(" + deco + ")";
+		let deco = sp_match[3] === "fast" ? "快" : sp_match[3] === "slow" ? "慢" : sp_match[3];
+		return `${main_sp}(${deco})`;
 	}
 	return Parser.translateKeyInMapToDisplay(Parser.speedKeyToDisplay, sp);
 }
-//Damage Type
+// Damage Type
 Parser.damageKeyToDisplay = {};
-Parser.damageKeyToDisplay["acid"]		= "酸蝕";
-Parser.damageKeyToDisplay["bludgeoning"]= "鈍擊";
-Parser.damageKeyToDisplay["cold"]		= "寒冰";
-Parser.damageKeyToDisplay["fire"]		= "火焰";
-Parser.damageKeyToDisplay["force"]		= "力場";
-Parser.damageKeyToDisplay["lightning"]	= "閃電";
-Parser.damageKeyToDisplay["necrotic"]	= "死靈";
-Parser.damageKeyToDisplay["piercing"]	= "穿刺";
-Parser.damageKeyToDisplay["poison"]		= "毒素";
-Parser.damageKeyToDisplay["psychic"]	= "精神";
-Parser.damageKeyToDisplay["radiant"]	= "光耀";
-Parser.damageKeyToDisplay["slashing"]	= "劈砍";
-Parser.damageKeyToDisplay["thunder"]	= "雷鳴";
-Parser.DamageToDisplay = function(d){
+Parser.damageKeyToDisplay["acid"]		 = "強酸";
+Parser.damageKeyToDisplay["bludgeoning"] = "鈍擊";
+Parser.damageKeyToDisplay["cold"]		 = "冷凍";
+Parser.damageKeyToDisplay["fire"]		 = "火焰";
+Parser.damageKeyToDisplay["force"]		 = "力場";
+Parser.damageKeyToDisplay["lightning"]	 = "閃電";
+Parser.damageKeyToDisplay["necrotic"]	 = "黯蝕";
+Parser.damageKeyToDisplay["piercing"]	 = "穿刺";
+Parser.damageKeyToDisplay["poison"]		 = "毒素";
+Parser.damageKeyToDisplay["psychic"]	 = "心靈";
+Parser.damageKeyToDisplay["radiant"]	 = "光耀";
+Parser.damageKeyToDisplay["slashing"]	 = "揮砍";
+Parser.damageKeyToDisplay["thunder"]	 = "雷鳴";
+Parser.damageKeyToDisplay["acid (conditional)"]			= "強酸（條件）";
+Parser.damageKeyToDisplay["bludgeoning (conditional)"]	= "鈍擊（條件）";
+Parser.damageKeyToDisplay["cold (conditional)"]			= "冷凍（條件）";
+Parser.damageKeyToDisplay["fire (conditional)"]			= "火焰（條件）";
+Parser.damageKeyToDisplay["force (conditional)"]		= "力場（條件）";
+Parser.damageKeyToDisplay["lightning (conditional)"]	= "閃電（條件）";
+Parser.damageKeyToDisplay["necrotic (conditional)"]		= "黯蝕（條件）";
+Parser.damageKeyToDisplay["piercing (conditional)"]		= "穿刺（條件）";
+Parser.damageKeyToDisplay["poison (conditional)"]		= "毒素（條件）";
+Parser.damageKeyToDisplay["psychic (conditional)"]		= "心靈（條件）";
+Parser.damageKeyToDisplay["radiant (conditional)"]		= "光耀（條件）";
+Parser.damageKeyToDisplay["slashing (conditional)"]		= "揮砍（條件）";
+Parser.damageKeyToDisplay["thunder (conditional)"]		= "雷鳴（條件）";
+Parser.DamageToDisplay = function (d) {
 	return Parser.translateKeyInMapToDisplay(Parser.damageKeyToDisplay, d);
 }
-//Condotions
+// Conditions
 Parser.condKeyToDisplay = {};
-Parser.condKeyToDisplay["blinded"]		= "目盲";
-Parser.condKeyToDisplay["charmed"]		= "魅惑";
-Parser.condKeyToDisplay["deafened"]		= "耳聾";
-Parser.condKeyToDisplay["exhaustion"]	= "力竭";
-Parser.condKeyToDisplay["frightened"]	= "恐懼";
-Parser.condKeyToDisplay["grappled"]		= "被擒";
-Parser.condKeyToDisplay["incapacitated"]= "無力";
-Parser.condKeyToDisplay["invisible"]	= "隱形";
-Parser.condKeyToDisplay["paralyzed"]	= "麻痺";
-Parser.condKeyToDisplay["petrified"]	= "石化";
-Parser.condKeyToDisplay["poisoned"]		= "中毒";
-Parser.condKeyToDisplay["prone"]		= "伏地";
-Parser.condKeyToDisplay["restrained"]	= "束縛";
-Parser.condKeyToDisplay["stunned"]		= "震懾";
-Parser.condKeyToDisplay["unconscious"]	= "昏迷";
-Parser.ConditionToDisplay = function(c){
+Parser.condKeyToDisplay["blinded"]		 = "目盲";
+Parser.condKeyToDisplay["charmed"]		 = "魅惑";
+Parser.condKeyToDisplay["deafened"]		 = "耳聾";
+Parser.condKeyToDisplay["exhaustion"]	 = "力竭";
+Parser.condKeyToDisplay["frightened"]	 = "恐懼";
+Parser.condKeyToDisplay["grappled"]		 = "被擒";
+Parser.condKeyToDisplay["incapacitated"] = "無力";
+Parser.condKeyToDisplay["invisible"]	 = "隱形";
+Parser.condKeyToDisplay["paralyzed"]	 = "麻痹";
+Parser.condKeyToDisplay["petrified"]	 = "石化";
+Parser.condKeyToDisplay["poisoned"]		 = "中毒";
+Parser.condKeyToDisplay["prone"]		 = "伏地";
+Parser.condKeyToDisplay["restrained"]	 = "束縛";
+Parser.condKeyToDisplay["stunned"]		 = "震懾";
+Parser.condKeyToDisplay["unconscious"]	 = "昏迷";
+Parser.condKeyToDisplay["disease"]		 = "疾病";
+Parser.ConditionToDisplay = function (c) {
 	return Parser.translateKeyInMapToDisplay(Parser.condKeyToDisplay, c);
 }
 
-//Armor
+// Armor
 Parser.armorKeyToDisplay = {};
-Parser.armorKeyToDisplay["light"]  = "輕";
+Parser.armorKeyToDisplay["light"] = "輕";
 Parser.armorKeyToDisplay["medium"] = "中";
-Parser.armorKeyToDisplay["heavy"]  = "重";
-Parser.armorKeyToDisplay["shields"]  = "盾牌";
-Parser.ArmorToDisplay = function(armor){
+Parser.armorKeyToDisplay["heavy"] = "重";
+Parser.armorKeyToDisplay["shields"] = "盾牌";
+Parser.ArmorToDisplay = function (armor) {
 	return Parser.translateKeyInMapToDisplay(Parser.armorKeyToDisplay, armor);
 }
 
-//Weapon
-Parser.keyToDisplay["simple"]  = "簡易";
+// Weapon
+Parser.keyToDisplay["simple"] = "簡易";
 Parser.keyToDisplay["martial"] = "軍用";
-//Tools
-Parser.keyToDisplay["alchemist's supplies"] 	= "煉金師設備";
-Parser.keyToDisplay["artisan's tools"]  		= "工匠工具";
-Parser.keyToDisplay["brewer's supplies"]  		= "釀酒設備";
-Parser.keyToDisplay["calligrapher's supplies"]  = "書寫設備";
-Parser.keyToDisplay["cartographer's tools"]  	= "制圖工具";
-Parser.keyToDisplay["cook's utensils"]  = "廚師器具";
-Parser.keyToDisplay["disguise kit"]  	= "偽裝工具組";
-Parser.keyToDisplay["forgery kit"]  	= "文書偽造工具組";
-Parser.keyToDisplay["gaming set"]  		= "遊戲套組";
-Parser.keyToDisplay["herbalism kit"]  	= "草藥工具組";
-Parser.keyToDisplay["musical instrument"] = "樂器";
-Parser.keyToDisplay["navigator's tools"]  = "領航工具";
-Parser.keyToDisplay["poisoner's kit"]  = "製毒工具組";
-Parser.keyToDisplay["thieves' tools"]  = "盜賊工具";
-Parser.keyToDisplay["tinker's tools"]  = "修補工具";
-Parser.keyToDisplay["vehicles (air)"]  = "載具(空中)";
-Parser.keyToDisplay["vehicles (land)"] = "載具(陸上)";
-Parser.keyToDisplay["vehicles (sea)"]  = "載具(海洋)";
-Parser.keyToDisplay["vehicles (water)"]= "載具(水上)";
-//Spell
-Parser.keyToDisplay["line"]= "直線";
-Parser.keyToDisplay["cube"]= "立方";
-Parser.keyToDisplay["cone"]= "錐形";
-Parser.keyToDisplay["cylinder"]= "圓柱";
-Parser.keyToDisplay["radius"]= "半徑";
+// Tools
+Parser.keyToDisplay["artisan's tools"] = "工匠工具";
+Parser.keyToDisplay["alchemist's supplies"] = "鍊金工具";
+Parser.keyToDisplay["brewer's supplies"] = "釀酒工具";
+Parser.keyToDisplay["carpenter's tools"] = "木匠工具";
+Parser.keyToDisplay["cartographer's tools"] = "製圖工具";
+Parser.keyToDisplay["cobbler's tools"] = "鞋匠工具";
+Parser.keyToDisplay["cook's utensils"] = "廚師工具";
+Parser.keyToDisplay["glassblower's tools"] = "玻璃匠工具";
+Parser.keyToDisplay["jeweler's tools"] = "珠寶匠工具";
+Parser.keyToDisplay["leatherworker's tools"] = "皮匠工具";
+Parser.keyToDisplay["mason's tools"] = "泥瓦匠工具";
+Parser.keyToDisplay["painter's supplies"] = "畫家工具";
+Parser.keyToDisplay["potter's tools"] = "陶匠工具";
+Parser.keyToDisplay["smith's tools"] = "鐵匠工具";
+Parser.keyToDisplay["tinker's tools"] = "修理工具";
+Parser.keyToDisplay["weaver's tools"] = "織布工具";
+Parser.keyToDisplay["woodcarver's tools"] = "木雕工具";
 
-//Spell
+Parser.keyToDisplay["disguise kit"] = "易容工具";
+Parser.keyToDisplay["forgery kit"] = "文書僞造工具";
+Parser.keyToDisplay["gaming set"] = "賭具";
+Parser.keyToDisplay["herbalism kit"] = "草藥工具";
+Parser.keyToDisplay["musical instrument"] = "樂器";
+Parser.keyToDisplay["navigator's tools"] = "領航工具";
+Parser.keyToDisplay["poisoner's kit"] = "製毒工具";
+Parser.keyToDisplay["thieves' tools"] = "盜賊工具";
+Parser.keyToDisplay["tinker's tools"] = "修理工具";
+Parser.keyToDisplay["vehicles (air)"] = "載具(空中)";
+Parser.keyToDisplay["vehicles (land)"] = "載具(陸上)";
+Parser.keyToDisplay["vehicles (sea)"] = "載具(海洋)";
+Parser.keyToDisplay["vehicles (water)"] = "載具(水上)";
+// Spell
+Parser.keyToDisplay["line"] = "直線";
+Parser.keyToDisplay["cube"] = "立方";
+Parser.keyToDisplay["cone"] = "錐形";
+Parser.keyToDisplay["cylinder"] = "圓柱";
+Parser.keyToDisplay["radius"] = "半徑";
+
+// Spell
 Parser.keyToDisplay["action"] = "動作";
 Parser.keyToDisplay["bonus"] = "附贈";
 Parser.keyToDisplay["reaction"] = "反應";
@@ -6429,43 +6915,43 @@ Parser.keyToDisplay["minute"] = "分鐘";
 Parser.keyToDisplay["hour"] = "小時";
 Parser.keyToDisplay["day"] = "天";
 
-//Item
+// Item
 Parser.itemKeyToDisplay["none"] 	= "無";
 Parser.itemKeyToDisplay["common"] 	= "常見";
 Parser.itemKeyToDisplay["uncommon"] = "非常見";
 Parser.itemKeyToDisplay["rare"] 	= "珍稀";
-Parser.itemKeyToDisplay["very rare"]= "非常珍稀";
-Parser.itemKeyToDisplay["legendary"]= "傳說";
+Parser.itemKeyToDisplay["very rare"] = "非常珍稀";
+Parser.itemKeyToDisplay["legendary"] = "傳說";
 Parser.itemKeyToDisplay["artifact"] = "神器";
 Parser.itemKeyToDisplay["unknown"] 	= "不明";
-Parser.itemKeyToDisplay["unknown (magic)"] 	= "不明(魔法)";
+Parser.itemKeyToDisplay["unknown (magic)"] 	= "不明 (魔法)";
 Parser.itemKeyToDisplay["other"] 	= "其他";
 Parser.itemKeyToDisplay["varies"] 	= "可變";
 
-//Item Type
+// Item Type
 Parser.itemTypeKeyToDisplay = {};
 Parser.itemTypeKeyToDisplay["adventuring gear"] = "冒險裝備";
 Parser.itemTypeKeyToDisplay["tools"] = "工具";
 Parser.itemTypeKeyToDisplay["artisan's tools"] = "工匠工具";
-Parser.itemTypeKeyToDisplay["gaming set"] = "遊戲套組";
+Parser.itemTypeKeyToDisplay["gaming set"] = "賭具";
 Parser.itemTypeKeyToDisplay["instrument"] = "樂器";
 Parser.itemTypeKeyToDisplay["heavy armor"] = "重甲";
-Parser.itemTypeKeyToDisplay["medium armor"]= "中甲";
+Parser.itemTypeKeyToDisplay["medium armor"] = "中甲";
 Parser.itemTypeKeyToDisplay["light armor"] = "輕甲";
 Parser.itemTypeKeyToDisplay["shield"] = "盾牌";
 Parser.itemTypeKeyToDisplay["simple weapon"] = "簡易武器";
 Parser.itemTypeKeyToDisplay["martial weapon"] = "軍用武器";
 Parser.itemTypeKeyToDisplay["melee weapon"] = "近戰武器";
 Parser.itemTypeKeyToDisplay["ranged weapon"] = "遠程武器";
-Parser.itemTypeKeyToDisplay["ammunition"]   = "彈藥";
-Parser.itemTypeKeyToDisplay["explosive"]    = "爆裂物";
+Parser.itemTypeKeyToDisplay["ammunition"] = "彈藥";
+Parser.itemTypeKeyToDisplay["explosive"] = "爆裂物";
 Parser.itemTypeKeyToDisplay["mount"] = "坐騎";
 Parser.itemTypeKeyToDisplay["spellcasting focus"] = "法器";
 Parser.itemTypeKeyToDisplay["rod"] = "權杖";
 Parser.itemTypeKeyToDisplay["wand"] = "魔杖";
 Parser.itemTypeKeyToDisplay["ring"] = "戒指";
 Parser.itemTypeKeyToDisplay["wondrous item"] = "奇物";
-Parser.itemTypeKeyToDisplay["(tattoo)"] = "(刺青)";
+Parser.itemTypeKeyToDisplay["wondrous item (tattoo)"] = "奇物(刺青)";
 Parser.itemTypeKeyToDisplay["tattoo"] = "刺青";
 Parser.itemTypeKeyToDisplay["scroll"] = "卷軸";
 Parser.itemTypeKeyToDisplay["potion"] = "藥水";
@@ -6477,79 +6963,82 @@ Parser.itemTypeKeyToDisplay["other"] = "其他";
 Parser.itemTypeKeyToDisplay["poison"] = "毒藥";
 Parser.itemTypeKeyToDisplay["treasure"] = "$";
 Parser.itemTypeKeyToDisplay["food and drink"] = "食物和水";
-//Age
-Parser.itemTypeKeyToDisplay["renaissance"]= "文藝復興";
-Parser.itemTypeKeyToDisplay["modern"] 	  = "現代";
+// Age
+Parser.itemTypeKeyToDisplay["renaissance"] = "文藝復興";
+Parser.itemTypeKeyToDisplay["modern"] = "現代";
 Parser.itemTypeKeyToDisplay["futuristic"] = "未來";
-//Technology
+// Technology
 Parser.itemTypeKeyToDisplay["staff"] 	= "法杖";
 Parser.itemTypeKeyToDisplay["firearm"] 	= "槍械";
-Parser.ItemTypeToDisplay = function(i){
+Parser.ItemTypeToDisplay = function (i) {
 	let item_match = i.match(/([^()]*) (\((.*)\))?/);
-	if(item_match && item_match[2]){
-		var type = Parser.translateKeyInMapToDisplay(Parser.itemTypeKeyToDisplay, item_match[1]);
-		return type + " " + Parser.translateKeyInMapToDisplay(Parser.itemTypeKeyToDisplay, item_match[2]);
+	if (item_match && item_match[2]) {
+		const type = Parser.translateKeyInMapToDisplay(Parser.itemTypeKeyToDisplay, item_match[1]);
+		return `${type} ${item_match[2]}`
 	}
 	return Parser.translateKeyInMapToDisplay(Parser.itemTypeKeyToDisplay, i);
 }
-//Item Tier
+// Item Tier
 Parser.itemTierKeyToDisplay = {};
 Parser.itemTierKeyToDisplay["none"] = "無";
 Parser.itemTierKeyToDisplay["other"] = "其他";
 Parser.itemTierKeyToDisplay["minor"] = "弱效";
 Parser.itemTierKeyToDisplay["major"] = "強效";
-Parser.ItemTierToDisplay = function(t){
+Parser.ItemTierToDisplay = function (t) {
 	return Parser.translateKeyInMapToDisplay(Parser.itemTierKeyToDisplay, t);
 }
 
-//Language
+// Language
 Parser.languageKeyToDisplay["any"] 	 = "任意";
-Parser.languageKeyToDisplay["any (choose)"]  = "任意(選擇)";
+Parser.languageKeyToDisplay["any (choose)"] = "任意（選擇）";
 Parser.languageKeyToDisplay["all"] 	 = "全部語言";
 Parser.languageKeyToDisplay["other"] = "其他";
-Parser.languageKeyToDisplay["choose"]= "自選";
-Parser.languageKeyToDisplay["can't speak known languages"]= "理解但不會說";
-Parser.languageKeyToDisplay["telepathy"]= "心靈感應";
-Parser.languageKeyToDisplay["thieves' cant"]= "竊賊黑話";
+Parser.languageKeyToDisplay["choose"] = "自選";
+Parser.languageKeyToDisplay["can't speak known languages"] = "理解但不會說";
+Parser.languageKeyToDisplay["languages known in life"] = "生前掌握的語言";
+Parser.languageKeyToDisplay["telepathy"] = "心靈感應";
+Parser.languageKeyToDisplay["thieves' cant"] = "盜賊黑話";
 Parser.languageKeyToDisplay["druidic"] 		= "德魯伊語";
-Parser.languageKeyToDisplay["common"] 	  = "通用語";
-Parser.languageKeyToDisplay["undercommon"]= "地底通用語";
+Parser.languageKeyToDisplay["common"] = "通用語";
+Parser.languageKeyToDisplay["undercommon"] = "地底通用語";
 Parser.languageKeyToDisplay["draconic"] = "龍語";
 Parser.languageKeyToDisplay["dwarvish"] = "矮人語";
 Parser.languageKeyToDisplay["elvish"] 	= "精靈語";
 Parser.languageKeyToDisplay["giant"] 	= "巨人語";
-Parser.languageKeyToDisplay["gnomish"] 	= "地侏語";
-Parser.languageKeyToDisplay["goblin"] 	= "哥布林語";
+Parser.languageKeyToDisplay["gnomish"] 	= "侏儒語";
+Parser.languageKeyToDisplay["goblin"] 	= "地精語";
 Parser.languageKeyToDisplay["halfling"] = "半身人語";
 Parser.languageKeyToDisplay["orc"] 		= "獸人語";
-Parser.languageKeyToDisplay["gith"]		= "吉斯人語";
-Parser.languageKeyToDisplay["abyssal"] 	   = "深淵語";
-Parser.languageKeyToDisplay["celestial"]   = "天界語";
-Parser.languageKeyToDisplay["deep speech"] = "深幽語";
-Parser.languageKeyToDisplay["infernal"]    = "煉獄語";
-Parser.languageKeyToDisplay["primordial"]= "原初語";
+Parser.languageKeyToDisplay["gith"]		= "吉斯語";
+Parser.languageKeyToDisplay["abyssal"] = "深淵語";
+Parser.languageKeyToDisplay["celestial"] = "天界語";
+Parser.languageKeyToDisplay["deep speech"] = "深潛語";
+Parser.languageKeyToDisplay["infernal"] = "煉獄語";
+Parser.languageKeyToDisplay["primordial"] = "原初語";
 Parser.languageKeyToDisplay["ignan"] 	 = "火族語";
 Parser.languageKeyToDisplay["sylvan"] 	 = "木族語";
 Parser.languageKeyToDisplay["terran"] 	 = "土族語";
 Parser.languageKeyToDisplay["aquan"] 	 = "水族語";
 Parser.languageKeyToDisplay["auran"] 	 = "氣族語";
 
-Parser.LanguageToDisplay = function(lang_key){
+Parser.LanguageToDisplay = function (lang_key) {
 	return Parser.translateKeyInMapToDisplay(Parser.languageKeyToDisplay, lang_key);
 }
 
-//MonsterType-tag
+// MonsterType-tag
 Parser.monsterTagKeyToDisplay = {};
 Parser.monsterTagKeyToDisplay["any race"] = "任意種族";
 Parser.monsterTagKeyToDisplay["shapechanger"] = "變形者";
-Parser.monsterTagKeyToDisplay["swarm"] = "集群";
+Parser.monsterTagKeyToDisplay["changeling"] = "幻身靈";
+Parser.monsterTagKeyToDisplay["swarm"] = "集羣";
 Parser.monsterTagKeyToDisplay["angel"] = "天使";
 Parser.monsterTagKeyToDisplay["demon"] = "惡魔";
 Parser.monsterTagKeyToDisplay["devil"] = "魔鬼";
 Parser.monsterTagKeyToDisplay["titan"] = "泰坦";
 Parser.monsterTagKeyToDisplay["aarakocra"] = "阿蘭寇拉鷹人";
 Parser.monsterTagKeyToDisplay["gnoll"] = "豺狼人";
-Parser.monsterTagKeyToDisplay["goblinoid"] = "類哥布林";
+Parser.monsterTagKeyToDisplay["goblin"] = "地精";
+Parser.monsterTagKeyToDisplay["goblinoid"] = "類地精";
 Parser.monsterTagKeyToDisplay["merfolk"] = "人魚";
 Parser.monsterTagKeyToDisplay["bullywug"] = "狂蛙人";
 Parser.monsterTagKeyToDisplay["kenku"] = "天狗";
@@ -6578,29 +7067,29 @@ Parser.monsterTagKeyToDisplay["earth genasi"] = "土元素裔";
 Parser.monsterTagKeyToDisplay["fire genasi"] = "火元素裔";
 Parser.monsterTagKeyToDisplay["water genasi"] = "水元素裔";
 Parser.monsterTagKeyToDisplay["air genasi"] = "氣元素裔";
-Parser.MonsterTagToDisplay = function(e){
-	var race_e = Parser.RaceToDisplay(e)
+Parser.MonsterTagToDisplay = function (e) {
+	const race_e = Parser.RaceToDisplay(e)
 	return Parser.translateKeyInMapToDisplay(Parser.monsterTagKeyToDisplay, race_e);
 }
 
-//Environment
+// Environment
 Parser.environmentKeyToDisplay = {};
-Parser.environmentKeyToDisplay["arctic"]    = "極地";
-Parser.environmentKeyToDisplay["coastal"]   = "海岸";
-Parser.environmentKeyToDisplay["desert"]    = "沙漠";
-Parser.environmentKeyToDisplay["forest"]    = "森林";
+Parser.environmentKeyToDisplay["arctic"] = "極地";
+Parser.environmentKeyToDisplay["coastal"] = "海岸";
+Parser.environmentKeyToDisplay["desert"] = "沙漠";
+Parser.environmentKeyToDisplay["forest"] = "森林";
 Parser.environmentKeyToDisplay["grassland"] = "草地";
-Parser.environmentKeyToDisplay["hill"]      = "丘陵";
-Parser.environmentKeyToDisplay["mountain"]  = "高山";
-Parser.environmentKeyToDisplay["swamp"]     = "沼澤";
+Parser.environmentKeyToDisplay["hill"] = "丘陵";
+Parser.environmentKeyToDisplay["mountain"] = "高山";
+Parser.environmentKeyToDisplay["swamp"] = "沼澤";
 Parser.environmentKeyToDisplay["underdark"] = "幽暗地域";
-Parser.environmentKeyToDisplay["underwater"]= "水下";
-Parser.environmentKeyToDisplay["urban"]     = "城鎮";
-Parser.EnvironmentToDisplay = function(e){
+Parser.environmentKeyToDisplay["underwater"] = "水下";
+Parser.environmentKeyToDisplay["urban"] = "城鎮";
+Parser.EnvironmentToDisplay = function (e) {
 	return Parser.translateKeyInMapToDisplay(Parser.environmentKeyToDisplay, e);
 }
 
-//Pantheon
+// Pantheon
 Parser.pantheonKeyToDisplay = {};
 Parser.pantheonKeyToDisplay["celtic"] = "凱爾特";
 Parser.pantheonKeyToDisplay["egyptian"] = "埃及";
@@ -6611,38 +7100,46 @@ Parser.pantheonKeyToDisplay["elven"] = "精靈";
 Parser.pantheonKeyToDisplay["drow"] = "卓爾";
 Parser.pantheonKeyToDisplay["dwarven"] = "矮人";
 Parser.pantheonKeyToDisplay["duergar"] = "灰矮人";
-Parser.pantheonKeyToDisplay["gnomish"] = "地侏";
+Parser.pantheonKeyToDisplay["gnomish"] = "侏儒";
 Parser.pantheonKeyToDisplay["halfling"] = "半身人";
 Parser.pantheonKeyToDisplay["orc"] = "獸人";
+Parser.pantheonKeyToDisplay["gnome"] = "侏儒";
 Parser.pantheonKeyToDisplay["forgotten realms"] = "被遺忘的國度";
 Parser.pantheonKeyToDisplay["faerûnian"] = "費倫";
 Parser.pantheonKeyToDisplay["dawn war"] = "破曉之戰";
 Parser.pantheonKeyToDisplay["dragonlance"] = "龍槍";
 Parser.pantheonKeyToDisplay["eberron"] = "艾伯倫";
 Parser.pantheonKeyToDisplay["greyhawk"] = "灰鷹";
-Parser.PantheonToDisplay = function(p){
+Parser.pantheonKeyToDisplay["exandria"] = "伊克桑椎亞";
+Parser.pantheonKeyToDisplay["theros"] = "塞洛斯";
+Parser.PantheonToDisplay = function (p) {
 	return Parser.translateKeyInMapToDisplay(Parser.pantheonKeyToDisplay, p);
 }
 Parser.pantheonCategoryKeyToDisplay = {};
+Parser.pantheonCategoryKeyToDisplay["the mordinsamman"] = "摩丁薩曼諸神";
+Parser.pantheonCategoryKeyToDisplay["the seldarine"] = "席爾德琳諸神";
+Parser.pantheonCategoryKeyToDisplay["the dark seldarine"] = "黑暗席爾德琳諸神";
 Parser.pantheonCategoryKeyToDisplay["the sovereign host"] = "天命諸神";
 Parser.pantheonCategoryKeyToDisplay["the dark six"] = "黑暗六邪";
 Parser.pantheonCategoryKeyToDisplay["other faiths of eberron"] = "艾伯倫的其他信仰";
 Parser.pantheonCategoryKeyToDisplay["the gods of good"] = "善良諸神";
 Parser.pantheonCategoryKeyToDisplay["the gods of neutrality"] = "中立諸神";
 Parser.pantheonCategoryKeyToDisplay["the gods of evil"] = "邪惡諸神";
-Parser.PantheonCategoryToDisplay = function(p){
+Parser.pantheonCategoryKeyToDisplay["prime deities"] = "正神";
+Parser.pantheonCategoryKeyToDisplay["betrayer gods"] = "叛神";
+Parser.pantheonCategoryKeyToDisplay["lesser idols"] = "次等崇拜";
+Parser.PantheonCategoryToDisplay = function (p) {
 	return Parser.translateKeyInMapToDisplay(Parser.pantheonCategoryKeyToDisplay, p);
 }
 
-Parser.itemValueToDisplay = function(value){
-	if(!value) return value;
-	if(value=="Varies") return "不定";
-	return value.replace(/ *([pgesc])p/g, '$1幣').replace(/p(幣)/g, '鉑金$1').replace(/g(幣)/g, '金$1').replace(/e(幣)/g, '珀金$1').replace(/s(幣)/g, '銀$1').replace(/c(幣)/g, '銅$1');
+Parser.itemValueToDisplay = function (value) {
+	if (!value) return value;
+	if (value === "Varies") return "不定";
+	return value.replace(/ *([pgesc])p/g, "$1幣").replace(/p(幣)/g, "鉑金$1").replace(/g(幣)/g, "金$1").replace(/e(幣)/g, "珀金$1").replace(/s(幣)/g, "銀$1").replace(/c(幣)/g, "銅$1");
 }
 
-
 function isStringMatch (a, b, case_sensitive) {
-	if ((typeof a) !== 'string' || (typeof b) !== 'string')	return false;
+	if ((typeof a) !== "string" || (typeof b) !== "string")	return false;
 	if (case_sensitive) return a === b;
 	else 				return a.toUpperCase() === b.toUpperCase();
 }
@@ -6651,34 +7148,6 @@ Parser.ConditionsDiseasesKeyToDisplay = {};
 Parser.ConditionsDiseasesKeyToDisplay["condition"] = "狀態";
 Parser.ConditionsDiseasesKeyToDisplay["disease"] = "疾病";
 Parser.ConditionsDiseasesKeyToDisplay["status"] = "姿態";
-Parser.ConditionsDiseasesToDisplay = function(p){
+Parser.ConditionsDiseasesToDisplay = function (p) {
 	return Parser.translateKeyInMapToDisplay(Parser.ConditionsDiseasesKeyToDisplay, p);
 }
-
-Parser.ItemMiscKeyToDisplay = {};
-Parser.ItemMiscKeyToDisplay["ability score adjustment"] = "屬性值調整";
-Parser.ItemMiscKeyToDisplay["charges"] = "充能";
-Parser.ItemMiscKeyToDisplay["cursed"] = "詛咒";
-Parser.ItemMiscKeyToDisplay["grants proficiency"] = "熟練增益";
-Parser.ItemMiscKeyToDisplay["has images"] = "有圖片";
-Parser.ItemMiscKeyToDisplay["has info"] = "有資訊";
-Parser.ItemMiscKeyToDisplay["item group"] = "物品套組";
-Parser.ItemMiscKeyToDisplay["magic"] = "魔法物品";
-Parser.ItemMiscKeyToDisplay["mundane"] = "尋常物品";
-Parser.ItemMiscKeyToDisplay["sentient"] = "智能";
-Parser.ItemMiscKeyToDisplay["srd"] = "SRD";
-Parser.ItemMiscToDisplay = function(p){
-	return Parser.translateKeyInMapToDisplay(Parser.ItemMiscKeyToDisplay, p);
-}
-
-Parser.PosisonTypeKeyToDisplay = {};
-Parser.PosisonTypeKeyToDisplay["contact"] = "接觸";
-Parser.PosisonTypeKeyToDisplay["ingested"] = "內服";
-Parser.PosisonTypeKeyToDisplay["inhaled"] = "吸入";
-Parser.PosisonTypeKeyToDisplay["injury"] = "外傷";
-Parser.PosisonTypeToDisplay = function(p){
-	return Parser.translateKeyInMapToDisplay(Parser.PosisonTypeKeyToDisplay, p);
-}
-
-// Haz code
-// ==================
