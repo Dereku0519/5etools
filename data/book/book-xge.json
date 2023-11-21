@@ -32,7 +32,7 @@
 					"name": "核心規則",
 					"page": 5,
 					"entries": [
-						"This book relies on the rules in the three core rulebooks. The game especially makes frequent use of the rules in chapters 7-10 of the player's handbook: \"Using Ability Scores,\" \"Adventuring,\" \"Combat,\" and \"Spellcasting.\" That book's appendix A is also crucial; it contains definitions of conditions, like {@condition invisible} and {@condition prone}. You don't need to know the rules by heart, but it's helpful to know where to find them when you need them.",
+						"本書依賴三本核心規則手冊中的規則。 遊戲特別頻繁地使用了玩家手冊第7-10章中的規則：「使用能力分數」、「冒險」、「戰鬥」和「施法」。該書的附錄A也至關重要； 它包含條件的定義，例如{@condition 隱形}和{@condition 伏地}。 您不需要牢記規則，但在需要時知道在哪裡可以找到它們會很有幫助。",
 						"If you're a DM, you should also know where to look things up in the dungeon master's guide, especially the rules on how magic items work (see chapter 7 of that book). The introduction of the monster manual is your guide on how to use a monster's stat block.",
 						{
 							"type": "entries",
