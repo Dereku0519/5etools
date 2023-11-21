@@ -1,7 +1,8 @@
 {
 	"spell": [
 		{
-			"name": "Dark Star",
+			"name": "黑暗星辰",
+			"ENG_name": "Dark Star",
 			"source": "EGW",
 			"page": 186,
 			"level": 8,
@@ -23,7 +24,7 @@
 				"v": true,
 				"s": true,
 				"m": {
-					"text": "a shard of onyx and a drop of the caster's blood, both of which the spell consumes",
+					"text": "一小塊碎瑪瑙與一滴施法者的血液，在施法時被消耗。",
 					"consume": true
 				}
 			},
@@ -38,9 +39,9 @@
 				}
 			],
 			"entries": [
-				"This spell creates a sphere centered on a point you choose within range. The sphere can have a radius of up to 40 feet. The area within this sphere is filled with magical darkness and crushing gravitational force.",
-				"For the duration, the spell's area is difficult terrain. A creature with darkvision can't see through the magical darkness, and nonmagical light can't illuminate it. No sound can be created within or pass through the area. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are {@condition deafened} while entirely inside it. Casting a spell that includes a verbal component is impossible there.",
-				"Any creature that enters the spell's area for the first time on a turn or starts its turn there must make a Constitution saving throw. The creature takes {@damage 8d10} force damage on a failed save, or half as much damage on a successful one. A creature reduced to 0 hit points by this damage is disintegrated. A disintegrated creature and everything it is wearing and carrying, except magic items, are reduced to a pile of fine gray dust."
+				"該法術在施法距離內以你選擇的一點爲圓心創造一個球形範圍。該圓形半徑至多爲40尺。區域內充斥着魔法黑暗與毀滅性的重力能量。",
+				"法術持續時間內，球形區域內視爲困難地形。一個擁有黑暗視覺的生物沒法看透這片魔法黑暗，非魔法的光源無法點亮這片區域。該區域內沒法發出聲音，聲音也沒辦法穿過該區域。任何完全處於該區域內的生物或物件免疫雷鳴傷害，並且生物完全處於該區域內時處於{@condition 耳聾}狀態。在該法術的影響範圍內沒有辦法施展需要語言成分的法術。",
+				"任何在自己回合中第一次進入該區域的生物或在該區域內開始其回合的生物需要進行一次體質豁免。若豁免失敗，該生物受到{@damage 8d10}力場傷害，成功則只受到一半傷害。當一個生物的HP被這個法術降低到0時，該生物被解離。被解離的生物與其身上穿着的，攜帶着的一切，除了魔法物品外，都會化爲一縷灰色的煙塵。"
 			],
 			"damageInflict": [
 				"force"
@@ -71,7 +72,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Fortune's Favor",
+			"name": "命運寵兒",
+			"ENG_name": "Fortune's Favor",
 			"source": "EGW",
 			"page": 186,
 			"level": 2,
@@ -93,7 +95,7 @@
 				"v": true,
 				"s": true,
 				"m": {
-					"text": "a white pearl worth at least 100 gp, which the spell consumes",
+					"text": "言語，姿勢，材料(一顆至少價值 100gp 的白色珍珠，在施法時被消耗)",
 					"cost": 10000,
 					"consume": true
 				}
@@ -108,15 +110,16 @@
 				}
 			],
 			"entries": [
-				"You impart latent luck to yourself or one willing creature you can see within range. When the chosen creature makes an attack roll, an ability check, or a saving throw before the spell ends, it can dismiss this spell on itself to roll an additional {@dice d20} and choose which of the {@dice d20}s to use. Alternatively, when an attack roll is made against the chosen creature, it can dismiss this spell on itself to roll a {@dice d20} and choose which of the {@dice d20}s to use, the one it rolled or the one the attacker rolled.",
-				"If the original {@dice d20} roll has advantage or disadvantage, the creature rolls the additional {@dice d20} after advantage or disadvantage has been applied to the original roll."
+				"你給予你自己或施法距離內你可見的一個自願生物以潛藏的幸運。在法術結束之前，當被選中的生物進行一次攻擊檢定，屬性檢定或者豁免檢定時，其能夠使這個法術結束並扔一顆額外的{@dice d20}骰，並決定使用哪一顆{@dice d20}。或者，當這個生物成爲一個攻擊檢定的目標時，其能夠使這個法術結束並扔一顆額外的{@dice d20}骰，並決定使用哪一顆骰，並決定使用哪一顆{@dice d20}：攻擊者所擲骰的或通過該法術所擲骰。",
+				"若原{@dice d20}骰有優勢或劣勢，那麼通過該法術擲出的{@dice d20}在原{@dice d20}的優勢或劣勢生效後生效。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效應",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd."
+						"使用三環或更高法術位施展該法術時，每比二環高一環的法術位可以令你指定一個額外的生物。"
 					]
 				}
 			],
@@ -152,7 +155,8 @@
 			}
 		},
 		{
-			"name": "Gift of Alacrity",
+			"name": "靈敏之賜",
+			"ENG_name": "Gift of Alacrity",
 			"source": "EGW",
 			"page": 186,
 			"level": 1,
@@ -183,7 +187,7 @@
 				}
 			],
 			"entries": [
-				"You touch a willing creature. For the duration, the target can add {@dice 1d8} to its initiative rolls."
+				"你觸碰一個自願生物，在法術持續時間內，其先攻擲骰中可以加入一個額外的{@dice 1d8}。"
 			],
 			"areaTags": [
 				"ST"
@@ -204,7 +208,8 @@
 			}
 		},
 		{
-			"name": "Gravity Fissure",
+			"name": "重力分裂",
+			"ENG_name": "Gravity Fissure",
 			"source": "EGW",
 			"page": 187,
 			"level": 6,
@@ -225,7 +230,7 @@
 			"components": {
 				"v": true,
 				"s": true,
-				"m": "a fistful of iron filings"
+				"m": "一把鐵料"
 			},
 			"duration": [
 				{
@@ -233,15 +238,16 @@
 				}
 			],
 			"entries": [
-				"You manifest a ravine of gravitational energy in a line originating from you that is 100 feet long and 5 feet wide. Each creature in that line must make a Constitution saving throw, taking {@damage 8d8} force damage on a failed save, or half as much damage on a successful one.",
-				"Each creature within 10 feet of the line but not in it must succeed on a Constitution saving throw or take {@damage 8d8} force damage and be pulled toward the line until the creature is in its area."
+				"你以自身爲原點咒現出一條長100尺，寬5尺的重力能量。所有在線上的生物需要進行一個體質豁免，若失敗，則受到{@damage 8d8}力場傷害，若豁免成功則受到一半傷害。",
+				"所有距離這條線10尺或以內但不在線當中的生物需要通過一個體質豁免，若失敗則受到{@damage 8d8}力場傷害並且會被拉向線的區域中。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效應",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 7th level or higher, the damage increases by {@scaledamage 8d8|6-9|1d8} for each slot level above 6th."
+						"當你使用七環或更高環位的法術位施展該法術時，每比六環高出一環的法術位能使該法術的傷害增加{@scaledamage 8d8|6-9|1d8} 。"
 					]
 				}
 			],
@@ -270,7 +276,8 @@
 			}
 		},
 		{
-			"name": "Gravity Sinkhole",
+			"name": "引力裂溝",
+			"ENG_name": "Gravity Sinkhole",
 			"source": "EGW",
 			"page": 187,
 			"level": 4,
@@ -291,7 +298,7 @@
 			"components": {
 				"v": true,
 				"s": true,
-				"m": "a black marble"
+				"m": "一塊黑色的大理石"
 			},
 			"duration": [
 				{
@@ -299,14 +306,15 @@
 				}
 			],
 			"entries": [
-				"A 20-foot-radius sphere of crushing force forms at a point you can see within range and tugs at the creatures there. Each creature in the sphere must make a Constitution saving throw. On a failed save, the creature takes {@damage 5d10} force damage and is pulled in a straight line toward the center of the sphere, ending in an unoccupied space as close to the center as possible (even if that space is in the air). On a successful save, the creature takes half as much damage and isn't pulled."
+				"一道半徑20尺球形範圍的破壞性能量在施法距離內你能看見的一點爲源點形成，並開始拖拽範圍內的生物。所有在範圍內的生物必須進行一次體質豁免檢定。若豁免失敗，該生物受到{@damage 5d10}力場傷害並且會被直直拉向能量的中心，並在離中心儘可能近的未被佔據的空間停止（哪怕這會讓其飛到天上）。若豁免成功，則其受到一半傷害並且不會被拉走。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效應",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 5th level or higher, the damage increases by {@scaledamage 5d10|4-9|1d10} for each slot level above 4th."
+						"當你使用五環或者更高環位的法術位施展該法術時， 每比四環高出一環的法術位可以使該法術的傷害增加{@scaledamage 5d10|4-9|1d10} 。"
 					]
 				}
 			],
@@ -338,7 +346,8 @@
 			}
 		},
 		{
-			"name": "Immovable Object",
+			"name": "不動物件",
+			"ENG_name": "Immovable Object",
 			"source": "EGW",
 			"page": 187,
 			"level": 2,
@@ -359,7 +368,7 @@
 				"v": true,
 				"s": true,
 				"m": {
-					"text": "gold dust worth at least 25 gp, which the spell consumes",
+					"text": "至少價值 25gp 的金塵，在施法時消耗。",
 					"cost": 2500,
 					"consume": true
 				}
@@ -374,15 +383,16 @@
 				}
 			],
 			"entries": [
-				"You touch an object that weighs no more than 10 pounds and cause it to become magically fixed in place. You and the creatures you designate when you cast this spell can move the object normally. You can also set a password that, when spoken within 5 feet of the object, suppresses this spell for 1 minute.",
-				"If the object is fixed in the air, it can hold up to 4,000 pounds of weight. More weight causes the object to fall. Otherwise, a creature can use an action to make a Strength check against your spell save DC. On a success, the creature can move the object up to 10 feet."
+				"你觸摸一個至多不超過10磅的物件，使其魔法般地固定住。你與你施法時指定的生物能夠如常移動它。你也可以設置一串密碼，當密碼在該物件5尺內被念出時，使這個法術暫時被壓制1分鐘。",
+				"若該物件被固定在空中，那麼它可以至多承載4000磅的重量。更重的負載會使其墜落。另外，一個生物能以其動作進行一個對抗你的法術豁免DC的力量檢定。若其成功，則該物件能被其移動10尺。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效應",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"If you cast this spell using a spell slot of 4th or 5th level, the DC to move the object increases by 5, it can carry up to 8,000 pounds of weight, and the duration increases to 24 hours. If you cast this spell using a spell slot of 6th level or higher, the DC to move the object increases by 10, it can carry up to 20,000 pounds of weight, and the effect is permanent until dispelled."
+						"若你使用四環或五環法術位施展該法術，使該物件移動的檢定DC增加5，並且它能夠承載8000磅重的負載並持續24小時。如果你用六環或者更高環的法術位施展該法術，那麼使該物件移動的檢定DC增加10，並且它能夠承載20000磅重的負載並一直持續到法術被解除。"
 					]
 				}
 			],
@@ -408,7 +418,8 @@
 			}
 		},
 		{
-			"name": "Magnify Gravity",
+			"name": "擴大重力",
+			"ENG_name": "Magnify Gravity",
 			"source": "EGW",
 			"page": 188,
 			"level": 1,
@@ -440,15 +451,16 @@
 				}
 			],
 			"entries": [
-				"The gravity in a 10-foot-radius sphere centered on a point you can see within range increases for a moment. Each creature in the sphere on the turn when you cast the spell must make a Constitution saving throw. On a failed save, a creature takes {@damage 2d8} force damage, and its speed is halved until the end of its next turn. On a successful save, a creature takes half as much damage and suffers no reduction to its speed.",
-				"Until the start of your next turn, any object that isn't being worn or carried in the sphere requires a successful Strength check against your spell save DC to pick up or move."
+				"施法距離內你可見的一點的10尺半徑球形範圍內的重力暫時性地增加了。在你施法時，所有處於該範圍內的生物必須通過一個體質豁免。若豁免失敗，該生物受到{@damage 2d8}力場傷害且其移動速度在其下個回合結束前減半。若豁免成功，該生物受到一半的傷害且在移動速度上沒有減值。",
+				"直到你的下個回合開始，任何想要把該範圍內未被着裝或攜帶的物品移動或撿起都需要進行一次對抗你的法術豁免DC的成功的力量檢定，若成功纔可行。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效應",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 2nd level or higher, the damage increases by {@scaledamage 2d8|1-9|1d8} for each slot level above 1st."
+						"每當你使用二環或更高的法術位施展該法術時，每比一環多一的法術位能使該法術的傷害增加{@scaledamage 2d8|1-9|1d8}。"
 					]
 				}
 			],
@@ -480,7 +492,8 @@
 			}
 		},
 		{
-			"name": "Pulse Wave",
+			"name": "脈衝波動",
+			"ENG_name": "Pulse Wave",
 			"source": "EGW",
 			"page": 188,
 			"level": 3,
@@ -508,15 +521,16 @@
 				}
 			],
 			"entries": [
-				"You create intense pressure, unleash it in a 30-foot cone, and decide whether the pressure pulls or pushes creatures and objects. Each creature in that cone must make a Constitution saving throw. A creature takes {@damage 6d6} force damage on a failed save, or half as much damage on a successful one. And every creature that fails the save is either pulled 15 feet toward you or pushed 15 feet away from you, depending on the choice you made for the spell.",
-				"In addition, unsecured objects that are completely within the cone are likewise pulled or pushed 15 feet."
+				"你創造出一股強烈的衝壓，將其釋放向30尺錐形範圍，並決定該衝壓會推開還是拉近範圍內的物品與生物。在錐形範圍內的每個生物必須要通過一個體質豁免，若豁免失敗則會受到{@damage 6d6}力場傷害，豁免成功則受到一半傷害。豁免失敗的生物會向你被拉進15尺，或從你處被推開15尺，取決於你施展法術時的選擇。",
+				"另外，完全處於錐形範圍內的物件也會被向你被拉進或者被推開15尺。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效應",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 4th level or higher, the damage increases by {@scaledamage 6d6|3-9|1d6} and the distance pulled or pushed increases by 5 feet for each slot level above 3rd."
+						"當你使用四環或更高環的法術位施展該法術時，每比三環高出一環的法術位就能使法術的傷害增加{@scaledamage 6d6|3-9|1d6}，並使推拉的距離增加5尺。"
 					]
 				}
 			],
@@ -525,6 +539,9 @@
 			],
 			"savingThrow": [
 				"constitution"
+			],
+			"miscTags": [
+				"FMV"
 			],
 			"areaTags": [
 				"N"
@@ -555,7 +572,8 @@
 			}
 		},
 		{
-			"name": "Ravenous Void",
+			"name": "饕餮虛空",
+			"ENG_name": "Ravenous Void",
 			"source": "EGW",
 			"page": 188,
 			"level": 9,
@@ -576,7 +594,7 @@
 			"components": {
 				"v": true,
 				"s": true,
-				"m": "a small, nine-pointed star made of iron"
+				"m": "一隻鐵製的小九芒星"
 			},
 			"duration": [
 				{
@@ -589,9 +607,9 @@
 				}
 			],
 			"entries": [
-				"You create a 20-foot-radius sphere of destructive gravitational force centered on a point you can see within range. For the spell's duration, the sphere and any space within 100 feet of it are difficult terrain, and nonmagical objects fully inside the sphere are destroyed if they aren't being worn or carried.",
-				"When the sphere appears and at the start of each of your turns until the spell ends, unsecured objects within 100 feet of the sphere are pulled toward the sphere's center, ending in an unoccupied space as close to the center as possible.",
-				"A creature that starts its turn within 100 feet of the sphere must succeed on a Strength saving throw or be pulled straight toward the sphere's center, ending in an unoccupied space as close to the center as possible. A creature that enters the sphere for the first time on a turn or starts its turn there takes {@damage 5d10} force damage and is {@condition restrained} until it is no longer in the sphere. If the sphere is in the air, the {@condition restrained} creature hovers inside the sphere. A creature can use its action to make a Strength check against your spell save DC, ending this {@condition restrained} condition on itself or another creature in the sphere that it can reach. A creature reduced to 0 hit points by this spell is annihilated, along with any nonmagical items it is wearing or carrying."
+				"你以施法距離內你可見的一點爲源點創造一個半徑20尺的毀滅性球形力場。在法術持續時間內，球形力場與其100尺範圍內的空間視爲困難地形，且完全處於力場內的未被着裝與攜帶的非魔法物件會被摧毀。",
+				"當力場出現時或者在你的每回合開始時，力場的100尺範圍內未被着裝的物件將被直直拉向力場的中心，並在距離力場中心最近的未被佔據的空間停止。",
+				"當一個生物在力場的100尺範圍內開始其回合時，其必須進行一個力量豁免，若失敗則將被直直拉向力場的中心，並在距離力場中心最近的未被佔據的空間停止。一個在當前回合內第一次進入力場的生物或在力場內開始其回合的生物會受到{@damage 5d10}力場傷害並且被{@condition 束縛}，直到其離開力場範圍。 若力場位於空中，那麼被{@condition 束縛}的生物將會在力場中懸浮。一個生物能以其動作進行一個對抗你的法術豁免DC的力量檢定，若成功則能解除其自己或者另一個在其觸及範圍內的力場內的生物的{@condition 束縛}狀態。若一個生物的HP被該法術降低至0，其與其身上攜帶的所有非魔法物件都會被湮滅。"
 			],
 			"damageInflict": [
 				"force"
@@ -627,7 +645,8 @@
 			}
 		},
 		{
-			"name": "Reality Break",
+			"name": "崩壞現實",
+			"ENG_name": "Reality Break",
 			"source": "EGW",
 			"page": 189,
 			"level": 8,
@@ -648,7 +667,7 @@
 			"components": {
 				"v": true,
 				"s": true,
-				"m": "a crystal prism"
+				"m": "一個水晶棱鏡"
 			},
 			"duration": [
 				{
@@ -661,14 +680,14 @@
 				}
 			],
 			"entries": [
-				"You shatter the barriers between realities and timelines, thrusting a creature into turmoil and madness. The target must succeed on a Wisdom saving throw, or it can't take reactions until the spell ends. The affected target must also roll a {@dice d10} at the start of each of its turns; the number rolled determines what happens to the target, as shown on the Reality Break Effects table.",
-				"At the end of each of its turns, the affected target can repeat the Wisdom saving throw, ending the spell on itself on a success.",
+				"你將現實與時間線之間的壁壘粉碎，使一個生物陷入混沌與瘋狂。目標必須通過一個感知豁免，否則將無法執行任何反應直到法術結束。被影響的生物必須在其回合開始時擲一個{@dice d10}，其結果決定目標身上發生了什麼。參照下方表格\"崩壞現實效果：",
+				"在其回合結束時，受影響的生物能重複其感知豁免，若成功，則法術結束。",
 				{
 					"type": "table",
-					"caption": "Reality Break Effects",
+					"caption": "崩壞現實效果",
 					"colLabels": [
 						"d10",
-						"Effect"
+						"效果"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -677,19 +696,19 @@
 					"rows": [
 						[
 							"1-2",
-							"{@b Vision of the Far Realm.} The target takes {@damage 6d12} psychic damage, and it is {@condition stunned} until the end of the turn."
+							"{@b 遙遠國度之瞥。}目標受到{@damage 6d12}心靈傷害並且陷入{@condition 震懾}到本輪結束。"
 						],
 						[
 							"3-5",
-							"{@b Rending Rift.} The target must make a Dexterity saving throw, taking {@damage 8d12} force damage on a failed save, or half as much damage on a successful one."
+							"{@b 崩碎裂縫。}目標必須通過一個敏捷豁免，若失敗則受到{@damage 8d12}力場傷害，若豁免成功則受到一半傷害。"
 						],
 						[
 							"6-8",
-							"{@b Wormhole.} The target is teleported, along with everything it is wearing and carrying, up to 30 feet to an unoccupied space of your choice that you can see. The target also takes {@damage 10d12} force damage and is knocked {@condition prone}."
+							"{@b 蟲洞。}該目標與其身上所着裝、攜帶的一切東西被傳送到其30尺內你能看到的未被佔據的空間。目標受到{@damage 10d12}力場傷害並倒地。"
 						],
 						[
 							"9-10",
-							"{@b Chill of the Dark Void.} The target takes {@damage 10d12} cold damage, and it is {@condition blinded} until the end of the turn."
+							"{@b 暗虛之凍。}目標受到{@damage 10d12}冷凍傷害並且{@condition 目盲}到本回合結束。"
 						]
 					]
 				}
@@ -731,7 +750,8 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Sapping Sting",
+			"name": "削弱芒刺",
+			"ENG_name": "Sapping Sting",
 			"source": "EGW",
 			"page": 189,
 			"level": 0,
@@ -759,8 +779,8 @@
 				}
 			],
 			"entries": [
-				"You sap the vitality of one creature you can see in range. The target must succeed on a Constitution saving throw or take {@damage 1d4} necrotic damage and fall {@condition prone}.",
-				"This spell's damage increases by {@dice 1d4} when you reach 5th level ({@dice 2d4}), 11th level ({@dice 3d4}), and 17th level ({@dice 4d4})."
+				"你削弱施法距離內一個你看得見的生物的生命活力。目標必須通過一個體質豁免，否則就會受到{@damage 1d4}黯蝕傷害並且{@condition 伏地}。",
+				"該法術的傷害會在你到達5級時變爲（{@dice 2d4}）、11級（{@dice 3d4}）、17級（{@dice 4d4}）。"
 			],
 			"scalingLevelDice": {
 				"label": "necrotic damage",
@@ -813,7 +833,8 @@
 			}
 		},
 		{
-			"name": "Temporal Shunt",
+			"name": "時流剎轉",
+			"ENG_name": "Temporal Shunt",
 			"source": "EGW",
 			"page": 189,
 			"level": 5,
@@ -822,7 +843,7 @@
 				{
 					"number": 1,
 					"unit": "reaction",
-					"condition": "taken when a creature you can see makes an attack roll or starts to cast a spell"
+					"condition": "當你看到一個生物進行一次攻擊擲骰或開始施展一個法術時使用"
 				}
 			],
 			"range": {
@@ -846,14 +867,15 @@
 				}
 			],
 			"entries": [
-				"You target the triggering creature, which must succeed on a Wisdom saving throw or vanish, being thrown to another point in time and causing the attack to miss or the spell to be wasted. At the start of its next turn, the target reappears where it was or in the closest unoccupied space. The target doesn't remember you casting the spell or being affected by it."
+				"你以觸發法術的生物爲目標, 其必須通過一個成功的感知豁免，否則就會消失，被驅逐到時間流的另一個時間點上並導致攻擊失手或法術浪費。在目標生物的下個回合開始時，目標重新出現在其剛剛的位置或最近一處未被佔據的空間。目標不記得你施展了這個法術或自己被這個法術影響。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效應",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 6th level or higher, you can target one additional creature for each slot level above 5th. All targets must be within 30 feet of each other."
+						"當你使用六環或更高環位的法術位施展該法術時，每比五環高出一環的法術位可以使你多指定一個目標。 所有的目標都需要在互相的30尺內。"
 					]
 				}
 			],
@@ -879,7 +901,8 @@
 			}
 		},
 		{
-			"name": "Tether Essence",
+			"name": "繫結本源",
+			"ENG_name": "Tether Essence",
 			"source": "EGW",
 			"page": 189,
 			"level": 7,
@@ -901,7 +924,7 @@
 				"v": true,
 				"s": true,
 				"m": {
-					"text": "a spool of platinum cord worth at least 250 gp, which the spell consumes",
+					"text": "一卷至少價值 250gp 的鉑金絲線，在施法時被消耗。",
 					"cost": 25000,
 					"consume": true
 				}
@@ -917,7 +940,7 @@
 				}
 			],
 			"entries": [
-				"Two creatures you can see within range must make a Constitution saving throw, with disadvantage if they are within 30 feet of each other. Either creature can willingly fail the save. If either save succeeds, the spell has no effect. If both saves fail, the creatures are magically linked for the duration, regardless of the distance between them. When damage is dealt to one of them, the same damage is dealt to the other one. If hit points are restored to one of them, the same number of hit points are restored to the other one. If either of the tethered creatures is reduced to 0 hit points, the spell ends on both. If the spell ends on one creature, it ends on both."
+				"兩個施法距離內的你能看見的生物必須進行一次體質豁免，若兩者在30尺內，則兩者的豁免檢定具有劣勢。每個生物都能自願放棄豁免。若兩者中有一個豁免成功了，那麼法術沒有效果。若兩者豁免均失敗，那麼彼此便會在法術持續時間內魔法般地被連接在一起，無論兩人間距多少。 若其中一人受到傷害 ，另外一人也會受到等額的傷害。若其中一人恢復了生命值，另外一人也會恢復等額的生命值。如果被繫結的雙方中任意一方的HP減少到了0，那麼該法術結束。該法術在任意一方身上結束時，另外一方的法術也結束。"
 			],
 			"savingThrow": [
 				"constitution"
@@ -954,7 +977,8 @@
 			}
 		},
 		{
-			"name": "Time Ravage",
+			"name": "時光蹂躪",
+			"ENG_name": "Time Ravage",
 			"source": "EGW",
 			"page": 189,
 			"level": 9,
@@ -976,7 +1000,7 @@
 				"v": true,
 				"s": true,
 				"m": {
-					"text": "an hourglass filled with diamond dust worth at least 5,000 gp, which the spell consumes",
+					"text": "一個裝滿了鑽石粉塵的沙漏，其價值至少爲 5000 gp, 會在施法時消耗",
 					"cost": 500000,
 					"consume": true
 				}
@@ -987,7 +1011,7 @@
 				}
 			],
 			"entries": [
-				"You target a creature you can see within range, putting its physical form through the devastation of rapid aging. The target must make a Constitution saving throw, taking {@damage 10d12} necrotic damage on a failed save, or half as much damage on a successful one. If the save fails, the target also ages to the point where it has only 30 days left before it dies of old age. In this aged state, the target has disadvantage on attack rolls, ability checks, and saving throws, and its walking speed is halved. Only the wish spell or the {@spell 高等復原術} cast with a 9th-level spell slot can end these effects and restore the target to its previous age."
+				"你選定一個施法距離內的目標，使其身體形態受到飛速衰老的破壞。目標必須進行一個體質豁免並在豁免失敗時受到{@damage 10d12}黯蝕傷害, 或在豁免成功時只受到一半的傷害。若其豁免失敗，目標還會快速老化至離老死只有三十天的時間點。在這個年齡段, 目標在攻擊擲骰上, 屬性檢定上與豁免檢定上承受劣勢，其步行速度也減少一半.。只有祈願術，或以九環法術位施展的{@spell 高等復原術}才能使這些效果消除並使其恢復原先的年齡。"
 			],
 			"damageInflict": [
 				"necrotic"
@@ -1017,7 +1041,8 @@
 			}
 		},
 		{
-			"name": "Wristpocket",
+			"name": "魔袋術",
+			"ENG_name": "Wristpocket",
 			"source": "EGW",
 			"page": 190,
 			"level": 2,
@@ -1051,8 +1076,8 @@
 				"ritual": true
 			},
 			"entries": [
-				"You flick your wrist, causing one object in your hand to vanish. The object, which only you can be holding and can weigh no more than 5 pounds, is transported to an extradimensional space, where it remains for the duration.",
-				"Until the spell ends, you can use your action to summon the object to your free hand, and you can use your action to return the object to the extradimensional space. An object still in the pocket plane when the spell ends appears in your space, at your feet."
+				"你輕彈手腕, 讓你手中的一件物品消失。這件只有你能持握的，重量不超過五磅物件會被傳送到一個異次元空間，它會在法術持續時間內一直停留在那裏。",
+				"到法術結束爲止, 你可以用你的動作將物件召喚到你空餘的手中, 你也可以用一個動作將該物件返還至異次元空間處。到法術結束時仍然存在在異次元空間的物品會出現在你所在的位置中，處於你的腳下。"
 			],
 			"areaTags": [
 				"ST"
