@@ -181,7 +181,7 @@
 					"rows": [
 						[
 							"Barbarian",
-							"{@class Barbarian|Battlerager}",
+							"{@class Battlerager|Barbarian}",
 							"3rd",
 							"Calls on the spirits of honored ancestors to protect others"
 						],
