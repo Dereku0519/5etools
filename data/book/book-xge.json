@@ -5,22 +5,22 @@
 			"name": "介紹",
 			"page": 4,
 			"entries": [
-				"在繁華的深水城下面，有一個魔眼監視著所有的人事物\u2014至少他自己是這麼想的。這個奇怪的生物被稱為珊娜薩，它相信自己可以收集龍與地下城多元宇宙中一切事物的資訊。魔眼渴望知道一切！但無論魔眼學到了什麼知識，獲得了什麼寶藏，它在整個多元宇宙中最珍貴的財產仍然是它的金魚，西爾加(Sylgar)。",
-				"{@i 姍納薩的萬事指南} 是 D&D 第五版的第一個主要規則擴展，為遊戲提供了大量新選項。 珊娜薩可能無法實現其了解一切的夢想，但這本書確實深入研究了遊戲的每個主要部分：冒險家、他們的冒險以及他們所使用的魔法。",
+				"在熙熙攘攘的深水城下，身為罪犯之王的眼魔監視著  所有的人事物——至少它自己是這麼認為的。人稱珊娜薩Xanathar的這一古怪存在覺得自己可以收集龍與地下城多元宇宙中萬事萬物的情報。眼魔它想要知道一切！不過無論眼魔再如何研習與蒐集寶物，它在多元宇宙中最珍貴的財產仍然是它的金魚，斯爾嘉Sylgar。",
+				"《珊娜萨的万事指南Xanathar’s Guide to Everything》作为第五版D&D的首个大型规则扩展为该游戏提供了大量的新选项。珊娜萨或许无法实现其了解万物的梦想，但本书确实深入研究了游戏的每个主要部分：冒险者，以及他们经历的冒险本身和他们行使的魔法。",
 				{
 					"type": "section",
 					"name": "使用本書",
 					"page": 4,
 					"entries": [
-						"這本書是為玩家和地下城主而寫的，它提供了增強任何世界中戰役的選項，無論你是在被遺忘的國度、另一個官方D&D 設定，還是你自己創造的世界中冒險。這裡的選項建立在官方的基礎上玩家手冊、怪物手冊和地下城主指南中包含的規則。將本書與這些手冊一起使用。它建立在這些手冊的基礎上，將這些規則延伸出去。遊玩D&D 這本書的任何內容不是必要的\u2014這不是第四本核心規則手冊\u2014但我們希望它能為您提供享受遊戲的新方式。",
-						"第一章提供了對玩家手冊中提供的內容進行擴展的角色選項。 第 2 章是 DM 的工具包，為運行遊戲和設計冒險提供了新的資源，所有這些都建立在《怪物手冊》和《地下城主指南》的基礎上。 第 3 章介紹了供玩家角色和施法怪物使用的新法術。",
-						"附錄 A 提供了運行共享活動的指南，類似於 D&D 冒險家聯盟舉辦的活動，附錄 B 包含大量表格，可讓您快速為 D&D 故事中的角色產生名稱。",
-						"當您仔細閱讀本文中的許多選項時，您會透過珊娜薩本身的觀察。 就像魔眼的游移思維一樣，你的閱讀將帶你到遊戲中熟悉和陌生的地方。 祝您旅途愉快！",
+						"本書為玩家和地下城主而著。無論你是在被遺忘國度裡冒險，還是在另一個官方D&D設定中，又或者在你自己創作的世界中，本書所提供的選項都可以為戰役世界作加成增進。這些選項建立在《玩家手冊》《怪物圖鑑》和《城主指南》中所包含的官方規則基礎之上。你可以將本書看作是原三寶書的附帶。它以三寶書的內容為基礎，探索這些書刊裡最初所述內容的走向。這裡的內容不是D&D戰役中必需的東西（這不算第四本核心規則書），但我們希望它能為你提供一些享受該遊戲的新方式。",
+						"第1章提供了《玩家手冊》中所述角色選線的擴充套件。第2章是個DM的工具包，它提供了一些運行遊戲和設計冒險的新資源，而所有這些需要以《怪物圖鑑》和《城主指南》為基礎進行構建。第3章則為玩家角色和施法怪物們提供了一些新的法術。",
+						"附錄A提供了關於運作與D&D冒險者聯盟類似的共享戰役之指引，而附錄B包含的許多表格則可以幫你快速地為自己的D&D故事角色生成名字。",
+						"你閱讀本書中諸多選項時，還會遇到來自珊娜薩的觀察。你的閱讀體驗或許會隨著眼魔那翻滾的思維將你帶去某些熟悉又新鮮的遊戲中。祝你旅途愉快！",
 						{
 							"type": "inset",
-							"name": "出土的奧秘",
+							"name": "破解奧祕",
 							"entries": [
-								"本書中的大部分內容最初出現在出土的奧秘中，這是我們發布的一系列線上文章，旨在探索可能正式成為遊戲一部分的規則。 一些出土的奧秘項目最終沒有引起粉絲的共鳴，因此暫時被擱置。 後續章節中的選項提供靈感的出土的奧秘受到了好評，並且由於成千上萬的反饋，已被完善為此處呈現的官方形式。"
+								"本書的大部分內容都曾在破解奧秘中出現。破解奧秘是我們釋出的一系列線上文章，用於探索那些或許能應用於遊戲的規則。那些未能引起引起粉絲共鳴的破解奧秘內容會被暫時擱置。在下列篇章中的破解奧秘材料都是廣受歡迎的部分，而這些材料也已經在千萬人的反饋中作了進一步的提煉才得以正式釋出。"
 							],
 							"id": "002"
 						}
@@ -32,15 +32,15 @@
 					"name": "核心規則",
 					"page": 5,
 					"entries": [
-						"本書依賴三本核心規則手冊中的規則。 遊戲特別頻繁地使用了玩家手冊第7-10章中的規則：「使用能力分數」、「冒險」、「戰鬥」和「施法」。該書的附錄A也至關重要； 它包含條件的定義，例如{@condition 隱形}和{@condition 伏地}。 您不需要牢記規則，但在需要時知道在哪裡可以找到它們會很有幫助。",
-						"If you're a DM, you should also know where to look things up in the dungeon master's guide, especially the rules on how magic items work (see chapter 7 of that book). The introduction of the monster manual is your guide on how to use a monster's stat block.",
+						"本書基於三本核心規則書的規則。遊戲會頻繁用到《玩家手冊》第7~10章的規則，包括：“屬性值應用”“冒險”“戰鬥”“施法”，以及其附錄A中包括的{@condition 隱形}和{@condition 伏地}等重要狀態。你不需要死記這些規則，不過最好能再需要它們時知道要到哪裡去查詢。",
+						"如果你是DM，你還要知道如何在《城主指南》中查詢相應的內容，特別是一些魔法物品的運作方式（件該書第7章）。關於如何閱讀怪物資料板的指引可以參見《怪物圖鑑》的簡介",
 						{
 							"type": "entries",
-							"name": "The DM Adjudicates the Rules",
+							"name": "DM裁決規則",
 							"page": 5,
 							"entries": [
-								"One rule overrides all others: the DM is the final authority on how the rules work in play.",
-								"Rules are part of what makes D&D a game, rather than just improvised storytelling. The game's rules are meant to help organize, and even inspire, the action of a D&D campaign. The rules are a tool, and we want our tools to be as effective as possible. No matter how good those tools might be, they need a group of players to bring them to life and a DM to guide their use.",
+								"條凌駕一切的規則：DM是所有遊戲中運作規則的最終裁決者。",
+								"規則是 D&D 做為遊戲中很重要的一部分，而不僅僅是即興虛構故事。 遊戲規則旨在幫助組織甚至激發 D&D 的行動。 規則是一種工具，我們希望我們的工具盡可能有效。 無論這些工具有多好，它們都需要一群玩家來使它們生效，並需要一個 DM 來指導它們的使用。",
 								"The DM is key. Many unexpected events can occur in a D&D campaign, and no set of rules could reasonably account for every contingency. If the rules tried to do so, the game would become a slog. An alternative would be for the rules to severely limit what characters can do, which would be contrary to the open-endedness of D&D. Here's the path the game takes: it lays a foundation of rules that a DM can build on, and it embraces the DM's role as the bridge between the things the rules address and the things they don't."
 							],
 							"id": "004"
