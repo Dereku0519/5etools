@@ -1,7 +1,8 @@
 {
 	"spell": [
 		{
-			"name": "Distort Value",
+			"name": "扭曲價值",
+			"ENG_name": "Distort Value",
 			"source": "AI",
 			"page": 75,
 			"level": 1,
@@ -31,15 +32,16 @@
 				}
 			],
 			"entries": [
-				"Do you need to squeeze a few more gold pieces out of a merchant as you try to sell that weird octopus statue you liberated from the chaos temple? Do you need to downplay the worth of some magical assets when the tax collector stops by? Distort value has you covered.",
-				"You cast this spell on an object no more than 1 foot on a side, doubling the object's perceived value by adding illusory flourishes or polish to it, or reducing its perceived value by half with the help of illusory scratches, dents, and other unsightly features. Anyone examining the object can ascertain its true value with a successful Intelligence ({@skill Investigation}) check against your spell save DC."
+				"當你試圖賣掉從混沌神殿中解放出來的那座奇異章魚雕像時，你是否需要從那個無良商人口袋裏再壓榨幾塊黃金？當收稅員駐足你的身前時，你是否需要貶低一些魔法資產的價值呢？扭曲價值法術爲你保駕護航。",
+				"你施展此法術於邊長不超過1尺的一個物件上，以幻術的滋養和拋光來加倍它看起來的價值，或者是用虛幻的劃痕、凹陷和其他不雅的特徵來減半它看起來的價值。任何檢查物件的人，可以通過智力（{@skill 調查}）檢定對抗你的法術DC，若成功將會確定它的真實價值。 "
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效果",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 2nd level or higher, the maximum size of the object increases by 1 foot for each slot level above 1st."
+						"當你使用2環或更高的法術位施放該法術時，使用的法術位每高一環，目標物件的最大尺寸就可以增加1尺。"
 					]
 				}
 			],
@@ -65,7 +67,8 @@
 			}
 		},
 		{
-			"name": "Fast Friends",
+			"name": "快速交友",
+			"ENG_name": "Fast Friends",
 			"source": "AI",
 			"page": 75,
 			"level": 3,
@@ -97,16 +100,17 @@
 				}
 			],
 			"entries": [
-				"When you need to make sure something gets done, you can't rely on vague promises, sworn oaths, or binding contracts of employment. When you cast this spell, choose one humanoid within range that can see and hear you, and that can understand you. The creature must succeed on a Wisdom saving throw or become {@condition charmed} by you for the duration. While the creature is {@condition charmed} in this way, it undertakes to perform any services or activities you ask of it in a friendly manner, to the best of its ability.",
-				"You can set the creature new tasks when a previous task is completed, or if you decide to end its current task. If the service or activity might cause harm to the creature, or if it conflicts with the creature's normal activities and desires, the creature can make another Wisdom saving throw to try to end the effect. This save is made with advantage if you or your companions are fighting the creature. If the activity would result in certain death for the creature, the spell ends.",
-				"When the spell ends, the creature knows it was {@condition charmed} by you."
+				"如果你想要確保某件事情完成，你不能依賴於含糊不清的承諾、宣誓或僱傭合同。當你施展此法術時，選擇一個能看見、能聽見、並且能理解你的，在施法距離內的類人生物。這個生物必須通過一次感知豁免，否則將會在持續期間內被你{@condition 魅惑}。當生物因爲這種方式被{@condition 魅惑}時，它將承諾盡其所能地以友好的方式履行你所要求的任何服務或者是活動。",
+				"在這個生物之前的任務完成時，或者你決定中止它的當前任務時，你可以爲它佈置一個新任務。如果這項活動或任務可能傷害這個生物，或者與這個生物的正常活動和慾望相違背時，生物可以進行另一次感知豁免來嘗試中止這個效果。如果你或者你的同伴正在與這個生物交戰，他對此豁免具有優勢。如果你要求的活動在結果上會確實地導致這個生物死亡，法術將會結束。",
+				"當法術結束時，這個生物知道他曾經被你所{@condition 魅惑}。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效果",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd."
+						"當你使用4環或更高的法術位施放該法術時，使用的法術位每高一環，你就可以多指定一個額外的目標。"
 					]
 				}
 			],
@@ -141,7 +145,8 @@
 			}
 		},
 		{
-			"name": "Gift of Gab",
+			"name": "巧舌如簧",
+			"ENG_name": "Gift of Gab",
 			"source": "AI",
 			"page": 76,
 			"level": 2,
@@ -150,7 +155,7 @@
 				{
 					"number": 1,
 					"unit": "reaction",
-					"condition": "which you take when you speak to another creature"
+					"condition": "當你與另一個生物說話時採取"
 				}
 			],
 			"range": {
@@ -173,12 +178,12 @@
 				{
 					"type": "quote",
 					"entries": [
-						"When I met Jim Darkmagic, I wondered how he got anything done in that outfit. I have since learned that most of his talents involve standing and talking. His outfit is perfect for that."
+						"我最開始見到吉姆·黑法 Jim Darkmagic 那時，我就在想他是怎麼穿着這身搞定那麼多事的。後來我才知道他最大的天賦就是站着說話。那這身行頭確實完美。"
 					],
-					"by": "Môrgæn"
+					"by": "摩根 Môrgæn"
 				},
-				"Jim Darkmagic is said to have invented this spell, originally calling it {@i I said what?!} Have you ever been talking to the local monarch and accidentally mentioned how their son looks like your favorite hog from when you were growing up on the family farm? We've all been there! But rather than being beheaded for an honest slip of the tongue, you can pretend it never happened\u2014by ensuring that no one knows it happened.",
-				"When you cast this spell, you skillfully reshape the memories of listeners in your immediate area, so that each creature of your choice within 5 feet of you forgets everything you said within the last 6 seconds. Those creatures then remember that you actually said the words you speak as the verbal component of the spell."
+				"據說是吉姆·黑法 Jim Darkmagic 發明了這個魔法，並且它最開始的名字叫{@i 我說啥來着？！}。你有沒有曾經在與當地領主開玩笑時，不小心提到他的兒子長得像你家農場裏那隻你最喜歡的豬？我們過去都經歷過！不過你可以確保沒人知道這件事情，來假裝它從未發生過，以此來避免因爲一次誠實的失言而丟掉腦袋。",
+				"當你施展這個法術時，你可以通過巧妙的操作修整你周圍聽衆的記憶，從而使在你周圍5尺內、每一個你所選擇的生物立即忘掉在最後六秒中你所說過的每一句話。之後，他們會記住你實際上說的是作爲這個法術言語成分的那些話語。"
 			],
 			"areaTags": [
 				"MT"
@@ -197,7 +202,8 @@
 			}
 		},
 		{
-			"name": "Incite Greed",
+			"name": "鼓動貪慾",
+			"ENG_name": "Incite Greed",
 			"source": "AI",
 			"page": 76,
 			"level": 3,
@@ -219,7 +225,7 @@
 				"v": true,
 				"s": true,
 				"m": {
-					"text": "a gem worth at least 50 gp",
+					"text": "一塊至少價值 50gp 的寶石",
 					"cost": 5000
 				}
 			},
@@ -234,8 +240,8 @@
 				}
 			],
 			"entries": [
-				"When you cast this spell, you present the gem used as the material component and choose any number of creatures within range that can see you. Each target must succeed on a Wisdom saving throw or be {@condition charmed} by you until the spell ends, or until you or your companions do anything harmful to it. While {@condition charmed} in this way, a creature can do nothing but use its movement to approach you in a safe manner. While an affected creature is within 5 feet of you, it cannot move, but simply stares greedily at the gem you present.",
-				"At the end of each of its turns, an affected target can make a Wisdom saving throw. If it succeeds, this effect ends for that target."
+				"當你施展這個法術時，你將展現作爲法術材料成分的寶石，並且選擇施法距離內能看見你的、任意數量的生物。每一個目標都必須成功通過一次感知豁免檢定，否則將會被你{@condition 魅惑}直到法術結束，或者直到你或你的同伴做了任何有害於他的事情。當生物被這種方式{@condition 魅惑}時，它們除了以安全的方式花費移動力來接近你以外，不能做任何其他的事情。當一個受影響的生物到達你的5尺之內，它將不能移動，只是貪婪地注視着你所展現的寶石。",
+				"受影響的目標每個回合結束時，可以再進行一次感知豁免檢定。如果它成功，對於那個目標的效果將結束。"
 			],
 			"conditionInflict": [
 				"charmed"
@@ -267,7 +273,7 @@
 			}
 		},
 		{
-			"name": "Jim's Glowing Coin",
+			"name": "吉姆的發光硬幣",
 			"source": "AI",
 			"page": 76,
 			"level": 2,
@@ -287,7 +293,7 @@
 			},
 			"components": {
 				"s": true,
-				"m": "a coin",
+				"m": "一枚硬幣",
 				"r": true
 			},
 			"duration": [
@@ -300,7 +306,7 @@
 				}
 			],
 			"entries": [
-				"Of the many tactics employed by master magician and renowned adventurer Jim Darkmagic, the old glowing coin trick is a time-honored classic. When you cast the spell, you hurl the coin that is the spell's material component to any spot within range. The coin lights up as if under the effect of a {@spell 光亮術} spell. Each creature of your choice that you can see within 30 feet of the coin must succeed on a Wisdom saving throw or be distracted for the duration. While distracted, a creature has disadvantage on Wisdom ({@skill Perception}) checks and initiative rolls."
+				"在魔術大師、大冒險家吉姆·黑法 Jim Darkmagic 運用過的許多騙術中，\"發光的舊硬幣\"是其中最爲經典的。 當你施法時，你將作爲法術材料成分的硬幣丟往法術距離內任意一點。這枚硬幣將會像處於{@spell 光亮術}法術影響一般閃閃發光。在硬幣周圍30尺內，你所能看到、並且由你選擇的每一個生物必須通過一次感知豁免檢定，否則將會在持續時間內被硬幣所分心。在被分心時，生物在感知（{@skill 察覺}）檢定和先攻檢定中具有劣勢。"
 			],
 			"miscTags": [
 				"SGT"
@@ -318,7 +324,8 @@
 			}
 		},
 		{
-			"name": "Jim's Magic Missile",
+			"name": "吉姆的魔法飛彈",
+			"ENG_name": "Jim's Magic Missile",
 			"source": "AI",
 			"page": 76,
 			"level": 1,
@@ -350,20 +357,21 @@
 				{
 					"type": "quote",
 					"entries": [
-						"Jim's magic missile is an ancient and powerful spell, as well as being the name of my band in Wizard Academy."
+						"吉姆的魔法飛彈是個久遠又強大的法術，也是我在法師學院裏的樂隊的的名字。"
 					],
-					"by": "Jim Darkmagic"
+					"by": "吉姆·黑法 Jim Darkmagic"
 				},
-				"Any apprentice wizard can cast a boring old magic missile. Sure, it always strikes its target. Yawn. Do away with the drudgery of your grandfather's magic with this improved version of the spell, as used by Jim Darkmagic!",
-				"You create three twisting, whistling, hypoallergenic, gluten-free darts of magical force. Each dart targets a creature of your choice that you can see within range. Make a ranged spell attack for each missile. On a hit, a missile deals {@damage 2d4} force damage to its target.",
-				"If the attack roll scores a critical hit, the target of that missile takes {@damage 5d4} force damage instead of you rolling damage twice for a critical hit. If the attack roll for any missile is a 1, all missiles miss their targets and blow up in your face, dealing 1 force damage per missile to you."
+				"每一個法師學徒都會施展無聊的古董魔法飛彈。啊哈，它總是擊中目標。（哈欠）。別再幹你祖父流傳下來的苦差事了，來像吉姆·黑法 Jim Darkmagic 那樣，用這個改進版本的法術吧！",
+				"你創造了三個扭曲着的、尖嘯着的、低致敏的、無麩質的魔法力場飛鏢。每一枚飛彈都瞄準一個在法術距離內由你選擇的可見生物。爲每一枚飛彈進行遠程攻擊檢定。若命中，飛彈將對這個目標造成{@damage 2d4}力場傷害。",
+				"如果這次攻擊檢定形成了一次重擊，取代正常重擊形成的兩次傷害骰的是，那枚飛彈的目標將直接受到{@damage 5d4}力場傷害。但是如果任何一個飛彈的攻擊檢定爲1，所有飛彈都會丟失他們的目標並且在你的臉上爆炸，此時每一枚飛彈都會對你造成1點傷害。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效果",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart, and the royalty component increases by 1 gp, for each slot level above 1st."
+						"當你使用2環或更高的法術位施放該法術時，使用的法術位每高一環，法術就可以多創造一枚飛鏢，但是版權成分也會增加 1 gp。"
 					]
 				}
 			],
@@ -390,7 +398,8 @@
 			}
 		},
 		{
-			"name": "Motivational Speech",
+			"name": "勵志演講",
+			"ENG_name": "Motivational Speech",
 			"source": "AI",
 			"page": 77,
 			"level": 3,
@@ -424,18 +433,19 @@
 				{
 					"type": "quote",
 					"entries": [
-						"I once heard a motivational speech by Jim and it was the worst ninety seconds of my life. What does Omin see in him, anyway?"
+						"聽過吉姆的一次勵志演講，那是我人生最弱智的九十秒。真不知道歐米到底看中了他哪裏。"
 					],
-					"by": "Walnut Dankgrass"
+					"by": "沃爾納特·鄧格拉斯 Walnut Dankgrass"
 				},
-				"You address allies, staff, or innocent bystanders to exhort and inspire them to greatness, whether they have anything to get excited about or not. Choose up to five creatures within range that can hear you. For the duration, each affected creature gains 5 temporary hit points and has advantage on Wisdom saving throws. If an affected creature is hit by an attack, it has advantage on the next attack roll it makes. Once an affected creature loses the temporary hit points granted by this spell, the spell ends for that creature."
+				"你向盟友、工作人員或是無辜的旁觀者發出勸誡，激勵他們嚮往崇高的目標，不管到底有沒有發生什麼讓他們興奮的事情。選擇施法距離內最多5個可以聽見你的生物。在持續時間中，每個生物都可以得到5點臨時生命值，並且在感知豁免中具有優勢。如果一個受影響的生物被一次攻擊擊中，它將在下一個它所進行的攻擊檢定中具有優勢。一旦一個受影響的生物失去了這個法術所提供的臨時生命值，這個法術就對它結束了。"
 			],
 			"entriesHigherLevel": [
 				{
 					"type": "entries",
-					"name": "At Higher Levels",
+					"name": "升環施法效果",
+					"ENG_name": "At Higher Levels",
 					"entries": [
-						"When you cast this spell using a spell slot of 4th level or higher, the temporary hit points increase by 5 for each slot level above 3rd."
+						"當你使用4環或更高的法術位施放該法術時，使用的法術位每高一環，提供的臨時生命值就增加5點。"
 					]
 				}
 			],
