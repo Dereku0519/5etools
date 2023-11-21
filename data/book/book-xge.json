@@ -155,22 +155,22 @@
 		},
 		{
 			"type": "section",
-			"name": "Character Options",
+			"name": "角色選項",
 			"page": 7,
 			"entries": [
-				"The main figures in any D&D campaign are the characters created by the players. The heroics, folly, righteousness, and potential villainy of your characters are at the heart of the story. This chapter provides a variety of new options for them, focusing on additional subclasses for each of the classes in the player's handbook.",
-				"Each class offers a character-defining choice at 1st, 2nd, or 3rd level that unlocks a series of special features, not available to the class as a whole. That choice is called a subclass. Each class has a collective term that describes its subclasses; in the fighter, for instance, the subclasses are called martial archetypes, and in the paladin, they're sacred oaths. The table below identifies each of the subclasses in this book. In addition, the section for druids presents details on how the Wild Shape feature works, and the warlock receives a collection of new choices for the class's Eldritch Invocations feature.",
-				"Each of the class presentations leads off with advice on how to add depth and detail to your character's personality. You can use the tables in these sections as a source of inspiration, or roll a die to randomly determine a result if desired.",
-				"Following the subclasses, the section called \"this is your life\" presents a series of tables for adding detail to your character's backstory.",
-				"The chapter concludes with a selection of feats for the races in the player's handbook, offering ways to delve deeper into a character's racial identity.",
+				"在任何D&D冒險中，主要角色是由玩家創建的角色。你角色的英勇、愚蠢、正義和潛在的邪惡是故事的核心。本章提供了各種新的選擇，著重於玩家手冊中每個職業的附加子職業。",
+				"每個職業在1級、2級或3級都提供了一個定義角色的選擇，解鎖了一系列對整個職業不可用的特殊功能。這個選擇被稱為子職業。每個職業都有一個描述其子職業的集體術語；例如，在戰士中，子職業被稱為武術原型，而在聖騎士中，它們被稱為神聖誓言。下表標識了本書中的每個子職業。此外，針對德魯伊的部分介紹了野性變身功能的工作原理，而術士則為該職業的秘法職能提供了一系列新的選擇。",
+				"每個職業介紹都以如何為你的角色的個性增添深度和細節的建議開頭。你可以將這些部分的表格用作靈感來源，或者如果需要，擲骰子以隨機決定結果。",
+				"在子職業之後，名為「這是你的生活」的部分呈現了一系列表格，用於為你的角色的背景增添細節。",
+				"該章節以一系列用於玩家手冊種族的技能的選擇結尾，提供了深入挖掘角色種族身份的方式。",
 				{
 					"type": "table",
-					"caption": "Subclasses",
+					"caption": "子職業",
 					"colLabels": [
-						"Class",
-						"Subclass",
-						"Level Available",
-						"Description"
+						"職業",
+						"子職業",
+						"可用等級",
+						"描述"
 					],
 					"colStyles": [
 						"col-1",
@@ -181,7 +181,8 @@
 					"rows": [
 						[
 							"Barbarian",
-							"{@class Barbarian|phb|Path of the Ancestral Guardian|Ancestral Guardian|xge}",
+							"{@class 野蠻人|phb|Path of the Ancestral Guardian|先祖守衛道途|xge}",
+							//"{@class Barbarian|phb|Path of the Ancestral Guardian|Ancestral Guardian|xge}",
 							"3rd",
 							"Calls on the spirits of honored ancestors to protect others"
 						],
