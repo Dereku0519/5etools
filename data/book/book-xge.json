@@ -3249,7 +3249,7 @@
 					"name": "精金武器",
 					"page": 78,
 					"entries": [
-						"精金是從隕石和特殊礦脈中發現的超硬金屬。除了被用來製作{@item 精金護甲}（詳見《地下城主指南》“魔法物品”），該金屬也用於鍛造武器。",
+						"精金是從隕石和特殊礦脈中發現的超硬金屬。除了被用來製作{@item 精金護甲|DMG}（詳見《地下城主指南》“魔法物品”），該金屬也用於鍛造武器。",
 						"Melee weapons and ammunition made of or coated with adamantine are unusually effective when used to break objects. Whenever an adamantine weapon or piece of ammunition hits an object, the hit is a critical hit.",
 						"The adamantine version of a melee weapon or of ten pieces of ammunition costs 500 gp more than the normal version, whether the weapon or ammunition is made of the metal or coated with it."
 					],
