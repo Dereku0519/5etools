@@ -10,7 +10,7 @@ class RenderSpells {
 			${Renderer.utils.getExcludedTr(sp, "spell", UrlUtil.PG_SPELLS)}
 			${Renderer.utils.getNameTr(sp, {page: UrlUtil.PG_SPELLS})}
 			<tr><td class="rd-spell__level-school-ritual" colspan="6"><span>${Parser.spLevelSchoolMetaToFull(sp.level, sp.school, sp.meta, sp.subschools)}</span></td></tr>
-			<tr><td colspan="6"><span class="bold">施法間：</span>${Parser.spTimeListToFull(sp.time)}</td></tr>
+			<tr><td colspan="6"><span class="bold">施法時間：</span>${Parser.spTimeListToFull(sp.time)}</td></tr>
 			<tr><td colspan="6"><span class="bold">射程：</span>${Parser.spRangeToFull(sp.range)}</td></tr>
 			<tr><td colspan="6"><span class="bold">構材：</span>${Parser.spComponentsToFull(sp.components, sp.level)}</td></tr>
 			<tr><td colspan="6"><span class="bold">持續時間：</span>${Parser.spDurationToFull(sp.duration)}</td></tr>
