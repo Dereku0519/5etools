@@ -37,7 +37,6 @@ class SpellsPage {
 		const range = Parser.spRangeToFull(spell.range);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
-			<span class="bold col-2-9 pl-0">${spell.name}</span>
 			<span class="col-1-5 text-center">${PageFilterSpells.getTblLevelStr(spell)}</span>
 			<span class="col-1-7 text-center">${time}</span>
 			<span class="col-1-2 sp__school-${spell.school} text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</span>
