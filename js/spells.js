@@ -43,7 +43,7 @@ class SpellsPage {
 			<span class="col-1-2 sp__school-${spell.school} text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</span>
 			<span class="col-0-6 text-center" title="Concentration">${concentration}</span>
 			<span class="col-2-4 text-right">${range}</span>
-			<span class="col-2-4 text-right">${range}</span>
+			<span class="col-2-4 text-right">${concentration}</span>
 			<span class="col-1-7 text-center ${Parser.sourceJsonToColor(spell.source)} pr-0" title="${Parser.sourceJsonToFull(spell.source)}" ${BrewUtil.sourceJsonToStyle(spell.source)}>${source}</span>
 		</a>`;
 
