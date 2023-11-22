@@ -253,6 +253,7 @@ async function pPostLoad () {
 			duration: {name: "Duration", transform: (it) => Parser.spDurationToFull(it)},
 			_school: {name: "School", transform: (sp) => `<span class="sp__school-${sp.school}" ${Parser.spSchoolAbvToStyle(sp.school)}>${Parser.spSchoolAndSubschoolsAbvsToFull(sp.school, sp.subschools)}</span>`},
 			range: {name: "Range", transform: (it) => Parser.spRangeToFull(it)},
+			_components: {name: "Components", transform: (sp) => Parser.spComponentsToFull(sp.components, sp.level)},
 			_classes: {
 				name: "Classes",
 				transform: (sp) => {
