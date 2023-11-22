@@ -3250,19 +3250,19 @@
 					"page": 78,
 					"entries": [
 						"精金是從隕石和特殊礦脈中發現的超硬金屬。除了被用來製作{@item 精金護甲|DMG}（詳見《地下城主指南》“魔法物品”），該金屬也用於鍛造武器。",
-						"Melee weapons and ammunition made of or coated with adamantine are unusually effective when used to break objects. Whenever an adamantine weapon or piece of ammunition hits an object, the hit is a critical hit.",
-						"The adamantine version of a melee weapon or of ten pieces of ammunition costs 500 gp more than the normal version, whether the weapon or ammunition is made of the metal or coated with it."
+						"精金鍛造或有精金鍍層的近戰武器和彈藥具有極強的破壞能力。每當一件精金武器或一發精金彈藥命中一個物件時，這次攻擊會造成重擊。",
+						"精金製成的近戰武器或每十發彈藥會比普通貨色額外花費500金幣，無論該武器或彈藥是通體由精金打造還是僅僅鍍了一層。"
 					],
 					"id": "036"
 				},
 				{
 					"type": "section",
-					"name": "Tying Knots",
+					"name": "打結",
 					"page": 78,
 					"entries": [
-						"The rules are purposely open-ended concerning mundane tasks like tying knots, but sometimes knowing how well a knot was fashioned is important in a dramatic scene when someone is trying to untie a knot or slip out of one. Here's an optional rule for determining the effectiveness of a knot.",
-						"The creature who ties the knot makes an Intelligence ({@skill Sleight of Hand}) check when doing so. The total of the check becomes the DC for an attempt to untie the knot with an Intelligence ({@skill Sleight of Hand}) check or to slip out of it with a Dexterity ({@skill Acrobatics}) check.",
-						"This rule intentionally links {@skill Sleight of Hand} with Intelligence, rather than Dexterity. This is an example of how to apply the rule in the {@variantrule Skills with Different Abilities|phb|\"Variant: Skills with Different Abilities\"} section in chapter 7 of the player's handbook."
+						"像打結這類瑣碎的小事原本沒必要專門制定一套規則。但有時為了營造戲劇性的效果，當某人試圖解開一或掙脫一個繩結時，我們需要知道這個結是否足夠複雜。這裡有一個可選規則來確定繩結的有效性。",
+						"當某人打結時，進行一次智力（巧手）檢定，以檢定最終結果作為DC。試圖解開這個結須透過一次智力（巧手）檢定，而想要掙脫這個結則須透過一次敏捷（雜技）檢定。",
+						"這一規則故意將巧手技能與智力屬性搭配，而不是通常的敏捷。這是一個應用《玩家手冊》第7章中“變體：技能搭配其他屬性Variant: Skills with Different Abilities”規則的例子。"
 					],
 					"data": {
 						"quickref": 3
@@ -3271,32 +3271,32 @@
 				},
 				{
 					"type": "section",
-					"name": "Tool Proficiencies",
+					"name": "工具熟練項",
 					"page": 78,
 					"entries": [
-						"Tool proficiencies are a useful way to highlight a character's background and talents. At the game table, though, the use of tools sometimes overlaps with the use of skills, and it can be unclear how to use them together in certain situations. This section offers various ways that tools can be used in the game.",
+						"工具熟練項是用來突出角色背景和專業水平的有效途徑。然而在遊戲進行中，工具的使用有時與技能的使用重疊，而且應該在何種情況下如何使用它們也不夠明確。本節提供了各種工具可以在遊戲中使用的方法。",
 						{
 							"type": "entries",
-							"name": "Tools and Skills Together",
+							"name": "工具和技能的選擇",
 							"page": 78,
 							"entries": [
-								"Tools have more specific applications than skills. The {@skill History} skill applies to any event in the past. A tool such as a {@item forgery kit|phb} is used to make fake objects and little else. Thus, why would a character who has the opportunity to acquire one or the other want to gain a tool proficiency instead of proficiency in a skill?",
-								"To make tool proficiencies more attractive choices for the characters, you can use the methods outlined below.",
+								"工具比技能擁有更具體的應用。歷史技能適用於過去的任何事件。例如，偽造工具包這樣的工具主要用於製造假冒物品，幾乎沒有其他用途。因此，一個有機會獲得其中之一的角色為什麼要選擇獲得工具熟練而不是技能熟練呢？",
+								"為了讓角色更願意選擇工具熟練，你可以使用以下概述的方法。",
 								{
 									"type": "entries",
-									"name": "Advantage",
+									"name": "檢定優勢",
 									"page": 78,
 									"entries": [
-										"If the use of a tool and the use of a skill both apply to a check, and a character is proficient with the tool and the skill, consider allowing the character to make the check with advantage. This simple benefit can go a long way toward encouraging players to pick up tool proficiencies. In the tool descriptions that follow, this benefit is often expressed as additional insight (or something similar), which translates into an increased chance that the check will be a success."
+										"如果一個工具的使用和一個技能的運用都適用於同一個檢定，而一個角色同時具有該工具和該技能的熟練，那麼可以考慮允許這個角色在檢定時具有優勢。這個簡單的收益對於鼓勵玩家獲取工具熟練大有幫助。在下文的工具說明中，這種益處通常被描述為額外的洞察力（或類似的東西），這意味著增加了檢定成功的機會。"
 									],
 									"id": "03a"
 								},
 								{
 									"type": "entries",
-									"name": "Added Benefit",
+									"name": "額外獎勵",
 									"page": 78,
 									"entries": [
-										"In addition, consider giving characters who have both a relevant skill and a relevant tool proficiency an added benefit on a successful check. This benefit might be in the form of more detailed information or could simulate the effect of a different sort of successful check. For example, a character proficient with {@item mason's tools|phb} makes a successful Wisdom ({@skill Perception}) check to find a secret door in a stone wall. Not only does the character notice the door's presence, but you decide that the tool proficiency entitles the character to an automatic success on an Intelligence ({@skill Investigation}) check to determine how to open the door."
+										"此外，考慮給有相關技能和相關工具熟練的人一個檢定成功後的額外獎勵。這種獎勵可以是提供更詳細的資訊，或者也可以模擬不同型別的檢定成功的效果。例如，一個具有泥瓦匠工具熟練的角色成功地透過感知（察覺）檢定在石牆中找到一扇密門。這個角色不僅注意到密門的存在，而且你可以決定該角色的工具熟練項使其在一個智力（調查）檢定中自動成功，知道這扇密門該如何開啟。"
 									],
 									"id": "03b"
 								}
@@ -3305,45 +3305,46 @@
 						},
 						{
 							"type": "entries",
-							"name": "Tool Descriptions",
+							"name": "工具說明",
 							"page": 78,
 							"entries": [
-								"The following sections go into detail about the tools presented in the player's handbook, offering advice on how to use them in a campaign.",
+								"以下各節詳細介紹了《玩家手冊》中所提供的工具，以及如何在戰役中使用這些工具的建議。",
 								{
 									"type": "entries",
-									"name": "Components",
+									"name": "元件",
 									"page": 78,
 									"entries": [
-										"The first paragraph in each description gives details on what a set of supplies or tools is made up of. A character who is proficient with a tool knows how to use all of its component parts."
+										"以下每項工具說明都會在開頭說明這套用品或工具都由什麼部件組成。具有工具熟練項的角色知道所有部件的用法。"
 									],
 									"id": "03d"
 								},
 								{
 									"type": "entries",
-									"name": "Skills",
+									"name": "技能",
 									"page": 78,
 									"entries": [
-										"Every tool potentially provides advantage on a check when used in conjunction with certain skills, provided a character is proficient with the tool and the skill. As DM, you can allow a character to make a check using the indicated skill with advantage. Paragraphs that begin with skill names discuss these possibilities. In each of these paragraphs, the benefits apply only to someone who has proficiency with the tool, not someone who simply owns it.",
-										"With respect to skills, the system is mildly abstract in terms of what a tool proficiency represents; essentially, it assumes that a character who has proficiency with a tool also has learned about facets of the trade or profession that are not necessarily associated with the use of the tool.",
-										"In addition, you can consider giving a character extra information or an added benefit on a skill check. The text provides some examples and ideas when this opportunity is relevant."
+										"當一個角色具有工具和技能熟練項時，每一種工具都可能在與某些技能配合使用時提供檢定的優勢。",
+										"作為DM，你可以允許一個角色在使用指定技能進行檢定時具有優勢。以技能名稱開頭的段落描述了這些可選項。但要注意的是，這些好處只適用於具有對應工具熟練項的人，而不是僅僅攜帶了該工具的人。",
+										"聯絡到技能時，工具熟練項的意思其實是有些抽象的；具體來講，它假定了具有相應工具熟練項的角色同時也瞭解相關行業或專業方面的事情，儘管這些事情不一定跟使用本工具相關。",
+										"此外，你可以考慮給角色進行技能檢定時一些額外資訊或好處。本文也給出了滿足相關條件的例子和建議。"
 									],
 									"id": "03e"
 								},
 								{
 									"type": "entries",
-									"name": "Special Use",
+									"name": "特殊用途",
 									"page": 78,
 									"entries": [
-										"Proficiency with a tool usually brings with it a particular benefit in the form of a special use, as described in this paragraph."
+										"顧名思義，將具有熟練項的工具用於特殊用途往往會帶來特殊的好處。"
 									],
 									"id": "03f"
 								},
 								{
 									"type": "entries",
-									"name": "Sample DCs",
+									"name": "難度示例",
 									"page": 79,
 									"entries": [
-										"A table at the end of each section lists activities that a tool can be used to perform, and suggested DCs for the necessary ability checks."
+										"每一節末尾的表格列出了該工具所適用的一些用途，以及必要能力檢定的推薦DC值。"
 									],
 									"id": "040"
 								},
@@ -3363,24 +3364,24 @@
 				},
 				{
 					"type": "section",
-					"name": "Spellcasting",
+					"name": "施法",
 					"page": 85,
 					"entries": [
-						"This section expands on the spellcasting rules presented in the Player's Handbook and the Dungeon Master's Guide, providing clarifications and new options.",
+						"本節擴充套件了玩家手冊和地下城主指南中所提及的施法規則，並提供了詳細說明和新的選項。",
 						{
 							"type": "entries",
-							"name": "Perceiving a Caster at Work",
+							"name": "察覺法術的施展",
 							"page": 85,
 							"entries": [
-								"Many spells create obvious effects: explosions of fire, walls of ice, teleportation, and the like. Other spells, such as charm person, display no visible, audible, or otherwise perceptible sign of their effects, and could easily go unnoticed by someone unaffected by them. As noted in the Player's Handbook, you normally don't know that a spell has been cast unless the spell produces a noticeable effect.",
-								"But what about the act of casting a spell? Is it possible for someone to perceive that a spell is being cast in their presence? To be perceptible, the casting of a spell must involve a verbal, somatic, or material component. The form of a material component doesn't matter for the purposes of perception, whether it's an object specified in the spell's description, a component pouch, or a spellcasting focus.",
-								"If the need for a spell's components has been removed by a special ability, such as the sorcerer's Subtle Spell feature or the Innate Spellcasting trait possessed by many creatures, the casting of the spell is imperceptible. If an imperceptible casting produces a perceptible effect, it's normally impossible to determine who cast the spell in the absence of other evidence."
+								"許多法術展現出明顯可見的效果：如火焰爆炸，冰牆，傳送等等。其餘的某類法術，如魅惑人類一樣，沒有任何可見的、可聽見的、或其他可察覺其效果的跡象，並且很容易被不受其影響的人所忽視。正如《玩家手冊》中所提到的，你通常不知道一個法術已經被施放了，除非這個法術產生了一個能夠引起注意的效果。",
+								"但是施法的動作呢？是否有可能有人正察覺到一個法術正在被施放於他們的面前？要被覺察到，這次施法必須包含言語，姿勢或材料。無論使用的是在法術描述中所指定的材料物件、材料包或者法器，該材料成分的具體形式對於感知結果而言並不重要。",
+								"如果對法術成分的需求已經被一種特殊的能力所取代，比如法師微妙的法術特性或者許多生物所具有的天生施法能力，那麼施法是不可察覺的。如果一個不可察覺的施法產生了一個可感知的效果，通常不可能在沒有其他證據的情況下確定施法者是誰。"
 							],
 							"id": "043"
 						},
 						{
 							"type": "entries",
-							"name": "Identifying a Spell",
+							"name": "辨識法術",
 							"page": 85,
 							"entries": [
 								"See the {@action Identify a Spell|XGE} entry."
@@ -3389,46 +3390,46 @@
 						},
 						{
 							"type": "entries",
-							"name": "Invalid Spell Targets",
+							"name": "無效的法術目標",
 							"page": 85,
 							"entries": [
-								"A spell specifies what a caster can target with it: any type of creature, a creature of a certain type (humanoid or beast, for instance), an object, an area, the caster, or something else. But what happens if a spell targets something that isn't a valid target? For example, someone might cast charm person on a creature believed to be a humanoid, not knowing that the target is in fact a vampire. If this issue comes up, handle it using the following rule.",
-								"If you cast a spell on someone or something that can't be affected by the spell, nothing happens to that target, but if you used a spell slot to cast the spell, the slot is still expended. If the spell normally has no effect on a target that succeeds on a saving throw, the invalid target appears to have succeeded on its saving throw, even though it didn't attempt one (giving no hint that the creature is in fact an invalid target). Otherwise, you perceive that the spell did nothing to the target."
+								"一道法術會具體指明施法者可指定的目標：任何型別生物、特定型別生物（比如，類人生物或野獸）、一個物件、一個區域、施法者本身或其他什麼東西。但是如果一個法術的目標不是一個有效的目標會發生什麼呢？例如，有人可能會對一個被認為是類人生物的生物施展魅惑人類，而不知道目標實際上是個吸血鬼。如果出現此問題，請使用以下規則處理。",
+								"如果你對某人或某物施放了一個不能被該法術影響的法術，那該目標將不發生任何事，其結果等同於其豁免檢定成功，哪怕它並未進行過任何一次豁免（不要表露任何該生物是無效目標的暗示）。否則，你就會視為意識到該法術對目標無效。"
 							],
 							"id": "045"
 						},
 						{
 							"type": "entries",
-							"name": "Areas of Effect on a Grid",
+							"name": "格子地圖上的效應範圍",
 							"page": 86,
 							"entries": [
-								"The Dungeon Master's Guide includes the following short rule for using areas of effect on a grid.",
-								"Choose an intersection of squares as the point of origin of an area of effect, then follow the rules for that kind of area as normal (see the \"Areas of Effect\" section in chapter 10 of the Player's Handbook). If an area of effect is circular and covers at least half a square, it affects that square.",
-								"That rule works, but it can require a fair amount of on-the-spot adjudication. This section offers two alternatives for determining the exact location of an area: the template method and the token method. Both of these methods assume you're using a grid and miniatures of some sort. Because these methods can yield different results for the number of squares in a given area, it's not recommended that they be combined at the table\u2014choose whichever method you and your players find easier or more intuitive.",
+								"在《城主指南》中提供了以下使用格子地圖時判斷效應範圍的簡單規則。",
+								"選擇方格一角的頂點作為效應範圍的源點，然後按通常的規則實行（見《玩家手冊》第10章“效應範圍”一節）。如果效應範圍是圓形的並覆蓋至少半個方格，那它就看作作用於整個方格。",
+								"這條規則是可行的，但是它可能需要大量的現場計算。本節則提供兩種能明確效應範圍的方法：模板法和標記物法。這兩種方法都假定你使用了某種格子地圖和微縮模型來進行遊戲。這兩種方法有可能在計算指定範圍的方格數時給出不同的結果，因此不建議混合使用，請選擇你和玩家們覺得更簡單或更直觀的方法。",
 								{
 									"type": "entries",
-									"name": "Template Method",
+									"name": "模板法",
 									"page": 86,
 									"entries": [
-										"The template method uses two-dimensional shapes that represent different areas of effect. The aim of the method is to accurately portray the length and width of each area on the grid and to leave little doubt about which creatures are affected by it. You'll need to make these templates or find premade ones.",
+										"模板法需要使用不同形狀的平面板塊來表示效應範圍。該方法旨在準確繪製出格子地圖上每個效應範圍的長度和寬度，並明確判斷所有將會受到效應影響的生物。你需要預先製作模板，或找到現成的模板。",
 										{
 											"type": "entries",
-											"name": "Making a Template",
+											"name": "製作模板",
 											"page": 86,
 											"entries": [
-												"Making a template is simple. Get a piece of paper or card stock, and cut it in the shape of the area of effect you're using. Every 5 feet of the area equals 1 inch of the template's size. For example, the 20-foot-radius sphere of the fireball spell, which has a 40-foot diameter, would translate into a circular template with an 8-inch diameter."
+												"製作模板很簡單。拿一張紙或一張卡片，將其剪裁成你需要使用的效應範圍的形狀。每5尺效應距離對應1個方格的邊長（譯註：原文為1英寸模板尺寸，因為大家使用的網格地圖規格不一定一致，所以此處改為1格，更符合實際）。例如，直徑40尺的火球術擁有一個半徑20尺的球形範圍，這將轉化為直徑8格長度的圓形模板。"
 											],
 											"id": "048"
 										},
 										{
 											"type": "entries",
-											"name": "Using a Template",
+											"name": "使用模板",
 											"page": 86,
 											"entries": [
-												"To use an area-of-effect template, apply it to the grid. If the terrain is flat, you can lay it on the surface; otherwise, hold the template above the surface and take note of which squares it covers or partially covers. If any part of a square is under the template, that square is included in the area of effect. If a creature's miniature is in an affected square, that creature is in the area. Being adjacent to the edge of the template isn't enough for a square to be included in the area of effect; the square must be entirely or partly covered by the template.",
-												"You can also use this method without a grid. If you do so, a creature is included in an area of effect if any part of the miniature's base is overlapped by the template.",
-												"When you place a template, follow all the rules in the Player's Handbook for placing the associated area of effect. If an area of effect, such as a cone or a line, originates from a spellcaster, the template should extend out from the caster and be positioned however the caster likes within the bounds of the rules.",
-												"Diagrams 2.1 and 2.2 show the template method in action.",
+												"要使用範圍模板，需將其放置在格子地圖上。若地形平坦，可以將模板直接放在地圖表面；否則，請把模板置於地圖上方，並記下被模板覆蓋或部分覆蓋的方格。若一個方格有任何部分被複蓋在模板下方，則該方格包含在效應範圍內。若一個生物的微縮模型處於一個受到效應影響的方格內，則該生物就處於這個效應範圍內。與模板的邊緣相鄰的方格不包含在效應範圍內；受影響的方格必須完全或部分被模板覆蓋。",
+												"你也可以在沒有格子地圖的情況下使用此方法。若如此做，如果一個微縮模型的任何部分被模板覆蓋，則它所指代的生物處於這個效應範圍內。",
+												"在放置模板時，需遵循《玩家手冊》中關於確定效應範圍的所有規則。如果一個效應範圍來自一位施法者，例如一個錐狀或線狀範圍，則模板應以該施法者為源點，並放置在該施法者指定的且符合規則的區域上。",
+												"圖2.1和2.2展示了模板法的使用範例。",
 												{
 													"type": "image",
 													"href": {
@@ -3446,18 +3447,18 @@
 								},
 								{
 									"type": "entries",
-									"name": "Token Method",
+									"name": "標記物法",
 									"page": 87,
 									"entries": [
-										"The token method is meant to make areas of effect tactile and fun. To use this method, grab some dice or other tokens, which you're going to use to represent your areas of effect.",
-										"Rather than faithfully representing the shapes of the different areas of effect, this method gives you a way to create square-edged versions of them on a grid easily, as described in the following subsections.",
+										"標記物法旨在讓效應範圍看得見摸得著，變得更有趣味性。要使用該方法，請準備一些骰子或其他標記物，你將使用它們來表示你的效應範圍。",
+										"該方法並非準確地描繪不同效應範圍的形狀，而是為你提供一種在格子地圖上輕鬆轉換成它們的方格版本的方法，正如以下小節所述。",
 										{
 											"type": "entries",
-											"name": "Using Tokens",
+											"name": "使用標記物",
 											"page": 87,
 											"entries": [
-												"Every 5-foot square of an area of effect becomes a die or other token that you place on the grid. Each token goes inside a square, not at an intersection of lines. If an area's token is in a square, that square is included in the area of effect. It's that simple.",
-												"Diagrams 2.3 through 2.6 show this method in action, using dice as the tokens.",
+												"每5平方尺的效應範圍就變成一個骰子或其他的你放置在方格上的標記物。每個標記物都放置在方格內，而非方格一角的頂點。如果一個效應範圍的標記物處於一個方格內，則該方格處於該效應範圍內。就這麼簡單。",
+												"圖2.3到2.6展示了以骰子作為標記物時該方法的使用範例。",
 												{
 													"type": "image",
 													"href": {
@@ -3481,29 +3482,29 @@
 										},
 										{
 											"type": "entries",
-											"name": "Circles",
+											"name": "圓形",
 											"page": 87,
 											"entries": [
-												"This method depicts everything using squares, and a circular area of effect becomes square in it, whether the area is a sphere, cylinder, or radius. For instance, the 10-foot radius of flame strike, which has a diameter of 20 feet, is expressed as a square that is 20 feet on a side, as shown in diagram 2.3. Diagram 2.4 shows that area with total cover inside it."
+												"該方法使用方格來表示所有的範圍，一個圓形的範圍將轉變成一個方形的範圍，不論該範圍是球狀、柱狀還是半圓。例如，直徑20尺的焰擊術擁有一個半徑10尺的柱狀範圍，被轉化為一個邊長20尺的方形範圍，正如圖2.3所示。圖2.4則展示了總覆蓋範圍。"
 											],
 											"id": "04c"
 										},
 										{
 											"type": "entries",
-											"name": "Cones",
+											"name": "錐狀",
 											"page": 87,
 											"entries": [
-												"A cone is represented by rows of tokens on the grid, extending from the cone's point of origin. In the rows, the squares are adjoining side by side or corner to corner, as shown in diagram 2.5. To determine the number of rows a cone contains, divide its length by 5. For example, a 30-foot cone contains six rows.",
-												"Here's how to create the rows. Starting with a square adjacent to the cone's point of origin, place one token. The square can be orthogonally or diagonally adjacent to the point of origin. In every row beyond that one, place as many tokens as you placed in the previous row, plus one more token. Place this row's tokens so that their squares each share a side with a square in the previous row. If the cone is orthogonally adjacent to the point of origin, you'll have one more token to place in the row; place it on one end or the other of the row you just created (you don't have to pick the side chosen in diagram 2.5). Keep placing tokens in this way until you've created all of the cone's rows."
+												"一個錐狀範圍將由源點延伸出的數行標記物表示。如圖2.5所示，在各行中，方格是並排或對角放置的。要確定一個錐狀範圍所包含的行數，請將其長度除以5。例如，一個30尺的錐狀範圍包含六行標記物。",
+												"下面介紹如何放置每一行標記物。從最靠近錐狀源點的方格開始，先放置一個標記物。該方格可以與源點所在方格垂直相鄰或處於對角。若第一行的方格與源點處於對角，在該行之外的每一行都比前一行要多放置一個標記物。放置一行的標記物時，要使它們所在的方格與前一行的方格共享同一條邊。如果第一行的方格與源點垂直相鄰，你在之後的每一行都將多放置一個標記物，將其放置在新一行的任意一端（不必如圖2.5右圖中展示那樣與前一行的方格共享一條邊）。依照上述方法放置標記物，直到完成錐狀範圍的所有行。"
 											],
 											"id": "04d"
 										},
 										{
 											"type": "entries",
-											"name": "Lines",
+											"name": "線狀",
 											"page": 88,
 											"entries": [
-												"A line can extend from its source orthogonally or diagonally, as shown in diagram 2.6."
+												"如圖2.6所示，一個線狀範圍可以從源點開始向垂直或對角的方向延伸。"
 											],
 											"id": "04e"
 										}
