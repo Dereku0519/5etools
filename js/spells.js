@@ -37,6 +37,7 @@ class SpellsPage {
 		const range = Parser.spRangeToFull(spell.range);
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
+			<span class="bold col-2-9 pl-0">${spell.name}</span>
 			<span class="col-1-5 text-center">${PageFilterSpells.getTblLevelStr(spell)}</span>
 			<span class="col-1-7 text-center">${time}</span>
 			<span class="col-1-2 sp__school-${spell.school} text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</span>
@@ -252,7 +253,6 @@ async function pPostLoad () {
 			duration: {name: "Duration", transform: (it) => Parser.spDurationToFull(it)},
 			_school: {name: "School", transform: (sp) => `<span class="sp__school-${sp.school}" ${Parser.spSchoolAbvToStyle(sp.school)}>${Parser.spSchoolAndSubschoolsAbvsToFull(sp.school, sp.subschools)}</span>`},
 			range: {name: "Range", transform: (it) => Parser.spRangeToFull(it)},
-			_components: {name: "Components", transform: (sp) => Parser.spComponentsToFull(sp.components, sp.level)},
 			_classes: {
 				name: "Classes",
 				transform: (sp) => {
