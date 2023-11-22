@@ -35,11 +35,12 @@ class SpellsPage {
 		const school = Parser.spSchoolAndSubschoolsAbvsShort(spell.school, spell.subschools);
 		const concentration = spell._isConc ? "×" : "";
 		const range = Parser.spRangeToFull(spell.range);
-		const components = [];
-		if (spell.components && spell.components.v) components.push("V");
-		if (spell.components && spell.components.s) components.push("S");
-		if (spell.components && spell.components.m) components.push("M");
-		if (spell.components && spell.components.r) components.push("R");
+		const componentsV = [];
+		const componentsS = [];
+		const componentsM = [];
+		if (spell.components && spell.components.v) componentsV.push("V");
+		if (spell.components && spell.components.s) componentsS.push("S");
+		if (spell.components && spell.components.m) componentsM.push("M");
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-2-9 pl-0">${spell.name}</span>
@@ -48,7 +49,9 @@ class SpellsPage {
 			<span class="col-1-2 sp__school-${spell.school} text-center" title="${Parser.spSchoolAndSubschoolsAbvsToFull(spell.school, spell.subschools)}" ${Parser.spSchoolAbvToStyle(spell.school)}>${school}</span>
 			<span class="col-0-6 text-center" title="Concentration">${concentration}</span>
 			<span class="col-2-4 text-right">${range}</span>
-			<span class="col-2-4 text-right">${components}</span>
+			<span class="col-0-6 text-right">${componentsV}</span>
+			<span class="col-0-6 text-right">${componentsS}</span>
+			<span class="col-0-6 text-right">${componentsM}</span>
 			<span class="col-1-7 text-center ${Parser.sourceJsonToColor(spell.source)} pr-0" title="${Parser.sourceJsonToFull(spell.source)}" ${BrewUtil.sourceJsonToStyle(spell.source)}>${source}</span>
 		</a>`;
 
