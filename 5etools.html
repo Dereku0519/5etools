@@ -502,7 +502,7 @@
 
 		$(`#current_year`).text((new Date).getFullYear());
 
-		$(`#version_number`).text(VERSION_NUMBER).attr("href", `https://get.5e.tools/`);
+		$(`#version_number`).text(VERSION_NUMBER).attr("href", ``);
 
 		const $lnkB20 = $(`#betteR20_link`);
 		$lnkB20.attr("href", `${$lnkB20.attr("href")}?v=${VERSION_NUMBER}_${Date.now()}`);
