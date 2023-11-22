@@ -378,18 +378,18 @@
 						"To answer these questions and more, you can use the tables and the advice in this section to compose a well-developed backstory for your character-an autobiography of sorts-that you can use to inform how you roleplay the character. Your DM can draw from this material as the campaign proceeds, creating situations and scenarios that build off your previous life experiences.",
 						{
 							"type": "entries",
-							"name": "Ideas, Not Rules",
+							"name": "想像力是你的超能力",
 							"page": 61,
 							"entries": [
-								"Even though these pages are full of tables and die rolls, they don't make up a rules system-in fact, the opposite is true. You can use as much or as little of this material as you desire, and you can make decisions in any order you want.",
-								"For instance, you might not want these tables to help you decide who your parents and siblings are, because that's among the information you've already come up with. But you can still use other parts, such as the section on life events, to provide added depth and detail.",
+								"雖然這裡有一堆表格和擲骰，但他們終究都只是參考用，你可以根據你的需求修改內容，也可以按照任何順序做出任何決定",
+								"例如，你可能不想使用這些表格來幫助你決定你的父母和兄弟姐妹是誰，因為這已經是你已經想好的信息之一。但你仍然可以使用其他部分，比如有關生活事件的部分，以提供額外的深度和細節。",
 								{
 									"type": "entries",
-									"name": "How and When to Use the Tables",
+									"name": "如何使用這些表格",
 									"page": 61,
 									"entries": [
-										"If you're comfortable with letting the dice decide a certain fact about your character, go ahead and roll. If not, you can take charge and make the decision, choosing from among the possibilities on a table. Of course, you also have the option of disregarding the result of a die roll if it conflicts with another result. Likewise, if the text instructs you to roll on a table, that's not meant to be taken literally. You can always make your own choice.",
-										"Although these tables are meant to augment the step-by-step character creation process in the player's handbook, they don't occupy a specific place in that process. You can use some of them early on-for instance, it's possible to determine your parents and other family members immediately after deciding your character's race-but you could also wait until later in the process. You might prefer to establish more facts about your character's game identity-such as your class, ability scores, and alignment-before supplementing that information with what's offered here."
+										"如果你很樂意讓骰子決定你的角色某個設定，可以毫不猶豫地擲骰。如果有自己的想法，你可以主動掌握主動權，自己做出決定，從表格上的可能性中進行選擇。當然，如果一次擲骰的結果與另一個結果相衝突，你仍有選擇忽略擲骰結果的權利。相同的，對於擲骰的結果你都可以自己做出選擇",
+										"雖然這些表格旨在增強玩家手冊中逐步角色創建過程，但它們在該過程中並沒有具體的位置。你可以在早期使用其中一些設定，例如，在確定你的角色種族後立即確定你的父母和其他家庭成員，但你也可以等到過程的後期。你可能更喜歡在確定更多有關你角色遊戲身份的事實之前，例如你的職業、能力值和立場，再補充這裡提供的信息。"
 									],
 									"id": "013"
 								},
@@ -3150,18 +3150,18 @@
 		},
 		{
 			"type": "section",
-			"name": "Dungeon Master's Tools",
+			"name": "地下城主工具",
 			"page": 77,
 			"entries": [
-				"As the Dungeon Master, you oversee the game and weave together the story experienced by your players. You're the one who keeps it all going, and this chapter is for you. It gives you new rules options, as well as some refined tools for creating and running adventures and campaigns. It is a supplement to the tools and advice offered in the dungeon master's guide.",
-				"The chapter opens with optional rules meant to help you run certain parts of the game more smoothly. The chapter then goes into greater depth on several topics-encounter building, random encounters, traps, magic items, and downtime-which largely relate to how you create and stage your adventures.",
-				"The material in this chapter is meant to make your life easier. Ignore anything you find here that doesn't help you, and don't hesitate to customize the things that you do use. The game's rules exist to serve you and the games you run. As always, make them your own.",
-				{
+				"作為地下城主，你負責監督遊戲並把玩家們經歷的故事編織在一起。你是保持這一切進展的人，這一章是為你準備的。它為您提供了新的可選規則，以及一些用於建立並執行冒險和戰役的進階工具。它是《地下城主指南》中的工具和建議的補充。",
+				"本章從可選規則開始，旨在幫助你更順利地運行遊戲的某些部分。這一章深入探討了幾個話題——構建遭遇、隨機遭遇、陷阱、魔法物品和休整期——這些都與你如何創造和演繹你的冒險有關。",
+				"本章的內容是為了給你提供方便，而不是反過來制約你。你可以忽略掉任何你不需要的部分，並且隨你心意來定製自己的規則。遊戲規則是為你和你所執行的遊戲服務的。一如既往，讓它們成為你自己的工具。",
+				{	
 					"type": "section",
-					"name": "Simultaneous Effects",
+					"name": "同時效應",
 					"page": 77,
 					"entries": [
-						"Most effects in the game happen in succession, following an order set by the rules or the DM. In rare cases, effects can happen at the same time, especially at the start or end of a creature's turn. If two or more things happen at the same time on a character or monster's turn, the person at the game table-whether player or DM-who controls that creature decides the order in which those things happen. For example, if two effects occur at the end of a player character's turn, the player decides which of the two effects happens first."
+						"遊戲中的大部分效應都是按照規則或DM安排的順序依次發生的。在罕見的情況下，尤其是在某個生物的回合開始或結束時，可能會出現同時發生的效應。如果複數事件同時發生在角色或怪物的回合中，那麼將由控制該生物的人——玩家或DM——來決定這些事件發生的順序。例如，在某位玩家角色的回合結束時同時存在兩個效應，則該玩家決定兩個效應中的哪一個先生效。"
 					],
 					"data": {
 						"quickref": 3
@@ -3170,26 +3170,26 @@
 				},
 				{
 					"type": "section",
-					"name": "Falling",
+					"name": "墜落",
 					"page": 77,
 					"entries": [
-						"Falling from a great height is a significant risk for adventurers and their foes. The rule given in the player's handbook is simple: at the end of a fall, you take {@dice 1d6} bludgeoning damage for every 10 feet you fell, to a maximum of {@dice 20d6}. You also land {@condition prone}, unless you somehow avoid taking damage from the fall. Here are two optional rules that expand on that simple rule.",
+						"从高处坠落无论对于冒险者还是其敌人来说都有重大的风险。在《玩家手册》给出的规则很简单：在一次坠落结束时，你每坠落10尺就会受到1d6点钝击伤害，最大值为20d6。同时你会以倒地状态着陆，除非你以某种方式避免了坠落伤害。这里有两个可选项，用以扩展这条简单粗暴的规则。",
 						{
 							"type": "entries",
-							"name": "Rate of Falling",
+							"name": "墜落速度",
 							"page": 77,
 							"entries": [
-								"The rule for falling assumes that a creature immediately drops the entire distance when it falls. But what if a creature is at a high altitude when it falls, perhaps on the back of a {@creature griffon} or on board an {@item airship}? Realistically, a fall from such a height can take more than a few seconds, extending past the end of the turn when the fall occurred. If you'd like high-altitude falls to be properly time-consuming, use the following optional rule.",
-								"When you fall from a great height, you instantly descend up to 500 feet. If you're still falling on your next turn, you descend up to 500 feet at the end of that turn. This process continues until the fall ends, either because you hit the ground or the fall is otherwise halted."
+								"原本的墜落規則假定一個生物墜落時會立即落下整段距離。但如果一個生物在墜落時處於一個相當高的高度，比如獅鷲的背上或飛艇的甲板呢？事實上，從這樣的高度墜落，區區幾秒鐘可到不了地面，這樣的高空墜落會持續到下個回合。如果你認為高空墜落要花費足夠的時間，那麼使用下面的可選規則。",
+								"當你從極高處墜落時，你會立即下降500尺。如果你下一回合仍將繼續墜落，那麼那一回合結束時你會再下降500尺。這個過程一直持續到墜落結束，要麼是因為你撞到地面，要麼是以別的方式終止墜落。"
 							],
 							"id": "030"
 						},
 						{
 							"type": "entries",
-							"name": "Flying Creatures and Falling",
+							"name": "飛行生物與墜落",
 							"page": 77,
 							"entries": [
-								"A flying creature in flight falls if it is knocked {@condition prone}, if its speed is reduced to 0 feet, or if it otherwise loses the ability to move, unless it can hover or it is being held aloft by magic, such as the {@spell 飛行術} spell.",
+								"飛行中的生物將會在陷入{@condition 伏地}狀態、速度降到0尺或者以別的方式失去移動能力的時候墜落，除非它能盤旋（懸停）或被魔法託舉在空中，例如魔法{@spell 飛行術}",
 								"If you'd like a flying creature to have a better chance of surviving a fall than a non-flying creature does, use this rule: subtract the creature's current flying speed from the distance it fell before calculating falling damage. This rule is helpful to a flier that is knocked {@condition prone} but is still conscious and has a current flying speed that is greater than 0 feet. The rule is designed to simulate the creature flapping its wings furiously or taking similar measures to slow the velocity of its fall.",
 								"If you use the rule for rate of falling in the previous section, a flying creature descends 500 feet on the turn when it falls, just as other creatures do. But if that creature starts any of its later turns still falling and is {@condition prone}, it can halt the fall on its turn by spending half its flying speed to counter the {@condition prone} condition (as if it were standing up in midair)."
 							],
