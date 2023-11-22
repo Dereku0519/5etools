@@ -35,7 +35,11 @@ class SpellsPage {
 		const school = Parser.spSchoolAndSubschoolsAbvsShort(spell.school, spell.subschools);
 		const concentration = spell._isConc ? "×" : "";
 		const range = Parser.spRangeToFull(spell.range);
-		const components = spell.components && spell.components.v ? "TTT" : "";
+		const components = [];
+		if (spell.components && spell.components.v) components.push("V");
+		if (spell.components && spell.components.s) components.push("S");
+		if (spell.components && spell.components.m) components.push("M");
+		if (spell.components && spell.components.r) components.push("R");
 
 		eleLi.innerHTML = `<a href="#${hash}" class="lst--border lst__row-inner">
 			<span class="bold col-2-9 pl-0">${spell.name}</span>
