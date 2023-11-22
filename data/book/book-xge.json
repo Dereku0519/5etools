@@ -3190,8 +3190,8 @@
 							"page": 77,
 							"entries": [
 								"飛行中的生物將會在陷入{@condition 伏地}狀態、速度降到0尺或者以別的方式失去移動能力的時候墜落，除非它能盤旋（懸停）或被魔法託舉在空中，例如魔法{@spell 飛行術}",
-								"If you'd like a flying creature to have a better chance of surviving a fall than a non-flying creature does, use this rule: subtract the creature's current flying speed from the distance it fell before calculating falling damage. This rule is helpful to a flier that is knocked {@condition prone} but is still conscious and has a current flying speed that is greater than 0 feet. The rule is designed to simulate the creature flapping its wings furiously or taking similar measures to slow the velocity of its fall.",
-								"If you use the rule for rate of falling in the previous section, a flying creature descends 500 feet on the turn when it falls, just as other creatures do. But if that creature starts any of its later turns still falling and is {@condition prone}, it can halt the fall on its turn by spending half its flying speed to counter the {@condition prone} condition (as if it were standing up in midair)."
+								"如果你想讓飛行生物比非飛行生物有更高的生存機率，那麼使用這個規則：在計算墜落傷害之前，先從它的墜落距離中減去該生物的當前飛行速度。這條規則適用於陷入{@condition 伏地}狀態但仍然保持清醒，且當前飛行速度大於0尺的飛行者。這個規則模擬的是生物猛烈地拍打翅膀，或者採取類似的措施來減緩墜落速度的情形。",
+								"如果你使用了上一節中的墜落速度規則，那麼一個飛行生物同樣會在發生墜落的回合下降500尺，就像其他生物一樣。但如果該生物在其後的回合中仍在墜落並處於倒地狀態，那麼它可以透過花費一半的飛行速度解除{@condition 伏地}狀態並終止墜落（規則上來說，相當於在半空中“起身”）。"
 							],
 							"id": "031"
 						}
@@ -3203,38 +3203,38 @@
 				},
 				{
 					"type": "section",
-					"name": "Sleep",
+					"name": "睡眠",
 					"page": 77,
 					"entries": [
-						"Just as in the real world, D&D characters spend many hours sleeping, most often as part of a long rest. Most monsters also need to sleep. While a creature sleeps, it is subjected to the {@condition unconscious} condition. Here are a few rules that expand on that basic fact.",
+						"和現實世界一樣，D&D的角色們也需要花費數個小時用於睡眠，通常是長休息的一部分。大多數怪物也需要睡眠。當一個生物睡著時，它受到{@condition 昏迷}狀態的影響。下面是一些關於這一基本事實的規則。",
 						{
 							"type": "entries",
-							"name": "Waking Someone",
+							"name": "喚醒某人",
 							"page": 77,
 							"entries": [
-								"A creature that is naturally sleeping, as opposed to being in a magically or chemically induced sleep, wakes up if it takes any damage or if someone else uses an action to shake or slap the creature awake. A sudden loud noise-such as yelling, thunder, or a ringing bell-also awakens someone that is sleeping naturally.",
-								"Whispers don't disturb sleep, unless a sleeper's passive Wisdom ({@skill Perception}) score is 20 or higher and the whispers are within 10 feet of the sleeper. Speech at a normal volume awakens a sleeper if the environment is otherwise silent (no wind, birdsong, crickets, street sounds, or the like) and the sleeper has a passive Wisdom ({@skill Perception}) score of 15 or higher."
+								"當一個生物處於自然睡眠，而不是受魔法或藥劑影響的睡眠中，如果它受到任何傷害，或者其他人用一個動作搖晃或拍打這個生物，它就會醒來。一聲突如其來的巨響，如叫喊、雷鳴或鈴聲，也會喚醒自然睡眠中的某人。",
+								"耳語不會影響睡眠，除非睡眠者的被動感知（察覺）值為20或更高，並且耳語者就在睡眠者周圍10尺以內。當週圍環境比較安靜（沒有風聲、鳥鳴、蟋蟀、鬧市，或者類似的雜音）且睡眠者的被動感知（察覺）值為15或更高時，正常音量的談話便可以吵醒它。"
 							],
 							"id": "033"
 						},
 						{
 							"type": "entries",
-							"name": "Sleeping in Armor",
+							"name": "睡不解甲",
 							"page": 77,
 							"entries": [
-								"Sleeping in light armor has no adverse effect on the wearer, but sleeping in medium or heavy armor makes it difficult to recover fully during a long rest.",
-								"When you finish a long rest during which you slept in medium or heavy armor, you regain only one quarter of your spent Hit Dice (minimum of one die). If you have any levels of {@condition exhaustion}, the rest doesn't reduce your {@condition exhaustion} level."
+								"穿著輕甲睡覺對穿戴者沒有不利影響，但穿著中甲或重甲睡覺則很難在長休息中完全恢復。",
+								"當你穿著中甲或重甲睡覺並完成一次長休息後，你只能恢復已消耗的生命骰數量的四分之一（但最少一個）。如果你處於任何程度的{@condition 力竭}狀態中，則休息不會降低你的力竭等級。"
 							],
 							"id": "034"
 						},
 						{
 							"type": "entries",
-							"name": "Going without a Long Rest",
+							"name": "不眠不休",
 							"page": 78,
 							"entries": [
-								"A long rest is never mandatory, but going without sleep does have its consequences. If you want to account for the effects of sleep deprivation on characters and creatures, use these rules.",
-								"Whenever you end a 24-hour period without finishing a long rest, you must succeed on a DC 10 Constitution saving throw or suffer one level of {@condition exhaustion}.",
-								"It becomes harder to fight off {@condition exhaustion} if you stay awake for multiple days. After the first 24 hours, the DC increases by 5 for each consecutive 24-hour period without a long rest. The DC resets to 10 when you finish a long rest."
+								"雖然長休息並非強制性的，但是不睡覺的確會導致一些後果。如果你想體現缺乏睡眠對角色和生物的影響，可以使用這些規則。",
+								"無論從什麼時間算起，當你結束了一個24小時的時段卻沒有完成一次長休息的話，你必須透過一次DC為 10的體質檢定，失敗則增加一級{@condition 力竭}狀態。",
+								"如果你連續幾天不眠不休，將很難解除{@condition 力竭}狀態。在第一個24小時時段後，每過一個未完成長休息的24小時時段，體質檢定DC便增加5。當你完成長休息時，DC重置為10。"
 							],
 							"id": "035"
 						}
@@ -3246,10 +3246,10 @@
 				},
 				{
 					"type": "section",
-					"name": "Adamantine Weapons",
+					"name": "精金武器",
 					"page": 78,
 					"entries": [
-						"Adamantine is an ultrahard metal found in meteorites and extraordinary mineral veins. In addition to being used to craft adamantine armor, the metal is also used for weapons.",
+						"精金是從隕石和特殊礦脈中發現的超硬金屬。除了被用來製作{@item 精金護甲}（詳見《地下城主指南》“魔法物品”），該金屬也用於鍛造武器。",
 						"Melee weapons and ammunition made of or coated with adamantine are unusually effective when used to break objects. Whenever an adamantine weapon or piece of ammunition hits an object, the hit is a critical hit.",
 						"The adamantine version of a melee weapon or of ten pieces of ammunition costs 500 gp more than the normal version, whether the weapon or ammunition is made of the metal or coated with it."
 					],
