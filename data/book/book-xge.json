@@ -739,7 +739,7 @@
 											"name": "其他細節",
 											"page": 62,
 											"entries": [
-												"You can decide any other details you like about each sibling, including gender, personality, and place in the world.",
+												"你可以自行決定有關每個兄弟姐妹的其他細節，包括性別、個性和在世界中的位置。",
 												{
 													"type": "table",
 													"caption": "Number of Siblings",
