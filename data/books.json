@@ -712,7 +712,7 @@
 					}
 				},
 				{
-					"name": "Character Names",
+					"name": "角色名稱",
 					"ordinal": {
 						"type": "appendix",
 						"identifier": "B"
