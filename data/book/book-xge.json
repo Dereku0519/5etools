@@ -7452,37 +7452,38 @@
 				},
 				{
 					"type": "section",
-					"name": "Designing Adventures",
+					"name": "設計冒險",
 					"page": 172,
 					"entries": [
-						"Designing adventures for a shared campaign involves a different set of considerations than designing for a standard group of players. Most important, the adventure must be timed to conclude when the session is scheduled to end. You also need to balance combat encounters for a range of levels, since a wide range of characters might be experiencing the adventure at the same time.",
+						"為共享戰役設計冒險與為特定固定玩家設計冒險時需要考慮完全不同的因素。最重要的是，冒險的時間必須安排在程序計劃時間內。你還需要平衡不同等級的戰鬥遭遇，因為可能會有很多不同等級的角色同時體驗這場冒險。",
 						{
 							"type": "entries",
-							"name": "Adventure Duration",
+							"name": "冒險時長",
 							"page": 172,
 							"entries": [
-								"Every adventure in a shared campaign begins and ends in the same play session. (If a group of participants wants to take longer to finish and all are willing to do so, they can exceed the time limit.) A session or an event can't end with the adventure unfinished, since there's no way to guarantee that the same players and DM will be available for the next session.",
-								"Typically, adventures in a shared campaign are designed to take either 2 hours or 4 hours. In each hour of play, assume the characters can complete the following:",
+								"每場共享戰役中的冒險都應當開始於一次遊戲團務，並同時結束於那次遊戲團務（不過如果團隊的參與者都想著延長時間且全員同意延長的情況下，他們也能突破這一時間限制）。一次團務或一個事件不能再冒險還沒結束的時候結束，因為沒有人能保證下一場遊戲團務中會有相同的玩家與DM。",
+								"通常來講，一場共享戰役的冒險應該被設計為需2小時或需4小時來完成。在遊戲的每個小時中，請假設玩家們能完成以下的事件：",
 								{
 									"type": "list",
 									"items": [
-										"Three or four simple combat encounters, or one or two complex ones",
-										"Three or four scenes involving significant exploration or social interaction"
+										"三到四場簡單的遭遇戰，或一到兩場複雜的遭遇戰。",
+										"三到四個涉及重要探索或可社互動動的場景。"
 									]
 								},
-								"Within these constraints, it can be difficult to create open-ended adventures. A time limit assumes a specific starting point and endpoint. A good way to get around this restriction is to create an adventure with multiple possible endings.",
-								"Location-based adventures also work well with this format. A dungeon presents a natural limit on character options, while still giving the players choices. The adventure could be a quest to defeat a creature or recover an item, but the path to achieving that goal can be different for each group.",
-								"For more narrative adventures, try to focus on simple but flexible encounters or events. For instance, an adventure requires the characters to protect a high priest of Tyr from assassins. Give the players a chance to plan out how they want to protect the temple, complete with authority over the guards. A few well-fleshed out NPCs, some of whom might be suspected of working with the temple's enemies, add a layer of tension. Consider leaving some details or plot points for the DM to decide. For example, the DM might have the option to pick which member of the temple guards is the traitor, ensuring that the scenario is different for each group."
+								"在這些限制條件下，很難創作出開放式的冒險。時間為你限制了一個必要假定的起點與終點。繞開這一限制的好方法就是建立一個有著複數結局的冒險。",
+								"基於某一地點的冒險特同樣適用於這一冒險形式。一個地下城可以很自然的限制玩家的選擇，但同樣也會給予玩家足夠的選擇。這場冒險也許是關於討伐某個特定生物的任務，或去回收某一件物品。但每個團隊完成這一目標的方法和路徑都不盡相同。",
+								"對於那些強敘事的冒險，請儘可能使用簡單但靈活的遭遇或時間。舉例來說，一場冒險要求角色去保護一名 提爾Tyr 的大祭司不受刺客所傷，你可以給玩家一個計劃如何保護神廟、完善守備的機會。一些精心設計的NPC（比如被懷疑是與敵人合作的內鬼的NPC）能增加緊張的氣氛。",
+								"請考慮將一些細節與情節交給DM來決定。例如，你可以讓DM抉擇神廟收尾中的哪位是內鬼，而非一開始確定好，以此來保證每個團隊能遇到的劇情都不相同。"
 							],
 							"id": "0db"
 						},
 						{
 							"type": "entries",
-							"name": "Combat Encounters",
+							"name": "戰鬥遭遇",
 							"page": 173,
 							"entries": [
-								"Design your adventure for one of the four tiers, as set forth in chapter 1 of the player's handbook: tier 1 includes levels 1-4, tier 2 is levels 5-10, tier 3 is levels 11-16, and tier 4 includes levels 17-20. Within each tier, it's a good idea to use a specific level as a starting point. Assume a party of five 3rd-level characters for tier 1, five 8th-level characters for tier 2, five 13th-level characters for tier 3, and five 18th-level characters for tier 4. Use that assumption when creating combat encounters, whether you use the encounter-building rules in the dungeon master's guide or are making an estimate.",
-								"For each battle, provide guidelines to help DMs adjust the difficulty up or down to match stronger or weaker parties. As a rule of thumb, account for a party two levels higher and for a party two levels lower, and don't worry about balancing the adventure for parties outside the adventure's tier."
+								"為你的冒險設定一個 階層Tier ，如《玩家手冊》第一章所述的那樣，階層分為T1（1~4級）、T2（5~10級）、T3（11~16級）、T4（17~20級）這四層。在每個階層中，如果你能設定一個特定等級作為你的起始點是一個不錯的主意。你可以假定要遭遇這場T1戰鬥的是5個3級角色、遭遇這場T2戰鬥的是5個8級角色、遭遇這場T3戰鬥的是5個13級角色、或遭遇這場T4戰鬥的是5個18級角色。在設計戰鬥遭遇時，不論你使用本書的構建遭遇規則還是自行估算，都要進行這一假設。",
+								"對於設計的每場戰鬥，都要提供一定的指導原則，以幫助使用的DM調整難度，使之難度與強弱不一的隊伍相匹配。作為經驗法則，要考慮到更高兩級和更低兩級的隊伍。不過，不用擔心冒險等級之外的隊伍的平衡問題。"
 							],
 							"id": "0dc"
 						},
