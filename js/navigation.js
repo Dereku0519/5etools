@@ -58,7 +58,6 @@ class NavBar {
 		addLi(ulBooks, "book.html", "塞洛斯的神話奧德賽", {aHash: "MOT", date: null});
 		addLi(ulBooks, "book.html", "塔莎的萬象坩鍋", {aHash: "TCE", date: null});
 		addLi(ulBooks, "book.html", "範·裏希騰的鴉閣指南", {aHash: "VRGR", date: "2021"});
-		addLi(ulBooks, "book.html", "魔法船冒險指南", {aHash: "AAG", date: "2022"});
 		addDivider(ulBooks);
 		addLi(ulBooks, "book.html", "DM帷幕：荒野套件", {aHash: "ScreenWildernessKit", date: "2020"});
 		addDivider(ulBooks);
