@@ -660,7 +660,7 @@
 					]
 				},
 				{
-					"name": "Character Options",
+					"name": "角色選項",
 					"headers": [
 						"This is Your Life",
 						"Racial Feats"
@@ -678,8 +678,8 @@
 						"睡眠",
 						"精金武器",
 						"打結",
-						"Tool Proficiencies",
-						"Spellcasting",
+						"工具熟練項",
+						"施法",
 						"Encounter Building",
 						"Random Encounters: A World of Possibilities",
 						"Traps Revisited",
@@ -692,19 +692,19 @@
 					}
 				},
 				{
-					"name": "Spells",
+					"name": "法術",
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 3
 					}
 				},
 				{
-					"name": "Shared Campaigns",
+					"name": "共享戰役",
 					"headers": [
-						"Code of Conduct",
-						"Designing Adventures",
-						"Character Creation",
-						"Variant Rules"
+						"行為準則",
+						"設計冒險",
+						"建立角色",
+						"變體規則"
 					],
 					"ordinal": {
 						"type": "appendix",
