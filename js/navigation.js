@@ -48,7 +48,7 @@ class NavBar {
 		addDivider(ulBooks);
 		addLi(ulBooks, "book.html", "劍灣冒險指南", {aHash: "SCAG", date: "2015"});
 		addLi(ulBooks, "book.html", "瓦羅的怪物指南", {aHash: "VGM", date: "2016"});
-		addLi(ulBooks, "book.html", "姍納薩的萬事指南", {aHash: "XGE", date: "2017"});
+		addLi(ulBooks, "book.html", "珊娜薩的萬事指南", {aHash: "XGE", date: "2017"});
 		addLi(ulBooks, "book.html", "魔鄧肯的衆敵卷冊", {aHash: "MTF", date: "2018"});
 		addLi(ulBooks, "book.html", "拉尼卡的公會長指南", {aHash: "GGR", date: null});
 		addLi(ulBooks, "book.html", "艾奎茲玄有限責任公司", {aHash: "AI", date: "2019"});
