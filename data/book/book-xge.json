@@ -7420,31 +7420,31 @@
 		},
 		{
 			"type": "section",
-			"name": "Shared Campaigns",
+			"name": "共享戰役",
 			"page": 172,
 			"entries": [
-				"Coordinating a regular schedule of D&D game sessions, to keep a campaign active and vibrant, can be a challenge. If the campaign's only Dungeon Master or enough players aren't available, the next session might have to be postponed, and repeated problems of this sort can endanger the continuation of the campaign.",
-				"In short: in a world filled with distractions, it can be hard to keep a campaign going. Enter the concept of the shared campaign.",
-				"In a shared campaign, more than one member of the group can take on the role of DM. A shared campaign is episodic rather than continuous, with each play session comprising a complete adventure.",
-				"The largest shared campaigns are administered by the D&D Adventurers League and overseen by Wizards of the Coast. You can also create your own shared campaign for a school D&D club, at a game store, a library, or anywhere else where D&D players and DMs gather.",
-				"A shared campaign establishes a framework that allows a player to take a character from one DM's game to another one within the shared campaign. It creates a situation where almost nothing can prevent a scheduled session from happening. The roster of potential players can be quite large, virtually ensuring that any session has at least the minimum number of characters needed to play. If everyone shows up to play at the same time, multiple DMs ensure that everyone can take part.",
-				"In order to be successful, a shared campaign needs a champion-someone who takes on the responsibility of organizing and maintaining the group. If you're interested in learning more about how to run a shared campaign and seeing how the Adventurers League handles certain issues, then the rest of this appendix is meant for you.",
+				"協定一個D&D的固定“課程表”一向是難題，使戰役保持活躍與生機更是一種挑戰。如果本次遊戲團務的DM或來的玩家不齊，這一次團務就得被推遲。而如果反覆出現這一情況，也許戰役的連續性將被破壞。",
+				"簡而言之：在這個充滿各種干擾和意外的世界裡，想讓一場長期戰役一直進行下去是極度困難的。而共享戰役這一概念因此應運而生。",
+				"在一場共享戰役中，團隊內可以有複數個人擔任DM的職責。一場共享戰役更像是一集一集的單元劇而非連續劇，每一場遊戲程序都像是一次完整的冒險。",
+				"世界上最大的共享戰役由 D&D 冒險者聯盟（D&D Adventurers League）運營，並由 威世智 （Wizards of the Coast）監管。不過你也可以在你的校園D&D社團、一家桌遊店、一座圖書館、或別的什麼有D&D玩家和D&D的DM們的地方建立屬於你們的共享戰役。",
+				"共享戰役更像是一種框架，它允許玩家把一個角色從一名DM的遊戲中帶到另一個共享戰役中的另一名DM的遊戲中去。它創造了一種幾乎無法被破壞的預訂遊戲團務。潛在同行玩家的名單也許會非常大，不論出什麼事都能讓你這場遊戲有最少所需的人數來進行，而如果大家都在同一時間想去進行遊戲，也將有多個DM能夠帶下這群人。",
+				"為了保證這一秩序的成功，一場共享戰役需要一名總管——一個承擔起組織和維護小組責任的人。如果你想了解更多關於如何開展共享活動的資訊，並想知道 冒險者聯盟Adventurers League 是如何處理某些問題的，那麼本附錄的其餘部分就是為你準備的。",
 				{
 					"type": "inset",
-					"name": "Code of Conduct",
+					"name": "行為準則",
 					"entries": [
-						"Time and time again, the core rulebooks come back to the point that the most important goal of a D&D play session is for everyone involved to have fun. In keeping with that goal, it's a good idea for a shared campaign to have a code of conduct. Because people who don't normally play together might end up at the same table in a shared campaign, it can be helpful to establish some ground rules for behavior.",
-						"On the broadest level, everyone in a shared campaign is responsible for making sure that everyone else has an enjoyable time. If anyone feels offended, belittled, or bullied by the actions of another person, the entire purpose of getting together to play is defeated.",
-						"The basic code of conduct for a shared campaign might be modeled on a similar document that another organization or location uses. Beyond that, some special policies might need to be added to account for what might happen at the table when players and DMs interact. As a starting point, consider the following material, which is excerpted from the Adventurers League code of conduct.",
-						"During a play session, participants are expected to:",
+						"核心規則書中一而再，再而三的強調，D&D的遊戲團務中最重要就是讓所有玩家都能獲得到樂趣。為了保持這一目標，在一場共同戰役中制定一份行為準則將會是個很好的注意。畢竟大家都不一定會與自己熟悉的人一同在同桌上游玩共享戰役，因此制定基本的行為準則是很有幫助和必要的。",
+						"進一步來說，共享戰役中的每個人都有責任讓其他人都能度過愉快的時光。如果有人因其他人的行為的感到被冒犯、被輕視、或被欺凌，那麼大家一起愉快玩耍的初衷就落空了。",
+						"共享戰役的行為準則可以參考其他組織或地點用的類似檔案。此外，因為DM和玩家的特殊關係，可能還需要新增一點特殊的準則。作為起步點，請參考以下摘自 冒險者聯盟Adventurers League 行為準則的材料。",
+						"在一場遊戲程序中，參與者應當：",
 						{
 							"type": "list",
 							"items": [
-								"Follow the DM's lead and refrain from arguing with the DM or other players over rules.",
-								"Let other players speak, and allow other players to get attention from the DM.",
-								"Avoid excessive conversation that is not relevant to the adventure.",
-								"Discourage others from using social media to bully, shame, or intimidate other participants.",
-								"Make the DM or the campaign's administrators aware of disruptive or aggressive behavior so that appropriate action can be taken."
+								"聽從DM的指引，並儘可能不要與DM或其他玩家爭論規則。",
+								"讓別的玩家也能說上話，並允許每個玩家都能從DM那邊得到反饋。",
+								"避免太多與冒險無關的討論。",
+								"阻止他人使用社交媒體欺凌、羞辱、或恐嚇其他參與者。",
+								"讓DM或戰役的管理員瞭解破壞性或攻擊性行為，以便採取適當措施。"
 							]
 						}
 					],
