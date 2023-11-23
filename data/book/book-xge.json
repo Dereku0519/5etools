@@ -395,43 +395,43 @@
 								},
 								{
 									"type": "entries",
-									"name": "Section by Section",
+									"name": "循序漸進",
 									"page": 61,
 									"entries": [
-										"This material is divided into four sections, each addressing a different aspect of your character's backstory.",
+										"這邊分為四個小節，每個小節都涉及角色背景的不同方面。",
 										{
 											"type": "entries",
-											"name": "Origins",
+											"name": "起源",
 											"page": 61,
 											"entries": [
-												"To find out who and where you came from, use the \"Origins\" section. When you're done, you will have a summary of facts about your parents, your siblings, and the circumstances under which you grew up."
+												"要了解你是誰，來自哪裡，使用“起源”小節。完成後，你將對你的父母、兄弟姐妹以及你成長的環境有一個簡要的了解。"
 											],
 											"id": "015"
 										},
 										{
 											"type": "entries",
-											"name": "Personal Decisions",
+											"name": "背景",
 											"page": 61,
 											"entries": [
-												"After you have selected your character's background and class, use the appropriate tables to determine how you came to make those choices."
+												"在選擇了你的角色背景和職業後，使用相應的表格來確定你做出這些選擇的原因。"
 											],
 											"id": "016"
 										},
 										{
 											"type": "entries",
-											"name": "Life Events",
+											"name": "羈絆",
 											"page": 61,
 											"entries": [
-												"Your character's existence until now, no matter how brief or uneventful, has been marked by one or more life events-memorable happenings that have had an effect on who you are today."
+												"你的角色存在至今，無論多麼簡短或平淡，都被一個或多個生活事件所標記 - 有影響你今天是誰的難忘事件。"
 											],
 											"id": "017"
 										},
 										{
 											"type": "entries",
-											"name": "Supplemental Tables",
+											"name": "補充",
 											"page": 61,
 											"entries": [
-												"Your life has intersected with the lives of plenty of other people, all the way from your infancy to today. When a result mentions such a person, you can use the supplemental tables to add needed details-such as race, class, or occupation-to that person. Some tables in the other sections direct you to one or more of the supplemental tables, and you can also use them any other time you see fit."
+												"你的生活與許多其他人的生活交織在一起，從你的嬰兒時期一直到今天。當結果提到這樣的一個人時，你可以使用補充表格添加所需的細節 - 例如種族、職業或職業。其他部分的一些表格會引導你去補充表格中的一個或多個，你也可以在任何你認為合適的時候使用它們。"
 											],
 											"id": "018"
 										}
@@ -443,28 +443,28 @@
 						},
 						{
 							"type": "entries",
-							"name": "Origins",
+							"name": "起源",
 							"page": 61,
 							"entries": [
-								"The usual first step in creating your character's life story is to determine your early circumstances. Who were your parents? Where were you born? Did you have any siblings? Who raised you? You can address these questions by using the following tables.",
+								"創建你的角色生平故事的通常第一步是確定你的早期環境。你的父母是誰？你在哪裡出生的？你有兄弟姐妹嗎？是誰撫養你長大的？你可以通過使用以下表格來回答這些問題。",
 								{
 									"type": "entries",
-									"name": "Parents",
+									"name": "父母",
 									"page": 61,
 									"entries": [
-										"You had parents, of course, even if they didn't raise you. To determine what you know about these people, use the Parents table. If you want, you can roll separately on the table for your mother and your father. Use the supplemental tables as desired (particularly Class, Occupation, and Alignment) to learn more about your parents.",
+										"你有父母，即使他們沒有撫養你。要確定你對這些人知道什麼，請使用「父母」表格。如果你願意，你可以分別在母親和父親的表格上擲骰子。根據需要使用補充表格（尤其是「職業」、「職業」和「立場」）來更多地了解你的父母。",
 										{
 											"type": "entries",
-											"name": "Nonhuman Parents",
+											"name": "非人類父母",
 											"page": 62,
 											"entries": [
-												"If your character is a half-elf, a half-orc, or a tiefling, you can use one of the tables below to determine the race of each of your parents. When you have a result, randomly determine which part of the result refers to your father and which to your mother.",
+												"如果你的角色是半精靈、半獸人或惡魔血統，你可以使用以下表格之一來確定父母的種族。當你有了結果後，隨機確定結果中的哪一部分指的是你的父親，哪一部分指的是你的母親。",
 												{
 													"type": "table",
-													"caption": "Parents",
+													"caption": "父母",
 													"colLabels": [
 														"d100",
-														"Parents"
+														"父母"
 													],
 													"colStyles": [
 														"col-2 text-center",
@@ -473,20 +473,20 @@
 													"rows": [
 														[
 															"1-95",
-															"You know who your parents are or were."
+															"你知道你的父母是誰，或者曾經是誰。"
 														],
 														[
 															"96-100",
-															"You do not know who your parents were."
+															"你不知道你的父母是誰。"
 														]
 													]
 												},
 												{
 													"type": "table",
-													"caption": "Half-Elf Parents",
+													"caption": "半精靈父母",
 													"colLabels": [
 														"d8",
-														"Parents"
+														"父母"
 													],
 													"colStyles": [
 														"col-2 text-center",
@@ -495,25 +495,25 @@
 													"rows": [
 														[
 															"1-5",
-															"One parent was an elf and the other was a human."
+															"父母中其中一位是精靈，另一位是人類"
 														],
 														[
 															"6",
-															"One parent was an elf and the other was a half-elf."
+															"父母中其中一位是精靈，另一位是半精靈"
 														],
 														[
 															"7",
-															"One parent was a human and the other was a half-elf."
+															"父母中其中一位是半精靈，另一位是人類"
 														],
 														[
 															"8",
-															"Both parents were half-elves."
+															"父母都是半精靈"
 														]
 													]
 												},
 												{
 													"type": "table",
-													"caption": "Half-Orc Parents",
+													"caption": "半獸人父母",
 													"colLabels": [
 														"d8",
 														"Parents"
@@ -525,25 +525,25 @@
 													"rows": [
 														[
 															"1-3",
-															"One parent was an orc and the other was a human."
+															"父母中其中一位是獸人，另一位是人類"
 														],
 														[
 															"4-5",
-															"One parent was an orc and the other was a half-orc."
+															"父母中其中一位是獸人，另一位是半獸人"
 														],
 														[
 															"6-7",
-															"One parent was a human and the other was a half-orc."
+															"父母中其中一位是半獸人，另一位是人類"
 														],
 														[
 															"8",
-															"Both parents were half-orcs."
+															"父母都是半獸人"
 														]
 													]
 												},
 												{
 													"type": "table",
-													"caption": "Tiefling Parents",
+													"caption": "提夫林",
 													"colLabels": [
 														"d8",
 														"Parents"
@@ -555,19 +555,19 @@
 													"rows": [
 														[
 															"1-4",
-															"Both parents were humans, their infernal heritage dormant until you came along."
+															"兩位父母都是人類，他們的地獄血統在你出生之前沉睡著。"
 														],
 														[
 															"5-6",
-															"One parent was a tiefling and the other was a human."
+															"父母中其中一位是提夫林，另一位是人類"
 														],
 														[
 															"7",
-															"One parent was a tiefling and the other was a devil."
+															"父母中其中一位是提夫林，另一位是惡魔"
 														],
 														[
 															"8",
-															"One parent was a human and the other was a devil."
+															"父母中其中一位是人類，另一位是惡魔"
 														]
 													]
 												}
@@ -579,16 +579,16 @@
 								},
 								{
 									"type": "entries",
-									"name": "Birthplace",
+									"name": "出生地",
 									"page": 62,
 									"entries": [
-										"After establishing your parentage, you can determine where you were born by using the Birthplace table. (Modify the result or roll again if you get a result that's inconsistent with what you know about your parents.) Once you have a result, roll percentile dice. On a roll of 00, a strange event coincided with your birth: the moon briefly turning red, all the milk within a mile spoiling, the water in the area freezing solid in midsummer, all the iron in the home rusting or turning to silver, or some other unusual event of your choice.",
+										"在確定了你的親生父母後，你可以使用「出生地」表格來確定你的出生地點。（如果你得到的結果與你對父母的了解不一致，請修改結果或重新擲骰。）一旦有了結果，擲百分骰。如果擲出00，那麼你的出生與一個奇異的事件相符：月亮短暫變成紅色，一英里內的所有牛奶變壞，夏天時區域內的水結冰，家中所有的鐵器生銹或變成銀，或者其他你選擇的異常事件。",
 										{
 											"type": "table",
-											"caption": "Birthplace",
+											"caption": "出生地",
 											"colLabels": [
 												"d100",
-												"Location"
+												"地點"
 											],
 											"colStyles": [
 												"col-2 text-center",
@@ -597,95 +597,95 @@
 											"rows": [
 												[
 													"1-50",
-													"Home"
+													"家裡"
 												],
 												[
 													"51-55",
-													"Home of a family friend"
+													"朋友家裡"
 												],
 												[
 													"56-63",
-													"Home of a healer or midwife"
+													"一位治療師或接生婆的家"
 												],
 												[
 													"64-65",
-													"Carriage, cart, or wagon"
+													"馬車、手推車或運貨車"
 												],
 												[
 													"66-68",
-													"Barn, shed, or other outbuilding"
+													"穀倉、小屋或其他附屬建築"
 												],
 												[
 													"69-70",
-													"Cave"
+													"洞穴"
 												],
 												[
 													"71-72",
-													"Field"
+													"田野"
 												],
 												[
 													"73-74",
-													"Forest"
+													"森林"
 												],
 												[
 													"75-77",
-													"Temple"
+													"寺廟"
 												],
 												[
 													"78",
-													"Battlefield"
+													"戰場"
 												],
 												[
 													"79-80",
-													"Alley or street"
+													"小巷或街道"
 												],
 												[
 													"81-82",
-													"Brothel, tavern, or inn"
+													"妓院、酒館或旅館"
 												],
 												[
 													"83-84",
-													"Castle, keep, tower, or palace"
+													"城堡、要塞、塔樓或宮殿"
 												],
 												[
 													"85",
-													"Sewer or rubbish heap"
+													"下水道或垃圾堆"
 												],
 												[
 													"86-88",
-													"Among people of a different race"
+													"在一群有著不同種族的人群之間"
 												],
 												[
 													"89-91",
-													"On board a boat or a ship"
+													"在船上或船艙中"
 												],
 												[
 													"92-93",
-													"In a prison or in the headquarters of a secret organization"
+													"在監獄中或秘密組織的總部"
 												],
 												[
 													"94-95",
-													"In a sage's laboratory"
+													"在一位賢者的實驗室"
 												],
 												[
 													"96",
-													"In the Feywild"
+													"在妖界"
 												],
 												[
 													"97",
-													"In the Shadowfell"
+													"在影暗界"
 												],
 												[
 													"98",
-													"On the Astral Plane or the Ethereal Plane"
+													"在星界或虛界"
 												],
 												[
 													"99",
-													"On an Inner Plane of your choice"
+													"在你選擇的內界面"
 												],
 												[
 													"100",
-													"On an Outer Plane of your choice"
+													"在你選擇的其他位面"
 												]
 											]
 										}
@@ -694,49 +694,49 @@
 								},
 								{
 									"type": "entries",
-									"name": "Siblings",
+									"name": "兄弟姐妹",
 									"page": 62,
 									"entries": [
-										"You might be an only child or one of many children. Your siblings could be cherished friends or hated rivals. Roll on the Number of Siblings table to determine how many brothers or sisters you have. If you are a dwarf or an elf, subtract 2 from your roll. Then, roll on the Birth Order table for each sibling to determine that person's age relative to yours (older, younger, or born at the same time).",
+										"你可能是獨生子女，也可能是眾多兄弟姐妹中的一員。你的兄弟姐妹可能是珍愛的朋友，也可能是憎恨的對手。在「兄弟姐妹數量」表上擲骰子，以確定你有多少兄弟姐妹。如果你是矮人或精靈，請將你的擲骰結果減去2。然後，對每個兄弟姐妹擲骰在「出生順序」表上，以確定該人相對於你的年齡（較大、較小或同時出生）。",
 										{
 											"type": "entries",
-											"name": "Occupation",
+											"name": "職業",
 											"page": 62,
 											"entries": [
-												"For each sibling of suitable age, roll on the Occupation supplemental table to determine what that person does for a living."
+												"對於每位適齡的兄弟姐妹，請在「職業」補充表上擲骰，以確定他們的職業。"
 											],
 											"id": "01e"
 										},
 										{
 											"type": "entries",
-											"name": "Alignment",
+											"name": "立場、取向",
 											"page": 62,
 											"entries": [
-												"You can choose your siblings' alignments or roll on the Alignment supplemental table."
+												"你可以選擇你兄弟姐妹的立場，或者在「立場」補充表上擲骰。"
 											],
 											"id": "01f"
 										},
 										{
 											"type": "entries",
-											"name": "Status",
+											"name": "身份、地位",
 											"page": 62,
 											"entries": [
-												"By now, each of your siblings might be alive and well, alive and not so well, in dire straits, or dead. Roll on the Status supplemental table."
+												"到現在，你的每個兄弟姐妹可能是活得好好的，活著但狀況不佳，陷入極端困境，或者已經去世。在「狀態」補充表上擲骰。"
 											],
 											"id": "020"
 										},
 										{
 											"type": "entries",
-											"name": "Relationship",
+											"name": "關係",
 											"page": 62,
 											"entries": [
-												"You can roll on the Relationship supplemental table to determine how your siblings feel about you. They might all have the same attitude toward you, or some might view you differently from how the others do."
+												"你可以在「關係」補充表上擲骰，以確定你的兄弟姐妹對你的感覺。他們可能對你有相同的態度，或者有些人可能對你的看法與其他人不同"
 											],
 											"id": "021"
 										},
 										{
 											"type": "entries",
-											"name": "Other Details",
+											"name": "其他細節",
 											"page": 62,
 											"entries": [
 												"You can decide any other details you like about each sibling, including gender, personality, and place in the world.",
