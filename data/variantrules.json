@@ -9341,13 +9341,13 @@
 			]
 		},
 		{
-			"name": "Shared Campaign Variant Rules",
+			"name": "共享冒險變體規則",
 			"source": "XGE",
 			"page": 173,
 			"ruleType": "V",
 			"type": "section",
 			"entries": [
-				"A shared campaign might use some variant rules to handle certain aspects of the game. The Adventurers League, for instance, has variant systems for gaining levels and acquiring treasure. These \"house rules,\" presented below, serve as a sort of common language, ensuring that the rewards all characters receive are equivalent no matter what kind of adventure a character experienced.",
+				"一個共享冒險可能會使用一些變體規則來處理遊戲的某些方面。例如，冒險者聯盟為升級和獲得財寶等方面提供了變體系統。下面所提到的這些“家規”充當一種共同語言，確保所有角色獲得的獎勵都是等價的，無論角色經歷了怎樣的冒險。",
 				{
 					"type": "entries",
 					"name": "角色提升",
@@ -9375,18 +9375,18 @@
 				},
 				{
 					"type": "entries",
-					"name": "Individual Treasure",
+					"name": "個體寶藏",
 					"entries": [
-						"In a shared campaign, each character receives a fixed number of gold pieces upon gaining a new level. (This gain represents the treasure a character might find in a standard adventure.)",
-						"As an additional benefit, characters are not required to put out gold to maintain a lifestyle. Instead, each character begins with a modest lifestyle, which improves as the character attains higher levels.",
-						"These benefits are summarized on the Individual Treasure table. Ways for characters to spend their treasure are covered in the \"Buying and Selling\" section below.",
+						"在一場共享戰役中，每個角色將在獲得一個新等級時得到固定數量的金幣。（這些錢代表著角色在一場標準冒險中大概能找到的寶藏價值。）",
+						"作為這一變體規則的另一個好處，角色將不需要花費任何金幣來維持他們的生活開支。相反，每個角色一開始都有適度的生活方式，隨著等級的提高，生活方式也會變得更富足。",
+						"以上的好處皆呈現在下方的個體寶藏表中。後續章節的“買入與賣出”部分將介紹角色使用這些金幣的方法。",
 						{
 							"type": "table",
-							"caption": "Individual Treasure",
+							"caption": "個體寶藏",
 							"colLabels": [
-								"Level Gained",
-								"Lifestyle",
-								"Reward"
+								"等級",
+								"生活舒適度",
+								"獎勵"
 							],
 							"colStyles": [
 								"col-4 text-center",
@@ -9396,22 +9396,22 @@
 							"rows": [
 								[
 									"2-4",
-									"Modest",
+									"儉樸",
 									"75 gp"
 								],
 								[
 									"5-10",
-									"Comfortable",
+									"舒適",
 									"150 gp"
 								],
 								[
 									"11-16",
-									"Wealthy",
+									"富裕",
 									"550 gp"
 								],
 								[
 									"17-20",
-									"Aristocratic",
+									"奢華",
 									"5,500 gp"
 								]
 							]
@@ -9420,39 +9420,39 @@
 				},
 				{
 					"type": "entries",
-					"name": "Magic Items",
+					"name": "魔法物品",
 					"entries": [
-						"Characters earn treasure points from adventures, then redeem those points in exchange for magic items. The list of available magic items is agreed to and compiled by the DMs running the campaign.",
+						"角色會在冒險之中獲得財寶點，並可以在之後用這些財寶點來兌換想要的魔法物品。而可以選用的魔法物品列表由運作這場戰役的DM們批准與制定。",
 						{
 							"type": "entries",
-							"name": "Gaining Treasure Points",
+							"name": "獲取財寶點",
 							"entries": [
-								"Each character earns treasure points based on an adventure's tier and its intended playing time:",
+								"每個角色可以獲得的財寶點取決於他們這場冒險的 階層Tier 與那個角色的實際遊玩時間：",
 								{
 									"type": "list",
 									"items": [
-										"1 treasure point is awarded for every 2 hours played in a tier 1 or tier 2 adventure.",
-										"1 treasure point is awarded for every 1 hour played in a tier 3 or tier 4 adventure."
+										"T1與T2的冒險中，玩家每遊玩2小時，自己的角色就能獲得1點財寶點。",
+										"T3與T4的冒險中，玩家每遊玩1小時，自己的角色就能獲得1點財寶點。"
 									]
 								},
-								"As with the variant rules for gaining levels, this award is based on the adventure's projected playing time, rather than the actual time a group spent at the table.",
-								"If a character completes an adventure of a tier higher than that character's tier, the character receives 1 additional treasure point for that adventure."
+								"若與升級的變體規則一同使用，這一獎勵將基於這場冒險的預設遊玩時長，而非實際在桌上花費的遊玩時間。",
+								"如果一個角色完成了一場比角色本身更高階層的冒險，那個角色將可以在本次冒險中額外獲得1點財寶點。"
 							]
 						},
 						{
 							"type": "entries",
-							"name": "Creating an Item List",
+							"name": "建立物品列表",
 							"entries": [
-								"The DMs of the shared campaign should work together to compile a list of magic items that players can purchase. The magic item tables in chapter 2 of this book and in chapter 7 of the Dungeon Master's Guide are the obvious starting point. Choosing which items to allow or ban is a matter of personal preference, just as it is for the DM in a standard campaign. Involving all the DMs helps to ensure that the list meets everyone's expectations. When in doubt, disallow an item; it's easier to add it to the available items at a later time than it would be to remove it from the game once it has been handed out.",
-								"Naturally, the list of available items is longer for adventures in the higher tiers, and the point cost of those higher-tier items likewise increases. The Magic Items by Tier table provides the details.",
-								"For instance, treasure points from a tier 1 adventure can be spent on items from tables A, B, C, and F. Any item on the first three tables costs 4 points, and an item from table F costs 8 points.",
+								"共享戰役中的DM們應當聯合起來，合作去完成一份可供玩家購買的魔法物品列表。本書的第二章與《地下城主指南》的第七章中出現的魔法物品將是你們最好的出發點。選擇哪些物品可以購買，哪些物品禁止購買，如同一個常規戰役的DM該做的那樣的。只不過在這需要所有DM們來討論，參考大家的意願來合作完成這張表。如果出現爭執則預設先禁止那個物品——以後將其新增到可用物品列表中，可比在遊戲中將其移除要容易得多。",
+								"自然，這張可用物品的列表將伴隨玩家到更高的階層，而表中那些在高階層才該有的物品所需要的點數也會比其他低階層的更高。",
+								"拿現有的表來舉例，一場T1冒險也許可以讓玩家將點數花費在購買魔法物品列表A、B、C、與F的魔法物品上。而任何A、B、C表的魔法物品將標價為4點數，而F表的魔法物品將標價為8點數。",
 								{
 									"type": "table",
-									"caption": "Magic Items by Tier",
+									"caption": "以 階層Tier 決定的魔法物品價格表",
 									"colLabels": [
-										"Magic Item Table",
-										"Available at Tiers",
-										"Point Cost"
+										"魔法物品表",
+										"可購買階層",
+										"花費點數"
 									],
 									"colStyles": [
 										"col-4 text-center",
@@ -9511,26 +9511,26 @@
 						},
 						{
 							"type": "entries",
-							"name": "Spending Treasure Points",
+							"name": "消耗財寶點",
 							"entries": [
-								"Players must spend treasure points at the end of a play session, immediately after determining whether their characters have gained a level. The order of these steps is important, since a character might enter a new tier because of the level gain.",
-								"Players are entitled to choose any approved item from one of the magic item tables available in the current tier. Treasure points can be spread across multiple items.",
-								"Many items cost more treasure points than a character can earn in a 2- or 4-hour adventure. To buy such an item, a character can make a deposit, spending treasure points on the item until it's paid off, at which time the character gains the item."
+								"在每場遊戲程序的最後——即決定角色升級時，玩家都必須消耗掉手裡的財寶點。這一步驟的順序是十分重要的，因為玩家也許會因為升級而進入新的階層。",
+								"玩家們有權在當前階層可用的任何魔法物品列表是選擇物品。且他們可以一次性用寶藏點購買多件魔法物品（前提是它們的點數夠）。",
+								"許多物品所需的財寶點遠超玩家能在2小時或4小時冒險中能獲得的多。為了購買那樣的物品，玩家可以進行借貸以獲取那件物品——接下來的冒險中，直到還完欠款為止獲得的財寶點將全部被用於這件物品的欠款上。"
 							]
 						}
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Buying and Selling",
+					"name": "買入與賣出",
 					"entries": [
-						"Characters can use their monetary treasure to purchase anything from the equipment lists in chapter 5 of the Player's Handbook. In addition, the Adventurers League allows characters to purchase potions and spell scrolls, as detailed below. A spell scroll can be purchased only by a character who is capable of casting the spell in question.",
+						"角色可以用他們那些有價值的寶藏（指前文提及的金幣獎勵）來購買《玩家手冊》第五章的裝備列表中的任何物品。此外，冒險者聯盟Adventurers League 中允許玩家購買藥水與法術卷軸，其價格與目錄如下所示。關於法術卷軸的話，玩家只能購買那些他們能夠使用的法術的法術卷軸。",
 						{
 							"type": "table",
-							"caption": "Potions for Sale",
+							"caption": "售賣中的藥水",
 							"colLabels": [
-								"Potion of...",
-								"Cost"
+								"藥水類別",
+								"價格"
 							],
 							"colStyles": [
 								"col-4 text-center",
@@ -9539,7 +9539,7 @@
 							],
 							"rows": [
 								[
-									"Healing",
+									"{@item 治療藥水}",
 									"50 gp"
 								],
 								[
