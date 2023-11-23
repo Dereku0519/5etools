@@ -7550,13 +7550,13 @@
 		},
 		{
 			"type": "section",
-			"name": "Character Names",
+			"name": "角色名稱",
 			"page": 173,
 			"entries": [
-				"Some players and DMs have a knack for coming up with  character names on the fly, while others find that task  more of a challenge. The tables in this appendix are  designed to make life easier for both kinds of people,  whether you're naming a player character, a nonplayer  character, a monster, or even a place.",
-				"Each table contains names that are associated with  a nonhuman character race in the player's handbook or a real-world ethnic or language group, with a focus  on groups from antiquity and the Middle Ages. You can select from the possibilities here, or use dice to determine a name.",
-				"Even though names are associated with races in this  appendix, a character might not have a name from their  own race. For instance, a half-orc might have grown up  among dwarves and have a dwarven name. Or, as DM,  you might decide that dragonborn in your campaign  have a culture reminiscent of ancient Rome and therefore use Roman names, rather than the dragonborn  names suggested here.",
-				"See the {@5etools names|names.html} page for the full collection of name tables."
+				"有些玩家和DM擁有即興創建角色名稱的天賦，而其他人可能會覺得這項任務更具挑戰性。這個附錄中的表格旨在為這兩種人提供更輕鬆的選擇，不論你是為玩家角色、非玩家角色、怪物，甚至是地點命名。",
+				"每個表格中都包含與《玩家手冊》中的非人類角色種族或現實世界的種族或語言群體相關聯的名字，重點放在古代和中世紀的群體上。你可以從這裡的選擇中進行選擇，或者使用骰子來確定一個名字。",
+				"儘管這個附錄中的名字與種族相關聯，但一個角色可能並不一定有來自自己種族的名字。例如，一個半獸人可能在矮人中長大，擁有一個矮人名字。或者，作為DM，你可能決定你的戰龍在你的戰役中擁有類似古羅馬的文化，因此使用羅馬名字，而不是這裡建議的戰龍名字。",
+				"從{@5etools 命名頁面|names.html}中察看完整的表格"
 			],
 			"id": "0e3"
 		}
