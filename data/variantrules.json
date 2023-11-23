@@ -9543,31 +9543,31 @@
 									"50 gp"
 								],
 								[
-									"Climbing",
+									"{@item 攀爬藥水}",
 									"75 gp"
 								],
 								[
-									"Animal friendship",
+									"{@item 化獸為友藥水}",
 									"100 gp"
 								],
 								[
-									"Greater healing",
+									"{@item 良效治療藥水}",
 									"100 gp"
 								],
 								[
-									"Water breathing",
+									"{@item 水下呼吸藥水}",
 									"100 gp"
 								],
 								[
-									"Superior healing",
+									"{@item 強效治療藥水}",
 									"500 gp"
 								],
 								[
-									"Supreme healing",
+									"{@item 極效治療藥水}",
 									"5,000 gp"
 								],
 								[
-									"Invisibility",
+									"{@item 隱形藥水}",
 									"5,000 gp"
 								]
 							],
@@ -9577,10 +9577,10 @@
 						},
 						{
 							"type": "table",
-							"caption": "Spell Scrolls for Sale",
+							"caption": "售賣中的法術卷軸",
 							"colLabels": [
-								"Spell Level",
-								"Cost"
+								"法術環階",
+								"價格"
 							],
 							"colStyles": [
 								"col-4 text-center",
@@ -9589,27 +9589,27 @@
 							],
 							"rows": [
 								[
-									"Cantrip",
+									"戲法",
 									"25 gp"
 								],
 								[
-									"1st",
+									"1環",
 									"75 gp"
 								],
 								[
-									"2nd",
+									"2環",
 									"150 gp"
 								],
 								[
-									"3rd",
+									"3環",
 									"300 gp"
 								],
 								[
-									"4th",
+									"4環",
 									"500 gp"
 								],
 								[
-									"5th",
+									"5環",
 									"1,000 gp"
 								]
 							],
@@ -9619,9 +9619,9 @@
 						},
 						{
 							"type": "entries",
-							"name": "Selling Items",
+							"name": "出售物品",
 							"entries": [
-								"In a shared campaign, characters are not entitled to sell items they find on adventures or equipment they purchase with their personal funds. Weapons, armor, and other gear used by enemies are considered too damaged to have any monetary value."
+								"在共享戰役中，角色大致上是不應該能被允許出售他們在冒險者找到的東西或它們用自己的錢購買的那些裝備的。武器、護甲、以及其他敵人使用的玩意可以直接被視為“損壞的太嚴重導致根本沒有任何價值”的東西。"
 							]
 						}
 					]
