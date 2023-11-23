@@ -7409,12 +7409,12 @@
 		},
 		{
 			"type": "section",
-			"name": "Spells",
+			"name": "法術",
 			"page": 147,
 			"entries": [
-				"Many of the character classes in the player's handbook harness magic in the form of spells. This chapter provides new spells for those classes, as well as for spellcasting monsters. The Dungeon Master decides which of these spells are available in a campaign and how they can be learned. For example, a DM might decide that some of the spells are freely available, that others are unobtainable, and that a handful can be found only after a special quest, perhaps discovered in a long-lost tome of magic. Wizard spells, in particular, can be introduced to a campaign in spellbooks found as treasure.",
-				"When a DM adds spells to a campaign, clerics, druids, and paladins require special consideration. When characters of those classes prepare their spells, they have access to the entire spell list for their class. Given that fact, the DM should be cautious about making all of these new spells available to a player who is overwhelmed when presented with many options. For such a player, consider adding only story-appropriate spells to the spell list of that player's character.",
-				"See the full list of spells from {@i Xanathar's Guide to Everything} on the {@filter Spells|spells|source=XGE} page."
+				"玩家手冊中的許多角色職業都利用法術的形式施展魔法。本章為這些職業提供了新的法術，同時也為具有施法能力的怪物提供了新的法術。DM決定在冒險中有哪些法術可用，以及如何學習它們。例如，地下城主可能決定其中一些法術是自由可得的，而其他一些是無法獲得的，只有在特殊的任務中才能找到，或者可能在一本遺失已久的魔法書中發現。特別是法師的法術，可以通過在寶藏中找到的法術書引入到冒險中。",
+				"當DM在冒險中增加法術時，牧師、德魯伊和聖武士需要特別注意。當這些職業的角色準備法術時，他們可以準備的法術是基於整個法術列表。鑒於這一事實，DM應該謹慎考慮是否將所有這些新法術提供給一個在面對眾多選擇時感到不知所措的玩家。對於這樣的玩家，可以考慮僅向該玩家角色的法術列表中準備與故事相關的法術。",
+				"請在{@filter 法術|spells|source=XGE}頁面上查看《珊娜薩的萬事指南》的法術完整列表。"
 			],
 			"id": "0d7"
 		},
