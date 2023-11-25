@@ -2,7 +2,7 @@
 	"data": [
 		{
 			"type": "section",
-			"name": "Chapter 1: Acquisitions Incorporated",
+			"name": "第一章：艾奎茲玄有限責任公司",
 			"page": 5,
 			"entries": [
 				{
@@ -14,32 +14,32 @@
 					"width": 1522,
 					"height": 1054
 				},
-				"Acquisitions Incorporated was founded in Seattle, Washington, in a time spoken of in only hushed tones: the year 2009. It first saw life as a podcast, which, at the time, was an unusual way to play Dungeons & Dragons. The intervening decade saw Acq Inc take on many forms\u2014streams, recorded content, comics, and, of course, live roleplaying shows. While these are all now completely normal ways to discover and enjoy D&D, back then, not so much. We just did it because it seemed like a cool idea, and ten years later, it seems like maybe we were right. Today, Acq Inc's adventures continue, dutifully chronicled online at acq-inc.com.",
-				"Our intention with Acquisitions Incorporated was to bring dark office comedy to a world of swords, sorcery, dungeons, and (dare we say) dragons. This book, created in concert with Wizards of the Coast, sets you up for success in your own fantasy-business endeavors. Chapter 1 provides an orientation for new franchise members, detailing how to start a game and play the Acquisitions Incorporated way. {@book Chapter 2|AI|1} explores the various positions within an Acq Inc franchise, introducing a variety of roles vital to an adventuring enterprise's success. {@book Chapter 3|AI|2} delves into backgrounds for Acq Inc franchise members, entrenching company goals at the core of their beings. In {@adventure Chapter 4|OoW|0}, all this comes together in an adventure taking characters from level 1 to 6, establishing a party's claim on a world they've begun to explore and strip-mine for profit.",
-				"Following these chapters, {@book appendix A|AI|3} presents stalwarts of the Acquisitions Incorporated world, founding members and characters from the company's ongoing adventures. {@book Appendix B|AI|11} details foes, from terrifying deep crows to infamous keg robots. {@book Appendices C|AI|12}, {@book D|AI|13}, and {@book E|AI|14} conclude this guide with a variety of Acq Inc tools and treasures, from vehicles like the {@vehicle battle balloon|AI} to the mighty {@item Orrery of the Wanderer|AI}.",
-				"Many hands worked diligently throughout the process of creating the Acquisitions Incorporated campaign and this resulting book. If you put your ear very close to the pages, you will hear us whisper, \"thank you.\"",
+				"Acquisitions Incorporated成立於多災多難的2009年，是位於西雅圖的一個D&D跑團組織。組織起初將播客作為主要的跑團形式。在當時，還沒有多少人用這種方式來體驗D&D。這十年來組織又嘗試了許多種不同的跑團形式，有流媒體，錄製，漫畫和一定繞不過的直播。用現在的眼光來看，這些是非常常見的跑團形式，讓玩家們能更好的探索和享受跑團。但就當時而言，這些還並不流行，我們會去嘗試只是因為覺得它們很酷。如今十年時間一晃而過，我們當初的決定看來並沒有出錯。如今，Acq Inc.的故事仍在繼續，並用我們的網站（acq-inc.com）一絲不苟地將其記錄下來。",
+				"我們建立Acquisitions Incorporated的本意是想把辦公室黑色幽默和劍與魔法有機結合起來。這本書由威世智公司與我們合作共同編寫，幫助你實現你在D&D世界裡的商業夢想。第一章為新員工提供導向，詳述了艾奎茲玄有限責任公司的獨特玩法。第二章詳列了公司內的不同職位，要想公司蓬勃發展這些角色必不可少。第三章提供了公司成員的背景，將公司的目標深植於冒險的伊始。第四章將前面的內容整合起來，注入到一個1到6級的模組裡。模組中玩家們透過探索與辛苦勞作盈利。",
+				"緊跟著，附錄A列出了艾奎茲玄有限責任公司的忠實擁護者，讓你認識公司發展路上的成員與夥伴。附錄B列舉了公司的仇敵，從毛孔悚然的淵鴉到聲名狼藉的桶裝機器人。附錄C,D和E歸納了公司豐富的工具和財寶，從浮空戰船這樣的載具，到強力的位面遊蕩儀。",
+				"這份模組和這本書是許多人嘔心瀝血的成果，如果你把你的耳朵貼近書頁，你會聽到我們低聲地在說：“謝謝”。",
 				{
 					"type": "section",
-					"name": "It's Just Business",
+					"name": "說白了只是做生意",
 					"page": 5,
 					"entries": [
-						"With its roots set firmly in heroic fantasy, D&D might feel out of sync with modern-day business dealings. But the game and its settings are actually a perfect fit for such tropes. What better way to think of the big bad monster at the center of a web of even bigger and badder plans than as the CEO of a megacorporation, using every resource to dominate the market? What is an adventuring party but a limited-liability corporation, with each member contributing specialized skills to growing the brand and expanding a power base?",
-						"Likewise, hirelings, sidekicks, apprentices, and other paid laborers working for the heroes have been staples of Dungeons & Dragons since the earliest editions of the game. Charisma in AD&D was good for little other than determining how many followers your character might gather\u2014and, more importantly, how much pain and suffering you could put those followers through before they abandoned you. The world of Acquisitions Incorporated returns these hired helpers to prominence for their importance to the campaign story. And, of course, for comic effect.",
-						"When the characters are relatively low level, an Acquisitions Incorporated style of play can present them with even more hurdles to overcome. The often bizarre, unfeeling, and surreal elements of corporate and business life can add a degree of danger or absurdity to even the most run-of-the-mill adventuring. And as the characters attain higher levels\u2014and their franchise attains higher rank\u2014their connections to Acquisitions Incorporated can help dial up the stakes of any adventure path. In an Acq Inc campaign, every NPC is a potential customer. Every bit of treasure found is an investment in the franchise and its future. Every other would-be hero is the competition, and every villain is the head of Evil Incorporated, just begging for some market volatility.",
-						"Money, as they say, makes the world go around. And as is true in real life, so it goes in the fantasy realm. The far-reaching power of global corporations allied with political power doesn't just inform our own real world\u2014it molds it. Bringing that concept of powerful corporations working with or against nobility to gain money, power, and influence into D&D adds another layer of depth to the story your campaigns create.",
+						"D&D向來根植於英雄主義奇幻世界，這與現代貿易格格不入。但事實上D&D與其規則完美的適用於這樣的風格。試想一下，將一個處在複雜邪惡計劃核心的可怖怪物，轉化為一個試圖使用所有資源來佔有市場的巨型公司的CEO；而將冒險小隊轉化為一個有限責任公司，每位成員都透過貢獻自己的專長來發展公司和提升自己在公司內的權力基礎。",
+						"同樣的，從D&D最早期的版本開始，僱工、助手、學徒以及其他帶僱傭性質的人就成為了遊戲內容裡密不可分的一部分。在AD&D中，魅力的主要作用就是決定你能擁有多少隨從，和他們對你的忍耐程度。Acquisitions Incorporated的世界中將這些做出過傑出貢獻的人們重新擺上了舞臺——喜劇舞臺。",
+						"當人物等級相對較低時，Acquisitions Incorporated的玩法能提供更多的挑戰。即使是最平淡無奇的冒險，也可以因為離奇、冷酷和超現實的商業生活，而變得危險與荒誕。當角色們的等級和加盟公司等級到達一定高度以後，與艾奎茲玄有限責任公司的深入合作會讓每一次冒險之旅都滿載而歸。在這種玩法裡，每個NPC都是一位潛在的顧客；每個潛在的英雄都是一名競爭者；每個反派都是試圖波動市場的邪惡公司老闆。",
+						"俗話說，有錢能使鬼推磨。現實世界中是如此，幻想世界中同樣也是如此。國際公司的巨大影響力和政治力量相勾結，這不僅影響著真實世界，更是塑造了真實世界。 將這一概念帶入D&D的世界，想象強大的公司與貴族階層或合作或競爭，為了取得財富、權力和影響力。這將給你創造的模組故事帶來另一層深度。",
 						{
 							"type": "entries",
-							"name": "What Is Acquisitions Incorporated?",
+							"name": "什麼是艾奎茲玄有限責任公司？",
 							"page": 6,
 							"entries": [
-								"An Acquisitions Incorporated campaign has a unique texture, because it combines deeply ordinary clerical toil with multiverse-spanning stakes. And in the end, you never know which one of those tropes might save your life.",
-								"Acquisitions Incorporated is high fantasy by way of office comedy. Imagine the Fellowship of the Ring insisting they only trekked from nine to five. Think about Conan barbarously assailing his way up the corporate ladder. Or perhaps King Arthur insisting that Excalibur's real magic lie in brand awareness, or Robin Hood pivoting the Merry Men toward a pyramid scheme.",
-								"Starting your own Acquisitions Incorporated franchise means stepping into a world of possibility. It opens up countless adventure hooks, rules for building and growing your own personalized base of operations, and a way to introduce Acquisitions Incorporated's specific sense of farcical corporate culture, questionable morality, and unfolding narrative to your own game.",
-								"Within the world of Acquisitions Incorporated, the franchise is the center of brand expansion throughout the world of Faerûn and beyond, even as it provides a new set of tools for player expression and involvement. In a way, it provides players with a greater purpose to explore. And although entirely nonnegotiable, franchise fees are incredibly reasonable.",
+								"一個艾奎茲玄有限責任公司模組有著獨特的結構，因為它將極端無聊的行政工作，和跨越位面的冒險相結合。就算到了最後，你也不會知道哪個會點亮你的生活。",
+								"艾奎茲玄有限責任公司是用高度奇幻的方式來演繹的一出辦公室喜劇。想象一下魔戒使者要求一天只跋涉八個小時，柯南野蠻地掃除晉升路上的障礙，亞瑟王堅持認為聖劍的真正威力在於它強大的品牌知名度，羅賓漢將快活人的工作重心轉向傳銷。",
+								" 建立屬於你自己的加盟公司意味著你進入了一片充滿可能性的世界。它將帶來不計其數的冒險，讓你瞭解建築修建的規則，允許你對公司基地進行持續的個性化改造。讓你明白如何將公司獨有的滑稽企業文化、令人存疑的道德標準、巧妙的情節展開一一帶入你自己的遊戲世界。",
+								"不管是在費倫大陸還是其他地方，加盟公司始終是企業擴充套件的核心，它甚至也會提供一系列新產品幫忙玩家們更好的去展現自己並參與遊戲。在某種程度上，加盟公司為玩家們的探險事業提供了更大的動力。最後，雖然加盟費是絕對不在可協商範圍內的，但費用依然極端的合理。",
 								{
 									"type": "quote",
 									"entries": [
-										"Our integrated Intern Success Pathway is a robust, unparalleled system for reliable growth year-on-year while maximizing your downstream."
+										"我們擁有一套被稱為“從實習生開始：成功之路“的可靠且無可比擬的體系，這套體系將在最大化你的下游產業的同時，帶給你年利潤的不斷增長。"
 									],
 									"by": "Omin Dran"
 								}
@@ -51,7 +51,7 @@
 				},
 				{
 					"type": "section",
-					"name": "A Corporate Prospectus",
+					"name": "公司發展史",
 					"page": 6,
 					"entries": [
 						{
@@ -63,32 +63,30 @@
 							"width": 613,
 							"height": 1000
 						},
-						"Throughout history, some people have had things and other people have wanted those things. But where most would gaze upon that arrangement and see an inescapable life of unfulfillment, {@creature Omin Dran|AI|Ominifis Hereward \"Omin\" Dran} saw a business opportunity. Thus was Acquisitions Incorporated born. In the years since, Omin and longtime employee (though less-longtime friend) {@creature Jim Darkmagic|AI|James Winifred \"Jim\" Darkmagic III} have turned a talent for redistribution of property into a reputation as the multiverse's premier adventurers for hire.",
-						"Omin Dran, CEO of Acquisitions Incorporated and war priest of Tymora, is the very model of the modern Faerûn business mien. He prioritizes his responsibilities first to his shareholders (which is to say, himself); second to his goddess; and then at some later stage to the well-being of his employees. It's definitely not third. But it's up there somewhere.",
-						"Jim Darkmagic III comes from a long line of renowned wizards, but he turned his back on his family and his inheritance for a life on the stage\u2014at least until well-paid heroics came calling. Jim and Omin's unlikely partnership began when Jim was the only surviving candidate in the running for a hotly contested position with the company. (Any deaths incurred in this process were incidental, and not the result of the actions or negligence of Acq Inc.)",
+						"縱觀歷史，貿易的需求一直存在。在大多數人還在翹首企盼別人的安排或者乖乖接受自己空虛生活的時候，歐米里菲斯·赫裡沃德·德蘭——通常被稱為歐米——看到了商機。艾奎茲玄有限責任公司因此誕生。在往後的日子裡，歐米與他的老員工（勉強算老朋友）詹姆士·威尼弗雷德·黑法三世——通常被稱為吉姆——靠著劫富濟貧的天賦名聲鵲起，成為了這世界裡最值得僱傭的冒險者。",
+						" 歐米·德蘭作為艾奎茲玄有限責任公司的CEO與太摩拉的戰爭祭司，是當代費倫商務人士的成功典範。他將股東的利益放在第一位（本公司唯一股東為歐米·德蘭），將信仰放在第二位，將員工的福祉……勉強算是放在心上了。吉姆·黑法三世來自一個十分顯赫的法師世家，但他一直與家中不和。當這份日進斗金的冒險事業召喚他時，吉姆果斷放棄了家族的遺產並離開了他們。吉姆後來在公司一次競爭激烈的應聘中脫穎而出，成為了唯一的倖存者，與本來不可能出現交集的歐米成為了夥伴。（此次應聘中出現的傷亡都是意外事故，與本公司的行動和疏忽沒有任何關係）",
 						{
 							"type": "entries",
-							"name": "How It Started",
+							"name": "初出茅廬",
 							"page": 7,
 							"entries": [
-								"Acquisitions Incorporated began as most adventuring groups do, with the wholesale removal of irksome kobolds, scouting ruined towers, delving into dwarven necropolis-cities, and abandoning wounded goblin hirelings named Splug to a terrible fate. The usual stuff. But in short order, Acq Inc traded kobolds for dragons, and upgraded ruined towers to eldritch temples. As the company grew, so too did its demand for willing and able-bodied adventurers. However, a limited payroll meant having to settle for one or the other.",
-								"After coming to the conclusion that a mission statement best described as \"minion harvesting\" sent the wrong message, Acquisitions Incorporated started an internship program. In accordance with the truism \"you get what you pay for,\" the very first Acq Inc intern died on his second assignment with the company. But like all good leaders, Omin Dran understood that truisms cut two ways, and he led the remaining team on a legendary trek through the Nine Hells to recover the soul of said intern. (Clearly, none of those hells paid for him either.)",
-								"The rogue {@creature Viari|AI} is one of Acquisitions Incorporated's best internship success stories. In fact, he was so successful that he remained the company's flagship intern for nearly a decade. He first joined Acquisitions Incorporated during an expedition into the {@adventure Undermountain dungeons of Halaster Blackcloak|WDMM} (who, due to an ongoing defamation suit, we can no longer refer to as \"the Mad Mage\"). From regrowing his own arm after an unfortunate incident with the {@i Apocalypse Dagger}, to wrangling dinosaurs to win street races, Viari has earned something far more valuable than a regular salary with Acq Inc. He's earned on-the-job experience."
+								"公司的起始和絕大多數冒險團隊一樣，做一些再正常不過的事，比如大規模屠殺狗頭人，探索塔樓遺蹟，挖掘矮人舊城，順便在途中拋棄受傷的狗頭人僱工史帕克。但很快，公司就開始將矛頭從狗頭人指向龍，塔樓遺蹟也不再有趣，轉而探索駭人的神廟。隨著公司繼續擴大，對有志向，有能力的冒險者的需求慢慢增大。無論如何，最後總是要僱新人的。",
+								"在一名員工將“棗木圓拱”錯誤的傳達成“招募員工”後，公司開啟了實習生計劃。俗話說的好，回報等同付出。公司的第一個免費實習生在第二次公司任務中不幸犧牲。和所有的優秀領袖一樣，歐米同樣明白回報等同付出的道理，於是他為了報答那位實習生的付出，毅然決然的向九獄進發，並經過長途跋涉找回實習生的靈魂。（再次宣告，回報等同付出，九獄沒有付出就想得到靈魂是不可能的）",
+								"遊蕩者瓦爾瑞是實習生計劃中最為成功的員工之一。事實上，他成功到近十年都沒人撼動的了他頭號實習生的稱號。瓦爾瑞是在公司探索海拉斯特·黑袍的地脈迷城時加入的。(順帶一提，海拉斯特以破壞名譽為由，給我們發了律師函，現在我們不能叫他瘋法師了)在公司後來的冒險中，他被凡尼弗用焰襲削去手臂，但幸運的用魔法復原了；他還為了贏一場街頭競速不要命的驅趕一頭恐龍。這些經歷給了瓦爾瑞一些比工資寶貴多的東西，那就是工作經驗。"
 							],
 							"id": "004"
 						},
 						{
 							"type": "entries",
-							"name": "Aggressive Expansion",
+							"name": "大舉擴張",
 							"page": 7,
 							"entries": [
-								"Thanks to the company's continuing success and robust internship program, Acquisitions Incorporated has long since outgrown garden-variety slaughter and disregard for public well-being. {@creature Môrgæn|AI}, an elf ranger from the Elsewynn, joined the team as a troubleshooter some time ago, and quickly showed that her propensity for slaughter and disregard for the public well-being is far beyond garden variety.",
-								"Môrgæn's recruitment coincided with Acquisitions Incorporated acquiring its first airship. Diviners have theorized that this was no coincidence, but the combined psychic will of all mortal creatures to put as much distance between them and the ranger as possible. More practical minds see the folly in this, since the airship simply gave Môrgæn a better vantage point.",
-								"Beyond the core Acquisitions Incorporated crew, Omin Dran has overseen regular strategic expansion of the Acq Inc brand. The \"C\" Team, the \"B\" team, and numerous other franchise operations have been established, flying the Acq Inc flag, bearing the Acq Inc sigil, and\u2014most crucially\u2014paying a cut of the profits into company coffers on a monthly basis.",
+								"得力於實習生計劃的不斷成功，艾奎茲玄有限責任公司迅速發展，很快就脫離了低階的屠殺和對公眾福利的漠視。一位名叫摩根的精靈遊俠從埃爾瑟文遠道而來，加入公司並專門負責改善工作。她迅速展現了對高效屠殺和對公眾福利徹底無視的癖好。摩根加入時，公司正好擁有了第一艘飛船。有預言家說這並不是巧合，而是因為世上的所有生物都希望離這個遊俠越遠越好，他們的一致的精神力量促成了這個結果。不過許多聰明人發現了其中愚蠢的地方，飛船明明讓摩根更容易攻擊敵人了！",
+								"除了公司的核心团队以外，欧米·德兰同样重视公司品牌的战略扩张，创建了数不清的团队，其中就包括了希骥小队和柏勒罗丰小队。这些优秀的小队挥舞着公司的旗帜，与公司共进退，但最重要的是，他们按月度提供收入抽成。",
 								{
 									"type": "quote",
 									"entries": [
-										"What the customer wants is not always what the customer needs... or gets."
+										"顧客想要的不總是顧客所需要的..."
 									],
 									"by": "Jim Darkmagic"
 								}
@@ -97,22 +95,22 @@
 						},
 						{
 							"type": "entries",
-							"name": "The Adventuring Biz",
+							"name": "冒險歷程",
 							"page": 7,
 							"entries": [
-								"In the years between its founding and today, Acquisitions Incorporated has pried deep into the underbelly of Waterdeep, commandeered battle balloons above the jungles of Chult, faced down mechanical beholders, and robbed a bank operated by devils. The team has also rubbed shoulders with some of the most notorious figures in the Forgotten Realms, including bumping into Drizzt Do'Urden while journeying through the Underdark.",
-								"When Jim Darkmagic became afflicted with the Death Curse, there was no definitive proof that this was a direct result of his employment with Acquisitions Incorporated, or had been incurred while on assignment. However, as Omin had already made his stance on the subject of death and termination of employment contracts very clear, he sought to break the curse. Dabbling in some light cloning and contracting the help of a trash witch, the team managed to restore Jim to peak productivity. Never one to waste company resources, Omin also traded Jim's clone to a devil. It seemed prudent at the time.",
-								"However, nothing in Acquisitions Incorporated's storied history encapsulates the company's efficacy better than the recovery of Omin's sister, {@creature Auspicia Dran|AI}, from the Wandering Crypt. The specifics of her initial capture by that dread creature remain shrouded in mystery. Some say it was inspired by the evil actions of Omin's other sister, {@creature Portentia Dran|AI|Portentia}. Some also speculate that as the sole shareholder of Acq Inc, Omin founded the company for the express purpose of rescuing his beloved sister. Acquisitions Incorporated will not be making further statements on the matter at this time."
+								"公司建立至今以有十年時間，在此期間公司深入了地脈迷城，在楚爾特叢林的上空劫持了一艘浮空戰船，在眼魔型動力飛船前吃了癟，還搶劫了一家魔鬼開的銀行。公司團隊還搶劫了不少費倫大陸上臭名昭著的大人物，甚至有一次在幽暗地域探險時遇到了崔斯特·杜堊登。",
+								"在一次前往楚爾特的冒險中，吉姆·黑法深受死亡詛咒的折磨。雖然沒有任何決定性證據證明這就是加入公司的下場，公司也不承認這是工傷。但歐米找到了方法解除了詛咒，表明了他對死亡和中止勞動合同的態度——這絕不是因果關係。團隊使用了一些克隆技術並尋求了一位三流女巫的幫助，終於幫助吉姆完全恢復了過來。秉著絕不浪費公司資源的原則，歐米將吉姆剩下的克隆體交易給了魔鬼。在當時這確實是個勤儉節約的好主意。",
+								"但以上的所有故事都不能最完美的概括公司的功績，因為其中還缺少了公司最為傳奇的故事——對奧斯皮西婭·德蘭的解救。奧斯皮西婭·德蘭是歐米·德蘭的親妹妹，自幼被困於遊蕩地穴，被困的原因至今依然謎團重重。對於這件事背後的真相，有些人認為這是歐米的另一個姐姐波滕提亞的邪惡計劃，有些人認為艾奎茲玄有限責任公司是歐米為了解救他親愛的妹妹才一手創立起來的。艾奎茲玄有限責任公司對此無可奉告。"
 							],
 							"id": "006"
 						},
 						{
 							"type": "entries",
-							"name": "No Competition",
+							"name": "和氣生財",
 							"page": 7,
 							"entries": [
-								"The company's mounting successes have led, of course, to imitators and rivals. The Six, counting among their number a certain left-for-dead goblin now named {@creature Splugoth the Returned|AI}, have been a persistent splinter in the Acq Inc corporate paw for ages. Suggesting that acquisition is a family business, Omin's own sister Portentia now runs and serves a competing company called Dran Enterprises. Originally founded by what turned out to be a false version of Omin's lost sister, Auspicia, Dran Enterprises has long sought to execute a hostile takeover of Acquisitions Incorporated. All such efforts have been skillfully rebuffed, of course, with Acq Inc embracing its place as an always-independent (and clearly superior) operation.",
-								"Riding its past success into a completely deliberate and planned expansion across the multiverse, Acquisitions Incorporated shows no signs of slowing down. (Because that would likely require self-reflection and measured responses that are historically off-brand.) And that expansion means new franchises. The first step was Ravnica, a city run by guilds and simply overflowing at the practicability of acquisition for hire. But beyond that? Infinite possibilities. Because wherever people want things they don't currently have, Acquisitions Incorporated will be there, asking them to sign."
+								"公司不斷壯大的同時，也帶來了模仿者和仇敵。一名被拋棄等死的哥布林僱工意外的活了下來，並將自己改名為復生者斯普格斯，成立了名為“第六人”的組織，在往後的日子裡不斷地在公司僱工中進行分裂活動。歐米的親姐姐波滕提亞也建立了一家名叫“德蘭企業”的公司，並不斷的嘗試惡意收購艾奎茲玄有限責任公司。但所有的嘗試都被巧妙地化解了，使公司能一直保持出色的獨立運作。",
+								"透過汲取過去的成功經驗，並制定詳盡周密的擴張計劃，公司發展的腳步一刻不停。（也因為公司不會停下腳步自省或者評估那些被吞併公司的反應）公司的擴張意味著更多的加盟公司。公司來到的第一站是拉尼卡，這座由行會控制的城市充滿機遇。然而除了拉尼卡，還有無限的可能性等待著我們。只要你有需求，公司就一定會在，滿足你的需求，並且把你賣了還讓你幫我們數錢。"
 							],
 							"id": "007"
 						}
@@ -121,16 +119,16 @@
 				},
 				{
 					"type": "section",
-					"name": "Fast Franchise Generator",
+					"name": "快速建立加盟公司",
 					"page": 7,
 					"entries": [
-						"No time to read the whole book? Who can blame you! (What is this thing, like 200 pages? Yikes.) To get a taste of the awesomeness that is an Acquisitions Incorporated franchise, just roll up any number of critical franchise elements from the tables on this page. (DMs can also do this if they want to shirk the work of creating rival franchises from whole cloth. Slackers.)",
+						"沒時間讀整本書？沒問題！（還有誰會去看200頁的玩意兒?）你只需要投幾個骰子，決定加盟公司的關鍵要素。DM如果想節省時間也可以使用下方的表格來編造敵對公司。",
 						{
 							"type": "table",
-							"caption": "Franchise Logos or Livery",
+							"caption": "公司商標或徽記",
 							"colLabels": [
 								"d10",
-								"Logo or Livery"
+								"商標或徽記"
 							],
 							"colStyles": [
 								"text-center col-2",
@@ -139,35 +137,35 @@
 							"rows": [
 								[
 									"1",
-									"The words \"Green Flan\" in Elvish"
+									"用精靈文寫的“綠色餡餅”"
 								],
 								[
 									"2",
-									"The symbol of Asmodeus"
+									"惡魔的標誌"
 								],
 								[
 									"3",
-									"The name of the franchise's dead founder, elaborately engraved"
+									"精心雕刻的已逝公司創立人姓名"
 								],
 								[
 									"4",
-									"A beholder's central eye"
+									"眼魔中央的眼睛"
 								],
 								[
 									"5",
-									"The silhouette of a catoblepas"
+									"卡託布萊帕斯的剪影"
 								],
 								[
 									"6",
-									"Three werewolves howling at the moon"
+									"三頭狼人對著月亮嚎叫"
 								],
 								[
 									"7",
-									"\"Lathander is Our Copilot\""
+									"“洛山達與我們同在”"
 								],
 								[
 									"8",
-									"A winking Jim Darkmagic"
+									"眨著眼的山姆·黑法"
 								],
 								[
 									"9",
