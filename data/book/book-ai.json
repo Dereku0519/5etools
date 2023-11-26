@@ -510,7 +510,7 @@
 							"name": "Staff",
 							"page": 10,
 							"entries": [
-								"玩家手冊{@book 第五章|PHB|5|Services}詳細描述了角色僱傭熟練以及未經訓練的僱傭兵(skilled and untrained hirelings)的成本。就像任何戰役中的角色一樣， Acquisitions Incorporated 加盟商可以在 DM 設定的限制範圍內自由僱傭任何 NPCs。 但特許經營本身就有很多員工， 他們的工資是特許經營成本的一部分， 不僅提供了勞動力，還提供了故事的潛力。",
+								"玩家手冊{@book 第五章|PHB|5|Services}詳細描述了角色僱傭熟練以及未經訓練的僱傭兵(skilled and untrained hirelings)的成本。就像任何戰役中的角色一樣，Acquisitions Incorporated加盟商可以在DM設定的限制範圍內自由僱傭任何NPC。但特許經營本身就有很多員工，他們的工資是特許經營成本的一部分，不僅提供了勞動力，還提供了故事的潛力。",
 								{
 									"type": "image",
 									"href": {
@@ -520,22 +520,22 @@
 									"width": 791,
 									"height": 1000
 								},
-								"Each franchise rank grants a number of new staff members who live in the franchise headquarters or within its geographic scope. The cost of maintaining staff is included in a franchise's costs. Each staff member has a proficiency bonus equal to 2 + the franchise's rank. For skilled hirelings or crew, the DM might substitute NPC statistics when that seems appropriate. Each time a franchise gains a rank, existing staff members can be gifted with early retirement (that is, fired), and replaced alongside new hires that fit the franchise's needs.",
-								"A franchise might engage all kinds of hirelings and agents over the course of a campaign, but specialized franchise staff fall into four different categories.",
+								"每個特許經營職級授予若干居住在特許經營總部或其地理範圍內的新員工。員工的維護費包含在特許經營費用中。每位員工的熟練加值等於2+特許經營階級。對於熟練的僱工或員工，DM可以在適當的時候替代NPC的統計資料。每當一個特許經營企業獲得一個等級，現有的員工就可以提前退休(即被解僱)，並與符合特許經營企業需求的新員​​工一起被替換。",
+								"特許經營可以在整個戰役過程中僱傭各種各樣的僱工和代理商，但特許經營專業人員可以分為四類。",
 								{
 									"type": "quote",
 									"entries": [
-										"An employee is like a friend you pay."
+										"雇員就像你花錢買來的朋友"
 									],
 									"by": "Omin Dran"
 								},
 								{
 									"type": "entries",
-									"name": "Majordomo",
+									"name": "總管",
 									"page": 11,
 									"entries": [
-										"A majordomo administers a franchise headquarters. They typically reside within the headquarters and seldom leave it, sending out communications through a dedicated messenger (at no extra cost, and traveling on foot or by means the franchise provides). A majordomo is proficient in Charisma ({@skill Persuasion}) and two skills of the DM's choice.",
-										"The DM is encouraged to use the rules for creating nonplayer characters in {@book chapter 4|DMG|4|Designing NPCs} of the {@book Dungeon Master's Guide|DMG} to detail the majordomo, giving this individual a vibrant personality and backstory. The majordomo's goals should be aligned with the franchise and with Acquisitions Incorporated as a whole, allowing them to properly act as an ally and steward for the party.",
+										"一個總管管理著一個特許經營總部。他們通常住在總部內，很少離開，透過專門的信使傳送通訊(無需額外費用，步行或透過特許經營提供的方式)。總監熟練魅力(說服)和DM選擇的兩項技能。",
+										"DM被鼓勵使用{@book 玩家手冊|DMG}{@book 第四章|DMG|4|Designing NPCs}中建立非玩家角色的規則來詳細描述總監，給這個人一個充滿活力的個性和背景故事。總監的目標應該與玩家的加盟業和作為一個整體的Acquisitions Incorporated保持一致，讓他們能夠正確地作為隊伍的盟友和管理者。",
 										"It can be helpful to a campaign to provide the majordomo with a backstory that complements a franchise's evolution over time. A sage might research how the franchise gains new capabilities. Or perhaps the majordomo was the pilot of a vessel capable of planar travel, who slowly applies those features to the headquarters. A majordomo of a franchise modeling itself after a spy organization might constantly invent devices for the franchise, making continuing progress as the party returns with gold, lore, and resources.",
 										{
 											"type": "inset",
