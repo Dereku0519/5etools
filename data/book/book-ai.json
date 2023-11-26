@@ -423,10 +423,10 @@
 										"你的授權現在擴展到包括一個類似於一個省或一個小王國的區域—通常長達50英里，您的初始定居點在其中的某個地方。(出於製圖的目的，這個區域的比例尺與省級地圖大致相同。參見{@book 城主指南|DMG}第一章中的“{@book 繪製戰役|DMG|1}”。)你希望擴大你的貿易和品牌在整個地區。你將抓住新的市場，開發新的產品，擴大你的人脈，保護國王和王后寵壞的孩子，讓君主們對你有正面的看法。您可以將貨物運送到您所在地區以外的兩個城市或其他定居點。",
 										{
 											"type": "inset",
-											"name": "Group Dynamic",
+											"name": "集團動態",
 											"page": 10,
 											"entries": [
-												"An Acquisitions Incorporated franchise is a group effort. Many decisions must be made in the course of running a franchise and playing in an Acq Inc campaign, and it is assumed that all players will be involved in making those decisions. Whenever this book talks about a franchise collectively\u2014and in particular, when it talks about decisions being made by a franchise\u2014the understanding is that all characters (in the game) and all players (at the table) have an equal say in determining a franchise's fortunes and fate. Sure, arguments will crop up from time to time. But that kind of roleplaying is a big part of what makes an Acquisitions Incorporated campaign."
+												"Acquisitions Incorporated特許經營權是一項集體努力。許多決定必須在經營一個專營權的過程中作出，並在一個Acq Inc的活動中發揮，並假定所有的玩家將參與作出這些決定。無論何時，當這本書從整體上討論特許經營時——特別是當它討論特許經營所做出的決定時——我們的理解是所有角色(在遊戲中)和所有玩家(在遊戲桌上)在決定特許經營的命運和命運上都有平等的發言權。當然，爭論不時會出現。但這種角色扮演是Acquisitions Incorporated戰役的重要組成部分。"
 											],
 											"id": "00f"
 										}
@@ -435,66 +435,66 @@
 								},
 								{
 									"type": "entries",
-									"name": "Rank 3: Large Territory",
+									"name": "階級3：大領土",
 									"page": 10,
 									"entries": [
-										"Your license grows to include a broad expanse of provinces, a few small kingdoms, or a large kingdom or federation, covering a territory the size of half the Sword Coast in the Forgotten Realms campaign setting. A large territory might overlap with other Acquisitions Incorporated regions, though you are theoretically working with (and perhaps overseeing) smaller franchises rather than working against them. You can ship your goods to any destination, and can assign staff to a city to which you ship goods\u2014solely to oversee the distribution of those goods, and certainly not to compete with rivals. Don't cause too much trouble and Head Office will stay happy."
+										"你的授權增長到包括一個廣闊的省份，幾個小王國，或一個大王國或聯邦，覆蓋了一個被遺忘國度戰役設定中劍灣一半大小的領土。一大塊區域可能與其他Acquisitions Incorporated區域重疊，儘管理論上你是在與規模較小的特許經營商合作(或許是監管)，而不是與之對抗。你可以把你的貨物運到任何目的地，也可以把你的工作人員分配到你要運送貨物的城市——僅僅是為了監督這些貨物的分配，當然也不是為了與競爭對手競爭。不要製造太多麻煩，總公司會很高興的。"
 									],
 									"id": "010"
 								},
 								{
 									"type": "entries",
-									"name": "Rank 4: Limited Extraplanar",
+									"name": "階級4：有限的跨位面",
 									"page": 10,
 									"entries": [
-										"Your franchise now includes specific locations located on other planes of existence. These could include such fabled trading locations as Sigil, the City of Brass on the Elemental Plane of Fire, or a githyanki outpost in the Astral Plane. Your license to operate in these regions is not exclusive. Your region on the Material Plane might or might not expand, depending on both your performance and the goals of the campaign. The DM might establish extraplanar locations through play. Failing\u2014or succeeding\u2014in securing an extraplanar location could create interesting and deadly rivalries!",
+										"你的特許經營現在包括位於其他存在位面的特定地點。這些可能包括傳說中的交易地點，如印記城(Sigil)，火元素位面的黃銅之城(City of Brass)，或Astral Plane的githyanki 前哨。您在這些地區經營的許可證並不具有排他性。你在物質位面上的區域可能會擴張，也可能不會擴張，這取決於你的表現和戰役的目標。DM可能透過遊戲建立位面外的位置。在確保一個位面外位置上的失敗-或成功-可能會產生有趣的和致命的競爭!",
 										{
 											"type": "table",
-											"caption": "Franchise Advancement",
+											"caption": "加盟升級",
 											"colLabels": [
-												"Levels",
-												"Franchise Rank",
-												"Licensed Region",
-												"New Staff",
-												"Franchise Tasks",
-												"Headquarters Features",
-												"Costs"
+												"等級",
+												"加盟階級",
+												"授權領域",
+												"新員工",
+												"加盟任務",
+												"總部特性",
+												"成本"
 											],
 											"rows": [
 												[
 													"1\u20134",
 													"1",
-													"Settlement",
-													"Majordomo, 2 untrained hirelings, 1 skilled hireling",
-													"1 task",
-													"Starter headquarters",
+													"定居點",
+													"1個總管、2個未受訓僱員、1個已受訓僱員",
+													"1個任務",
+													"初始總部",
 													"× 1"
 												],
 												[
 													"5\u201310",
 													"2",
-													"Small territory",
-													"4 untrained hirelings, 1 skilled hireling, 10 crew",
-													"2 tasks",
-													"Cosmetic, expansion, transportation, weapon",
+													"小領土",
+													"4個未受訓僱員、1個已受訓僱員、10個員工",
+													"2個任務",
+													"外觀特徵、擴充套件、交通、武器",
 													"× 1.5"
 												],
 												[
 													"11\u201316",
 													"3",
-													"Large territory",
-													"8 untrained hirelings, 2 skilled hirelings, 10 crew",
-													"3 tasks",
-													"Arcane, defensive, franchise choice",
+													"大領土",
+													"8個未受訓僱員、2個已受訓僱員、10個員工",
+													"3個任務",
+													"奧術、防守、加盟選擇",
 													"× 3"
 												],
 												[
 													"17\u201320",
 													"4",
-													"Limited extraplanar",
-													"16 untrained hirelings, 4 skilled hirelings, 20 crew",
-													"4 tasks",
-													"Arcane, franchise choice, secret",
+													"有限的跨位面",
+													"16個未受訓僱員、4個已受訓僱員、20個員工",
+													"4個任務",
+													"奧術、加盟選擇、秘密",
 													"× 5"
 												]
 											]
@@ -510,7 +510,7 @@
 							"name": "Staff",
 							"page": 10,
 							"entries": [
-								"{@book Chapter 5|PHB|5|Services} of the {@book Player's Handbook|PHB} details the costs for characters to hire skilled and untrained hirelings. As is true of characters in any campaign, Acquisitions Incorporated franchisees are free to hire any NPCs they want, within whatever limitations the DM wants to set on such employment. But the franchise itself comes with a number of staff whose wages are part of the franchise's cost, providing not only labor but story potential.",
+								"玩家手冊{@book 第五章|PHB|5|Services}詳細描述了角色僱傭熟練以及未經訓練的僱傭兵(skilled and untrained hirelings)的成本。就像任何戰役中的角色一樣， Acquisitions Incorporated 加盟商可以在 DM 設定的限制範圍內自由僱傭任何 NPCs。 但特許經營本身就有很多員工， 他們的工資是特許經營成本的一部分， 不僅提供了勞動力，還提供了故事的潛力。",
 								{
 									"type": "image",
 									"href": {
