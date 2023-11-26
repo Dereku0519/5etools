@@ -536,13 +536,13 @@
 									"entries": [
 										"一個總管管理著一個特許經營總部。他們通常住在總部內，很少離開，透過專門的信使傳送通訊(無需額外費用，步行或透過特許經營提供的方式)。總監熟練魅力(說服)和DM選擇的兩項技能。",
 										"DM被鼓勵使用{@book 城主旨南第四章|DMG|4|創建非玩家角色}中建立非玩家角色的規則來詳細描述總監，給這個人一個充滿活力的個性和背景故事。總監的目標應該與玩家的加盟業和作為一個整體的Acquisitions Incorporated保持一致，讓他們能夠正確地作為隊伍的盟友和管理者。",
-										"It can be helpful to a campaign to provide the majordomo with a backstory that complements a franchise's evolution over time. A sage might research how the franchise gains new capabilities. Or perhaps the majordomo was the pilot of a vessel capable of planar travel, who slowly applies those features to the headquarters. A majordomo of a franchise modeling itself after a spy organization might constantly invent devices for the franchise, making continuing progress as the party returns with gold, lore, and resources.",
+										"這對於一場戰役來說是很有幫助的，該背景故事補充了特許經營權隨時間的演變。   學者可能會研究特許經營如何獲得新的能力。 或許總監是一個能夠進行位面航行的船隻的駕駛員，他慢慢地將這些特徵應用到總部。   一個以間諜組織為模型的特許經營的總監可能會不斷地為特許經營發明裝置，隨著團隊帶著黃金、傳說和資源返回，不斷取得進展。",
 										{
 											"type": "inset",
-											"name": "Filling Positions",
+											"name": "填補職位",
 											"page": 11,
 											"entries": [
-												"A franchise's majordomo can take a company position (see the next section) in addition to the positions taken by the characters. Especially with a small party, it can be good to have a majordomo fill a useful position that no character wants to take. No other NPCs can take company positions."
+												"除了角色所擔任的職位外，特許經營權的總監還可以擔任公司的職位(見下一節)。尤其是在一個小隊伍中，讓一個總監來填補一個沒有角色願意擔任的有用職位是件好事。其他NPC不能擔任公司職位。"
 											],
 											"id": "014"
 										}
