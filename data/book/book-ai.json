@@ -169,20 +169,20 @@
 								],
 								[
 									"9",
-									"A snaking piece of barbed wire"
+									"一團卷在一起的棘鐵刺"
 								],
 								[
 									"10",
-									"The franchise's business number"
+									"公司商號"
 								]
 							]
 						},
 						{
 							"type": "table",
-							"caption": "Headquarters Locations",
+							"caption": "總部地點",
 							"colLabels": [
 								"d10",
-								"Headquarters"
+								"總部"
 							],
 							"colStyles": [
 								"text-center col-2",
@@ -191,49 +191,49 @@
 							"rows": [
 								[
 									"1",
-									"A tavern once owned by smugglers. Tunnel entrances have clearly been bricked over, and no one's quite sure where they all lead."
+									"一家曾經被走私者佔據的酒館。裏面的過道都被磚塊堵上了，沒人清楚它們通向哪裏"
 								],
 								[
 									"2",
-									"A simple chapel to a long-forgotten god. The pews are awfully uncomfortable, but fragrant incense burns without ceasing."
+									"一個屬於不知名神明的小教堂。裏面的長凳坐起來及其不舒服，不過薰香從不間斷。"
 								],
 								[
 									"3",
-									"A battle-worn castle. A real fixer-upper, it's seen better days. Better years. Maybe even better centuries."
+									" 一座保盡滄桑的城堡。看起來急需修繕，依稀能看出來在數十年前（或百年前）十分輝煌。"
 								],
 								[
 									"4",
-									"A top-of-the-line naval vessel that has somehow been stranded miles inland."
+									"一艘高級的海軍軍艦。因不明原因擱淺在離海有數英里的地方。"
 								],
 								[
 									"5",
-									"A private library. The franchise is free to use the space as long as no harm comes to the books."
+									"一傢私人圖書館。員工可以免費使用，前提是不能損壞書籍。"
 								],
 								[
 									"6",
-									"A hollowed-out statue of an ancient king."
+									"被挖空的古代帝王雕像內部。"
 								],
 								[
 									"7",
-									"An early model airship. Very early. The balloon is mostly patches at this point\u2014a motley assortment of ship sails, cloaks, and animal skins."
+									"一艘早期型號的飛船。事實上非常的早期，氣球是用船帆,衣服,動物皮膚縫縫補補製成的。"
 								],
 								[
 									"8",
-									"A former blacksmith's shop, which was a former exercise studio, and a former cafe before that."
+									"一間曾經是鐵匠鋪的店。再早之前是健身館，再早之前是咖啡館。"
 								],
 								[
 									"9",
-									"A multicolor waterproof canvas stretched over a succession of jutting stone columns. Within, it always appears to be late spring."
+									"一塊彩色的防水帆布罩住了幾個石柱，形成了一片空間。空間裏永遠呈現着暮春的景色。"
 								],
 								[
 									"10",
-									"A creaking wagon that smells of turnips, and which is bigger inside than out."
+									"一架聞起來一股大頭菜味兒的四輪馬車。內部的空間比看起來的大多了。"
 								]
 							]
 						},
 						{
 							"type": "table",
-							"caption": "Headquarters Quirks",
+							"caption": "總部怪事",
 							"colLabels": [
 								"d8",
 								"Quirk"
@@ -245,44 +245,44 @@
 							"rows": [
 								[
 									"1",
-									"One staircase leads to two different places somehow."
+									"一個能走向兩個地方的樓梯。"
 								],
 								[
 									"2",
-									"Any kettle used in the kitchen screams when it boils."
+									"廚房裏的壺燒開的時候會發出尖叫。"
 								],
 								[
 									"3",
-									"Every chair has one leg slightly shorter than the others."
+									"所有的椅子都有一條腿短了一截。"
 								],
 								[
 									"4",
-									"Every stairwell has an illusion of one additional step at the top."
+									"所有的樓梯都會在頂層都會多一層幻象。"
 								],
 								[
 									"5",
-									"There's a nest in the attic. A big nest. Like, really big."
+									"閣樓裏有個很大的鳥巢。特別，特別大。"
 								],
 								[
 									"6",
-									"Every Friday, the color of the walls changes to a different festive theme."
+									"每週五，牆的顏色都會換成新的節日主題。"
 								],
 								[
 									"7",
-									"The building was previously owned by a franchise rival, and the place is filled with their marketing materials."
+									"總部原先是由敵對公司佔據，裏面到處都是他們的營銷材料。"
 								],
 								[
 									"8",
-									"There's a space inside the headquarters that's clearly a room, but which has no doors."
+									"總部裏有個沒有門的房間"
 								]
 							]
 						},
 						{
 							"type": "table",
-							"caption": "Memorable Majordomos",
+							"caption": "令人難忘的總管",
 							"colLabels": [
 								"d6",
-								"Majordomo"
+								"總管"
 							],
 							"colStyles": [
 								"text-center col-2",
@@ -291,33 +291,33 @@
 							"rows": [
 								[
 									"1",
-									"A consummate professional. No amount of blood, gore, or viscera will keep them from completing their duties."
+									"一位追求完美的大師。沒有任何東西可以阻止他完成自己的任務。"
 								],
 								[
 									"2",
-									"A sinister figure who sticks to the shadows and respond always to requests with, \"Yes, master.\""
+									"一個陰險的人物，總是喜歡躲在陰影裏，並使用“好的，主人”來回應請求。"
 								],
 								[
 									"3",
-									"The ghost of the previous owner. They do a terrible job and refer to all prospective clients as trespassers."
+									"房子前任主人的幽靈，他根本不知道怎麼工作，並把所有潛在客戶當成入侵者。"
 								],
 								[
 									"4",
-									"A brusque, deaf, retired military captain."
+									"一位直率的，聾了的退休海軍上尉"
 								],
 								[
 									"5",
-									"An incredibly cheerful chef, who insists that no business is more pressing than a full belly."
+									"一位樂觀開朗的廚子。他堅持認爲填飽肚子比做成生意更重要。"
 								],
 								[
 									"6",
-									"A druid that keeps an open door policy for any and all animals seeking shelter. Their cleaning policy is less rigorous."
+									"一位真正的德魯伊，要求總部的門一直開着，爲無家可歸的動物提供庇護。他對總部的衛生並沒有要求。"
 								]
 							]
 						},
 						{
 							"type": "table",
-							"caption": "Reliable Connections",
+							"caption": "可靠的公司人脈",
 							"colLabels": [
 								"d8",
 								"Connection"
@@ -329,35 +329,35 @@
 							"rows": [
 								[
 									"1",
-									"{@b Kim the Kid}: The best fence in town."
+									"{@b 小孩金姆}：鎮裏最好的銷贓商"
 								],
 								[
 									"2",
-									"{@b Jeremy Snoot}: The most easily intimidated customs official in the city. From blueprints of government buildings to shipping manifests, he's your halfling."
+									"{@b 傑里米·斯努特}：城裏最容易被恐嚇的海關人員。這個半身人可以提供從政府建築圖紙到貨船載貨單等一系列資源。"
 								],
 								[
 									"3",
-									"{@b York Battleby}: A dab hand at knitting and swinging a sword. He takes payment in liquor for either service."
+									"{@b 約克·巴託白}：縫紉好手，也使得一手好劍。可以用酒讓他幫你做事。"
 								],
 								[
 									"4",
-									"{@b Diana Fenwick}: Noble who wants to play criminal; enthusiastic, inexperienced, and loaded."
+									"{@b 戴安娜·芬威克}：一位想體驗刺激的犯罪生活的貴族。她充滿熱情，毫無經驗，錢包滿滿。"
 								],
 								[
 									"5",
-									"{@b \"G\"}: The only thing known about this information broker is the dead-drop point where they exchange messages, and that they're never wrong."
+									"{@b \"G\"}：對於這位情報商，我們唯一知道的是他交換情報的地方，以及他從不出錯。"
 								],
 								[
 									"6",
-									"{@b Teresa Clearlake}: If you're looking for a place to lie low, her funeral home is ideal."
+									"{@b 特里薩·克利爾萊克}：如果你需要一個躲風頭的地方，她的殯儀館是處好地方。"
 								],
 								[
 									"7",
-									"{@b Jenkin Twotooth}: Always has a job for those looking to scrape together a few coins. Unfortunately, his teeth outnumber his scruples."
+									"{@b 詹金·爛牙}：總能爲那些想湊點錢的人提供工作機會。不幸的是，他的良心比他的牙齒還少。"
 								],
 								[
 									"8",
-									"{@b \"Mustard\" Micah}: Famous for being able to get goods and people past any blockade. Provided you don't mind said goods or people smelling strongly of mustard for the next month."
+									"{@b “芥末”彌迦}：可以把任何貨物或人偷運過封鎖線，只要你不介意那些貨物和人在接下來的一個月裏，會有一股強烈的芥末味。"
 								]
 							]
 						}
@@ -369,7 +369,7 @@
 		},
 		{
 			"type": "section",
-			"name": "Chapter 2: Growing Your Franchise",
+			"name": "第一章：發展你的加盟公司",
 			"page": 9,
 			"entries": [
 				{
@@ -381,46 +381,46 @@
 					"width": 1545,
 					"height": 1000
 				},
-				"As a run-of-the-dungeon adventurer, your character might kick through countless locked doors, lay down ancient magics, or send any number of monsters to the afterlife in the pursuit of fame and treasure. But when you take your place as part of an Acquisitions Incorporated franchise, you become something more than a mere hero. As a member of an elite group standing on the cutting edge of the adventuring business, the brand precedes you. And sure, sometimes the blades on the cutting edge are kind of sharp. But with Head Office at your back, you know you have the best tools in the industry at your disposal. And maybe the basic funeral packages Acq Inc offers aren't that great, but there are some tasteful upgrades you might consider.",
-				"This chapter introduces the Acquisitions Incorporated franchise and the rules for running it. Franchise benefits are organized by level tier, and include an ever-expanding business territory, wide ranges of options and upgrades for a franchise headquarters, and more. This chapter also introduces company positions\u2014a new set of rules for franchise characters granting access to unique, tier-based abilities that can help a party stand out in a crowded marketplace. And because taking a vacation is no excuse for diminished returns, an Acquisitions Incorporated franchise can make use of expanded rules for downtime and franchise activities, allowing players to help shape the business and the narrative of the campaign even when they aren't in the field.",
+				"作爲一個地牢冒險家，你的角色可能會踢開無數鎖著的門，放下古老的魔法，或者爲了追求名利而把任何數量的怪物送到來世。但當你成爲 Acquisitions Incorporated 特許經營權的一部分時，你就不僅僅是一個英雄了。作爲一個站在冒險行業前沿的精英羣體的一員，品牌走在你的前面。當然，有時刀刃是鋒利的。但是有了總部的支持，你就知道你擁有這個行業中最好的工具。也許 Acq Inc提供的基本葬禮套餐不是很好，但你可以考慮一些有品味的升級。",
+				"本章介紹了Acquisitions Incorporated特許經營權及其經營規則。特許經營的好處是按層次組織的，包括不斷擴大的業務領域， 廣泛的選擇和升級的特許經營總部，以及更多。本章還介紹了公司職位——一套新的特許經營角色的規則，允許角色使用獨特的基於等級的能力，這可以幫助一方在擁擠的市場中脫穎而出。而且，因爲度假並不能成爲收益減少的藉口，Acquisitions Incorporated特許經營公司可以利用擴大的休整日時間和特許經營活動規則，讓玩家幫助塑造業務和營銷活動的敘事，即使他們不在現場。",
 				{
 					"type": "section",
-					"name": "Franchise Advancement",
+					"name": "開疆拓土",
 					"page": 9,
 					"entries": [
-						"A license to operate an Acquisitions Incorporated franchise comes with nearly limitless benefits! When your party starts a franchise, you receive a region in which to operate, a franchise headquarters, and a majordomo to assist with basic headquarters needs. As your characters become accomplished adventurers (and continue to contribute to Head Office coffers), Acquisitions Incorporated helps your franchise gain even greater benefits! See the following {@book Franchise Advancement table|AI|1|Franchise Advancement} for a summary of what you get at each rank.",
+						"經營Acquisitions Incorporated特許經營權的許可證帶來了幾乎無限的好處!當你的隊伍開始特許經營時，你將獲得經營區域、特許經營總部和協助基本總部需求的總監。當你的角色成爲有成就的冒險家(並繼續爲總公司的金庫做出貢獻)，Acquisitions Incorporated 可以幫助你的特許經營獲得更大的利益!",
 						{
 							"type": "entries",
-							"name": "Franchise Rank",
+							"name": "加盟階級",
 							"page": 9,
 							"entries": [
-								"By default, a franchise rank is gained at each tier of play (beginning at level 1 and advancing when the average party level reaches level 5, 11, and 17). The DM might choose to increase or decrease the level of play at which franchise tiers are gained, or tie advancement to story or campaign goals. Each franchise rank provides characters the opportunity to operate in a larger geographic area, hire staff and direct them to execute franchise tasks, and customize the franchise headquarters."
+								"默認情況下，遊戲的每個梯級(tier)都會獲得一個專營權等級(從第1級開始，當玩家的平均等級達到第5級、第11級和第17級時繼續提升)。DM可以選擇增加或減少獲得特許等級的遊戲級別，或者將升級與故事或戰役目標聯繫起來。每個特許經營等級都爲角色提供了在更大的地理區域運營、僱傭員工並指導他們執行特許經營任務以及定製特許經營總部的機會。"
 							],
 							"id": "00b"
 						},
 						{
 							"type": "entries",
-							"name": "Licensed Region",
+							"name": "授權區域",
 							"page": 9,
 							"entries": [
-								"When a franchise first starts out, it is licensed to operate in a small region focused on a settlement or similar mercantile point. You might think this means Head Office doesn't trust its new franchisees. Not at all! No! It's just so much easier to support a group when they start in a focused area. Don't worry at all that a rival Acquisitions Incorporated franchise will outmaneuver you. It seldom happens. Keep growing your business, and the Acq Inc license will expand to help you find more customers and increase your brand presence.",
-								"Within your licensed region, you have the right to use the full power of Acquisitions Incorporated branding. No other Acquisitions Incorporated franchise will operate in your region, and all the region's customers are exclusively yours. Of course, non-Acquisitions Incorporated rival organizations might be present. You are expected to drive them out of business. (Or give them untimely deaths. You do you.) A franchise can build or operate any number of locations, such as warehouses and trade shops, within its region. You may not maintain property or establish formal operations in a settlement outside your region, even if you ship goods to that location.",
-								"You may not use the Acquisitions Incorporated brand outside your licensed region without written, documancer-generated permission, since those areas might belong to other licensees. You can adventure outside your territory, of course, and can assist or work for other organizations. However, you are expected to prioritize missions given to you by Head Office.",
+								"當一個特許經營開始時，它被授權在一個小區域內經營，集中在一個定居點(settlement)或類似的商業點。你可能認爲這意味着總公司不信任它的新加盟商。一點也不!不!當一個團隊開始專注於某一領域時，支持他們會變得容易得多。別擔心，一個競爭對手Acquisitions Incorporated的特許經營權將超過你。它很少發生。繼續發展您的業務，Acq Inc的許可證將擴大，以幫助您找到更多的客戶，並增加您的品牌存在。",
+								"在您的授權區域內，您有權使用Acquisitions Incorporated的全部權力。本公司不會在貴地區經營其他收購的特許經營權，且該地區的所有客戶均爲貴公司獨家擁有。當然，非Acquisitions Incorporated的競爭組織也可能存在。你要把他們趕出這個行業。或者讓他們過早死亡。看你想怎做。)特許經營可以在其區域內建立或經營任意數量的地點，如倉庫和貿易商店。即使你將貨物運往該地區，你也不能在該地區以外的一個定居點維持財產或建立正式的業務。",
+								"未經授權書面許可，您不得在許可區域之外使用Acquisitions Incorporated品牌，因爲這些區域可能屬於其他被許可方。當然，您可以在您的領土之外進行冒險，並可以爲其他組織提供幫助或工作。但是，您需要優先考慮總部給您的任務。",
 								{
 									"type": "entries",
-									"name": "Rank 1: Settlement",
+									"name": "階級1：定居點",
 									"page": 10,
 									"entries": [
-										"Acquisitions Incorporated grants your franchise a license to operate in a settlement, and in a territory around the settlement approximately 10 miles across. If your region includes a coastline, you are granted the rights to engage in sea trade within that region. You can ship goods (over land, water, or air) to one city or other settlement outside your region. (The DM approves this location, and might wish to establish your franchise's relationship with it through play as part of the campaign.)"
+										"Acquisitions Incorporated授予您的特許經營權，使您可以在一個定居點經營，並在定居點周圍大約10英里的區域內經營。如果你的區域包括海岸線，你被授予在該區域內從事海上貿易的權利。您可以將貨物(通過陸路、水路或空運)運送到您所在地區以外的一個城市或其他定居點。(DM批准了該位置，並可能希望通過此玩法作爲戰役的一部分來建立您與該位置的特許經營關係。)"
 									],
 									"id": "00d"
 								},
 								{
 									"type": "entries",
-									"name": "Rank 2: Small Territory",
+									"name": "階級2：小領土",
 									"page": 10,
 									"entries": [
-										"Your license now expands to include a region similar in size to a province or a small kingdom\u2014typically up to 50 miles across, with your starting settlement somewhere within. (For mapping purposes, this area is roughly the same scale as a province-scale map. See \"{@book Mapping Your Campaign|DMG|1|Mapping Your Campaign}\" in chapter 1 of the {@book Dungeon Master's Guide|DMG}.) You are expected to expand your trade and branding throughout the region. You'll seize new markets, develop new offerings, increase your network of contacts, and safeguard the king and queen's spoiled kids so the monarchs think of you positively. You can ship goods to two cities or other settlements outside your region.",
+										"你的授權現在擴展到包括一個類似於一個省或一個小王國的區域—通常長達50英里，您的初始定居點在其中的某個地方。(出於製圖的目的，這個區域的比例尺與省級地圖大致相同。參見{@book |Dungeon Master's Guide|DMG|城主旨南}第一章中的“{@book Mapping Your Campaign|DMG|1|繪製戰役}”。)你希望擴大你的貿易和品牌在整個地區。你將抓住新的市場，開發新的產品，擴大你的人脈，保護國王和王后寵壞的孩子，讓君主們對你有正面的看法。您可以將貨物運送到您所在地區以外的兩個城市或其他定居點。",
 										{
 											"type": "inset",
 											"name": "Group Dynamic",
