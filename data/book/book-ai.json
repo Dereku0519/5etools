@@ -1126,12 +1126,12 @@
 				},
 				{
 					"type": "section",
-					"name": "Company Positions",
+					"name": "公司職位",
 					"page": 18,
 					"entries": [
-						"A franchise is a complex affair, requiring its participants to fulfill a myriad of important duties necessary for its proper growth (and the enrichment of Acquisitions Incorporated Head Office). A company position establishes a character's role within a franchise, as well as a relationship with the larger Acq Inc organization.",
-						"When you choose a company position for your character, that choice is independent of and in addition to your character's background, class, and other options. Though Head Office might tell would-be Acq Inc franchisees to play to their strengths, you should choose the position that speaks to you\u2014and that feels like it'll be the most fun. All characters who take on an Acquisitions Incorporated franchise must take a company position. A character can take only one position within a franchise.",
-						"Each company position has its own distinct flavor\u2014and comes with a range of preternatural benefits. Some of these benefits take the form of material boons granted by Head Office, including specialized magic items available only to Acquisitions Incorporated franchisees. Others are shaped by the subtle power of your position and the franchise's rank.",
+						"特許經營是一件複雜的事情，要求其參與者履行大量的重要職責，這些職責對於特許經營的適當增長(以及Acquisitions Incorporated總部的充實)是必要的。公司職位建立了角色在特許經營中的角色，以及日漸壯大的Acq Inc組織關係。",
+						"當你為你的角色選擇一個公司職位時，這個選擇是獨立於你的角色的背景、職業和其他選項的。儘管總部可能會告訴未來的Acq Inc連鎖加盟商發揮他們的優勢，但你應該選擇一個能與你對話的職位——而且感覺這將是最有趣的。所有參與Acquisitions Incorporated特許經營權的角色必須擔任公司職務。角色在特許經營中只能佔一個位置。",
+						"每個公司職位都有自己獨特的風格，並帶來一系列意想不到的好處。其中一些好處是以總公司授予的物質獎勵的形式出現的，包括只有Acquisitions Incorporated加盟商才能獲得的特殊魔法物品。其他人則是由你的職位和特權等級的微妙力量塑造的。",
 						{
 							"type": "entries",
 							"name": "Joint Effort",
@@ -1143,18 +1143,18 @@
 						},
 						{
 							"type": "entries",
-							"name": "Position Proficiencies",
+							"name": "職位熟練程度",
 							"page": 18,
 							"entries": [
-								"Accepting a company position with Acquisitions Incorporated means more than just a title and hopes of a paycheck. With it comes access to trade secrets, best practices, and corporate shortcuts central to fulfilling one's role within a franchise. When a character takes a specific company position, they gain proficiency in the tools and skills associated with that position. Such proficiency also extends to a variety of business practices, day-to-day tasks, and hazard mitigations that are all part of the job. Professional functions that characters can add their proficiency bonus to are detailed in the \"Position Proficiency\" section of each of the following company positions.",
+								"接受一個Acquisitions Incorporated的職位不僅僅意味著一個頭銜和對薪水的希望。隨之而來的是獲取商業機密、最佳實踐和企業捷徑，這些都是在特許經營中發揮作用的關鍵。當一個角色擔任一個特定的公司職位時，他們會熟練掌握與該職位相關的工具和技能。這種熟練程度還擴充套件到各種業務實踐、日常任務和風險減輕，這些都是工作的一部分。角色可以新增技能加值的專業功能在以下每個公司職位的“Position Proficiency”部分詳細介紹。",
 								{
 									"type": "inset",
-									"name": "Company Tools",
+									"name": "公司工具",
 									"page": 19,
 									"entries": [
-										"The tools and items that are granted to a character as part of a company position are unique objects created and bestowed by Head Office on trusted franchisees. A set of Acquisitions Incorporated tools might resemble mundane tools, but they are never the same. Countless mundane cartographers in the world have proficiency with cartographer's tools. But only an Acquisitions Incorporated cartographer has access to a {@item cartographer's map case|AI} and the ability to use it.",
-										"Magic items gained as part of a company position always require attunement, but they do not count against the number of magic items a character can normally attune to. Each item can be attuned to only by the character to whom it has been granted by Head Office. If the tools of other Acq Inc franchisees are ever found, they cannot be attuned even by characters with the applicable position. (It goes without saying that such tools found at large are expected to be returned to Head Office immediately.)",
-										"Each position magic item is representative of the significant mystic expertise of Acquisitions Incorporated\u2014and no matter who might use them, position items always belong to the franchise proper. The use of such items is typically revoked upon leaving the company, and Head Office is known for the diligence with which it retrieves items that are \"accidentally\" held onto."
+										"作為公司職位的一部分授予角色的工具和物品是總部建立並授予受信任的加盟商的獨特物件。一組Acquisitions Incorporated工具可能類似於普通的工具，但它們絕不是相同的。世界上無數平凡的製圖師都精通{@item cartographer's map case|AI}。但只有Acquisitions Incorporated製圖師的才能訪問製圖師的地圖案例並使用它。",
+										"作為一個公司職位的一部分獲得的魔法物品總是需要同調，但它們不計入角色通常可以同調的魔法物品的數量。每個專案只能透過總公司授予的角色來調整。如果其他Acq Inc加盟商的工具被發現，它們甚至不能被角色與適用的職位相同調。(不用說，這些被廣泛發現的工具預計將立即歸還總部。)",
+										"每個職位魔法物品都代表著Acquisitions Incorporated中重要的神秘專長——而且無論誰可能使用它們，職位物品都屬於特許經營權。這類物品的使用通常在離開公司時就會被撤銷，而總部則以其在檢索“意外”持有的物品時的勤奮而聞名。"
 									],
 									"id": "048"
 								}
@@ -1163,57 +1163,57 @@
 						},
 						{
 							"type": "entries",
-							"name": "Gaining Ranks",
+							"name": "增加階級",
 							"page": 19,
 							"entries": [
-								"You choose your character's position when the character first joins an Acquisitions Incorporated franchise. Your character's position rank is equal to your franchise's rank. Starting from rank 1, you gain specialized training (including new proficiencies), special equipment, and your rank 1 position feature. Then, as the franchise grows, the scope of your position grows with it. Each time the franchise gains a rank (normally at levels 5, 11, and 17), your character is promoted to that new rank in their position and gains the appropriate benefits."
+								"當角色第一次加入一個Acquisitions Incorporated特許經營權時，你選擇角色的位置。你角色的職位等級與你的特許經營權等級相等。從階級1開始，你將獲得專門的訓練(包括新的熟練程度)，特殊的裝備，和你的1級職位特徵。然後，隨著特許經營的增長，你的職位範圍也隨之增長。每次你的角色獲得一個等級(通常是5級，11級和17級)，你的角色就會被提升到他們的新等級並獲得相應的好處。"
 							],
 							"id": "049"
 						},
 						{
 							"type": "entries",
-							"name": "Cartographer",
+							"name": "製圖師",
 							"page": 19,
 							"entries": [
 								{
 									"type": "quote",
 									"entries": [
-										"{@i I've seen a million places, and I've mapped them all}!"
+										"{@i 我已經看到了百萬個地方，我把它們都畫出來了}!"
 									],
 									"by": "Cartographer's boast"
 								},
-								"Acquisitions Incorporated missions can lead across vast tracts of wilderness, into ancient ruins, deep underground, or to even more dangerous and remote places. The cartographer selects the method and route of travel for a franchise, and creates and maintains maps of the journey. As the characters travel, the cartographer maps important locations and resources, later providing finished maps to Head Office. The franchise's cartographer is also often responsible for the selection and care of vehicles and mounts.",
-								"As a cartographer, you have a sharp eye for detail and take an interest in people, history, and natural features. You help advance your franchise by discovering and mapping new locations or hidden features, acquiring rare maps, and using different modes of transportation in secure and clever ways.",
-								"{@b Noteworthy Cartographers}: {@creature Rosie Beestinger|AI} (\"C\" Team), Brahma Lutier (\"B\" Team, retired), {@creature Pendragon Beestinger|AI} (\"B\" Team), Purnagh Grost",
-								"{@b Essential Functions}: Create and maintain maps of a franchise's journeys; dictate directions",
-								"{@b Position Proficiency}: In addition to the proficiencies noted below, you can add your proficiency bonus when you make an ability check to create or examine maps, search for new paths in the wild, or assess a route for possible dangers.",
+								"Acquisitions Incorporated任務可以穿越大片荒野，進入古老的廢墟，深入地下，甚至是更危險和偏遠的地方。製圖師為特許經營選擇旅行的方法和路線，並建立和維護旅行地圖。隨著角色的旅行，製圖師繪製重要的地點和資源，然後將完成的地圖提供給總部。該系列的製圖師還經常負責車輛和坐騎的選擇和保養。",
+								"作為一名製圖師，你對細節有著敏銳的觀察力，對人物、歷史和自然特徵都很感興趣。您可以透過發現和繪製新的地點或隱藏的特徵，獲取稀有的地圖，以及以安全而巧妙的方式使用不同的交通方式來幫助您的特許經營。",
+								"{@b 值得注意的製圖師}：{@creature Rosie Beestinger|AI} (\"C\" Team), Brahma Lutier (\"B\" Team, retired), {@creature Pendragon Beestinger|AI} (\"B\" Team), Purnagh Grost",
+								"{@b 基本功能}：建立和維護特許經營的旅程地圖及規定的方向",
+								"{@b 職位熟練程度}：除了下面提到的熟練程度，您還可以在進行建立或檢查地圖的能力檢查、搜尋野外新路徑或評估可能存在危險的路徑時新增熟練程度獎勵。",
 								{
 									"type": "table",
-									"caption": "The Cartographer",
+									"caption": "製圖師",
 									"colStyles": [
 										"col-2 text-center",
 										"col-10"
 									],
 									"colLabels": [
-										"Franchise Rank",
-										"Features"
+										"特許經營階級",
+										"特色"
 									],
 									"rows": [
 										[
 											"1",
-											"Proficiencies and Starting Equipment, It's a Rental"
+											"職業技能和起始裝備的租借服務"
 										],
 										[
 											"2",
-											"{@item Spyglass of Clairvoyance|AI}, Tale of Safe Travel"
+											"{@item Spyglass of Clairvoyance|AI}、安全旅程(參見{@book 安全旅程|AI|1|製圖師|安全旅程})"
 										],
 										[
 											"3",
-											"Map of Shortcuts, Map of the Moment"
+											"捷徑地圖，瞬間地圖"
 										],
 										[
 											"4",
-											"{@item Elder Cartographer's Glossography|AI}, Greater Tale of Safe Travel"
+											"{@item Elder Cartographer's Glossography|AI}、大型安全旅程"
 										]
 									]
 								},
@@ -1247,7 +1247,7 @@
 								},
 								{
 									"type": "entries",
-									"name": "Tale of Safe Travel",
+									"name": "安全旅程",
 									"page": 19,
 									"entries": [
 										"Starting at rank 2, you gain the ability to perform a 45-minute ritual using your {@item cartographer's tools|PHB}, maps, and 50 gp in consumed material components. By doing so, you ensure safe travel for you and other creatures, from your current location to another location you could normally reach within one day. The destination must be one to which you have traveled previously, or for which you have an accurate route and map.",
@@ -1364,7 +1364,7 @@
 								},
 								{
 									"type": "entries",
-									"name": "Greater Tale of Safe Travel",
+									"name": "大型安全旅程",
 									"page": 20,
 									"entries": [
 										"Also at rank 4, your Tale of Safe Travel feature can now span up to three days of travel. If your franchise headquarters is mobile, you can include it in your Tale of Safe Travel, and can also include items or goods weighing up to 2,000 pounds.",
