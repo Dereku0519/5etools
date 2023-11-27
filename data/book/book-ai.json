@@ -866,7 +866,7 @@
 									"name": "武器特徵",
 									"page": 16,
 									"entries": [
-										"在階級2，玩家可以從城主指南第八章“{@book 攻城裝備|DMG|8}”部分的選項中選擇武器新增到他們的總部。DM可以限制這些選項或改變具體的細節的選擇，而且玩家也可以設計獨特的進攻特點，由DM批准。例如，一個行走雕像，拳頭打擊可以視為一個攻城錘，或DM和玩家們或許會同意這個說法，用{@spell 畢格比之掌}的效果來應用，這將是有趣的一些影響。",
+										"在階級2，玩家可以從城主指南第八章“{@book 攻城裝備|DMG|8|攻城裝備}”部分的選項中選擇武器新增到他們的總部。DM可以限制這些選項或改變具體的細節的選擇，而且玩家也可以設計獨特的進攻特點，由DM批准。例如，一個行走雕像，拳頭打擊可以視為一個攻城錘，或DM和玩家們或許會同意這個說法，用{@spell 畢格比之掌}的效果來應用，這將是有趣的一些影響。",
 										"Most siege weapons (whether mechanical or magical) require two characters, crew, or skilled hirelings to operate, and such weapons might be slow to reload or recharge. Headquarters weapons are not particularly effective against small bands of creatures (such as a group of goblins), but they can be useful against a single large threat (such as a dragon). If siege weapons are abused by franchisees, they might be targeted by enemies, break down, or require costly maintenance each time they are employed in battle.",
 										{
 											"type": "entries",
