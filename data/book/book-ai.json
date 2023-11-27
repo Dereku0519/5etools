@@ -420,7 +420,7 @@
 									"name": "階級2：小領土",
 									"page": 10,
 									"entries": [
-										"你的授權現在擴展到包括一個類似於一個省或一個小王國的區域—通常長達50英里，您的初始定居點在其中的某個地方。(出於製圖的目的，這個區域的比例尺與省級地圖大致相同。參見城主旨南第一章中的“{@book 繪製戰役|DMG|1|繪製戰役}”。)你希望擴大你的貿易和品牌在整個地區。你將抓住新的市場，開發新的產品，擴大你的人脈，保護國王和王后寵壞的孩子，讓君主們對你有正面的看法。您可以將貨物運送到您所在地區以外的兩個城市或其他定居點。",
+										"你的授權現在擴展到包括一個類似於一個省或一個小王國的區域—通常長達50英里，您的初始定居點在其中的某個地方。(出於製圖的目的，這個區域的比例尺與省級地圖大致相同。參見城主指南第一章中的“{@book 繪製戰役|DMG|1|繪製戰役}”。)你希望擴大你的貿易和品牌在整個地區。你將抓住新的市場，開發新的產品，擴大你的人脈，保護國王和王后寵壞的孩子，讓君主們對你有正面的看法。您可以將貨物運送到您所在地區以外的兩個城市或其他定居點。",
 										{
 											"type": "inset",
 											"name": "集團動態",
@@ -535,7 +535,7 @@
 									"page": 11,
 									"entries": [
 										"一個總管管理著一個特許經營總部。他們通常住在總部內，很少離開，透過專門的信使傳送通訊(無需額外費用，步行或透過特許經營提供的方式)。總監熟練魅力(說服)和DM選擇的兩項技能。",
-										"DM被鼓勵使用{@book 城主旨南第四章|DMG|4|創建非玩家角色}中建立非玩家角色的規則來詳細描述總監，給這個人一個充滿活力的個性和背景故事。總監的目標應該與玩家的加盟業和作為一個整體的Acquisitions Incorporated保持一致，讓他們能夠正確地作為隊伍的盟友和管理者。",
+										"DM被鼓勵使用{@book 城主指南第四章|DMG|4|創建非玩家角色}中建立非玩家角色的規則來詳細描述總監，給這個人一個充滿活力的個性和背景故事。總監的目標應該與玩家的加盟業和作為一個整體的Acquisitions Incorporated保持一致，讓他們能夠正確地作為隊伍的盟友和管理者。",
 										"這對於一場戰役來說是很有幫助的，該背景故事補充了特許經營權隨時間的演變。   學者可能會研究特許經營如何獲得新的能力。 或許總監是一個能夠進行位面航行的船隻的駕駛員，他慢慢地將這些特徵應用到總部。   一個以間諜組織為模型的特許經營的總監可能會不斷地為特許經營發明裝置，隨著團隊帶著黃金、傳說和資源返回，不斷取得進展。",
 										{
 											"type": "inset",
@@ -694,7 +694,7 @@
 											"page": 13,
 											"entries": [
 												"任何特許經營權都可以乘坐這艘新的(好吧，非常常用)龍骨船出海!海盜殺死了以前的主人，總公司以極好的價格買下了它。船身上的大部分洞都修補過了，船帆也只有一點點發黴。更棒的是，後面有一個小的覆蓋區域的保護元素，是一個完美的生活空間!這艘龍骨船可以裝載半噸貨物，甚至在一些停靠港還可以降低停靠費用。",
-												"標準龍骨船的數據可以在{@book 城主旨南第五章|DMG|5}中找到。DM可能會調整這艘船可以輕鬆載客的人數， 但擁有這樣一個總部通常意味著，大多數特許經營員工都是流動的，或者住在船上主要停靠港的其他地方。",
+												"標準龍骨船的數據可以在{@book 城主指南第五章|DMG|5}中找到。DM可能會調整這艘船可以輕鬆載客的人數， 但擁有這樣一個總部通常意味著，大多數特許經營員工都是流動的，或者住在船上主要停靠港的其他地方。",
 												{
 													"type": "quote",
 													"entries": [
@@ -846,11 +846,11 @@
 												"一匹老馬拉著一輛看似簡單的馬車，卻能帶來強大的魔力。貨車司機可以使貨車傳送一天的路程，在一個或多個超維度跳躍的過程中鎖定一個已知的位置。這種瞬間移動通常在沒有人注意的時候進行，以避免引起當地人的懷疑或驚嚇。雖然貨車最終到達了預定的目的地，但是中間的停靠點是未知的，而且很可能是危險的。",
 												{
 													"type": "inset",
-													"name": "Acquisitions Incorporated Is Magic!",
+													"name": "充滿魔法的艾奎茲玄有限責任公司",
 													"page": 15,
 													"entries": [
-														"Dungeons & Dragons offers a wide range of play styles, and works with many different types of campaign story. The {@book Dungeon Master's Guide|DMG} talks about some of the most common types of fantasy that can shape a D&D campaign, including a general sense of campaigns being high magic, low magic, or the D&D standard in between.",
-														"An Acquisitions Incorporated campaign has its own distinct feel, as talked about in {@book chapter 1|AI|0} of this book. Part of that feel comes from the substantial benefits that characters gain from franchise features and company positions\u2014mechanical boons, magic items, access to powerful spell effects, and more. These benefits are gained automatically, as a general reward for the characters' adventuring success driving franchise advancement. So it's important that everyone is aware how adding those built-in campaign benefits to the regular magic gained during adventuring will give the characters a boost in power.",
+														"龍與地下城提供了廣泛的遊戲風格，並與許多不同型別的戰役故事。{@book 城主指南|DMG}談到了一些能夠塑造D&D戰役的最常見的幻想型別，包括戰役的高魔法、低魔法或介於兩者之間的D&D標準。",
+														"Acquisitions Incorporated戰役有自己獨特的感覺，正如在{@book 本書第一章|AI|0}中談到的。這種感覺部分來自角色從特許經營功能和公司職位中獲得的實質性好處——機械裝備、魔法物品、強大的法術效果等等。這些好處是自動獲得的，作為一般獎勵，為角色的冒險成功推動特許經營的進展。因此，重要的是，每個人都要意識到，在冒險過程中獲得的常規魔法中新增這些內建的戰役優勢將如何提升角色的力量。",
 														"For an Acquisitions Incorporated campaign meant to feel and play like standard D&D, the DM should consider creating a low-magic campaign, and letting the benefits of company positions and franchise features fill in the magical gaps. A standard campaign played with the rules in this book should be treated as a high magic campaign, with the DM and the players understanding that the difficulty of encounters and other tasks might need to be ramped up to offer a real challenge to the characters. Of course, nothing prevents anyone from playing a high magic campaign with the Acquisitions Incorporated rules. But DMs and players should all be aware that doing so will create extremely powerful characters\u2014who will no doubt attract extremely powerful enemies and threats as a matter of course."
 													],
 													"id": "02f"
