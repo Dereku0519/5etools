@@ -978,32 +978,32 @@
 			]
 		},
 		{
-			"name": "Acquisitions Incorporated",
+			"name": "艾奎茲玄有限責任公司",
 			"id": "AI",
 			"source": "AI",
 			"coverUrl": "img/covers/AI.png",
 			"published": "2019-06-18",
 			"contents": [
 				{
-					"name": "Acquisitions Incorporated",
+					"name": "艾奎茲玄有限責任公司",
 					"ordinal": {
-						"type": "chapter",
+						"type": "章節",
 						"identifier": 1
 					},
 					"headers": [
-						"It's Just Business",
-						"A Corporate Prospectus",
-						"Fast Franchise Generator"
+						"說白了只是做生意",
+						"公司發展史",
+						"快速建立加盟公司"
 					]
 				},
 				{
-					"name": "Growing Your Franchise",
+					"name": "發展你的加盟公司",
 					"ordinal": {
 						"type": "chapter",
 						"identifier": 2
 					},
 					"headers": [
-						"Franchise Advancement",
+						"開疆拓土",
 						"Company Positions",
 						{
 							"depth": 1,
