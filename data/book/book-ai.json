@@ -670,31 +670,31 @@
 										"DM批准了總部的概念，並決定初始結構的大小，以及任何有用的功能。DM和玩家可以一起建立一個總部和周圍環境的地圖。{@book 城主指南第五章|DMG|5}可以幫助詳細描述荒野和城市的位置。",
 										{
 											"type": "inset",
-											"name": "Lifestyle Expenses",
+											"name": "生活風格費用",
 											"page": 13,
 											"entries": [
-												"Whenever characters are in residence at their franchise headquarters, they can automatically benefit from a minimum lifestyle\u2014poor at rank 1, modest at rank 2, comfortable at rank 3, and wealthy at rank 4. The normal costs associated with that lifestyle for franchisees and select staff are subsumed within the overall cost of running the franchise. Outside the franchise headquarters, normal lifestyle expenses apply."
+												"當角色在他們的特許經營總部居住時，他們可以自動地從最低生活方式中獲益——在等級1時是貧窮，等級2時是適度，等級3時是舒適，等級4時是富裕。加盟商和精選員工與這種生活方式相關的正常成本包含在特許經營的總成本中。除特許經營總部外，套用正常生活風格費用。"
 											],
 											"id": "01f"
 										},
-										"Many franchisees will use their starter headquarters as a point for expansion, adding new features, new rooms, new levels\u2014and, of course, new magic as the franchise grows in rank. Other campaigns might be better served by having the franchise change headquarters at different stages. Characters might start out in a ship, then move to a castle, then take possession of a unique magical headquarters in the end. Any potential headquarters site might be discovered by the characters as part of the campaign, or sites might be suggested or allocated by Head Office.",
-										"Any of the following suggestions can make a great starter headquarters, or can provide inspiration for other headquarters features.",
+										"許多加盟商將把他們的首發總部作為一個擴張點，增加新的功能，新的房間，新的級別，當然，隨著特許經營的等級增長，新的魔法。在不同階段更換特許經營總部可能會更好地服務於其他活動。角色可能從船上開始，然後搬到城堡，最後擁有一個獨特的魔法總部。任何可能的總部地點都可以由角色發現，作為戰役的一部分，或者由總部建議或分配。",
+										"以下任何一個建議都可以成為一個很好的入門總部，或者可以為其他總部功能提供靈感。",
 										{
 											"type": "entries",
-											"name": "Abandoned Lighthouse",
+											"name": "被遺棄的燈塔",
 											"page": 13,
 											"entries": [
-												"Raided by orcs who left no one alive? Those are probably just stories. And even if true, the orcs won't come back (probably). This abandoned lighthouse headquarters is strong enough to stand against any storm (probably), and many of the leaks have been fixed already. And just look at that cool light up top, and the oversized storage cellar. Docks close by are perfect for a starter franchise that comes into possession of a boat, and are also a sign of the lighthouse's importance to coastal trade. Commandeering it will likely win over the locals and maybe even the region's royalty!"
+												"被獸人襲擊而沒有留下活口?這些可能只是故事。即使是真的，獸人也不會回來了。這座廢棄的燈塔總部很堅固，足以抵禦任何風暴(很可能)，而且許多漏洞已經被修復。看看上面那盞很酷的燈，還有超大的酒窖。附近的碼頭是一個完美的入門特許經營，進入擁有一艘船，也是燈塔對沿海貿易的重要性的標誌。徵用它很可能會贏得當地人的支援，甚至可能贏得該地區的皇室!"
 											],
 											"id": "020"
 										},
 										{
 											"type": "entries",
-											"name": "Beat-Up Keelboat",
+											"name": "破舊的龍骨船",
 											"page": 13,
 											"entries": [
-												"Any franchise can take to the seas in this new (okay, very used) {@vehicle keelboat}! Pirates killed the previous owners, and Head Office picked it up for an excellent price. Most of the holes in the hull are repaired, and the sails are only a little bit moldy. Even better, there's a small covered area in the rear protected from the elements that makes a perfect living space! The keelboat holds a half-ton of cargo, and might even come with reduced docking fees at some ports of call.",
-												"Statistics for a standard {@vehicle keelboat} are found in {@table Owning a Ship; Airborne and Waterborne Vehicles|DMG|chapter 5} of the {@book Dungeon Master's Guide|DMG}. The DM might adjust the number of people the boat can comfortably carry, but having such a headquarters typically implies that most franchise staff are itinerant or live elsewhere in whatever settlement is the boat's primary port of call.",
+												"任何特許經營權都可以乘坐這艘新的(好吧，非常常用)龍骨船出海!海盜殺死了以前的主人，總公司以極好的價格買下了它。船身上的大部分洞都修補過了，船帆也只有一點點發黴。更棒的是，後面有一個小的覆蓋區域的保護元素，是一個完美的生活空間!這艘龍骨船可以裝載半噸貨物，甚至在一些停靠港還可以降低停靠費用。",
+												"標準龍骨船的數據可以在{@book 城主旨南第五章|DMG|5}中找到。DM可能會調整這艘船可以輕鬆載客的人數， 但擁有這樣一個總部通常意味著，大多數特許經營員工都是流動的，或者住在船上主要停靠港的其他地方。",
 												{
 													"type": "quote",
 													"entries": [
@@ -707,21 +707,21 @@
 										},
 										{
 											"type": "entries",
-											"name": "Old Tavern",
+											"name": "老酒館",
 											"page": 13,
 											"entries": [
-												"With just a little work and some better furniture, this place could be the talk of the town. The tavern is certainly not haunted. Seriously, no one listens to those rumors. But if it were, and if the story was spun the right way, the marketing potential could be huge. Some even say that the ghosts (which totally don't exist) like to sing, so that's a plus! The kitchen is already stocked with plates, mugs, and lots of knives, and a few rooms upstairs are ready to rent out to travelers."
+												"只要稍微乾點活，再添置些好傢俱，這個地方就可以成為全城的談資了。小酒館當然沒有鬧鬼。說真的，沒人聽那些謠言。但如果是這樣，如果故事的發展方向正確，市場潛力將是巨大的。有些人甚至說鬼魂(完全不存在)喜歡唱歌，所以這是一個加分! 廚房裡已經擺滿了盤子、杯子和很多刀，樓上還有幾間房間準備出租給遊客。"
 											],
 											"id": "022"
 										},
 										{
 											"type": "entries",
-											"name": "Worn Carriage and Horses",
+											"name": "破舊的馬車和馬匹",
 											"page": 13,
 											"entries": [
-												"This humble, worn carriage, previously owned by a now-defunct trading company, makes a perfect starter headquarters. The carriage's exterior is weathered wood, and the interior seats and cushions have seen better days. Still, it offers all the perks of home plus the ability to change the neighbors every time you take to the road.",
-												"The rear of the carriage features a generous cargo space for up to 500 pounds of goods, and is protected from the weather. The horses are hardworking and love apples. The carriage has AC 11 and 75 hit points, and moves at the speed of its {@creature Draft Horse||draft horses} (40 feet). Four passengers can ride inside, two up front with one steering, and two atop the rear cargo area. Up to three people can also sit on the roof of the cabin, for an especially exciting perch when the cart is moving quickly!",
-												"Because this sort of franchise typically can't hold the characters and all their staff (at least not comfortably), such staff are often itinerant or based in whatever settlement the carriage returns to most often.",
+												"這輛簡陋破舊的馬車原本屬於一家現已倒閉的貿易公司，是一個完美的首發總部。車廂的外部是風化的木頭，內部的座椅和坐墊也經歷了風平浪靜的日子。不過，它提供了所有在家的好處，而且你每次出門都可以換鄰居。",
+												"車廂的後部有一個寬敞的貨艙，可以容納500磅的貨物，而且不受天氣影響。馬很勤勞，喜歡吃蘋果。馬車有AC11和75點生命值，並且有40呎的移動速度。四名乘客可以坐在裡面，兩名乘客可以坐在前面，一個方向盤，兩名乘客可以坐在後面的貨艙頂部。多達三個人也可以坐在小屋的屋頂上，當小車快速移動時，這是一個特別令人興奮的棲息之處!",
+												"因為這種型別的特許經營通常無法容納角色和他們所有的員工(至少不是很舒服)，這些員工通常是流動的，或者是基於馬車最常返回的任何定居點。",
 												{
 													"type": "image",
 													"href": {
@@ -740,27 +740,27 @@
 								},
 								{
 									"type": "entries",
-									"name": "Cosmetic Features",
+									"name": "外觀特徵",
 									"page": 14,
 									"entries": [
-										"A cosmetic improvement, gained at franchise rank 2, allows a franchise to radically alter the look and feel of its headquarters. A beat-up wagon could become a gilded carriage, with luxurious interiors and servants dressed in matching finery. A tavern could proudly display the party's kills in the drinking hall, feature mugs gathered from dwarven holds around Faerûn, and have decor matching a particular theme.",
-										"Improvements can also be of a fantastic or magical nature, such as flickering magical torches or portraits that watch and interact with observers. The DM has final approval over such improvements, and is the arbiter as to whether cosmetic improvements might provide any actual benefits during play. When allowed, such benefits should be situational and limited. A foe might become distracted the first time a ghostly figure appears in a haunted tavern, but the quality of the illusion is such that it doesn't stand up to continued scrutiny.",
-										"Cosmetic effects can also be focused on selling and branding a franchise, such as adding manufacturing capabilities, a light-up sign, a customer showroom or service center, and other commercial features. At the DM's discretion, such features might generate additional income or lower the costs of certain franchise tasks.",
+										"一個外觀上的改進，在特許經營階級2，允許特許經營從根本上改變其總部的外觀和感覺。一輛破舊的馬車可以變成一輛鍍金的馬車，內部裝飾豪華，僕人們穿著配套的服飾。酒館可以自豪地在酒廊裡展示宴會上的戰利品，特色是從矮人的酒窖裡收集來的杯子，以及與特定主題相匹配的裝飾。",
+										"改進也可以是一種奇妙或神奇的性質，如閃爍的魔法火炬或與觀察者互動的肖像。DM對這些改進有最終的批准權，並且是關於外觀改進是否會在遊戲過程中提供任何實際好處的仲裁者。在允許的情況下，這些好處應該是情境性的和有限的。當一個鬼影第一次出現在鬧鬼的酒館裡時，敵人可能會分心，但是幻覺的質量使得它不能經得起持續的審查。",
+										"外觀效果也可以集中於銷售和品牌的特許經營，如增加製造能力，一個燈光標誌，一個客戶展示或服務中心，和其他商業功能。根據DM的判斷，這些功能可能產生額外的收入或降低某些特許經營任務的成本。",
 										{
 											"type": "entries",
-											"name": "Draconic Ship",
+											"name": "龍船",
 											"page": 14,
 											"entries": [
-												"This once-innocuous seagoing vessel has been detailed to appear as a brass dragon. The ship's interior is decorated in draconic art, and platforms among the rigging are linked by silk ropes attached to pulleys. These might provide benefits to crew trained in their use if the ship is ever attacked."
+												"這艘曾經無害的海船被詳細描述為一條銅龍。船的內部裝飾是龍的藝術，平臺之間的索具是連線到滑輪上的絲綢繩。如果船隻受到攻擊，這些可能會為訓練有素的船員提供好處。"
 											],
 											"id": "025"
 										},
 										{
 											"type": "entries",
-											"name": "Enchanted Wizard's Tower",
+											"name": "附魔巫師塔",
 											"page": 14,
 											"entries": [
-												"In the entrance hall of a former-wizard's-tower headquarters, enchanted portraits display visages of the franchise's recently vanquished foes. Smaller portraits throughout the tower display important moments in the franchise's adventuring history, and the whole interior is set with magical lighting, decorated with candelabra, and features drapes and carpets matching the franchise's chosen motif."
+												"在前巫師塔總部的門廳裡，施了魔法的肖像展示著該系列最近被擊敗的敵人的面孔。整座塔的小畫像展示了該系列冒險史上的重要時刻，整個內部設定了魔幻燈光，用燭臺裝飾，窗簾和地毯與該系列選擇的主題相匹配。"
 											],
 											"id": "026"
 										}
@@ -769,27 +769,27 @@
 								},
 								{
 									"type": "entries",
-									"name": "Expansion Features",
+									"name": "擴充套件功能",
 									"page": 14,
 									"entries": [
-										"At rank 2, an expansion feature allows a franchise to double the size of its headquarters. When doing so, players and characters can define the changes to the current configuration. Perhaps the headquarters expands in size laterally, or gains an extra floor. Perhaps a new basement is excavated\u2014or poking around the existing basement reveals a secret level of dungeons heretofore unknown.",
-										"Franchise members can decide on what features are involved in the expansion, including new windows, doors, and furniture. Adding certain types of space might also call for extra supporting features. If storage is on an upper floor, a winch might be installed to lift goods. A cellar could add another exit and an area for storing wine or alchemical supplies. Or a carriage headquarters could gain a second cart to become a wagon train.",
-										"All construction is low cost but functional, as in the following examples.",
+										"在階級2，一個擴充套件功能允許特許經營的規模翻倍其總部。當這樣做時，玩家和角色可以定義對當前配置的更改。也許總部會橫向擴張，或者增加一層樓。也許一個新的地下室正在被挖掘，或者在現有的地下室周圍探出一個未知地下城的秘密等級。",
+										"特許經營成員可以決定哪些功能涉及到擴充套件，包括新的窗戶，門，和傢俱。新增某些型別的空間可能還需要額外的支援功能。如果倉庫在上層，可以安裝絞車來提升貨物。酒窖可以增加另一個出口和存放葡萄酒或鍊金術用品的區域。或者，一個馬車總部可以獲得第二輛馬車，成為一個馬車隊。",
+										"所有的建設都是低成本但功能，如下面的例子所示。",
 										{
 											"type": "entries",
-											"name": "Expanded Lighthouse",
+											"name": "擴充套件：燈塔",
 											"page": 15,
 											"entries": [
-												"The lighthouse is now taller, with two additional levels, an upgraded beacon, and a stronger exterior. A stairway leads down into a network of old caverns, including some used as storage space, and finally onto a small beach with a dock."
+												"燈塔現在更高了，增加了兩層，一個升級的燈塔和一個更堅固的外部。一條樓梯通向一個由舊洞穴組成的網路，包括一些用作儲存空間的洞穴，最後到達一個帶碼頭的小海灘。"
 											],
 											"id": "028"
 										},
 										{
 											"type": "entries",
-											"name": "Expanded Tavern",
+											"name": "擴充套件：酒館",
 											"page": 15,
 											"entries": [
-												"The building adjacent to the tavern has been bought out and connected to it, allowing for more guest chambers, a larger common room, a larger kitchen, and staff quarters. A large fireplace fills the common room with light and warmth, while new tables and chairs create a welcome environment. Guest chambers might feature a patio or balcony."
+												"酒店附近的建築已經被買斷並與之相連，允許更多的客房、更大的公共休息室、更大的廚房和員工宿舍。一個大壁爐使公共休息室充滿陽光和溫暖，而新的桌椅創造了一個受歡迎的環境。客房可能設有露臺或陽臺。"
 											],
 											"id": "029"
 										}
@@ -798,17 +798,17 @@
 								},
 								{
 									"type": "entries",
-									"name": "Transportation Features",
+									"name": "交通特性",
 									"page": 15,
 									"entries": [
-										"Also at rank 2, every franchise gains some form of mobility, with players and DM working together to determine how a headquarters facilitates travel (or expands on its normal travel modes) from one location to another. A ship might gain a magic sail, or could add a balloon to become a battle balloon airship. A hollow statue could gain the ability to stride across the landscape. A wizard's tower might teleport from place to place. Or doors within a tavern could be revealed as a magical portal connected to various locations in far-flung lands.",
-										"The DM has final approval over the method of locomotion, and can put in place any reasonable limitations or constraints on that movement. Additionally, any method of movement should have a weakness or drawback determined by the DM. As a rule of thumb, a mobile headquarters can travel a distance of 30 miles per day (equivalent to a fast travel pace) per franchise rank. This rate of travel can vary depending on weather, visibility, availability of maps, or other conditions.",
+										"一樣在階級2，每個特許經營都獲得了某種形式的機動性，玩家和DM共同決定總部如何促進從一個地點到另一個地點的旅行(或擴充套件其正常的旅行模式)。一艘船可能獲得一個魔法帆，或者新增一個氣球成為一個戰鬥氣球飛艇(battle balloon airship)。一箇中空的雕像可以獲得跨越風景的能力。巫師塔可以從一個地方傳送到另一個地方。或者酒館裡的門可以被揭示為一個魔法傳送門，連線到國度的遙遠地方。",
+										"DM對移動的方法有最終的批准，並可以對該移動設定任何合理的限制或約束。此外，任何移動方式都應該有DM確定的弱點或缺點。根據經驗，每個特許經營階級的移動總部每天可以移動30英里(相當於一個快速的移動速度)。這種旅行速度可以根據天氣、能見度、地圖的可用性或其他條件而變化。",
 										{
 											"type": "entries",
-											"name": "Giant Stone Statue",
+											"name": "巨大石雕像",
 											"page": 15,
 											"entries": [
-												"A 100-foot-tall stone statue has stairs and rooms carved within its interior. When a character sits at the helm located in a room within the statue's head, the statue can be directed to walk across the land. The statue ignores difficult terrain, usually by simply crashing through it. However, the navigator has a limited sight line while peering out through the statue's large eyes. When the terrain is cluttered or subject to combat conditions, it can be hard to avoid creatures or objects smaller than a large building.",
+												"一座100英尺高的石像內部雕刻著樓梯和房間。當一個角色坐在位於雕像頭部的一個房間裡的頭盔上時，雕像可以被引導著穿越大地。這座雕像忽略了複雜的地形，通常只是撞穿它。然而，透過雕像的大眼睛往外看時，導航員的視線有限。當地形雜亂或受戰鬥條件影響時，很難避開比大型建築小的生物或物體。",
 												{
 													"type": "quote",
 													"entries": [
@@ -821,29 +821,29 @@
 										},
 										{
 											"type": "entries",
-											"name": "Battle Balloon",
+											"name": "戰鬥氣球",
 											"page": 15,
 											"entries": [
-												"A hot air balloon is lit by a magic furnace channeling elemental power. A galleon suspended below the balloon features a helm that controls the ship. The vessel can fly virtually anywhere, ignoring difficult terrain, but it is at risk from storms and strong winds. If the balloon takes significant damage, the ship could be forced to descend\u2014or might even crash.",
-												"({@book Appendix C|AI|12} features vehicle statistics for a typical battle balloon. For characters who choose this highly coveted feature for their headquarters, the DM can impose limitations on the ship's attacks and make changes to its statistics.)"
+												"一個熱氣球是由一個傳送元素能量的魔法爐點燃的。一艘懸掛在氣球下方的帆船有一個舵控制著這艘船。這艘船幾乎可以飛到任何地方，無視複雜的地形，但它面臨著風暴和強風的風險。如果氣球受到嚴重損壞，這艘船可能會被迫下墜，甚至可能墜毀。",
+												"({@book Appendix C|AI|12}是典型戰鬥氣球的載具統計資料。 對於選擇這一令人垂涎的功能作為其總部的角色，DM 可以限制船隻的攻擊，並對其統計資料進行修改。)"
 											],
 											"id": "02c"
 										},
 										{
 											"type": "entries",
-											"name": "Self-Contained Train",
+											"name": "自給自足的列車",
 											"page": 15,
 											"entries": [
-												"This mobile franchise headquarters features a magical-mechanical locomotive that lays down its own track. Mechanical arms at the front of the locomotive set down crossbars and rails in front of the headquarters at ridiculous speed, while arms at the back of the headquarters pick up the track as it passes. The train moves at quarter speed over difficult terrain (instead of half speed). It can pass over rivers, but cannot cross lakes or large bodies of water."
+												"這個移動專營權總部的特點是一個魔法機械機車鋪設自己的軌道。機車前部的機械臂以極快的速度在總部前面放下橫木和鐵軌，而總部後部的機械臂則在火車經過時拾起鐵軌。火車在崎嶇的地形上以四分之一的速度行駛(而不是以一半的速度)。它能越過河流，但不能越過湖泊或大片水域。"
 											],
 											"id": "02d"
 										},
 										{
 											"type": "entries",
-											"name": "Extradimensional Wagon",
+											"name": "超維度馬車",
 											"page": 15,
 											"entries": [
-												"A seemingly simple wagon drawn by an old horse channels powerful magic. The wagon's driver can cause the wagon to teleport the distance of a day's journey, targeting a known location over the course of one or more extradimensional jumps. Such teleportation is usually done when no one is looking, to avoid arousing suspicion or frightening the locals. Though the wagon eventually arrives at the intended destination, the intervening stop-off points are unknown\u2014and quite possibly perilous.",
+												"一匹老馬拉著一輛看似簡單的馬車，卻能帶來強大的魔力。貨車司機可以使貨車傳送一天的路程，在一個或多個超維度跳躍的過程中鎖定一個已知的位置。這種瞬間移動通常在沒有人注意的時候進行，以避免引起當地人的懷疑或驚嚇。雖然貨車最終到達了預定的目的地，但是中間的停靠點是未知的，而且很可能是危險的。",
 												{
 													"type": "inset",
 													"name": "Acquisitions Incorporated Is Magic!",
