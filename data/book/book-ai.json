@@ -1219,11 +1219,11 @@
 								},
 								{
 									"type": "entries",
-									"name": "Proficiencies and Starting Equipment",
+									"name": "熟練和起始裝備",
 									"page": 19,
 									"entries": [
-										"As a rank 1 cartographer, you gain proficiency with {@item cartographer's tools|PHB}, and your choice of vehicles (land) or vehicles (water).",
-										"Head Office also grants you the use of cartographer's supplies (quill, ink, parchment, a pair of compasses, calipers, and a ruler), a waterproof leather map case, a spyglass, and a supply of colored inks."
+										"作為一個階級1的製圖師，你可以熟練掌握{@item cartographer's map case|AI}，以及陸地載具或水上載具擇一。",
+										"總公司還允許您使用製圖員的用品(羽毛筆、墨水、羊皮紙、一對圓規、卡鉗和一把尺子)、防水皮地圖盒、一個望遠鏡和一些彩色墨水。"
 									],
 									"id": "04b"
 								},
