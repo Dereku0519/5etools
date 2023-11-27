@@ -867,31 +867,31 @@
 									"page": 16,
 									"entries": [
 										"在階級2，玩家可以從城主指南第八章“{@book 攻城裝備|DMG|8|攻城裝備}”部分的選項中選擇武器新增到他們的總部。DM可以限制這些選項或改變具體的細節的選擇，而且玩家也可以設計獨特的進攻特點，由DM批准。例如，一個行走雕像，拳頭打擊可以視為一個攻城錘，或DM和玩家們或許會同意這個說法，用{@spell 畢格比之掌}的效果來應用，這將是有趣的一些影響。",
-										"Most siege weapons (whether mechanical or magical) require two characters, crew, or skilled hirelings to operate, and such weapons might be slow to reload or recharge. Headquarters weapons are not particularly effective against small bands of creatures (such as a group of goblins), but they can be useful against a single large threat (such as a dragon). If siege weapons are abused by franchisees, they might be targeted by enemies, break down, or require costly maintenance each time they are employed in battle.",
+										"大多數攻城武器(無論是機械武器還是魔法武器)都需要兩個角色、船員或熟練僱員來操作，而這些武器的裝填速度可能會很慢。總部武器對小群生物(比如一群哥布林)不是特別有效，但對單個大威脅(比如一條龍)卻很有用。如果攻城武器被特許經銷商濫用，它們可能成為敵人的目標，在每次戰鬥中被使用時，它們可能會被擊毀，或者需要昂貴的維護費用。",
 										{
 											"type": "entries",
-											"name": "Giant Statue's Fists",
+											"name": "巨大雕像",
 											"page": 16,
 											"entries": [
-												"A giant hollow metal statue acting as a franchise headquarters features a control center from which the statue's arms can be manipulated. One fist can be used per round to strike at foes, using statistics similar to a ram (AC 15, 100 hit points, immunity to poison and psychic damage)."
+												"一個巨大的空心金屬雕像作為特許經營總部，有一個控制中心，可以操縱雕像的手臂。每輪可以使用一個拳頭攻擊敵人，造成衝撞的效果(AC15、100點生命值，免疫毒藥和精神傷害)。"
 											],
 											"id": "031"
 										},
 										{
 											"type": "entries",
-											"name": "Giant Fist",
+											"name": "巨大的拳頭",
 											"page": 16,
 											"entries": [
-												"{@i Melee Weapon Attack}: +8 to hit, reach 15 ft., one object or creature. {@i Hit}: 16 ({@dice 3d10}) bludgeoning damage."
+												"{@i 近戰武器攻擊}：+8命中，射程15英尺，一個物體或生物。{@i 命中}:16({@dice 3d10})鈍擊傷害。"
 											],
 											"id": "032"
 										},
 										{
 											"type": "entries",
-											"name": "Lighthouse Energy Blast",
+											"name": "塔能量爆炸",
 											"page": 16,
 											"entries": [
-												"Magical power can be focused through a lighthouse beacon, requiring 1 round to gather energy and aim. The following round, the energy can be released. The beacon has AC 12, 75 hit points, immunity to poison and psychic damage, and vulnerability to cold. The explosion of energy can be treated as a {@spell 灼熱射線}, {@spell 火球術}, or {@spell 閃電束} spell, as the DM determines. More powerful features might require more time to recharge, or could be usable only a certain number of times per day. Such attacks might function at longer range but be unable to target creatures or objects within 60 feet of the lighthouse."
+												"魔法力量可以透過燈塔來聚焦，需要1輪的時間來收集能量和瞄準。下一輪，能量就可以釋放了。信標有AC12，75點生命值，對毒藥和精神傷害免疫，有寒冷易傷。能量爆發可以被當作{@spell 灼熱射線}、{@spell 火球術}或{@spell 閃電束}法術，由DM決定。更強大的功能可能需要更多的時間來充電，或者每天只能使用一定數量的時間。這樣的攻擊可以在較遠的範圍內進行，但不能攻擊距離燈塔60英尺以內的生物或物體。"
 											],
 											"id": "033"
 										}
@@ -900,11 +900,11 @@
 								},
 								{
 									"type": "entries",
-									"name": "Arcane Features",
+									"name": "奧術特徵",
 									"page": 16,
 									"entries": [
-										"At rank 3, an arcane feature provides a unique magical capability to a headquarters. A haunted headquarters might gain a permanent cohort of friendly undead servants, while a giant statue headquarters could gain the ability to allow the characters to see at great distances and through darkness or fog. A more generic arcane feature could instead grant any franchisee the ability to cast a specific spell of 6th level or lower, with a limitation of one casting per day.",
-										"An arcane feature should be something that doesn't fit within another category (specifically, a transportation or weapon feature), though the DM is the final judge of what arcane features are acceptable.",
+										"在階級3，一個奧術特徵為總部提供了一個獨特的魔法能力。一個鬧鬼的總部可能會得到一群友好的不死族僕人，而一個巨大的雕像總部可以讓角色看到很遠的地方，穿過黑暗或霧。一個更通用的奧術特性可以授予任何加盟商施放6級或更低等級特定法術的能力，但每天只能施放一次。",
+										"奧術特徵應該是不屬於另一個類別的東西(具體來說，是一個運輸或武器特性)，儘管DM有決定什麼奧術特徵是可接受的最終判斷。",
 										{
 											"type": "quote",
 											"entries": [
@@ -914,19 +914,19 @@
 										},
 										{
 											"type": "entries",
-											"name": "Ever-Changing Ship",
+											"name": "千變萬化的船",
 											"page": 16,
 											"entries": [
-												"Whether an oceangoing vessel or an airship, this headquarters can alter its appearance with illusion magic. Additionally, the appearance of some or all creatures aboard can be changed as if they were affected by a {@spell 偽裝術} spell. Franchisees can alter the appearance of the ship and its occupants a number of times per day, or can drop the illusory effects as needs be. The nature of the illusion magic means that the ship's size and features do not change, and individuals interacting with the ship or investigating its appearance have a chance to see the true form of the ship and its crew."
+												"無論是遠洋船隻還是飛艇，這個指揮部都可以用幻象魔法改變它的外觀。此外，船上的一些或所有生物的外觀可以改變，就像他們受到了一個{@spell 偽裝術}法術的影響。特許經營商可以每天多次改變船舶及其居住者的外觀，也可以根據需要減少虛幻效果。幻像魔法的本質是指船的大小和特徵不會改變，與船互動或研究其外觀的個體有機會看到船和船員的真實形態。"
 											],
 											"id": "035"
 										},
 										{
 											"type": "entries",
-											"name": "Spectral Wait Staff",
+											"name": "待命的幽靈員工",
 											"page": 16,
 											"entries": [
-												"A tavern headquarters (which already has a cosmetic feature to make it appear haunted) now gains spectral wait staff. The spectral staff serve customers expertly, and speak and understand speech as if intelligent. However, they are magical creations similar to those conjured by the {@spell 隱形僕役} spell, able to perform all the functions of such a creation and any other functions agreed to by the DM. Spectral staff can momentarily become insubstantial, along with anything they carry, allowing them to serve food and drink through walls. Any member of the franchise can spend an action to telepathically command one or more spectral staff members."
+												"一家酒館的總部(已經有了讓它看起來像鬧鬼的化妝特徵)現在獲得了幽靈服務員。幽靈員工熟練地為客戶服務，說話和理解語言就像有智慧一樣。然而，他們都是透過類似{@spell 隱形僕役}法術創造的，能夠執行所有此類生物和其他由DM同意的功能。幽靈員工可以在瞬間變得單薄，連同任何他們攜帶，允許他們提供食品和飲料穿牆。特許經營權的任何成員都可以透過心靈感應命令一個或多個幽靈員工。"
 											],
 											"id": "036"
 										}
@@ -935,35 +935,35 @@
 								},
 								{
 									"type": "entries",
-									"name": "Defensive Features",
+									"name": "防守特徵",
 									"page": 16,
 									"entries": [
-										"Also at rank 3, the headquarters gains one defensive feature, planned out by the players in collaboration with the DM. Ships and other vessels with statistics can gain an increase to hit points or AC. Or a general defensive feature could include the choice of any two effects noted in the {@spell 銅牆鐵壁} spell, which can be enabled or disabled by any franchise member.",
-										"Players are encouraged to be creative in thinking about defensive features. An airship might have a deck that can channel lightning to repel boarders. A wagon might have transparent windows as strong as steel, and the ability to retract any rails or platforms upon which attacking foes could stand. Defensive features might impose conditions on enemies, or even deal damage. The DM should limit damaging effects to dealing 10 damage to a single target (5 damage for a multitarget or area effect) per franchise rank. When a saving throw is required, a good DC is 12 + franchise rank.",
+										"總部在階級3，獲得一個防禦特徵，由玩家與DM合作策劃。船隻和其他船隻與統計資料可以增加生命值或AC。一般的防禦功能可能包括選擇任意兩個效應作用在{@spell 銅牆鐵壁}法術，可以由任何特許成員啟用或禁用。",
+										"玩家被鼓勵創造性地思考防守特徵。飛艇可能有一個甲板，可以引導閃電擊退登船者。一輛貨車可能有像鋼鐵一樣堅固的透明窗戶，並且能夠收回任何攻擊敵人可能站在上面的鐵軌或平臺。防禦功能可能會對敵人施加狀態，甚至造成傷害。DM應將傷害效果限制為每個等級對一個目標造成10點傷害(對一個多目標或區域效果造成5點傷害)。當需要豁免時，一個好的DC是12+特許等級。",
 										{
 											"type": "entries",
-											"name": "Carriage Ejector Platforms",
+											"name": "車架彈射器平臺",
 											"page": 16,
 											"entries": [
-												"A carriage gains potent defensive capabilities in the form of sections of its roof and walls set with powerful concealed springs. This defensive feature can be activated as a bonus action by the driver or any creature within 5 feet of them. When a creature steps or grabs onto a protected section, that creature must succeed on a Dexterity saving throw or be flung from the wagon to a distance of 10 feet per franchise rank. The creature takes falling damage as if it had fallen that distance."
+												"一輛馬車獲得了強大的防禦能力，其屋頂和牆壁的部分設定了強大的隱藏彈簧。這個防禦功能可以作為附贈動作，由司機或任何生物在5英尺內他們啟用。當一個生物跨步或抓住一個受保護的區域時，該生物必須透過敏捷豁免，或者從車中被投擲到每個特許等級x10英尺的距離。該生物承受墬落傷害，就好像它已經墬落那麼遠。"
 											],
 											"id": "038"
 										},
 										{
 											"type": "entries",
-											"name": "Electrified Floors and Rails",
+											"name": "電氣地板和導軌",
 											"page": 17,
 											"entries": [
-												"Specific areas of a ship or airship's floor and railings are warded with elemental lightning, up to an area the size of half the ship's upper deck. A character at the helm can activate this magic as a bonus action. Any creature making contact with a warded area takes 13 ({@dice 3d8}) lightning damage, and must succeed on a Constitution saving throw or have its speed reduced to 0 until the start of its next turn."
+												"一艘船或飛艇的地板和欄杆的特定區域被元素閃電覆蓋，面積可達船上層甲板的一半。在掌舵的角色可以作為一個附贈動作啟用這個魔法。任何與被阻擋區域接觸的生物都會受到13({@dice 3d8})閃電傷害，並且必須透過體質豁免，或者將速度降低到0，直到下一輪開始。"
 											],
 											"id": "039"
 										},
 										{
 											"type": "entries",
-											"name": "Grease Compartment",
+											"name": "滑脂室",
 											"page": 17,
 											"entries": [
-												"Whether a building, a vessel, or some other structure, a franchise is equipped with a compartment holding grease. When activated, nozzles release the grease either in a 30-foot cone or into a specific area no larger than 20 by 20 feet\u2014typically focusing on an area through which attacking creatures are likely to move. Any creature entering the greased area must succeed on a Dexterity saving throw or fall {@condition prone} and end its movement that turn. A creature driving a vehicle that enters the greased area must make an appropriate ability check against the save DC. On a failure, the vehicle veers {@dice 3d10 + 10} feet in a random direction, then ends its movement for the round."
+												"無論是建築物、船隻或其他結構，特許經營權都設有存放油脂的隔間。當啟動時，噴嘴會將油脂釋放到一個30英尺的錐形體中，或者釋放到一個不超過20x20英尺的特定區域——通常集中在攻擊生物可能移動的區域。任何進入油汙區域的生物必須透過敏捷豁免否則{@condition 伏地}，並結束該回合的移動。駕駛載具進入油汙區域的生物必須對豁免DC進行適當的能力檢查對抗。如果出現故障，載具會隨機偏向{@dice 3d10 + 10}英尺，然後結束這一輪的移動。"
 											],
 											"id": "03a"
 										}
@@ -972,43 +972,43 @@
 								},
 								{
 									"type": "entries",
-									"name": "Franchise Choice Features",
+									"name": "特許經營選擇特徵",
 									"page": 17,
 									"entries": [
-										"At ranks 3 and 4, a franchise can outfit its headquarters with any one feature from among the lower-tier features (cosmetic, expansion, transportation, or weapon features). In consultation with the DM, this might cover additional features to augment the headquarters' existing look or combat capability, or a plan to instead make an existing feature even stronger. A method of transportation might double its speed and remove an existing drawback, or an offensive feature could deal more damage or target more than one creature per round."
+										"在階級3和4，一個特許經營可以裝備其總部的任何一個功能從較低的功能(外觀、擴充套件、運輸或武器功能)。在與DM協商後，這可能包括增加總部現有外觀或作戰能力的附加功能，或者是使現有功能更加強大的計劃。一種運輸方式可以使它的速度加倍，並消除一個現有的缺點，或者一種進攻性的特徵可以造成更多的傷害，或者每輪攻擊一個以上的生物。"
 									],
 									"id": "03b"
 								},
 								{
 									"type": "entries",
-									"name": "Secret Features",
+									"name": "秘密特徵",
 									"page": 17,
 									"entries": [
-										"A secret feature, gained at rank 4, is one that remains unnoticed to most inspection, typically requiring a successful DC 25 Intelligence ({@skill Investigation}) check or Wisdom ({@skill Perception}) check to notice. A headquarters might have a secret exit that guarantees escape and allows franchise members or staff to leave and enter without detection. A secret feature should usually add in-game benefits, such as a potion-brewing laboratory in a secret level of a castle, or a secret cargo hold within a ship that can keep perishables fresh and provide endless stocks of food and water to crew and passengers.",
+										"在階級4獲得的一個秘密特徵是大多數檢查都沒有注意到的，通常需要一個DC25智力(調查)檢查或感知(觀察)檢查才能注意到。總部可能有一個秘密出口，保證逃跑，並允許特許經營成員或工作人員離開和進入而不被發現。一個秘密的功能通常應該新增遊戲內的好處，比如城堡的一個秘密級別的魔藥釀造實驗室，或者船上的一個秘密貨艙，可以保持易腐物品的新鮮，併為船員和乘客提供源源不斷的食物和水。",
 										{
 											"type": "entries",
-											"name": "Escape Pod",
+											"name": "逃生艙",
 											"page": 17,
 											"entries": [
-												"A walking statue's head can also serve as an escape pod. If the headquarters is ever destroyed, or if the character controlling the statue activates the escape mode as an action, the head detaches from the body and takes to the air with a flying speed of 80 feet. The flight lasts for up to 5 rounds, and is directed by the same controls that originally controlled the statue. If the head is not on the ground when the flight ends, it falls and any creatures within take falling damage."
+												"行走雕像的頭部也可以作為逃生艙。如果總部被摧毀，或者控制雕像的角色激活了逃跑模式，頭部就會脫離身體，以80英尺的飛行速度飛到空中。飛行持續5輪，由最初控制雕像的相同控制裝置控制。如果飛行結束時頭部沒有著地，它就會掉下來，裡面的任何生物都會受到掉落的傷害。"
 											],
 											"id": "03d"
 										},
 										{
 											"type": "entries",
-											"name": "Extradimensional Tavern",
+											"name": "維度酒館",
 											"page": 17,
 											"entries": [
-												"Several of the doors in a franchise's tavern are inscribed with runes. Anyone who traces a rune while speaking a passphrase can access their choice of ten extradimensional rooms, 20 feet on a side. These rooms can function as libraries, laboratories, meeting rooms, kitchens, prisons, private quarters, and more, with each room's setup and contents chosen when the rooms are first installed. Each room's initial furnishing and equipment are included, though characters can later add to these features as they wish."
+												"特許經營酒店的幾扇門上都刻有符文。任何說密碼並追蹤符文的人都可以進入他們選擇的10個超維度房間，每邊20英尺。這些房間可以用作圖書館、實驗室、會議室、廚房、監獄、私人宿舍等，每個房間的設定和內容都是在第一次安裝時選擇的。每個房間最初的傢俱和裝置都包括在內，不過角色們以後可以根據自己的意願新增這些功能。"
 											],
 											"id": "03e"
 										},
 										{
 											"type": "entries",
-											"name": "Glider Launcher",
+											"name": "滑翔機發射器",
 											"page": 17,
 											"entries": [
-												"A hidden compartment within an airship holds ten gliders. A secret door leads to the compartment, which features an exterior escape hatch activated from within any glider. Each glider accommodates one Medium or smaller creature and up to 50 pounds of gear, has a flying speed of 60 feet, and must descend at least 20 feet each round. A glider can be piloted as an action by any character with proficiency with flying vehicles. Characters without such proficiency might need to make ability checks of the DM's choosing to pilot a glider successfully. A glider weighs 100 pounds, has AC 14, 50 hit points, and is immune to poison and psychic damage."
+												"飛艇內的一個暗室可容納十架滑翔機。一扇暗門通向這個隔間，裡面有一個外部逃生口，可以從任何滑翔機裡啟動。每架滑翔機可容納一箇中等或更小的生物，最多可攜帶50磅重的裝備，飛行速度為60英尺，每輪必須下降至少20英尺。滑翔機可以作為任何角色熟練駕駛飛行器的以一個動作操作。沒有這種熟練技能的角色可能需要對DM選擇成功駕駛滑翔機的能力進行檢查。滑翔機重100磅，AC14、50點生命值，對毒藥和精神傷害免疫。"
 											],
 											"id": "03f"
 										}
@@ -1020,11 +1020,11 @@
 						},
 						{
 							"type": "entries",
-							"name": "Franchise Costs",
+							"name": "特許經營成本",
 							"page": 17,
 							"entries": [
-								"Running an Acquisitions Incorporated franchise offers countless benefits to an adventuring party\u2014but those benefits aren't cheap. Operating the franchise, installing and maintaining franchise features, paying staff, creating merchandise with proper branding, settling legal issues, and more are all encompassed by the baseline cost for a franchise's headquarters, a multiplier from the franchise's rank, and the franchise party's business performance for the month.",
-								"If a franchise's costs leave a party low on cash, that's a sign that it's time to go adventuring. Alternatively, characters might use downtime to structure a leaner business or engage in non-adventuring activities to bring in more gold (see \"{@book Franchise Tasks and Downtime|AI|1|Franchise Tasks and Downtime}\" later in this chapter for more information). A franchise's majordomo handles these finances and makes all necessary payments to Head Office, suppliers, and other agents\u2014as long as sufficient funds are available.",
+								"經營一家Acquisitions Incorporated的特許經營權會給冒險團隊帶來無數好處，但這些好處並不便宜。經營加盟店、安裝和維護加盟店的特色、支付員工工資、建立具有適當品牌的商品、解決法律問題，以及更多，都包含在加盟店總部的基本成本、加盟店階級的乘數以及加盟方當月的經營業績之中。",
+								"如果特許經營的成本讓隊伍現金不足，那就說明是時候去冒險了。或者，角色可以利用休整日時間來構建更精簡的業務，或者從事非冒險活動來獲取更多的金幣(有關更多資訊，請參閱本章後面的“{@book 任務和閒置時間|AI|1|任務和閒置時間}”)。只要有足夠的資金，特許經營的總監負責處理這些財務，並向總部、供應商和其他代理商支付所有必要的款項。",
 								{
 									"type": "entries",
 									"name": "Baseline Costs",
