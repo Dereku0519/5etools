@@ -555,11 +555,11 @@
 									"page": 11,
 									"entries": [
 										"正如玩家手冊第5章的 “{@book 服務|PHB|5|服務}”部分所描述的，未訓練僱員提供一般的勞動力，可以充當建築工人、清潔工、搬運工和其他工人。未訓練僱員可以為特許經營企業或其盟友工作，比如為貴族家庭打理花園，或幫助商人卸貨。他們不會參與戰鬥，也不會離開總部加入冒險的隊伍。",
-										"DM應至少指定一名傭工作為與未訓練僱員進行任何互動的領導者。為僱傭者提供類似的背景(比如一群退役士兵或改過自新的罪犯)可以增加這個群體的個性。考慮使用城主指南{@book 第四章|DMG|-1|創建非玩家角色}中的規則，將一個骰的結果應用到整個團體。這些僱工個個都能剃光頭髮，體格健壯，但心不在焉，能演奏各種樂器，能使用各種各樣的誓言和感嘆詞，等等。",
-										"Group ideals, bonds, and flaws, along with a shared history, can all add depth to a group of untrained hirelings. Those musicians might be connected by the ideal of tradition, and bound to the franchise to protect a cultural heirloom they value above all else. Their flaw and secret could be that they stole the heirloom from their former employer, a rival merchant organization. Over time, the same hirelings might show up as part of the characters' adventures time and time again, revealing aspects of their past and creating story continuity.",
+										"DM應至少指定一名傭工作為與未訓練僱員進行任何互動的領導者。為僱傭者提供類似的背景(比如一群退役士兵或改過自新的罪犯)可以增加這個群體的個性。考慮使用{@book 城主指南第四章|DMG|-1|創建非玩家角色}中的規則，將一個骰的結果應用到整個團體。這些僱工個個都能剃光頭髮，體格健壯，但心不在焉，能演奏各種樂器，能使用各種各樣的誓言和感嘆詞，等等。",
+										"群體理想、羈絆、缺陷，以及共同的歷史，都能給一群未訓練僱員增加深度。這些音樂家可能因為傳統的理想而聯絡在一起，並被授權保護他們最珍視的文化遺產。他們的缺點和秘密可能是他們從他們的前僱主，一個競爭對手的商業組織那裡偷了傳家寶。隨著時間的推移，同樣的僱工可能會一次又一次地出現在角色的冒險中，揭示他們過去的一些方面，並創造出故事的連續性。",
 										{
 											"type": "inset",
-											"name": "Job Title and Benefits",
+											"name": "職位和福利",
 											"page": 11,
 											"entries": [
 												"What the {@book Player's Handbook|PHB} calls untrained hirelings are often referred to as \"subemployees\" within an Acquisitions Incorporated franchise, while skilled hirelings typically gain the more prestigious title of \"intern.\" It's entirely up to individual franchisees what awesome titles they bestow upon their staff members in addition to (or, indeed, in lieu of) perks such as an occasional wage."
@@ -571,7 +571,7 @@
 								},
 								{
 									"type": "entries",
-									"name": "Skilled Hirelings",
+									"name": "熟練僱員",
 									"page": 12,
 									"entries": [
 										{
@@ -584,28 +584,28 @@
 											"width": 792,
 											"height": 1000
 										},
-										"A skilled hireling has one or more skill, weapon, or tool proficiencies. A franchise can request skilled hirelings when needed (up to the maximum allowed by franchise rank), with the players describing the concept behind the hirelings and selecting one proficiency for each. The DM can then customize the hirelings as desired, perhaps by adding additional proficiencies or adjusting their combat statistics.",
-										"Skilled hirelings can be fired and hired as needed. A franchise might bring on a couple of thugs to act as distraction during a street fair, then release those NPCs to hire a different set of skilled hirelings to conduct franchise tasks and downtime activities.",
-										"Hirelings cannot perform more than one task at a time. A full complement of skilled hirelings assisting the party on a mission precludes other skilled hirelings from helping with franchise tasks and downtime activities until the mission is completed. As with untrained hirelings, detailing a group background and assigning personality characteristics to a group leader can make for a fun play experience.",
+										"熟練僱員擁有一項或多項技能、武器或工具的熟練程度。一個特許經營可以在需要的時候要求熟練僱員(根據特許經營等級的最大允許)，玩家描述僱工背後的概念，併為每個僱工選擇一種熟練程度。然後DM可以根據需要定製僱傭兵，也許透過增加額外的熟練程度或者調整他們的戰鬥統計資料。",
+										"熟練僱員可以根據需要被解僱和僱傭。一個特許經營可能會讓幾個暴徒在街頭集市上分散注意力，然後釋放這些NPC去僱傭一組不同的熟練僱工來執行特許經營任務和休整日活動。",
+										"僱員一次不能執行一項以上的任務。協助一方完成任務的熟練僱員的完整補充排除了其他熟練僱員在任務完成前幫助完成特許經營任務和休整日活動。就像未訓練僱員一樣，詳細描述一個團隊的背景，並將個性特徵分配給一個團隊領導者，可以創造一個有趣的遊戲體驗。",
 										{
 											"type": "entries",
-											"name": "Adventuring",
+											"name": "冒險",
 											"page": 12,
 											"entries": [
-												"Characters can adventure with up to one skilled hireling at a time. An NPC with a challenge rating of roughly half the franchise rank works well for most adventures, providing utility without disrupting balance. The loyalty system described in {@book chapter 4|DMG|4|Optional Rule: Loyalty} of the {@book Dungeon Master's Guide|DMG} can be used to determine whether the hireling remains dedicated to the party's goals, or the DM can make that decision on the basis of how the adventure plays out and the characters' attitude toward the adventuring NPC."
+												"角色可以與一個熟練僱員一起冒險。一個NPC的挑戰等級大約是遊戲等級的一半，這對於大多數冒險遊戲來說都是有效的，在不破壞平衡的情況下提供了效用。{@book 城主指南第四章|DMG|-1|創建非玩家角色}中描述的忠誠系統可以用來確定僱傭者是否仍然致力於團隊的目標，或者DM可以根據冒險的過程以及角色對冒險NPC的態度來做出決定。"
 											],
 											"id": "018"
 										},
 										{
 											"type": "entries",
-											"name": "Tasks and Downtime",
+											"name": "任務和閒置時間",
 											"page": 12,
 											"entries": [
-												"Skilled hirelings can also be assigned to franchise tasks, as described in the \"Franchise Tasks and Downtime\" section later in this chapter.",
+												"熟練僱員也可以被分配到特許經營任務中，如本章後面的“{@book 任務和閒置時間|AI|1|任務和閒置時間}”一節所述。",
 												{
 													"type": "quote",
 													"entries": [
-														"Hirelings are kindling in the fire of opportunity!"
+														"僱工們點燃了機會之火"
 													],
 													"by": "Jim Darkmagic"
 												}
@@ -617,11 +617,11 @@
 								},
 								{
 									"type": "entries",
-									"name": "Crew",
+									"name": "員工",
 									"page": 12,
 									"entries": [
-										"Crew are skilled hirelings trained in tasks pertaining to the physical maintenance of a franchise (for example, servers or gardeners) or the navigation of a mobile headquarters (sailors for a seagoing franchise, engineers for a giant hollow statue, and so on). Crew do not leave a franchise and cannot perform franchise tasks. They typically run rather than fight back when attacked, though the DM can decide otherwise. If a mobile franchise headquarters requires more crew than is granted by the franchise's rank, the characters must hire the remainder (typically at the skilled hireling cost of 2 gp per day).",
-										"Hiring crew can become a cooperative roleplaying activity. Potential crew might hear of Acquisitions Incorporated or the party's exploits and come to interview with the franchisees. Choices might be offered by the DM, as between a team of ex-militia who lost their last battle and a crew of recently released criminals who swear they were wrongly imprisoned. Names, personalities, and roles can be assigned to crew by the DM and the players. Rather than simply interacting with the cook and the first mate, the characters can instead deal with Pepper, the chef who loves spicy foods, and Brazen, the veteran sailor who always talks back, creating the potential for entertaining interactions as the franchise grows."
+										"員工是經過專業熟練僱員，他們的任務與特許經營權的物理維護(例如，服務員或園丁)或移動總部的導航(航海特許經營的水手，巨型空心雕像的工程師，等等)有關。員工不得離開特許經營場所，不得執行特許經營任務。當受到攻擊時，它們通常會逃跑而不是反擊，儘管DM可以做出其他決定。如果一個移動特許經營總部需要位元許經營等級更多的工作人員，角色必須僱傭剩餘的人員(通常是每天2gp的熟練僱傭成本)。",
+										"僱傭員工可以成為一種合作的角色扮演活動。潛在的員工可能聽說了Acquisitions Incorporated或隊伍的功績，並來採訪加盟商。DM可能會提供一些選擇，比如在最後一場戰鬥中失敗的前民兵隊伍和一群最近獲釋的罪犯之間做出選擇，這些罪犯發誓說他們被錯誤地監禁了。名字，個性，和角色可以分配給乘員由DM和玩家。除了簡單地與廚師和大副互動，角色還可以與喜歡辛辣食物的廚師Pepper和老水手Brazen互動，隨著劇情的發展，他們之間的互動也會越來越有趣。"
 									],
 									"id": "01a"
 								}
@@ -630,7 +630,7 @@
 						},
 						{
 							"type": "entries",
-							"name": "Headquarters Features",
+							"name": "總部特色",
 							"page": 12,
 							"entries": [
 								"Acquisitions Incorporated Head Office provides the members of each franchise with a place to call their own. It might not be initially impressive (cleaning any old blood stains is the franchisees' responsibility). But over time, characters in an Acq Inc campaign are granted resources to help construct the headquarters of their dreams! Each franchise rank affords the characters a number of choices, allowing customization and creativity. Sample features are provided as guidelines, but a franchise's features can include literally anything decided on and agreed to by the players and the DM.",
@@ -663,11 +663,11 @@
 								},
 								{
 									"type": "entries",
-									"name": "Starter Headquarters",
+									"name": "入門總部",
 									"page": 13,
 									"entries": [
-										"Each franchise's starter headquarters is a mundane site, which has often been selected or handed down by Acquisitions Incorporated. The characters' initial base of operations could be a ruined tower, a worn horse-drawn carriage, a beat-up fishing boat, a dilapidated store or farm, or any similar structure or site. The DM might direct the characters toward a single ideal location, or might provide a range of options for players and characters to choose from. And of course, many potential franchise locations will have an interesting past\u2014a haunted mansion, a mysterious lighthouse, an old wizard's tower filled with malfunctioning magic, and so forth.",
-										"The DM approves the headquarters concept and decides how large or small the initial structure can be, as well as any useful features. DMs and players can work together to create a map of the headquarters and its surroundings. {@book Chapter 5|DMG|-1} of the {@book Dungeon Master's Guide|DMG} can help detail both wilderness and urban locations.",
+										"每個特許經營的初始總部都是一個普通的地點，通常由Acquisitions Incorporated選擇或接手。角色最初的行動基礎可能是一座廢棄的塔，一輛破舊的馬車，一艘破舊的漁船，一個破舊的商店或農場，或任何類似的結構或地點。DM可能會將角色導向一個理想的位置，或者為玩家和角色提供一系列選擇。當然，許多潛在的特許經營地點將會有一個有趣的過去——鬧鬼的宅邸，神秘的燈塔，充滿故障魔法的老巫師塔，等等。",
+										"DM批准了總部的概念，並決定初始結構的大小，以及任何有用的功能。DM和玩家可以一起建立一個總部和周圍環境的地圖。{@book 城主指南第五章|PHB|5}可以幫助詳細描述荒野和城市的位置。",
 										{
 											"type": "inset",
 											"name": "Lifestyle Expenses",
@@ -3264,7 +3264,7 @@
 				},
 				{
 					"type": "section",
-					"name": "Franchise Tasks and Downtime",
+					"name": "任務和閒置時間",
 					"page": 34,
 					"entries": [
 						"As talked about in the {@book Player's Handbook|PHB} and the {@book Dungeon Master's Guide|DMG}, downtime activities allow players and DMs to make the breaks between adventures into a compelling part of the campaign. In between the highlights of slogging through dungeons, infiltrating death cults, and being generally heroic, characters can practice professions, engage in research, create special items, and indulge other activities beyond adventuring.",
