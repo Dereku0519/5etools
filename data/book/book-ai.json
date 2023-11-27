@@ -851,7 +851,7 @@
 													"entries": [
 														"龍與地下城提供了廣泛的遊戲風格，並與許多不同型別的戰役故事。{@book 城主指南|DMG}談到了一些能夠塑造D&D戰役的最常見的幻想型別，包括戰役的高魔法、低魔法或介於兩者之間的D&D標準。",
 														"Acquisitions Incorporated戰役有自己獨特的感覺，正如在{@book 本書第一章|AI|0}中談到的。這種感覺部分來自角色從特許經營功能和公司職位中獲得的實質性好處——機械裝備、魔法物品、強大的法術效果等等。這些好處是自動獲得的，作為一般獎勵，為角色的冒險成功推動特許經營的進展。因此，重要的是，每個人都要意識到，在冒險過程中獲得的常規魔法中新增這些內建的戰役優勢將如何提升角色的力量。",
-														"For an Acquisitions Incorporated campaign meant to feel and play like standard D&D, the DM should consider creating a low-magic campaign, and letting the benefits of company positions and franchise features fill in the magical gaps. A standard campaign played with the rules in this book should be treated as a high magic campaign, with the DM and the players understanding that the difficulty of encounters and other tasks might need to be ramped up to offer a real challenge to the characters. Of course, nothing prevents anyone from playing a high magic campaign with the Acquisitions Incorporated rules. But DMs and players should all be aware that doing so will create extremely powerful characters\u2014who will no doubt attract extremely powerful enemies and threats as a matter of course."
+														"對於像標準D&D一樣的Acquisitions Incorporated戰役，DM應該考慮建立一個低魔法的戰役，並讓公司職位和特許經營功能的好處填補魔法的空白。按照本書規則進行的一場標準戰役應該被視為一場高魔法戰役，DM和玩家都明白可能需要增加遭遇戰和其他任務的難度，才能給角色帶來真正的挑戰。當然，沒有什麼能阻止任何人利用Acquisitions Incorporated規則玩一場高魔法的遊戲。但是DM和玩家都應該意識到這樣做將創造出非常強大的角色——毫無疑問，這些角色將吸引非常強大的敵人和威脅。"
 													],
 													"id": "02f"
 												}
@@ -863,10 +863,10 @@
 								},
 								{
 									"type": "entries",
-									"name": "Weapon Features",
+									"name": "武器特徵",
 									"page": 16,
 									"entries": [
-										"At rank 2, the members of a franchise can add a weapon to their headquarters, choosing from the options in the \"{@book Siege Equipment|DMG|8|Siege Equipment}\" section of chapter 8 of the {@book Dungeon Master's Guide|DMG}. The DM can limit those options or change the details of specific choices, and players can also design unique offensive features, subject to approval by the DM. For example, a walking statue that strikes with a fist could be treated as a ram\u2014or the DM and the players might agree that it would be fun to use some of the effects of {@spell 畢格比之掌} for such an attack.",
+										"在階級2，玩家可以從城主指南第八章“{@book 攻城裝備|DMG|8}”部分的選項中選擇武器新增到他們的總部。DM可以限制這些選項或改變具體的細節的選擇，而且玩家也可以設計獨特的進攻特點，由DM批准。例如，一個行走雕像，拳頭打擊可以視為一個攻城錘，或DM和玩家們或許會同意這個說法，用{@spell 畢格比之掌}的效果來應用，這將是有趣的一些影響。",
 										"Most siege weapons (whether mechanical or magical) require two characters, crew, or skilled hirelings to operate, and such weapons might be slow to reload or recharge. Headquarters weapons are not particularly effective against small bands of creatures (such as a group of goblins), but they can be useful against a single large threat (such as a dragon). If siege weapons are abused by franchisees, they might be targeted by enemies, break down, or require costly maintenance each time they are employed in battle.",
 										{
 											"type": "entries",
