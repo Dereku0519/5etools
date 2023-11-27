@@ -1027,94 +1027,94 @@
 								"如果特許經營的成本讓隊伍現金不足，那就說明是時候去冒險了。或者，角色可以利用休整日時間來構建更精簡的業務，或者從事非冒險活動來獲取更多的金幣(有關更多資訊，請參閱本章後面的“{@book 特許經營的任務和閒置時間|AI|1|特許經營的任務和閒置時間}”)。只要有足夠的資金，特許經營的總監負責處理這些財務，並向總部、供應商和其他代理商支付所有必要的款項。",
 								{
 									"type": "entries",
-									"name": "Baseline Costs",
+									"name": "最低成本",
 									"page": 17,
 									"entries": [
-										"The baseline monthly cost of a franchise is calculated based on the franchise's headquarters, as noted on the Baseline Costs table on the next page. The costs on this table differ from the costs found in the \"{@book Recurring Expenses|DMG|6|Recurring Expenses}\" section of chapter 6 in the {@book Dungeon Master's Guide|DMG}. (That section details the costs characters might expect to pay to own an inn, a keep, or other types of properties.) This is because franchise costs include a tithe to Head Office, repayment to Acquisitions Incorporated for funding the initial construction or purchase of the headquarters, the use of approved contractors for construction and maintenance, and other subtle fees.",
-										"Baseline costs are for representative dwellings, and can be adjusted by the DM as needs be. A noble estate that is the envy of other nobles might demand expenditures of double or triple the baseline cost. A franchise's baseline costs might also change during the course of the campaign. A party might initially start out headquartered in an abandoned lighthouse with monthly expenses of 250 gp. But as time passes and headquarters features are added, that lighthouse might grow in size, weapon features, and magic to resemble a fortified tower. The DM will modify baseline costs as needed to fit the headquarters and the campaign style.",
+										"最低成本如下最低成本表所示，特許經營的基線月成本是根據特許經營總部計算的。此表中的成本與城主指南第六章“{@book 週期開支|DMG|6}”部分中的成本不同。(這一節詳細描述了擁有一家旅店、一筆生活費或其他型別的財產所需支付的費用。)這是因為特許經營成本包括向總部繳納十分之一的稅，償還為最初建設或購買總部而合併的購併款項，使用經批准的承包商進行建設和維修，以及其他微妙的費用。",
+										"最低成本是標誌性的指標，可以根據需要由DM調整。一個令其他貴族羨慕的貴族產業，可能需要兩倍或三倍於基本成本的支出。特許經營的基本成本也可能在活動過程中發生變化。一個團隊可能最初的總部設在一個廢棄的燈塔，每月的費用為250gp。但隨著時間的推移和總部功能的增加，燈塔可能會變得更大，武器功能，和魔法像一個加強塔。DM將根據需要修改基線成本，以適應總部和戰役風格。",
 										{
 											"type": "table",
-											"caption": "Baseline Costs",
+											"caption": "最低成本表",
 											"colStyles": [
 												"col-10",
 												"col-2 text-right"
 											],
 											"colLabels": [
-												"Franchise Headquarters",
-												"Monthly Cost"
+												"特許經營總部",
+												"每月花費"
 											],
 											"rows": [
 												[
-													"Horse-drawn carriage or wagon",
+													"馬車或篷車",
 													"15 gp"
 												],
 												[
-													"Farm or rural enterprise",
+													"農場或農村企業",
 													"20 gp"
 												],
 												[
-													"Settlement enterprise (guildhall, inn, tavern, shop, and so forth)",
+													"定居點企業（市政廳、旅館、酒館和商店等）",
 													"120 gp"
 												],
 												[
-													"Sailing ship, including all port fees",
+													"帆船，包括所有港口費",
 													"200 gp"
 												],
 												[
-													"Remote enterprise (fort, lighthouse, trading post, roadhouse, and so forth)",
+													"偏遠企業（堡壘、燈塔、貿易站和旅館等）",
 													"250 gp"
 												],
 												[
-													"Noble estate, large manor, fortified tower",
+													"高貴的莊園、大莊園和強化塔",
 													"350 gp"
 												],
 												[
-													"Airship",
+													"飛艇",
 													"800 gp"
 												],
 												[
-													"Giant walking statue, magic locomotive",
+													"巨型行走雕像和魔法機關車",
 													"1,000 gp"
 												],
 												[
-													"Keep or small castle",
+													"要塞或小城堡",
 													"3,000 gp"
 												],
 												[
-													"Large castle or palace",
+													"大城堡或宮殿",
 													"12,000 gp"
 												]
 											]
 										},
-										"Some characters might decide to maintain more than one headquarters for their franchise, or to control additional sites as part of the franchise's overall operation. A franchise might use a ship as its headquarters, while also owning a number of remote trading posts run by franchise staff. The costs for all such \"virtual headquarters\" should be added together to derive one monthly baseline cost."
+										"一些角色可能會決定為他們的特許經營保留一個以上的總部，或者控制額外的地點作為特許經營的一部分。特許經營企業可以將一艘船作為其總部，同時擁有由特許經營員工運營的若干偏遠交易崗位。所有這些“虛擬總部”的費用應加在一起，得出每月的基線費用。"
 									],
 									"id": "041"
 								},
 								{
 									"type": "entries",
-									"name": "Franchise Rank Multiplier",
+									"name": "特許經營權階級倍數",
 									"page": 18,
 									"entries": [
-										"The multiplier on the Franchise Advancement table is applied to a franchise's baseline cost. This represents the increased costs a franchise faces as it expands into larger markets."
+										"特許經營進步表上的乘數應用於特許經營的基線成本。這代表了特許經營企業在進入更大市場時所面臨的成本增加。"
 									],
 									"id": "042"
 								},
 								{
 									"type": "entries",
-									"name": "Monthly Business Performance",
+									"name": "每月業務表現",
 									"page": 18,
 									"entries": [
-										"Each month, a franchise performs the running a franchise task, which can be found in the \"{@book Franchise Tasks and Downtime|AI|1|Franchise Tasks and Downtime}\" section later in this chapter. The result of this task is used to calculate the final monthly cost, and is deducted from the franchise's coffers."
+										"每個月，一個特許經營企業執行一個特許經營任務，這可以在本章後面“{@book 特許經營的任務和閒置時間|AI|1|特許經營的任務和閒置時間}”"
 									],
 									"id": "043"
 								},
 								{
 									"type": "entries",
-									"name": "Defaulting",
+									"name": "違約",
 									"page": 18,
 									"entries": [
-										"No self-respecting franchise would ever run out of money and fail to make its monthly payments. Right? Were that to happen, the amount owed\u2014plus a modest 15 percent penalty\u2014would be due to Head Office the following month. Failing to make payments\u2014and especially defaulting on two or more payments in a row\u2014is likely to trigger campaign consequences. Head Office might send inspectors to a troubled franchise, or assign the franchisees a difficult (and hopefully profitable) mission. Rival groups and entrepreneurs might smell blood and attempt to attack the franchise or take over its markets. Nefarious NPCs will most certainly come calling.",
-										"Defaulting on franchise payments can also strain relationships with nobles, merchants, and others who value a franchise more for its assets than for the characters. Such relationships typically turn frosty until the characters are able to prove that the franchise is back on its feet."
+										"任何一家有自尊的特許經營企業都不會因為資金耗盡而無法支付月供。對吧？如果發生這種情況，所欠金額——加上15%的罰款——將在下個月交給總部。未能付款——尤其是連續兩次或兩次以上付款違約——可能會引發戰役活動的後果。總部可能會派遣檢查員到一個陷入困境的特許經營企業，或者給特許經營企業指派一項困難(但有望盈利)的任務。競爭對手和企業家可能嗅到血腥味，試圖攻擊特許經營或接管其市場。邪惡的NPC肯定會來找你。",
+										"拖欠特許經營權的付款也會使他們與貴族、商人以及其他看重特許經營權的人的關係變得緊張。這種關係通常會變得冷淡，直到角色們能夠證明這加盟業已經重新振作。"
 									],
 									"id": "044"
 								}
