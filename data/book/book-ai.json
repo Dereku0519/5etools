@@ -1178,7 +1178,7 @@
 								{
 									"type": "quote",
 									"entries": [
-										"{@i 我已經看到了百萬個地方，我把它們都畫出來了}!"
+										"{@i 我已經看到了百萬個地方，要把他們都畫出來}!"
 									],
 									"by": "Cartographer's boast"
 								},
@@ -1205,7 +1205,7 @@
 										],
 										[
 											"2",
-											"{@item Spyglass of Clairvoyance|AI}、安全旅程(參見下述)"
+											"{@item Spyglass of Clairvoyance|AI}、安全旅程的故事(參見下述)"
 										],
 										[
 											"3",
@@ -1213,7 +1213,7 @@
 										],
 										[
 											"4",
-											"{@item Elder Cartographer's Glossography|AI}、大型安全旅程"
+											"{@item Elder Cartographer's Glossography|AI}、大型安全旅程的故事"
 										]
 									]
 								},
@@ -1229,28 +1229,28 @@
 								},
 								{
 									"type": "entries",
-									"name": "It's a Rental",
+									"name": "這是租賃",
 									"page": 19,
 									"entries": [
-										"At rank 1, at the start of any mission, you can requisition a second-hand {@creature draft horse} and {@item cart|PHB} (barely functional), {@creature Riding Horse||riding horses} and {@creature Pony||ponies} (typically well aged, one for each party member), passage on a ship or ferry (might require minor labor as part of the fare), and similar transportation. Any damage or losses to requisitioned equipment is expected to be repaid to Head Office."
+										"在階級1時，在開始任何任務之前，可以徵用一個二手馬車(幾乎沒有功能)，騎著馬或小馬(適當年齡，每個隊伍一匹)，登上一艘渡輪(可能需要輕微勞動的一部分費用)和類似的交通工具。被徵用的裝置如有損壞或損失，應向總公司賠償。"
 									],
 									"id": "04c"
 								},
 								{
 									"type": "entries",
-									"name": "Spyglass of Clairvoyance",
+									"name": "透視的千里眼",
 									"page": 19,
 									"entries": [
-										"At rank 2, your Head Office-supplied spyglass becomes a common magic item. As an action, you can look through the {@item spyglass of clairvoyance|AI} at a location within 1 mile of you that is obstructing your view, such as a mountain, castle, or forest. You must then succeed on a DC 15 Wisdom check using {@item cartographer's tools|PHB} to map the natural terrain found within three miles of that chosen point. You do not gain any knowledge of creatures, structures, or anything other than natural terrain. This property of the spyglass cannot be used again until the next dawn."
+										"在等級2，你的總部提供的遠鏡變成了一個普通的魔法物品。使用一個動作，你可以使用透視望遠鏡在距離你1英里內的位置上觀察，例如阻礙你視野的山、城堡或森林。然後，你必須使用製圖師工具進行一次DC15的智力檢定，以繪製該選定點附近三英里內的自然地形。你不會對生物、建築或除了自然地形之外的任何事物有任何了解。這個望遠鏡的這個特性直到第二天黎明前都不能再次使用。"
 									],
 									"id": "04d"
 								},
 								{
 									"type": "entries",
-									"name": "安全旅程",
+									"name": "安全旅程的故事",
 									"page": 19,
 									"entries": [
-										"Starting at rank 2, you gain the ability to perform a 45-minute ritual using your {@item cartographer's tools|PHB}, maps, and 50 gp in consumed material components. By doing so, you ensure safe travel for you and other creatures, from your current location to another location you could normally reach within one day. The destination must be one to which you have traveled previously, or for which you have an accurate route and map.",
+										"在等級2開始，你獲得了使用你的製圖師工具、地圖和價值50金幣的消耗性材料成分進行45分鐘儀式的能力。通過這樣做，你確保了你和其他生物的安全旅行，從你當前的位置到正常情況下一天內可以到達的另一個位置。目的地必須是你先前曾經前往過的地方，或者你擁有精確的路線和地圖。",
 										{
 											"type": "image",
 											"href": {
@@ -1260,17 +1260,17 @@
 											"width": 773,
 											"height": 1000
 										},
-										"If your tale is told with reverence and precision, you and up to six other creatures plus their gear (including vehicles or mounts) become encircled in a magical bubble and are pulled into the {@book Border Ethereal|DMG|2|Border Ethereal} (see chapter 2 of the {@book Dungeon Master's Guide|DMG}). During the ritual, you tell a story of your future journey, relating details of what will be seen en route. The DM can choose to add to the story, imparting additional details or planting seeds for future adventures. If you wish, the ritual can be ended early, allowing the party to encounter what's being described by the DM.",
-										"Whenever the ritual is ended or interrupted by you, all the travelers arrive safely at the destination. At the DM's discretion, all the travelers affected by the ritual can gain the benefit of either a short rest or a long rest during the voyage."
+										"如果你的故事被謹慎而精確地講述，你和最多六個其他生物以及它們的裝備（包括車輛或坐騎）將被包裹在一個魔法泡泡中拉入{@book 乙太位面|DMG|2|乙太位面}。在儀式期間，你講述未來旅程的故事，關於途中會見到的細節。DM可以選擇添加故事，提供額外的細節或種下未來冒險的種子。如果你願意，儀式可以提前結束，讓隊伍遇到DM所描述的內容。",
+										"每當儀式被你結束或中斷時，所有旅行者都安全抵達目的地。在DM的酌情下，受到儀式影響的所有旅行者在航行期間都可以獲得短休息或長休息的好處。"
 									],
 									"id": "04e"
 								},
 								{
 									"type": "entries",
-									"name": "Map of Shortcuts",
+									"name": "捷徑地圖",
 									"page": 20,
 									"entries": [
-										"At rank 3, your map case becomes a common magic item. In addition to storing normal maps, your {@item cartographer's map case|AI} can be used to generate a special map identifying a shortcut. You can use your action to make a DC 15 Wisdom ({@skill Perception}) check, with a success revealing a map buried in your {@i cartographer's map case} noting a relevant shortcut . Your travel time is reduced by half while you follow that route. If you succeed at the check by 5 or more, the map includes notes on the terrain, granting you advantage on the next ability check you make to travel through the mapped area in the next hour. Once you use this feature, you cannot use it again until you finish a long rest.",
+										"在等級3時，你的地圖盒成為一個普通的魔法物品。除了儲存普通地圖外，你的製圖師地圖盒還可以用來生成一張標識著捷徑的特殊地圖。你可以使用一個動作進行一次DC15的感知（洞察）檢定，成功的話會發現在你的製圖師地圖盒中有一張標記著相應捷徑的地圖。當你沿著該路線行進時，你的旅行時間減少一半。如果你的檢定結果超過DC難度5，地圖上還包括有關地形的註釋，讓你在下一個小時內進行通過該地區的能力檢定時獲得優勢。使用此能力後，你必須完成一次長休息才能再次使用。",
 										{
 											"type": "inset",
 											"name": "Half-Orc Cartographer (Fighter)",
