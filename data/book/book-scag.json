@@ -38,12 +38,12 @@
 				"除最偏远或与世隔绝的地方外，费伦人们都已习惯看到不同文化、不同民族、不同种族的人。但也只有在最国际化的地区，这种轻松接受的心情才可延展到邪恶的类人种族（比如类地精、兽人和卓尔），而其他更危险的生物就更不在话下。而冒险者们却往往更加宽容，更能接受那些来自陌生土地或是体态异常的流亡者、不合群者和寻求救赎者。",
 				{
 					"type": "section",
-					"name": "The Sword Coast and the North",
+					"name": "劍灣與北地",
 					"page": 7,
 					"entries": [
-						"Running along the Sea of Swords from north of Amn to the Sea of Moving Ice, the Sword Coast is a narrow band of territory dominated by the city-states of the area that use the sea for trade. For most who care about such things, the area is delimited by Neverwinter in the north and Baldur's Gate in the south, but territory farther to the north and south that isn't under the sway of a more influential power is usually also included in maps of the Sword Coast.",
-						"More broadly, the North refers to all the territory north of Amn, split into two general regions: the Western Heartlands and the Savage Frontier. The Western Heartlands encompasses a narrow strip of civilization running from the Sunset Mountains to the Sea of Swords, and northward from the band of territory marked by the Cloud Peaks and the Troll Mountains to the Trade Way. The Savage Frontier is the name given to the rest of the unsettled or sparsely settled territory in the North, not including the major cities and towns and any settlements in their immediate spheres of influence.",
-						"Most of the communities, nations, and governments of the North can be grouped into five categories: the cities and towns that are members of the Lords' Alliance, the dwarfholds that have been built throughout the area, the island kingdoms off the coast, the independent realms scattered up and down the coast, and the subterranean environs of the Underdark. Each category is discussed briefly here; more details can be found in chapter 2.",
+						"“劍灣”指沿“寶劍海”從“安姆”往北一直到“浮冰之海”的地區，是利用其鄰近海域進行商貿活動的諸城邦其領地連成的一片狹窄的帶狀區域。許多熱衷於該地區的人將其北界定在“無冬城”而南界定於“博德之門”，不過那些地處該區域外更南或更北的地區，即使其更受其他勢力影響更多，通常也會被歸入劍灣的地圖裡。",
+						"從更廣區域看，“北地”指的是安姆以北的所有地區，其更進一步細分為兩大區域：“西央土”和“蠻荒邊境”。西央土外是一條從“日落山脈”延伸至寶劍海的狹窄文明地帶，然後從“雲霧群峰”和“巨魔山區”連成的地界往北延伸至“貿易公路”。而蠻荒邊境則是北地其他一些無定居地帶或人煙稀少地區的統稱，其中不包括該區域裡的主要城市和小鎮，也不包括任何受這些城鎮直接影響的其他聚居地。",
+						"北地的大多數社群、國家和主權地可歸納為五類：作為“領主聯盟”成員的城市和小鎮，區域內已建成的矮人要塞，離岸的諸島國，分散在海岸附近的獨立國度，以及位於地底的“幽暗地域”。這裡將為每個類別進行一些簡要的討論，更多相關細節可參見第2章。{@book 第二章|SCAG|2}",
 						{
 							"type": "entries",
 							"name": "The Lords' Alliance",
