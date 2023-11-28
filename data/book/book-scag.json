@@ -116,16 +116,16 @@
 				},
 				{
 					"type": "section",
-					"name": "Toril and Its Lands",
+					"name": "託瑞爾及其中各地區",
 					"page": 9,
 					"entries": [
-						"Toril is a vast and wondrous world, filled with an immense diversity of peoples and a rich, full history. For most folk of the Sword Coast, however, knowledge doesn't extend much beyond the confines of the North, and anything \"known\" outside of Faerûn proper is based more in rumor than in fact.",
+						"託瑞爾是個有著各種人物和豐富歷史的神奇大世界。不過，身在劍灣的大多數民眾其認知並不能延伸到北地之外，而任何費倫之外的“見聞”也大多是來自謠言而非事實。",
 						{
 							"type": "entries",
-							"name": "Faerûn",
+							"name": "費倫",
 							"page": 9,
 							"entries": [
-								"The vast central continent of Toril, Faerûn is a land mass divided by a great sea known as the Inner Sea, or the Sea of Fallen Stars. The lands beyond the North can be roughly divided into those to the south and those to the east, becoming more foreign to the folk of the Sword Coast and the North the farther away they are.",
+								"託瑞爾中遼闊的中央大陸“費倫”，被一片稱為“內海”或稱“墜星海”的大海隔開。其內除北地外的地區可大致分為南部和東部兩塊，而這兩區的各地在北地及劍灣的民眾看來，都是相當陌生的地方。",
 								{
 									"type": "image",
 									"href": {
@@ -137,32 +137,32 @@
 								},
 								{
 									"type": "inset",
-									"name": "Regions of the Realms",
+									"name": "國度的分區",
 									"entries": [
-										"Just as \"the North\" describes an area that includes a number of nations and governments, a number of collective terms exist for other regions across Faerûn. Not all such names are used universally, and opinions vary as to which lands qualify in which groups. Here are some currently recognized regional groupings:",
+										"正如“北地”所指區域包括了許多國家和政權，費倫的其他地區也存在許多類似的劃分區域。不過並不是所有這些區域名都有被廣泛的應用，事實上還存在許多不同的分組方式。以下是一些目前認可程度較高的地區分組：",
 										{
 											"type": "list",
 											"style": "list-hang-notitle",
 											"items": [
 												{
 													"type": "item",
-													"name": "The Cold Lands:",
-													"entry": "Damara, Narfell, Sossal, and Vaasa"
+													"name": "酷寒之地：",
+													"entry": "達馬拉、納菲爾、索薩爾和瓦薩"
 												},
 												{
 													"type": "item",
-													"name": "The Heartlands:",
-													"entry": "Cormyr, the Dalelands, the Moonsea, and Sembia"
+													"name": "央土：",
+													"entry": "科米爾、谷地、月海和桑比亞"
 												},
 												{
 													"type": "item",
-													"name": "The Lands of Intrigue:",
-													"entry": "Amn, Calimshan, and Tethyr, also known as the Empires of the Sands"
+													"name": "陰謀之地：",
+													"entry": "安姆、卡林珊和泰瑟爾，該區也被稱為“沙帝國群”"
 												},
 												{
 													"type": "item",
-													"name": "The Old Empires:",
-													"entry": "Chessenta, Mulhorand, and Unther"
+													"name": "古帝國群：",
+													"entry": "闕森塔、穆爾霍蘭德和恩瑟"
 												}
 											]
 										}
@@ -171,95 +171,95 @@
 								},
 								{
 									"type": "entries",
-									"name": "Lands to the South",
+									"name": "南部各地",
 									"page": 9,
 									"entries": [
-										"To the south of the Sword Coast lie ancient nations, a tremendous, forbidding jungle, and all manner of lands destroyed or transformed by magical cataclysms and upheavals. Amid the ruin and the distress in these realms are signs of renewal and hope, as tenacious civilizations and peoples rebuild, reclaim, and create anew.",
+										"劍灣以南坐落著許多古國，一片令人生畏的巨大叢林，還有各種各樣的其他地帶。它們多被魔法災難或動盪所改變，但其頑強的文明與人民總能振作，然後在一片廢墟中重建，光復或是徹底重生。",
 										{
 											"type": "entries",
-											"name": "Amn",
+											"name": "安姆",
 											"page": 9,
 											"entries": [
-												"A nation led by the representatives of five noble families, Amn is a place where the wealthy rule, openly and without pretense. Shrewd traders and ruthless in business, Amnians believe that the end of a successful transaction is justified by any means, ethical or otherwise. Although the nation is richer by far than even the northern metropolises of Baldur's Gate and Waterdeep, its influence is curtailed by the unwillingness of its rulers to work together in the nation's best interest. The members of the Council of Five are fairly unified and tight-fisted in their control of Amn, but their ability to affect events outside their own borders is limited because they can't agree enough on major matters of foreign policy. The oligarchs utterly control their nation, but beyond the areas that each rules, their families and businesses compete with one another and with the locals of far-flung places.",
-												"The use of arcane magic is illegal in Amn, meaning that the only authorized spellcasters in the nation are wielders of divine magic who enjoy the support and patronage of a temple, and users of arcane magic who have been given special dispensation by one of the oligarchs. So pervasive is the sway of Amn's oligarchy that few crimes merit physical punishment but those that involve the use of arcane magic or an offense against one of the council's merchant houses. Other infractions are forgiven after the miscreant makes payment of an appropriate fine."
+												"由五大貴族家作代表領導的安姆，是個毫不掩飾地公開由富人統治的國家。作為精明貿易者與冷酷生意人的安姆人民認為，一宗成功的交易必須得透過多方面的評估，甚至要滿足某些道德要求。儘管該國家的富裕程度已經遠超博德之門和深水城等北方大都市，但由於其統治者以國家利益為藉口不願與他國合作，而使其影響力受到限制。“五老議會”的成員在決定安姆本國問題時非常吝嗇卻總能達成共識，但其對國外事件的影響力又時常受限於各成員外交政策的大方向差異而無法一致決策。寡頭們完全掌握著國家的控制權，但在其統治領域外，他們旗下的個家族與生意都在互相爭鬥，甚至牽連到遠方地區的本土居民。",
+												"在安姆使用奧術魔法是違法行為，這意味著這個國家裡唯一有授權的施法者是享受神廟的支援與庇護，行使神聖魔法的人，不過部分獲得其中某個寡頭集團授權者也能在境內使用奧術魔法。安姆的寡頭集團影響力之廣使的其內對犯罪行為的懲罰很少涉及皮肉，但那些涉及到使用奧術魔法或是涉及反對某一議會成員其商業家族時就另當別論。而其他違規行為則只要不法分子支付適當的罰款，即可被原諒。"
 											],
 											"id": "00c"
 										},
 										{
 											"type": "entries",
-											"name": "Calimshan",
+											"name": "卡林珊",
 											"page": 9,
 											"entries": [
-												"This southern land has long been the battleground for warring genies. After years of struggling beneath their genasi masters, human slaves arose to follow a Chosen of Ilmater, at first using nonviolent resistance, and then erupting in full rebellion following his disappearance. They overthrew the genie lords of Calimport and Memnon, casting the remaining genies out of the cities and back to their elemental homes or into the depths of the deserts.",
-												"Much of Calimshan is a chaotic place dominated by wealth, political influence, and personal power. Many pray for the return of the Chosen and the completion of his work. Others are learning to live together without genie masters, and to grudgingly accept the remaining genasi among them."
+												"這片南部地區長期以來一直是交戰的戰場。在與其元素裔主人進行數年的艱苦抗爭後，人類奴隸們終於跟隨在一位伊爾梅特選民旗下起義。他們先是進行非暴力抗議，在該選民消失後又爆發了全面抗戰。他們推翻了“卡林港”和“曼農”的巨靈領主，又把其餘的巨靈趕出城市，驅逐回其最初的家園或是將其趕入沙漠深處。",
+												"卡林珊裡很多地區都是受財富、政治影響和個人力量左右的混亂地帶。許多人仍在祈求那位選民迴歸並完成其未競之業。其他人則聚集起來慢慢習慣沒有巨靈主人的生活，甚至開始勉強接受那些混跡其中的元素裔。"
 											],
 											"id": "00d"
 										},
 										{
 											"type": "entries",
-											"name": "Chult",
+											"name": "楚爾特",
 											"page": 9,
 											"entries": [
-												"The vast, choking jungles of Chult hide what many believe to be great mineral wealth, including large gemstones and veins of ore. Poisonous flora and fauna riddle the jungles, but some still brave the dangers to seek their fortunes. Some of the exotic plants that grow only in Chult fetch high prices in mainland markets. Ruined Mezro stands across the sea from Calimshan, waiting for explorers and its displaced people to cleanse the city of its undead inhabitants and uncover the treasures that lie hidden there.",
-												"Eastward along the Chultan peninsula lie the remains of Thindol and Samarach. Despite the apparent fall of both civilizations, Thindol remains infested with yuan-ti, while the illusions cloaking Samarach's mountain passes conceal the activities in that nation."
+												"令人窒息楚爾特大叢林裡隱藏著許多人們自以為存在的礦產財富，包括巨大的寶石和各種礦脈。叢林裡充斥著劇毒的動植物，但並不能阻止某些人勇敢地去追求富貴。在主大陸的市場上，一些只生長在楚爾特的異國植物能賣得相當高的價錢。卡林珊對海的麥茲羅Mezro廢墟，正等著各路探險者和其本城流離失所的人民，前去清楚城裡的不死生物居民，並揭開隱藏其中的寶藏。",
+												"沿“楚爾坦”半島向東，坐落著“辛朵爾”和“薩瑪拉奇”的遺蹟。儘管表面上著兩地的文明都已經沒落，但辛朵爾的遺蹟裡卻仍充斥著許多蛇人，而籠罩薩瑪拉奇山道的幻象卻徹底掩蓋了該國內的一切活動。"
 											],
 											"id": "00e"
 										},
 										{
 											"type": "entries",
-											"name": "Dambrath",
+											"name": "丹布拉斯",
 											"page": 10,
 											"entries": [
-												"Situated on a warm plain on the shore of the Great Sea, Dambrath is ruled by nomadic clans of human horse riders who revere Silvanus, Malar, and occasionally Selûne. Given the Dambrathans' history of domination by the Crinti, a ruling caste of half-drow, it is no surprise that they reserve their greatest hatred for the drow.",
-												"The clans meet twice a year at a sacred site known as the Hills of the Kings, where dozens of totem sculptures are preserved. At these gatherings, each clan updates its totem with an account of its exploits over the previous seasons. Many Dambrathans seek out lycanthropy as a means of showing reverence for their favored deity and honoring their heritage."
+												"位於“巨海”岸邊一個溫暖平原上的丹布拉斯，由崇拜西凡納斯、瑪拉，部分還崇拜塞倫涅的人類騎馬遊牧者諸氏族所統治。鑑於丹布拉斯人歷史上曾被種姓為“克林提”的半卓爾統治，其本地人都理所當然對卓爾表現出切骨的痛恨。",
+												"諸氏族每年會在一處儲存著幾十個圖騰雕像的聖地“王者之丘”內舉行兩次會面。每個氏族都會在這個聚會上重新粉刷本族的圖騰，以在其上記述本族前幾季的功績。許多丹布拉斯人還會主動尋求接受獸化症感染，以此表示自己對所敬重之神祇膜拜並光耀其自身之傳承。"
 											],
 											"id": "00f"
 										},
 										{
 											"type": "entries",
-											"name": "Elfharrow",
+											"name": "埃夫哈洛",
 											"page": 10,
 											"entries": [
-												"A blasted near-desert north and east of the North Wall mountains bordering Halruaa, Elfharrow isn't a name bestowed by its residents, but rather the sobriquet that travelers use for this violent region. The tribes of xenophobic elves that claim this area don't hesitate to discourage uninvited guests by any means necessary. A simple group of pilgrims might be scared off with some arrows, while a band of hunters or explorers is likely to be killed outright.",
-												"Food is sparse in this region, with the forests long since vanished, and as a result the elves of Elfharrow fiercely protect the herds of animals they have cultivated. The elves have no interest in looting the cities of fallen Lapaliiya, but neither are they willing to allow \"adventurers\" free access to those lands through their territory."
+												"鄰近哈魯阿的“北牆”山脈其北邊與東邊是一片半沙漠地區，這個被成為埃夫哈洛的地方其名字並不是由其本地人所作，而是途徑該地的旅行者為這片暴力地區所取的綽號。佔據該地的排外經歷部族們會毫不猶豫地用任何必要的手段來阻止一切未受邀請的訪客。結團的單純朝聖者可能會被亂箭嚇跑，而一隊獵人或探險者則可能會被當場殺死。",
+												"該地區食物稀少，森林也早已消失殆盡。也正是因此，埃夫哈洛的精靈們會極力保護自己栽培的畜群。這些精靈對搜刮“拉帕利亞”那些傾復的城市毫無興趣，但他們也不願意讓“冒險者”們隨意穿過自己的領地進入這片地帶。"
 											],
 											"id": "010"
 										},
 										{
 											"type": "entries",
-											"name": "Halruaa",
+											"name": "哈魯阿",
 											"page": 10,
 											"entries": [
-												"Once believed destroyed in the conflagration of the Spellplague, Halruaa has largely been restored to the insular, magic-mighty nation it once was. Because of the foresight of their divinations, Halruaan wizards were able to use the raging blue fire that followed Mystra's death to propel their nation safely into the realm of Toril's twin, Abeir (displacing part of that world into the Plane of Shadow).",
-												"Now that the events of those times have mostly been undone, the famed Halruaan skyships and waterborne vessels have spread out from their home once again, seeking to establish trading routes and political connections, as well as to learn what has changed of the world in their century of absence."
+												"一度被認為已被“奧法之劫”之災難摧毀的哈魯阿，現已基本恢復為曾經那個獨立而具有強大魔法的國家。由於哈魯阿預言師們提前預見了災難，其本國法師們在密斯特拉死後用肆虐的藍火將自己國家安全地推入了託瑞爾的孿生世界，阿貝爾（還將該世界的一部分置換到了“幽影位面”）。",
+												"現在，曾經的事件大都已被解決。著名的哈魯阿天空船和水運載具又一次從其家園起航，開始四處尋找建立商貿路線和政治聯絡，以瞭解在自己消失的一個世紀裡，世界到底發生了何種變化。"
 											],
 											"id": "011"
 										},
 										{
 											"type": "entries",
-											"name": "The Lake of Steam",
+											"name": "蒸汽之湖",
 											"page": 11,
 											"entries": [
-												"Far to the south and east of the Sword Coast, the Lake of Steam is more accurately an inland sea, its waters tainted by volcanism and undrinkable. Around its perimeter is a conglomeration of city-states and minor baronies typified by the shifting domains known as the Border Kingdoms. Here, along the southern shore of the lake, explorers and fortune seekers squander their amassed wealth building castles, founding communities, and drawing loyal vassals to them\u2014only to have all those good works disappear within a generation or two. In some cases, one of these realms is fortunate to be saved from its inevitable decline by another group of successful adventurers, who inject enough wealth and wisdom to keep the enterprise going a few more decades."
+												"從劍灣往南再往東的遠方可以到達實際上是個內陸海的蒸汽之湖。其內的水體因火山活動而汙染且無法飲用。其周邊坐落著一群以領土變更著稱的城邦與小型封地集合，統稱“邊境諸國Border Kindoms”。許多探險者和尋寶者們在這裡的南湖岸邊揮霍自己積累的財富，他們興建城堡，建立社群，並將忠誠的臣子們吸引到自己麾下。不過，這些成果通常都只能維持一兩代人，然後便訊息殆盡。有時，這些國度如果夠幸運得以遇到另一批功成名就的冒險者，而這些人還能再為其注入足夠豐厚的財富與智慧，但這也只能讓其事業再多走幾十年。"
 											],
 											"id": "012"
 										},
 										{
 											"type": "entries",
-											"name": "Luiren",
+											"name": "魯倫",
 											"page": 11,
 											"entries": [
-												"Long the homeland of halflings and thought to be the place where their race had its genesis, Luiren was lost during the Spellplague to a great inundation of the sea. In the century since that great disaster, the waters receded, and now stories told by travelers from the south tell of halfling communities that survived as island redoubts."
+												"長期被人們認作半身人的故鄉兼種族起源地的魯倫，在“奧法之劫”時期因被大海淹沒而失蹤。在那場大災難過去一個世紀後，海水終於退去。而最近從南方來的旅行者們述說的故事裡，一些半身人社群以稜堡島的方式在倖存了下來。"
 											],
 											"id": "013"
 										},
 										{
 											"type": "entries",
-											"name": "Tethyr",
+											"name": "泰瑟爾",
 											"page": 11,
 											"entries": [
-												"Tethyr is a feudal realm ruled by Queen Anais from its capital of Darromar. The queen commands her dukes, who in turn receive homage from the counts and countesses of the realm, appoint sheriffs over their counties, and generally maintain order. The farmlands of Tethyr are abundant, and its markets flow freely with trade from the Western Heartlands.",
-												"Tethyr has seen more than its share of noble intrigue and royal murder, and adventurers who are native to Tethyr or merely passing through that land are often drawn into such plots, either as unwitting accomplices or as easy scapegoats."
+												"泰瑟爾是由其首都“達勞瑪”裡的“安娜伊斯女王”統治之封建王國。女王號令旗下諸公爵，然後公爵封賞自己下級的伯爵與女伯爵，然後再往下任命各郡的治安官，以此層層向下維持秩序。泰瑟爾境內保有大量農田，而其集市則可以自如的與西央土相互往來。",
+												"泰瑟爾內的貴族陰謀與皇家謀殺比表面所見更加不堪，來自泰瑟爾本地或僅僅是從此地經過的冒險者，通常都會捲入這樣的陰謀事件，然後要麼莫名的成為共犯，要麼就順勢的被當成了替罪羊。"
 											],
 											"id": "014"
 										}
@@ -268,174 +268,174 @@
 								},
 								{
 									"type": "entries",
-									"name": "Lands to the East",
+									"name": "東部各地",
 									"page": 11,
 									"entries": [
-										"To the east lie many of the older nations of the Realms, including the Western Heartlands of Faerûn\u2014those civilizations centrally located on the continent, and thereby best able to take advantage of trade routes and access to the Sea of Fallen Stars. As in the North, there are cold lands to the east, as well as more temperate regions. As one travels farther from the Sword Coast, one moves from lands not so different from one's own to places so foreign they might as well exist on other continents or worlds\u2014which a few of them actually have done.",
+										"東方坐落著許多國度中的古老國家，其中就包括費倫的“西央土”諸地——作為集中在大陸中央的文明，其地理位置最能利用周圍的貿易商路，並且還可以利用墜星海進行水路移動。跟北地一樣，東邊也有寒冷的地帶，也還有更溫暖的地區。從劍灣出發遠道而來的旅者，往往會先經過一些與家鄉相似之地，然後再逐漸到達某些宛如新大陸或異界的別國他鄉——也許這些人還真去過新大陸或異界。",
 										{
 											"type": "entries",
-											"name": "Aglarond",
+											"name": "阿戈拉隆",
 											"page": 11,
 											"entries": [
-												"The great peninsula of Aglarond juts out into the Inner Sea, and that body of water and the forests of the Yuirwood define much of the nation's character. A realm of humans living in harmony with their elf and half-elf neighbors, Aglarond has been a foe of Thay for centuries, in part due to the temperament of its former ruler, the Simbul. The nation is now ruled by a Simbarch Council, which has backed away from open hostilities with Thay. With the restoration of the Weave, the ongoing changes to the political landscape, and calls for elven independence within the nation, it is unclear what sort of place Aglarond will be in a generation's time, except that its potential for great change will be realized."
+												"延伸入內海的巨大半島阿戈拉隆，其周邊水域和“攸木林”之森林便是該國最突出的特徵。人類居住的國度阿戈拉隆與其精靈和半精靈鄰居相處和睦，卻與對手“塞爾”對立了數個世紀。這種局面部分源於其前統治者“欣布”的脾性，不過現在的阿戈拉隆已經由“欣布議會”接管，因此已放棄公然與塞爾敵對的政策。隨著“魔網”重建恢復，本地的政治格局也持續地發生變化，國內甚至響起呼籲精靈獨立的聲音。目前仍無法預計新一代的阿戈拉隆會變成怎樣的地方，而其本身也存有許多潛在的巨大變數。"
 											],
 											"id": "016"
 										},
 										{
 											"type": "entries",
-											"name": "Chessenta",
+											"name": "闕森塔",
 											"page": 11,
 											"entries": [
-												"A collection of city-states bound by common culture and mutual defense, Chessenta isn't truly a nation. Each city boasts its own heroes, worships its own gladiatorial champions, and spends as much time insulting and competing with the other cities as it does on any other activity. The city of Luthcheq is dominated by worship of the bizarre deity known as Entropy, while Erebos is ruled by the latest incarnation of the red dragon known as Tchazzar the Undying. Heptios contains the largest library in Chessenta, a center of learning where all nobles aspire to send their children for tutoring. That city is looked on with disdain by the people of Akanax, whose militant contempt for the \"fat philosophers\" of Heptios is widely known. Toreus welcomes all visitors, even those from lands that are despised or mistrusted, and foreign coin can buy nearly anything there. The floating city of Airspur still flies somehow, its earthmotes unaffected by the fall of its fellows when the Sundering came to a close."
+												"作為擁有共同文化和聯合防禦之城邦集合的闕森塔並不是個真正意義的國家。其每個城市都有自己的英雄，崇拜自己的角鬥勇士，並且不遺餘力的與其他各城市互相侮辱，互相競爭。“魯斯奇誇”城的主流信仰是個被稱為“熵”的奇異神祇，而“厄瑞波斯”則由一頭人稱“不死之察斯薩”的紅龍以最新的化身統治。闕森塔最大的圖書館建在“赫西歐斯”，其還是個學習機構中心，所有貴族都渴望將自己的孩子送到那裡接受輔導。但“阿卡納西”的人民卻鄙視這座城市，好戰的他們會公然將對方蔑視為“哲學胖子”。“圖瑞爾斯”歡迎所有訪客，哪怕是來自某些受鄙視或不受信任地區的人也不例外，這裡的貨物幾乎都可以用外來貨幣購買。漂浮城市“埃爾斯貝”仍以某種方在空中飛行，其浮土並未受“大陸分離”末期那場墜落事故影響。"
 											],
 											"id": "017"
 										},
 										{
 											"type": "entries",
-											"name": "Cormyr",
+											"name": "科米爾",
 											"page": 11,
 											"entries": [
-												"For most folk in central Faerûn, the notion of a human kingdom is inextricably linked to Cormyr. A strong realm bolstered by its loyal army (the Purple Dragons), a cadre of magical defenders and investigators (the War Wizards), and numerous wealthy and influential nobles, Cormyr is recovering from its war with Sembia and Netheril\u2014a conflict that cost the nation much, but left the kingdom standing, and which, in the end, Netheril didn't survive. The pride of that victory remains strong in Cormyr's collective consciousness, even as Queen Raedra draws back from plans to permanently welcome into the realm towns that lie beyond Cormyr's traditional borders.",
-												"Cormyreans are justly proud of their homeland, and go to great lengths to guard it and its honor. Still, there is no shortage of danger in the Forest Kingdom, whether from scheming, treacherous nobles, monsters out of the Hullack Forest or the Stonelands, or some ancient, hidden magic. Cormyr is many things, but dull isn't one of them."
+												"在費倫中部的大多數民眾看來，人們對人類王國的概念多少都與科米爾相關。這個強勢的國度保有其忠誠的軍隊（“紫龍軍團”），一批使用魔法的守護者兼調查員（“戰法師團”），以及許多有錢有勢的貴族。在與桑比亞和耐色瑞爾的戰爭結束後，科米爾現正處於恢復期——這次戰爭讓國家付出了許多，但卻讓其最終得以存活，還令耐色瑞爾從此消亡。整個科米爾仍沉浸在這場勝利帶來的強烈自豪感中，而“雷德拉女王”卻在此撤回了永久歡迎科米爾傳統邊疆外之城鎮入境的一眾政策。",
+												"科米爾人為自己的祖國而自豪，並不遺餘力地捍衛其本身和其榮譽。儘管如此，在“森林王國”中仍然存在著危險，它們可能來自奸狡的貴族，來自“胡雷克森林”或“巖地”裡出沒的怪物，甚至是來自某古老而隱秘的魔法。科米爾包含了許多事物，但當中沒有一樣會讓人枯燥。"
 											],
 											"id": "018"
 										},
 										{
 											"type": "entries",
-											"name": "The Cold Lands",
+											"name": "酷寒之地",
 											"page": 11,
 											"entries": [
-												"The nations of Damara, Narfell, Sossal, and Vaasa, known collectively to most Faerûnians as the Cold Lands, rest near the Great Glacier in the cold, dry environs of the northeast. Few outside the region have much interest in what goes on here, except for those in the immediately surrounding lands, who fear a resurgence of the ancient evils of the region\u2014though they aren't fearful enough to do more than send an adventuring party or two into the area to investigate.",
-												"In Damara, the usurper King Yarin Frostmantle sits on the throne of the Dragonbane dynasty, while his people complain about his tyranny and the growing threat from demons across the country. In Narfell, skilled riders and archers hunt, raid, and are gradually reclaiming their heritage as a great nation of mages who treated with devils. The Warlock Knights of Vaasa threaten to break the bounds of their nation and invade Damara, the Moonsea, or both, while some of its members suspiciously eye the ominously silent Castle Perilous, perhaps planning another excursion to the place. The tiny nation of Sossal trades with its neighbors, but shares little of itself with the wider world."
+												"“達馬拉”“納菲爾”“索薩爾”和“瓦薩”等國家位處寒冷而乾燥的東北邊區且鄰近“大冰川”，因而被費倫人統稱為“酷寒之地”。該區以外的人很少關心這裡的狀況，但這些地區的接壤處仍會擔心其內某個遠古邪物會死灰復燃——不過它們最多也只能委派一兩支冒險者隊伍進入其中進行調查。",
+												"在達馬拉，篡位的國王“亞林·霜幔”坐鎮“龍魘”王朝的王座，其人民卻在抱怨他的暴政和全國各地日漸嚴重的惡魔威脅。在納菲爾，老練的騎手和弓箭手四處掠劫狩獵，並逐漸恢復自己曾作為對付魔鬼之魔法師的偉大國家傳承。瓦薩的“騎術士軍團”威脅要打破與本國的約定，並對達馬拉和“月海”兩者其一或同時發動入侵，但隊伍中某些成員對“邪異堡”的沉默仍有疑慮，或許要對該地發起另一場遠征。小國索薩爾保持與其鄰邦的貿易往來，但其本國的情報卻很少透露出來。"
 											],
 											"id": "019"
 										},
 										{
 											"type": "entries",
-											"name": "The Dalelands",
+											"name": "谷地",
 											"page": 12,
 											"entries": [
-												"The humans who call the Dalelands home want nothing more than lives untroubled by the concerns of larger nations. They take great pride in their peaceful coexistence with the elves of Cormanthor, and in their ability to remain largely self-sufficient and autonomous even when their homeland was used as a battlefield by Cormyr, Netheril, Sembia, and Myth Drannor in the recent conflicts. Featherdale and Tasseldale have reasserted their independence since the end of the war, and rejoined Archendale, Battledale, Daggerdale, Deepingdale, Harrowdale, Mistledale, Scardale, and Shadowdale on the Dales Council. The High Dale did the same shortly afterward.",
-												"Dalesfolk are mistrustful of anyone unwilling to sacrifice for the common good, but those who put in good work\u2014whether in defense or labor\u2014are accepted as equals, entitled to share in the rewards from their toil."
+												"在“谷地”安家的人類唯一擔心的事情，便是其他大國打擾本地的安寧。其本土人民因能與“科曼索”的精靈和平共處而自豪。同樣令谷地自豪之事，便是在家園淪為“科米爾” “耐色瑞爾”“桑比亞”和“迷斯卓諾”等國家近期衝突之戰場時，人民仍能維持自己主權且能做到自給自足之現狀。自戰爭結束以來，“翎羽谷”和“穗子谷”重啟各自的獨立程序，並重新加入到“弓谷”“戰役谷”“匕首谷”“深林谷”“耕谷”“迷霧谷”“傷痕谷”和“陰影谷”的“谷地議會”中。不久後，“高谷”也加入其中。",
+												"谷地居民們不信任那些不願為公共利益犧牲的人，那些好好為國防或勞動表現的人才能得到平等對待，也只有這些人才能分享大家的勞動成果。"
 											],
 											"id": "01a"
 										},
 										{
 											"type": "entries",
-											"name": "The Hordelands",
+											"name": "遊牧之地",
 											"page": 12,
 											"entries": [
-												"Formerly known as the Endless Wastes, this land has gained a new name among Faerûnians, styled after the vast Tuigan horde that roared out of the east and rode against Faerûn more than a century ago. After these tribesfolk were defeated, some of the fierce, mounted warriors who survived the conflict gathered to form the small nation of Yaïmunnahar. Some others cling to the old ways, mastering the sword and the bow and riding across the steppes on their short-legged horses. Brave merchants still traverse the Golden Way to and from Kara-Tur, but those who return from such a voyage are fewer than they once were."
+												"舊名為“無盡荒原”的這片土地，其新名字由費倫人根據一個世紀前從東方咆哮而來的“圖坎”大部落之風格命名。這些部族人被擊敗後，其中部分在衝突中倖存的兇猛騎兵聚起組成一個小國家“雅姆納哈”。其他倖存者則固守舊的行事方式，仍然給熟習手上的劍與弓，騎著他們的矮腳馬馳騁在草原上。一眾勇敢商人們仍以“黃金之路”往來於卡拉-圖，只是能從這條航線歸家的人比以前少了許多。"
 											],
 											"id": "01b"
 										},
 										{
 											"type": "entries",
-											"name": "Impiltur",
+											"name": "因布圖",
 											"page": 12,
 											"entries": [
-												"With the rising of the waters of the Sea of Fallen Stars, some of Impiltur's wealth and influence is returning, leading to whispers among the populace that a lost king of the line of old will rise up to lift Impiltur out of its woes and back to the great nation it once was.",
-												"Impiltur is a nation of humans with pockets of dwarves and halflings among its populace. Where once a long royal line sat its throne and ruled over a unified kingdom, now a Grand Council sits around a table and struggles to combat the presence of demons, and demon worship, within the nation's borders."
+												"隨著墜星海水位上漲，因布圖部分恢復了曾經的富有與影響力。而人民群眾也開始紛紛議論，說古老王統的某個失落之王即將歸來，並帶領因布圖拜託當前的困境，重新恢復為曾經的偉大國家。",
+												"因布圖是個有許多矮人和半身人生活其中的人類國家。這裡曾經由世襲的皇家血脈坐鎮王座，統治一整個統一王國，而現在則由一個“大議會”以圓桌會議的形式努力解決當前國境內的惡魔勢力及惡魔崇拜等問題。"
 											],
 											"id": "01c"
 										},
 										{
 											"type": "entries",
-											"name": "The Moonsea",
+											"name": "月海",
 											"page": 12,
 											"entries": [
-												"The shores of the Moonsea have long been home to cities that rise swiftly, relying on vigorous trade and gathering powerful mercenaries to their banners, only to overextend themselves and fall\u2014sometimes crumbling over time, and sometimes dropping like stones from the sky.",
-												"Now that Netheril and Myth Drannor have fallen, those two great powers can no longer exert their influence over the Moonsea, allowing the city of Hillsfar to spread its wings and eye southward expansion, and Mulmaster to once again further the worship of Bane. Phlan, Teshwave, Thentia, and Voonlar\u2014all Moonsea cities where greater powers jockeyed for influence\u2014now work to find their own identities before an unchecked or malevolent realm swallows them, one by one.",
-												"This region is also home to the ruins of the Citadel of the Raven and Zhentil Keep, former strongholds of the Zhentarim, which the Black Network shows occasional interest in restoring."
+												"長久以來，月海沿岸是許多迅速興起之城市的發祥地。它們都擁有可靠而發達的商貿，以及聚集在各自麾下的強大僱傭軍。只是這些城市通常都會因過度擴張而沒落，有時是隨著時間推移而逐漸崩潰，有時又如高空落石般猛烈迅速。",
+												"在“耐色瑞爾”和“迷斯卓諾”都都已隕落的現在，月海再也不受這兩個大國之影響。“遠丘城”終於得以向南擴張其眼目與羽翼，而“穆爾瑪斯特”也再一次深化其班恩信仰。“菲蘭”“泰斯威”“森提亞”“福恩拉”，月海的每個城市其內的勢力都在爭相提升影響力，並抓緊確立自身城市的地位，以防止某個不受控或惡意的國度將他們一個個吞併。",
+												"該地區還是散塔林會原據點“渡鴉要塞”和“散提爾堡”的廢墟所在地。“暗黑情報網”有時也會對這裡重新提起興趣。"
 											],
 											"id": "01d"
 										},
 										{
 											"type": "entries",
-											"name": "Mulhorand",
+											"name": "穆爾霍蘭德",
 											"page": 12,
 											"entries": [
-												"Since the Chosen of the gods began to appear in the last few years, Mulhorand has become a land transformed. Its deities manifested fully in the forms of some of their descendants, and swiftly rallied the Mulan to overthrow the Imaskari. Aided by the mighty wizard Nezram, known as the World-Walker, the Mulhorandi overthrew the rulers of High Imaskar, who fled into the Plains of Purple Dust or to extraplanar safeholds.",
-												"When the upheaval ended and the Chosen began to disappear, the gods of Mulhorand remained to rule their people, focusing their attention on defending their restored homeland to keep the war in Unther and Tymanther from spilling over its borders. For the first time in centuries, the people in Mulhorand are free, with the gods declaring that slavery shall no longer be practiced among the Mulan since their return."
+												"從近幾年出現眾神選民開始，穆爾霍蘭德地區發生了巨大的變化。其各路神祇以各自後裔的形式公然現身，迅速集結於“穆蘭”並計劃推翻伊瑪斯卡人。依靠人稱“界行者”的強大法師聶茲然協助，穆爾霍蘭德人最終推翻了“至高伊瑪斯卡”的統治者們，並迫使他們逃往“紫塵平原”或逃向諸跨位面哨堡。",
+												"動亂結束後，選民們便相繼消失不見，而穆爾霍蘭德眾神則留下繼續統治其人民。眾神讓大眾集中注意力保衛其剛恢復之家園，以防止“恩瑟”和“泰曼瑟”趁機發動戰爭蠶食國土。迴歸的眾神宣佈，此後的穆蘭將不再實行奴隸制。而這將是數個世紀以來，穆爾霍蘭德人第一次得到自由。"
 											],
 											"id": "01e"
 										},
 										{
 											"type": "entries",
-											"name": "Rashemen",
+											"name": "萊瑟曼",
 											"page": 12,
 											"entries": [
-												"A harsh, cold land filled with hardy folk, Rashemen is a fiercely traditional nation. It is ruled by its Iron Lord, Mangan Uruk, who speaks for the power behind the throne: the Wychlaran, the society of masked witches that determine Rashemen's course. These witches wield great powers tied to the land and its magic and guard against evil fey and vengeful spirits. A small number of male spellcasters, known as the Old Ones, create magic items and weave arcane rituals for the witches. Rashemi witches revere the Three, a triumvirate of goddesses they call Bhalla (the Den Mother), Khelliara (the Forest Maiden), and the Hidden One. Over the centuries, scholars in other lands have speculated that these deities might be faces of Chauntea, Mielikki, and Mystra, respectively.",
-												"The nation's warriors are a fierce, stoic lot, famed for their strength, endurance, and stubbornness in battle. Rashemen is a long-standing enemy of Thay, and has often thwarted that nation's ambitions to rule Faerûn. Little pleases a Rashemi warrior more than the chance to strike down a Red Wizard in battle."
+												"位於嚴寒之地由堅強民族組建的萊瑟曼是個非常傳統的國家。其統治者，本國的“鐵王”曼根·烏魯克只是王座幕後權力的代表——隱秘的女巫社團“女巫議會”才是真正決定萊瑟曼政策的操縱者。這些女巫行使著與大地和其自身魔法相關聯的強大力量，對抗那些邪惡精靈與復仇精魂。少數被稱為“長老”的男性施法者，負責為女巫們製作魔法物品和編排奧術儀式。萊瑟曼的女巫們崇拜“三女神”，即三位聯合決策的女神分別是“芭拉”（獸穴之母）、“卡希萊拉”（森林少女）和“隱匿者”。幾個世紀以來，其他地區的學者們猜測這些神祇可能是指“裳提亞”“梅麗凱”和“密斯特拉”各自的另一個化身。",
+												"其本土的武者是一群兇狠而堅忍之人，且以其在戰鬥中體現的力量、耐力和頑強而聞名。萊瑟曼長久以來都是塞爾的敵人，而且經常挫敗這個國家一統費倫的野心。在萊瑟曼武者們看來，在戰場上打倒一名紅袍法師是最能讓他們開心的事。"
 											],
 											"id": "01f"
 										},
 										{
 											"type": "entries",
-											"name": "Sembia",
+											"name": "桑比亞",
 											"page": 12,
 											"entries": [
-												"Following a period of subjugation at the hands of Netheril, Sembia is already on its way to becoming the economic power it was in prior years. Although relations are cool with the Dales and Cormyr following the most recent war, Sembian merchants are quick to dismiss previous conflicts as the work of the Netherese, and remind their former trading partners of the long and mutually profitable relationships they previously enjoyed. To prove its good intentions, Sembia has \"allowed\" Featherdale and Tasseldale to regain their independence, even though Sembian investors had owned much of Featherdale for nearly seventy years when the war came to an end.",
-												"Before Netheril claimed Sembia as a vassal state, mercenary work and adventuring were popular livelihoods among Sembians who didn't have local families to feed. Those endeavors are even more popular now among veterans of the war, who are better trained than their predecessors were. A few of Sembia's less scrupulous former soldiers have taken to banditry, which offers other Sembians more opportunities for guard work."
+												"經過一段從屬於耐色瑞爾的時期，桑比亞已經開始逐漸恢復為曾經的經濟強國。儘管因近期戰事而與諸谷地和科米爾關係陷入冷淡，但桑比亞的商人們已經機智地將衝突的責任歸咎到耐色人頭上，還向其前貿易伙伴們提起曾經同享共樂的長期互利關係。為證明其善意，桑比亞表示對“翎羽谷”和“穗子谷”重啟獨立程序之事表示“認同”。儘管在戰爭結束時，許多桑比亞的投資者在最近七十年間已經獲得了翎羽谷許多地區的所有權。",
+												"在耐色瑞爾佔領桑比亞將其作為附庸國前，那些沒在當地建起家庭的桑比亞人非常流行以傭兵和冒險營生。現在這幾門生意在那些經歷過戰爭的老兵看來更是受歡迎，而且他們的受訓程度還比生意前輩們更好。一些作風不太嚴謹的前桑比亞士兵卻作起了強盜的勾當，只是從另一面看這也為桑比亞人們製造了更多護衛類的工作崗位。"
 											],
 											"id": "020"
 										},
 										{
 											"type": "entries",
-											"name": "Thay",
+											"name": "塞爾",
 											"page": 13,
 											"entries": [
-												"For centuries one of the greatest concentrations of magical might in Faerûn, Thay is ruled by the ancient lich, Szass Tam, and the nation's Council of Zulkirs in a ruthless magocracy. The council's will is enacted by regional tharchions and bureaucrats, leaving the ruling Red Wizards to focus on magical study and more important arcane matters.",
-												"For a time, living mages couldn't hope to advance to prominence in Thay: Szass Tam promoted undeath as a means of existence with boundless possibilities, and held back those who didn't agree with this philosophy. The recent battles with the demon Eltab, however, have prompted Szass Tam to loosen this stricture\u2014the living now have hope of ascending within the Red Wizards, even if that hope is merely to advance to a high station within the cadre of Tam's servants."
+												"數個世紀以來，塞爾都是費倫最強大的魔法武裝之一，它由古老的巫妖薩扎斯坦和無情的國家法師執政會“首席議會”所統治。議會之意志由各地區的總督和官僚實施，而執政的紅袍法師們則專注於魔法研究和更重要的奧秘事宜。",
+												"塞爾的在生者魔法師曾一度處於不得晉升的地位：薩扎斯坦將不死之道作為具有無比潛力的無拘束存在手段，甚至因此壓制那些不同意該理念之人。然而，近期與惡魔艾爾塔柏的戰鬥已促使薩扎斯坦放鬆了這一限制——現在紅袍法師團體中的在生者也能獲得提拔，不過他們充其量也只能在薩扎斯坦的侍從團隊內攀升高位。"
 											],
 											"id": "021"
 										},
 										{
 											"type": "entries",
-											"name": "Thesk",
+											"name": "賽斯克",
 											"page": 13,
 											"entries": [
-												"Reminders of the century-old war with the Tuigan horde remain throughout Thesk, in the many and varied features of its present-day inhabitants, particularly the half-orc descendants of the mercenaries who fought in that great conflict.",
-												"Thesk is known to many as the Gateway to the East because it is the western terminus of the Golden Way, which runs through the Hordelands and into Kara-Tur. Because their city is a crossroads of sorts between Faerûn and the east, it should come as no surprise that Theskians don't judge outsiders quickly, and don't bristle at visitors who demonstrate strange quirks in speech or behavior. The people of Thesk trade readily with any folk, even nearby orcs and goblins that are willing to treat with them peacefully. They aren't fools, however, and have no patience for violent or raiding humanoids of all sorts."
+												"賽斯克境內現今的居民種類繁多而各異，其中還有那些曾參與圖坎部落百年戰爭的半獸人傭兵後裔，這一切讓那場戰爭依舊曆歷在目。",
+												"作為“黃金之路”西起點的賽斯克被許多人視為“通往東方的大門”，從這裡出發穿過“遊牧之地”便可進入卡拉-圖大陸。由於是連線費倫與東方的十字路口，所以賽斯克人都習慣不輕易對外人下定論，也不會對那些說話或行為不同的遊客感覺不悅。賽斯克的人民樂於與任何民族交易，甚至能與附近的獸人、半獸人和平共處。當然，他們並不傻，也不會對訴諸暴力或前來掠奪的任何類人生物保持耐心。"
 											],
 											"id": "022"
 										},
 										{
 											"type": "entries",
-											"name": "Turmish",
+											"name": "突米斯",
 											"page": 13,
 											"entries": [
-												"On the southern shore of the Sea of Fallen Stars, Turmish is a nation of mercantile cities ruled by its Assembly of Stars, representatives of each of its cities in a parliamentary democracy. After being much diminished by the devastation wrought in this area a century ago, Turmish is currently enjoying a revival of its fortunes, as the rising of the waters of the Inner Sea has returned some of the trade that was lost in the cataclysm. Turmish is the birthplace of the Emerald Enclave, which has proudly taken credit for the rebirth of Turmishan agriculture, the cessation of the great rains that plagued the region a few years ago, and the restoration of the god Lathander."
+												"位於墜星海南岸的突米斯是由多個商業城市組成的國家，執掌該國的“眾星集會”即是每個城市其民主議會政體的代表。該地區在一個世紀前遭大災變的破壞而衰落，曾經因此斷絕的部分商貿隨“內海”的海平面上漲而逐漸恢復，突米斯也趁機積極地復興其曾經的富庶。突米斯還是“翠綠閒庭”的誕生地，該組織也光榮的承擔起恢復本地農業經濟的任務，以讓那場幾年來一直困擾該地的大雨消停，並恢復洛山達神的光輝。"
 											],
 											"id": "023"
 										},
 										{
 											"type": "entries",
-											"name": "Tymanther",
+											"name": "泰曼瑟",
 											"page": 13,
 											"entries": [
-												"In decades past, the land of the dragonborn claimed as its territory part of what had been the vanished nation of Unther. Then Unther suddenly returned to Faerûn a few years ago and promptly went to war against Tymanther. The realm has since been reduced to small tracts mainly along the coast of the Alamber Sea and Ash Lake. The dragonborn that have withdrawn to those areas have lost none of their military tradition, and their ability to hold this smaller amount of territory makes it unlikely that Unther will push farther any time soon\u2014particularly since the Untherite navy has been unable to overcome the great beast that guards the harbor of Djerad Kethendi and the nearby waters of the Alamber.",
-												"Some of Tymanther's dragonborn have spread across Faerûn and gained reputations as competent, highly sought-after mercenaries."
+												"這片在去幾十年裡一直被龍裔們佔領的土地曾是一度消失的恩瑟國之領土。幾年前，恩瑟突然迴歸費倫，並迅速與泰曼瑟開戰。從那以後，龍裔的國土便一直龜縮到“阿蘭勃內海”和“灰之湖”周邊沿岸。撤到該地的龍裔並未失去其軍事傳統，而他們對這小塊領地的掌控也讓阻止了恩瑟進一步推進的步伐——該狀況自恩瑟人的海軍一直無法攻克守護“哲拉德·柯森迪”港口及其附近水域的巨獸起，便陷入僵持。",
+												"一些泰曼瑟的龍裔會離開本土走向費倫各地，且大都成為了實幹而備受歡迎的傭兵。"
 											],
 											"id": "024"
 										},
 										{
 											"type": "entries",
-											"name": "Unther",
+											"name": "恩瑟",
 											"page": 14,
 											"entries": [
-												"Trapped in another world, the people of Unther had succumbed to domination by others. Then among them arose one who called himself Gilgeam, and he reminded them of their former greatness. Under the leadership of this reincarnated god, the people of Unther rose up as an army to face their masters. On the eve of a great battle, the people of Unther were miraculously returned to their home, and Gilgeam wasted no time in leading them against the dragonborn occupying their ancestral lands. The Untherites have retaken much of the land they formerly held, while seeking to wipe out the \"godless lizards\" they blame for their time of oppression in Abeir.",
-												"Gilgeam wants nothing short of a complete return to Unther's former glory. This achievement will require utterly destroying Tymanther, of course, and eventual war with Mulhorand to reclaim lands lost centuries ago, but as every Untherite knows, the great God-King is patient, for he is eternal."
+												"由於被困在另一個世界，恩瑟的人民不得不屈服於別人統治。直至族中一個自稱“吉勒今”的人讓大家回想起當初的偉業，從此，這重生之神便領導恩瑟人民集結為軍隊，直面敵人。戰況持續至一場大戰前夕，恩瑟人奇蹟般地回到了自己的家園，吉勒今隨即馬不停蹄地帶領眾人對戰眼前佔領自己先祖之地的龍裔們。重新收復舊領土恩瑟人嘗試徹底消滅這些“無神的蜥蜴”，讓它們為自己在阿貝爾所受的壓迫負責。",
+												"吉勒今想要完全恢復恩瑟曾經的榮耀。這一成就必須先將眼前的泰曼瑟徹底摧毀，然後當然還要打到穆爾霍蘭德，以從對方手中奪回幾世紀前被奪走的土地。不過每個恩瑟人都明白，偉大的“神王”永生不死，因而他並不著急。"
 											],
 											"id": "025"
 										},
 										{
 											"type": "entries",
-											"name": "Westgate",
+											"name": "西門",
 											"page": 14,
 											"entries": [
-												"The dismal city of Westgate isn't a romantic place, but someone seeking employment for shady work, or looking to hire someone for the same, will find few places better suited in all of Faerûn.",
-												"Westgate is considered by some Faerûnians as a harbinger of the eventual fate of places like Amn and Sembia, where coin rules over all other considerations. As in many such places, one's moral outlook is less important in Westgate than one's attitude toward bribery. The city's proximity to Cormyr makes it a breeding ground for that nation's enemies, including the Fire Knives, a guild of thieves and assassins that the naive pretend doesn't exist."
+												"陰鬱的西門城並不是個浪漫之地，但若是有人要找人幹一些不見得人的工作，或是有同樣的工作需要僱人幫忙，他會發現這裡是全費倫少有的好地方。",
+												"西門城被一些費倫人看作安姆和桑比亞等金錢至上地區未來命運的範例。跟這些地區一樣，在西門城裡，個人對實施賄賂的接受程度比其道德觀念更重要。該城市靠近科米爾的地區成了該國敵人的滋生地，其中就包括有盜賊及刺客組成之工會“焰匕”，那個天真者都會假裝其並不存在的組織。"
 											],
 											"id": "026"
 										}
@@ -447,74 +447,74 @@
 						},
 						{
 							"type": "entries",
-							"name": "Kara-Tur",
+							"name": "卡拉-圖",
 							"page": 14,
 							"entries": [
-								"Far to the east, past the wastes of the Hordelands, lie the empires of Shou Lung, Kozakura, Wa, and the other lands of the vast continent of Kara-Tur. To most people of Faerûn, Kara-Tur is like another world, and the tales told by travelers from its nations seem to confirm it. The gods that humans worship in Faerûn are unknown there, as are common peoples such as gnomes and orcs. Other dragons, neither chromatic nor metallic, dwell in its lands and fly its skies. And its mages practice forms of magic mysterious even to archwizards of Faerûn.",
-								"Stories of Kara-Tur tell of gold and jade in great abundance, rich spices, silks, and other goods rare or unknown in western lands\u2014alongside tales of shapechanging spirit-people, horned giants, and nightmare monsters absent in Faerûn."
+								"向遠東越過遊牧之地的荒原後，便是卡拉-圖大陸。其內坐落著“受龍”“小櫻”“倭”等諸帝國以及一些其他地區。費倫的人民大都將卡拉-圖看作另一個世界，而從那裡過來的旅行者其述說的故事也證實了這點。在費倫受人類崇拜的眾神，以及隨處可見的侏儒和獸人在這裡都無人知曉。別樣的龍在空中翱翔，在地上棲息，但它們既不是色彩龍也不是金屬龍。這裡的魔法師實現魔法之形式，連費倫的大奧師們也會覺得極其神秘。",
+								"與卡拉-圖相關的故事，都描述了大堆的黃金寶玉，濃郁的香料，絲綢，以及其他在西方罕見甚至聞所未聞的東西——故事裡甚至還有那些不會出現在費倫的各種變形靈體人，長角巨人和夢魘般的怪物。"
 							],
 							"id": "027"
 						},
 						{
 							"type": "entries",
-							"name": "Zakhara",
+							"name": "扎哈拉",
 							"page": 14,
 							"entries": [
-								"Far to the south of Faerûn, beyond Calimshan and even the jungles of Chult, are the Lands of Fate. Surrounded by waters thick with pirates and corsairs, Zakhara is a place less hospitable than most, but still braved by travelers who hope to profit from its exotic goods and strange magics. Like Kara-Tur, Zakhara seems a world away to Faerûnians. It is thought of as a vast desert, sprinkled with glittering cities like scattered gems. Romantic tales abound of scimitar-wielding rogues riding flying carpets and of genies bound in service to humans. Their mages, called sha'ir, practice their magic with the aid of genies and, it is said, might carry the lineage of these elemental beings in their blood."
+								"從費倫向南至遠處，在“卡林珊”乃至“楚爾特”的叢林之外，是被稱作“命定之地”的地區。環繞扎哈拉的水域充斥著大量的海盜與其船隻，是個不太好客的地方。但那些希望從這裡獲得一些異國商品和怪異魔法的旅行者，仍可過來勇敢地接受其挑戰。跟卡拉-圖一樣，扎哈拉在費倫人看來如同另一個世界。人們認為它是一片廣闊的沙漠，裡面稀疏地散落著如寶石般閃耀的城市。其間的浪漫故事述說了各種騎著飛毯的舞刀遊蕩者，以及受約束而為人類服務的巨靈們。這裡的魔法師稱作“覓法師”，他們會在巨靈的幫助下實施魔法，而且據說他們的血脈可能有部分來自元素生物的遺傳。"
 							],
 							"id": "028"
 						},
 						{
 							"type": "entries",
-							"name": "Beyond the Trackless Sea",
+							"name": "無痕海之外",
 							"page": 14,
 							"entries": [
-								"Farther to the west, past even Evermeet, are untold, unknown lands beyond the Trackless Sea. Many explorers have visited such lands, and some have even returned, bearing tales that change from generation to generation about exotic locales, from island chains that are the sites of countless shipwrecks, to fearsome feather-clad warriors, and vast continents that suddenly appeared where nothing\u2014or something very much different\u2014had rested only seasons prior.",
+								"西邊的更遠處，越過“永聚島”後，便是“無痕海”對面一眾無人提及，無人知曉的土地。曾經有許多探險者去過那些地區，其中甚至還有人能尋路歸來，但其帶回的故事卻隨代代相傳而改變。傳說那迥異的地區裡有無數船隻殘骸連城的島鏈，還有身披羽毛的嚇人戰士，還有隨季節更替忽然憑空出現的大片陸地（或是其他某些非同尋常的東西）。",
 								{
 									"type": "inset",
-									"name": "Coin of the Realms",
+									"name": "國度的鑄幣",
 									"entries": [
-										"Nearly every major power of Faerûn has its own currency: coins minted within its borders that represent both its influence and material wealth. Most coins of pure composition and standard weight are accepted at face value across the continent, though not every city-state or nation bothers to mint every sort of coin.",
-										"Some of the most commonly found, and widely accepted, currency in the Realms is summarized below. Each grouping is arranged in order of value: copper, silver, electrum, gold, and (when present) platinum. Most people across Faerûn refer to coins by whatever name the issuing government uses, regardless of origin, except for Zhentil Keep\u2014for some reason, all Zhent coins have unflattering epithets associated with them.",
+										"幾乎每個費倫的主要政權都有自己的通行貨幣：鑄成各自獨特樣式的錢幣，其本身既帶著金屬材料的價值，還帶有其代表的影響力價值。大部分成分純正和重量標準的錢幣都能在整個大陸通行，不過並不是每個城邦或國家都會不厭其煩的鑄造出每一種錢幣。",
+										"一些在國度裡最常見、通用性最廣的鑄幣總結如下。下列的每一組都按其價值排列為：銅幣、銀幣、銀金幣、金幣，以及（不一定有的）鉑金幣。不管鑄幣源於哪裡，大多數在費倫往來的人都會直接使用其發行時定下的名字，只有散提爾堡例外——出於某種原因，每種散提爾鑄幣都有各自對應的惡俗綽號。",
 										{
 											"type": "list",
 											"style": "list-hang-notitle",
 											"items": [
 												{
 													"type": "item",
-													"name": "Amn",
-													"entry": "fander, taran, centaur, danter, roldon"
+													"name": "安姆",
+													"entry": "梵德、塔蘭、人馬、丹特、羅爾丹"
 												},
 												{
 													"type": "item",
-													"name": "Cormyr",
-													"entry": "thumb, falcon, blue eye, golden lion, tricrown"
+													"name": "科米爾",
+													"entry": "拇指、隼、藍眼、金獅、三冠"
 												},
 												{
 													"type": "item",
-													"name": "Sembia",
-													"entry": "steelpence (an iron coin), hawk, blue eye, noble"
+													"name": "桑比亞",
+													"entry": "鋼便士（一種鐵幣）、獵鷹、藍眼、貴族"
 												},
 												{
 													"type": "item",
-													"name": "Silverymoon",
-													"entry": "glint, shield, sword, dragon, unicorn"
+													"name": "銀月城",
+													"entry": "閃光、盾、劍、龍、角獸"
 												},
 												{
 													"type": "item",
-													"name": "Waterdeep",
-													"entry": "nib, shard, sambar, dragon, sun"
+													"name": "深水城",
+													"entry": "尖兒、碎子、水鹿、龍、太陽"
 												},
 												{
 													"type": "item",
-													"name": "Zhentil Keep",
-													"entry": "fang (\"dung-piece\"), talon/naal (\"flea-bit\"), tarenth (\"hardhammer\"), glory (\"weeping wolf\"), platinum glory (\"flat metal gem\")"
+													"name": "散提爾堡",
+													"entry": "尖牙（“糞塊”）、禽爪/奈爾（“蝨口”）、塔倫德（“重錘”）、榮光（“泣狼”）、鉑光（“金屬寶石片”）"
 												}
 											]
 										},
-										"Silverymoon also mints two special coins: the moon and the eclipsed moon. The moon is a crescent-shaped, shining blue coin of electrum, valued at 2 unicorns in Silverymoon and nearby settlements, and 1 unicorn everywhere else. The eclipsed moon stamps an electrum moon with a darker silver wedge to complete a round coin. It is worth 5 unicorns within the city, but only 2 unicorns elsewhere.",
-										"Waterdeep has its own coins. The taol is a square piece of brass, worth 2 dragons in the city\u2014and virtually worthless to anyone not trading with Waterdeep. Most traders exchange their taols for standard coins before traveling. The \"harbor moon\" is a palm-sized crescent of platinum inset with electrum, and is worth 50 dragons in the city, 30 dragons elsewhere. Its name comes from its common use in buying large amounts of cargo. Both taols and harbor moons are pierced to enable the bearer to string multiple coins together.",
-										"Baldur's Gate sets the standard for minting trade bars\u2014ingots of metal (usually silver) of an accepted size and weight used in lieu of great piles of coins or gems for larger transactions. The most common such trade bar is a 5-pound bar 6 inches long, 2 inches wide, and 1 inch thick, valued at 25 gp."
+										"銀月城還鑄有兩種特殊的鑄幣：“月幣”和“月食幣”。月幣是一種亮藍色的新月形硬幣，它在銀月城及其周邊聚居地裡價值2角獸，在其他地區則只值1角獸。月食幣的外形是一面銀金質的月亮其上襯托著較暗的銀質陰影，結合起來組成一枚圓形的硬幣。它在城中價值5角獸，但在其他地方只值2角獸。",
+										"深水城也有自己硬幣。“陶爾”是方形的黃銅幣，在城裡價值2龍，但不跟深水城交易的人幾乎都不承認其價值。在深水城做交易的人在去別處旅行前通常都會將陶爾兌換成標準的錢幣。“灣月”是一種鑲嵌著銀金的巴掌大新月形鉑金幣，它在城裡值50龍，在其他地方值30龍。它通常用於大量貨物的買賣，而這也是其名字的來由。陶爾和灣月都有穿孔，以讓持幣使用者可以將多枚硬幣串在一起。",
+										"博德之門為鑄造“交易錠”設定了標準。交易錠是一種金屬鑄塊（通常是銀），用於代替大量鑄幣或寶石來進行大價值的交易。最常見的交易錠重5磅、長6寸、寬2寸、厚1寸，每錠價值25gp。"
 									],
 									"id": "02a"
 								}
