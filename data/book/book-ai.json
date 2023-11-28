@@ -1209,7 +1209,7 @@
 										],
 										[
 											"3",
-											"捷徑地圖，瞬間地圖"
+											"捷徑地圖、即時地圖"
 										],
 										[
 											"4",
@@ -1290,10 +1290,10 @@
 								},
 								{
 									"type": "entries",
-									"name": "Map of the Moment",
+									"name": "即時地圖",
 									"page": 20,
 									"entries": [
-										"Starting at rank 3, you can use an action to make a DC 15 Wisdom ({@skill Perception}) check and search your {@item cartographer's map case|AI} to find a map either related to your current mission or inspiring a new one. On a success, you find a map with a prominent landmark. The map has information on the natural terrain within one mile of the landmark. Once you use this feature, you cannot use it again until dawn seven days later.",
+										"從第3級開始，您可以使用一個動作進行DC15的感知（察覺）檢定，並搜索您的{@item cartographer's map case|AI}，以找到一張與您當前任務有關或激發新任務的地圖。成功後，您會找到一張帶有突出地標的地圖。該地圖包含地標周圍一英里內的自然地形信息。使用此功能後，您必須等到七天後的黎明才能再次使用。",
 										{
 											"type": "table",
 											"caption": "Possible Map Mission Landmarks",
@@ -1348,7 +1348,7 @@
 									"name": "Elder Cartographer's Glossography",
 									"page": 20,
 									"entries": [
-										"When you attain rank 4, you gain a small tome that is an uncommon magic item. The {@item elder cartographer's glossography|AI} grants advantage on Intelligence or Wisdom checks related to geographical features or locations.",
+										"當你達到階級4時，你將獲得一本小冊子{@item elder cartographer's glossography|AI}，它是一個不常見的魔法物品。在涉及地理特徵或地點的智力或感知檢定上獲得優勢。",
 										{
 											"type": "image",
 											"href": {
@@ -1367,7 +1367,7 @@
 									"name": "大型安全旅程",
 									"page": 20,
 									"entries": [
-										"Also at rank 4, your Tale of Safe Travel feature can now span up to three days of travel. If your franchise headquarters is mobile, you can include it in your Tale of Safe Travel, and can also include items or goods weighing up to 2,000 pounds.",
+										"同樣在第4級時，你的“安全旅程的故事”功能現在可以涵蓋長達三天的旅行。如果你的特許總部是移動的，你可以將它包含在你的安全旅行故事中，還可以包含重量達2000磅的物品或貨物。",
 										{
 											"type": "quote",
 											"entries": [
@@ -1377,7 +1377,7 @@
 										},
 										{
 											"type": "table",
-											"caption": "Why Be a Cartographer?",
+											"caption": "成為地圖製作者的原因",
 											"colLabels": [
 												"d8",
 												"Reason"
@@ -1389,35 +1389,35 @@
 											"rows": [
 												[
 													"1",
-													"A paranoid person by nature, you like seeing what's ahead of you at all times."
+													"天生多疑的你喜歡隨時了解前方的情況。"
 												],
 												[
 													"2",
-													"Your parent was a cartographer, their parent was a cartographer, and by the gods, you're going to be one too."
+													"你的父母是地圖製作者，他們的父母也是地圖製作者，你傳承了世世代代的基因。"
 												],
 												[
 													"3",
-													"You're fairly certain no one else in your party even knows how to hold a map, let alone read one."
+													"你相當確定你隊伍中沒有其他人甚至知道如何拿著地圖，更不用說讀懂它了。"
 												],
 												[
 													"4",
-													"You like spyglasses. A lot."
+													"你非常喜歡望遠鏡。"
 												],
 												[
 													"5",
-													"Your nickname as a child was \"the cartography kid.\""
+													"你孩提時的綽號是“地圖小子”。"
 												],
 												[
 													"6",
-													"Contrary to popular opinion, the destination is much, much more important than the journey."
+													"與普遍觀點相反，目的地比旅程更重要得多。"
 												],
 												[
 													"7",
-													"A good map is like an adventure without the bugs. And the mud. And the wolves."
+													"一張好地圖就像是一場沒有蟲子、泥巴和狼的冒險。"
 												],
 												[
 													"8",
-													"You suffer from the nagging feeling of never knowing why you've come into a room, and you need the professional flourish that lets you cover for that."
+													"你常常感到進入一個房間後不知道自己為什麼而來，你需要這種專業的修飾來掩飾。"
 												]
 											]
 										}
@@ -1429,7 +1429,7 @@
 						},
 						{
 							"type": "entries",
-							"name": "Decisionist",
+							"name": "決策者",
 							"page": 21,
 							"entries": [
 								{
@@ -1439,8 +1439,8 @@
 									],
 									"by": "Decisionist sales pitch"
 								},
-								"A decisionist brings decisive leadership to an Acquisitions Incorporated franchise. They settle disputes and ensure that the team moves forward toward its goals, often serving as a leader (officially or otherwise) and compass for the party. A signature move of the decisionist is to impress the importance of a particular looming choice on the other franchisees, then call for a vote. The results of all franchise votes are recorded, then later reported to Head Office. Decisionists are also concerned with franchise morale and teamwork, helping all members of the franchise work together effectively.",
-								"All decisionists vary in their approach to the task. You might primarily attempt to convince others through charismatic arguments, or through force of will or intellectual cunning. You might lead by example, or by extolling the examples of other people who've done the things you haven't quite gotten around to yet. Many decisionists go on to publish famous tomes, such as the best-selling {@i Habits of Effective Adventuring Parties} and {@i I Don't Care If the Rogue Stole Your Coins, We Have a Job to Do}. You help advance the franchise by calling for votes, making sure you're always on the side with the most votes, and resolving disputes within the franchise party.",
+								"決策者為Acquisitions Incorporated特許經營帶來果斷的領導風格。他們解決爭端，確保團隊朝著目標前進，通常作為領導者（正式或非正式）和團隊的指南。決策者的招牌舉動是強調某個迫在眉睫的選擇對其他特許經營成員的重要性，然後提出投票。所有特許經營的投票結果都被記錄，隨後報告給總部。決策者還關心特許經營的士氣和團隊合作，協助確保特許經營成員能夠有效地協同工作。",
+								"所有決策者在處理任務的方法上都有所不同。你可能主要嘗試通過有感染力的論點、意志力或智慧來說服他人。你可能以身作則，或者通過讚美那些已經完成你尚未開展的事情的他人的例子來領導。許多決策者最終會出版著名的著作，如暢銷書《有效的冒險隊伍習慣》和《我不在乎盜賊偷了你的金幣，我們有工作要做》。你通過提出投票，確保自己總是站在得票最多的一方，並解決特許經營團隊內部的爭端，來推動特許經營的發展。",
 								{
 									"type": "image",
 									"href": {
