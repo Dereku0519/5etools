@@ -2,16 +2,17 @@
 	"data": [
 		{
 			"type": "section",
-			"name": "Preface",
+			"name": "前言",
 			"page": 4,
 			"entries": [
-				"Hail and well met, traveler! Welcome to a world of magic and adventure. Originally created by Ed Greenwood, the Forgotten Realms setting has been home to Dungeons & Dragons stories and games for decades. Built for tales of swords and sorcery, the Realms initially grew and flourished in Ed's D&D campaign, which featured heroes like the Knights of Myth Drannor in the Dalelands. Ed also shared glimpses of the Realms in the pages of Dragon magazine, giving D&D players their first tales from the wizard Elminster, the old sage of Shadowdale, who occasionally found his way through a portal between Faerûn and our world and into Ed's living room.",
-				"When TSR, the company that owned D&D at the time, sought a new campaign world to expand the D&D multiverse, they chose the Forgotten Realms, and in 1987, the gates were flung wide for players and Dungeon Masters all over the world to come to Faerûn and create their own heroic tales. A year later, author R.A. Salvatore introduced readers to the adventures of the drow outcast Drizzt Do'Urden in his first novel, The Crystal Shard, establishing the Underdark as an essential part of the Realms.",
-				"In the years since, the Forgotten Realms have played host to a vast number of game products, novels, video games, and more, making it one of the most widely visited fantasy settings ever created. The lost portals to the Realms have returned and remained open in the depths of our imaginations and do so to this day, as more and more visitors find their way there.",
-				"It is no surprise, then, that the Forgotten Realms became the setting for the first adventures for fifth edition Dungeons & Dragons. Already, new heroes have accomplished great deeds and saved Faerûn from terrible evil and will continue to do so, as long as the flame of imagination draws them there.",
-				"This book is further fuel for the fire sparked by those adventures and the glimpses of the Realms you can find in the fifth edition Player's Handbook, Dungeon Master's Guide, and Monster Manual. It gives you a broad look at the continent of Faerûn and the world of Toril in general, and the regions of the Sword Coast and the North in particular.",
-				"In these pages, you'll learn about the history, lands, and peoples of Faerûn, of the great city-states of the Sword Coast and the North, of the world's gods, and of the factions and forces that support and threaten civilization. Chapter 1 of this book gives an overview of the Sword Coast and nearby lands, its history, the role of magic, and its religions. Chapter 2 goes into detail about the cities and other locations of the Sword Coast. Chapter 3 gives history and some game material for various races and subraces, both common and uncommon, that can be met on the Sword Coast and in the North. Chapter 4 shows how the character options in the Player's Handbook fit into this region and presents new character class options specific to the Forgotten Realms. Chapter 5 gives backgrounds designed to link your characters to the great places, people, and events of Faerûn.",
-				"While the body of Realms lore is vast, and this book is only an introduction, the Forgotten Realms setting\u2014like D&D itself\u2014is yours, and has been ever since Ed opened that first portal and invited us to come and visit. The Realms are a place to create and tell your stories, about your adventurers and their deeds. The lands and peoples of Faerûn welcome you, traveler, for it is a place of peril sorely in need of the heroes you will bring forth. Go now, through the portal of imagination and into vast and wonderful realms awaiting beyond.",
+				"向您致敬，旅行者！歡迎來到一個充滿魔法與冒險的世界。由艾德·格林沃初建的被遺忘國度背景是幾十年來龍與地下城故事和遊戲的發源地。這個基於劍與魔法的國度開始只在艾德的D&D戰役中發展豐富，其中也樹立了如谷地的迷思卓諾騎士那樣的英雄。艾德還在《龍》雜誌裡分享了該國度的一些內容，讓D&D的玩家們得以開展關於陰影谷的老智者，法師伊爾明斯特的首個故事。這位老法師偶爾也會用傳送門從費倫來到我們的世界，出現在艾德的臥室。",
+				"D&D的所有者，TSR公司在尋找新的戰役世界來擴充套件D&D的多元宇宙時選擇了被遺忘國度，不過直至1987年，這扇大門才對玩家跟地下城主們開啟，讓他們得以再其中創作自己的英雄故事。一年後，作家R.A.薩爾瓦多便為讀者們展示了其第一部小說《碎魔晶》中崔斯特·杜厄登的冒險經歷，並將幽暗地域作為國度的一個重要組成部分。",
+				"隨後幾年裡，被遺忘國度一直作為大量遊戲刊物、小說、電子遊戲等作品的故事載體，並以此成為了有史以來最廣泛的虛擬現實場景之一。進入國度的失落傳送門開啟至今仍暢行無阻，它通往我們腦海深處的想象之中，並以此將越來越多的旅行者帶來此處。",
+				"因而被遺忘國度毫無懸念的成為了第五版龍與地下城第一個冒險模組的設定世界。新英雄們已經完成其偉大的壯舉，並將費倫從可怕的邪惡中拯救出來，而只要想象的火焰不滅，他們就會繼續如此這般的拯救世界。",
+				"本書是你在第五版《玩家手冊》《城主指南》和《怪物圖鑑》中瞥見的國度之端倪後，為你的想象之火進一步助燃的佐料。它可以幫你整體的瞭解費倫大陸與託瑞爾的世界，特別是劍灣與北地諸地區。",
+				"在這書頁之間，你將瞭解費倫的歷史、大陸與人民，還有劍灣和北地各偉大城邦，世界諸神，以及支援或威脅文明的各派系與勢力。本書第1章概述了劍灣級附近各地區，介紹其歷史，魔法在其中的影響力，以及其宗教狀況。第2章詳細介紹了劍灣各城市和其他地點。第3章為劍灣和北地中各異的種族和亞種介紹其歷史，並提供一些遊戲材料。第4章介紹瞭如何利用《玩家手冊》中的人物選項匹配這些地區故事，並提供了一些針對被遺忘國度的新角色選項。第5章介紹了一些背景項，其旨在讓你的角色與費倫廣大的地區、人物和事件相聯。",
+				"雖然國度的知識設計甚廣，而本書只能作一些簡單的介紹。但被遺忘國度的設定本身（如同D&D本身一樣）屬於你自己。自艾德開啟第一扇傳送門邀請我們來訪之日起，國度就是個創造並講述你的故事，發展你的冒險與事蹟之地。旅行者，費倫的土地與人民歡迎你，因為這是個充滿危險之地，它需要你帶來的英雄們。",
+				"那現在，就讓我們穿越想象的門扉，進入前方拿正靜待你到來的美妙大國度。",
 				{
 					"type": "image",
 					"href": {
@@ -26,15 +27,15 @@
 		},
 		{
 			"type": "section",
-			"name": "Welcome to the Realms",
+			"name": "歡迎來到國度",
 			"page": 7,
 			"entries": [
-				"On the world of Toril, between the windswept Sea of Swords to the west and the mysterious lands of Kara-Tur to the east, lies the continent of Faerûn. A place of varied cultures and races, Faerûn is dominated by human lands, be they kingdoms, city-states, or carefully maintained alliances of rural communities. Interspersed among the lands of humans are old dwarven kingdoms and hidden elven enclaves, assimilated populations of gnomes and halflings, and more exotic folk.",
-				"A great deal of adventure is to be had in the Realms, for those willing to seek it out. The routes between cities and nations often cross into the territory of brigands or marauding humanoids. Every forest, swamp, and mountain range has its own perils, whether lurking bandits, savage orcs and goblinoids, or mighty creatures such as giants and dragons. Ruins dot the landscape and the caverns that wind beneath the surface. In these places, treasures of every living race\u2014and a number of dead ones\u2014wait for adventurers intrepid enough to come and claim them.",
-				"Faerûn is filled with rich history and wondrous tales of adventure and magic, but the lifeblood of its common people is agriculture and trade. Most rural folk depend on farming to eat, and Faerûnians who live in cities ply skilled trades or use brawn to earn their keep, so they can purchase the goods and food provided by others. News and gossip are carried between population centers by caravans and ships that bring in supplies for trade and by traveling bards and minstrels who recount (or invent) stories to inform and entertain people in taverns, inns, and castles. Adventurers also spread news\u2014while also creating it!",
-				"The common folk of Faerûn look on adventurers with a mixture of admiration, envy, and mistrust. Folk believe that any stalwarts willing to risk their lives on behalf of complete strangers should be lauded and rewarded. But such adventurers, if they become successful, amass wealth and personal status at a rate that some people find alarming. Even people who admire these adventurers for their energy and their acts of valor might have misgivings: what horrors will be unleashed if adventurers, heedless or unknowing of the danger, unlock a ruin or a tomb and release an ancient evil into the world?",
-				"Most of the people who populate the continent have little or no knowledge of lands outside Faerûn. The most educated among the populace agree that Faerûn is but one continent and that Toril is the whole of the world, but for the majority of people, who don't experience intercontinental travel or extraplanar exploration, \"Faerûn\" is more than large enough of a concept for them to comprehend.",
-				"Except in the most remote or insular places, Faerûnians are accustomed to seeing people of different cultures, ethnicities, and races. Only in the most cosmopolitan areas does such casual acceptance extend to evil humanoid races\u2014such as goblinoids, orcs, and drow\u2014to say nothing of even more dangerous creatures. Adventurers tend to be more tolerant, accepting exiles, misfits, and redeemed folk from strange lands and with unusual shapes.",
+				"在“託瑞爾”世界裡，從大風肆虐的“寶劍海”到東方神秘的“卡-拉圖”地區之間，便是被稱為“費倫”的大陸。費倫是個由各種不同文化和種族組成的地方，其本身以人類各領土為主，並作為其王國、城邦或謹慎維繫的鄉間社群聯盟。在這些人類領地之間，散佈著諸古老的矮人王國和隱秘的精靈飛地，其內部還包含一些被同化的侏儒和半身人，以及其他的一些外來民族。",
+				"國度中有許多冒險等待那些渴望探索之人前去挖掘。各城市與國家間的道路時常會經過土匪或其他類人生物掠奪者所在的領地。每一處森林、沼澤和山地都有各自不同型別的危險，可能是潛伏的強盜、野蠻的獸人和類地精，也可能是巨人與龍等強大生物。分佈各處的廢墟混雜在各種景觀地裡，以及各處地下的通風洞窟中。各在世種族，以及大量已消亡種族之寶藏安放其間，都在等待勇敢無畏的冒險者們前來獲取。",
+				"費倫包含了豐富的歷史以及各種冒險與魔力的神奇故事，但其中的普通民眾其營生手段仍只是農業與貿易。大多鄉間村民靠務農為生，而城裡人則從事需要技巧行當或是以體力勞動賺得生計，然後以其收入購買別人提供的商品和食物。各種訊息和流言蜚語，跟隨轉運貨物的商隊與船隻在各人口密集地間流傳。旅行的吟遊詩人和巡演藝人們也會複述（或自創）各種故事，以通告大眾或是用於在酒館、旅店和城堡內娛樂大眾。冒險者們也會傳播新聞——同時也在創造各種新聞！",
+				"費倫的普通民眾以羨慕、嫉妒和不信任等複雜的混合心情看待冒險者。人們覺得那些願為完全陌生者冒生命危險的人都應該得到讚揚和獎勵。而這些冒險者一旦成功，便會積累起財富與地位，甚至因此讓某些人覺得不快。即使是那些欣賞冒險者們的熱情與英勇行為的人也可能會遲疑：如果冒險者們不夠謹慎或是無知地開啟某個廢墟或陵墓並釋放出某個遠古之惡，那將會帶來怎樣的恐怖？",
+				"居住在这片大陆的大多数人对费伦之外的土地几乎都一无所知。大多受过教育的民众都认为费伦是唯一的一整块大陆，而托瑞尔便是世界的全部。不过，在并未经历过跨大陆旅行或异位面探索的大多数人看来，“费伦”已经是其理解范围内最大的地域概念。",
+				"除最偏远或与世隔绝的地方外，费伦人们都已习惯看到不同文化、不同民族、不同种族的人。但也只有在最国际化的地区，这种轻松接受的心情才可延展到邪恶的类人种族（比如类地精、兽人和卓尔），而其他更危险的生物就更不在话下。而冒险者们却往往更加宽容，更能接受那些来自陌生土地或是体态异常的流亡者、不合群者和寻求救赎者。",
 				{
 					"type": "section",
 					"name": "The Sword Coast and the North",
