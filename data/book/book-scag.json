@@ -46,68 +46,68 @@
 						"北地的大多數社群、國家和主權地可歸納為五類：作為“領主聯盟”成員的城市和小鎮，區域內已建成的矮人要塞，離岸的諸島國，分散在海岸附近的獨立國度，以及位於地底的“幽暗地域”。這裡將為每個類別進行一些簡要的討論，更多相關細節可參見{@book 第二章|SCAG|2|劍灣與北地}。",
 						{
 							"type": "entries",
-							"name": "The Lords' Alliance",
+							"name": "領主聯盟",
 							"page": 7,
 							"entries": [
-								"The Lords' Alliance is a confederation among the rulers of various northern settlements. The number of members on the Council of Lords, the group's governing body, shifts depending on the changing status of member cities and political tensions in the region. Currently, the Lords' Alliance counts these individuals as council members:",
+								"領主聯盟是北方各聚居地其統治者間建起的邦聯。該組織的管理機構——“領主議會”其成員人數的變動與成員城市各自的情況相關，也與該地區的政治緊張局勢相關。領主聯盟當前的議會成員為：",
 								{
 									"type": "list",
 									"items": [
-										"Laeral Silverhand, the Open Lord of Waterdeep",
-										"Dagult Neverember, Lord Protector of Neverwinter",
-										"Taern Hornblade, High Mage of Silverymoon",
-										"Ulder Ravengard, Grand Duke of Baldur's Gate and Marshal of the Flaming Fist",
-										"Morwen Daggerford, Duchess of Daggerford",
-										"Selin Ramur, Marchion of Mirabar",
-										"Dowell Harpell of Longsaddle",
-										"Dagnabbet Waybeard, Queen of Mithral Hall",
-										"Lord Dauner Ilzimmer of Amphail",
-										"Nestra Ruthiol, Waterbaron of Yartar"
+										"萊拉·銀手(深水城公開領主)",
+										"達格特·無燼(無冬城的護國公)",
+										"特恩·角刃(銀月城至高法師)",
+										"厄爾德·瑞文嘉德(博德之門的大公爵兼焰拳兵團的元帥)",
+										"莫玟·匕首灘(匕首灘的女公爵)",
+										"謝林·拉姆爾(米拉巴的侯爵)",
+										"長鞍鎮的道爾·哈貝爾",
+										"達格娜貝·韋貝爾德(秘銀廳的女王)",
+										"安菲爾的多內·伊爾齊瑪領主",
+										"內斯特拉·路西歐(雅塔的水男爵)"
 									]
 								},
-								"The Lords' Alliance includes the strongest mercantile powers of the North. In addition to providing military support and a forum for the peaceful airing of differences, the Alliance has always acted under the principle that communities with common cause that engage in trade are less likely to go to war with one another. By maintaining strong trade ties within the alliance as well as outside it, the Lords' Alliance helps to keep the peace."
+								"領主聯盟囊括了北地最強大的商業勢力。在提供軍事支援以及召開和平討論分歧的論壇之餘，聯盟自始至終的原則都是以溝通交流促進商貿發展並努力避免相互之間爆發戰爭。領主聯盟正是透過維護同盟內外的緊密貿易關係來幫助各地維持和平。"
 							],
 							"id": "003"
 						},
 						{
 							"type": "entries",
-							"name": "Dwarfholds of the North",
+							"name": "北地的矮人要塞",
 							"page": 8,
 							"entries": [
-								"The various dwarven communities of the North are the heirs and survivors of Delzoun, the great Northkingdom of long ago. Despite continually warring over the centuries with the orcs and goblinoids of the region, and having to fight off assaults from below by duergar and drow, the shield dwarves have stood fast, determined to hold their halls against all threats\u2014and, when necessary, reclaim them.",
-								"Holds that survive from the days of Delzoun include Mithral Hall, Citadel Adbar, and Citadel Felbarr. The fabled city of Gauntlgrym, built by the Delzoun dwarves and recently taken back from the drow, stands as a beacon of resurgent dwarven strength in the North. Stoneshaft Hold and Ironmaster are lonely settlements continually girding themselves for threats real and imagined. Sundabar and Mirabar are also generally considered dwarfholds, despite their substantial human populations.",
-								"Until recently, many of the dwarfholds were members of the Silver Marches (also known as Luruar), an alliance of cities that provided mutual protection across the North. Disagreements and failed obligations during a war with the orc kingdom of Many-Arrows destroyed the remaining trust between members of the Marches, and that pact is no more. The dwarfholds still ally with one another, and individually with nearby human realms, but no longer pledge to stand unified with all their neighbors."
+								"北地諸矮人社群是舊時的偉大北王國“丹佐”之後裔和倖存者。儘管過去的幾個世紀裡，他們與該地區的獸人和類地精接連不斷地爆發戰事，還要應付來自地底的灰矮人和卓爾進犯，但盾矮人們仍總能迅速恢復元氣，堅定地死守其其要塞大廳對抗所有威脅，然後在時機成熟時奪回一切。",
+								"從丹佐時代倖存下來的要塞包括“秘銀廳”“阿德巴堡”和“費爾巴堡”。剛從卓爾手中奪回的傳說之城“岡特格瑞姆”也是由丹佐矮人所建，而這座城市也成為了北地矮人勢力復興的象徵。孤立的聚居地如“石井要塞”和“精鐵城”則在不斷地加固自己，以面對一切真實或虛構的威脅。“桑達巴”和“米拉巴”也被普遍歸類為矮人要塞，不過這些地點內部還居住著大量的人類居民。",
+								"直至最近，許多矮人要塞都曾加入一個稱為“銀色聯邦”（亦稱“拉露亞”）的北地聯合防禦城市聯盟。然而在與“眾箭”獸人王國的戰爭中，分歧和失敗的責任破壞了聯邦盟國間最後的信任，而其協議也隨之不復存在。各矮人要塞仍是彼此的盟友，並分別與其鄰近的人類王國結盟，只是不再與其所有鄰邦都保持統一國家的聯絡。"
 							],
 							"id": "004"
 						},
 						{
 							"type": "entries",
-							"name": "Island Kingdoms",
+							"name": "諸島國",
 							"page": 8,
 							"entries": [
-								"Off the western coast of Faerûn are a number of island realms of varying size. The most distant, and yet perhaps the most symbolically important to the mainland, is Evermeet, the island paradise of the elves, reputed to be a part of the divine realm of Arvandor. Much closer to Faerûn are the Whalebones and Ruathym, ancient homes of the ancestors of the Illuskan people, and the Moonshaes, where many of those same people now share the islands with the Ffolk and an elf offshoot known as the Llewyr. The free port of Mintarn lies nearby, a neutral site for meetings between enemies and a recruitment spot that offers abundant jobs for sailors. Despite its size, the tiny island of Orlumbor, with its treacherous harbor and its skilled, in-demand shipwrights, is an independent and influential nation unto itself.",
-								"In the seas to the south, pirates of many races and predilections sail from the Nelanther Isles, preying on trade running north and south along the coasts. Since the beginning of the Sundering, fabled Lantan and Nimbral have returned. Both the center of invention and the isle of Leira-worshiping illusionists are even more secretive and less welcoming of strangers than before their disappearance."
+								"費倫的西海岸外有許多大小不一的島嶼。其中對主陸而言最遙遠也最具象徵意義之地，便是號稱神聖國度“阿梵多”一部分的精靈島嶼“永聚島”。更接近費倫處，有伊路斯坎先祖的古老家園“鯨骨群島”和“魯斯姆”，以及該民族現正與弗爾克人及精靈分支“利維爾”共享資源的“月影群島”。附近不遠處便是“明檀”的自由港，這裡還作為對敵雙方會面的中立地帶，還作為向水手委託各種工作的徵募地。面積不大的小島“歐倫伯”，有著險惡港口和市場需求強勢的專業船舶，還是個獨立而有影響力的國家。",
+								"在南部諸海，不同種族不同嗜好的海盜從“奈蘭瑟爾群島”揚帆出發，狩獵一切沿海岸南北經商的船隻。自“大陸分離”開始，著名的“蘭檀”和“寧布拉爾”也相繼迴歸。自此，曾經的研發中心和崇拜萊拉之幻術師們都變得更加神秘，並且比其消失之前更加不歡迎陌生人到訪。"
 							],
 							"id": "005"
 						},
 						{
 							"type": "entries",
-							"name": "Independent Realms",
+							"name": "獨立國度",
 							"page": 8,
 							"entries": [
-								"Interspersed among the fortresses of the dwarves and the settlements protected by the Lords' Alliance are significant sites that have no collective character, except that they exist largely outside the protection or purview of the great powers of the region. Even the civilized locales among these places, such as Elturgard, exist, at best, in an uneasy tension with the denizens of the wilder lands within and just outside their borders, and survive only through constant vigilance and the steady recruitment of new defenders.",
-								"A great variety of independent nations and notable locations is encompassed within the wild lands of the North. Among them are the great library of Candlekeep, home of the greatest collection of written lore in Faerûn; the imposing, giant-scale castle of Darkhold; the fortified abbey of Helm's Hold; sites of great battles such as Boareskyr Bridge and the Fields of the Dead; realms of some security, such as Elturgard and Hartsvale; and the yuan-ti realm of Najara. The lands of the Uthgardt, the towns of frigid Icewind Dale, the quiet Trielta Hills, the cutthroat city of Luskan, and the legendary Warlock's Crypt, dominion of the great lich Larloch, are all independent realms, as are the High Moor, the Trollclaws, and the High Forest.",
-								"There is much danger and adventure to be had in the free places of the North, and a great deal of wealth and treasure as well. The ruins of ancient kingdoms and countless smaller settlements litter the countryside, waiting for the right explorers to happen upon them."
+								"除矮人的堡壘和受領主聯盟庇護的聚居地外，該地區還散佈著許多無共同特徵的重要地點，其唯一相似之處便是都分別受某個大勢力的保護或管轄。連其所孕育的文明（比如埃爾圖迦德），也至少會與周邊一些荒野地區或鄰邦疆土處於某種不穩定的緊張局勢，只有保持不間斷的警惕並不斷招募新的守衛才能頑強生存下來。",
+								"許多獨立國家和著名地點都在北地的荒野中。其中就有費倫最大的手書作品安置所，即“燭堡”最偉大的圖書館；雄偉壯觀如巨人之地的“黑暗堡”之城堡；要塞城市兼修道院的“海姆之握”；大戰所在地如“巴里斯凱爾橋”和“死亡之地”；相對安全的國度，如“埃爾圖迦德”和“雄鹿谷”；以及蛇人的國度“納迦拉”。烏斯伽人各處的領地，“冰風谷”內冰封的諸城鎮，寂靜的“崔爾塔丘陵”，殘酷的城市“路斯坎”，以及著名巫妖“拉洛克”佔領的傳奇地點“邪術師之墓”都屬於獨立國度，此外還有“至高荒原”“巨魔之爪”和“至高森林”等地。",
+								"在北地大片的無主之地裡有著許多的危險與冒險，其中還有大量的財富與寶藏。遠古王國的廢墟和無數小村落散佈在鄉間地帶裡，等待著那些註定與之相遇的探險者們。"
 							],
 							"id": "006"
 						},
 						{
 							"type": "entries",
-							"name": "The Underdark",
+							"name": "幽暗地域",
 							"page": 9,
 							"entries": [
-								"Extending miles downward and outward beneath the surface of Faerûn, and reaching to other continents as well, the great network of subterranean caverns known as the Underdark is home to all manner of strange and deadly creatures. Duergar and drow\u2014dark reflections of dwarves and elves\u2014live in these sunless lands, as do the svirfneblin, or deep gnomes. Most surface-dwelling folk aren't threatened or even disturbed by denizens of the deep places, but the creatures occasionally emerge to raid or to seek some kind of goal in the surface world.",
-								"Among the lands of the Underdark beneath the North are the svirfneblin city of Blingdenstone, the duergar city of Gracklstugh, and the infamous drow city of Menzoberranzan. Also prominent is Mantol-Derith, a trading post for Underdark merchants."
+								"從費倫地表向下延伸數里便可到達另一大陸，即被稱為幽暗地域的巨大地下洞窟群，這裡同時也是各種致命的奇異生物之家園。灰矮人和卓爾（矮人和精靈的黑暗倒影）生活在這片沒有陽光的土地上，同樣生活在這裡的還有斯涅布力，也就是人稱的地底侏儒。地表世界居民的到訪大都不會對深地地區的居民構成任何威脅，甚至談不上打擾，但本地的生物卻偶爾會為施行掠奪，或是為完成某些目的而前往地表。",
+								"北地下的幽暗地域各領地有斯涅布力城市“布靈登石城”，灰矮人的城市“格萊克斯圖格”，以及臭名昭著的卓爾城市“魔索布萊城”。此外還有著名城市“曼塔-岱瑞絲”，幽暗地域裡一個重要交易站。"
 							],
 							"id": "007"
 						}
