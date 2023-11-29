@@ -470,11 +470,11 @@
 					"headers": [
 						"劍灣與北地",
 						"託瑞爾及其中各地區",
-						"Time in the Realms",
-						"A Brief History",
-						"Magic in the Realms",
-						"Religion in the Realms",
-						"The Gods of Faerûn"
+						"國度的歷法",
+						"簡史",
+						"國度的魔法",
+						"國度的宗教",
+						"費倫諸神"
 					],
 					"ordinal": {
 						"type": "chapter",
