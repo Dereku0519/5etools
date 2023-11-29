@@ -44,24 +44,24 @@
 					"light",
 					"medium",
 					{
-						"proficiency": "盾牌",
+						"proficiency": "{@item shield|phb|盾牌}",
 						"full": "盾牌（德魯伊不能穿戴或使用金屬製成的護甲和盾牌）"
 					}
 				],
 				"weapons": [
-					"棍棒",
-					"匕首",
-					"飛鏢",
-					"標槍",
-					"硬頭錘",
-					"長棍",
-					"彎刀",
-					"鐮刀",
-					"投石索",
-					"矛"
+					"{@item club|phb|棍棒}",
+					"{@item dagger|phb|匕首}",
+					"{@item dart|phb|飛鏢}",
+					"{@item javelin|phb|標槍}",
+					"{@item mace|phb|硬頭錘}",
+					"{@item quarterstaff|phb|長棍}",
+					"{@item scimitar|phb|彎刀}",
+					"{@item sickle|phb|鐮刀}",
+					"{@item sling|phb|投石索}",
+					"{@item spear|phb|矛}"
 				],
 				"tools": [
-					"{@item 藥草師工具組|PHB}"
+					"{@item 草藥工具|PHB}"
 				],
 				"skills": [
 					{
@@ -81,11 +81,6 @@
 					}
 				]
 			},
-			"languageProficiencies": [
-				{
-					"druidic": true
-				}
-			],
 			"startingEquipment": {
 				"additionalFromBackground": true,
 				"default": [
@@ -133,7 +128,7 @@
 						"light",
 						"medium",
 						{
-							"proficiency": "shields",
+							"proficiency": "{@item shield|phb|盾牌}",
 							"full": "盾牌（德魯伊不能穿戴或使用金屬製成的護甲和盾牌）"
 						}
 					]
@@ -450,7 +445,7 @@
 				"Cantrip Versatility|Druid||1|UAClassFeatureVariants",
 				"荒野形態|Druid||2",
 				"Wild Companion|Druid||2|UAClassFeatureVariants",
-				"Wild Companion|Druid||2|TCE",
+				"荒野夥伴|Druid||2|TCE",
 				{
 					"classFeature": "德魯伊結社|Druid||2",
 					"gainSubclassFeature": true
@@ -458,7 +453,7 @@
 				"荒野形態強化|Druid||4",
 				"屬性值提升|Druid||4",
 				"Proficiency Versatility|Druid||4|UAClassFeatureVariants",
-				"Cantrip Versatility|Druid||4|TCE",
+				"替換戲法|Druid||4|TCE",
 				{
 					"classFeature": "德魯伊結社能力|Druid||6",
 					"gainSubclassFeature": true
@@ -490,12 +485,13 @@
 					"name": "大地結社",
 					"ENG_name": "Circle of the Land",
 					"shortName": "大地",
-					"ENG_shortName": "Circle of the Land",
+					"ENG_shortName": "Land",
 					"source": "PHB",
 					"page": 68,
 					"srd": true,
 					"additionalSpells": [
 						{
+							"name": "Arctic",
 							"prepared": {
 								"3": [
 									"hold person",
@@ -516,6 +512,7 @@
 							}
 						},
 						{
+							"name": "Coast",
 							"prepared": {
 								"3": [
 									"mirror image",
@@ -536,6 +533,7 @@
 							}
 						},
 						{
+							"name": "Desert",
 							"prepared": {
 								"3": [
 									"blur",
@@ -556,6 +554,7 @@
 							}
 						},
 						{
+							"name": "Forest",
 							"prepared": {
 								"3": [
 									"barkskin",
@@ -576,6 +575,7 @@
 							}
 						},
 						{
+							"name": "Grassland",
 							"prepared": {
 								"3": [
 									"invisibility",
@@ -596,6 +596,7 @@
 							}
 						},
 						{
+							"name": "Mountain",
 							"prepared": {
 								"3": [
 									"spider climb",
@@ -616,6 +617,7 @@
 							}
 						},
 						{
+							"name": "Swamp",
 							"prepared": {
 								"3": [
 									"darkness",
@@ -636,6 +638,7 @@
 							}
 						},
 						{
+							"name": "Underdark",
 							"prepared": {
 								"3": [
 									"spider climb",
@@ -667,7 +670,7 @@
 					"name": "月亮結社",
 					"ENG_name": "Circle of the Moon",
 					"shortName": "月亮",
-					"ENG_shortName": "Circle of the Moon",
+					"ENG_shortName": "Moon",
 					"source": "PHB",
 					"page": 69,
 					"additionalSpells": [
@@ -741,7 +744,7 @@
 					"name": "夢境結社",
 					"ENG_name": "Circle of the Dreams",
 					"shortName": "夢境",
-					"ENG_shortName": "Circle of the Dreams",
+					"ENG_shortName": "Dreams",
 					"source": "XGE",
 					"page": 22,
 					"subclassFeatures": [
@@ -852,7 +855,7 @@
 					"name": "孢子結社",
 					"ENG_name": "Circle of Spores",
 					"shortName": "孢子",
-					"ENG_shortName": "Circle Spores",
+					"ENG_shortName": "Spores",
 					"source": "TCE",
 					"page": 36,
 					"otherSources": [
@@ -891,20 +894,24 @@
 					]
 				},
 				{
-					"name": "Circle of Stars",
-					"shortName": "Stars",
+					"name": "星辰結社",
+					"ENG_name": "Circle of Stars",
+					"shortName": "星辰",
+					"ENG_shortName": "Stars",
 					"source": "TCE",
 					"page": 38,
 					"subclassFeatures": [
-						"Circle of Stars|Druid||Stars|TCE|2",
-						"Cosmic Omen|Druid||Stars|TCE|6",
-						"Twinkling Constellations|Druid||Stars|TCE|10",
-						"Full of Stars|Druid||Stars|TCE|14"
+						"星辰結社|Druid||Stars|TCE|2",
+						"宇宙預兆|Druid||Stars|TCE|6",
+						"閃耀星座|Druid||Stars|TCE|10",
+						"燦若繁星|Druid||Stars|TCE|14"
 					]
 				},
 				{
-					"name": "Circle of Wildfire",
-					"shortName": "Wildfire",
+					"name": "野火結社",
+					"ENG_name": "Circle of Wildfire",
+					"shortName": "野火",
+					"ENG_shortName": "Wildfire",
 					"source": "TCE",
 					"page": 39,
 					"additionalSpells": [
@@ -934,10 +941,10 @@
 						}
 					],
 					"subclassFeatures": [
-						"Circle of Wildfire|Druid||Wildfire|TCE|2",
-						"Enhanced Bond|Druid||Wildfire|TCE|6",
-						"Cauterizing Flames|Druid||Wildfire|TCE|10",
-						"Blazing Revival|Druid||Wildfire|TCE|14"
+						"野火結社|Druid||Wildfire|TCE|2",
+						"強化鏈接|Druid||Wildfire|TCE|6",
+						"灼燒烈焰|Druid||Wildfire|TCE|10",
+						"熾烈回生|Druid||Wildfire|TCE|14"
 					]
 				}
 			],
@@ -2364,7 +2371,7 @@
 			"classSource": "PHB",
 			"level": 1,
 			"entries": [
-				"你知曉德魯伊語，一種屬於德魯伊的秘密語言。你可以說這種語言，並用它來留下隱藏的信息。你和其他知曉這種語言的人將會自動注意到這類信息。其他人則可以透過成功通過一次DC 15的睿知（{@skill 感知}）檢定以察覺這個信息的存在，但不使用魔法就無法解讀它。"
+				"你知曉{@language Druidic}，一種屬於德魯伊的祕密語言。你可以說這種語言，並用它來留下隱藏的信息。你和其他知曉這種語言的人將會自動注意到這類信息。其他人則可以通過成功通過一次DC 15的感知（{@skill 察覺}）檢定以察覺這個信息的存在，但不使用魔法就無法解讀它。"
 			]
 		},
 		{
@@ -2377,12 +2384,12 @@
 			"classSource": "PHB",
 			"level": 1,
 			"entries": [
-				"借助大自然本身的天授精粹，你可以施放法術以按照你的意願形塑它。請參閱{@book 第十章|PHB|10}以了解關於施法的規則，以及第十一章以查閱{@filter 德魯伊法術列表|spells|class=druid}。",
+				"藉助大自然本身的天授精粹，你可以施放法術以按照你的意願形塑它。請參閱{@book 第十章|PHB|10}以瞭解關於施法的規則，以及第十一章以查閱{@filter 德魯伊法術列表|spells|class=druid}。",
 				{
 					"type": "entries",
 					"name": "戲法",
 					"entries": [
-						"在1級時，你知曉兩個從{@filter 德魯伊法術列表|spells|class=druid}自選的戲法。你將在升至更高的德魯伊等級時學會額外的德魯伊戲法，見德魯伊表格中的已知戲法欄位。"
+						"在1級時，你知曉兩個從{@filter 德魯伊法術列表|spells|class=druid}自選的戲法。你將在升至更高的德魯伊等級時學會額外的德魯伊戲法，見德魯伊表格中的已知戲法字段。"
 					]
 				},
 				{
@@ -2390,16 +2397,16 @@
 					"name": "準備及施放法術",
 					"entries": [
 						"德魯伊表中顯示了你有多少個法術位可以用來施放你一環或更高環的{@filter 德魯伊法術|spells|class=druid}。要施放其中一個這些德魯伊法術，你必須消耗一個與該法術環階相同或更高的法術位。你在完成一次長休後恢復所有你花費掉的法術位。",
-						"你準備一份你所能施放的德魯伊法術列表，從德魯伊法術列表中選擇。當你這麼做時，選擇數量等同於你睿知調整值 + 你德魯伊等級的德魯伊法術（最少一個法術）。這些法術的環階都必須符合你所擁有法術位的環階。",
-						"舉例來說，如果你是一個3級的德魯伊，你擁有四個1環和二個2環的法術位。你的睿知為16，則你已準備法術的列表中可以包含總共六個1環或2環的法術。若你準備了1環法術{@spell 治療傷勢}，你可以使用1環和2環的法術位來施放它。施放法術並不會將它從你的準備法術列表中移除。",
-						"你也可以在你完成一次長休時改變你的準備法術列表。準備一份新的德魯伊法術列表需要花費時間於祈禱和冥想：你需要為你列表上每個法術的每個環階都花費至少1分鐘的時間。"
+						"你準備一份你所能施放的德魯伊法術列表，從德魯伊法術列表中選擇。當你這麼做時，選擇數量等同於你感知調整值 + 你德魯伊等級的德魯伊法術（最少一個法術）。這些法術的環階都必須符合你所擁有法術位的環階。",
+						"舉例來說，如果你是一個3級的德魯伊，你擁有四個1環和二個2環的法術位。你的感知爲16，則你已準備法術的列表中可以包含總共六個1環或2環的法術。若你準備了1環法術{@spell 治療傷勢}，你可以使用1環和2環的法術位來施放它。施放法術並不會將它從你的準備法術列表中移除。",
+						"你也可以在你完成一次長休時改變你的準備法術列表。準備一份新的德魯伊法術列表需要花費時間於祈禱和冥想：你需要爲你列表上每個法術的每個環階都花費至少1分鐘的時間。"
 					]
 				},
 				{
 					"type": "entries",
 					"name": "施法屬性",
 					"entries": [
-						"由於你的魔法是源自你對大自然的奉獻與協調，睿知是你施展德魯伊法術的施法屬性。每當法術提及你的施法屬性時，你將使用你的睿知。此外，當決定你德魯伊法術的豁免DC、以及使用德魯伊法術進行攻擊檢定時，你使用你的睿知調整值。",
+						"由於你的魔法是源自你對大自然的奉獻與協調，感知是你施展德魯伊法術的施法屬性。每當法術提及你的施法屬性時，你將使用你的感知。此外，當決定你德魯伊法術的豁免DC、以及使用德魯伊法術進行攻擊檢定時，你使用你的感知調整值。",
 						{
 							"type": "abilityDc",
 							"name": "法術",
@@ -2420,14 +2427,14 @@
 					"type": "entries",
 					"name": "儀式施法",
 					"entries": [
-						"You can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared."
+						"若一個德魯伊法術具有儀式標籤，且你已準備了該法術，則你可以將它作爲儀式法術施放。"
 					]
 				},
 				{
 					"type": "entries",
 					"name": "施法法器",
 					"entries": [
-						"你可以使用一個{@item 德魯伊法器|phb}（第五章），來做為你施放德魯伊法術的法器。"
+						"你可以使用一個{@item 德魯伊法器|phb}（第五章），來作爲你施放德魯伊法術的法器。"
 					]
 				}
 			]
@@ -2446,7 +2453,8 @@
 			]
 		},
 		{
-			"name": "Wild Companion",
+			"name": "荒野夥伴",
+			"ENG_name": "Wild Companion",
 			"source": "TCE",
 			"page": 35,
 			"className": "Druid",
@@ -2454,9 +2462,9 @@
 			"level": 2,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 2nd-level druid {@variantrule optional class features|tce|optional feature}}",
-				"You gain the ability to summon a spirit that assumes an animal form: as an action, you can expend a use of your Wild Shape feature to cast the {@spell 尋獲魔寵} spell, without material components.",
-				"When you cast the spell in this way, the familiar is a fey instead of a beast, and the familiar disappears after a number of hours equal to half your druid level."
+				"{@i 2級德魯伊 {@variantrule 可選職業特性|tce|可選特性}}",
+				"你獲得召喚呈現動物形態的精魂的能力，以一個動作，你能夠消耗一次荒野變形使用次數來施放一次無需材料的{@spell 尋獲魔寵}法術。",
+				"你以此方法施放該法術時，魔寵的類型是精類而不是野獸，魔寵會在等同於你德魯伊等級一半的小時數後消失。"
 			]
 		},
 		{
@@ -2484,15 +2492,15 @@
 			"level": 2,
 			"entries": [
 				"從2級開始，你可以使用你的動作以魔法變成一個你曾經見過野獸的型態。你可以使用這個能力二次。你在完成一次短休或長休後恢復所有你花費掉的次數。",
-				"你的德魯伊等級決定了你可以變化成的野獸，參見野獸型態表。舉例來說，在2級時，你可以轉變成任何挑戰等級為1/4或更低，且不具有飛行或游泳速度的野獸。",
+				"你的德魯伊等級決定了你可以變化成的野獸，參見\"野獸形態表\"。舉例來說，在2級時，你可以轉變成任何挑戰等級爲1/4或更低，且不具有飛行或游泳速度的野獸。",
 				{
 					"type": "table",
-					"caption": "野獸型態",
+					"caption": "野獸形態",
 					"colLabels": [
-						"Level",
-						"Max. CR",
-						"Limitations",
-						"Example"
+						"等級",
+						"最高 CR",
+						"限制",
+						"例子"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -2521,13 +2529,13 @@
 						]
 					]
 				},
-				"你可以保持野獸型態長達等同於你德魯伊等級一半的小時數。你接著將回復你原本的型態，除非你再花費此能力的一個次數。你可以透過在你的回合使用一個附贈動作以提早回復你原本的型態。你將在你陷入{@condition 昏迷}、生命值歸零、或死亡時自動回復原本的型態。",
+				"你可以保持野獸型態長達等同於你德魯伊等級一半的小時數。你接着將回復你原本的型態，除非你再花費此能力的一個次數。你可以通過在你的回合使用一個附贈動作以提早回覆你原本的型態。你將在你陷入{@condition 昏迷}、生命值歸零、或死亡時自動回覆原本的型態。",
 				"當你變形後，適用以下規則：",
 				{
 					"type": "list",
 					"items": [
-						"你的遊戲數據被該野獸的數據給取代，但你保留你的陣營、個性，和智力、睿知、和魅力值。你同時也保留你的所有技能和豁免熟練，並額外獲得該生物所具有的熟練。若該生物具有與你相同的熟練項，且它數據資料中列出的加值比你的還要高，則你使用該生物的加值取代你自己的。若該生物具有任何傳奇動作或巢穴動作，你不能使用它們。",
-						"當你變形時，你取用該野獸的生命值和生命骰。當你回復你原本的型態時，你將取回你變形之前的生命值。若你是因為生命值歸零而回復原本型態，則任何溢出傷害都將被帶到你原本的型態，扣減你原本的生命值。舉例來說，若你在處於動物型態時受到10點傷害，且只剩下1點生命值，你將回復原本的型態並承受9點傷害。只要這個溢出傷害沒有讓你原本型態的生命值歸零，你就不會被擊倒{@condition 昏迷}。",
+						"你的遊戲數據被該野獸的數據給取代，但你保留你的陣營、個性，和智力、感知、和魅力值。你同時也保留你的所有技能和豁免熟練，並額外獲得該生物所具有的熟練。若該生物具有與你相同的熟練項，且它數據數據中列出的加值比你的還要高，則你使用該生物的加值取代你自己的。若該生物具有任何傳奇動作或巢穴動作，你不能使用它們。",
+						"當你變形時，你取用該野獸的生命值和生命骰。當你回覆你原本的型態時，你將取回你變形之前的生命值。若你是因爲生命值歸零而回復原本型態，則任何溢出傷害都將被帶到你原本的型態，扣減你原本的生命值。舉例來說，若你在處於動物型態時受到10點傷害，且只剩下1點生命值，你將回復原本的型態並承受9點傷害。只要這個溢出傷害沒有讓你原本型態的生命值歸零，你就不會被擊倒{@condition 昏迷}。",
 						"你不能施放法術，且你說話或採取任何需要雙手的動作的能力將受限於你的野獸型態。然而，變形並不會中斷你對已施放法術的專注，也不會讓你無法採取你已經施放法術所提供的動作，像是{@spell 召雷術}。",
 						"你保留任何來自你職業、種族、或其他來源的能力，且若新型態物理上有能力這麼做，你就能夠使用它們。然而，你無法使用你的特殊感官，像是黑暗視覺，除非你的新型態也具有該感官。",
 						"你選擇你的裝備是會掉在地上、融入新型態、或是被新型態穿戴。被穿戴的裝備將正常生效，但DM將根據該生物的體型和形狀以決定新型態是否可以正常穿戴你的每個裝備。你的裝備並不會改變形狀或尺寸以符合你的新形態，且任何新型態無法穿戴的裝備將會掉在地上或融入新型態。直到你解除該型態前，融入新型態的裝備將不會產生任何效果。"
@@ -2545,12 +2553,13 @@
 			"classSource": "PHB",
 			"level": 4,
 			"entries": [
-				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
-			"name": "Cantrip Versatility",
+			"name": "替換戲法",
+			"ENG_name": "Cantrip Versatility",
 			"source": "TCE",
 			"page": 35,
 			"className": "Druid",
@@ -2558,8 +2567,8 @@
 			"level": 4,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 4th-level druid {@variantrule optional class features|tce|optional feature}}",
-				"Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace one cantrip you learned from this class's Spellcasting feature with another cantrip from the {@filter druid spell list|spells|level=0|class=Druid}."
+				"{@i 4級德魯伊 {@variantrule 可選職業特性|tce|可選特性}}",
+				"每當你達到該職業提升屬性值的等級時，你就可以用{@filter 德魯伊法術列表|spells|level=0|class=Druid}中的另一個戲法來替換你從該職業的施法特性中學到的一個戲法。"
 			]
 		},
 		{
@@ -2612,8 +2621,8 @@
 			"classSource": "PHB",
 			"level": 8,
 			"entries": [
-				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -2666,8 +2675,8 @@
 			"classSource": "PHB",
 			"level": 12,
 			"entries": [
-				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -2707,8 +2716,8 @@
 			"classSource": "PHB",
 			"level": 16,
 			"entries": [
-				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -2735,7 +2744,7 @@
 			"classSource": "PHB",
 			"level": 18,
 			"entries": [
-				"從18級開始，你可以在處於荒野形態所變成的任何型態時施放你的許多德魯伊法術。你可以在處於野獸型態時執行德魯伊法術的姿勢和聲音構材，但你無法提供材料構材。"
+				"從18級開始，你可以在處於荒野形態所變成的任何型態時施放你的許多德魯伊法術。你可以在處於野獸型態時運行德魯伊法術的姿勢和聲音構材，但你無法提供材料構材。"
 			]
 		},
 		{
@@ -2761,8 +2770,8 @@
 			"classSource": "PHB",
 			"level": 19,
 			"entries": [
-				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -2807,7 +2816,7 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"entries": [
-				"大地結社是由神祕主義者和賢者所組成，透過廣泛的口述傳承來守護古老知識和儀式。這些德魯伊會在樹木或立石環繞而成的神聖圓環內相聚，用德魯伊語低語述說著原初的秘密。結社中最具智慧的成員會做為團體中掌握著上古誓約的祭司長，並擔當這群人的顧問和管理者。做為結社中的一員，你的魔法將被你在入會時所施展神秘結社儀式的大地環境所影響。",
+				"大地結社是由神祕主義者和賢者所組成，通過廣泛的口述傳承來守護古老知識和儀式。這些德魯伊會在樹木或立石環繞而成的神聖圓環內相聚，用{@language Druidic}低語述說着原初的祕密。結社中最具智能的成員會作爲團體中掌握着上古誓約的祭司長，並擔當這羣人的顧問和管理者。作爲結社中的一員，你的魔法將被你在入會時所施展神祕結社儀式的大地環境所影響。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "額外戲法|Druid||Land||2"
@@ -2835,6 +2844,7 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
+				"{@i 2級大地結社特性}",
 				"你習得一個自選的額外德魯伊戲法。"
 			]
 		},
@@ -2851,7 +2861,8 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"你與大地之間的神祕聯繫使你獲得能施放特定法術的能力。在3級、5級、7級、和9級時，你將獲得與你成為德魯伊時所在大地相連的結社法術。選擇一種環境：極地、海岸、沙漠、森林、草地、高山、沼澤、或幽暗地域，並查閱對應的法術列表",
+				"{@i 2級大地結社特性}",
+				"你與大地之間的神祕聯繫使你獲得能施放特定法術的能力。在3級、5級、7級、和9級時，你將獲得與你成爲德魯伊時所在大地相連的結社法術。選擇一種環境：極地、海岸、沙漠、森林、草地、高山、沼澤、或幽暗地域，並查閱對應的法術列表",
 				"一旦你獲得結社法術，你將永遠視作已經準備了它，且它不會計入你每日可準備的法術數量中。若你獲得一個不在德魯伊法術列表上的法術，則該法術對你而言仍然視作德魯伊法術。",
 				{
 					"type": "table",
@@ -2939,7 +2950,7 @@
 						],
 						[
 							"9級",
-							"{@spell 疫病蟲群}, {@spell 石牆術}"
+							"{@spell 疫病蟲羣}, {@spell 石牆術}"
 						]
 					]
 				},
@@ -2969,7 +2980,7 @@
 						],
 						[
 							"9級",
-							"{@spell 問道自然}, {@spell 疫病蟲群}"
+							"{@spell 問道自然}, {@spell 疫病蟲羣}"
 						]
 					]
 				},
@@ -2999,7 +3010,7 @@
 						],
 						[
 							"9級",
-							"{@spell 託夢術}, {@spell 疫病蟲群}"
+							"{@spell 託夢術}, {@spell 疫病蟲羣}"
 						]
 					]
 				},
@@ -3059,7 +3070,7 @@
 						],
 						[
 							"9級",
-							"{@spell 疫病蟲群}, {@spell 探知}"
+							"{@spell 疫病蟲羣}, {@spell 探知}"
 						]
 					]
 				},
@@ -3089,7 +3100,7 @@
 						],
 						[
 							"9級",
-							"{@spell 死雲術}, {@spell 疫病蟲群}"
+							"{@spell 死雲術}, {@spell 疫病蟲羣}"
 						]
 					]
 				}
@@ -3108,7 +3119,8 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"從2級開始，你可以藉由靜坐冥想並與自然溝通來回復你一部份的魔法能量。在短休期間，你選擇並恢復已消耗的法術位。這些法術位可以是環階總和等於或低於你一半德魯伊等級（向上取整）的複數法術位，且這些法術位個別的環階不能是6環或更高。直到你完成一次長休之前你都不能再使用此能力。",
+				"{@i 2級大地結社特性}",
+				"你可以藉由靜坐冥想並與自然溝通來回復你一部份的魔法能量。在短休期間，你選擇並恢復已消耗的法術位。這些法術位可以是環階總和等於或低於你一半德魯伊等級（向上取整）的複數法術位，且這些法術位個別的環階不能是6環或更高。直到你完成一次長休之前你都不能再使用此能力。",
 				"舉例來說，如果你是一個4級的德魯伊，你可以恢復最多總共二個環階的法術位。你可以恢復一個2環的法術位、或二個1環的法術位。"
 			]
 		},
@@ -3125,7 +3137,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"從6級開始，移動穿過非魔法的困難地形並不會花費你額外的移動速度。你也可以穿越非魔法植物而不會被它們減緩速度，若它們是荊棘、棘刺、或其他類似危險，你也不會被它們的傷害。",
+				"{@i 6級大地結社特性}",
+				"移動穿過非魔法的困難地形並不會花費你額外的移動速度。你也可以穿越非魔法植物而不會被它們減緩速度，若它們是荊棘、棘刺、或其他類似危險，你也不會被它們的傷害。",
 				"此外，在對抗由魔法創造或控制的植物所造成的阻礙移動效果時（像是{@spell 糾纏術}法術創造出的植物），你所進行的豁免檢定具有優勢。"
 			]
 		},
@@ -3142,6 +3155,7 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
+				"{@i 10級大地結社特性}",
 				"當你升至10級時，你將不會被元素或精類生物給{@condition 魅惑}或{@condition 恐懼}，且你將免疫於疾病和毒素（包含中毒狀態）。"
 			]
 		},
@@ -3158,7 +3172,8 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"當你升至14級時，自然界的生物們將察覺到你與大自然之間的聯繫，而猶豫於攻擊你。當一個野獸或植物生物攻擊你時，該生物必須進行一次對抗你德魯伊法術豁免DC的睿知豁免。若豁免失敗，該生物必須選擇一個不同的目標，否則該攻擊將自動失手。若豁免成功，該生物將在藉下來24小時內免疫於此效果。",
+				"{@i 14級大地結社特性}",
+				"當你升至14級時，自然界的生物們將察覺到你與大自然之間的聯繫，而猶豫於攻擊你。當一個野獸或植物生物攻擊你時，該生物必須進行一次對抗你德魯伊法術豁免DC的感知豁免。若豁免失敗，該生物必須選擇一個不同的目標，否則該攻擊將自動失手。若豁免成功，該生物將在藉下來24小時內免疫於此效果。",
 				"該生物將在它對你進行攻擊前察覺這個效果。"
 			]
 		},
@@ -3173,7 +3188,7 @@
 			"subclassSource": "PHB",
 			"level": 2,
 			"entries": [
-				"月亮結社的德魯伊都是凶猛的荒野衛士。他們的教團聚集在滿月之下，彼此分享新聞並交換警示。他們出沒於荒野最深處的所在，並可能在該處迴盪數周的時間，直到偶然遭遇另一個類人生物、或甚至另一個德魯伊。",
+				"月亮結社的德魯伊都是兇猛的荒野衛士。他們的教團聚集在滿月之下，彼此分享新聞並交換警示。他們出沒於荒野最深處的所在，並可能在該處迴盪數週的時間，直到偶然遭遇另一個類人生物、或甚至另一個德魯伊。",
 				"如月亮一樣善變，這個結社的德魯伊可能會在夜晚如大貓徘徊，在隔日如鷹隼盤旋於樹頂，並以熊型態橫掃灌木，趕走入侵的怪物。荒野之力流淌於德魯伊的血液中。",
 				{
 					"type": "refSubclassFeature",
@@ -3197,7 +3212,8 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"你結社的儀式賦予你轉變成更加危險動物型態的能力。從2級開始，你可以使用你的荒野形態以轉變成一個{@filter 挑戰等級最高為1的野獸|bestiary|challenge rating=0;1/8;1/4;1/2;1|type=beast|speed=!fly;!swim|miscellaneous=!swarm}（你忽視原本野獸型態表中的最高挑戰等級欄位，但仍受限於該表中的其它限制）。",
+				"{@i 2級月亮結社特性}",
+				"你結社的儀式賦予你轉變成更加危險動物型態的能力。你可以使用你的荒野形態以轉變成一個{@filter 挑戰等級最高爲1的野獸|bestiary|challenge rating=[&0;&1]|type=beast|speed=!fly;!swim|miscellaneous=!swarm}（你忽視原本野獸型態表中的最高挑戰等級字段，但仍受限於該表中的其它限制）。",
 				"從6級開始，你可以轉變成一個挑戰等級最高等同於你德魯伊等級除以3（向下取整）的野獸。",
 				{
 					"type": "table",
@@ -3215,42 +3231,42 @@
 					"rows": [
 						[
 							"2級",
-							"{@filter 1|bestiary|challenge rating=0;1/8;1/4;1/2;1|type=beast|speed type=!fly;!swim|miscellaneous=!swarm}",
+							"{@filter 1|bestiary|challenge rating=[&0;&1]|type=beast|speed type=!fly;!swim|miscellaneous=!swarm}",
 							"沒有飛行或游泳速度"
 						],
 						[
 							"4級",
-							"{@filter 1|bestiary|challenge rating=0;1/8;1/4;1/2;1|type=beast|speed type=!fly|miscellaneous=!swarm}",
+							"{@filter 1|bestiary|challenge rating=[&0;&1]|type=beast|speed type=!fly|miscellaneous=!swarm}",
 							"沒有飛行速度"
 						],
 						[
 							"6級",
-							"{@filter 2|bestiary|challenge rating=0;1/8;1/4;1/2;1;2|type=beast|speed type=!fly|miscellaneous=!swarm}",
+							"{@filter 2|bestiary|challenge rating=[&0;&2]|type=beast|speed type=!fly|miscellaneous=!swarm}",
 							"沒有飛行速度"
 						],
 						[
 							"8級",
-							"{@filter 2|bestiary|challenge rating=0;1/8;1/4;1/2;1;2|type=beast|miscellaneous=!swarm}",
+							"{@filter 2|bestiary|challenge rating=[&0;&2]|type=beast|miscellaneous=!swarm}",
 							"\u2014"
 						],
 						[
 							"9級",
-							"{@filter 3|bestiary|challenge rating=0;1/8;1/4;1/2;1;2;3|type=beast|miscellaneous=!swarm}",
+							"{@filter 3|bestiary|challenge rating=[&0;&3]|type=beast|miscellaneous=!swarm}",
 							"\u2014"
 						],
 						[
 							"12級",
-							"{@filter 4|bestiary|challenge rating=0;1/8;1/4;1/2;1;2;3;4|type=beast|miscellaneous=!swarm}",
+							"{@filter 4|bestiary|challenge rating=[&0;&4]|type=beast|miscellaneous=!swarm}",
 							"\u2014"
 						],
 						[
 							"15級",
-							"{@filter 5|bestiary|challenge rating=0;1/8;1/4;1/2;1;2;3;4;5|type=beast|miscellaneous=!swarm}",
+							"{@filter 5|bestiary|challenge rating=[&0;&5]|type=beast|miscellaneous=!swarm}",
 							"\u2014"
 						],
 						[
 							"18級",
-							"{@filter 6|bestiary|challenge rating=0;1/8;1/4;1/2;1;2;3;4;5;6|type=beast|miscellaneous=!swarm}",
+							"{@filter 6|bestiary|challenge rating=[&0;&6]|type=beast|miscellaneous=!swarm}",
 							"\u2014"
 						]
 					]
@@ -3269,8 +3285,9 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
+				"{@i 2級月亮結社特性}",
 				"你獲得在你的回合以一個附贈動作，而非一個動作來使用荒野形態型態的能力。",
-				"此外，當你透過荒野型態而處於變形狀態時，你可以使用一個附贈動作以消耗一個法術位，回復等同於被消耗法術位的每環階{@dice 1d8}點的生命值。"
+				"此外，當你通過荒野型態而處於變形狀態時，你可以使用一個附贈動作以消耗一個法術位，回覆等同於被消耗法術位的每環階{@dice 1d8}點的生命值。"
 			]
 		},
 		{
@@ -3285,7 +3302,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"從6級開始，在克服對非魔法攻擊和傷害的抗性和免疫能力時，你在野獸型態下的攻擊被視作魔法攻擊。"
+				"{@i 6級月亮結社特性}",
+				"在克服對非魔法攻擊和傷害的抗性和免疫能力時，你在野獸型態下的攻擊被視作魔法攻擊。"
 			]
 		},
 		{
@@ -3300,7 +3318,8 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"在10級時，你可以同時花費二次荒野形態的使用次數，以轉變成一個{@creature 氣元素}、{@creature 土元素}、{@creature 火元素}、或{@creature 水元素}。"
+				"{@i 10級月亮結社特性}",
+				"你可以同時花費二次荒野形態的使用次數，以轉變成一個{@creature 氣元素}、{@creature 土元素}、{@creature 火元素}或{@creature 水元素}。"
 			]
 		},
 		{
@@ -3315,7 +3334,8 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"在14級時，你學會以更精細的方式用魔法改變自己的身體型態。你可以隨意施放{@spell 變造自身}法術。"
+				"{@i 14級月亮結社特性}",
+				"你學會以更精細的方式用魔法改變自己的身體型態。你可以隨意施放{@spell 變造自身}法術。"
 			]
 		},
 		{
@@ -3335,9 +3355,9 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"entries": [
-				"孢子結社的德魯伊們能在腐朽中發現美。他們在黴菌和其他真菌中發現，那能將無生命物質轉變成儘管有些奇怪，卻有著豐富生命的能力。",
-				"這些德魯伊相信生和死只不過是大循環中的一部分，一個接續著另一個，周而復始。死亡並不是生命的結束，而是轉變成另一種生命型態的狀態變化。",
-				"這個結社的德魯伊與不死生物間有著相當複雜的關係。不像其他大多數的德魯伊，他們並認為不死生物並沒有什麼本質上的問題，而是將它們視做生與死共存的狀態。然而，由於這些德魯伊們相信自然循環只有在它每個階段都充滿活力和變化時才最為健全，因此那些希望讓亡靈取代所有活物的不死生物，或那些嘗試避免陷入永眠的不死生物都違反了生死循環，而必須被阻止。",
+				"孢子結社的德魯伊們能在腐朽中發現美。他們在黴菌和其他真菌中發現，那能將無生命物質轉變成儘管有些奇怪，卻有着豐富生命的能力。",
+				"這些德魯伊相信生和死只不過是大循環中的一部分，一個接續着另一個，周而復始。死亡並不是生命的結束，而是轉變成另一種生命型態的狀態變化。",
+				"這個結社的德魯伊與不死生物間有着相當複雜的關係。不像其他大多數的德魯伊，他們並認爲不死生物並沒有什麼本質上的問題，而是將它們視做生與死共存的狀態。然而，由於這些德魯伊們相信自然循環只有在它每個階段都充滿活力和變化時才最爲健全，因此那些希望讓亡靈取代所有活物的不死生物，或那些嘗試避免陷入永眠的不死生物都違反了生死循環，而必須被阻止。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "結社法術|Druid||Spores|TCE|2"
@@ -3370,7 +3390,8 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"你與真菌之間形成了共生連結，且你踏入生死循環的能力使你獲得特定的法術。在2級時，你學會{@spell 寒顫之觸}戲法。在3級、5級、7級、和9級時，你將獲得孢子結社法術表中在該等級所對應的法術。",
+				"{@i 2級孢子結社特性}",
+				"你與真菌之間形成了共生鏈接，且你踏入生死循環的能力使你獲得特定的法術。你學會{@spell 寒顫之觸}戲法。在3級、5級、7級、和9級時，你將獲得孢子結社法術表中在該等級所對應的法術。",
 				"一旦你獲得其中一個這些法術，你將永遠視作已經準備了它，且它不會計入你每日可準備的法術數量中。若你獲得一個不在德魯伊法術列表上的法術，則該法術對你而言仍然視作德魯伊法術。",
 				{
 					"type": "table",
@@ -3422,7 +3443,8 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"從2級開始，你被不可見的壞死孢子給環繞，它們是無害的，直到你將它們釋放到附近的一個生物上。當一個你所能看見的生物移動到距離你10呎內的空間，或在該處開始它的回合，你可以使用你的反應，除非該生物成功通過一次對抗你法術豁免DC的體質豁免，否則該生物將受到{@dice 1d4}死靈傷害。這個死靈傷害將在6級時增加至{@dice 1d6}，10級時{@dice 1d8}，14級時{@dice 1d10}。"
+				"{@i 2級孢子結社特性}",
+				"你被不可見的壞死孢子給環繞，它們是無害的，直到你將它們釋放到附近的一個生物上。當一個你所能看見的生物移動到距離你10尺內的空間，或在該處開始它的回合，你可以使用你的反應，除非該生物成功通過一次對抗你法術豁免DC的體質豁免，否則該生物將受到{@damage 1d4}黯蝕傷害。這個黯蝕傷害將在6級時增加至{@dice 1d6}，10級時{@dice 1d8}，14級時{@dice 1d10}。"
 			]
 		},
 		{
@@ -3443,12 +3465,13 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"在2級時，你獲得了將魔法能量引導到你孢子的能力。以一個動作，你可以消耗一次你荒野形態能力的使用次數以喚醒這些孢子，而非轉變成野獸型態。當你這麼做時，你獲得每個此職業等級4點的臨時生命值。當這個能力被啟動時，你獲得下列好處：",
+				"{@i 2級孢子結社特性}",
+				"你獲得了將魔法能量引導到你孢子的能力。以一個動作，你可以消耗一次你荒野形態能力的使用次數以喚醒這些孢子，而非轉變成野獸型態。當你這麼做時，你獲得每個此職業等級4點的臨時生命值。當這個能力被啓動時，你獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
 						"當你的孢子光環能力造成傷害時，骰第二次傷害骰，並將之加入傷害總和。",
-						"你的近戰武器攻擊將對任何它命中的目標造成額外的{@dice 1d6}毒素傷害。"
+						"你的近戰武器攻擊將對任何它命中的目標造成額外的{@dice 1d6}黯蝕傷害。"
 					]
 				},
 				"這些好處將會持續10分鐘，或直到你失去所有這些臨時生命值、或直到你再次使用你的荒野形態。"
@@ -3472,9 +3495,10 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"在6級時，你的孢子獲得感染屍體並活化它的能力。若一個體型為小型或中型的野獸或類人生物在距離你10呎內死亡，你可以使用你的反應以活化它，使它以1點生命值的狀態立刻起身。該生物使用記載於《{@book 怪物圖鑑|MM}》的{@creature 殭屍}的數據資料。它將持續活化長達1小時，在這之後它將瓦解並死亡。",
+				"{@i 6級孢子結社特性}",
+				"你的孢子獲得感染屍體並活化它的能力。若一個體型爲小型或中型的野獸或類人生物在距離你10尺內死亡，你可以使用你的反應以活化它，使它以1點生命值的狀態立刻起身。該生物使用記載於《{@book 怪物圖鑑|MM}》的{@creature 殭屍}的數據數據。它將持續活化長達1小時，在這之後它將瓦解並死亡。",
 				"在戰鬥中，這個殭屍的回合將緊接在你之後進行。它服從你的心靈命令，且它唯一能採取的動作是{@action 攻擊}動作，進行一次近戰攻擊。",
-				"你可以使用此能力的次數等同於你的睿知調整值（最少一次），且你在完成一次長休後恢復所有你花費掉的次數。"
+				"你可以使用此能力的次數等同於你的感知調整值（最少一次），且你在完成一次長休後恢復所有你花費掉的次數。"
 			]
 		},
 		{
@@ -3495,7 +3519,8 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"在10級時，你獲得在一片區域內散佈致命胞子的能力。當你的共生實體能力在作用時，以一個附贈動作，你可以將孢子投至最多30呎距離，並使它們在該處10呎邊長立方體的範圍內盤繞持續1分鐘。若你再次使用此能力、你以一個附贈動作解消它們、或你的共生實體能力不再作用時，這團孢子將會提早消失。",
+				"{@i 10級孢子結社特性}",
+				"你獲得在一片區域內散佈致命胞子的能力。當你的共生實體能力在作用時，以一個附贈動作，你可以將孢子投至最多30尺距離，並使它們在該處10尺邊長立方體的範圍內盤繞持續1分鐘。若你再次使用此能力、你以一個附贈動作解消它們、或你的共生實體能力不再作用時，這團孢子將會提早消失。",
 				"每當一個生物移動進入該立方體區域或在該處開始它的回合，則除非該生物成功通過一次對抗你法術豁免DC的體質豁免，否則它將受到你孢子光環的傷害。一個生物每回合只會受到此傷害一次。",
 				"當這個孢子立方體範圍存在時，你將不能使用你孢子光環的反應。"
 			]
@@ -3518,11 +3543,13 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"在14級時，你體內的真菌孢子改變了你：你不會陷入{@condition 目盲}、{@condition 耳聾}、{@condition 恐懼}、或{@condition 中毒}狀態，且除非你陷入{@condition 無力}狀態，否則任何對你的重擊都將改為被視作普通命中。"
+				"{@i 14級孢子結社特性}",
+				"你體內的真菌孢子改變了你：你不會陷入{@condition 目盲}、{@condition 耳聾}、{@condition 恐懼}或{@condition 中毒}狀態，且除非你陷入{@condition 無力}狀態，否則任何對你的重擊都將改爲被視作普通命中。"
 			]
 		},
 		{
-			"name": "Circle of Stars",
+			"name": "星辰結社",
+			"ENG_name": "Circle of Stars",
 			"source": "TCE",
 			"page": 38,
 			"className": "Druid",
@@ -3531,20 +3558,21 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"entries": [
-				"The Circle of Stars allows druids to draw on the power of starlight. These druids have tracked heavenly patterns since time immemorial, discovering secrets hidden amid the constellations. By revealing and understanding these secrets, the Circle of the Stars seeks to harness the powers of the cosmos.",
-				"Many druids of this circle keep records of the constellations and the stars' effects on the world. Some groups document these observations at megalithic sites, which serve as enigmatic libraries of lore. These repositories might take the form of stone circles, pyramids, petroglyphs, and underground temples-any construction durable enough to protect the circle's sacred knowledge even against a great cataclysm.",
+				"星辰結社使德魯伊能夠藉助星光的能量。這些德魯伊自遠古時期便開始記載星象並探索星座中隱藏的祕密。通過揭示並理解羣星之奧妙，星辰結社試圖藉助宇宙能量。",
+				"這個結社中的許多德魯伊記載着星座與羣星對世界的影響。一些團體將這些觀察記錄在巨石遺址上，作爲神祕傳說圖書館。這些知識庫的形式可能採取巨石陣、金字塔、巖刻與地下神殿\u2014乃至任何堅實到甚至足以使此結社神聖知識倖存於大災變的結構。",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Star Map|Druid||Stars|TCE|2"
+					"subclassFeature": "星圖|Druid||Stars|TCE|2"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Starry Form|Druid||Stars|TCE|2"
+					"subclassFeature": "星耀形態|Druid||Stars|TCE|2"
 				}
 			]
 		},
 		{
-			"name": "Star Map",
+			"name": "星圖",
+			"ENG_name": "Star Map",
 			"source": "TCE",
 			"page": 38,
 			"className": "Druid",
@@ -3554,14 +3582,14 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"{@i 2nd-level Circle of the Stars feature}",
-				"You've created a star chart as part of your heavenly studies. It is a Tiny object and can serve as a spellcasting focus for your druid spells. You determine its form by rolling on the Star Map table or by choosing one.",
+				"{@i 2級星辰結社特性}",
+				"作爲你天文學研究的一部分，你創造了一個星圖。它是一個微型物體，可以作爲你德魯伊法術的法器。你通過在星圖列表上擲骰或選擇一個來確定它的形態。",
 				{
 					"type": "table",
-					"caption": "Star Map",
+					"caption": "星圖形態",
 					"colLabels": [
 						"d6",
-						"Map Form"
+						"星圖樣式"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -3570,44 +3598,45 @@
 					"rows": [
 						[
 							"1",
-							"A scroll covered with depictions of constellations"
+							"一幅佈滿星座圖列的卷軸"
 						],
 						[
 							"2",
-							"A stone tablet with fine holes drilled through it"
+							"一塊鑽有細孔的石板"
 						],
 						[
 							"3",
-							"A speckled owlbear hide, tooled with raised marks"
+							"一張斑點梟熊皮，標有凸痕記號"
 						],
 						[
 							"4",
-							"A collection of maps bound in an ebony cover"
+							"一套黑檀木封皮地圖集"
 						],
 						[
 							"5",
-							"A crystal that projects starry patterns when placed before a light"
+							"一塊遇光會投射出星辰軌跡的水晶"
 						],
 						[
 							"6",
-							"Glass disks that depict constellations"
+							"描繪星座排列的玻璃圓盤"
 						]
 					]
 				},
-				"While holding this map, you have these benefits:",
+				"當你持握這件星圖時，你獲得這些好處：",
 				{
 					"type": "list",
 					"items": [
-						"You know the {@spell 指導術} cantrip.",
-						"You have the {@spell 光導箭} spell prepared. It counts as a druid spell for you, and it doesn't count against the number of spells you can have prepared.",
-						"You can cast {@spell 光導箭} without expending a spell slot. You can do so a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+						"你已知{@spell 神導術}戲法。",
+						"你獲得準備{@spell 光導箭}。它對你來說視作德魯伊法術，且不計入你的每日準備法術上限。",
+						"你可以施放{@spell 光導箭}而無需消耗法術位。你可以這樣做的次數等同於你的熟練加值，且在你完成一次長休後會恢復所有已消耗使用次數。"
 					]
 				},
-				"If you lose the map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a short or long rest, and it destroys the previous map."
+				"如果你丟失了星圖，你可以舉行一場爲時一小時的儀式來使用魔法創造一個替代品。這一儀式可以在一場短休或長休時舉行，並會摧毀先前的星圖。"
 			]
 		},
 		{
-			"name": "Starry Form",
+			"name": "星耀形態",
+			"ENG_name": "Starry Form",
 			"source": "TCE",
 			"page": 38,
 			"className": "Druid",
@@ -3617,35 +3646,36 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"{@i 2nd-level Circle of the Stars feature}",
-				"As a bonus action, you can expend a use of your Wild Shape feature to take on a starry form, rather than transforming into a beast.",
-				"While in your starry form, you retain your game statistics, but your body becomes luminous; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes. It ends early if you dismiss it (no action required), are {@condition incapacitated}, die, or use this feature again.",
-				"Whenever you assume your starry form, choose which of the following constellations glimmers on your body; your choice gives you certain benefits while in the form:",
+				"{@i 2級星辰結社特性}",
+				"作爲一個附贈動作，你可以消耗一次荒野形態使用次數以呈現一個星耀形態，而不是變化爲野獸形態。",
+				"當處於星耀形態時，你保留你的遊戲數據，但你的身體變得明亮；你的關節星光熠熠並有如星圖一般由亮線連接。這一形態散發出10尺範圍明亮光照以及其外10尺範圍昏暗光照。這一形態持續10分鐘。如果你解除它（無需動作）、{@condition 無力}、死亡或再次使用此特性，它就會提前結束。",
+				"每當你化身星耀形態，選擇以下哪個星座在你身上閃耀；你的選擇爲你在形態中獲得特定好處：",
 				{
 					"type": "entries",
-					"name": "Archer",
+					"name": "射手座",
 					"entries": [
-						"A constellation of an archer appears on you. When you activate this form, and as a bonus action on your subsequent turns while it lasts, you can make a ranged spell attack, hurling a luminous arrow that targets one creature within 60 feet of you. On a hit, the attack deals radiant damage equal to {@dice 1d8} + your Wisdom modifier."
+						"一個弓箭手星座於你身上浮現。當你激活這個形態時，你可以在它持續的後續回合使用一個附贈動作進行一次遠程法術攻擊，對你60尺內的一個生物射出一發光箭。命中時，此次攻擊造成的光耀傷害等同於{@dice 1d8} + 你的感知調整值。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Chalice",
+					"name": "聖盃座",
 					"entries": [
-						"A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores hit points to a creature, you or another creature within 30 feet of you can regain hit points equal to {@dice 1d8} + your Wisdom modifier."
+						"一個予命聖盃星座於你身上浮現。每當你使用法術位施展生物生命值的法術，你或你30尺內的另一生物可以回覆等同於{@dice 1d8} + 你的感知調整值的生命值。"
 					]
 				},
 				{
 					"type": "entries",
-					"name": "Dragon",
+					"name": "巨龍座",
 					"entries": [
-						"A constellation of a wise dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain concentration on a spell, you can treat a roll of 9 or lower on the {@dice d20} as a 10."
+						"一個智龍星座於你身上浮現。當你進行一次智力或感知檢定或是進行一次體質豁免來維持法術專注時，你可以將{@dice d20}中9或以下的骰值視爲10。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Cosmic Omen",
+			"name": "宇宙預兆",
+			"ENG_name": "Cosmic Omen",
 			"source": "TCE",
 			"page": 38,
 			"className": "Druid",
@@ -3655,29 +3685,30 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"{@i 6th-level Circle of the Stars feature}",
-				"Whenever you finish a long rest, you can consult your Star Map for omens. When you do so, roll a die. Until you finish your next long rest, you gain access to a special reaction based on whether you rolled an even or an odd number on the die:",
+				"{@i 6級星辰結社特性}",
+				"每當你完成一次長休，你可以參照你的星圖來尋找預兆。當你這樣做是，擲一個骰子。直到你完成下一次長休，你獲得一個基於此擲骰結果奇偶性的特殊反應。",
 				{
 					"type": "list",
 					"style": "list-hang-notitle",
 					"items": [
 						{
 							"type": "item",
-							"name": "Weal (even).",
-							"entry": "Whenever a creature you can see within 30 feet of you is about to make an attack roll, a saving throw, or an ability check, you can use your reaction to roll a {@dice d6} and add the number rolled to the total."
+							"name": "吉兆（奇數）。",
+							"entry": "每當你 30 尺內可見的一個生物進行一次攻擊檢定，豁免檢定或屬性檢定，你可以使用你的反應來骰一個{@dice d6}並將骰值加到檢定結果中。"
 						},
 						{
 							"type": "item",
-							"name": "Woe (odd).",
-							"entry": "Whenever a creature you can see within 30 feet of you is about to make an attack roll, a saving throw, or an ability check, you can use your reaction to roll a {@dice d6} and subtract the number rolled from the total."
+							"name": "凶兆（偶數）.",
+							"entry": "每當你 30 尺內可見的一個生物進行一次攻擊檢定，豁免檢定或屬性檢定，你可以使用你的反應來骰一個{@dice d6}並將骰值從檢定結果中減去。"
 						}
 					]
 				},
-				"You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+				"你可以使用你的反應次數等於你的熟練加值，且在你完成一次長休後會恢復所有已消耗使用次數。"
 			]
 		},
 		{
-			"name": "Twinkling Constellations",
+			"name": "閃耀星座",
+			"ENG_name": "Twinkling Constellations",
 			"source": "TCE",
 			"page": 38,
 			"className": "Druid",
@@ -3687,13 +3718,14 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"{@i 10th-level Circle of the Stars feature}",
-				"The constellations of your Starry Form improve. The {@dice 1d8} of the Archer and the Chalice becomes {@dice 2d8}, and while the Dragon is active, you have a flying speed of 20 feet and can hover.",
-				"Moreover, at the start of each of your turns while in your Starry Form, you can change which constellation glimmers on your body."
+				"{@i 10級星辰結社特性}",
+				"你的星耀形態星座增強了。射手座和聖盃座的{@dice d8}變成了{@dice 2d8}，而且在巨龍座激活時，你獲得20尺飛行速度並且可以懸浮。",
+				"此外，在星耀形態下的每回合開始時，你可以改變身上閃耀的星座。"
 			]
 		},
 		{
-			"name": "Full of Stars",
+			"name": "燦若繁星",
+			"ENG_name": "Full of Stars",
 			"source": "TCE",
 			"page": 38,
 			"className": "Druid",
@@ -3703,12 +3735,13 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"{@i 14th-level Circle of the Stars feature}",
-				"While in your Starry Form, you become partially incorporeal, giving you resistance to bludgeoning, piercing, and slashing damage."
+				"{@i 14級星辰結社特性}",
+				"當你處於星耀形態時，你的身體部分無實質化，使你對鈍擊，穿刺和劈砍傷害具有抗性。"
 			]
 		},
 		{
-			"name": "Circle of Wildfire",
+			"name": "野火結社",
+			"ENG_name": "Circle of Wildfire",
 			"source": "TCE",
 			"page": 39,
 			"className": "Druid",
@@ -3717,19 +3750,20 @@
 			"subclassSource": "TCE",
 			"level": 2,
 			"entries": [
-				"Druids within the Circle of Wildfire understand that destruction is sometimes the precursor of creation, such as when a forest fire promotes later growth. These druids bond with a primal spirit that harbors both destructive and creative power, allowing the druids to create controlled flames that burn away one thing but give life to another.",
+				"野火結社的德魯伊們知曉破壞有時是創造的先驅，就如森林大火促進之後的生長。這些德魯伊們與具有破壞力與創造力的原始精魄連接在一起，使德魯伊能夠創造出可控的火焰，焚燒某樣事物卻又給予它者生命。",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Circle Spells|Druid||Wildfire|TCE|2"
+					"subclassFeature": "結社法術|Druid||Wildfire|TCE|2"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Summon Wildfire Spirit|Druid||Wildfire|TCE|2"
+					"subclassFeature": "召喚野火精魄|Druid||Wildfire|TCE|2"
 				}
 			]
 		},
 		{
-			"name": "Circle Spells",
+			"name": "結社法術",
+			"ENG_name": "Circle Spells",
 			"source": "TCE",
 			"page": 39,
 			"className": "Druid",
@@ -3739,15 +3773,15 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"{@i 2nd-level Circle of Wildfire feature}",
-				"You have formed a bond with a wildfire spirit, a primal being of creation and destruction. Your link with this spirit grants you access to some spells when you reach certain levels in this class, as shown on the Circle of Wildfire Spells table.",
-				"Once you gain access to one of these spells, you always have it prepared, and it doesn't count against the number of spells you can prepare each day. If you gain access to a spell that doesn't appear on the druid spell list, the spell is nonetheless a druid spell for you.",
+				"{@i 2級野火結社特性}",
+				"你與野火精魄\u2014\u2014一位兼具創生和毀滅的原初存在\u2014\u2014之間的神祕連接業已形成。當你在此職業到達特定等級時，你與精魄的連接使你獲取了一些特定法術的使用權，就如野火結社法術列表所示。",
+				"　一旦你獲得了其中某個法術的使用權，你就會一直準備着它，且不計入你的每日準備法術上限。如果你學會一個不在德魯伊法術列表中的法術，該法術對你來說視作德魯伊法術。",
 				{
 					"type": "table",
-					"caption": "Circle of Wildfire Spells",
+					"caption": "野火結社法術",
 					"colLabels": [
-						"Druid Level",
-						"Circle Spells"
+						"等級",
+						"擴展法術"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -3772,14 +3806,15 @@
 						],
 						[
 							"9th",
-							"{@spell 焰擊術}, {@spell 群體治療傷勢}"
+							"{@spell 焰擊術}, {@spell 羣體治療傷勢}"
 						]
 					]
 				}
 			]
 		},
 		{
-			"name": "Summon Wildfire Spirit",
+			"name": "召喚野火精魄",
+			"ENG_name": "Summon Wildfire Spirit",
 			"source": "TCE",
 			"page": 39,
 			"className": "Druid",
@@ -3789,16 +3824,17 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"{@i 2nd-level Circle of Wildfire feature}",
-				"You can summon the primal spirit bound to your soul. As an action, you can expend one use of your Wild Shape feature to summon your wildfire spirit, rather than assuming a beast form.",
-				"The spirit appears in an unoccupied space of your choice that you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take {@damage 2d6} fire damage.",
-				"The spirit is friendly to you and your companions and obeys your commands. See this creature's game statistics in the {@creature Wildfire Spirit|TCE} stat block, which uses your proficiency bonus (PB) in several places. You determine the spirit's appearance. Some spirits take the form of a humanoid figure made of gnarled branches covered in flame, while others look like beasts wreathed in fire.",
-				"In combat, the spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the {@action Dodge} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition incapacitated}, the spirit can take any action of its choice, not just {@action Dodge}.",
-				"The spirit manifests for 1 hour, until it is reduced to 0 hit points, until you use this feature to summon the spirit again, or until you die."
+				"{@i 2級野火結社特性}",
+				"你能召喚出與你靈魂連接的原初精魄。以一個動作，你可以消耗一次荒野形態使用次數召喚你的野火精魄，而不是變化爲野獸形態。",
+				"精魄出現在你所選擇的距離你30尺內未被佔據的可見空間內。每個精魄10尺內的生物（除你之外）在它出現時都必須成功一次對抗你法術豁免DC的敏捷豁免否則受到{@damage 2d6}火焰傷害。",
+				"野火精魄對你與你的同伴保持友善並遵從你的命令。在{@creature 野火精魄|TCE}資料表中可以看到這隻生物的遊戲數據，其中幾處採用了你的熟練加值（PB）。由你來決定精魄的外形。一些精魄是熊熊燃燒的枝條虯結而成的人形，而另一些則像是被火焰包裹的野獸。",
+				"在戰鬥中，野火精魄與你使用同一先攻，但在你的回合之後緊接着行動。它僅能使用{@action 閃避}，除非你使用一個附贈動作命令它採取其他動作。那個動作可以是其資料表上的一個，也可以是其他動作。如果你陷入{@condition 無力}，精魄可以採取任何它選擇的動作，不只是{@action 閃避}。",
+				"野火精魄持續存在1小時，直到其生命值降低至0，或直到你再次使用此特性召喚此精魄，或直到你死亡。"
 			]
 		},
 		{
-			"name": "Enhanced Bond",
+			"name": "強化鏈接",
+			"ENG_name": "Enhanced Bond",
 			"source": "TCE",
 			"page": 39,
 			"className": "Druid",
@@ -3808,13 +3844,14 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"{@i 6th-level Circle of Wildfire feature}",
-				"The bond with your wildfire spirit enhances your destructive and restorative spells. Whenever you cast a spell that deals fire damage or restores hit points while your wildfire spirit is summoned, roll a {@dice d8}, and you gain a bonus equal to the number rolled to one damage or healing roll of the spell.",
-				"In addition, when you cast a spell with a range other than self, the spell can originate from you or your wildfire spirit."
+				"{@i 6級野火結社特性}",
+				"你與野火精魄的連接增強了你的破壞與恢復法術。當你在野火精魄處於召喚狀態下施展一個造成火焰傷害或回覆生命值的法術時，骰一個{@dice d8}，你在該法術的一次傷害或治療的擲骰中，獲得等同於骰出數值的加值。",
+				"此外，當你施展一個射程非自身的法術時，該法術可以源自你或你的野火精魄。"
 			]
 		},
 		{
-			"name": "Cauterizing Flames",
+			"name": "灼燒烈焰",
+			"ENG_name": "Cauterizing Flames",
 			"source": "TCE",
 			"page": 39,
 			"className": "Druid",
@@ -3824,13 +3861,14 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"{@i 10th-level Circle of Wildfire feature}",
-				"You gain the ability to turn death into magical flames that can heal or incinerate. When a Small or larger creature dies within 30 feet of you or your wildfire spirit, a harmless spectral flame springs forth in the dead creature's space and flickers there for 1 minute. When a creature you can see enters that space, you can use your reaction to extinguish the spectral flame there and either heal the creature or deal fire damage to it. The healing or damage equals {@dice 2d10} + your Wisdom modifier.",
-				"You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+				"{@i 10級野火結社特性}",
+				"你獲得將死亡轉化爲可以用於治療或焚燒的魔法火焰的能力。當一個小型或更大生物在你或你的野火精魄30尺內死亡時，無害幽火從其死亡生物空間中涌現並在此處搖曳1分鐘。當一個你可見的生物進入該空間時，你可以用反應撲滅那裏的幽火併對該生物進行治療或火焰傷害。傷害或治療數值等於{@dice 2d10} + 你的感知調整值。",
+				"你能使用該特性的次數等於你熟練加值，你在完成一次長休後會恢復所有已消耗使用次數。"
 			]
 		},
 		{
-			"name": "Blazing Revival",
+			"name": "熾烈回生",
+			"ENG_name": "Blazing Revival",
 			"source": "TCE",
 			"page": 39,
 			"className": "Druid",
@@ -3840,9 +3878,9 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"{@i 14th-level Circle of Wildfire feature}",
-				"The bond with your wildfire spirit can save you from death. If the spirit is within 120 feet of you when you are reduced to 0 hit points and thereby fall {@condition unconscious}, you can cause the spirit to drop to 0 hit points. You then regain half your hit points and immediately rise to your feet.",
-				"Once you use this feature, you can't use it again until you finish a long rest."
+				"{@i 14級野火結社特性}",
+				"你與野火精魄的連接可以使你免於死亡。當你生命值降至0從而{@condition 昏迷}時，如果精魄在你的120尺之內，你可以使精魄降至0生命值。之後你就會恢復一半生命值，並立刻站起來。",
+				"一旦你使用這一特性，直到你結束一次長休前你不能再次使用。"
 			]
 		},
 		{
@@ -3935,7 +3973,7 @@
 			"entries": [
 				"{@i 2nd-level Circle of the Stars feature}",
 				"You gain the ability to harness constellations' power to alter your form. As an action, you can expend a use of your Wild Shape feature to take on a starry form rather than transforming into a beast.",
-				"While in your starry form, you retain your game statistics, but your body takes on a luminous, starlike quality; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes or until you're {@condition incapacitated}.",
+				"While in your starry form, you retain your game statistics, but your body takes on a luminous, starlike quality; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes or until you're {@condition 無力}.",
 				"Whenever you assume your starry form, choose which of the following constellations glimmers on your body; your choice gives you certain benefits while in the form:",
 				{
 					"type": "list",
@@ -4019,7 +4057,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 14th-level Circle of the Stars feature}",
-				"Your connection to the cosmos allows you to conjure brilliant starlight. As an action, you conjure a burst of light in a 30-foot-radius sphere centered on a point you can see within 120 feet of you. You can immediately teleport each willing creature in the sphere to an unoccupied space within 30 feet of it. Each creature remaining in the sphere must succeed on a Constitution saving throw against your spell save DC or take {@damage 4d10} radiant damage and be {@condition blinded} until the end of your next turn.",
+				"Your connection to the cosmos allows you to conjure brilliant starlight. As an action, you conjure a burst of light in a 30-foot-radius sphere centered on a point you can see within 120 feet of you. You can immediately teleport each willing creature in the sphere to an unoccupied space within 30 feet of it. Each creature remaining in the sphere must succeed on a Constitution saving throw against your spell save DC or take {@damage 4d10} radiant damage and be {@condition 目盲} until the end of your next turn.",
 				"Once you have used this action, you can't use it again until you finish a long rest or until you expend a spell slot of 5th level or higher to use it again."
 			]
 		},
@@ -4105,7 +4143,7 @@
 				"You can summon the primal spirit bound to your soul. As an action, you can expend one use of your Wild Shape feature to summon your {@creature wildfire spirit|UAClericDruidWizard}, rather than assuming a beast form.",
 				"The spirit appears in an unoccupied space of your choice you can see within 30 feet of you. Each creature within 10 feet of the spirit (other than you) when it appears must succeed on a Dexterity saving throw against your spell save DC or take {@damage 2d10} fire damage.",
 				"The wildfire spirit is friendly to you and your companions and obeys your commands. See this creature's game statistics in the wildfire spirit stat block. You determine the spirit's appearance. Some spirits take the form of a humanoid figure made of gnarled branches covered in flame, while others look like beasts wreathed in fire.",
-				"In combat, the wildfire spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the {@action Dodge} action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or to take the {@action Dash}, {@action Disengage}, {@action Help}, or {@action Hide} action.",
+				"In combat, the wildfire spirit shares your initiative count, but it takes its turn immediately after yours. The only action it takes on its turn is the {@action 閃避} action, unless you take a bonus action on your turn to command it to take one of the actions in its stat block or to take the {@action 疾走}, {@action 撤離}, {@action 協助}, or {@action 躲藏} action.",
 				"The wildfire spirit manifests for 1 hour, until it is reduced to 0 hit points, or until you use your Wild Shape again."
 			]
 		},
@@ -4199,7 +4237,7 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"At 6th level, home is wherever you set up camp. During a short or long rest, you can invoke the shadowy power of the Gloaming Court to ward your campsite from intruders. At the start of the rest, you create an area with a 30-foot radius. Within this area, you and your allies gain a +5 bonus to Wisdom ({@skill Perception}) checks to detect creatures, and any light from open flames (campfire, torches, and the like) is not visible outside the area. These effects end when the rest finishes or when you leave the area."
+				"At 6th level, home is wherever you set up camp. During a short or long rest, you can invoke the shadowy power of the Gloaming Court to ward your campsite from intruders. At the start of the rest, you create an area with a 30-foot radius. Within this area, you and your allies gain a +5 bonus to Wisdom ({@skill 察覺}) checks to detect creatures, and any light from open flames (campfire, torches, and the like) is not visible outside the area. These effects end when the rest finishes or when you leave the area."
 			]
 		},
 		{
@@ -4360,7 +4398,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"Starting at 14th level, the bestial spirits you commune with protect you when you are vulnerable. If you are reduced to 0 hit points or are {@condition incapacitated} against your will, you can immediately gain the benefits of {@spell 召喚動物} as if it was cast with a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour.",
+				"Starting at 14th level, the bestial spirits you commune with protect you when you are vulnerable. If you are reduced to 0 hit points or are {@condition 無力} against your will, you can immediately gain the benefits of {@spell 召喚動物} as if it was cast with a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour.",
 				"Once you use this feature, you can't use it again until you finish a long rest."
 			]
 		},
@@ -4424,7 +4462,7 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"At 10th level, you gain resistance to necrotic and radiant damage. In addition, while you aren't {@condition incapacitated}, any ally within 30 feet of you has advantage on death saving throws."
+				"At 10th level, you gain resistance to necrotic and radiant damage. In addition, while you aren't {@condition 無力}, any ally within 30 feet of you has advantage on death saving throws."
 			]
 		},
 		{
@@ -4475,7 +4513,7 @@
 			"header": 1,
 			"entries": [
 				"At 2nd level, you gain the ability to converse with beasts and many fey.",
-				"You learn to speak, read, and write Sylvan. In addition, beasts can understand your speech, and you gain the ability to decipher their noises and motions. Most beasts lack the intelligence to convey or understand sophisticated concepts, but a friendly beast could relay what it has seen or heard in the recent past. This ability doesn't grant you any special friendship with beasts, though you can combine this ability with gifts to curry favor with them as you would with any nonplayer character."
+				"You learn to speak, read, and write {@language Sylvan}. In addition, beasts can understand your speech, and you gain the ability to decipher their noises and motions. Most beasts lack the intelligence to convey or understand sophisticated concepts, but a friendly beast could relay what it has seen or heard in the recent past. This ability doesn't grant you any special friendship with beasts, though you can combine this ability with gifts to curry favor with them as you would with any nonplayer character."
 			]
 		},
 		{
@@ -4577,7 +4615,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"Starting at 14th level, the nature spirits you commune with protect you when you are the most defenseless. If you are reduced to 0 hit points or are {@condition incapacitated} against your will, you can immediately gain the benefits of {@spell 召喚動物} as if it were cast with a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour, requiring no concentration, or until you dismiss it (no action required).",
+				"Starting at 14th level, the nature spirits you commune with protect you when you are the most defenseless. If you are reduced to 0 hit points or are {@condition 無力} against your will, you can immediately gain the benefits of {@spell 召喚動物} as if it were cast with a 9th-level spell slot. It summons four beasts of your choice that are challenge rating 2 or lower. The conjured beasts appear within 20 feet of you. If they receive no commands from you, they protect you from harm and attack your foes. The spell lasts for 1 hour, requiring no concentration, or until you dismiss it (no action required).",
 				"Once you use this feature, you can't use it again until you finish a long rest."
 			]
 		},
@@ -4692,7 +4730,7 @@
 			"header": 2,
 			"entries": [
 				"At 6th level, your spores gain the ability to infest a humanoid corpse and animate it.",
-				"If you slay a humanoid with your Halo of Spores damage, the creature rises as a {@creature zombie} at the end of your turn. It has 1 hit point. In combat, its turn is immediately after yours. It obeys your mental commands, and the only action it can take is the {@action Attack} action, making one melee attack. It remains animate for 1 hour, after which time it collapses and dies."
+				"If you slay a humanoid with your Halo of Spores damage, the creature rises as a {@creature zombie} at the end of your turn. It has 1 hit point. In combat, its turn is immediately after yours. It obeys your mental commands, and the only action it can take is the {@action 攻擊} action, making one melee attack. It remains animate for 1 hour, after which time it collapses and dies."
 			]
 		},
 		{
@@ -4720,7 +4758,7 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"At 14th level, the fungal spores in your body alter you: you can't be {@condition blinded}, {@condition deafened}, {@condition frightened}, or {@condition poisoned}, and if an attack is a critical hit against you, it doesn't deal its extra damage to you."
+				"At 14th level, the fungal spores in your body alter you: you can't be {@condition 目盲}, {@condition 耳聾}, {@condition 恐懼}, or {@condition 中毒}, and if an attack is a critical hit against you, it doesn't deal its extra damage to you."
 			]
 		},
 		{
@@ -4734,7 +4772,7 @@
 			"subclassSource": "XGE",
 			"level": 2,
 			"entries": [
-				"身為夢境結社成員的德魯伊們來自那些與妖精荒野與那夢境般國度有著強烈聯繫的地區。這些德魯伊們對自然世界的守護使他們與善良陣營的精類生物自然而然的組成了聯盟。這些德魯伊冀望讓這世界充滿夢幻奇事。他們的魔法能修復傷口、為沮喪的心帶來歡樂、並讓他們所守護的國度永遠熠熠發光、豐碩富饒，夢境和現實的邊界將變得模糊，任何疲憊的人都能找到休憩的場所。",
+				"身爲夢境結社成員的德魯伊們來自那些與妖精荒野與那夢境般國度有着強烈聯繫的地區。這些德魯伊們對自然世界的守護使他們與善良陣營的精類生物自然而然的組成了聯盟。這些德魯伊冀望讓這世界充滿夢幻奇事。他們的魔法能修復傷口、爲沮喪的心帶來歡樂、並讓他們所守護的國度永遠熠熠發光、豐碩富饒，夢境和現實的邊界將變得模糊，任何疲憊的人都能找到休憩的場所。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "仲夏庭院的芬馥|Druid||Dreams|XGE|2"
@@ -4753,8 +4791,9 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"在2級時，你將被來自仲夏庭院的祝福給充滿，你成為了能緩解傷勢的能量泉源。你獲得一個精類能量池，呈現為數量等同於你德魯伊等級的{@dice d6}骰。",
-				"以一個附贈動作，你可以選擇距離你120呎內你所能看見的一個生物，並消耗數量等於你一半德魯伊等級或更少的這些骰子。投擲你所消耗的骰子並將它們加在一起。目標將回復等同於其總和的生命值。目標同時獲得等同於消耗骰數的臨時生命值。",
+				"{@i 2級夢境結社特性}",
+				"你將被來自仲夏庭院的祝福給充滿，你成爲了能緩解傷勢的能量泉源。你獲得一個精類能量池，呈現爲數量等同於你德魯伊等級的{@dice d6}骰。",
+				"以一個附贈動作，你可以選擇距離你120尺內你所能看見的一個生物，並消耗數量等於你一半德魯伊等級或更少的這些骰子。投擲你所消耗的骰子並將它們加在一起。目標將回復等同於其總和的生命值。目標同時獲得等同於消耗骰數的臨時生命值。",
 				"你將在完成一次長休時恢復所有花費掉的骰子。"
 			]
 		},
@@ -4770,8 +4809,9 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"在6級時，任何你所在的地方都可以是你的家。在短休或長休期間，你可以呼喚來自薄暮庭院的幽影力量以協助你守護你暫時的歇息。在休息開始時，你觸碰空間內的一點，且一個隱形，30呎半徑球體的魔法能量將會以該點為中心出現。將球體區域籠罩在全掩護之下。",
-				"當處於球體區域內，你和你的盟友將在敏捷（{@skill 隱匿}）檢定和睿知（{@skill 感知}）檢定中獲得+5加值，且任何球體內明火所散發出的光照都無法被從外側看見。",
+				"{@i 6級夢境結社特性}",
+				"任何你所在的地方都可以是你的家。在短休或長休期間，你可以呼喚來自薄暮庭院的幽影力量以協助你守護你暫時的歇息。在休息開始時，你觸碰空間內的一點，且一個隱形，30尺半徑球體的魔法能量將會以該點爲中心出現。將球體區域籠罩在全掩護之下。",
+				"當處於球體區域內，你和你的盟友將在敏捷（{@skill 隱匿}）檢定和感知（{@skill 察覺}）檢定中獲得+5加值，且任何球體內明火所散發出的光照都無法被從外側看見。",
 				"這個球體將在休息結束或你離開球體時消失。"
 			]
 		},
@@ -4787,8 +4827,9 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"從10級開始，你可以使用那些妖精用以在眨眼間穿梭空間的隱藏魔法通道。在你的回合以一個附贈動作，你可以傳送最多60呎距離到一處你所能看見的未被佔據空間。或者，你可以使用你的動作使一個你所觸碰的自願生物傳送到最多30呎距離到一處你所能看見的未被佔據空間。",
-				"你可以使用這個能力的次數等同於你的睿知調整值（最少一次）。你在完成一次長休後恢復所有你花費掉的次數。"
+				"{@i 10級夢境結社特性}",
+				"你可以使用那些妖精用以在眨眼間穿梭空間的隱藏魔法通道。在你的回合以一個附贈動作，你可以傳送最多60尺距離到一處你所能看見的未被佔據空間。或者，你可以使用你的動作使一個你所觸碰的自願生物傳送到最多30尺距離到一處你所能看見的未被佔據空間。",
+				"你可以使用這個能力的次數等同於你的感知調整值（最少一次）。你在完成一次長休後恢復所有你花費掉的次數。"
 			]
 		},
 		{
@@ -4803,9 +4844,10 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"在14級時，妖精荒野的魔法賦予你以心靈或身體穿梭夢境的能力。",
-				"當你完成一次短休，你可以施放下列其中一個法術，無須消耗法術位或需求材料構材：{@spell 託夢術}（以你做為信使）、{@spell 探知}、或{@spell 傳送法陣}。",
-				"這個{@spell 傳送法陣}的使用方式是特別的。它所開啟的傳送門並非通往一個永久傳送法陣，而是通往你在當前存在位面中最後一次完成長休的地點。若你在當前位面中尚未進行過長休，則此法術將失敗，但使用次數並不會被浪費。",
+				"{@i 14級夢境結社特性}",
+				"妖精荒野的魔法賦予你以心靈或身體穿梭夢境的能力。",
+				"當你完成一次短休，你可以施放下列其中一個法術，無須消耗法術位或需求材料構材：{@spell 託夢術}（以你作爲信使）、{@spell 探知}或{@spell 傳送法陣}。",
+				"這個{@spell 傳送法陣}的使用方式是特別的。它所打開的傳送門並非通往一個永久傳送法陣，而是通往你在當前存在位面中最後一次完成長休的地點。若你在當前位面中尚未進行過長休，則此法術將失敗，但使用次數並不會被浪費。",
 				"一旦你使用此能力，直到你完成一次長休之前你都不能再使用它。"
 			]
 		},
@@ -4820,8 +4862,8 @@
 			"subclassSource": "XGE",
 			"level": 2,
 			"entries": [
-				"牧人結社的德魯伊與大自然的精魂交融，尤其是那些野獸和妖精的精魂。他們也會呼喚這些精魂援助自己。這些德魯伊認為所有的活物都在自然界中扮演著各自的角色，因此他們專注於保護難以自保的動物和精類生物。牧人們，就如他們所為人知的，將這類生物視為自己的責任。他們抵禦那些會威脅他們的怪物、斥退進行不必要殺戮的獵人、並防止文明侵犯那些稀有動物的棲息地和精類的神聖場所。許多牧人結社的德魯伊們在遠離城市和城鎮的地方最為快樂，並滿足於在荒野中的動物和精類生物陪伴下度過他們的時光。",
-				"這個結社的成員會因為許多原因而成為冒險者，像是為了抵禦威脅他們照護對象的力量、或是為了尋求知識和力量以幫助他們更好的保護他們的照護對象。每當這些德魯伊們踏上旅程，荒野中的精魂都會與他們同行。",
+				"牧人結社的德魯伊與大自然的精魂交融，尤其是那些野獸和妖精的精魂。他們也會呼喚這些精魂援助自己。這些德魯伊認爲所有的活物都在自然界中扮演着各自的角色，因此他們專注於保護難以自保的動物和精類生物。牧人們，就如他們所爲人知的，將這類生物視爲自己的責任。他們抵禦那些會威脅他們的怪物、斥退進行不必要殺戮的獵人、並防止文明侵犯那些稀有動物的棲息地和精類的神聖場所。許多牧人結社的德魯伊們在遠離城市和城鎮的地方最爲快樂，並滿足於在荒野中的動物和精類生物陪伴下度過他們的時光。",
+				"這個結社的成員會因爲許多原因而成爲冒險者，像是爲了抵禦威脅他們照護對象的力量、或是爲了尋求知識和力量以幫助他們更好的保護他們的照護對象。每當這些德魯伊們踏上旅程，荒野中的精魂都會與他們同行。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "林地之語|Druid||Shepherd|XGE|2"
@@ -4844,8 +4886,9 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"在2級時，你獲得與野獸和多數精類生物交談的能力。",
-				"你學會說、讀、寫木族語。此外，野獸可以理解你的話語，且你獲得解析牠們聲音和動作的含意。大部分的野獸缺乏足夠的智能以傳達或理解複雜的概念，但一個友善的野獸可以復述牠在最近聽過或看到的事物。此能力並不會讓你和野獸成為朋友，但你可以將此能力與禮物結合以討好牠們，就如同你對待任何其他非玩家角色一樣。"
+				"{@i 2級牧人結社特性}",
+				"你獲得與野獸和多數精類生物交談的能力。",
+				"你學會說、讀、寫{@language Sylvan}。此外，野獸可以理解你的話語，且你獲得解析牠們聲音和動作的含意。大部分的野獸缺乏足夠的智能以傳達或理解複雜的概念，但一個友善的野獸可以複述牠在最近聽過或看到的事物。此能力並不會讓你和野獸成爲朋友，但你可以將此能力與禮物結合以討好牠們，就如同你對待任何其他非玩家角色一樣。"
 			]
 		},
 		{
@@ -4860,8 +4903,9 @@
 			"level": 2,
 			"header": 1,
 			"entries": [
-				"從2級開始，你可以喚出自然精魂以影響你周遭的世界。以一個附贈動作，你可以用魔法在距離你60呎內你所能看見的一點召喚出一個沒有實體的精魂。這個精魂將在該點周圍創造出一個30呎半徑的靈光。它不會被視作生物或物體，儘管它呈現著對應生物的靈體外觀。",
-				"以一個附贈動作，你可以移動該精魂最多60呎距離到你所能看見的一點。",
+				"{@i 2級牧人結社特性}",
+				"你可以喚出自然精魂以影響你周遭的世界。以一個附贈動作，你可以用魔法在距離你60尺內你所能看見的一點召喚出一個沒有實體的精魂。這個精魂將在該點周圍創造出一個30尺半徑的靈光。它不會被視作生物或物體，儘管它呈現着對應生物的靈體外觀。",
+				"以一個附贈動作，你可以移動該精魂最多60尺距離到你所能看見的一點。",
 				"這個精魂會持續存在1分鐘或直到你陷入{@condition 無力}狀態。一旦你使用此能力，直到你完成一次短休或長休之前你都不能再使用它。",
 				"這個精魂的靈光效果將根據你所召喚的精魂類型而有所不同，如下列選項所示。",
 				{
@@ -4869,7 +4913,7 @@
 					"name": "熊之精魂",
 					"ENG_name": "Bear Spirit",
 					"entries": [
-						"熊精魂將賦予你和你的盟友它的力量和耐性。每個在此精魂出現時處於靈光中且你所選擇的生物，將獲得等同於5+你的德魯伊等級的臨時生命值。此外，你和你的盟友在處於靈光中時，在力量檢定和力量豁免中具有優勢。"
+						"熊精魂將賦予你和你的盟友它的力量和耐性。每個在此精魂出現時處於靈光中且你所選擇的生物，將獲得等同於5 + 你的德魯伊等級的臨時生命值。此外，你和你的盟友在處於靈光中時，在力量檢定和力量豁免中具有優勢。"
 					]
 				},
 				{
@@ -4877,7 +4921,7 @@
 					"name": "鷹之精魂",
 					"ENG_name": "Hawk Spirit",
 					"entries": [
-						"鷹之精魂是一個完美的獵手，用它敏銳的視線協助你和你的盟友。當一個生物在對一個處於此精魂靈光中的目標進行攻擊檢定時，你可以使用你的反應以使該攻擊檢定獲得優勢。此外，你和你的盟友在處於靈光中時，在睿知（{@skill 感知}）檢定中具有優勢。"
+						"鷹之精魂是一個完美的獵手，用它敏銳的視線協助你和你的盟友。當一個生物在對一個處於此精魂靈光中的目標進行攻擊檢定時，你可以使用你的反應以使該攻擊檢定獲得優勢。此外，你和你的盟友在處於靈光中時，在感知（{@skill 察覺}）檢定中具有優勢。"
 					]
 				},
 				{
@@ -4885,7 +4929,7 @@
 					"name": "獨角獸精魂",
 					"ENG_name": "Unicorn Spirit",
 					"entries": [
-						"獨角獸精魂為那些周遭的人們提供保護。你和你的盟友在所有用於偵測處於靈光中的生物時所作的檢定具有優勢。此外，若你消耗法術位以施放一個為任何處於靈光範圍內或外的生物回復生命值的法術，則每個處於靈光中且你所選擇的生物，也將回復等同於你德魯伊等級的生命值。"
+						"獨角獸精魂爲那些周遭的人們提供保護。你和你的盟友在所有用於偵測處於靈光中的生物時所作的檢定具有優勢。此外，若你消耗法術位以施放一個爲任何處於靈光範圍內或外的生物回覆生命值的法術，則每個處於靈光中且你所選擇的生物，也將回復等同於你德魯伊等級的生命值。"
 					]
 				}
 			]
@@ -4902,7 +4946,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"從6級開始，你所召喚的野獸和精類生物將比原本更加強韌。任何你透過施放法術召喚出的野獸和精類生物將獲得下列好處：",
+				"{@i 6級牧人結社特性}",
+				"你所召喚的野獸和精類生物將比原本更加強韌。任何你通過施放法術召喚出的野獸和精類生物將獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
@@ -4924,7 +4969,8 @@
 			"level": 10,
 			"header": 2,
 			"entries": [
-				"從10級開始，你的精魂圖騰將會守護你用你魔法喚來的野獸和精類生物。當一個你用法術所召喚或創造的野獸或精類生物在你精魂圖騰的靈光中結束它的回合，該生物將回復等同於你德魯伊等級一半的生命值。"
+				"{@i 10級牧人結社特性}",
+				"你的精魂圖騰將會守護你用你魔法喚來的野獸和精類生物。當一個你用法術所召喚或創造的野獸或精類生物在你精魂圖騰的靈光中結束它的回合，該生物將回復等同於你德魯伊等級一半的生命值。"
 			]
 		},
 		{
@@ -4939,7 +4985,8 @@
 			"level": 14,
 			"header": 2,
 			"entries": [
-				"從14級開始，你所交融的自然精魂將在你最無助的時刻保護你。若你的生命值被歸零，或非自願地陷入{@condition 無力}狀態時，你可以立刻獲得如同以9環法術位施放{@spell 召喚動物}的好處。它將召喚出四隻你所選擇的挑戰等級為2或以下的野獸。被召喚的野獸將出現在距離你20呎內的位置。若它們沒有接受到來自你的命令，則它們將保護你不受傷害，並攻擊你的敵人。此法術不需要專注，且將持續1小時，或直到你解消它（不需要花費動作）。",
+				"{@i 14級牧人結社特性}",
+				"你所交融的自然精魂將在你最無助的時刻保護你。若你的生命值被歸零，或非自願地陷入{@condition 無力}狀態時，你可以立刻獲得如同以9環法術位施放{@spell 召喚動物}的好處。它將召喚出四隻你所選擇的挑戰等級爲2或以下的野獸。被召喚的野獸將出現在距離你20尺內的位置。若它們沒有接受到來自你的命令，則它們將保護你不受傷害，並攻擊你的敵人。此法術不需要專注，且將持續1小時，或直到你解消它（不需要花費動作）。",
 				"一旦你使用此能力，直到你完成一次長休前你都不能再使用它。"
 			]
 		}

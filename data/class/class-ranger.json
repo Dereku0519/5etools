@@ -42,7 +42,7 @@
 				"armor": [
 					"light",
 					"medium",
-					"shields"
+					"{@item shield|phb|盾牌}"
 				],
 				"weapons": [
 					"simple",
@@ -123,7 +123,7 @@
 					"armor": [
 						"light",
 						"medium",
-						"shields"
+						"{@item shield|phb|盾牌}"
 					],
 					"skills": [
 						{
@@ -372,10 +372,10 @@
 			"classFeatures": [
 				"宿敵|Ranger||1",
 				"Favored Foe|Ranger||1|UAClassFeatureVariants",
-				"Favored Foe|Ranger||1|TCE",
+				"夙敵|Ranger||1|TCE",
 				"自然探索者|Ranger||1",
 				"Deft Explorer|Ranger||1|UAClassFeatureVariants",
-				"Deft Explorer|Ranger||1|TCE",
+				"熟練探險家|Ranger||1|TCE",
 				"戰鬥風格|Ranger||2",
 				"Martial Versatility|Ranger||2|UAClassFeatureVariants",
 				"施法|Ranger||2",
@@ -388,13 +388,13 @@
 				},
 				"原初意識|Ranger||3",
 				"Primal Awareness|Ranger||3|UAClassFeatureVariants",
-				"Primal Awareness|Ranger||3|TCE",
+				"原始意識|Ranger||3|TCE",
 				"屬性值提升|Ranger||4",
 				"Proficiency Versatility|Ranger||4|UAClassFeatureVariants",
-				"Martial Versatility|Ranger||4|TCE",
+				"替換武術|Ranger||4|TCE",
 				"額外攻擊|Ranger||5",
 				"宿敵和自然探索者強化|Ranger||6",
-				"Deft Explorer Improvement|Ranger||6|TCE",
+				"熟練探險家強化|Ranger||6|TCE",
 				{
 					"classFeature": "遊俠範型能力|Ranger||7",
 					"gainSubclassFeature": true
@@ -404,9 +404,9 @@
 				"大地行者|Ranger||8",
 				"避人耳目|Ranger||10",
 				"Fade Away|Ranger||10|UAClassFeatureVariants",
-				"Nature's Veil|Ranger||10|TCE",
+				"自然面紗|Ranger||10|TCE",
 				"自然探索者強化|Ranger||10",
-				"Deft Explorer Improvement|Ranger||10|TCE",
+				"熟練探險家強化|Ranger||10|TCE",
 				{
 					"classFeature": "遊俠範型能力|Ranger||11",
 					"gainSubclassFeature": true
@@ -424,7 +424,7 @@
 				"野性感官|Ranger||18",
 				"屬性值提升|Ranger||19",
 				"Proficiency Versatility|Ranger||19|UAClassFeatureVariants",
-				"眾敵屠戮|Ranger||20"
+				"衆敵屠戮|Ranger||20"
 			],
 			"subclassTitle": "Ranger Archetype",
 			"subclasses": [
@@ -779,8 +779,10 @@
 					]
 				},
 				{
-					"name": "Fey Wanderer",
-					"shortName": "Fey Wanderer",
+					"name": "妖精漫遊者",
+					"ENG_name": "Fey Wanderer",
+					"shortName": "妖精漫遊者",
+					"ENG_shortName": "Fey Wanderer",
 					"source": "TCE",
 					"page": 58,
 					"additionalSpells": [
@@ -805,15 +807,17 @@
 						}
 					],
 					"subclassFeatures": [
-						"Fey Wanderer|Ranger||Fey Wanderer|TCE|3",
-						"Beguiling Twist|Ranger||Fey Wanderer|TCE|7",
-						"Fey Reinforcements|Ranger||Fey Wanderer|TCE|11",
-						"Misty Wanderer|Ranger||Fey Wanderer|TCE|15"
+						"妖精漫遊者|Ranger||Fey Wanderer|TCE|3",
+						"妖思魅縷|Ranger||Fey Wanderer|TCE|7",
+						"精宸所與|Ranger||Fey Wanderer|TCE|11",
+						"霧行漫遊|Ranger||Fey Wanderer|TCE|15"
 					]
 				},
 				{
-					"name": "Swarmkeeper",
-					"shortName": "Swarmkeeper",
+					"name": "集羣守衛",
+					"ENG_name": "Swarmkeeper",
+					"shortName": "集羣守衛",
+					"ENG_shortName": "Swarmkeeper",
 					"source": "TCE",
 					"page": 59,
 					"additionalSpells": [
@@ -839,10 +843,10 @@
 						}
 					],
 					"subclassFeatures": [
-						"Swarmkeeper|Ranger||Swarmkeeper|TCE|3",
-						"Writhing Tide|Ranger||Swarmkeeper|TCE|7",
-						"Mighty Swarm|Ranger||Swarmkeeper|TCE|11",
-						"Swarming Dispersal|Ranger||Swarmkeeper|TCE|15"
+						"集羣守衛|Ranger||Swarmkeeper|TCE|3",
+						"翻騰浪涌|Ranger||Swarmkeeper|TCE|7",
+						"壯大集羣|Ranger||Swarmkeeper|TCE|11",
+						"羣逸逃散|Ranger||Swarmkeeper|TCE|15"
 					]
 				}
 			],
@@ -1154,7 +1158,7 @@
 				"armor": [
 					"light",
 					"medium",
-					"shields"
+					"{@item shield|phb|盾牌}"
 				],
 				"weapons": [
 					"simple",
@@ -1298,10 +1302,10 @@
 			"classFeatures": [
 				"宿敵|Ranger (Spell-less)|UAModifyingClasses|1",
 				"Favored Foe|Ranger (Spell-less)|UAModifyingClasses|1|UAClassFeatureVariants",
-				"Favored Foe|Ranger (Spell-less)|UAModifyingClasses|1|TCE",
+				"夙敵|Ranger (Spell-less)|UAModifyingClasses|1|TCE",
 				"自然探索者|Ranger (Spell-less)|UAModifyingClasses|1",
 				"Deft Explorer|Ranger (Spell-less)|UAModifyingClasses|1|UAClassFeatureVariants",
-				"Deft Explorer|Ranger (Spell-less)|UAModifyingClasses|1|TCE",
+				"熟練探險家|Ranger (Spell-less)|UAModifyingClasses|1|TCE",
 				"戰鬥風格|Ranger (Spell-less)|UAModifyingClasses|2",
 				"Martial Versatility|Ranger (Spell-less)|UAModifyingClasses|2|UAClassFeatureVariants",
 				"戰鬥卓越|Ranger (Spell-less)|UAModifyingClasses|2",
@@ -1311,15 +1315,15 @@
 				},
 				"原初意識|Ranger (Spell-less)|UAModifyingClasses|3",
 				"Primal Awareness|Ranger (Spell-less)|UAModifyingClasses|3|UAClassFeatureVariants",
-				"Primal Awareness|Ranger (Spell-less)|UAModifyingClasses|3|TCE",
+				"原始意識|Ranger (Spell-less)|UAModifyingClasses|3|TCE",
 				"草藥敷劑|Ranger (Spell-less)|UAModifyingClasses|3",
 				"屬性值提升|Ranger (Spell-less)|UAModifyingClasses|4",
 				"Proficiency Versatility|Ranger (Spell-less)|UAModifyingClasses|4|UAClassFeatureVariants",
-				"Martial Versatility|Ranger (Spell-less)|UAModifyingClasses|4|TCE",
+				"替換武術|Ranger (Spell-less)|UAModifyingClasses|4|TCE",
 				"額外攻擊|Ranger (Spell-less)|UAModifyingClasses|5",
 				"額外戰技|Ranger (Spell-less)|UAModifyingClasses|5",
 				"宿敵和自然探索者強化|Ranger (Spell-less)|UAModifyingClasses|6",
-				"Deft Explorer Improvement|Ranger (Spell-less)|UAModifyingClasses|6|TCE",
+				"熟練探險家強化|Ranger (Spell-less)|UAModifyingClasses|6|TCE",
 				{
 					"classFeature": "遊俠範型能力|Ranger (Spell-less)|UAModifyingClasses|7",
 					"gainSubclassFeature": true
@@ -1331,9 +1335,9 @@
 				"額外戰技|Ranger (Spell-less)|UAModifyingClasses|9",
 				"避人耳目|Ranger (Spell-less)|UAModifyingClasses|10",
 				"Fade Away|Ranger (Spell-less)|UAModifyingClasses|10|UAClassFeatureVariants",
-				"Nature's Veil|Ranger (Spell-less)|UAModifyingClasses|10|TCE",
+				"自然面紗|Ranger (Spell-less)|UAModifyingClasses|10|TCE",
 				"自然探索者強化|Ranger (Spell-less)|UAModifyingClasses|10",
-				"Deft Explorer Improvement|Ranger (Spell-less)|UAModifyingClasses|10|TCE",
+				"熟練探險家強化|Ranger (Spell-less)|UAModifyingClasses|10|TCE",
 				{
 					"classFeature": "遊俠範型能力|Ranger (Spell-less)|UAModifyingClasses|11",
 					"gainSubclassFeature": true
@@ -1355,7 +1359,7 @@
 				"野性感官|Ranger (Spell-less)|UAModifyingClasses|18",
 				"屬性值提升|Ranger (Spell-less)|UAModifyingClasses|19",
 				"Proficiency Versatility|Ranger (Spell-less)|UAModifyingClasses|19|UAClassFeatureVariants",
-				"眾敵屠戮|Ranger (Spell-less)|UAModifyingClasses|20"
+				"衆敵屠戮|Ranger (Spell-less)|UAModifyingClasses|20"
 			],
 			"subclassTitle": "Ranger Archetype",
 			"subclasses": [
@@ -1886,14 +1890,14 @@
 			"startingProficiencies": {
 				"armor": [
 					"light",
-					"shields"
+					"{@item shield|phb|盾牌}"
 				],
 				"weapons": [
 					"simple",
 					"martial"
 				],
 				"tools": [
-					"{@item herbalism kit|PHB}"
+					"{@item 草藥工具|PHB}"
 				],
 				"skills": [
 					{
@@ -2013,7 +2017,7 @@
 			]
 		},
 		{
-			"name": "遊俠(修訂)",
+			"name": "遊俠 (修訂)",
 			"ENG_name": "Ranger (Revised)",
 			"source": "UATheRangerRevised",
 			"page": 1,
@@ -2053,7 +2057,7 @@
 				"armor": [
 					"light",
 					"medium",
-					"shields"
+					"{@item shield|phb|盾牌}"
 				],
 				"weapons": [
 					"simple",
@@ -2359,7 +2363,7 @@
 				},
 				"屬性值提升|Ranger (Revised)|UATheRangerRevised|4",
 				"Proficiency Versatility|Ranger (Revised)|UATheRangerRevised|4|UAClassFeatureVariants",
-				"Martial Versatility|Ranger (Revised)|UATheRangerRevised|4|TCE",
+				"替換武術|Ranger (Revised)|UATheRangerRevised|4|TCE",
 				{
 					"classFeature": "遊俠密會能力|Ranger (Revised)|UATheRangerRevised|5",
 					"gainSubclassFeature": true
@@ -2389,7 +2393,7 @@
 				"野性感官|Ranger (Revised)|UATheRangerRevised|18",
 				"屬性值提升|Ranger (Revised)|UATheRangerRevised|19",
 				"Proficiency Versatility|Ranger (Revised)|UATheRangerRevised|19|UAClassFeatureVariants",
-				"眾敵屠戮|Ranger (Revised)|UATheRangerRevised|20"
+				"衆敵屠戮|Ranger (Revised)|UATheRangerRevised|20"
 			],
 			"subclassTitle": "Ranger Conclave",
 			"subclasses": [
@@ -3131,12 +3135,13 @@
 			"level": 1,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"Choose one skill: {@skill Animal Handling}, {@skill Athletics}, {@skill History}, {@skill Insight}, {@skill Investigation}, {@skill Medicine}, {@skill Nature}, {@skill Perception}, {@skill Stealth}, or {@skill Survival}. You gain proficiency in the chosen skill if you don't already have it, and you can add double your proficiency bonus to ability checks using that skill.",
+				"Choose one skill: {@skill 馴獸}, {@skill 運動}, {@skill 歷史}, {@skill 洞悉}, {@skill 調查}, {@skill 醫療}, {@skill 自然}, {@skill 察覺}, {@skill 隱匿}, or {@skill 生存}. You gain proficiency in the chosen skill if you don't already have it, and you can add double your proficiency bonus to ability checks using that skill.",
 				"In addition, thanks to your extensive wandering, you are able to speak, read, and write two languages of your choice."
 			]
 		},
 		{
-			"name": "Deft Explorer",
+			"name": "熟練探險家",
+			"ENG_name": "Deft Explorer",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger",
@@ -3144,53 +3149,15 @@
 			"level": 1,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 1st-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Natural Explorer feature}",
-				"You are an unsurpassed explorer and survivor, both in the wilderness and in dealing with others on your travels. You gain the Canny benefit below, and you gain an additional benefit below when you reach 6th level and 10th level in this class.",
+				"{@i 1級遊俠 {@variantrule 可選職業特性|tce|可選特性}，替代自然探索者}",
+				"你是一個無與倫比的探險家和求生專家，無論是在荒野還是在你的旅途他人打交道。你獲得下列的增益，然後你在此職業升至6級和10級時再各獲得一項。",
 				{
-					"name": "Canny",
+					"name": "精明",
+					"ENG_name": "Canny",
 					"type": "entries",
 					"entries": [
-						"Choose one of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses the chosen skill.",
-						"You can also speak, read, and write two additional languages of your choice."
-					]
-				}
-			]
-		},
-		{
-			"name": "Deft Explorer Improvement",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger",
-			"classSource": "PHB",
-			"level": 6,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"You gain an additional benefit when you reach 6th level in this class.",
-				{
-					"type": "entries",
-					"name": "Roving",
-					"entries": [
-						"Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
-					]
-				}
-			]
-		},
-		{
-			"name": "Deft Explorer Improvement",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger",
-			"classSource": "PHB",
-			"level": 10,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"You gain an additional benefit when you reach 10th level in this class.",
-				{
-					"type": "entries",
-					"name": "Tireless",
-					"entries": [
-						"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d8} + your Wisdom modifier (minimum of 1 temporary hit point). You can use this action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-						"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
+						"你選擇一項你擁有熟練的技能，你在使用該技能時的任何屬性檢定的使用兩倍的熟練加值。",
+						"你可以額外說，讀，寫兩門你選擇的語言。"
 					]
 				}
 			]
@@ -3237,14 +3204,15 @@
 			"level": 1,
 			"entries": [
 				"從1級開始，你在對一個特定類型的敵人的研究、追跡、狩獵、和甚至交談上已相當具備充足的經驗。",
-				"選擇一個宿敵類型：{@filter 異怪|bestiary|type=aberration}、{@filter 野獸|bestiary|type=beast}、{@filter 天界生物|bestiary|type=celestial}、{@filter 構裝體|bestiary|type=construct}、{@filter 龍|bestiary|type=dragon}、{@filter 元素|bestiary|type=elemental}、{@filter 精類|bestiary|type=fey}、{@filter 邪魔|bestiary|type=fiend}、{@filter 巨人|bestiary|type=giant}、{@filter 怪獸|bestiary|type=monstrosity}、{@filter 泥怪|bestiary|type=ooze}、{@filter 植物|bestiary|type=plant}、或{@filter 不死生物|bestiary|type=undead}。或者，你可以選擇二個{@filter 類人生物|bestiary|type=humanoid}種族（像是{@creature 豺狼人|mm}和{@creature 獸人|mm}）做為宿敵。",
-				"你在用於追蹤你宿敵的睿知（{@skill 求生}）檢定、以及用以回憶關於它們情報的智力檢定中具有優勢。",
+				"選擇一個宿敵類型：{@filter 異怪|bestiary|type=aberration}、{@filter 野獸|bestiary|type=beast}、{@filter 天界生物|bestiary|type=celestial}、{@filter 構裝體|bestiary|type=construct}、{@filter 龍|bestiary|type=dragon}、{@filter 元素|bestiary|type=elemental}、{@filter 精類|bestiary|type=fey}、{@filter 邪魔|bestiary|type=fiend}、{@filter 巨人|bestiary|type=giant}、{@filter 怪獸|bestiary|type=monstrosity}、{@filter 泥怪|bestiary|type=ooze}、{@filter 植物|bestiary|type=plant}或{@filter 不死生物|bestiary|type=undead}。或者，你可以選擇二個{@filter 類人生物|bestiary|type=humanoid}種族（像是{@creature 豺狼人|mm}和{@creature 獸人|mm}）作爲宿敵。",
+				"你在用於追蹤你宿敵的感知（{@skill 生存}）檢定、以及用以回憶關於它們情報的智力檢定中具有優勢。",
 				"當你獲得此能力時，若你的宿敵擁有至少一種語言，你也選擇學會一種被它們所使用的語言。",
-				"你在6級和14級時選擇一種額外的宿敵以及一種關聯語言。隨著你提升等級，你的選擇必須反映你在你冒險中所遭遇過的怪物類型。"
+				"你在6級和14級時選擇一種額外的宿敵以及一種關聯語言。隨着你提升等級，你的選擇必須反映你在你冒險中所遭遇過的怪物類型。"
 			]
 		},
 		{
-			"name": "Favored Foe",
+			"name": "夙敵",
+			"ENG_name": "Favored Foe",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger",
@@ -3252,11 +3220,11 @@
 			"level": 1,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 1st-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Favored Enemy feature and works with the Foe Slayer feature}",
-				"When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your concentration (as if you were concentrating on a spell).",
-				"The first time on each of your turns that you hit the favored enemy and deal damage to it, including when you mark it, you can increase that damage by {@dice 1d4}.",
-				"You can use this feature to mark a favored enemy a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-				"This feature's extra damage increases when you reach certain levels in this class: to {@dice 1d6} at 6th level and to {@dice 1d8} at 14th level."
+				"{@i 1級遊俠 {@variantrule 可選職業特性|tce|可選特性}，替代宿敵並能夠對衆敵屠戮起效}",
+				"當你以一次攻擊擲骰命中一個生物時，你可以呼喚你與自然的神祕羈連以將目標標記爲你的夙敵，持續一分鐘或直到你失去專注(如同你在專注一道法術)。",
+				"你在你的回合內第一次命中你的夙敵並對其造成傷害，包括你正在標記它的那一次攻擊時，你可以增加{@dice 1d4}傷害。",
+				"你可以使用同等於你的熟練加值次該特性來標記你的夙敵，你在完成一次長休後恢復所有已使用的次數。",
+				"這個特性的額外傷害在你於此職業升至特定等級時會增加：6級時{@dice 1d6}，14級時{@dice 1d8}。"
 			]
 		},
 		{
@@ -3283,13 +3251,13 @@
 			"classSource": "PHB",
 			"level": 1,
 			"entries": [
-				"你特別熟悉於一種自然環境，且熟稔在這類區域中旅行和生存的方式。選擇一種偏好環境：極地、海岸、沙漠、森林、草地、高山、沼澤、或幽暗地域。當你進行一次關聯於你偏好環境的智力或睿知檢定時，若你使用一個你所熟練的技能，則你的熟練加值變為二倍。",
+				"你特別熟悉於一種自然環境，且熟稔在這類區域中旅行和生存的方式。選擇一種偏好環境：極地、海岸、沙漠、森林、草地、高山、沼澤、或幽暗地域。當你進行一次關聯於你偏好環境的智力或感知檢定時，若你使用一個你所熟練的技能，則你的熟練加值變爲二倍。",
 				"當在你的偏好環境中旅行長達1個小時或更久，你將獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
 						"困難地形不會減慢你們團隊的旅行速度。",
-						"除非是因為魔法的緣故，否則你們團隊不會迷路。",
+						"除非是因爲魔法的緣故，否則你們團隊不會迷路。",
 						"即使你在旅行途中正從事於其他行動（像是覓食、導航、或追跡），你仍保持對危險的警戒。",
 						"若你正獨自旅行，你能夠以正常步調隱匿移動。",
 						"當你覓食時，你能找到二倍你原本所能找到的食物。",
@@ -3321,7 +3289,7 @@
 			"isClassFeatureVariant": true,
 			"entries": [
 				"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d10} + your Wisdom modifier. You can use this special action a number of times equal to your Wisdom modifier (a minimum of once), and you regain all expended uses when you finish a long rest.",
-				"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
+				"In addition, whenever you finish a short rest, your {@condition 力竭} level, if any, is decreased by 1."
 			]
 		},
 		{
@@ -3334,7 +3302,7 @@
 			"classSource": "PHB",
 			"level": 2,
 			"entries": [
-				"在2級時，你採用一種特殊的戰鬥風格以做為你的專業。從下列選項中選擇一種。你不能獲得相同的戰鬥風格選項超過一次，即使你有機會再選擇它也一樣。",
+				"在2級時，你採用一種特殊的戰鬥風格以作爲你的專業。從下列選項中選擇一種。你不能獲得相同的戰鬥風格選項超過一次，即使你有機會再選擇它也一樣。",
 				{
 					"type": "options",
 					"count": 1,
@@ -3393,7 +3361,7 @@
 						},
 						{
 							"type": "refOptionalfeature",
-							"optionalfeature": "Druidic Warrior|TCE"
+							"optionalfeature": "德魯伊教戰士|TCE"
 						},
 						{
 							"type": "refOptionalfeature",
@@ -3439,13 +3407,13 @@
 			"classSource": "PHB",
 			"level": 2,
 			"entries": [
-				"在你升至2級時，你學會如同德魯伊的方式使用大自然的精粹以施放法術。請參閱{@book 第十章|PHB|10}以了解關於施法的規則，以及第十一章以查閱{@filter 遊俠法術列表|spells|class=ranger}。",
+				"在你升至2級時，你學會如同德魯伊的方式使用大自然的精粹以施放法術。請參閱{@book 第十章|PHB|10}以瞭解關於施法的規則，以及第十一章以查閱{@filter 遊俠法術列表|spells|class=ranger}。",
 				{
 					"type": "entries",
 					"name": "法術位",
 					"entries": [
 						"遊俠表中顯示了你有多少個法術位可以用來施放你一環或更高環的{@filter 遊俠法術|spells|class=ranger}。要施放其中一個法術，你必須消耗一個與該法術環階相同或更高的法術位。你在完成一次長休後恢復所有你花費掉的法術位。",
-						"舉例來說，如果你知曉一個1環的{@spell 化獸為友}法術，且你擁有一個1環和一個2環的法術位，則你可以使用其中任意一個法術位來施放{@spell 化獸為友}。"
+						"舉例來說，如果你知曉一個1環的{@spell 化獸爲友}法術，且你擁有一個1環和一個2環的法術位，則你可以使用其中任意一個法術位來施放{@spell 化獸爲友}。"
 					]
 				},
 				{
@@ -3453,7 +3421,7 @@
 					"name": "一環或更高環的已知法術",
 					"entries": [
 						"你知曉二個從遊俠法術列表中自選的1環法術。",
-						"遊俠表中的已知法術欄位顯示你將在何時學習到更多自選的遊俠法術。每個這些法術的環階都必須符合你所擁有法術位的環階。舉例來說，當你在此職業升至5級時，你可以學習一個新的1環或2環法術。",
+						"遊俠表中的已知法術字段顯示你將在何時學習到更多自選的遊俠法術。每個這些法術的環階都必須符合你所擁有法術位的環階。舉例來說，當你在此職業升至5級時，你可以學習一個新的1環或2環法術。",
 						"此外，當你提升這個職業的等級時，你可以從遊俠的法術列表中挑選一個法術來取代一個你目前已知的法術，而它的環階也必須符合你所擁有法術位的環階。"
 					]
 				},
@@ -3461,7 +3429,7 @@
 					"type": "entries",
 					"name": "施法屬性",
 					"entries": [
-						"由於你的魔法是源自你與大自然的協調，睿知是你施展遊俠法術的施法屬性。每當法術提及你的施法屬性時，你將使用你的睿知。此外，當決定你遊俠法術的豁免DC、以及使用遊俠法術進行攻擊檢定時，你使用你的睿知調整值。",
+						"由於你的魔法是源自你與大自然的協調，感知是你施展遊俠法術的施法屬性。每當法術提及你的施法屬性時，你將使用你的感知。此外，當決定你遊俠法術的豁免DC、以及使用遊俠法術進行攻擊檢定時，你使用你的感知調整值。",
 						{
 							"type": "abilityDc",
 							"name": "法術",
@@ -3490,8 +3458,8 @@
 			"level": 2,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 2nd-level ranger {@variantrule optional class features|tce|optional feature}}",
-				"You can use a {@item druidic focus|phb} as a spellcasting focus for your ranger spells. A druidic focus might be a sprig of mistletoe or holly, a wand or rod made of yew or another special wood, a staff drawn whole from a living tree, or an object incorporating feathers, fur, bones, and teeth from sacred animals."
+				"{@i 2級遊俠 {@variantrule 可選職業特性|tce|可選特性}}",
+				"你可以使用一件{@item 德魯伊法器|phb}作爲你的遊俠法術的法器。一件德魯伊法器可能會是一枝槲寄生或者冬青木的枝條，用紫衫木或者其他特殊木材製作而成的魔杖或權杖，一柄從活化樹木上取來的法杖，或是一件混合了神聖動物的羽毛、毛髮、骨頭與牙齒的物件。"
 			]
 		},
 		{
@@ -3509,7 +3477,8 @@
 			]
 		},
 		{
-			"name": "Primal Awareness",
+			"name": "原始意識",
+			"ENG_name": "Primal Awareness",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger",
@@ -3517,14 +3486,14 @@
 			"level": 3,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 3rd-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Primeval Awareness feature}",
-				"You can focus your awareness through the interconnections of nature: you learn additional spells when you reach certain levels in this class if you don't already know them, as shown in the Primal Awareness Spells table. These spells don't count against the number of ranger spells you know.",
+				"{@i 3級遊俠 {@variantrule 可選職業特性|tce|可選特性}，替代原初意識}",
+				"你可以通過與自然的共鳴而集中你的意識：若你尚未習得下方表中的法術，那麼你在升至對應等級時習得下方\"原始意識法術表\"中的法術。這些法術不佔用你的遊俠已知法術。",
 				{
 					"type": "table",
-					"caption": "Primal Awareness Spells",
+					"caption": "原始意識法術",
 					"colLabels": [
-						"Ranger Level",
-						"Spell"
+						"遊俠等級",
+						"法術"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -3553,7 +3522,7 @@
 						]
 					]
 				},
-				"You can cast each of these spells once without expending a spell slot. Once you cast a spell in this way, you can't do so again until you finish a long rest."
+				"你每天可以施展這些對應的法術每個一次而不需要消耗法術位。一旦你用這種方式施法，你在完成一次長休前不能再如此做。"
 			]
 		},
 		{
@@ -3614,7 +3583,7 @@
 			"classSource": "PHB",
 			"level": 3,
 			"entries": [
-				"從3級開始，你可以使用你的動作並消耗一個遊俠法術位以集中你的意識於你周遭的區域。在為你所消耗法術位的每環階1分鐘內，你可以感知下列類型的生物是否存在於距離你1哩內的區域：異怪、天界生物、龍、元素、精類、邪魔、和不死生物。此能力無法揭露出該生物的位置和數量。"
+				"從3級開始，你可以使用你的動作並消耗一個遊俠法術位以集中你的意識於你周遭的區域。在爲你所消耗法術位的每環階1分鐘內，你可以感知下列類型的生物是否存在於距離你1裏內的區域：異怪、天界生物、龍、元素、精類、邪魔、和不死生物。此能力無法揭露出該生物的位置和數量。"
 			]
 		},
 		{
@@ -3640,12 +3609,13 @@
 			"classSource": "PHB",
 			"level": 4,
 			"entries": [
-				"當你在此職業升至4級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至4級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
-			"name": "Martial Versatility",
+			"name": "替換武術",
+			"ENG_name": "Martial Versatility",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger",
@@ -3653,8 +3623,8 @@
 			"level": 4,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 4th-level ranger {@variantrule optional class features|tce|optional feature}}",
-				"Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace a fighting style you know with another fighting style available to rangers. This replacement represents a shift of focus in your martial practice."
+				"{@i 4級遊俠 {@variantrule 可選職業特性|tce|可選特性}}",
+				"當你的該職業等級升至能讓你獲得屬性值提升的特性時，你能用一個遊俠可用的{@filter 戰鬥風格|optionalfeatures|feature type=FS:R}替換原有的一個戰鬥風格。這種變化代表着你改變了武術訓練和練習的重點。"
 			]
 		},
 		{
@@ -3681,7 +3651,28 @@
 			"classSource": "PHB",
 			"level": 5,
 			"entries": [
-				"從5級開始，每當你在你的回合採取{@action 攻擊}動作，你可以攻擊二次，而非一次。"
+				"從5級開始，每當你在自己回合執行{@action 攻擊}動作時，你可以發動兩次攻擊，而非一次。"
+			]
+		},
+		{
+			"name": "熟練探險家強化",
+			"ENG_name": "Deft Explorer Improvement",
+			"source": "TCE",
+			"page": 56,
+			"className": "Ranger",
+			"classSource": "PHB",
+			"level": 6,
+			"isClassFeatureVariant": true,
+			"entries": [
+				"你在該職業升至6級時獲得一個額外增益。",
+				{
+					"type": "entries",
+					"name": "越野",
+					"ENG_name": "Roving",
+					"entries": [
+						"你的步行速度增加5，同時你獲得等於你步行速度的攀爬速度和游泳速度。"
+					]
+				}
 			]
 		},
 		{
@@ -3721,8 +3712,8 @@
 			"classSource": "PHB",
 			"level": 8,
 			"entries": [
-				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -3754,6 +3745,28 @@
 			]
 		},
 		{
+			"name": "熟練探險家強化",
+			"ENG_name": "Deft Explorer Improvement",
+			"source": "TCE",
+			"page": 56,
+			"className": "Ranger",
+			"classSource": "PHB",
+			"level": 10,
+			"isClassFeatureVariant": true,
+			"entries": [
+				"你在該職業升至10級時獲得一個額外增益。",
+				{
+					"type": "entries",
+					"name": "不知疲倦",
+					"ENG_name": "Tireless",
+					"entries": [
+						"以一個動作，你能夠給予自己 {@dice 1d8} + 你的感知調整值的臨時生命值（最少1點）。你能夠使用此特性的次數等於你的熟練加值，已消耗的次數可以通過完成一次長休進行恢復。",
+						"此外，每當你完成一次短休時，你的{@condition 力竭}等級減少1（若有）。"
+					]
+				}
+			]
+		},
+		{
 			"name": "Fade Away",
 			"source": "UAClassFeatureVariants",
 			"page": 8,
@@ -3763,7 +3776,7 @@
 			"isClassFeatureVariant": true,
 			"entries": [
 				"{@i 10th-level ranger feature (replaces Hide in Plain Sight)}",
-				"You can use a bonus action to magically become {@condition invisible}, along with any equipment you are wearing or carrying, until the start of your next turn.",
+				"You can use a bonus action to magically become {@condition 隱形}, along with any equipment you are wearing or carrying, until the start of your next turn.",
 				"Once you use this feature, you can't use it again until you finish a short or long rest."
 			]
 		},
@@ -3777,8 +3790,8 @@
 			"classSource": "PHB",
 			"level": 10,
 			"entries": [
-				"從10級開始，你可以花費1分鐘的時間為自己創造一個偽裝。你必須要能取用新鮮的泥巴、土壤、植物、煙灰、和其他自然產出的材料以創造你的偽裝。",
-				"一旦你透過這個方式偽裝，你可以透過將自己貼合於一個高度和寬度至少與你一樣大的固體表面上，例如樹木或牆壁，以嘗試進行躲藏。只要你待於該處且不移動或採取動作，你就在敏捷（{@skill 隱匿}）檢定中獲得+10的加值。一旦你移動或採取動作或反應，你就必須再次偽裝自己以獲得這個好處。"
+				"從10級開始，你可以花費1分鐘的時間爲自己創造一個僞裝。你必須要能取用新鮮的泥巴、土壤、植物、菸灰、和其他自然產出的材料以創造你的僞裝。",
+				"一旦你通過這個方式僞裝，你可以通過將自己貼合於一個高度和寬度至少與你一樣大的固體表面上，例如樹木或牆壁，以嘗試進行躲藏。只要你待於該處且不移動或採取動作，你就在敏捷（{@skill 隱匿}）檢定中獲得+10的加值。一旦你移動或採取動作或反應，你就必須再次僞裝自己以獲得這個好處。"
 			]
 		},
 		{
@@ -3795,7 +3808,8 @@
 			]
 		},
 		{
-			"name": "Nature's Veil",
+			"name": "自然面紗",
+			"ENG_name": "Nature's Veil",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger",
@@ -3803,9 +3817,9 @@
 			"level": 10,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 10th-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Hide in Plain Sight feature}",
-				"You draw on the powers of nature to hide yourself from view briefly. As a bonus action, you can magically become {@condition invisible}, along with any equipment you are wearing or carrying, until the start of your next turn.",
-				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+				"{@i 10級遊俠 {@variantrule 可選職業特性|tce|可選特性}，替代避人耳目}",
+				"你可以暫時地使用自然的力量將你的身形遮蔽。以一個附贈動作，你可以魔法地使自己與正攜帶、着裝的任何裝備變得{@condition 隱形}，直到你的下個回合開始。",
+				"你可以使用該特性的次數等同於你的熟練加值，你在完成一次長休後恢復所有的使用次數。"
 			]
 		},
 		{
@@ -3831,8 +3845,8 @@
 			"classSource": "PHB",
 			"level": 12,
 			"entries": [
-				"當你在此職業升至12級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至12級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -3898,8 +3912,8 @@
 			"classSource": "PHB",
 			"level": 16,
 			"entries": [
-				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -3926,7 +3940,7 @@
 			"classSource": "PHB",
 			"level": 18,
 			"entries": [
-				"在18級時，你獲得超自然的感官以幫助你對抗看不見的生物。當你攻擊一個你看不見的生物時，你並不會因為無法看見它而在你對它進行的攻擊檢定中承受劣勢。同時，只要該生物沒有躲藏於你，且你不處於{@condition 目盲}或{@condition 耳聾}狀態，則你也能察覺到任何距離你30呎內{@condition 隱形}生物的位置。"
+				"在18級時，你獲得超自然的感官以幫助你對抗看不見的生物。當你攻擊一個你看不見的生物時，你並不會因爲無法看見它而在你對它進行的攻擊檢定中承受劣勢。同時，只要該生物沒有躲藏於你，且你不處於{@condition 目盲}或{@condition 耳聾}狀態，則你也能察覺到任何距離你30尺內{@condition 隱形}生物的位置。"
 			]
 		},
 		{
@@ -3939,8 +3953,8 @@
 			"classSource": "PHB",
 			"level": 19,
 			"entries": [
-				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -3958,7 +3972,7 @@
 			]
 		},
 		{
-			"name": "眾敵屠戮",
+			"name": "衆敵屠戮",
 			"ENG_name": "Foe Slayer",
 			"source": "PHB",
 			"page": 89,
@@ -3967,7 +3981,7 @@
 			"classSource": "PHB",
 			"level": 20,
 			"entries": [
-				"在20級時，你成為了一名針對你敵人的無雙獵手。在你的每個回合一次，你可以將你的睿知調整值加到你對你其中一個宿敵所進行的攻擊檢定或傷害骰中。你可以選擇在擲骰之前或之後使用此能力，但是必須在任何擲骰效果適用之前使用。"
+				"在20級時，你成爲了一名針對你敵人的無雙獵手。在你的每個回合一次，你可以將你的感知調整值加到你對你其中一個宿敵/夙敵所進行的攻擊檢定或傷害骰中。你可以選擇在擲骰之前或之後使用此能力，但是必須在任何擲骰效果適用之前使用。"
 			]
 		},
 		{
@@ -3979,12 +3993,13 @@
 			"level": 1,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"Choose one skill: {@skill Animal Handling}, {@skill Athletics}, {@skill History}, {@skill Insight}, {@skill Investigation}, {@skill Medicine}, {@skill Nature}, {@skill Perception}, {@skill Stealth}, or {@skill Survival}. You gain proficiency in the chosen skill if you don't already have it, and you can add double your proficiency bonus to ability checks using that skill.",
+				"Choose one skill: {@skill 馴獸}, {@skill 運動}, {@skill 歷史}, {@skill 洞悉}, {@skill 調查}, {@skill 醫療}, {@skill 自然}, {@skill 察覺}, {@skill 隱匿}, or {@skill 生存}. You gain proficiency in the chosen skill if you don't already have it, and you can add double your proficiency bonus to ability checks using that skill.",
 				"In addition, thanks to your extensive wandering, you are able to speak, read, and write two languages of your choice."
 			]
 		},
 		{
-			"name": "Deft Explorer",
+			"name": "熟練探險家",
+			"ENG_name": "Deft Explorer",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger (Spell-less)",
@@ -3992,54 +4007,16 @@
 			"level": 1,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 1st-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Natural Explorer feature}",
-				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
-				"You are an unsurpassed explorer and survivor, both in the wilderness and in dealing with others on your travels. You gain the Canny benefit below, and you gain an additional benefit below when you reach 6th level and 10th level in this class.",
+				"{@i 1級遊俠 {@variantrule 可選職業特性|tce|可選特性}，替代自然探索者}",
+				"{@note 注意，該特性是爲了配合《玩家手冊》中的遊俠職業使用的。此處顯示該特性是爲了方便，可能並不適用於無法術版本的遊俠。}",
+				"你是一個無與倫比的探險家和求生專家，無論是在荒野還是在你的旅途他人打交道。你獲得下列的增益，然後在你在此職業升至6級和10級時再各獲得一項。",
 				{
+					"name": "精明",
+					"ENG_name": "Canny",
 					"type": "entries",
-					"name": "Canny",
 					"entries": [
-						"Choose one of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses the chosen skill.",
-						"You can also speak, read, and write two additional languages of your choice."
-					]
-				}
-			]
-		},
-		{
-			"name": "Deft Explorer Improvement",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger (Spell-less)",
-			"classSource": "UAModifyingClasses",
-			"level": 6,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"You gain an additional benefit when you reach 6th level in this class.",
-				{
-					"type": "entries",
-					"name": "Roving",
-					"entries": [
-						"Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
-					]
-				}
-			]
-		},
-		{
-			"name": "Deft Explorer Improvement",
-			"source": "TCE",
-			"page": 56,
-			"className": "Ranger (Spell-less)",
-			"classSource": "UAModifyingClasses",
-			"level": 10,
-			"isClassFeatureVariant": true,
-			"entries": [
-				"You gain an additional benefit when you reach 10th level in this class.",
-				{
-					"type": "entries",
-					"name": "Tireless",
-					"entries": [
-						"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d8} + your Wisdom modifier (minimum of 1 temporary hit point). You can use this action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-						"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
+						"你選擇一項你擁有熟練的技能，你在使用該技能時的任何屬性檢定的使用兩倍的熟練加值。",
+						"你可以額外說，讀，寫兩門你選擇的語言。"
 					]
 				}
 			]
@@ -4086,14 +4063,15 @@
 			"level": 1,
 			"entries": [
 				"從1級開始，你在對一個特定類型敵人的研究、追跡、狩獵、和甚至交談上已相當具備充足的經驗。",
-				"選擇一個宿敵類型：{@filter 異怪|bestiary|type=aberration}、{@filter 野獸|bestiary|type=beast}、{@filter 天界生物|bestiary|type=celestial}、{@filter 構裝體|bestiary|type=construct}、{@filter 龍|bestiary|type=dragon}、{@filter 元素|bestiary|type=elemental}、{@filter 精類|bestiary|type=fey}、{@filter 邪魔|bestiary|type=fiend}、{@filter 巨人|bestiary|type=giant}、{@filter 怪獸|bestiary|type=monstrosity}、{@filter 泥怪|bestiary|type=ooze}、{@filter 植物|bestiary|type=plant}、或{@filter 不死生物|bestiary|type=undead}。或者，你可以選擇二個{@filter 類人生物|bestiary|type=humanoid}種族（像是{@creature 豺狼人|mm}和{@creature 獸人|mm}）做為宿敵。",
-				"你在用於追蹤你宿敵的睿知（{@skill 求生}）檢定、以及用以回憶關於它們情報的智力檢定中具有優勢。",
+				"選擇一個宿敵類型：{@filter 異怪|bestiary|type=aberration}、{@filter 野獸|bestiary|type=beast}、{@filter 天界生物|bestiary|type=celestial}、{@filter 構裝體|bestiary|type=construct}、{@filter 龍|bestiary|type=dragon}、{@filter 元素|bestiary|type=elemental}、{@filter 精類|bestiary|type=fey}、{@filter 邪魔|bestiary|type=fiend}、{@filter 巨人|bestiary|type=giant}、{@filter 怪獸|bestiary|type=monstrosity}、{@filter 泥怪|bestiary|type=ooze}、{@filter 植物|bestiary|type=plant}或{@filter 不死生物|bestiary|type=undead}。或者，你可以選擇二個{@filter 類人生物|bestiary|type=humanoid}種族（像是{@creature 豺狼人|mm}和{@creature 獸人|mm}）作爲宿敵。",
+				"你在用於追蹤你宿敵的感知（{@skill 生存}）檢定、以及用以回憶關於它們情報的智力檢定中具有優勢。",
 				"當你獲得此能力時，若你的宿敵擁有至少一種語言，你也選擇學會一種被它們所使用的語言。",
-				"你在6級和14級時選擇一種額外的宿敵以及一種關聯語言。隨著你提升等級，你的選擇必須反映你在你冒險中所遭遇過的怪物類型。"
+				"你在6級和14級時選擇一種額外的宿敵以及一種關聯語言。隨着你提升等級，你的選擇必須反映你在你冒險中所遭遇過的怪物類型。"
 			]
 		},
 		{
-			"name": "Favored Foe",
+			"name": "夙敵",
+			"ENG_name": "Favored Foe",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger (Spell-less)",
@@ -4101,12 +4079,11 @@
 			"level": 1,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 1st-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Favored Enemy feature and works with the Foe Slayer feature}",
-				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
-				"When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your concentration (as if you were concentrating on a spell).",
-				"The first time on each of your turns that you hit the favored enemy and deal damage to it, including when you mark it, you can increase that damage by {@dice 1d4}.",
-				"You can use this feature to mark a favored enemy a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
-				"This feature's extra damage increases when you reach certain levels in this class: to {@dice 1d6} at 6th level and to {@dice 1d8} at 14th level."
+				"{@i 1級遊俠 {@variantrule 可選職業特性|tce|可選特性}，替代宿敵並能夠對衆敵屠戮起效}",
+				"當你以一次攻擊擲骰命中一個生物時，你可以呼喚你與自然的神祕羈連以將目標標記爲你的夙敵，持續一分鐘或直到你失去專注(如同你在專注一道法術)。",
+				"你在你的回合內第一次命中你的夙敵並對其造成傷害，包括你正在標記它的那一次攻擊時，你可以增加{@dice 1d4}傷害。",
+				"你可以使用同等於你的熟練加值次該特性來標記你的夙敵，你在完成一次長休後恢復所有已使用的次數。",
+				"這個特性的額外傷害在你於此職業升至特定等級時會增加：6級時{@dice 1d6}，14級時{@dice 1d8}。"
 			]
 		},
 		{
@@ -4133,13 +4110,13 @@
 			"classSource": "UAModifyingClasses",
 			"level": 1,
 			"entries": [
-				"你特別熟悉於一種自然環境，且熟稔在這類區域中旅行和生存的方式。選擇一種偏好環境：極地、海岸、沙漠、森林、草地、高山、沼澤、或幽暗地域。當你進行一次關聯於你偏好環境的智力或睿知檢定時，若你使用一個你所熟練的技能，則你的熟練加值變為二倍。",
+				"你特別熟悉於一種自然環境，且熟稔在這類區域中旅行和生存的方式。選擇一種偏好環境：極地、海岸、沙漠、森林、草地、高山、沼澤、或幽暗地域。當你進行一次關聯於你偏好環境的智力或感知檢定時，若你使用一個你所熟練的技能，則你的熟練加值變爲二倍。",
 				"當在你的偏好環境中旅行長達1個小時或更久，你將獲得下列好處：",
 				{
 					"type": "list",
 					"items": [
 						"困難地形不會減慢你們團隊的旅行速度。",
-						"除非是因為魔法的緣故，否則你們團隊不會迷路。",
+						"除非是因爲魔法的緣故，否則你們團隊不會迷路。",
 						"即使你在旅行途中正從事於其他行動（像是覓食、導航、或追跡），你仍保持對危險的警戒。",
 						"若你正獨自旅行，你能夠以正常步調隱匿移動。",
 						"當你覓食時，你能找到二倍你原本所能找到的食物。",
@@ -4171,7 +4148,7 @@
 			"isClassFeatureVariant": true,
 			"entries": [
 				"As an action, you can give yourself a number of temporary hit points equal to {@dice 1d10} + your Wisdom modifier. You can use this special action a number of times equal to your Wisdom modifier (a minimum of once), and you regain all expended uses when you finish a long rest.",
-				"In addition, whenever you finish a short rest, your {@condition exhaustion} level, if any, is decreased by 1."
+				"In addition, whenever you finish a short rest, your {@condition 力竭} level, if any, is decreased by 1."
 			]
 		},
 		{
@@ -4188,7 +4165,7 @@
 					"type": "entries",
 					"name": "戰技",
 					"entries": [
-						"你學會二個自選戰技，從戰士的戰鬥大師範型的可選戰技列表中選擇。許多戰技將以某些方式強化一次攻擊。你只能為每次攻擊使用一種戰技。",
+						"你學會二個自選戰技，從戰士的戰鬥大師範型的可選戰技列表中選擇。許多戰技將以某些方式強化一次攻擊。你只能爲每次攻擊使用一種戰技。",
 						"你將在5級、9級、13級、和17級時學會一個額外的戰技。每次你學會新的戰技時，你也可以將一個你已知的戰技取代成另一個不同的戰技。"
 					]
 				},
@@ -4196,7 +4173,7 @@
 					"type": "entries",
 					"name": "卓越骰",
 					"entries": [
-						"你擁有四顆卓越骰，這四顆卓越骰為d8。卓越骰將在你使用戰技時被花費。你在完成一次短休或長休後恢復你花費掉的卓越骰。",
+						"你擁有四顆卓越骰，這四顆卓越骰爲d8。卓越骰將在你使用戰技時被花費。你在完成一次短休或長休後恢復你花費掉的卓越骰。",
 						"你將在9級、和17級時再獲得一顆額外的卓越骰。"
 					]
 				},
@@ -4226,7 +4203,7 @@
 			"classSource": "UAModifyingClasses",
 			"level": 2,
 			"entries": [
-				"在2級時，你採用一種特殊的戰鬥風格以做為你的專業。從下列選項中選擇一種。你不能獲得相同的戰鬥風格選項超過一次，即使你有機會再選擇它也一樣。",
+				"在2級時，你採用一種特殊的戰鬥風格以作爲你的專業。從下列選項中選擇一種。你不能獲得相同的戰鬥風格選項超過一次，即使你有機會再選擇它也一樣。",
 				{
 					"type": "options",
 					"count": 1,
@@ -4285,7 +4262,7 @@
 						},
 						{
 							"type": "refOptionalfeature",
-							"optionalfeature": "Druidic Warrior|TCE"
+							"optionalfeature": "德魯伊教戰士|TCE"
 						},
 						{
 							"type": "refOptionalfeature",
@@ -4318,12 +4295,13 @@
 			"classSource": "UAModifyingClasses",
 			"level": 3,
 			"entries": [
-				"在3級時，你可以製造一種特殊的草藥敷劑，蘊含著可與某些藥水匹配的治癒能量。你可以花費1小時的時間收集藥草並預備醫護繃帶，以製造出數量等同於你睿知調整值(最少為1)的草藥敷劑。你同時可以攜帶最多等同於你睿知調整值(最少為1)數量的草藥敷劑。你所製造的這些敷劑無法由你以外的人塗抹使用。在24小時之後，所有你尚未使用的敷劑都將失去效力。",
-				"若你花費1分鐘的時間將你的其中一個敷劑塗抹在一個受傷的類人生物身上，則你每有兩級遊俠等級，該生物就會回復{@dice 1d6}的生命值。"
+				"在3級時，你可以製造一種特殊的草藥敷劑，蘊含着可與某些藥水匹配的治癒能量。你可以花費1小時的時間收集藥草並預備醫護繃帶，以製造出數量等同於你感知調整值(最少爲1)的草藥敷劑。你同時可以攜帶最多等同於你感知調整值(最少爲1)數量的草藥敷劑。你所製造的這些敷劑無法由你以外的人塗抹使用。在24小時之後，所有你尚未使用的敷劑都將失去效力。",
+				"若你花費1分鐘的時間將你的其中一個敷劑塗抹在一個受傷的類人生物身上，則你每有兩級遊俠等級，該生物就會回覆{@dice 1d6}的生命值。"
 			]
 		},
 		{
-			"name": "Primal Awareness",
+			"name": "原始意識",
+			"ENG_name": "Primal Awareness",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger (Spell-less)",
@@ -4331,15 +4309,15 @@
 			"level": 3,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 3rd-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Primeval Awareness feature}",
-				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
-				"You can focus your awareness through the interconnections of nature: you learn additional spells when you reach certain levels in this class if you don't already know them, as shown in the Primal Awareness Spells table. These spells don't count against the number of ranger spells you know.",
+				"{@i 3級遊俠 {@variantrule 可選職業特性|tce|可選特性}，替代原初意識}",
+				"{@note 注意，該特性是爲了配合《玩家手冊》中的遊俠職業使用的。此處顯示該特性是爲了方便，可能並不適用於無法術版本的遊俠。}",
+				"你可以通過與自然的共鳴而集中你的意識：若你尚未習得下方表中的法術，那麼你在升至對應等級時習得下方\"原始意識法術表\"中的法術。這些法術不佔用你的遊俠已知法術。",
 				{
 					"type": "table",
-					"caption": "Primal Awareness Spells",
+					"caption": "原始意識法術",
 					"colLabels": [
-						"Ranger Level",
-						"Spell"
+						"遊俠等級",
+						"法術"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -4368,7 +4346,7 @@
 						]
 					]
 				},
-				"You can cast each of these spells once without expending a spell slot. Once you cast a spell in this way, you can't do so again until you finish a long rest."
+				"你每天可以施展這些對應的法術每個一次而不需要消耗法術位。一旦你用這種方式施法，你在完成一次長休前不能再如此做。"
 			]
 		},
 		{
@@ -4429,7 +4407,7 @@
 			"classSource": "UAModifyingClasses",
 			"level": 3,
 			"entries": [
-				"從3級開始，你可以使用你的動作以集中你的意識於你周遭的區域。在接下來一分鐘內，你可以感知下列類型的生物是否存在於距離你1哩內的區域（或若處於你的偏好環境則為6哩內）：異怪、天界生物、龍、元素、精類、邪魔、和不死生物。此能力無法揭露出該生物的位置和數量。",
+				"從3級開始，你可以使用你的動作以集中你的意識於你周遭的區域。在接下來一分鐘內，你可以感知下列類型的生物是否存在於距離你1裏內的區域（或若處於你的偏好環境則爲6裏內）：異怪、天界生物、龍、元素、精類、邪魔、和不死生物。此能力無法揭露出該生物的位置和數量。",
 				"一旦你使用這個能力，你將必須完成一次短休或長休才能再次使用它。"
 			]
 		},
@@ -4454,12 +4432,13 @@
 			"classSource": "UAModifyingClasses",
 			"level": 4,
 			"entries": [
-				"當你在此職業升至4級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至4級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
-			"name": "Martial Versatility",
+			"name": "替換武術",
+			"ENG_name": "Martial Versatility",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger (Spell-less)",
@@ -4467,9 +4446,9 @@
 			"level": 4,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 4th-level ranger {@variantrule optional class features|tce|optional feature}}",
-				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
-				"Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace a fighting style you know with another fighting style available to rangers. This replacement represents a shift of focus in your martial practice."
+				"{@i 4級遊俠 {@variantrule 可選職業特性|tce|可選特性}}",
+				"{@note 注意，該特性是爲了配合《玩家手冊》中的遊俠職業使用的。此處顯示該特性是爲了方便，可能並不適用於無法術版本的遊俠。}",
+				"當你的該職業等級升至能讓你獲得屬性值提升的特性時，你能用一個遊俠可用的{@filter 戰鬥風格|optionalfeatures|feature type=FS:R}替換原有的一個戰鬥風格。這種變化代表着你改變了武術訓練和練習的重點。"
 			]
 		},
 		{
@@ -4508,7 +4487,28 @@
 			"classSource": "UAModifyingClasses",
 			"level": 5,
 			"entries": [
-				"從5級開始，每當你在你的回合採取{@action 攻擊}動作，你可以攻擊二次，而非一次。"
+				"從5級開始，每當你在自己回合執行{@action 攻擊}動作時，你可以發動兩次攻擊，而非一次。"
+			]
+		},
+		{
+			"name": "熟練探險家強化",
+			"ENG_name": "Deft Explorer Improvement",
+			"source": "TCE",
+			"page": 56,
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"level": 6,
+			"isClassFeatureVariant": true,
+			"entries": [
+				"你在該職業升至6級時獲得一個額外增益。",
+				{
+					"type": "entries",
+					"name": "越野",
+					"ENG_name": "Roving",
+					"entries": [
+						"你的步行速度增加5，同時你獲得等於你步行速度的攀爬速度和游泳速度。"
+					]
+				}
 			]
 		},
 		{
@@ -4545,8 +4545,8 @@
 			"classSource": "UAModifyingClasses",
 			"level": 8,
 			"entries": [
-				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -4598,7 +4598,29 @@
 			"classSource": "UAModifyingClasses",
 			"level": 9,
 			"entries": [
-				"從9級開始，你在對抗毒素的豁免檢定中具有優勢，且具有對毒素傷害的抗性。此外，當你使用你的其中一個草藥敷劑塗抹在生物身上以回復它的生命值時，你也可以治療它身上的一種毒素效果。"
+				"從9級開始，你在對抗毒素的豁免檢定中具有優勢，且具有對毒素傷害的抗性。此外，當你使用你的其中一個草藥敷劑塗抹在生物身上以回覆它的生命值時，你也可以治療它身上的一種毒素效果。"
+			]
+		},
+		{
+			"name": "熟練探險家強化",
+			"ENG_name": "Deft Explorer Improvement",
+			"source": "TCE",
+			"page": 56,
+			"className": "Ranger (Spell-less)",
+			"classSource": "UAModifyingClasses",
+			"level": 10,
+			"isClassFeatureVariant": true,
+			"entries": [
+				"你在該職業升至10級時獲得一個額外增益。",
+				{
+					"type": "entries",
+					"name": "不知疲倦",
+					"ENG_name": "Tireless",
+					"entries": [
+						"以一個動作，你能夠給予自己 {@dice 1d8} + 你的感知調整值的臨時生命值（最少1點）。你能夠使用此特性的次數等於你的熟練加值，已消耗的次數可以通過完成一次長休進行恢復。",
+						"此外，每當你完成一次短休時，你的{@condition 力竭}等級減少1（若有）。"
+					]
+				}
 			]
 		},
 		{
@@ -4612,7 +4634,7 @@
 			"entries": [
 				"{@i 10th-level ranger feature (replaces Hide in Plain Sight)}",
 				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
-				"You can use a bonus action to magically become {@condition invisible}, along with any equipment you are wearing or carrying, until the start of your next turn.",
+				"You can use a bonus action to magically become {@condition 隱形}, along with any equipment you are wearing or carrying, until the start of your next turn.",
 				"Once you use this feature, you can't use it again until you finish a short or long rest."
 			]
 		},
@@ -4625,8 +4647,8 @@
 			"classSource": "UAModifyingClasses",
 			"level": 10,
 			"entries": [
-				"從10級開始，你可以花費1分鐘的時間為自己創造一個偽裝。你必須要能取用新鮮的泥巴、土壤、植物、煙灰、和其他自然產出的材料以創造你的偽裝。",
-				"一旦你透過這個方式偽裝，你可以透過將自己貼合於一個高度和寬度至少與你一樣大的固體表面上，例如樹木或牆壁，以嘗試進行躲藏。只要你待於該處且不移動或採取動作，你就在敏捷（{@skill 隱匿}）檢定中獲得+10的加值。一旦你移動或採取動作或反應，你就必須再次偽裝自己以獲得這個好處。"
+				"從10級開始，你可以花費1分鐘的時間爲自己創造一個僞裝。你必須要能取用新鮮的泥巴、土壤、植物、菸灰、和其他自然產出的材料以創造你的僞裝。",
+				"一旦你通過這個方式僞裝，你可以通過將自己貼合於一個高度和寬度至少與你一樣大的固體表面上，例如樹木或牆壁，以嘗試進行躲藏。只要你待於該處且不移動或採取動作，你就在敏捷（{@skill 隱匿}）檢定中獲得+10的加值。一旦你移動或採取動作或反應，你就必須再次僞裝自己以獲得這個好處。"
 			]
 		},
 		{
@@ -4642,7 +4664,8 @@
 			]
 		},
 		{
-			"name": "Nature's Veil",
+			"name": "自然面紗",
+			"ENG_name": "Nature's Veil",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger (Spell-less)",
@@ -4650,10 +4673,10 @@
 			"level": 10,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 10th-level ranger {@variantrule optional class features|tce|optional feature}, which replaces the Hide in Plain Sight feature}",
-				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
-				"You draw on the powers of nature to hide yourself from view briefly. As a bonus action, you can magically become {@condition invisible}, along with any equipment you are wearing or carrying, until the start of your next turn.",
-				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+				"{@i 10級遊俠 {@variantrule 可選職業特性|tce|可選特性}，替代避人耳目}",
+				"{@note 注意，該特性是爲了配合《玩家手冊》中的遊俠職業使用的。此處顯示該特性是爲了方便，可能並不適用於無法術版本的遊俠。}",
+				"你可以暫時地使用自然的力量將你的身形遮蔽。以一個附贈動作，你可以魔法地使自己與正攜帶、着裝的任何裝備變得{@condition 隱形}，直到你的下個回合開始。",
+				"你可以使用該特性的次數等同於你的熟練加值，你在完成一次長休後恢復所有的使用次數。"
 			]
 		},
 		{
@@ -4677,8 +4700,8 @@
 			"classSource": "UAModifyingClasses",
 			"level": 12,
 			"entries": [
-				"當你在此職業升至12級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至12級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -4717,18 +4740,18 @@
 			"classSource": "UAModifyingClasses",
 			"level": 13,
 			"entries": [
-				"從13級開始，當你處於你偏好環境的區域時，你可以從環境中呼喚自然生物為你而戰，利用你與自然世界的協調說服牠們協助你。由DM從那些距離你1哩內，能夠聽見你的野獸中，選擇適合生存於該環境中的野獸以出來協助你，牠們屬於下列其中一種組合：",
+				"從13級開始，當你處於你偏好環境的區域時，你可以從環境中呼喚自然生物爲你而戰，利用你與自然世界的協調說服牠們協助你。由DM從那些距離你1裏內，能夠聽見你的野獸中，選擇適合生存於該環境中的野獸以出來協助你，牠們屬於下列其中一種組合：",
 				{
 					"type": "list",
 					"items": [
-						"一隻{@filter 挑戰等級2或以下的野獸|bestiary|challenge rating=2|type=beast|miscellaneous=!swarm}",
-						"二隻{@filter 挑戰等級1或以下的野獸|bestiary|challenge rating=1|type=beast|miscellaneous=!swarm}",
-						"四隻{@filter 挑戰等級1/2或以下的野獸|bestiary|challenge rating=1/2|type=beast|miscellaneous=!swarm}",
-						"八隻{@filter 挑戰等級1/4或以下的野獸|bestiary|challenge rating=0;1/8;1/4|type=beast|miscellaneous=!swarm}"
+						"一隻{@filter 挑戰等級2或以下的野獸|bestiary|challenge rating=[&0;&2]|type=beast|miscellaneous=!swarm}",
+						"二隻{@filter 挑戰等級1或以下的野獸|bestiary|challenge rating=[&0;&1]|type=beast|miscellaneous=!swarm}",
+						"四隻{@filter 挑戰等級1/2或以下的野獸|bestiary|challenge rating=[&0;&1/2]|type=beast|miscellaneous=!swarm}",
+						"八隻{@filter 挑戰等級1/4或以下的野獸|bestiary|challenge rating=[&0;&1/4]|type=beast|miscellaneous=!swarm}"
 					]
 				},
-				"這些野獸將會從牠們當前所在的場所接近你，並會與你並肩作戰，攻擊任何與你敵對的生物。牠們對你和你的同伴友善，且牠們在骰先攻時作為一組擲骰，但有著各自的回合。這些生物的數據資料由DM掌控。",
-				"在1小時之後．這些野獸將會返回牠們先前的場所。一旦你使用這個能力，則因為同樣的動物不會再重複響應你的呼喚，你在24小時內將無法再在相同的區域內使用這個能力。"
+				"這些野獸將會從牠們當前所在的場所接近你，並會與你並肩作戰，攻擊任何與你敵對的生物。牠們對你和你的同伴友善，且牠們在骰先攻時作爲一組擲骰，但有着各自的回合。這些生物的數據數據由DM掌控。",
+				"在1小時之後·這些野獸將會返回牠們先前的場所。一旦你使用這個能力，則因爲同樣的動物不會再重複響應你的呼喚，你在24小時內將無法再在相同的區域內使用這個能力。"
 			]
 		},
 		{
@@ -4776,8 +4799,8 @@
 			"classSource": "UAModifyingClasses",
 			"level": 16,
 			"entries": [
-				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -4827,7 +4850,7 @@
 			"classSource": "UAModifyingClasses",
 			"level": 18,
 			"entries": [
-				"在18級時，你獲得超自然的感官以幫助你對抗看不見的生物。當你攻擊一個你看不見的生物時，你並不會因為無法看見它而在你對它進行的攻擊檢定中承受劣勢。同時，只要該生物沒有躲藏於你，且你不處於{@condition 目盲}或{@condition 耳聾}狀態，則你也能察覺到任何距離你30呎內{@condition 隱形}生物的位置。"
+				"在18級時，你獲得超自然的感官以幫助你對抗看不見的生物。當你攻擊一個你看不見的生物時，你並不會因爲無法看見它而在你對它進行的攻擊檢定中承受劣勢。同時，只要該生物沒有躲藏於你，且你不處於{@condition 目盲}或{@condition 耳聾}狀態，則你也能察覺到任何距離你30尺內{@condition 隱形}生物的位置。"
 			]
 		},
 		{
@@ -4839,8 +4862,8 @@
 			"classSource": "UAModifyingClasses",
 			"level": 19,
 			"entries": [
-				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -4859,7 +4882,7 @@
 			]
 		},
 		{
-			"name": "眾敵屠戮",
+			"name": "衆敵屠戮",
 			"ENG_name": "Foe Slayer",
 			"source": "UAModifyingClasses",
 			"page": 5,
@@ -4867,7 +4890,7 @@
 			"classSource": "UAModifyingClasses",
 			"level": 20,
 			"entries": [
-				"在20級時，你成為了一名針對你敵人的無雙獵手。在你的每個回合一次，你可以將你的睿知調整值加到你對你其中一個宿敵所進行的攻擊檢定或傷害骰中。你可以選擇在擲骰之前或之後使用此能力，但是必須在任何擲骰效果適用之前使用。"
+				"在20級時，你成爲了一名針對你敵人的無雙獵手。在你的每個回合一次，你可以將你的感知調整值加到你對你其中一個宿敵/夙敵所進行的攻擊檢定或傷害骰中。你可以選擇在擲骰之前或之後使用此能力，但是必須在任何擲骰效果適用之前使用。"
 			]
 		},
 		{
@@ -4878,7 +4901,7 @@
 			"classSource": "UARanger",
 			"level": 1,
 			"entries": [
-				"Rangers strike first and strike hard. When you roll initiative, you gain a special turn that takes place before other creatures can act. On this turn, you can use your action to take either the {@action Attack} or {@action Hide} action.",
+				"Rangers strike first and strike hard. When you roll initiative, you gain a special turn that takes place before other creatures can act. On this turn, you can use your action to take either the {@action 攻擊} or {@action 躲藏} action.",
 				"If more than one creature in an encounter has this feature, they all act first in order of initiative, then the regular initiative order begins.",
 				"If you would normally be surprised at the start of an encounter, you are not surprised but you do not gain this extra turn."
 			]
@@ -4892,7 +4915,7 @@
 			"level": 2,
 			"entries": [
 				"Beginning at 2nd level, you combine speed and stealth in combat to make yourself hard to pin down. You are difficult to detect even if you attack or otherwise take actions that would normally reveal your presence.",
-				"At the start of your turn, pick a creature you are hidden from. You remain hidden from that creature during your turn, regardless of your actions or the actions of other creatures. As a bonus action at the end of your turn, you can make a Dexterity ({@skill Stealth}) check to hide again if you fulfill the conditions needed to hide. Otherwise, creatures are aware of you at the end of your turn."
+				"At the start of your turn, pick a creature you are hidden from. You remain hidden from that creature during your turn, regardless of your actions or the actions of other creatures. As a bonus action at the end of your turn, you can make a Dexterity ({@skill 隱匿}) check to hide again if you fulfill the conditions needed to hide. Otherwise, creatures are aware of you at the end of your turn."
 			]
 		},
 		{
@@ -4911,7 +4934,7 @@
 						"All rangers gain a spirit companion and the ability to invoke its magical power. (Your spirit companion grants you one benefit you can call on in this playtest version of the revised ranger, with more benefits gained at higher levels.) You regain your ability to call on your spirit companion in this way when you finish a short or long rest.",
 						"Once per day as a bonus action, you can command your spirit companion to materialize as a living creature, determined by the ranger path you choose. Your spirit companion manifests as an animal for 1 minute or until your concentration is broken (as if you are concentrating on a spell). You can also dismiss it as a bonus action.",
 						"The manifested creature gains a bonus to attack rolls and saving throws equal to your Wisdom modifier. It uses the hit points in the animal's stat block or half your hit point maximum, whichever is higher.",
-						"The manifested creature takes its turn on your initiative and acts immediately after you. You control its actions, even if you are {@condition unconscious} or otherwise unable to act."
+						"The manifested creature takes its turn on your initiative and acts immediately after you. You control its actions, even if you are {@condition 昏迷} or otherwise unable to act."
 					]
 				}
 			]
@@ -4926,7 +4949,7 @@
 			"level": 1,
 			"entries": [
 				"從1級開始，你在對荒野中經常遭遇到的一個特定類型敵人的研究、追跡、狩獵、和甚至交談上已相當具備充足的經驗。",
-				"選擇一個宿敵類型：{@filter 野獸|bestiary|type=beast}、{@filter 精類|bestiary|type=fey}、{@filter 類人生物|bestiary|type=humanoid}、{@filter 怪獸|bestiary|type=monstrosity}、或{@filter 不死生物|bestiary|type=undead}。你對所選類型的生物所進行的武器攻擊的傷害骰獲得+2加值。此外，你在用於追蹤你宿敵的睿知（{@skill 求生}）檢定、以及用以回憶關於它們情報的智力檢定中具有優勢。",
+				"選擇一個宿敵類型：{@filter 野獸|bestiary|type=beast}、{@filter 精類|bestiary|type=fey}、{@filter 類人生物|bestiary|type=humanoid}、{@filter 怪獸|bestiary|type=monstrosity}或{@filter 不死生物|bestiary|type=undead}。你對所選類型的生物所進行的武器攻擊的傷害骰獲得+2加值。此外，你在用於追蹤你宿敵的感知（{@skill 生存}）檢定、以及用以回憶關於它們情報的智力檢定中具有優勢。",
 				"當你獲得此能力時，你同時學會一種你所選擇的語言，這個語言通常會是你的宿敵、或與之有關的生物所使用的語言。然而，你可以自由選擇任意一種你想要學會的語言。"
 			]
 		},
@@ -4953,7 +4976,7 @@
 					"type": "list",
 					"items": [
 						"困難地形不會減慢你們團隊的旅行速度。",
-						"除非是因為魔法的緣故，否則你們團隊不會迷路。",
+						"除非是因爲魔法的緣故，否則你們團隊不會迷路。",
 						"即使你在旅行途中正從事於其他行動（像是覓食、導航、或追跡），你仍保持對危險的警戒。",
 						"若你正獨自旅行，你能夠以正常步調隱匿移動。",
 						"當你覓食時，你能找到二倍你原本所能找到的食物。",
@@ -4971,7 +4994,7 @@
 			"classSource": "UATheRangerRevised",
 			"level": 2,
 			"entries": [
-				"在2級時，你採用一種特殊的戰鬥風格以做為你的專業。從下列選項中選擇一種。你不能獲得相同的戰鬥風格選項超過一次，即使你有機會再選擇它也一樣。",
+				"在2級時，你採用一種特殊的戰鬥風格以作爲你的專業。從下列選項中選擇一種。你不能獲得相同的戰鬥風格選項超過一次，即使你有機會再選擇它也一樣。",
 				{
 					"type": "options",
 					"count": 1,
@@ -5030,7 +5053,7 @@
 						},
 						{
 							"type": "refOptionalfeature",
-							"optionalfeature": "Druidic Warrior|TCE"
+							"optionalfeature": "德魯伊教戰士|TCE"
 						},
 						{
 							"type": "refOptionalfeature",
@@ -5063,13 +5086,13 @@
 			"classSource": "UATheRangerRevised",
 			"level": 2,
 			"entries": [
-				"在你升至2級時，你學會如同德魯伊的方式使用大自然的精粹以施放法術。請參閱{@book 第十章|PHB|10}以了解關於施法的規則，以及第十一章以查閱{@filter 遊俠法術列表|spells|class=ranger}。",
+				"在你升至2級時，你學會如同德魯伊的方式使用大自然的精粹以施放法術。請參閱{@book 第十章|PHB|10}以瞭解關於施法的規則，以及第十一章以查閱{@filter 遊俠法術列表|spells|class=ranger}。",
 				{
 					"type": "entries",
 					"name": "法術位",
 					"entries": [
 						"遊俠表中顯示了你有多少個法術位可以用來施放你一環或更高環的{@filter 遊俠法術|spells|class=ranger}。要施放其中一個法術，你必須消耗一個與該法術環階相同或更高的法術位。你在完成一次長休後恢復所有你花費掉的法術位。",
-						"舉例來說，如果你知曉一個1環的{@spell 化獸為友}法術，且你擁有一個1環和一個2環的法術位，則你可以使用其中任意一個法術位來施放{@spell 化獸為友}。"
+						"舉例來說，如果你知曉一個1環的{@spell 化獸爲友}法術，且你擁有一個1環和一個2環的法術位，則你可以使用其中任意一個法術位來施放{@spell 化獸爲友}。"
 					]
 				},
 				{
@@ -5077,7 +5100,7 @@
 					"name": "一環或更高環的已知法術",
 					"entries": [
 						"你知曉二個從遊俠法術列表中自選的1環法術。",
-						"遊俠表中的已知法術欄位顯示你將在何時學習到更多自選的遊俠法術。每個這些法術的環階都必須符合你所擁有法術位的環階。舉例來說，當你在此職業升至5級時，你可以學習一個新的1環或2環法術。",
+						"遊俠表中的已知法術字段顯示你將在何時學習到更多自選的遊俠法術。每個這些法術的環階都必須符合你所擁有法術位的環階。舉例來說，當你在此職業升至5級時，你可以學習一個新的1環或2環法術。",
 						"此外，當你提升這個職業的等級時，你可以從遊俠的法術列表中挑選一個法術來取代一個你目前已知的法術，而它的環階也必須符合你所擁有法術位的環階。"
 					]
 				},
@@ -5085,7 +5108,7 @@
 					"type": "entries",
 					"name": "施法屬性",
 					"entries": [
-						"由於你的魔法是源自你與大自然的協調，睿知是你施展遊俠法術的施法屬性。每當法術提及你的施法屬性時，你將使用你的睿知。此外，當決定你遊俠法術的豁免DC、以及使用遊俠法術進行攻擊檢定時，你使用你的睿知調整值。",
+						"由於你的魔法是源自你與大自然的協調，感知是你施展遊俠法術的施法屬性。每當法術提及你的施法屬性時，你將使用你的感知。此外，當決定你遊俠法術的豁免DC、以及使用遊俠法術進行攻擊檢定時，你使用你的感知調整值。",
 						{
 							"type": "abilityDc",
 							"name": "法術",
@@ -5113,11 +5136,11 @@
 			"classSource": "UATheRangerRevised",
 			"level": 3,
 			"entries": [
-				"從3級開始，你在遊俠學識上的專業讓你得以建立一道與你周圍野獸和環境之間的連結。",
-				"你具有一種與野獸交流的天賦能力，且它們將視你為精神上的同類。透過聲音和姿勢，你能夠以一個動作對一個野獸傳達簡單的想法，並可以理解它基本的情緒和意圖。你能得知它的情緒狀態、判斷它是否受到任何魔法的影響、它的短期需求（像是食物或安全的場所）、且你得知你要說服它不攻擊所應採取的行動（若有）。",
+				"從3級開始，你在遊俠學識上的專業讓你得以創建一道與你周圍野獸和環境之間的鏈接。",
+				"你具有一種與野獸交流的天賦能力，且它們將視你爲精神上的同類。通過聲音和姿勢，你能夠以一個動作對一個野獸傳達簡單的想法，並可以理解它基本的情緒和意圖。你能得知它的情緒狀態、判斷它是否受到任何魔法的影響、它的短期需求（像是食物或安全的場所）、且你得知你要說服它不攻擊所應採取的行動（若有）。",
 				"你不能對一個你在最近10分鐘內曾經攻擊過的生物使用這個能力。",
-				"此外，你可以調整你的感官以判斷附近是否潛伏著你的宿敵。透過花費1分鐘不受干擾的專注（如同專注於法術），你可以感知到是否有任何宿敵存在於距離你5哩內的區域之中。這能力將揭露出你的宿敵是否存在、它們的數量、以及這些生物離你大致的方向和距離（以哩為單位）。",
-				"若範圍中有複數個宿敵群體，則你將得知它們各自的情報。"
+				"此外，你可以調整你的感官以判斷附近是否潛伏着你的宿敵。通過花費1分鐘不受干擾的專注（如同專注於法術），你可以感知到是否有任何宿敵存在於距離你5裏內的區域之中。這能力將揭露出你的宿敵是否存在、它們的數量、以及這些生物離你大致的方向和距離（以裏爲單位）。",
+				"若範圍中有複數個宿敵羣體，則你將得知它們各自的情報。"
 			]
 		},
 		{
@@ -5141,12 +5164,13 @@
 			"classSource": "UATheRangerRevised",
 			"level": 4,
 			"entries": [
-				"當你在此職業升至4級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至4級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
-			"name": "Martial Versatility",
+			"name": "替換武術",
+			"ENG_name": "Martial Versatility",
 			"source": "TCE",
 			"page": 56,
 			"className": "Ranger (Revised)",
@@ -5154,9 +5178,9 @@
 			"level": 4,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 4th-level ranger {@variantrule optional class features|tce|optional feature}}",
-				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Revised Ranger feature.}",
-				"Whenever you reach a level in this class that grants the Ability Score Improvement feature, you can replace a fighting style you know with another fighting style available to rangers. This replacement represents a shift of focus in your martial practice."
+				"{@i 4級遊俠 {@variantrule 可選職業特性|tce|可選特性}}",
+				"{@note 注意，該特性是爲了配合《玩家手冊》中的遊俠職業使用的。此處顯示該特性是爲了方便，可能並不適用於修訂版本的遊俠。}",
+				"當你的該職業等級升至能讓你獲得屬性值提升的特性時，你能用一個遊俠可用的{@filter 戰鬥風格|optionalfeatures|feature type=FS:R}替換原有的一個戰鬥風格。這種變化代表着你改變了武術訓練和練習的重點。"
 			]
 		},
 		{
@@ -5195,7 +5219,7 @@
 			"classSource": "UATheRangerRevised",
 			"level": 6,
 			"entries": [
-				"在6級時，你已經準備好狩獵更加致命的獵物。選擇一個高等宿敵類型：{@filter 異怪|bestiary|type=aberration}、{@filter 天界生物|bestiary|type=celestial}、{@filter 構裝|bestiary|type=construct}、{@filter 龍|bestiary|type=dragon}、{@filter 元素|bestiary|type=elemental}、{@filter 邪魔|bestiary|type=fiend}、或{@filter 巨人|bestiary|type=giant}。你獲得所有你在獲得宿敵能力時所會獲得的好處，包括一種額外語言。你對你所有宿敵的傷害骰加值提升至+4。",
+				"在6級時，你已經準備好狩獵更加致命的獵物。選擇一個高等宿敵類型：{@filter 異怪|bestiary|type=aberration}、{@filter 天界生物|bestiary|type=celestial}、{@filter 構裝|bestiary|type=construct}、{@filter 龍|bestiary|type=dragon}、{@filter 元素|bestiary|type=elemental}、{@filter 邪魔|bestiary|type=fiend}或{@filter 巨人|bestiary|type=giant}。你獲得所有你在獲得宿敵能力時所會獲得的好處，包括一種額外語言。你對你所有宿敵的傷害骰加值提升至+4。",
 				"此外，你在對抗任何高等宿敵所使用的法術和能力時所進行豁免檢定中具有優勢。"
 			]
 		},
@@ -5220,8 +5244,8 @@
 			"classSource": "UATheRangerRevised",
 			"level": 8,
 			"entries": [
-				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -5261,7 +5285,7 @@
 			"level": 10,
 			"entries": [
 				"從10級開始，你可以長時間保持完美的靜止以發動伏擊。",
-				"當你嘗試在你的回合躲藏時，你可以選擇不在該回合進行移動。若你不進行移動，則直到你的下個回合開始，其他生物在嘗試察覺你所進行的睿知（{@skill 感知}）檢定中將承受-10的罰值。無論是自願或因為某些外部效果所致，一旦你移動或倒下{@condition 伏地}，則你將失去這個好處。若任何效果或動作使你不再躲藏，則你仍將自動被察覺。",
+				"當你嘗試在你的回合躲藏時，你可以選擇不在該回合進行移動。若你不進行移動，則直到你的下個回合開始，其他生物在嘗試察覺你所進行的感知（{@skill 察覺}）檢定中將承受-10的罰值。無論是自願或因爲某些外部效果所致，一旦你移動或倒下{@condition 伏地}，則你將失去這個好處。若任何效果或動作使你不再躲藏，則你仍將自動被察覺。",
 				"若你在你的下個回合仍然保持躲藏，你可以持續維持不動以在被察覺之前繼續獲得這個好處。"
 			]
 		},
@@ -5286,8 +5310,8 @@
 			"classSource": "UATheRangerRevised",
 			"level": 12,
 			"entries": [
-				"當你在此職業升至12級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至12級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -5338,8 +5362,8 @@
 			"classSource": "UATheRangerRevised",
 			"level": 16,
 			"entries": [
-				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -5366,7 +5390,7 @@
 			"classSource": "UATheRangerRevised",
 			"level": 18,
 			"entries": [
-				"在18級時，你獲得超自然的感官以幫助你對抗看不見的生物。當你攻擊一個你看不見的生物時，你並不會因為無法看見它而在你對它進行的攻擊檢定中承受劣勢。同時，只要該生物沒有躲藏於你，且你不處於{@condition 目盲}或{@condition 耳聾}狀態，則你也能察覺到任何距離你30呎內{@condition 隱形}生物的位置。"
+				"在18級時，你獲得超自然的感官以幫助你對抗看不見的生物。當你攻擊一個你看不見的生物時，你並不會因爲無法看見它而在你對它進行的攻擊檢定中承受劣勢。同時，只要該生物沒有躲藏於你，且你不處於{@condition 目盲}或{@condition 耳聾}狀態，則你也能察覺到任何距離你30尺內{@condition 隱形}生物的位置。"
 			]
 		},
 		{
@@ -5378,8 +5402,8 @@
 			"classSource": "UATheRangerRevised",
 			"level": 19,
 			"entries": [
-				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -5398,7 +5422,7 @@
 			]
 		},
 		{
-			"name": "眾敵屠戮",
+			"name": "衆敵屠戮",
 			"ENG_name": "Foe Slayer",
 			"source": "UATheRangerRevised",
 			"page": 1,
@@ -5406,7 +5430,7 @@
 			"classSource": "UATheRangerRevised",
 			"level": 20,
 			"entries": [
-				"在20級時，你成為了一名無可匹敵的獵手。在你的每個回合一次，你可以將你的睿知調整值加到你所進行的一次攻擊檢定或傷害骰中。你可以選擇在擲骰之前或之後使用此能力，但是必須在任何擲骰效果適用之前使用。"
+				"在20級時，你成爲了一名無可匹敵的獵手。在你的每個回合一次，你可以將你的感知調整值加到你所進行的一次攻擊檢定或傷害骰中。你可以選擇在擲骰之前或之後使用此能力，但是必須在任何擲骰效果適用之前使用。"
 			]
 		}
 	],
@@ -5422,7 +5446,7 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"entries": [
-				"獸王範型體現了文明種族和自然野獸之間的情誼。團結一致，野獸和游俠將共同對抗威脅著文明和自然世界的可怕敵人。仿效獸王範型意味著將自己奉獻給這個理念，與動物做為同伴和朋友一同奮鬥。",
+				"獸王範型體現了文明種族和自然野獸之間的情誼。團結一致，野獸和遊俠將共同對抗威脅着文明和自然世界的可怕敵人。仿效獸王範型意味着將自己奉獻給這個理念，與動物作爲同伴和朋友一同奮鬥。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "遊俠動物夥伴|Ranger||Beast Master||3"
@@ -5433,12 +5457,13 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Primal Companion|Ranger||Beast Master||3|TCE"
+					"subclassFeature": "原初動物夥伴|Ranger||Beast Master||3|TCE"
 				}
 			]
 		},
 		{
-			"name": "Primal Companion",
+			"name": "原初動物夥伴",
+			"ENG_name": "Primal Companion",
 			"source": "TCE",
 			"page": 61,
 			"className": "Ranger",
@@ -5449,11 +5474,11 @@
 			"isClassFeatureVariant": true,
 			"header": 1,
 			"entries": [
-				"{@i 3rd-level Beast Master variant feature, which replaces the Ranger's Companion feature}",
-				"You magically summon a primal beast, which draws strength from your bond with nature. The beast is friendly to you and your companions and obeys your commands. Choose its stat block\u2014{@creature Beast of the Land|TCE}, {@creature Beast of the Sea|TCE}, or {@creature Beast of the Sky|TCE}\u2014which uses your proficiency bonus (PB) in several places. You also determine the kind of animal the beast is, choosing a kind appropriate for the stat block. Whatever kind you choose, the beast bears primal markings, indicating its mystical origin.",
-				"In combat, the beast acts during your turn. It can move and use its reaction on its own, but the only action it takes is the {@action Dodge} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. You can also sacrifice one of your attacks when you take the {@action Attack} action to command the beast to take the {@action Attack} action. If you are {@condition incapacitated}, the beast can take any action of its choice, not just {@action Dodge}.",
-				"If the beast has died within the last hour, you can use your action to touch it and expend a spell slot of 1st level or higher. The beast returns to life after 1 minute with all its hit points restored.",
-				"When you finish a long rest, you can summon a different primal beast. The new beast appears in an unoccupied space within 5 feet of you, and you choose its stat block and appearance. If you already have a beast from this feature, it vanishes when the new beast appears. The beast also vanishes if you die."
+				"{@i 3級獸王 {@variantrule 可選職業特性|tce|可選特性}，替代遊俠動物夥伴}",
+				"你召喚出一隻原初的野獸，其力量來自於與你與自然的聯繫。這隻野獸對你和你的夥伴態度友善，並會聽從你的命令。從\u2014{@creature 大地野獸|TCE}、{@creature 海洋野獸|TCE}或{@creature 天空野獸|TCE}\u2014的數據中選擇其一，它數據表中許多地方將會用到你的熟練加值（PB）。你決定原初野獸是何種動物，並選擇適合其數據的種類。無論你選擇什麼樣的動物，這隻野獸都帶有原始的印記，暗示着其神祕的起源。",
+				"在戰鬥中，原初野獸在你的回合中行動。它能自行移動和使用反應動作，但除非你在你的回合中以一個附贈動作命令它執行其他動作，它只會執行{@action 閃避}動作。該動作可以是其數據中列出的動作或是之外的其他動作。你也能在使用自己的{@action 攻擊}動作時，犧牲一次自己的攻擊命令野獸執行{@action 攻擊}動作。如果你陷入{@condition 無力}，野獸將會自主行動，而非僅使用{@action 閃避}動作。",
+				"如果野獸在存在時間內死亡，你能使用你的動作觸碰它並消耗一個一環或更高的法術位。原初野獸會在一分鐘後死而復生並獲得所有生命值。",
+				"當你結束一次長休後，你能夠召喚一隻不同的原初野獸。這隻新的野獸出現在你5尺內未被佔據的空間內，並由你選擇其數據和外表。如果你已經通過此特性獲得了一隻原初野獸，它會在新的原初野獸出現時消失。原初野獸也會在你死亡時消失。"
 			]
 		},
 		{
@@ -5469,7 +5494,7 @@
 			"header": 1,
 			"entries": [
 				"{@i 3rd-level Beast Master feature (enhances Ranger's Companion)}",
-				"While wandering the wilds, a ranger encounters many sorts of animals, some of which the ranger might befriend. This friendship can arise from successful use of the {@skill Animal Handling} skill or the {@spell 化獸為友} spell. If the resulting bond is strong enough, the animal might join the ranger on adventures.",
+				"While wandering the wilds, a ranger encounters many sorts of animals, some of which the ranger might befriend. This friendship can arise from successful use of the {@skill 馴獸} skill or the {@spell 化獸爲友} spell. If the resulting bond is strong enough, the animal might join the ranger on adventures.",
 				"A ranger who has the Beast Master archetype can form an even stronger bond, feeling almost like a sibling to an animal. A special type of beast awaits a Beast Master in the wilds, a creature whose lineage stretches back to the beginnings of the world: a primal beast known as a {@creature Beast of the Air|UAClassFeatureVariants} or a {@creature Beast of the Earth|UAClassFeatureVariants}. Such a creature seeks out the type of companionship that a Beast Master offers, ready for the two of them to battle the imbalances in the natural world.",
 				"The primal beast is a special creature that a Beast Master can choose for the Ranger's Companion feature. When choosing such a creature, you decide whether it is a Beast of the Air or the Earth, and you determine its appearance. Stories describe primal beasts that mystically change form to align with the spirit of their companion.",
 				"When a primal beast is met apart from a Beast Master, the creature takes the form a regular beast of challenge rating 1/4 or lower, as determined by the DM."
@@ -5487,12 +5512,13 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得一個動物夥伴，牠將陪伴你一起冒險，並受過訓練以與你一起戰鬥。選擇一個{@filter 體型不超過中型，且挑戰等級為1/4或更低的野獸|bestiary|challenge rating=0;1/8;1/4|type=beast|size=f;d;t;s;m|miscellaneous=!swarm}。將你的熟練加值加入該野獸的AC、攻擊檢定、傷害骰，以及任何牠所熟練的豁免檢定和技能中。牠的生命值最大值等同於牠正常的生命值最大值或你遊俠等級的四倍，兩者取高。",
-				"該野獸將盡其所能的服從你的命令。牠會在你的先攻順序採取牠的行動。在你的回合，你可以口頭命令該野獸移動到某處（你不需要花費動作）。你也可以使用你的動作以口頭命令牠採取{@action 攻擊}、{@action 疾走}、{@action 撤離}、{@action 閃避}、或{@action 協助}動作。如果你沒有命令，牠將採取{@action 閃避}動作。一旦你獲得額外攻擊能力，則當你命令該野獸採取{@action 攻擊}動作時，你可以自己進行一次武器攻擊。",
+				"{@i 3級獸王特性}",
+				"你獲得一個動物夥伴，牠將陪伴你一起冒險，並受過訓練以與你一起戰鬥。選擇一個{@filter 體型不超過中型，且挑戰等級爲1/4或更低的野獸|bestiary|challenge rating=[&0;&1/4]|type=beast|size=f;d;t;s;m|miscellaneous=!swarm}。將你的熟練加值加入該野獸的AC、攻擊檢定、傷害骰，以及任何牠所熟練的豁免檢定和技能中。牠的生命值最大值等同於牠正常的生命值最大值或你遊俠等級的四倍，兩者取高。",
+				"該野獸將盡其所能的服從你的命令。牠會在你的先攻順序採取牠的行動。在你的回合，你可以口頭命令該野獸移動到某處（你不需要花費動作）。你也可以使用你的動作以口頭命令牠採取{@action 攻擊}、{@action 疾走}、{@action 撤離}、{@action 閃避}或{@action 協助}動作。如果你沒有命令，牠將採取{@action 閃避}動作。一旦你獲得額外攻擊能力，則當你命令該野獸採取{@action 攻擊}動作時，你可以自己進行一次武器攻擊。",
 				"若你處於{@condition 無力}狀態或不在現場，你的動物夥伴將會自主行動，專注於保護你或牠自己。牠使用牠的反應時不需要你的命令，例如進行一次藉機攻擊。",
 				"跟其他生物一樣，野獸可以在短休期間消耗生命骰。",
 				"當你只和該野獸一起在你的偏好環境中旅行時，你們能夠以正常步調隱匿移動。",
-				"若該野獸死亡，你可以藉由花費8小時的時間以用魔法與另一個對你不具有敵意的野獸建立連結以再次獲得動物夥伴。該野獸可以是與之前那隻相同或不同類型的野獸。"
+				"若該野獸死亡，你可以藉由花費8小時的時間以用魔法與另一個對你不具有敵意的野獸創建鏈接以再次獲得動物夥伴。該野獸可以是與之前那隻相同或不同類型的野獸。"
 			]
 		},
 		{
@@ -5507,7 +5533,8 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"從7級開始，在你的任何回合，只要你的動物夥伴沒有攻擊，你就可以使用一個附贈動作以命令該野獸在它的回合採取{@action 疾走}、{@action 撤離}、或{@action 協助}動作。此外，該野獸的攻擊現在起將在克服對非魔法攻擊和傷害的抗性和免疫能力時被視作魔法攻擊。"
+				"{@i 7級獸王特性}",
+				"在你的任何回合，只要你的動物夥伴沒有攻擊，你就可以使用一個附贈動作以命令該野獸在它的回合採取{@action 疾走}、{@action 撤離}或{@action 協助}動作。此外，該野獸的攻擊現在起將在克服對非魔法攻擊和傷害的抗性和免疫能力時被視作魔法攻擊。"
 			]
 		},
 		{
@@ -5522,7 +5549,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"從11級開始，當你命令你的動物夥伴採取{@action 攻擊}動作時，該野獸可以進行二次攻擊，或採取牠擁有的多重攻擊動作。"
+				"{@i 11級獸王特性}",
+				"當你命令你的動物夥伴採取{@action 攻擊}動作時，該野獸可以進行二次攻擊，或採取牠擁有的多重攻擊動作。"
 			]
 		},
 		{
@@ -5537,7 +5565,8 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"從15級開始，當你施放以你自己為目標的法術時，若你的動物夥伴距離你30呎內，你也可以讓它受到該法術的影響。"
+				"{@i 15級獸王特性}",
+				"當你施放以你自己爲目標的法術時，若你的動物夥伴距離你30尺內，你也可以讓它受到該法術的影響。"
 			]
 		},
 		{
@@ -5552,7 +5581,7 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"entries": [
-				"仿效獵人範型意味著接受你做為文明和荒野恐懼間壁壘的身分。隨著你行走在獵人的道途上，你學會對抗迎面而來威脅的專業技巧，從狂暴的食人魔、成群的獸人、到巨人和恐怖的龍族們。",
+				"仿效獵人範型意味着接受你作爲文明和荒野恐懼間壁壘的身分。隨着你行走在獵人的道途上，你學會對抗迎面而來威脅的專業技巧，從狂暴的食人魔、成羣的獸人、到巨人和恐怖的龍族們。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "狩者獵物|Ranger||Hunter||3"
@@ -5572,7 +5601,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在你的每個回合一次，當你進行一次武器攻擊時，你可以使用相同的武器對一個距離原本目標5呎內，且處於你武器射程內的另一個生物進行另一次攻擊。"
+				"在你的每個回合一次，當你進行一次武器攻擊時，你可以使用相同的武器對一個距離原本目標5尺內，且處於你武器射程內的另一個生物進行另一次攻擊。"
 			]
 		},
 		{
@@ -5588,9 +5617,11 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得下列其中一個你所選擇的能力：巨怪獵者、巨人殺手、或滅族者。",
+				"{@i 3級獵人特性}",
+				"你獲得下列其中一個你所選擇的能力：巨怪獵者、巨人殺手或滅族者。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -5621,7 +5652,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"你的執著可以毀滅最強大的敵人。當你以一次武器攻擊命中一個生物，若它的生命值低於最大值，則該生物將受到額外的{@dice 1d8}傷害。你每回合只能造成一次這個額外傷害。"
+				"你的執着可以毀滅最強大的敵人。當你以一次武器攻擊命中一個生物，若它的生命值低於最大值，則該生物將受到額外的{@dice 1d8}傷害。你每回合只能造成一次這個額外傷害。"
 			]
 		},
 		{
@@ -5637,7 +5668,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"當一個距離你5呎內，體型為大型或更大的生物對你進行的一次攻擊命中或失手時，只要你可以看見該生物，你就可以使用你的反應以立刻在它的攻擊之後對它進行攻擊。"
+				"當一個距離你5尺內，體型爲大型或更大的生物對你進行的一次攻擊命中或失手時，只要你可以看見該生物，你就可以使用你的反應以立刻在它的攻擊之後對它進行攻擊。"
 			]
 		},
 		{
@@ -5653,13 +5684,15 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"在7級時，你獲得下列其中一個你所選擇的能力：逃離眾敵、防禦多重攻擊、或鋼鐵意志。",
+				"{@i 7級獵人特性}",
+				"你獲得下列其中一個你所選擇的能力：逃離衆敵、防禦多重攻擊或鋼鐵意志。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "逃離眾敵|Ranger||Hunter||7"
+							"subclassFeature": "逃離衆敵|Ranger||Hunter||7"
 						},
 						{
 							"type": "refSubclassFeature",
@@ -5667,14 +5700,14 @@
 						},
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "防禦多重攻擊|Ranger||Hunter||7"
+							"subclassFeature": "鋼鐵意志|Ranger||Hunter||7"
 						}
 					]
 				}
 			]
 		},
 		{
-			"name": "逃離眾敵",
+			"name": "逃離衆敵",
 			"ENG_name": "Escape the Horde",
 			"source": "PHB",
 			"page": 93,
@@ -5702,7 +5735,7 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"當一個生物以一次攻擊命中你時，你的AC將對該生物在該回合中所進行的所有後續攻擊獲得+4的加值。"
+				"當一個生物以一次攻擊命中你時，你的AC將對該生物在該回閤中所進行的所有後續攻擊獲得+4的加值。"
 			]
 		},
 		{
@@ -5734,9 +5767,11 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你獲得下列其中一個你所選擇的能力：箭雨、或劍刃風暴。",
+				"{@i 11級獵人特性}",
+				"你獲得下列其中一個你所選擇的能力：箭雨、或劍刃風暴。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -5763,7 +5798,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"你可以使用你的動作以進行一次遠程攻擊，並以處於你武器射程內你所能看見一點的周圍10呎範圍內的任意數量個生物做為目標。你必須有足夠的彈藥以攻擊每個目標，且你為每個目標進行各自的攻擊檢定。"
+				"你可以使用你的動作以進行一次遠程攻擊，並以處於你武器射程內你所能看見一點的周圍10尺範圍內的任意數量個生物作爲目標。你必須有足夠的彈藥以攻擊每個目標，且你爲每個目標進行各自的攻擊檢定。"
 			]
 		},
 		{
@@ -5779,7 +5814,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"你可以使用你的動作以進行一次近戰攻擊，並以距離你5呎內的任意數量個生物做為目標，為每個目標進行各自的攻擊檢定。"
+				"你可以使用你的動作以進行一次近戰攻擊，並以距離你5尺內的任意數量個生物作爲目標，爲每個目標進行各自的攻擊檢定。"
 			]
 		},
 		{
@@ -5795,7 +5830,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"你可以靈活地躲開某些範圍效果，像是紅龍的火焰吐息、或{@spell 閃電束}法術。當你成為一個允許你進行敏捷豁免以僅承受一半傷害的效果的目標時，你改為在豁免成功時不受任何傷害，且在豁免失敗時僅承受一半傷害。"
+				"你可以靈活地躲開某些範圍效果，像是紅龍的火焰吐息、或{@spell 閃電束}法術。當你成爲一個允許你進行敏捷豁免以僅承受一半傷害的效果的目標時，你改爲在豁免成功時不受任何傷害，且在豁免失敗時僅承受一半傷害。"
 			]
 		},
 		{
@@ -5827,9 +5862,11 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"在15級時，你獲得下列其中一個你所選擇的能力：反射閃避、逆潮而立、或直覺閃避。",
+				"{@i 15級獵人特性}",
+				"你獲得下列其中一個你所選擇的能力：反射閃避、逆潮而立、或直覺閃避。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -5864,7 +5901,8 @@
 			]
 		},
 		{
-			"name": "Fey Wanderer",
+			"name": "妖精漫遊者",
+			"ENG_name": "Fey Wanderer",
 			"source": "TCE",
 			"page": 58,
 			"className": "Ranger",
@@ -5873,23 +5911,24 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"entries": [
-				"A fey mystique surrounds you, thanks to the boon of an archfey, the shining fruit you ate from a talking tree, the magic spring you swam in, or some other auspicious event. However you acquired your fey magic, you are now a Fey Wanderer, a ranger who represents both the mortal and the fey realms. As you wander the multiverse, your joyful laughter brightens the hearts of the downtrodden, and your martial prowess strikes terror in your foes, for great is the mirth of the fey and dreadful is their fury.",
+				"或來自一位至高妖精的恩惠，或是來自你食用的一枚從能言之樹上取下的閃亮果實，或是來自你曾浸遊於中的魔法清泉，或是來自其它妙事，你的身側因那次奇遇而有妖精的魔力纏繞。無論你是怎麼得到你來自妖精的魔法的，你現在是一名代表了凡間與妖精國度雙方的遊俠\u2014\u2014妖精漫遊者。你漫步於多元宇宙之時，你輕快的笑聲爲受壓迫者們帶來欣喜的希望，你英勇的技藝直擊你敵人的恐懼，你所就的偉績乃是妖精的喜悅，你散步的恐懼乃是妖精的憤怒。",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Dreadful Strikes|Ranger||Fey Wanderer|TCE|3"
+					"subclassFeature": "哀懼靈襲|Ranger||Fey Wanderer|TCE|3"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Fey Wanderer Magic|Ranger||Fey Wanderer|TCE|3"
+					"subclassFeature": "妖精漫遊者法術|Ranger||Fey Wanderer|TCE|3"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Otherworldly Glamour|Ranger||Fey Wanderer|TCE|3"
+					"subclassFeature": "妖冶嫺都|Ranger||Fey Wanderer|TCE|3"
 				}
 			]
 		},
 		{
-			"name": "Dreadful Strikes",
+			"name": "哀懼靈襲",
+			"ENG_name": "Dreadful Strikes",
 			"source": "TCE",
 			"page": 58,
 			"className": "Ranger",
@@ -5899,13 +5938,14 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3rd-level Fey Wanderer feature}",
-				"You can augment your weapon strikes with mind-scarring magic, drawn from the gloomy hollows of the Feywild. When you hit a creature with a weapon, you can deal an extra {@damage 1d4} psychic damage to the target, which can take this extra damage only once per turn.",
-				"The extra damage increases to {@dice 1d6} when you reach 11th level in this class."
+				"{@i 3級妖精漫遊者特性}",
+				"你能夠使用來自妖精荒原中黑暗空洞的攝心魔法以強化你的武器攻擊。當你使用武器命中一個生物時，你可以對目標造成額外的{@damage 1d4}心靈傷害，一個目標一回合只能夠受到一次這個傷害。",
+				"該額外傷害在你於此職業的等級升至11級時變成{@dice 1d6}。"
 			]
 		},
 		{
-			"name": "Fey Wanderer Magic",
+			"name": "妖精漫遊者法術",
+			"ENG_name": "Fey Wanderer Magic",
 			"source": "TCE",
 			"page": 58,
 			"className": "Ranger",
@@ -5915,14 +5955,14 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3rd-level Fey Wanderer feature}",
-				"You learn an additional spell when you reach certain levels in this class, as shown in the Fey Wanderer Spells table. Each spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.",
+				"{@i 3級妖精漫遊者特性}",
+				"你在達到特定等級時學會一個下方妖精漫遊者法術列表中列出的魔法。這些法術對你而言視作遊俠法術，且不佔用你的遊俠已知法術數量。",
 				{
 					"type": "table",
-					"caption": "Fey Wanderer Spells",
+					"caption": "妖精漫遊者法術",
 					"colLabels": [
-						"Ranger Level",
-						"Spells"
+						"遊俠等級",
+						"法術"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -5951,13 +5991,13 @@
 						]
 					]
 				},
-				"You also possess a preternatural blessing from a fey ally or a place of fey power. Choose your blessing from the Feywild Gifts table or determine it randomly.",
+				"你還獲得了來自一位妖精盟友或一處妖精神力的神奇祝福。你可以在下方妖精荒原之賜表格中選擇你的祝福或者隨機決定。",
 				{
 					"type": "table",
-					"caption": "Feywild Gifts",
+					"caption": "精野之賜",
 					"colLabels": [
 						"d6",
-						"Gift"
+						"賜福"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -5966,34 +6006,35 @@
 					"rows": [
 						[
 							"1",
-							"Illusory butterflies flutter around you while you take a short or long rest."
+							"在你進行長休或短休時，縹緲的蝴蝶在你周身振翅。"
 						],
 						[
 							"2",
-							"Fresh, seasonal flowers sprout from your hair each dawn."
+							"每天黎明，新鮮的、當季的花朵將在你的頭髮中生長。"
 						],
 						[
 							"3",
-							"You faintly smell of cinnamon, lavender, nutmeg, or another comforting herb or spice."
+							"你身上有淡淡的肉桂、薰衣草或肉豆蔻，或另一種令人舒適的藥草或香料的香味。"
 						],
 						[
 							"4",
-							"Your shadow dances while no one is looking directly at it."
+							"你的影子會在沒人直視它時起舞。"
 						],
 						[
 							"5",
-							"Horns or antlers sprout from your head."
+							"你的頭髮中長出纖細的觸角或鹿角。"
 						],
 						[
 							"6",
-							"Your skin and hair change color to match the season at each dawn."
+							"每天黎明，你的膚色與髮色都會變成適合當下季節的顏色。"
 						]
 					]
 				}
 			]
 		},
 		{
-			"name": "Otherworldly Glamour",
+			"name": "妖冶嫺都",
+			"ENG_name": "Otherworldly Glamour",
 			"source": "TCE",
 			"page": 58,
 			"className": "Ranger",
@@ -6003,13 +6044,14 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3rd-level Fey Wanderer feature}",
-				"Your fey qualities give you a supernatural charm. As a result, whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier (minimum of +1).",
-				"In addition, you gain proficiency in one of the following skills of your choice: {@skill Deception}, {@skill Performance}, or {@skill Persuasion}."
+				"{@i 3級妖精漫遊者特性}",
+				"你的妖精本質給予了你超脫凡俗的魅力。因此，每當你進行一次魅力檢定時，你可以在結果中加入等於你的感知調整值的加值(最低爲1)。",
+				"另外，你得到下列技能中你選擇的一項的熟練：{@skill 欺瞞}、{@skill 表演}或{@skill 說服}."
 			]
 		},
 		{
-			"name": "Beguiling Twist",
+			"name": "妖思魅縷",
+			"ENG_name": "Beguiling Twist",
 			"source": "TCE",
 			"page": 58,
 			"className": "Ranger",
@@ -6019,13 +6061,14 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"{@i 7th-level Fey Wanderer feature}",
-				"The magic of the Feywild guards your mind. You have advantage on saving throws against being {@condition charmed} or {@condition frightened}.",
-				"In addition, whenever you or a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition charmed} or {@condition frightened}, you can use your reaction to force a different creature you can see within 120 feet of you to make a Wisdom saving throw against your spell save DC. If the save fails, the target is {@condition charmed} or {@condition frightened} by you (your choice) for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
+				"{@i 7級妖精漫遊者特性}",
+				"妖精荒原的魔法護衛着你的心靈。你在對抗造成{@condition 恐懼}與{@condition 魅惑}的豁免檢定上具有優勢。",
+				"另外，120尺內你可見的一個生物成功地通過了一個對抗{@condition 恐懼}或{@condition 魅惑}的豁免檢定時，你可以用你的反應迫使120尺內你可見的另一個生物通過一個DC爲你的法術DC的感知豁免。若其豁免失敗，則目標會被你魅惑或恐懼（由你選擇）一分鐘。目標能夠在他的每回合結束時重複豁免，若其豁免成功，則效果終止。"
 			]
 		},
 		{
-			"name": "Fey Reinforcements",
+			"name": "精宸所與",
+			"ENG_name": "Fey Reinforcements",
 			"source": "TCE",
 			"page": 58,
 			"className": "Ranger",
@@ -6035,13 +6078,14 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"{@i 11th-level Fey Wanderer feature}",
-				"The royal courts of the Feywild have blessed you with the assistance of fey beings: you know {@spell summon fey|tce}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
-				"Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting."
+				"{@i 11級妖精漫遊者特性}",
+				"妖精荒原的皇庭賜予你獲得精類援助的祝福：你習得{@spell 精類召喚術|tce}。這不佔用你的已知遊俠法術，且你可以施展它而無需材料成分。你可以不消耗法術位而施展這個法術一次，並在你完成一次長休後重獲該能力。",
+				"當你開始施展這個法術時，你可以對其進行調整使其無需專注。若你這麼做，那麼法術的持續時間會在那一次施展時變爲一分鐘。"
 			]
 		},
 		{
-			"name": "Misty Wanderer",
+			"name": "霧行漫遊",
+			"ENG_name": "Misty Wanderer",
 			"source": "TCE",
 			"page": 58,
 			"className": "Ranger",
@@ -6051,13 +6095,14 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"{@i 15th-level Fey Wanderer feature}",
-				"You can slip in and out of the Feywild to move in a blink of an eye: you can cast {@spell 迷蹤步} without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.",
-				"In addition, whenever you cast {@i misty step}, you can bring along one willing creature you can see within 5 feet of you. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space."
+				"{@i 15級妖精漫遊者特性}",
+				"你可以在眨眼之間穿梭妖精荒原以進行移動：你可以施展{@spell 迷蹤步}而不需要消耗法術位。你可以這麼做的次數等於你的感知調整值（最低一次），你在完成一次長休後重獲所有的使用次數。",
+				"另外，每當你施展{@i 迷蹤步}時，你可以攜帶一個五尺以內你看得見的自願生物與你一起移動。那個生物會被傳送到由你選擇的，位於你的目標位置五尺以內的未被佔據空間。"
 			]
 		},
 		{
-			"name": "Swarmkeeper",
+			"name": "集羣守衛",
+			"ENG_name": "Swarmkeeper",
 			"source": "TCE",
 			"page": 59,
 			"className": "Ranger",
@@ -6066,19 +6111,20 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"entries": [
-				"Feeling a deep connection to the environment around them, some rangers reach out through their magical connection to the world and bond with a swarm of nature spirits. The swarm becomes a potent force in battle, as well as helpful company for the ranger. Some Swarmkeepers are outcasts or hermits, keeping to themselves and their attendant swarms rather than dealing with the discomfort of others. Other Swarmkeepers enjoy building vibrant communities that work for the mutual benefit of all those they consider part of their swarm.",
+				"有的遊俠感受到了與周身自然之間的緊密聯繫，他們通過自己與世界之間的魔法聯繫向自然的本源伸出雙手，並通過一片自然精魂的集羣與自然本身羈連。集羣隨後化作戰鬥中的強力幫手，或遊俠的一位得力助手。有的遊俠是被放逐者或是隱士他們更在意修行自我而非與他人打交道並找不快。而其他的集羣守衛則樂意創造服務於所有被他們視爲自然集羣的一部分者集體利益的美麗社會。",
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Gathered Swarm|Ranger||Swarmkeeper|TCE|3"
+					"subclassFeature": "蜂聚集羣|Ranger||Swarmkeeper|TCE|3"
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Swarmkeeper Magic|Ranger||Swarmkeeper|TCE|3"
+					"subclassFeature": "集羣守衛魔法|Ranger||Swarmkeeper|TCE|3"
 				}
 			]
 		},
 		{
-			"name": "Gathered Swarm",
+			"name": "蜂聚集羣",
+			"ENG_name": "Gathered Swarm",
 			"source": "TCE",
 			"page": 59,
 			"className": "Ranger",
@@ -6088,14 +6134,14 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3rd-level Swarmkeeper feature}",
-				"A swarm of intangible nature spirits has bonded itself to you and can assist you in battle. Until you die, the swarm remains in your space, crawling on you or flying and skittering around you within your space. You determine its appearance, or you generate its appearance by rolling on the Swarm Appearance table.",
+				"{@i 3級集羣守衛特性}",
+				"無形自然精魂形成的集羣與你形影不離並會在戰鬥中對你施以援手。直到你死亡，集羣會存在於你的空間中，在你身上爬行或在你周身的空間裏飛舞或竄動。你決定集羣的外觀，或者你通過按照集羣外觀表格擲骰生成其外表。",
 				{
 					"type": "table",
-					"caption": "Swarm Appearance",
+					"caption": "集羣外觀",
 					"colLabels": [
 						"d4",
-						"Appearance"
+						"外觀"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -6104,43 +6150,44 @@
 					"rows": [
 						[
 							"1",
-							"Swarming insects"
+							"羣聚的昆蟲"
 						],
 						[
 							"2",
-							"Miniature twig blights"
+							"微小的枯枝怪"
 						],
 						[
 							"3",
-							"Fluttering birds"
+							"飛舞的羣鳥"
 						],
 						[
 							"4",
-							"Playful pixies"
+							"好動的皮克精"
 						]
 					]
 				},
-				"Once on each of your turns, you can cause the swarm to assist you in one of the following ways, immediately after you hit a creature with an attack:",
+				"在你的回合中每回合一次，當你以一次攻擊命中一個生物之後，你能讓集羣以以下一種方式助你一臂之力：",
 				{
 					"type": "list",
 					"items": [
-						"The attack's target takes {@damage 1d6} piercing damage from the swarm.",
-						"The attack's target must succeed on a Strength saving throw against your spell save DC or be moved by the swarm up to 15 feet horizontally in a direction of your choice.",
-						"You are moved by the swarm 5 feet horizontally in a direction of your choice."
+						"這次攻擊的目標因集羣受到{@damage 1d6}穿刺傷害。",
+						"這次攻擊的目標必須成功通過對抗你法術DC的力量豁免檢定否則被集羣朝你選擇的方向水平移動最多15尺。",
+						"你被集羣朝着你所選擇的方向水平移動5尺。"
 					]
 				},
 				{
 					"type": "inset",
-					"name": "It's Your Swarm",
+					"name": "這是你的集羣",
 					"entries": [
-						"A Swarmkeeper's swarm and spells are reflections of the character's bond with nature spirits. Take the opportunity to describe the swarm and the ranger's magic in play. For example, when your ranger casts gaseous form, they might appear to melt into the swarm, instead of a cloud of mist, or the {@spell 祕法眼} spell could create an extension of your swarm that spies for you. Such descriptions don't change the effects of spells, but they are an exciting opportunity to explore your character's narrative through their class abilities. For more guidance on customizing spells, see the \"Personalizing Spells\" section in chapter 3.",
-						"Also, remember that the swarm's appearance is yours to customize, and don't feel confined to a single appearance. Perhaps the spirits' look changes with the ranger's mood or with the seasons. You decide!"
+						"一位集羣守衛的集羣和法術反應了角色與自然精魂的聯繫。在遊戲中抓住機會描述你自己的集羣和遊俠法術。比方說，當你的遊俠施展{@spell 氣化形體}時，施法對象可能會消失在他自己的集羣中，而非變爲一團霧氣，而{@spell 祕法眼}則可以創造出一部分分離的集羣爲你進行偵查。這樣的描述不會改變法術的效應，但它們能讓通過特性描述自己的角色更加引人入勝。需要更多個性化法術的指導，請見第一章中的\"定製法術\"一節。",
+						"同樣，記住你得集羣外表能由你自己定製，別侷限於單一的造型。也許精魂的外表會隨着遊俠的情緒而千變萬化，或者隨着季節而呈現出不同的形象。這一切都由你自己選擇！"
 					]
 				}
 			]
 		},
 		{
-			"name": "Swarmkeeper Magic",
+			"name": "集羣守衛魔法",
+			"ENG_name": "Swarmkeeper Magic",
 			"source": "TCE",
 			"page": 59,
 			"className": "Ranger",
@@ -6150,15 +6197,15 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3rd-level Swarmkeeper feature}",
-				"You learn the {@spell 法師之手} cantrip if you don't already know it. When you cast it, the hand takes the form of your swarming nature spirits.",
-				"You also learn an additional spell of 1st level or higher when you reach certain levels in this class, as shown in the Swarmkeeper Spells table. Each spell counts as a ranger spell for you, but it doesn't count against the number of ranger spells you know.",
+				"{@i 3級集羣守衛特性}",
+				"如果你之前並未掌握，你學會{@spell 法師之手}戲法，當你施展它的時候，其形式是聚集在一起的自然精魂。",
+				"同樣，你會在升至指定遊俠等級時，學會一個額外的1環或更高環階的法術，如集羣守衛法術列表所示。這些法術對你視爲遊俠法術，但它不計入你的已知法術總數中。",
 				{
 					"type": "table",
-					"caption": "Swarmkeeper Spells",
+					"caption": "集羣守衛魔法",
 					"colLabels": [
-						"Ranger Level",
-						"Spells"
+						"遊俠等級",
+						"法術"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -6183,14 +6230,15 @@
 						],
 						[
 							"17th",
-							"{@spell 疫病蟲群}"
+							"{@spell 疫病蟲羣}"
 						]
 					]
 				}
 			]
 		},
 		{
-			"name": "Writhing Tide",
+			"name": "翻騰浪涌",
+			"ENG_name": "Writhing Tide",
 			"source": "TCE",
 			"page": 59,
 			"className": "Ranger",
@@ -6200,13 +6248,14 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"{@i 7th-level Swarmkeeper feature}",
-				"You can condense part of your swarm into a focused mass that lifts you up. As a bonus action, you gain a flying speed of 10 feet and can hover. This effect lasts for 1 minute or until you are {@condition incapacitated}.",
-				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+				"{@i 7級集羣守衛特性}",
+				"你能將你的集羣的一部分凝聚成一股集中的力量，來將你托起。以一個附贈動作，你獲得10尺飛行速度並且能懸浮在空中。該效應持續1分鐘或直到你陷入{@condition 無力}狀態。",
+				"你能使用該特性的次數等於你的熟練加值，而你在結束一次長休後重新獲得所有消耗的次數。"
 			]
 		},
 		{
-			"name": "Mighty Swarm",
+			"name": "壯大集羣",
+			"ENG_name": "Mighty Swarm",
 			"source": "TCE",
 			"page": 59,
 			"className": "Ranger",
@@ -6216,20 +6265,21 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"{@i 11th-level Swarmkeeper feature}",
-				"Your Gathered Swarm grows mightier in the following ways:",
+				"{@i 11級集羣守衛特性}",
+				"你的蜂聚集羣通過以下方式變得更加強大：",
 				{
 					"type": "list",
 					"items": [
-						"The damage of Gathered Swarm increases to {@dice 1d8}.",
-						"If a creature fails its saving throw against being moved by Gathered Swarm, you can also cause the swarm to knock the creature {@condition prone}.",
-						"When you are moved by Gathered Swarm, it gives you half cover until the start of your next turn."
+						"蜂聚集羣的傷害提升到{@dice 1d8}。",
+						"如果一個生物在對抗被蜂聚集羣移動的豁免檢定中失敗，你也能讓集羣將該生物擊倒{@condition 伏地}。",
+						"當你被蜂聚集羣移動時，直到你下個回合開始它使你獲得半掩蔽。"
 					]
 				}
 			]
 		},
 		{
-			"name": "Swarming Dispersal",
+			"name": "羣逸逃散",
+			"ENG_name": "Swarming Dispersal",
 			"source": "TCE",
 			"page": 59,
 			"className": "Ranger",
@@ -6239,9 +6289,9 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"{@i 15th-level Swarmkeeper feature}",
-				"You can discorporate into your swarm, avoiding danger. When you take damage, you can use your reaction to give yourself resistance to that damage. You vanish into your swarm and then teleport to an unoccupied space that you can see within 30 feet of you, where you reappear with the swarm.",
-				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+				"{@i 15級集羣守衛特性}",
+				"你能將自己散入集羣來躲避危險。當你受到傷害時，你能使用你的反應動作讓自己活得對該次傷害的抗性。你消失在自己的集羣之中，然後傳送至30尺內一個未被佔據的空間，你在那裏與自己的集羣一同重新出現。",
+				"你能使用該特性的次數等於你的熟練加值，而你在結束一次長休後重新獲得所有消耗的次數。"
 			]
 		},
 		{
@@ -6320,8 +6370,8 @@
 			"header": 1,
 			"entries": [
 				"{@i 3rd-level Fey Wanderer feature}",
-				"Your experience with the fey has guarded your mind and sharpened your tongue. You have advantage on saving throws against being {@condition charmed} or {@condition frightened}.",
-				"In addition, you gain proficiency in one of the following skills of your choice: {@skill Deception}, {@skill Performance}, or {@skill Persuasion}."
+				"Your experience with the fey has guarded your mind and sharpened your tongue. You have advantage on saving throws against being {@condition 魅惑} or {@condition 恐懼}.",
+				"In addition, you gain proficiency in one of the following skills of your choice: {@skill 欺瞞}, {@skill 表演}, or {@skill 說服}."
 			]
 		},
 		{
@@ -6401,7 +6451,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 7th-level Fey Wanderer feature}",
-				"You have learned eerie techniques from both the Gloaming Court and the Summer Court of the Feywild. Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal extra psychic damage. The extra damage is {@damage 3d6} psychic damage and the creature must succeed on a Wisdom saving throw against your spell save DC or be {@condition frightened} of you until the end of your next turn.",
+				"You have learned eerie techniques from both the Gloaming Court and the Summer Court of the Feywild. Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal extra psychic damage. The extra damage is {@damage 3d6} psychic damage and the creature must succeed on a Wisdom saving throw against your spell save DC or be {@condition 恐懼} of you until the end of your next turn.",
 				"In addition, whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier."
 			]
 		},
@@ -6417,11 +6467,11 @@
 			"header": 2,
 			"entries": [
 				"{@i 11th-level Fey Wanderer feature}",
-				"You learn how to manipulate mind-altering magic, channeling it from your allies toward others. Whenever a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition charmed} or {@condition frightened}, you can use your reaction to force a different creature you can see within 120 feet of you to succeed on a Wisdom saving throw against your spell save DC or suffer your choice of one of the following effects:",
+				"You learn how to manipulate mind-altering magic, channeling it from your allies toward others. Whenever a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition 魅惑} or {@condition 恐懼}, you can use your reaction to force a different creature you can see within 120 feet of you to succeed on a Wisdom saving throw against your spell save DC or suffer your choice of one of the following effects:",
 				{
 					"type": "list",
 					"items": [
-						"The creature is {@condition charmed} or {@condition frightened} by you (your choice) for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.",
+						"The creature is {@condition 魅惑} or {@condition 恐懼} by you (your choice) for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.",
 						"The creature takes {@damage 3d10} psychic damage."
 					]
 				}
@@ -6484,7 +6534,7 @@
 						],
 						[
 							"5",
-							"An ancient Draconic inscription on a standing stone empowered you when you read it aloud."
+							"An ancient {@language Draconic} inscription on a standing stone empowered you when you read it aloud."
 						],
 						[
 							"6",
@@ -6538,7 +6588,7 @@
 				"{@i 3rd-level Drakewarden feature}",
 				"You can magically summon the drake bound to you. As an action, you can summon the drake, which appears in an unoccupied space of your choice that you can see within 30 feet of you.",
 				"The drake is friendly to you and your companions and obeys your commands. See its game statistics in the {@creature Drake Companion|UA2020SubclassesPt5} stat block, which uses your proficiency bonus (PB) in several places. When you summon the drake, choose a damage type listed in its Draconic Essence trait. You can determine the cosmetic characteristics of the drake such as its color, scale texture, or any visible effect of its Draconic Essence; your choice has no effect on its game statistics.",
-				"In combat, the drake shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the {@action Dodge} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition incapacitated}, the drake can take any action of its choice, not just {@action Dodge}.",
+				"In combat, the drake shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the {@action 閃避} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition 無力}, the drake can take any action of its choice, not just {@action 閃避}.",
 				"Once you summon the drake, you can't do so again until you finish a long rest, unless you expend a spell slot of 1st level or higher to summon it.",
 				"The drake remains for a number of hours equal to your proficiency bonus, until it is reduced to 0 hit points, until you use this feature to summon the drake again, or until you die. Anything the drake was wearing or carrying is left behind when the drake vanishes."
 			]
@@ -6817,7 +6867,7 @@
 						],
 						[
 							"17th",
-							"{@spell 疫病蟲群}"
+							"{@spell 疫病蟲羣}"
 						]
 					]
 				}
@@ -6839,7 +6889,7 @@
 				{
 					"type": "list",
 					"items": [
-						"Your walking speed increases by 10 feet, and you can take the {@action Disengage} action as a bonus action.",
+						"Your walking speed increases by 10 feet, and you can take the {@action 撤離} action as a bonus action.",
 						"You gain a climb speed equal to your walking speed. You can climb difficult surfaces, including upside down on ceilings, without making an ability check.",
 						"You gain a flying speed of 10 feet and can hover."
 					]
@@ -6873,7 +6923,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 11th-level Swarmkeeper feature}",
-				"As an action, you can magically form one of the spirits of your swarm into the shape of a Tiny beast of your choice. The transformation lasts for 1 hour, at which point the spirit disappears. For the duration, the spirit has a speed of 40 feet, which it can use to walk, climb, fly, or swim. The spirit has your senses and telepathically relays what it sees and hears to you. During your turn, you can speak through the spirit, telepathically command it to move, and it can {@action Hide} using your bonus to Dexterity ({@skill Stealth}) checks. The spirit has AC 18. If it takes damage, you must succeed on a Wisdom saving throw (DC equal to 10, or half the damage dealt, whichever is higher) or the spirit disappears.",
+				"As an action, you can magically form one of the spirits of your swarm into the shape of a Tiny beast of your choice. The transformation lasts for 1 hour, at which point the spirit disappears. For the duration, the spirit has a speed of 40 feet, which it can use to walk, climb, fly, or swim. The spirit has your senses and telepathically relays what it sees and hears to you. During your turn, you can speak through the spirit, telepathically command it to move, and it can {@action 躲藏} using your bonus to Dexterity ({@skill 隱匿}) checks. The spirit has AC 18. If it takes damage, you must succeed on a Wisdom saving throw (DC equal to 10, or half the damage dealt, whichever is higher) or the spirit disappears.",
 				"As an action, you can dismiss the spirit early. If you do, you can magically teleport to an unoccupied space within 5 feet of where the spirit disappeared.",
 				"Once you use this feature, you can't do so again until you finish a long rest. You can also use it again by expending a spell slot of 3rd level or higher."
 			]
@@ -6890,7 +6940,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 15th-level Swarmkeeper feature}",
-				"Your swarm can expel a seething storm of spirits that drains life from others. As an action, you create a magical sphere filled with an enraged swarm centered on a point you can see within 120 feet of you. The sphere has a 10-foot-radius and lasts for 1 minute. The sphere is difficult terrain for creatures other than you. A creature other than you that starts its turn in the sphere's area must make a Constitution saving throw against your spell save DC. On a failed save, the creature takes {@damage 2d8} necrotic damage and is {@condition blinded} until the start of its next turn. On a successful save, it takes half as much damage and isn't {@condition blinded}. At the start of your turn, if any number of Small or larger creatures took necrotic damage from the swarm, you regain {@dice 1d8} hit points. On subsequent turns, you can use a bonus action to move the sphere up to 30 feet.",
+				"Your swarm can expel a seething storm of spirits that drains life from others. As an action, you create a magical sphere filled with an enraged swarm centered on a point you can see within 120 feet of you. The sphere has a 10-foot-radius and lasts for 1 minute. The sphere is difficult terrain for creatures other than you. A creature other than you that starts its turn in the sphere's area must make a Constitution saving throw against your spell save DC. On a failed save, the creature takes {@damage 2d8} necrotic damage and is {@condition 目盲} until the start of its next turn. On a successful save, it takes half as much damage and isn't {@condition 目盲}. At the start of your turn, if any number of Small or larger creatures took necrotic damage from the swarm, you regain {@dice 1d8} hit points. On subsequent turns, you can use a bonus action to move the sphere up to 30 feet.",
 				"When you activate this feature, you can choose any number of creatures you can see to be unaffected by it.",
 				"Once you use this feature, you can't do so again until you finish a long rest. You can also use it again by expending a spell slot of 4th level or higher."
 			]
@@ -6927,7 +6977,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"From 3rd level, you have {@sense darkvision} with a range of 90 feet. You also gain access to additional spells at 3rd, 5th, 9th, 13th, and 15th level. You are always able to cast these spells, and they do not count against your number of ranger spells known.",
+				"From 3rd level, you have {@sense 黑暗視覺} with a range of 90 feet. You also gain access to additional spells at 3rd, 5th, 9th, 13th, and 15th level. You are always able to cast these spells, and they do not count against your number of ranger spells known.",
 				{
 					"type": "table",
 					"caption": "Deep Stalker Spells",
@@ -6958,7 +7008,7 @@
 						],
 						[
 							"17th",
-							"{@spell 偽裝術}"
+							"{@spell 僞裝術}"
 						]
 					]
 				}
@@ -7155,7 +7205,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"At 11th level, you gain the ability to step between the planes in a blink of an eye. When you use the {@action Attack} action, you can teleport up to 10 feet before each attack. You must be able to see the destination of the teleportation.",
+				"At 11th level, you gain the ability to step between the planes in a blink of an eye. When you use the {@action 攻擊} action, you can teleport up to 10 feet before each attack. You must be able to see the destination of the teleportation.",
 				"If you attack at least two different creatures with the action, you can make one additional attack with it against a third creature."
 			]
 		},
@@ -7242,7 +7292,7 @@
 						],
 						[
 							"17th",
-							"{@spell 疫病蟲群}"
+							"{@spell 疫病蟲羣}"
 						]
 					]
 				}
@@ -7259,7 +7309,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"Starting at 3rd level, you gain the ability to temporarily grow and take on the appearance of a treelike person, covered with leaves and bark. As a bonus action, you assume this guardian form, which lasts until you end it as a bonus action or until you are {@condition incapacitated}.",
+				"Starting at 3rd level, you gain the ability to temporarily grow and take on the appearance of a treelike person, covered with leaves and bark. As a bonus action, you assume this guardian form, which lasts until you end it as a bonus action or until you are {@condition 無力}.",
 				"You undergo the following changes while in your guardian form:",
 				{
 					"type": "list",
@@ -7366,8 +7416,9 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你精通於伏擊的藝術。你可以讓你先攻檢定獲得等同於你睿知調整值的加值。",
-				"在每個戰鬥的你的第一個回合開始時，你的步行速度增加10呎，持續直到該回合結束。若你在該回合採取{@action 攻擊}動作，做為該動作的一部份，你可以進行一次額外的武器攻擊。若該攻擊命中，則目標將受到額外{@dice 1d8}該武器傷害類型的傷害。"
+				"{@i 3級幽域追蹤者特性}",
+				"你精通於伏擊的藝術。你可以讓你先攻檢定獲得等同於你感知調整值的加值。",
+				"在每個戰鬥的你的第一個回合開始時，你的步行速度增加10尺，持續直到該回合結束。若你在該回合採取{@action 攻擊}動作，作爲該動作的一部份，你可以進行一次額外的武器攻擊。若該攻擊命中，則目標將受到額外{@dice 1d8}該武器傷害類型的傷害。"
 			]
 		},
 		{
@@ -7382,7 +7433,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"從3級開始，當你在本職業升至特定等級，你將學會額外的法術，如幽域追蹤者法術表所示。這些法術對你而言視作遊俠法術，但並不會計入你已知遊俠法術的數量中。",
+				"{@i 3級幽域追蹤者特性}",
+				"當你在本職業升至特定等級，你將學會額外的法術，如幽域追蹤者法術表所示。這些法術對你而言視作遊俠法術，但並不會計入你已知遊俠法術的數量中。",
 				{
 					"type": "table",
 					"caption": "幽域追蹤者法術",
@@ -7413,7 +7465,7 @@
 						],
 						[
 							"17級",
-							"{@spell 偽裝術}"
+							"{@spell 僞裝術}"
 						]
 					]
 				}
@@ -7431,7 +7483,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得60呎範圍的黑暗視覺。若你已經擁有來自你種族的黑暗視覺，則它的範圍將增加30呎。",
+				"{@i 3級幽域追蹤者特性}",
+				"你獲得60尺範圍的黑暗視覺。若你已經擁有來自你種族的黑暗視覺，則它的範圍將增加30尺。",
 				"你也擅長於避開依賴於黑暗視覺的生物。當處於黑暗環境時，你對任何嘗試依靠黑暗視覺以看見黑暗中的你的生物而言處於{@condition 隱形}狀態。"
 			]
 		},
@@ -7447,7 +7500,8 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"從7級起，你已磨練出用於抵抗來自於你獵物的精神影響力量的能力。你獲得睿知豁免的熟練。若你已經擁有此熟練，則你可以改為獲得智力豁免或魅力豁免的熟練（由你選擇）。"
+				"{@i 7級幽域追蹤者特性}",
+				"你已磨練出用於抵抗來自於你獵物的精神影響力量的能力。你獲得感知豁免的熟練。若你已經擁有此熟練，則你可以改爲獲得智力豁免或魅力豁免的熟練（由你選擇）。"
 			]
 		},
 		{
@@ -7462,7 +7516,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你學會以出人意料的高速進行攻擊，以讓你將一次失手轉變成另一次打擊。在你的每個回合一次，當你的一次武器攻擊失手時，你可以進行另一次武器攻擊以做為同個動作的一部份。"
+				"{@i 11級幽域追蹤者特性}",
+				"你學會以出人意料的高速進行攻擊，以讓你將一次失手轉變成另一次打擊。在你的每個回合一次，當你的一次武器攻擊失手時，你可以進行另一次武器攻擊以作爲同個動作的一部份。"
 			]
 		},
 		{
@@ -7477,7 +7532,8 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"從15級開始，隨著一縷環繞在你身邊的超自然陰影，你能夠以令人無法預料的方式閃躲。當一個生物對你進行一次攻擊檢定且該檢定不具有優勢，你可以使用你的反應以讓它承受劣勢。你必須在你知道該攻擊檢定的結果之前決定是否使用此能力。"
+				"{@i 15級幽域追蹤者特性}",
+				"隨着一縷環繞在你身邊的超自然陰影，你能夠以令人無法預料的方式閃躲。當一個生物對你進行一次攻擊檢定且該檢定不具有優勢，你可以使用你的反應以讓它承受劣勢。你必須在你知道該攻擊檢定的結果之前決定是否使用此能力。"
 			]
 		},
 		{
@@ -7491,7 +7547,7 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"entries": [
-				"境界行者守護著世界不受來自其他位面、或試圖以異界魔法摧毀凡界的威脅所侵害。他們尋找並看守著位面傳送門，為了追捕他們的敵人而冒險穿梭於內層位面和外層位面。這些遊俠也是多元宇宙中任何致力於守護位面中生靈和秩序的勢力的盟友\u2014尤其是那些善良龍族、精類、和元素生物。",
+				"境界行者守護着世界不受來自其他位面、或試圖以異界魔法摧毀凡界的威脅所侵害。他們尋找並看守着位面傳送門，爲了追捕他們的敵人而冒險穿梭於內層位面和外層位面。這些遊俠也是多元宇宙中任何致力於守護位面中生靈和秩序的勢力的盟友\u2014尤其是那些善良龍族、精類、和元素生物。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "境界行者魔法|Ranger||Horizon Walker|XGE|3"
@@ -7518,7 +7574,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得以魔法感知位面傳送門存在的能力。以一個動作，你偵測出距離你1哩內最近的位面傳送門的距離以及方位。",
+				"{@i 3級境界行者特性}",
+				"你獲得以魔法感知位面傳送門存在的能力。以一個動作，你偵測出距離你1裏內最近的位面傳送門的距離以及方位。",
 				"一旦你使用此能力，直到你完成一次短休或長休之前你都不能再使用它。",
 				"參見《地下城主指南》第二章的「位面旅行」章節以查看關於位面傳送門的例子。"
 			]
@@ -7535,7 +7592,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"從3級開始，當你在本職業升至特定等級，你將學會額外的法術，如境界行者法術表所示。這些法術對你而言視作遊俠法術，但並不會計入你已知遊俠法術的數量中。",
+				"{@i 3級境界行者特性}",
+				"當你在本職業升至特定等級，你將學會額外的法術，如境界行者法術表所示。這些法術對你而言視作遊俠法術，但並不會計入你已知遊俠法術的數量中。",
 				{
 					"type": "table",
 					"caption": "境界行者法術",
@@ -7584,8 +7642,9 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你學會汲取多元宇宙中的能量以增強你的攻擊。",
-				"以一個附贈動作，選擇一個距離你30呎內且你所能看見的生物。下一次你在該回合以一次武器攻擊命中該生物時，該攻擊所造成的所有傷害都將變成力場傷害，且該生物將受到來自該攻擊的額外{@dice 1d8}力場傷害。當你在本職業升至11級時，這個額外傷害將增加至{@dice 2d8}。"
+				"{@i 3級境界行者特性}",
+				"你學會汲取多元宇宙中的能量以增強你的攻擊。",
+				"以一個附贈動作，選擇一個距離你30尺內且你所能看見的生物。下一次你在該回合以一次武器攻擊命中該生物時，該攻擊所造成的所有傷害都將變成力場傷害，且該生物將受到來自該攻擊的額外{@dice 1d8}力場傷害。當你在本職業升至11級時，這個額外傷害將增加至{@dice 2d8}。"
 			]
 		},
 		{
@@ -7600,7 +7659,8 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"在7級時，你學會跨入乙太位面。以一個附贈動作，你能夠以此能力施放{@spell 跨入乙太界}法術，無須消耗法術位。但此法術將在當回合結束時結束。",
+				"{@i 7級境界行者特性}",
+				"你學會跨入乙太位面。以一個附贈動作，你能夠以此能力施放{@spell 跨入乙太界}法術，無須消耗法術位。但此法術將在當回合結束時結束。",
 				"一旦你使用此能力，直到你完成一次短休或長休之前你都不能再使用它。"
 			]
 		},
@@ -7616,7 +7676,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你獲得在眨眼間穿梭於位面間的能力。當你採取{@action 攻擊}動作時，你可以在每次攻擊之前傳送最多10呎距離到一處你所能看見的未被佔據空間。",
+				"{@i 11級境界行者特性}",
+				"你獲得在眨眼間穿梭於位面間的能力。當你採取{@action 攻擊}動作時，你可以在每次攻擊之前傳送最多10尺距離到一處你所能看見的未被佔據空間。",
 				"若你以該動作攻擊了至少二個不同的生物，你可以再額外對第三個生物進行一次攻擊。"
 			]
 		},
@@ -7632,7 +7693,8 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"在15級時，你穿梭在位面之間的能力讓你得以溜進位面邊界以減輕你在戰鬥中所受到的傷害。當你受到來自於一次攻擊的傷害時，你可以使用你的反應以讓你自己獲得所有對這回合該攻擊傷害的抗性。"
+				"{@i 15級境界行者特性}",
+				"你穿梭在位面之間的能力讓你得以溜進位面邊界以減輕你在戰鬥中所受到的傷害。當你受到來自於一次攻擊的傷害時，你可以使用你的反應以讓你自己獲得所有對這回合該攻擊傷害的抗性。"
 			]
 		},
 		{
@@ -7646,7 +7708,7 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"entries": [
-				"You have dedicated yourself to hunting down creatures of the night and wielders of grim magic. A Monster Slayer seeks out vampires, dragons, evil fey, fiends, and other magical threats. Trained in supernatural techniques to overcome such monsters, slayers are experts at unearthing and defeating mighty, mystical foes.",
+				"你致力於獵殺那些黑夜中的怪物和邪惡魔法的施行者。一名怪物殺手尋覓着吸血鬼、龍、邪惡精類、邪魔、以及其他魔法威脅。受過用以戰勝這類怪物的超自然技術訓練，怪物殺手精通於找出並擊敗那些強大且神祕的敵人。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "怪物殺手魔法|Ranger||Monster Slayer|XGE|3"
@@ -7673,8 +7735,9 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"At 3rd level, you gain the ability to peer at a creature and magically discern how best to hurt it. As an action, choose one creature you can see within 60 feet of you. You immediately learn whether the creature has any damage immunities, resistances, or vulnerabilities and what they are. If the creature is hidden from divination magic, you sense that it has no damage immunities, resistances, or vulnerabilities.",
-				"You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses of it when you finish a long rest."
+				"{@i 3級怪物殺手特性}",
+				"你獲得凝視一個生物並以魔法知悉傷害它最佳的方式的能力。以一個動作，選擇一個距離你60尺內且你所能看見的生物。你將立刻知道該生物是否擁有任何傷害免疫、抗性、或是易傷，以及它們的種類。若該生物不受預言系魔法影響，則你感知到的結果將會是它不具有任何傷害免疫、抗性和易傷。",
+				"你可以使用此能力的次數等同於你的感知調整值（最少1次）。你在完成一次長休後恢復所有你消耗掉的次數。"
 			]
 		},
 		{
@@ -7689,7 +7752,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"從3級開始，當你在本職業升至特定等級，你將學會額外的法術，如怪物殺手法術表所示。這些法術對你而言視作遊俠法術，但並不會計入你已知遊俠法術的數量中。",
+				"{@i 3級怪物殺手特性}",
+				"當你在本職業升至特定等級，你將學會額外的法術，如怪物殺手法術表所示。這些法術對你而言視作遊俠法術，但並不會計入你已知遊俠法術的數量中。",
 				{
 					"type": "table",
 					"caption": "怪物殺手法術",
@@ -7738,8 +7802,9 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"從3級開始，你可以專注你的憤怒於單一敵人，增加你對它所造成的傷害。以一個附贈動作，你指定一個距離你60呎內且你所能看見的生物做為此能力的目標。每個回合當你第一次以武器攻擊命中目標時，它將額外受到來自該武器的{@dice 1d6}傷害。",
-				"這個好處將持續直到你完成一次短休或長休，或在你指定另一個不同生物做為目標時提早結束。"
+				"{@i 3級怪物殺手特性}",
+				"你可以專注你的憤怒於單一敵人，增加你對它所造成的傷害。以一個附贈動作，你指定一個距離你60尺內且你所能看見的生物作爲此能力的目標。每個回合當你第一次以武器攻擊命中目標時，它將額外受到來自該武器的{@dice 1d6}傷害。",
+				"這個好處將持續直到你完成一次短休或長休，或在你指定另一個不同生物作爲目標時提早結束。"
 			]
 		},
 		{
@@ -7754,7 +7819,8 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"在7級時，你獲得額外的韌性以抵抗你獵物對你身體和精神所做出的侵襲。每當你殺手獵物所指定的目標強迫你進行一次豁免檢定，或每當你進行一次屬性檢定以嘗試脫離該目標的擒抱，骰{@dice 1d6}並將其加入你的擲骰結果中。"
+				"{@i 7級怪物殺手特性}",
+				"你獲得額外的韌性以抵抗你獵物對你身體和精神所做出的侵襲。每當你殺手獵物所指定的目標強迫你進行一次豁免檢定，或每當你進行一次屬性檢定以嘗試脫離該目標的擒抱，骰{@dice 1d6}並將其加入你的擲骰結果中。"
 			]
 		},
 		{
@@ -7769,7 +7835,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你獲得阻撓其他人魔法的能力。當你看見一個距離你60呎內的生物施放法術或傳送，你可以使用你的反應以嘗試以魔法挫敗它。該生物必須成功通過一次對抗你法術豁免DC的睿知豁免，否則它的法術或傳送將失敗並被浪費。",
+				"{@i 11級怪物殺手特性}",
+				"你獲得阻撓其他人魔法的能力。當你看見一個距離你60尺內的生物施放法術或傳送，你可以使用你的反應以嘗試以魔法挫敗它。該生物必須成功通過一次對抗你法術豁免DC的感知豁免，否則它的法術或傳送將失敗並被浪費。",
 				"一旦你使用此能力，直到你完成一次短休或長休之前你都不能再使用它。"
 			]
 		},
@@ -7785,7 +7852,8 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"在15級時，你獲得在你的獵物嘗試妨害你時展開反擊的能力。若你殺手獵物所指定的目標強迫你進行一次豁免檢定，你可以使用你的反應以對該獵物進行一次武器攻擊。你在進行該豁免檢定之前立刻進行此攻擊。若你的攻擊命中，則除了該攻擊原本的效果之外，你的豁免檢定也將自動成功。"
+				"{@i 15級怪物殺手特性}",
+				"你獲得在你的獵物嘗試妨害你時展開反擊的能力。若你殺手獵物所指定的目標強迫你進行一次豁免檢定，你可以使用你的反應以對該獵物進行一次武器攻擊。你在進行該豁免檢定之前立刻進行此攻擊。若你的攻擊命中，則除了該攻擊原本的效果之外，你的豁免檢定也將自動成功。"
 			]
 		},
 		{
@@ -7799,7 +7867,7 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"entries": [
-				"獸王範型體現了文明種族和自然野獸之間的情誼。團結一致，野獸和游俠將共同對抗威脅著文明和自然世界的可怕敵人。仿效獸王範型意味著將自己奉獻給這個理念，與動物做為同伴和朋友一同奮鬥。",
+				"獸王範型體現了文明種族和自然野獸之間的情誼。團結一致，野獸和遊俠將共同對抗威脅着文明和自然世界的可怕敵人。仿效獸王範型意味着將自己奉獻給這個理念，與動物作爲同伴和朋友一同奮鬥。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "遊俠動物夥伴|Ranger (Spell-less)|UAModifyingClasses|Beast Master||3"
@@ -7810,12 +7878,13 @@
 				},
 				{
 					"type": "refSubclassFeature",
-					"subclassFeature": "Primal Companion|Ranger (Spell-less)|UAModifyingClasses|Beast Master||3|TCE"
+					"subclassFeature": "原初動物夥伴|Ranger (Spell-less)|UAModifyingClasses|Beast Master||3|TCE"
 				}
 			]
 		},
 		{
-			"name": "Primal Companion",
+			"name": "原初動物夥伴",
+			"ENG_name": "Primal Companion",
 			"source": "TCE",
 			"page": 61,
 			"className": "Ranger (Spell-less)",
@@ -7826,12 +7895,12 @@
 			"isClassFeatureVariant": true,
 			"header": 1,
 			"entries": [
-				"{@i 3rd-level Beast Master variant feature, which replaces the Ranger's Companion feature}",
-				"{@note Note that this feature is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger feature.}",
-				"You magically summon a primal beast, which draws strength from your bond with nature. The beast is friendly to you and your companions and obeys your commands. Choose its stat block\u2014{@creature Beast of the Land|TCE}, {@creature Beast of the Sea|TCE}, or {@creature Beast of the Sky|TCE}\u2014which uses your proficiency bonus (PB) in several places. You also determine the kind of animal the beast is, choosing a kind appropriate for the stat block. Whatever kind you choose, the beast bears primal markings, indicating its mystical origin.",
-				"In combat, the beast acts during your turn. It can move and use its reaction on its own, but the only action it takes is the {@action Dodge} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. You can also sacrifice one of your attacks when you take the {@action Attack} action to command the beast to take the {@action Attack} action. If you are {@condition incapacitated}, the beast can take any action of its choice, not just {@action Dodge}.",
-				"If the beast has died within the last hour, you can use your action to touch it and expend a spell slot of 1st level or higher. The beast returns to life after 1 minute with all its hit points restored.",
-				"When you finish a long rest, you can summon a different primal beast. The new beast appears in an unoccupied space within 5 feet of you, and you choose its stat block and appearance. If you already have a beast from this feature, it vanishes when the new beast appears. The beast also vanishes if you die."
+				"{@i 3級獸王 {@variantrule 可選職業特性|tce|可選特性}，替代遊俠動物夥伴}",
+				"{@note 注意，該特性是爲了配合《玩家手冊》中的遊俠職業使用的。此處顯示該特性是爲了方便，可能並不適用於無法術版本的遊俠。}",
+				"你召喚出一隻原初的野獸，其力量來自於與你與自然的聯繫。這隻野獸對你和你的夥伴態度友善，並會聽從你的命令。從\u2014{@creature 大地野獸|TCE}、{@creature 海洋野獸|TCE}或{@creature 天空野獸|TCE}\u2014的數據中選擇其一，它數據表中許多地方將會用到你的熟練加值（PB）。你決定原初野獸是何種動物，並選擇適合其數據的種類。無論你選擇什麼樣的動物，這隻野獸都帶有原始的印記，暗示着其神祕的起源。",
+				"在戰鬥中，原初野獸在你的回合中行動。它能自行移動和使用反應動作，但除非你在你的回合中以一個附贈動作命令它執行其他動作，它只會執行{@action 閃避}動作。該動作可以是其數據中列出的動作或是之外的其他動作。你也能在使用自己的{@action 攻擊}動作時，犧牲一次自己的攻擊命令野獸執行{@action 攻擊}動作。如果你陷入{@condition 無力}，野獸將會自主行動，而非僅使用{@action 閃避}動作。",
+				"如果野獸在存在時間內死亡，你能使用你的動作觸碰它並消耗一個一環或更高的法術位。原初野獸會在一分鐘後死而復生並獲得所有生命值。",
+				"當你結束一次長休後，你能夠召喚一隻不同的原初野獸。這隻新的野獸出現在你5尺內未被佔據的空間內，並由你選擇其數據和外表。如果你已經通過此特性獲得了一隻原初野獸，它會在新的原初野獸出現時消失。原初野獸也會在你死亡時消失。"
 			]
 		},
 		{
@@ -7847,7 +7916,7 @@
 			"header": 1,
 			"entries": [
 				"{@i 3rd-level Beast Master feature (enhances Ranger's Companion)}",
-				"While wandering the wilds, a ranger encounters many sorts of animals, some of which the ranger might befriend. This friendship can arise from successful use of the {@skill Animal Handling} skill or the {@spell 化獸為友} spell. If the resulting bond is strong enough, the animal might join the ranger on adventures.",
+				"While wandering the wilds, a ranger encounters many sorts of animals, some of which the ranger might befriend. This friendship can arise from successful use of the {@skill 馴獸} skill or the {@spell 化獸爲友} spell. If the resulting bond is strong enough, the animal might join the ranger on adventures.",
 				"A ranger who has the Beast Master archetype can form an even stronger bond, feeling almost like a sibling to an animal. A special type of beast awaits a Beast Master in the wilds, a creature whose lineage stretches back to the beginnings of the world: a primal beast known as a {@creature Beast of the Air|UAClassFeatureVariants} or a {@creature Beast of the Earth|UAClassFeatureVariants}. Such a creature seeks out the type of companionship that a Beast Master offers, ready for the two of them to battle the imbalances in the natural world.",
 				"The primal beast is a special creature that a Beast Master can choose for the Ranger's Companion feature. When choosing such a creature, you decide whether it is a Beast of the Air or the Earth, and you determine its appearance. Stories describe primal beasts that mystically change form to align with the spirit of their companion.",
 				"When a primal beast is met apart from a Beast Master, the creature takes the form a regular beast of challenge rating 1/4 or lower, as determined by the DM."
@@ -7865,12 +7934,13 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得一個動物夥伴，牠將陪伴你一起冒險，並受過訓練以與你一起戰鬥。選擇一個{@filter 體型不超過中型，且挑戰等級為1/4或更低的野獸|bestiary|challenge rating=0;1/8;1/4|type=beast|size=f;d;t;s;m|miscellaneous=!swarm}。將你的熟練加值加入該野獸的AC、攻擊檢定、傷害骰，以及任何牠所熟練的豁免檢定和技能中。牠的生命值最大值等同於牠正常的生命值最大值或你遊俠等級的四倍，兩者取高。",
-				"該野獸將盡其所能的服從你的命令。牠會在你的先攻順序採取牠的行動，儘管除非你命令牠，否則牠不會採取任何動作。在你的回合，你可以口頭命令該野獸移動到某處（你不需要花費動作）。你也可以使用你的動作以口頭命令牠採取{@action 攻擊}、{@action 疾走}、{@action 撤離}、{@action 閃避}、或{@action 協助}動作。一旦你獲得額外攻擊能力，則當你命令該野獸採取{@action 攻擊}動作時，你可以自己進行一次武器攻擊。",
+				"{@i 3級獸王特性}",
+				"你獲得一個動物夥伴，牠將陪伴你一起冒險，並受過訓練以與你一起戰鬥。選擇一個{@filter 體型不超過中型，且挑戰等級爲1/4或更低的野獸|bestiary|challenge rating=[&0;&1/4]|type=beast|size=f;d;t;s;m|miscellaneous=!swarm}。將你的熟練加值加入該野獸的AC、攻擊檢定、傷害骰，以及任何牠所熟練的豁免檢定和技能中。牠的生命值最大值等同於牠正常的生命值最大值或你遊俠等級的四倍，兩者取高。",
+				"該野獸將盡其所能的服從你的命令。牠會在你的先攻順序採取牠的行動，儘管除非你命令牠，否則牠不會採取任何動作。在你的回合，你可以口頭命令該野獸移動到某處（你不需要花費動作）。你也可以使用你的動作以口頭命令牠採取{@action 攻擊}、{@action 疾走}、{@action 撤離}、{@action 閃避}或{@action 協助}動作。一旦你獲得額外攻擊能力，則當你命令該野獸採取{@action 攻擊}動作時，你可以自己進行一次武器攻擊。",
 				"若你處於{@condition 無力}狀態或不在現場，你的動物夥伴將會自主行動，專注於保護你或牠自己。牠使用牠的反應時不需要你的命令，例如進行一次藉機攻擊。",
 				"跟其他生物一樣，野獸可以在短休期間消耗生命骰。",
 				"當你只和該野獸一起在你的偏好環境中旅行時，你們能夠以正常步調隱匿移動。",
-				"若該野獸死亡，你可以藉由花費8小時的時間以用魔法與另一個對你不具有敵意的野獸建立連結以再次獲得動物夥伴。該野獸可以是與之前那隻相同或不同類型的野獸。"
+				"若該野獸死亡，你可以藉由花費8小時的時間以用魔法與另一個對你不具有敵意的野獸創建鏈接以再次獲得動物夥伴。該野獸可以是與之前那隻相同或不同類型的野獸。"
 			]
 		},
 		{
@@ -7885,7 +7955,8 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"從7級開始，在你的任何回合，只要你的動物夥伴沒有攻擊，你就可以使用一個附贈動作以命令該野獸在它的回合採取{@action 疾走}、{@action 撤離}、或{@action 協助}動作。此外，該野獸的攻擊現在起將在克服對非魔法攻擊和傷害的抗性和免疫能力時被視作魔法攻擊。"
+				"{@i 7級獸王特性}",
+				"在你的任何回合，只要你的動物夥伴沒有攻擊，你就可以使用一個附贈動作以命令該野獸在它的回合採取{@action 疾走}、{@action 撤離}或{@action 協助}動作。此外，該野獸的攻擊現在起將在克服對非魔法攻擊和傷害的抗性和免疫能力時被視作魔法攻擊。"
 			]
 		},
 		{
@@ -7900,7 +7971,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"從11級開始，當你命令你的動物夥伴採取{@action 攻擊}動作時，該野獸可以進行二次攻擊。"
+				"{@i 11級獸王特性}",
+				"當你命令你的動物夥伴採取{@action 攻擊}動作時，該野獸可以進行二次攻擊。"
 			]
 		},
 		{
@@ -7914,6 +7986,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
+				"{@i 15級獸王特性}",
 				"Beginning at 15th level, when an attacker that you can see hits your beast companion with an attack, you can call out a warning. If your beast companion can hear you, it can use its reaction to halve the attack's damage against it."
 			]
 		},
@@ -7929,7 +8002,8 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"entries": [
-				"仿效獵人範型意味著接受你做為文明和荒野恐懼間壁壘的身分。隨著你行走在獵人的道途上，你學會對抗迎面而來威脅的專業技巧，從狂暴的食人魔、成群的獸人、到巨人和恐怖的龍族們。",
+				"{@i 3級獵人特性}",
+				"仿效獵人範型意味着接受你作爲文明和荒野恐懼間壁壘的身分。隨着你行走在獵人的道途上，你學會對抗迎面而來威脅的專業技巧，從狂暴的食人魔、成羣的獸人、到巨人和恐怖的龍族們。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "狩者獵物|Ranger (Spell-less)|UAModifyingClasses|Hunter||3"
@@ -7949,7 +8023,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在你的每個回合一次，當你進行一次武器攻擊時，你可以使用相同的武器對一個距離原本目標5呎內，且處於你武器射程內的另一個生物進行另一次攻擊。"
+				"在你的每個回合一次，當你進行一次武器攻擊時，你可以使用相同的武器對一個距離原本目標5尺內，且處於你武器射程內的另一個生物進行另一次攻擊。"
 			]
 		},
 		{
@@ -7965,9 +8039,11 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得下列其中一個你所選擇的能力：巨怪獵者、巨人殺手、或滅族者。",
+				"{@i 3級獵人特性}",
+				"你獲得下列其中一個你所選擇的能力：巨怪獵者、巨人殺手、或滅族者。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -7998,7 +8074,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"你的執著可以毀滅最強大的敵人。當你以一次武器攻擊命中一個生物，若它的生命值低於最大值，則該生物將受到額外的{@dice 1d8}傷害。你每回合只能造成一次這個額外傷害。"
+				"你的執着可以毀滅最強大的敵人。當你以一次武器攻擊命中一個生物，若它的生命值低於最大值，則該生物將受到額外的{@dice 1d8}傷害。你每回合只能造成一次這個額外傷害。"
 			]
 		},
 		{
@@ -8014,7 +8090,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"當一個距離你5呎內，體型為大型或更大的生物對你進行的一次攻擊命中或失手時，只要你可以看見該生物，你就可以使用你的反應以立刻在它的攻擊之後對它進行攻擊。"
+				"當一個距離你5尺內，體型爲大型或更大的生物對你進行的一次攻擊命中或失手時，只要你可以看見該生物，你就可以使用你的反應以立刻在它的攻擊之後對它進行攻擊。"
 			]
 		},
 		{
@@ -8030,13 +8106,15 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"在7級時，你獲得下列其中一個你所選擇的能力：逃離眾敵、防禦多重攻擊、或鋼鐵意志。",
+				"{@i 7級獵人特性}",
+				"你獲得下列其中一個你所選擇的能力：逃離衆敵、防禦多重攻擊、或鋼鐵意志。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "逃離眾敵|Ranger (Spell-less)|UAModifyingClasses|Hunter|PHB|7"
+							"subclassFeature": "逃離衆敵|Ranger (Spell-less)|UAModifyingClasses|Hunter|PHB|7"
 						},
 						{
 							"type": "refSubclassFeature",
@@ -8051,7 +8129,7 @@
 			]
 		},
 		{
-			"name": "逃離眾敵",
+			"name": "逃離衆敵",
 			"ENG_name": "Escape the Horde",
 			"source": "PHB",
 			"page": 93,
@@ -8079,7 +8157,7 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"當一個生物以一次攻擊命中你時，你的AC將對該生物在該回合中所進行的所有後續攻擊獲得+4的加值。"
+				"當一個生物以一次攻擊命中你時，你的AC將對該生物在該回閤中所進行的所有後續攻擊獲得+4的加值。"
 			]
 		},
 		{
@@ -8111,9 +8189,11 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你獲得下列其中一個你所選擇的能力：箭雨、或劍刃風暴。",
+				"{@i 11級獵人特性}",
+				"你獲得下列其中一個你所選擇的能力：箭雨、或劍刃風暴。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -8140,7 +8220,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"你可以使用你的動作以進行一次遠程攻擊，並以處於你武器射程內你所能看見一點的周圍10呎範圍內的任意數量個生物做為目標。你必須有足夠的彈藥以攻擊每個目標，且你為每個目標進行各自的攻擊檢定。"
+				"你可以使用你的動作以進行一次遠程攻擊，並以處於你武器射程內你所能看見一點的周圍10尺範圍內的任意數量個生物作爲目標。你必須有足夠的彈藥以攻擊每個目標，且你爲每個目標進行各自的攻擊檢定。"
 			]
 		},
 		{
@@ -8156,7 +8236,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"你可以使用你的動作以進行一次近戰攻擊，並以距離你5呎內的任意數量個生物做為目標，為每個目標進行各自的攻擊檢定。"
+				"你可以使用你的動作以進行一次近戰攻擊，並以距離你5尺內的任意數量個生物作爲目標，爲每個目標進行各自的攻擊檢定。"
 			]
 		},
 		{
@@ -8172,7 +8252,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"你可以靈活地躲開某些範圍效果，像是紅龍的火焰吐息、或{@spell 閃電束}法術。當你成為一個允許你進行敏捷豁免以僅承受一半傷害的效果的目標時，你改為在豁免成功時不受任何傷害，且在豁免失敗時僅承受一半傷害。"
+				"你可以靈活地躲開某些範圍效果，像是紅龍的火焰吐息、或{@spell 閃電束}法術。當你成爲一個允許你進行敏捷豁免以僅承受一半傷害的效果的目標時，你改爲在豁免成功時不受任何傷害，且在豁免失敗時僅承受一半傷害。"
 			]
 		},
 		{
@@ -8204,9 +8284,11 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"在15級時，你獲得下列其中一個你所選擇的能力：反射閃避、逆潮而立、或直覺閃避。",
+				"{@i 15級獵人特性}",
+				"你獲得下列其中一個你所選擇的能力：反射閃避、逆潮而立、或直覺閃避。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -8382,7 +8464,7 @@
 			"entries": [
 				"{@i 3rd-level Fey Wanderer feature}",
 				"Your fey qualities give you a supernatural charm. As a result, whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier (minimum of +1).",
-				"In addition, you gain proficiency in one of the following skills of your choice: {@skill Deception}, {@skill Performance}, or {@skill Persuasion}."
+				"In addition, you gain proficiency in one of the following skills of your choice: {@skill 欺瞞}, {@skill 表演}, or {@skill 說服}."
 			]
 		},
 		{
@@ -8397,8 +8479,8 @@
 			"header": 2,
 			"entries": [
 				"{@i 7th-level Fey Wanderer feature}",
-				"The magic of the Feywild guards your mind. You have advantage on saving throws against being {@condition charmed} or {@condition frightened}.",
-				"In addition, whenever you or a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition charmed} or {@condition frightened}, you can use your reaction to force a different creature you can see within 120 feet of you to make a Wisdom saving throw against your spell save DC. If the save fails, the target is {@condition charmed} or {@condition frightened} by you (your choice) for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
+				"The magic of the Feywild guards your mind. You have advantage on saving throws against being {@condition 魅惑} or {@condition 恐懼}.",
+				"In addition, whenever you or a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition 魅惑} or {@condition 恐懼}, you can use your reaction to force a different creature you can see within 120 feet of you to make a Wisdom saving throw against your spell save DC. If the save fails, the target is {@condition 魅惑} or {@condition 恐懼} by you (your choice) for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
 			]
 		},
 		{
@@ -8413,7 +8495,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 11th-level Fey Wanderer feature}",
-				"The royal courts of the Feywild have blessed you with the assistance of fey beings: you know {@spell summon fey|tce}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
+				"The royal courts of the Feywild have blessed you with the assistance of fey beings: you know {@spell 精類召喚術|tce}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
 				"Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting."
 			]
 		},
@@ -8560,7 +8642,7 @@
 						],
 						[
 							"17th",
-							"{@spell 疫病蟲群}"
+							"{@spell 疫病蟲羣}"
 						]
 					]
 				}
@@ -8578,7 +8660,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 7th-level Swarmkeeper feature}",
-				"You can condense part of your swarm into a focused mass that lifts you up. As a bonus action, you gain a flying speed of 10 feet and can hover. This effect lasts for 1 minute or until you are {@condition incapacitated}.",
+				"You can condense part of your swarm into a focused mass that lifts you up. As a bonus action, you gain a flying speed of 10 feet and can hover. This effect lasts for 1 minute or until you are {@condition 無力}.",
 				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
 			]
 		},
@@ -8599,7 +8681,7 @@
 					"type": "list",
 					"items": [
 						"The damage of Gathered Swarm increases to {@dice 1d8}.",
-						"If a creature fails its saving throw against being moved by Gathered Swarm, you can also cause the swarm to knock the creature {@condition prone}.",
+						"If a creature fails its saving throw against being moved by Gathered Swarm, you can also cause the swarm to knock the creature {@condition 伏地}.",
 						"When you are moved by Gathered Swarm, it gives you half cover until the start of your next turn."
 					]
 				}
@@ -8694,8 +8776,8 @@
 			"header": 1,
 			"entries": [
 				"{@i 3rd-level Fey Wanderer feature}",
-				"Your experience with the fey has guarded your mind and sharpened your tongue. You have advantage on saving throws against being {@condition charmed} or {@condition frightened}.",
-				"In addition, you gain proficiency in one of the following skills of your choice: {@skill Deception}, {@skill Performance}, or {@skill Persuasion}."
+				"Your experience with the fey has guarded your mind and sharpened your tongue. You have advantage on saving throws against being {@condition 魅惑} or {@condition 恐懼}.",
+				"In addition, you gain proficiency in one of the following skills of your choice: {@skill 欺瞞}, {@skill 表演}, or {@skill 說服}."
 			]
 		},
 		{
@@ -8726,7 +8808,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 7th-level Fey Wanderer feature}",
-				"You have learned eerie techniques from both the Gloaming Court and the Summer Court of the Feywild. Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal extra psychic damage. The extra damage is {@damage 3d6} psychic damage and the creature must succeed on a Wisdom saving throw against your spell save DC or be {@condition frightened} of you until the end of your next turn.",
+				"You have learned eerie techniques from both the Gloaming Court and the Summer Court of the Feywild. Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal extra psychic damage. The extra damage is {@damage 3d6} psychic damage and the creature must succeed on a Wisdom saving throw against your spell save DC or be {@condition 恐懼} of you until the end of your next turn.",
 				"In addition, whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier."
 			]
 		},
@@ -8742,11 +8824,11 @@
 			"header": 2,
 			"entries": [
 				"{@i 11th-level Fey Wanderer feature}",
-				"You learn how to manipulate mind-altering magic, channeling it from your allies toward others. Whenever a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition charmed} or {@condition frightened}, you can use your reaction to force a different creature you can see within 120 feet of you to succeed on a Wisdom saving throw against your spell save DC or suffer your choice of one of the following effects:",
+				"You learn how to manipulate mind-altering magic, channeling it from your allies toward others. Whenever a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition 魅惑} or {@condition 恐懼}, you can use your reaction to force a different creature you can see within 120 feet of you to succeed on a Wisdom saving throw against your spell save DC or suffer your choice of one of the following effects:",
 				{
 					"type": "list",
 					"items": [
-						"The creature is {@condition charmed} or {@condition frightened} by you (your choice) for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.",
+						"The creature is {@condition 魅惑} or {@condition 恐懼} by you (your choice) for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.",
 						"The creature takes {@damage 3d10} psychic damage."
 					]
 				}
@@ -8810,7 +8892,7 @@
 						],
 						[
 							"5",
-							"An ancient Draconic inscription on a standing stone empowered you when you read it aloud."
+							"An ancient {@language Draconic} inscription on a standing stone empowered you when you read it aloud."
 						],
 						[
 							"6",
@@ -8864,7 +8946,7 @@
 				"{@i 3rd-level Drakewarden feature}",
 				"You can magically summon the drake bound to you. As an action, you can summon the drake, which appears in an unoccupied space of your choice that you can see within 30 feet of you.",
 				"The drake is friendly to you and your companions and obeys your commands. See its game statistics in the {@creature Drake Companion|UA2020SubclassesPt5} stat block, which uses your proficiency bonus (PB) in several places. When you summon the drake, choose a damage type listed in its Draconic Essence trait. You can determine the cosmetic characteristics of the drake such as its color, scale texture, or any visible effect of its Draconic Essence; your choice has no effect on its game statistics.",
-				"In combat, the drake shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the {@action Dodge} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition incapacitated}, the drake can take any action of its choice, not just {@action Dodge}.",
+				"In combat, the drake shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the {@action 閃避} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition 無力}, the drake can take any action of its choice, not just {@action 閃避}.",
 				"Once you summon the drake, you can't do so again until you finish a long rest, unless you expend a spell slot of 1st level or higher to summon it.",
 				"The drake remains for a number of hours equal to your proficiency bonus, until it is reduced to 0 hit points, until you use this feature to summon the drake again, or until you die. Anything the drake was wearing or carrying is left behind when the drake vanishes."
 			]
@@ -9062,7 +9144,7 @@
 				{
 					"type": "list",
 					"items": [
-						"Your walking speed increases by 10 feet, and you can take the {@action Disengage} action as a bonus action.",
+						"Your walking speed increases by 10 feet, and you can take the {@action 撤離} action as a bonus action.",
 						"You gain a climb speed equal to your walking speed. You can climb difficult surfaces, including upside down on ceilings, without making an ability check.",
 						"You gain a flying speed of 10 feet and can hover."
 					]
@@ -9096,7 +9178,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 11th-level Swarmkeeper feature}",
-				"As an action, you can magically form one of the spirits of your swarm into the shape of a Tiny beast of your choice. The transformation lasts for 1 hour, at which point the spirit disappears. For the duration, the spirit has a speed of 40 feet, which it can use to walk, climb, fly, or swim. The spirit has your senses and telepathically relays what it sees and hears to you. During your turn, you can speak through the spirit, telepathically command it to move, and it can {@action Hide} using your bonus to Dexterity ({@skill Stealth}) checks. The spirit has AC 18. If it takes damage, you must succeed on a Wisdom saving throw (DC equal to 10, or half the damage dealt, whichever is higher) or the spirit disappears.",
+				"As an action, you can magically form one of the spirits of your swarm into the shape of a Tiny beast of your choice. The transformation lasts for 1 hour, at which point the spirit disappears. For the duration, the spirit has a speed of 40 feet, which it can use to walk, climb, fly, or swim. The spirit has your senses and telepathically relays what it sees and hears to you. During your turn, you can speak through the spirit, telepathically command it to move, and it can {@action 躲藏} using your bonus to Dexterity ({@skill 隱匿}) checks. The spirit has AC 18. If it takes damage, you must succeed on a Wisdom saving throw (DC equal to 10, or half the damage dealt, whichever is higher) or the spirit disappears.",
 				"As an action, you can dismiss the spirit early. If you do, you can magically teleport to an unoccupied space within 5 feet of where the spirit disappeared.",
 				"Once you use this feature, you can't do so again until you finish a long rest. You can also use it again by expending a spell slot of 3rd level or higher."
 			]
@@ -9113,7 +9195,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 15th-level Swarmkeeper feature}",
-				"Your swarm can expel a seething storm of spirits that drains life from others. As an action, you create a magical sphere filled with an enraged swarm centered on a point you can see within 120 feet of you. The sphere has a 10-foot-radius and lasts for 1 minute. The sphere is difficult terrain for creatures other than you. A creature other than you that starts its turn in the sphere's area must make a Constitution saving throw against your spell save DC. On a failed save, the creature takes {@damage 2d8} necrotic damage and is {@condition blinded} until the start of its next turn. On a successful save, it takes half as much damage and isn't {@condition blinded}. At the start of your turn, if any number of Small or larger creatures took necrotic damage from the swarm, you regain {@dice 1d8} hit points. On subsequent turns, you can use a bonus action to move the sphere up to 30 feet.",
+				"Your swarm can expel a seething storm of spirits that drains life from others. As an action, you create a magical sphere filled with an enraged swarm centered on a point you can see within 120 feet of you. The sphere has a 10-foot-radius and lasts for 1 minute. The sphere is difficult terrain for creatures other than you. A creature other than you that starts its turn in the sphere's area must make a Constitution saving throw against your spell save DC. On a failed save, the creature takes {@damage 2d8} necrotic damage and is {@condition 目盲} until the start of its next turn. On a successful save, it takes half as much damage and isn't {@condition 目盲}. At the start of your turn, if any number of Small or larger creatures took necrotic damage from the swarm, you regain {@dice 1d8} hit points. On subsequent turns, you can use a bonus action to move the sphere up to 30 feet.",
 				"When you activate this feature, you can choose any number of creatures you can see to be unaffected by it.",
 				"Once you use this feature, you can't do so again until you finish a long rest. You can also use it again by expending a spell slot of 4th level or higher."
 			]
@@ -9277,7 +9359,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你獲得在眨眼間穿梭於位面間的能力。當你採取{@action 攻擊}動作時，你可以在每次攻擊之前傳送最多10呎距離到一處你所能看見的未被佔據空間。",
+				"在11級時，你獲得在眨眼間穿梭於位面間的能力。當你採取{@action 攻擊}動作時，你可以在每次攻擊之前傳送最多10尺距離到一處你所能看見的未被佔據空間。",
 				"若你以該動作攻擊了至少二個不同的生物，你可以再額外對第三個生物進行一次攻擊。"
 			]
 		},
@@ -9330,7 +9412,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"Starting at 3rd level, you gain the ability to temporarily grow and take on the appearance of a treelike person, covered with leaves and bark. As a bonus action, you assume this guardian form, which lasts until you end it as a bonus action or until you are {@condition incapacitated}.",
+				"Starting at 3rd level, you gain the ability to temporarily grow and take on the appearance of a treelike person, covered with leaves and bark. As a bonus action, you assume this guardian form, which lasts until you end it as a bonus action or until you are {@condition 無力}.",
 				"You undergo the following changes while in your guardian form:",
 				{
 					"type": "list",
@@ -9434,8 +9516,9 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你精通於伏擊的藝術。你可以讓你先攻檢定獲得等同於你睿知調整值的加值。",
-				"在每個戰鬥的你的第一個回合開始時，你的步行速度增加10呎，持續直到該回合結束。若你在該回合採取{@action 攻擊}動作，做為該動作的一部份，你可以進行一次額外的武器攻擊。若該攻擊命中，則目標將受到額外{@dice 1d8}該武器傷害類型的傷害。"
+				"{@i 3級幽域追蹤者特性}",
+				"你精通於伏擊的藝術。你可以讓你先攻檢定獲得等同於你感知調整值的加值。",
+				"在每個戰鬥的你的第一個回合開始時，你的步行速度增加10尺，持續直到該回合結束。若你在該回合採取{@action 攻擊}動作，作爲該動作的一部份，你可以進行一次額外的武器攻擊。若該攻擊命中，則目標將受到額外{@dice 1d8}該武器傷害類型的傷害。"
 			]
 		},
 		{
@@ -9450,7 +9533,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得60呎範圍的黑暗視覺。若你已經擁有來自你種族的黑暗視覺，則它的範圍將增加30呎。",
+				"{@i 3級幽域追蹤者特性}",
+				"你獲得60尺範圍的黑暗視覺。若你已經擁有來自你種族的黑暗視覺，則它的範圍將增加30尺。",
 				"你也擅長於避開依賴於黑暗視覺的生物。當處於黑暗環境時，你對任何嘗試依靠黑暗視覺以看見黑暗中的你的生物而言處於{@condition 隱形}狀態。"
 			]
 		},
@@ -9466,7 +9550,8 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"從7級起，你已磨練出用於抵抗來自於你獵物的精神影響力量的能力。你獲得睿知豁免的熟練。若你已經擁有此熟練，則你可以改為獲得智力豁免或魅力豁免的熟練（由你選擇）。"
+				"{@i 7級幽域追蹤者特性}",
+				"你已磨練出用於抵抗來自於你獵物的精神影響力量的能力。你獲得感知豁免的熟練。若你已經擁有此熟練，則你可以改爲獲得智力豁免或魅力豁免的熟練（由你選擇）。"
 			]
 		},
 		{
@@ -9481,7 +9566,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你學會以出人意料的高速進行攻擊，以讓你將一次失手轉變成另一次打擊。在你的每個回合一次，當你的一次武器攻擊失手時，你可以進行另一次武器攻擊以做為同個動作的一部份。"
+				"{@i 11級幽域追蹤者特性}",
+				"你學會以出人意料的高速進行攻擊，以讓你將一次失手轉變成另一次打擊。在你的每個回合一次，當你的一次武器攻擊失手時，你可以進行另一次武器攻擊以作爲同個動作的一部份。"
 			]
 		},
 		{
@@ -9496,7 +9582,8 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"從15級開始，隨著一縷環繞在你身邊的超自然陰影，你能夠以令人無法預料的方式閃躲。當一個生物對你進行一次攻擊檢定且該檢定不具有優勢，你可以使用你的反應以讓它承受劣勢。你必須在你知道該攻擊檢定的結果之前決定是否使用此能力。"
+				"{@i 15級幽域追蹤者特性}",
+				"隨着一縷環繞在你身邊的超自然陰影，你能夠以令人無法預料的方式閃躲。當一個生物對你進行一次攻擊檢定且該檢定不具有優勢，你可以使用你的反應以讓它承受劣勢。你必須在你知道該攻擊檢定的結果之前決定是否使用此能力。"
 			]
 		},
 		{
@@ -9511,7 +9598,7 @@
 			"level": 3,
 			"entries": [
 				"{@note Note that this subclass is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger subclass.}",
-				"境界行者守護著世界不受來自其他位面、或試圖以異界魔法摧毀凡界的威脅所侵害。他們尋找並看守著位面傳送門，為了追捕他們的敵人而冒險穿梭於內層位面和外層位面。這些遊俠也是多元宇宙中任何致力於守護位面中生靈和秩序的勢力的盟友\u2014尤其是那些善良龍族、精類、和元素生物。",
+				"境界行者守護着世界不受來自其他位面、或試圖以異界魔法摧毀凡界的威脅所侵害。他們尋找並看守着位面傳送門，爲了追捕他們的敵人而冒險穿梭於內層位面和外層位面。這些遊俠也是多元宇宙中任何致力於守護位面中生靈和秩序的勢力的盟友\u2014尤其是那些善良龍族、精類、和元素生物。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "偵測傳送門|Ranger (Spell-less)|UAModifyingClasses|Horizon Walker|XGE|3"
@@ -9534,7 +9621,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得以魔法感知位面傳送門存在的能力。以一個動作，你偵測出距離你1哩內最近的位面傳送門的距離以及方位。",
+				"{@i 3級境界行者特性}",
+				"你獲得以魔法感知位面傳送門存在的能力。以一個動作，你偵測出距離你1裏內最近的位面傳送門的距離以及方位。",
 				"一旦你使用此能力，直到你完成一次短休或長休之前你都不能再使用它。",
 				"參見《地下城主指南》第二章的「位面旅行」章節以查看關於位面傳送門的例子。"
 			]
@@ -9551,8 +9639,9 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你學會汲取多元宇宙中的能量以增強你的攻擊。",
-				"以一個附贈動作，選擇一個距離你30呎內且你所能看見的生物。下一次你在該回合以一次武器攻擊命中該生物時，該攻擊所造成的所有傷害都將變成力場傷害，且該生物將受到來自該攻擊的額外{@dice 1d8}力場傷害。當你在本職業升至11級時，這個額外傷害將增加至{@dice 2d8}。"
+				"{@i 3級境界行者特性}",
+				"你學會汲取多元宇宙中的能量以增強你的攻擊。",
+				"以一個附贈動作，選擇一個距離你30尺內且你所能看見的生物。下一次你在該回合以一次武器攻擊命中該生物時，該攻擊所造成的所有傷害都將變成力場傷害，且該生物將受到來自該攻擊的額外{@dice 1d8}力場傷害。當你在本職業升至11級時，這個額外傷害將增加至{@dice 2d8}。"
 			]
 		},
 		{
@@ -9567,6 +9656,7 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
+				"{@i 7級境界行者特性}",
 				"At 7th level, you learn to step through the Ethereal Plane. As a bonus action, you can cast the {@spell 跨入乙太界} spell with this feature, without expending a spell slot, but the spell ends at the end of the current turn.",
 				"Once you use this feature, you can't use it again until you finish a short or long rest."
 			]
@@ -9583,7 +9673,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"At 11th level, you gain the ability to pass between the planes in the blink of an eye. When you take the {@action Attack} action, you can teleport up to 10 feet before each attack to an unoccupied space you can see.",
+				"{@i 11級境界行者特性}",
+				"At 11th level, you gain the ability to pass between the planes in the blink of an eye. When you take the {@action 攻擊} action, you can teleport up to 10 feet before each attack to an unoccupied space you can see.",
 				"If you attack at least two different creatures with the action, you can make one additional attack with it against a third creature."
 			]
 		},
@@ -9599,6 +9690,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
+				"{@i 15級境界行者特性}",
 				"At 15th level, your ability to move between planes enables you to slip through the planar boundaries to lessen the harm done to you during battle. When you take damage from an attack, you can use your reaction to give yourself resistance to all of that attack's damage on this turn."
 			]
 		},
@@ -9614,7 +9706,7 @@
 			"level": 3,
 			"entries": [
 				"{@note Note that this subclass is intended for use with the Ranger class presented in the Player's Handbook. It is presented here for convenience, and may be unsuitable for use as a Spell-less Ranger subclass.}",
-				"你致力於獵殺那些黑夜中的怪物和邪惡魔法的施行者。一名怪物殺手尋覓著吸血鬼、龍、邪惡精類、邪魔、以及其他魔法威脅。受過用以戰勝這類怪物的超自然技術訓練，怪物殺手精通於找出並擊敗那些強大且神秘的敵人。",
+				"你致力於獵殺那些黑夜中的怪物和邪惡魔法的施行者。一名怪物殺手尋覓着吸血鬼、龍、邪惡精類、邪魔、以及其他魔法威脅。受過用以戰勝這類怪物的超自然技術訓練，怪物殺手精通於找出並擊敗那些強大且神祕的敵人。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "獵人感知|Ranger (Spell-less)|UAModifyingClasses|Monster Slayer|XGE|3"
@@ -9637,8 +9729,9 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得凝視一個生物並以魔法知悉傷害它最佳的方式的能力。以一個動作，選擇一個距離你60呎內且你所能看見的生物。你將立刻知道該生物是否擁有任何傷害免疫、抗性、或是易傷，以及它們的種類。若該生物不受預言系魔法影響，則你感知到的結果將會是它不具有任何傷害免疫、抗性、和易傷。",
-				"你可以使用此能力的次數等同於你的睿知調整值（最少一次）。你在完成一次長休後恢復所有你花費掉的次數。"
+				"{@i 3級怪物殺手特性}",
+				"你獲得凝視一個生物並以魔法知悉傷害它最佳的方式的能力。以一個動作，選擇一個距離你60尺內且你所能看見的生物。你將立刻知道該生物是否擁有任何傷害免疫、抗性、或是易傷，以及它們的種類。若該生物不受預言系魔法影響，則你感知到的結果將會是它不具有任何傷害免疫、抗性、和易傷。",
+				"你可以使用此能力的次數等同於你的感知調整值（最少一次）。你在完成一次長休後恢復所有你花費掉的次數。"
 			]
 		},
 		{
@@ -9653,8 +9746,9 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"從3級開始，你可以專注你的憤怒於單一敵人，增加你對它所造成的傷害。以一個附贈動作，你指定一個距離你60呎內且你所能看見的生物做為此能力的目標。每個回合當你第一次以武器攻擊命中目標時，它將額外受到來自該武器的{@dice 1d6}傷害。",
-				"這個好處將持續直到你完成一次短休或長休，或在你指定另一個不同生物做為目標時提早結束。"
+				"{@i 3級怪物殺手特性}",
+				"你可以專注你的憤怒於單一敵人，增加你對它所造成的傷害。以一個附贈動作，你指定一個距離你60尺內且你所能看見的生物作爲此能力的目標。每個回合當你第一次以武器攻擊命中目標時，它將額外受到來自該武器的{@dice 1d6}傷害。",
+				"這個好處將持續直到你完成一次短休或長休，或在你指定另一個不同生物作爲目標時提早結束。"
 			]
 		},
 		{
@@ -9669,7 +9763,8 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"在7級時，你獲得額外的韌性以抵抗你獵物對你身體和精神所做出的侵襲。每當你殺手獵物所指定的目標強迫你進行一次豁免檢定，或每當你進行一次屬性檢定以嘗試脫離該目標的擒抱，骰{@dice 1d6}並將其加入你的擲骰結果中。"
+				"{@i 7級怪物殺手特性}",
+				"你獲得額外的韌性以抵抗你獵物對你身體和精神所做出的侵襲。每當你殺手獵物所指定的目標強迫你進行一次豁免檢定，或每當你進行一次屬性檢定以嘗試脫離該目標的擒抱，骰{@dice 1d6}並將其加入你的擲骰結果中。"
 			]
 		},
 		{
@@ -9684,7 +9779,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你獲得阻撓其他人魔法的能力。當你看見一個距離你60呎內的生物施放法術或傳送，你可以使用你的反應以嘗試以魔法挫敗它。該生物必須成功通過一次對抗你法術豁免DC的睿知豁免，否則它的法術或傳送將失敗並被浪費。",
+				"{@i 11級怪物殺手特性}",
+				"你獲得阻撓其他人魔法的能力。當你看見一個距離你60尺內的生物施放法術或傳送，你可以使用你的反應以嘗試以魔法挫敗它。該生物必須成功通過一次對抗你法術豁免DC的感知豁免，否則它的法術或傳送將失敗並被浪費。",
 				"一旦你使用此能力，直到你完成一次短休或長休之前你都不能再使用它。"
 			]
 		},
@@ -9700,7 +9796,8 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"在15級時，你獲得在你的獵物嘗試妨害你時展開反擊的能力。若你殺手獵物所指定的目標強迫你進行一次豁免檢定，你可以使用你的反應以對該獵物進行一次武器攻擊。你在進行該豁免檢定之前立刻進行此攻擊。若你的攻擊命中，則除了該攻擊原本的效果之外，你的豁免檢定也將自動成功。"
+				"{@i 15級怪物殺手特性}",
+				"你獲得在你的獵物嘗試妨害你時展開反擊的能力。若你殺手獵物所指定的目標強迫你進行一次豁免檢定，你可以使用你的反應以對該獵物進行一次武器攻擊。你在進行該豁免檢定之前立刻進行此攻擊。若你的攻擊命中，則除了該攻擊原本的效果之外，你的豁免檢定也將自動成功。"
 			]
 		},
 		{
@@ -9942,7 +10039,7 @@
 			"entries": [
 				"{@i 3rd-level Fey Wanderer feature}",
 				"Your fey qualities give you a supernatural charm. As a result, whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier (minimum of +1).",
-				"In addition, you gain proficiency in one of the following skills of your choice: {@skill Deception}, {@skill Performance}, or {@skill Persuasion}."
+				"In addition, you gain proficiency in one of the following skills of your choice: {@skill 欺瞞}, {@skill 表演}, or {@skill 說服}."
 			]
 		},
 		{
@@ -9957,7 +10054,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -9972,8 +10069,8 @@
 			"header": 2,
 			"entries": [
 				"{@i 7th-level Fey Wanderer feature}",
-				"The magic of the Feywild guards your mind. You have advantage on saving throws against being {@condition charmed} or {@condition frightened}.",
-				"In addition, whenever you or a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition charmed} or {@condition frightened}, you can use your reaction to force a different creature you can see within 120 feet of you to make a Wisdom saving throw against your spell save DC. If the save fails, the target is {@condition charmed} or {@condition frightened} by you (your choice) for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
+				"The magic of the Feywild guards your mind. You have advantage on saving throws against being {@condition 魅惑} or {@condition 恐懼}.",
+				"In addition, whenever you or a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition 魅惑} or {@condition 恐懼}, you can use your reaction to force a different creature you can see within 120 feet of you to make a Wisdom saving throw against your spell save DC. If the save fails, the target is {@condition 魅惑} or {@condition 恐懼} by you (your choice) for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save."
 			]
 		},
 		{
@@ -9988,7 +10085,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 11th-level Fey Wanderer feature}",
-				"The royal courts of the Feywild have blessed you with the assistance of fey beings: you know {@spell summon fey|tce}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
+				"The royal courts of the Feywild have blessed you with the assistance of fey beings: you know {@spell 精類召喚術|tce}. It doesn't count against the number of ranger spells you know, and you can cast it without a material component. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.",
 				"Whenever you start casting the spell, you can modify it so that it doesn't require concentration. If you do so, the spell's duration becomes 1 minute for that casting."
 			]
 		},
@@ -10136,7 +10233,7 @@
 						],
 						[
 							"17th",
-							"{@spell 疫病蟲群}"
+							"{@spell 疫病蟲羣}"
 						]
 					]
 				}
@@ -10154,7 +10251,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -10169,7 +10266,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 7th-level Swarmkeeper feature}",
-				"You can condense part of your swarm into a focused mass that lifts you up. As a bonus action, you gain a flying speed of 10 feet and can hover. This effect lasts for 1 minute or until you are {@condition incapacitated}.",
+				"You can condense part of your swarm into a focused mass that lifts you up. As a bonus action, you gain a flying speed of 10 feet and can hover. This effect lasts for 1 minute or until you are {@condition 無力}.",
 				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
 			]
 		},
@@ -10190,7 +10287,7 @@
 					"type": "list",
 					"items": [
 						"The damage of Gathered Swarm increases to {@dice 1d8}.",
-						"If a creature fails its saving throw against being moved by Gathered Swarm, you can also cause the swarm to knock the creature {@condition prone}.",
+						"If a creature fails its saving throw against being moved by Gathered Swarm, you can also cause the swarm to knock the creature {@condition 伏地}.",
 						"When you are moved by Gathered Swarm, it gives you half cover until the start of your next turn."
 					]
 				}
@@ -10289,8 +10386,8 @@
 			"header": 1,
 			"entries": [
 				"{@i 3rd-level Fey Wanderer feature}",
-				"Your experience with the fey has guarded your mind and sharpened your tongue. You have advantage on saving throws against being {@condition charmed} or {@condition frightened}.",
-				"In addition, you gain proficiency in one of the following skills of your choice: {@skill Deception}, {@skill Performance}, or {@skill Persuasion}."
+				"Your experience with the fey has guarded your mind and sharpened your tongue. You have advantage on saving throws against being {@condition 魅惑} or {@condition 恐懼}.",
+				"In addition, you gain proficiency in one of the following skills of your choice: {@skill 欺瞞}, {@skill 表演}, or {@skill 說服}."
 			]
 		},
 		{
@@ -10370,7 +10467,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -10385,7 +10482,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 7th-level Fey Wanderer feature}",
-				"You have learned eerie techniques from both the Gloaming Court and the Summer Court of the Feywild. Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal extra psychic damage. The extra damage is {@damage 3d6} psychic damage and the creature must succeed on a Wisdom saving throw against your spell save DC or be {@condition frightened} of you until the end of your next turn.",
+				"You have learned eerie techniques from both the Gloaming Court and the Summer Court of the Feywild. Once during each of your turns, when you hit a creature with a weapon attack, you can expend a spell slot to deal extra psychic damage. The extra damage is {@damage 3d6} psychic damage and the creature must succeed on a Wisdom saving throw against your spell save DC or be {@condition 恐懼} of you until the end of your next turn.",
 				"In addition, whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier."
 			]
 		},
@@ -10401,11 +10498,11 @@
 			"header": 2,
 			"entries": [
 				"{@i 11th-level Fey Wanderer feature}",
-				"You learn how to manipulate mind-altering magic, channeling it from your allies toward others. Whenever a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition charmed} or {@condition frightened}, you can use your reaction to force a different creature you can see within 120 feet of you to succeed on a Wisdom saving throw against your spell save DC or suffer your choice of one of the following effects:",
+				"You learn how to manipulate mind-altering magic, channeling it from your allies toward others. Whenever a creature you can see within 120 feet of you succeeds on a saving throw against being {@condition 魅惑} or {@condition 恐懼}, you can use your reaction to force a different creature you can see within 120 feet of you to succeed on a Wisdom saving throw against your spell save DC or suffer your choice of one of the following effects:",
 				{
 					"type": "list",
 					"items": [
-						"The creature is {@condition charmed} or {@condition frightened} by you (your choice) for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.",
+						"The creature is {@condition 魅惑} or {@condition 恐懼} by you (your choice) for 1 minute. The creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.",
 						"The creature takes {@damage 3d10} psychic damage."
 					]
 				}
@@ -10524,7 +10621,7 @@
 				"{@i 3rd-level Drakewarden feature}",
 				"You can magically summon the drake bound to you. As an action, you can summon the drake, which appears in an unoccupied space of your choice that you can see within 30 feet of you.",
 				"The drake is friendly to you and your companions and obeys your commands. See its game statistics in the {@creature Drake Companion|UA2020SubclassesPt5} stat block, which uses your proficiency bonus (PB) in several places. When you summon the drake, choose a damage type listed in its Draconic Essence trait. You can determine the cosmetic characteristics of the drake such as its color, scale texture, or any visible effect of its Draconic Essence; your choice has no effect on its game statistics.",
-				"In combat, the drake shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the {@action Dodge} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition incapacitated}, the drake can take any action of its choice, not just {@action Dodge}.",
+				"In combat, the drake shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the {@action 閃避} action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are {@condition 無力}, the drake can take any action of its choice, not just {@action 閃避}.",
 				"Once you summon the drake, you can't do so again until you finish a long rest, unless you expend a spell slot of 1st level or higher to summon it.",
 				"The drake remains for a number of hours equal to your proficiency bonus, until it is reduced to 0 hit points, until you use this feature to summon the drake again, or until you die. Anything the drake was wearing or carrying is left behind when the drake vanishes."
 			]
@@ -10541,7 +10638,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -10706,7 +10803,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -10835,7 +10932,7 @@
 						],
 						[
 							"17th",
-							"{@spell 疫病蟲群}"
+							"{@spell 疫病蟲羣}"
 						]
 					]
 				}
@@ -10853,7 +10950,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -10872,7 +10969,7 @@
 				{
 					"type": "list",
 					"items": [
-						"Your walking speed increases by 10 feet, and you can take the {@action Disengage} action as a bonus action.",
+						"Your walking speed increases by 10 feet, and you can take the {@action 撤離} action as a bonus action.",
 						"You gain a climb speed equal to your walking speed. You can climb difficult surfaces, including upside down on ceilings, without making an ability check.",
 						"You gain a flying speed of 10 feet and can hover."
 					]
@@ -10906,7 +11003,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 11th-level Swarmkeeper feature}",
-				"As an action, you can magically form one of the spirits of your swarm into the shape of a Tiny beast of your choice. The transformation lasts for 1 hour, at which point the spirit disappears. For the duration, the spirit has a speed of 40 feet, which it can use to walk, climb, fly, or swim. The spirit has your senses and telepathically relays what it sees and hears to you. During your turn, you can speak through the spirit, telepathically command it to move, and it can {@action Hide} using your bonus to Dexterity ({@skill Stealth}) checks. The spirit has AC 18. If it takes damage, you must succeed on a Wisdom saving throw (DC equal to 10, or half the damage dealt, whichever is higher) or the spirit disappears.",
+				"As an action, you can magically form one of the spirits of your swarm into the shape of a Tiny beast of your choice. The transformation lasts for 1 hour, at which point the spirit disappears. For the duration, the spirit has a speed of 40 feet, which it can use to walk, climb, fly, or swim. The spirit has your senses and telepathically relays what it sees and hears to you. During your turn, you can speak through the spirit, telepathically command it to move, and it can {@action 躲藏} using your bonus to Dexterity ({@skill 隱匿}) checks. The spirit has AC 18. If it takes damage, you must succeed on a Wisdom saving throw (DC equal to 10, or half the damage dealt, whichever is higher) or the spirit disappears.",
 				"As an action, you can dismiss the spirit early. If you do, you can magically teleport to an unoccupied space within 5 feet of where the spirit disappeared.",
 				"Once you use this feature, you can't do so again until you finish a long rest. You can also use it again by expending a spell slot of 3rd level or higher."
 			]
@@ -10923,7 +11020,7 @@
 			"header": 2,
 			"entries": [
 				"{@i 15th-level Swarmkeeper feature}",
-				"Your swarm can expel a seething storm of spirits that drains life from others. As an action, you create a magical sphere filled with an enraged swarm centered on a point you can see within 120 feet of you. The sphere has a 10-foot-radius and lasts for 1 minute. The sphere is difficult terrain for creatures other than you. A creature other than you that starts its turn in the sphere's area must make a Constitution saving throw against your spell save DC. On a failed save, the creature takes {@damage 2d8} necrotic damage and is {@condition blinded} until the start of its next turn. On a successful save, it takes half as much damage and isn't {@condition blinded}. At the start of your turn, if any number of Small or larger creatures took necrotic damage from the swarm, you regain {@dice 1d8} hit points. On subsequent turns, you can use a bonus action to move the sphere up to 30 feet.",
+				"Your swarm can expel a seething storm of spirits that drains life from others. As an action, you create a magical sphere filled with an enraged swarm centered on a point you can see within 120 feet of you. The sphere has a 10-foot-radius and lasts for 1 minute. The sphere is difficult terrain for creatures other than you. A creature other than you that starts its turn in the sphere's area must make a Constitution saving throw against your spell save DC. On a failed save, the creature takes {@damage 2d8} necrotic damage and is {@condition 目盲} until the start of its next turn. On a successful save, it takes half as much damage and isn't {@condition 目盲}. At the start of your turn, if any number of Small or larger creatures took necrotic damage from the swarm, you regain {@dice 1d8} hit points. On subsequent turns, you can use a bonus action to move the sphere up to 30 feet.",
 				"When you activate this feature, you can choose any number of creatures you can see to be unaffected by it.",
 				"Once you use this feature, you can't do so again until you finish a long rest. You can also use it again by expending a spell slot of 4th level or higher."
 			]
@@ -11046,7 +11143,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -11076,7 +11173,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"At 11th level, you gain the ability to step between the planes in a blink of an eye. When you use the {@action Attack} action, you can teleport up to 10 feet before each attack. You must be able to see the destination of the teleportation.",
+				"At 11th level, you gain the ability to step between the planes in a blink of an eye. When you use the {@action 攻擊} action, you can teleport up to 10 feet before each attack. You must be able to see the destination of the teleportation.",
 				"If you attack at least two different creatures with the action, you can make one additional attack with it against a third creature."
 			]
 		},
@@ -11164,7 +11261,7 @@
 						],
 						[
 							"17th",
-							"{@spell 疫病蟲群}"
+							"{@spell 疫病蟲羣}"
 						]
 					]
 				}
@@ -11181,7 +11278,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"Starting at 3rd level, you gain the ability to temporarily grow and take on the appearance of a treelike person, covered with leaves and bark. As a bonus action, you assume this guardian form, which lasts until you end it as a bonus action or until you are {@condition incapacitated}.",
+				"Starting at 3rd level, you gain the ability to temporarily grow and take on the appearance of a treelike person, covered with leaves and bark. As a bonus action, you assume this guardian form, which lasts until you end it as a bonus action or until you are {@condition 無力}.",
 				"You undergo the following changes while in your guardian form:",
 				{
 					"type": "list",
@@ -11220,7 +11317,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -11276,7 +11373,7 @@
 			"subclassSource": "UATheRangerRevised",
 			"level": 3,
 			"entries": [
-				"許多遊俠在野外比在文明中會更加自在，以至於甚至動物們會將他們視為同類。野獸密會的遊俠們與一頭野獸建立起了緊密的聯繫，並透過魔法進一步強化了這種聯繫。",
+				"許多遊俠在野外比在文明中會更加自在，以至於甚至動物們會將他們視爲同類。野獸密會的遊俠們與一頭野獸創建起了緊密的聯繫，並通過魔法進一步強化了這種聯繫。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "動物夥伴|Ranger (Revised)|UATheRangerRevised|Beast Conclave|UATheRangerRevised|3"
@@ -11299,11 +11396,11 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你習得使用你的魔法以和一頭自然世界中的生物建立一道強大的聯繫。",
-				"藉由8小時的作業以及消耗價值50金幣的稀有草藥和上好食物，你可以從荒野中喚來一頭野獸作為你忠實的夥伴。通常來說，你會從下列動物中選擇你的夥伴：{@creature 猿}、{@creature 黑熊}、{@creature 野豬}、{@creature 巨獾}、{@creature 巨鼬鼠}、{@creature 騾子}、{@creature 黑豹}、或{@creature 狼}。然而，你的DM可能會根據周遭地形環境、並考慮能夠在該區域中合理存在的動物類型，以從這些動物中為你挑選一種。",
+				"在3級時，你習得使用你的魔法以和一頭自然世界中的生物創建一道強大的聯繫。",
+				"藉由8小時的作業以及消耗價值50金幣的稀有草藥和上好食物，你可以從荒野中喚來一頭野獸作爲你忠實的夥伴。通常來說，你會從下列動物中選擇你的夥伴：{@creature 猿}、{@creature 黑熊}、{@creature 野豬}、{@creature 巨獾}、{@creature 巨鼬鼠}、{@creature 騾子}、{@creature 黑豹}或{@creature 狼}。然而，你的DM可能會根據周遭地形環境、並考慮能夠在該區域中合理存在的動物類型，以從這些動物中爲你挑選一種。",
 				"在這8小時的活動結束時，你的動物夥伴將會出現，並獲得所有你動物夥伴聯繫能力所賦予的好處。你同時只能擁有一個動物夥伴。",
-				"若你的動物夥伴被殺死，則你與牠之間的魔法聯繫將讓你得以使牠起死回生。藉由8小時的作業並消耗價值25金幣的稀有草藥和上好食物，你可以喚回你動物夥伴的靈魂並使用你的魔法為牠窗造一具新的身體。你可以透過這個方式將你的動物夥伴起死回生，即使你沒有任何牠的身體部位也一樣。",
-				"若你當下擁有一名動物夥伴，且使用這個能力將你的前一個動物夥伴起死回生，則你當下擁有的動物夥伴將離開你，且由被復活的動物夥伴取而代之。"
+				"若你的動物夥伴被殺死，則你與牠之間的魔法聯繫將讓你得以使牠起死回生。藉由8小時的作業並消耗價值25金幣的稀有草藥和上好食物，你可以喚回你動物夥伴的靈魂並使用你的魔法爲牠窗造一具新的身體。你可以通過這個方式將你的動物夥伴起死回生，即使你沒有任何牠的身體部位也一樣。",
+				"若你當下擁有一名動物夥伴，且使用這個能力將你的前一個動物夥伴起死回生，則你當下擁有的動物夥伴將離開你，且由被複活的動物夥伴取而代之。"
 			]
 		},
 		{
@@ -11325,9 +11422,9 @@
 				"你動物夥伴的能力和遊戲數據將有一部份是由你的等級決定。你的動物夥伴使用你的熟練加值，而非牠自己的。除了原本會使用其熟練加值的部分之外，牠還會將其熟練加值加到牠的AC和傷害骰上。",
 				"你的動物夥伴將熟練於二個你所選擇的技能。牠同時將熟練於所有的豁免檢定。",
 				"在3級之後，你每提升一級，你的動物夥伴都將因此獲得一顆額外的生命骰，且增加牠相應的生命值。",
-				"每當你獲得屬性值提升的職業能力，你動物夥伴的屬性值也將獲得提升。你的動物夥伴可以將一項你所選擇的屬性值提升2點，或著你可以將二項你所選擇的屬性值各提升1點。如同平常一樣，除非另有說明，否則你的動物夥伴不能透過這個能力將一個屬性值提升至20或以上。",
-				"你的動物夥伴擁有與你相同的陣營，且它具有一個個性特質和缺點，你可以從下表中選擇或擲骰決定。你的動物夥伴擁有與你相同的理念，且牠的羈絆永遠是「和我同行的遊俠是我願意為之獻身的摯愛夥伴。」",
-				"你的動物夥伴獲得你的宿敵能力、以及你在6級時獲得的高等宿敵能力所賦予的好處。牠將使用你所選擇的宿敵做為牠的宿敵。",
+				"每當你獲得屬性值提升的職業能力，你動物夥伴的屬性值也將獲得提升。你的動物夥伴可以將一項你所選擇的屬性值提升2點，或着你可以將二項你所選擇的屬性值各提升1點。如同平常一樣，除非另有說明，否則你的動物夥伴不能通過這個能力將一個屬性值提升至20或以上。",
+				"你的動物夥伴擁有與你相同的陣營，且它具有一個個性特質和缺點，你可以從下表中選擇或擲骰決定。你的動物夥伴擁有與你相同的理念，且牠的羈絆永遠是「和我同行的遊俠是我願意爲之獻身的摯愛夥伴。」",
+				"你的動物夥伴獲得你的宿敵能力、以及你在6級時獲得的高等宿敵能力所賦予的好處。牠將使用你所選擇的宿敵作爲牠的宿敵。",
 				{
 					"type": "table",
 					"caption": "動物夥伴特質",
@@ -11354,11 +11451,11 @@
 						],
 						[
 							"4",
-							"人們會將我視為動物並低估我。"
+							"人們會將我視爲動物並低估我。"
 						],
 						[
 							"5",
-							"我有著會在關鍵時刻現身登場的訣竅。"
+							"我有着會在關鍵時刻現身登場的訣竅。"
 						],
 						[
 							"6",
@@ -11448,7 +11545,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你的動物夥伴可以使用牠的動作對每個距離牠5呎內且牠選擇的生物進行一次近戰攻擊，為每個目標進行各自的攻擊檢定。"
+				"在11級時，你的動物夥伴可以使用牠的動作對每個距離牠5尺內且牠選擇的生物進行一次近戰攻擊，爲每個目標進行各自的攻擊檢定。"
 			]
 		},
 		{
@@ -11477,7 +11574,7 @@
 			"subclassSource": "UATheRangerRevised",
 			"level": 3,
 			"entries": [
-				"大部分的人們只會在最急迫情況下，為了執行艱困絕望的任務或尋求巨大的財富，才會鋌而走險進入幽暗地域的深處。通常來說，邪惡總會在這地底深處悄悄滋生，而深域追跡者密會的遊俠們則致力於在這類威脅崛起到地表世界之前就發掘並摧毀它們。",
+				"大部分的人們只會在最急迫情況下，爲了運行艱困絕望的任務或尋求巨大的財富，纔會鋌而走險進入幽暗地域的深處。通常來說，邪惡總會在這地底深處悄悄滋生，而深域追跡者密會的遊俠們則致力於在這類威脅崛起到地表世界之前就發掘並摧毀它們。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "深域追蹤者魔法|Ranger (Revised)|UATheRangerRevised|Deep Stalker Conclave|UATheRangerRevised|3"
@@ -11500,7 +11597,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得90呎範圍的黑暗視覺。若你已經擁有黑暗視覺，則它的範圍將增加30呎。你也在本職業升至3級、5級、9級、13級、和15級時學會額外的法術。當你獲得一個深域追跡者法術時，它對你而言將被視作遊俠法術，但並不會計入你已知遊俠法術的數量中。",
+				"在3級時，你獲得90尺範圍的黑暗視覺。若你已經擁有黑暗視覺，則它的範圍將增加30尺。你也在本職業升至3級、5級、9級、13級、和15級時學會額外的法術。當你獲得一個深域追跡者法術時，它對你而言將被視作遊俠法術，但並不會計入你已知遊俠法術的數量中。",
 				{
 					"type": "table",
 					"caption": "深域追跡者",
@@ -11531,7 +11628,7 @@
 						],
 						[
 							"17th",
-							"{@spell 偽裝術}"
+							"{@spell 僞裝術}"
 						]
 					]
 				}
@@ -11564,7 +11661,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"從5級開始，每當你在你的回合採取{@action 攻擊}動作，你可以攻擊二次，而非一次。"
+				"從5級開始，每當你在自己回合執行{@action 攻擊}動作時，你可以發動兩次攻擊，而非一次。"
 			]
 		},
 		{
@@ -11579,7 +11676,7 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"在7級時，你獲得睿知豁免的熟練。"
+				"在7級時，你獲得感知豁免的熟練。"
 			]
 		},
 		{
@@ -11623,7 +11720,7 @@
 			"subclassSource": "UATheRangerRevised",
 			"level": 3,
 			"entries": [
-				"有些遊俠尋求透過精通武器以更好的從荒野的威脅中守護文明世界。獵人密會的成員學習了特化的戰鬥技巧，用以對抗最可怕的威脅：從狂怒的食人魔、成群的獸人、到高聳的巨人和可怖的巨龍。",
+				"有些遊俠尋求通過精通武器以更好的從荒野的威脅中守護文明世界。獵人密會的成員學習了特化的戰鬥技巧，用以對抗最可怕的威脅：從狂怒的食人魔、成羣的獸人、到高聳的巨人和可怖的巨龍。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "狩者獵物|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|3"
@@ -11642,7 +11739,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在你的每個回合一次，當你進行一次武器攻擊時，你可以使用相同的武器對一個距離原本目標5呎內，且處於你武器射程內的另一個生物進行另一次攻擊。"
+				"在你的每個回合一次，當你進行一次武器攻擊時，你可以使用相同的武器對一個距離原本目標5尺內，且處於你武器射程內的另一個生物進行另一次攻擊。"
 			]
 		},
 		{
@@ -11660,6 +11757,7 @@
 				"在3級時，你獲得下列其中一個你所選擇的能力：巨怪獵者、巨人殺手、或滅族者。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -11689,7 +11787,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"你的執著可以毀滅最強大的敵人。當你以一次武器攻擊命中一個生物，若它的生命值低於最大值，則該生物將受到額外的{@dice 1d8}傷害。你每回合只能造成一次這個額外傷害。"
+				"你的執着可以毀滅最強大的敵人。當你以一次武器攻擊命中一個生物，若它的生命值低於最大值，則該生物將受到額外的{@dice 1d8}傷害。你每回合只能造成一次這個額外傷害。"
 			]
 		},
 		{
@@ -11704,7 +11802,7 @@
 			"level": 3,
 			"header": 2,
 			"entries": [
-				"當一個距離你5呎內，體型為大型或更大的生物對你進行的一次攻擊命中或失手時，只要你可以看見該生物，你就可以使用你的反應以立刻在它的攻擊之後對它進行攻擊。"
+				"當一個距離你5尺內，體型爲大型或更大的生物對你進行的一次攻擊命中或失手時，只要你可以看見該生物，你就可以使用你的反應以立刻在它的攻擊之後對它進行攻擊。"
 			]
 		},
 		{
@@ -11719,7 +11817,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"從5級開始，每當你在你的回合採取{@action 攻擊}動作，你可以攻擊二次，而非一次。"
+				"從5級開始，每當你在自己回合執行{@action 攻擊}動作時，你可以發動兩次攻擊，而非一次。"
 			]
 		},
 		{
@@ -11734,13 +11832,14 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"在7級時，你獲得下列其中一個你所選擇的能力：逃離眾敵、防禦多重攻擊、或鋼鐵意志。",
+				"在7級時，你獲得下列其中一個你所選擇的能力：逃離衆敵、防禦多重攻擊、或鋼鐵意志。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
-							"subclassFeature": "逃離眾敵|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|7"
+							"subclassFeature": "逃離衆敵|Ranger (Revised)|UATheRangerRevised|Hunter Conclave|UATheRangerRevised|7"
 						},
 						{
 							"type": "refSubclassFeature",
@@ -11755,7 +11854,7 @@
 			]
 		},
 		{
-			"name": "逃離眾敵",
+			"name": "逃離衆敵",
 			"ENG_name": "Escape the Horde",
 			"source": "UATheRangerRevised",
 			"page": 93,
@@ -11781,7 +11880,7 @@
 			"level": 7,
 			"header": 2,
 			"entries": [
-				"當一個生物以一次攻擊命中你時，你的AC將對該生物在該回合中所進行的所有後續攻擊獲得+4的加值。"
+				"當一個生物以一次攻擊命中你時，你的AC將對該生物在該回閤中所進行的所有後續攻擊獲得+4的加值。"
 			]
 		},
 		{
@@ -11814,6 +11913,7 @@
 				"在11級時，你獲得下列其中一個你所選擇的能力：箭雨、或劍刃風暴。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -11839,7 +11939,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"你可以使用你的動作以進行一次遠程攻擊，並以處於你武器射程內你所能看見一點的周圍10呎範圍內的任意數量個生物做為目標。你必須有足夠的彈藥以攻擊每個目標，且你為每個目標進行各自的攻擊檢定。"
+				"你可以使用你的動作以進行一次遠程攻擊，並以處於你武器射程內你所能看見一點的周圍10尺範圍內的任意數量個生物作爲目標。你必須有足夠的彈藥以攻擊每個目標，且你爲每個目標進行各自的攻擊檢定。"
 			]
 		},
 		{
@@ -11854,7 +11954,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"你可以使用你的動作以進行一次近戰攻擊，並以距離你5呎內的任意數量個生物做為目標，為每個目標進行各自的攻擊檢定。"
+				"你可以使用你的動作以進行一次近戰攻擊，並以距離你5尺內的任意數量個生物作爲目標，爲每個目標進行各自的攻擊檢定。"
 			]
 		},
 		{
@@ -11869,7 +11969,7 @@
 			"level": 15,
 			"header": 2,
 			"entries": [
-				"你可以靈活地躲開某些範圍效果，像是紅龍的火焰吐息、或{@spell 閃電束}法術。當你成為一個允許你進行敏捷豁免以僅承受一半傷害的效果的目標時，你改為在豁免成功時不受任何傷害，且在豁免失敗時僅承受一半傷害。"
+				"你可以靈活地躲開某些範圍效果，像是紅龍的火焰吐息、或{@spell 閃電束}法術。當你成爲一個允許你進行敏捷豁免以僅承受一半傷害的效果的目標時，你改爲在豁免成功時不受任何傷害，且在豁免失敗時僅承受一半傷害。"
 			]
 		},
 		{
@@ -11902,6 +12002,7 @@
 				"在15級時，你獲得下列其中一個你所選擇的能力：反射閃避、逆潮而立、或直覺閃避。",
 				{
 					"type": "options",
+					"count": 1,
 					"entries": [
 						{
 							"type": "refSubclassFeature",
@@ -11974,7 +12075,7 @@
 			"header": 1,
 			"entries": [
 				"At 3rd level, you master the art of the ambush. You can give yourself a bonus to your initiative rolls equal to your Wisdom modifier.",
-				"At the start of your first turn of each combat, your walking speed increases by 10 feet, which lasts until the end of that turn. If you take the {@action Attack} action on that turn, you can make one additional weapon attack as part of that action. If that attack hits, the target takes an extra {@damage 1d8} damage of the weapon's damage type."
+				"At the start of your first turn of each combat, your walking speed increases by 10 feet, which lasts until the end of that turn. If you take the {@action 攻擊} action on that turn, you can make one additional weapon attack as part of that action. If that attack hits, the target takes an extra {@damage 1d8} damage of the weapon's damage type."
 			]
 		},
 		{
@@ -12020,7 +12121,7 @@
 						],
 						[
 							"17級",
-							"{@spell 偽裝術}"
+							"{@spell 僞裝術}"
 						]
 					]
 				}
@@ -12038,8 +12139,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"At 3rd level, you gain {@sense darkvision} out to a range of 60 feet. If you already have {@sense darkvision} from your race, its range increases by 30 feet.",
-				"You are also adept at evading creatures that rely on {@sense darkvision}. While in darkness, you are {@condition invisible} to any creature that relies on {@sense darkvision} to see you in that darkness."
+				"At 3rd level, you gain {@sense 黑暗視覺} out to a range of 60 feet. If you already have {@sense 黑暗視覺} from your race, its range increases by 30 feet.",
+				"You are also adept at evading creatures that rely on {@sense 黑暗視覺}. While in darkness, you are {@condition 隱形} to any creature that relies on {@sense 黑暗視覺} to see you in that darkness."
 			]
 		},
 		{
@@ -12054,7 +12155,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -12223,7 +12324,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
@@ -12254,7 +12355,7 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"At 11th level, you gain the ability to pass between the planes in the blink of an eye. When you take the {@action Attack} action, you can teleport up to 10 feet before each attack to an unoccupied space you can see.",
+				"At 11th level, you gain the ability to pass between the planes in the blink of an eye. When you take the {@action 攻擊} action, you can teleport up to 10 feet before each attack to an unoccupied space you can see.",
 				"If you attack at least two different creatures with the action, you can make one additional attack with it against a third creature."
 			]
 		},
@@ -12312,8 +12413,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你獲得凝視一個生物並以魔法知悉傷害它最佳的方式的能力。以一個動作，選擇一個距離你60呎內且你所能看見的生物。你將立刻知道該生物是否擁有任何傷害免疫、抗性、或是易傷，以及它們的種類。若該生物不受預言系魔法影響，則你感知到的結果將會是它不具有任何傷害免疫、抗性、和易傷。",
-				"你可以使用此能力的次數等同於你的睿知調整值（最少一次）。你在完成一次長休後恢復所有你花費掉的次數。"
+				"在3級時，你獲得凝視一個生物並以魔法知悉傷害它最佳的方式的能力。以一個動作，選擇一個距離你60尺內且你所能看見的生物。你將立刻知道該生物是否擁有任何傷害免疫、抗性、或是易傷，以及它們的種類。若該生物不受預言系魔法影響，則你感知到的結果將會是它不具有任何傷害免疫、抗性、和易傷。",
+				"你可以使用此能力的次數等同於你的感知調整值（最少一次）。你在完成一次長休後恢復所有你花費掉的次數。"
 			]
 		},
 		{
@@ -12393,7 +12494,7 @@
 			"level": 5,
 			"header": 2,
 			"entries": [
-				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action Attack} action on your turn."
+				"Beginning at 5th level, you can attack twice, instead of once, whenever you take the {@action 攻擊} action on your turn."
 			]
 		},
 		{
