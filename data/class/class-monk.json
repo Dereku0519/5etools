@@ -17,7 +17,7 @@
 			"startingProficiencies": {
 				"weapons": [
 					"simple",
-					"短劍"
+					"{@item shortsword|phb|短劍}"
 				],
 				"tools": [
 					"一種你所選擇的 {@item 工匠工具|PHB} 或 一種你所選擇的 {@item 樂器|PHB}"
@@ -83,7 +83,7 @@
 				"proficienciesGained": {
 					"weapons": [
 						"simple",
-						"短劍"
+						"{@item shortsword|phb|短劍}"
 					]
 				}
 			},
@@ -480,6 +480,15 @@
 					"ENG_shortName": "Shadow",
 					"source": "PHB",
 					"page": 80,
+					"additionalSpells": [
+						{
+							"innate": {
+								"3": [
+									"minor illusion"
+								]
+							}
+						}
+					],
 					"subclassFeatures": [
 						"暗影宗|Monk||Shadow||3",
 						"暗影步|Monk||Shadow||6",
@@ -1009,11 +1018,11 @@
 					"type": "list",
 					"items": [
 						"你可以在徒手打擊和武僧武器中使用敏捷而非力量來計算其攻擊檢定和傷害骰。",
-						"你可以骰一顆{@dice d4}以取代你徒手打擊或武僧武器的傷害。這顆骰子會隨著你提升武僧等級時變化，參見武僧表中的武藝欄位。",
+						"你可以骰一顆{@dice d4}以取代你徒手打擊或武僧武器的傷害。這顆骰子會隨着你提升武僧等級時變化，參見武僧表中的武藝字段。",
 						"當你在你的回合以徒手打擊或一把武僧武器採取{@action 攻擊}動作，你能夠以附贈動作進行一次徒手打擊。舉例來說，若你採取{@action 攻擊}動作並使用{@item 長棍|phb}進行攻擊，只要你在該回合尚未採取附贈動作，你就能夠以一個附贈動作再進行一次徒手打擊。"
 					]
 				},
-				"某些宗派會使用特別外型的武僧武器。舉例來說，你可能使用二截用短鍊相連的木棍（名為雙節棍）、或一個刀刃較短而直的鐮刀（名為單鐮）。"
+				"某些宗派會使用特別外型的武僧武器。舉例來說，你可能使用二截用短煉相連的木棍（名爲雙節棍）、或一個刀刃較短而直的鐮刀（名爲單鐮）。"
 			]
 		},
 		{
@@ -1048,7 +1057,7 @@
 			"classSource": "PHB",
 			"level": 1,
 			"entries": [
-				"從1級開始，當你未穿戴護甲且未持用盾牌時，你的AC等於10 + 你的敏捷調整值 + 你的睿知調整值。"
+				"從1級開始，當你未穿戴護甲且未持用盾牌時，你的AC等於10 + 你的敏捷調整值 + 你的感知調整值。"
 			]
 		},
 		{
@@ -1061,14 +1070,14 @@
 			"level": 2,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 2等武僧{@variantrule optional class features|tce|optional feature}}",
-				"你訓練自己使用各種武器作為武僧武器，而不僅僅是簡易近戰武器和短劍。每當你完成短休或長休時，可以碰觸一件武器，將氣集中在它之中，然後該武器就視為武僧武器，直到你再次使用這個能力。",
+				"{@i 2級武僧 {@variantrule 可選職業特性|tce|可選特性}}",
+				"你訓練自己使用各種武器作爲武僧武器，而不僅僅是簡易近戰武器和短劍。每當你完成短休或長休時，可以碰觸一件武器，將氣集中在它之中，然後該武器就視爲武僧武器，直到你再次使用這個能力。",
 				"所選武器必須符合以下標準：",
 				{
 					"type": "list",
 					"items": [
 						"武器必須是簡易武器或軍用武器。",
-						"你必須擁有其熟練。",
+						"你必須擁有其熟練項。",
 						"不能擁有重型或特殊屬性。"
 					]
 				}
@@ -1084,8 +1093,8 @@
 			"classSource": "PHB",
 			"level": 2,
 			"entries": [
-				"從2級開始，你所受的訓練讓你得以駕馭這被稱為氣的神祕能量。你對於這股能量的掌握體現為你擁有一定數量的氣。你的武僧等級將決定你所擁有的氣的數量，參見武僧表中的氣的欄位。",
-				"你可以消耗這些氣以驅動多種與氣有關能力。你一開始知曉三個這類能力：疾風連擊、堅強防禦、以及飛簷走壁。你將在你於本職業升至特定等級時學到更多與氣有關的能力。",
+				"從2級開始，你所受的訓練讓你得以駕馭這被稱爲氣的神祕能量。你對於這股能量的掌握體現爲你擁有一定數量的氣。你的武僧等級將決定你所擁有的氣的數量，參見武僧表中的氣的字段。",
+				"你可以消耗這些氣以驅動多種與氣有關能力。你一開始知曉三個這類能力：疾風連擊、堅強防禦、以及飛檐走壁。你將在你於本職業升至特定等級時學到更多與氣有關的能力。",
 				"當你消耗一點氣時，直到你完成一次短休或長休前你都無法再使用被消耗的氣，且你將在短休或長休結束的時候恢復所有你花費掉的氣。你必須在休息中花費至少30分鐘的時間冥想才能恢復你的氣。",
 				"某些與氣有關的能力會要求你的目標進行一次豁免檢定對抗該能力的效果。該豁免檢定的DC計算方式如下：",
 				{
@@ -1113,10 +1122,10 @@
 				},
 				{
 					"type": "entries",
-					"name": "飛簷走壁",
+					"name": "飛檐走壁",
 					"ENG_name": "Step of the Wind",
 					"entries": [
-						"你可以在你的回合消耗1點氣以使用一個附贈動作採取{@action 撤離}或{@action 疾走}動作，且你的跳躍距離在該回合變為二倍。"
+						"你可以在你的回合消耗1點氣以使用一個附贈動作採取{@action 撤離}或{@action 疾走}動作，且你的跳躍距離在該回合變爲二倍。"
 					]
 				}
 			]
@@ -1171,8 +1180,8 @@
 			"classSource": "PHB",
 			"level": 2,
 			"entries": [
-				"從2級開始，當你未穿戴護甲或持用盾牌時，你的移動速度增加10呎。這個加值會在你升至特定武僧等級時提升，參見武僧表中的無甲移動欄位。",
-				"在9級時，你獲得在你的回合移動期間，可以沿著垂直表面或橫越水面移動而不至於摔落的能力。"
+				"從2級開始，當你未穿戴護甲或持用盾牌時，你的移動速度增加10尺。這個加值會在你升至特定武僧等級時提升，參見武僧表中的無甲移動字段。",
+				"在9級時，你獲得在你的回合移動期間，可以沿着垂直表面或橫越水面移動而不至於摔落的能力。"
 			]
 		},
 		{
@@ -1186,7 +1195,7 @@
 			"level": 3,
 			"entries": [
 				"從3級開始，當你被一次遠程武器攻擊命中時，你可以使用你的反應以撥擋或抓住該投射物。當你這麼做時，你從該攻擊所受到的傷害將被減少{@dice 1d10} + 你的敏捷調整值 + 你的武僧等級。",
-				"若你將該傷害降低至零，且若該投射物的大小能夠被你單手抓住且你有至少一隻空手，則你可以抓住該投射物。若你透過這個方式抓住一個投射物，你可以消耗1點氣，做為你該次反應的一部份，使用你剛抓到的武器或彈藥進行一次遠程攻擊（範圍20/60）。無論你的武器熟練如何，你都熟練於該次攻擊，且該投射物在此攻擊中被視作武僧武器。"
+				"若你將該傷害降低至零，且若該投射物的大小能夠被你單手抓住且你有至少一隻空手，則你可以抓住該投射物。若你通過這個方式抓住一個投射物，你可以消耗1點氣，作爲你該次反應的一部份，使用你剛抓到的武器或彈藥進行一次遠程攻擊（範圍20/60）。無論你的武器熟練如何，你都熟練於該次攻擊，且該投射物在此攻擊中被視作武僧武器。"
 			]
 		},
 		{
@@ -1199,8 +1208,8 @@
 			"level": 3,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 3等武僧{@variantrule optional class features|tce|optional feature}}",
-				"如果你在你的回合中執行動作時花費了 1 點或更多的氣，則你可以在回合結束前用一個附贈動作以徒手打擊或武僧武器進行一次攻擊。"
+				"{@i 3級武僧 {@variantrule 可選職業特性|tce|可選特性}}",
+				"如果你在你的回合中執行動作時花費了1點或更多的氣，則你可以在回合結束前用1附贈動作以徒手打擊或武僧武器進行一次攻擊。"
 			]
 		},
 		{
@@ -1226,8 +1235,8 @@
 			"classSource": "PHB",
 			"level": 4,
 			"entries": [
-				"當你在此職業升至4級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至4級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -1254,8 +1263,8 @@
 			"level": 4,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 4等武僧{@variantrule optional class features|tce|optional feature}}",
-				"以一個動作，你能消耗 2 點氣並且投擲一顆武藝骰，你恢復等同於擲骰結果加上你的熟練加值的生命值。"
+				"{@i 4級武僧 {@variantrule 可選職業特性|tce|可選特性}}",
+				"以一個動作，你能消耗2點氣並且擲一粒武藝骰，你恢復等同於擲骰結果加上你的熟練加值的生命值。"
 			]
 		},
 		{
@@ -1281,7 +1290,7 @@
 			"classSource": "PHB",
 			"level": 5,
 			"entries": [
-				"從5級開始，每當你在你的回合採取{@action 攻擊}動作，你可以攻擊二次，而非一次。"
+				"從5級開始，每當你在自己回合執行{@action 攻擊}動作時，你可以發動兩次攻擊，而非一次。"
 			]
 		},
 		{
@@ -1294,8 +1303,8 @@
 			"level": 5,
 			"isClassFeatureVariant": true,
 			"entries": [
-				"{@i 5等武僧{@variantrule optional class features|tce|optional feature}}",
-				"當你攻擊檢定未命中時，你可以花費 1 到 3 點氣來使該次攻擊檢定獲得加值，每點氣的消耗能獲得 +2 加值，這可能會使原本未命中的攻擊變為命中。"
+				"{@i 5級武僧 {@variantrule 可選職業特性|tce|可選特性}}",
+				"當你攻擊檢定未命中時，你可以花費1到3點氣來使該次攻擊檢定獲得加值，每點氣的消耗能獲得+2加值，這可能會使原本的未命中改爲命中。"
 			]
 		},
 		{
@@ -1347,7 +1356,7 @@
 			"classSource": "PHB",
 			"level": 7,
 			"entries": [
-				"在7級時，你直覺性的靈活身法讓你能夠躲開某些範圍效果，像是藍龍的閃電吐息、或{@spell 火球術}法術。當你成為一個允許你進行敏捷豁免以僅承受一半傷害的效果的目標時，你改為在豁免成功時不受任何傷害，且在豁免失敗時僅承受一半傷害。"
+				"在7級時，你直覺性的靈活身法讓你能夠躲開某些範圍效果，像是藍龍的閃電吐息、或{@spell 火球術}法術。當你成爲一個允許你進行敏捷豁免以僅承受一半傷害的效果的目標時，你改爲在豁免成功時不受任何傷害，且在豁免失敗時僅承受一半傷害。"
 			]
 		},
 		{
@@ -1373,8 +1382,8 @@
 			"classSource": "PHB",
 			"level": 8,
 			"entries": [
-				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至8級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -1401,7 +1410,7 @@
 			"classSource": "PHB",
 			"level": 9,
 			"entries": [
-				"在9級時，你獲得在你的回合移動期間，可以沿著垂直表面或橫越水面移動而不至於摔落的能力。"
+				"在9級時，你獲得在你的回合移動期間，可以沿着垂直表面或橫越水面移動而不至於摔落的能力。"
 			]
 		},
 		{
@@ -1440,8 +1449,8 @@
 			"classSource": "PHB",
 			"level": 12,
 			"entries": [
-				"當你在此職業升至12級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至12級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -1495,7 +1504,7 @@
 			"classSource": "PHB",
 			"level": 15,
 			"entries": [
-				"在15級時，你體內的氣將維持你免受任何衰老的弊害，且你不會被魔法變老。然而，你仍然會因為衰老而死亡。此外，你將不再需要食物和飲水。"
+				"在15級時，你體內的氣將維持你免受任何衰老的弊害，且你不會被魔法變老。然而，你仍然會因爲衰老而死亡。此外，你將不再需要食物和飲水。"
 			]
 		},
 		{
@@ -1508,8 +1517,8 @@
 			"classSource": "PHB",
 			"level": 16,
 			"entries": [
-				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至16級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -1563,8 +1572,8 @@
 			"classSource": "PHB",
 			"level": 19,
 			"entries": [
-				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或着你可以增加二項自選屬性值各1點。如同平常一樣，你不能通過這個能力將一個屬性值提升至超過20。",
+				"如果你的DM允許使用專長的話，你也可以改爲獲得一個{@5etools 專長|feats.html}。"
 			]
 		},
 		{
@@ -1591,8 +1600,7 @@
 			"classSource": "PHB",
 			"level": 20,
 			"entries": [
-				"當你在此職業升至19級時，你可以增加一項自選屬性值2點，或著你可以增加二項自選屬性值各1點。如同平常一樣，你不能透過這個能力將一個屬性值提升至超過20。",
-				"如果你的DM允許使用專長的話，你也可以改為獲得一個{@5etools 專長|feats.html}。"
+				"在20級時，當你擲先攻時且已經沒有剩下的氣時，你獲得4點氣。"
 			]
 		}
 	],
@@ -1608,8 +1616,8 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"entries": [
-				"你遵循著一個教導你駕馭元素之力的宗派傳統。當你凝神運氣時，你可以使你自己調和於創造和操縱四元素之力，如臂使指般驅使它們。這個宗派的部分成員投身於單一元素，而其它人則將四元素織為一體。",
-				"這個宗派的許多武僧會將他們氣的象徵紋在身上，常見的像是盤龍，或者諸如火鳳、游魚、古木、群山、奔浪等等。",
+				"你遵循着一個教導你駕馭元素之力的宗派傳統。當你凝神運氣時，你可以使你自己調和於創造和操縱四元素之力，如臂使指般驅使它們。這個宗派的部分成員投身於單一元素，而其它人則將四元素織爲一體。",
+				"這個宗派的許多武僧會將他們氣的象徵紋在身上，常見的像是盤龍，或者諸如火鳳、游魚、古木、羣山、奔浪等等。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "元素門徒|Monk||Four Elements||3"
@@ -1632,16 +1640,17 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"當你在3級時選擇此宗派時，你學會駕馭四元素力量的魔法法門。每種法門都會要求你在每次使用它的時候消耗氣。",
+				"{@i 3級四象宗特性}",
+				"你學會駕馭四元素力量的魔法法門。每種法門都會要求你在每次使用它的時候消耗氣。",
 				"你知曉元素調律法門、以及另外一個你所選擇的四象法門。你將在6級、11級、和17級時各學會一個你所選擇的額外四象法門。",
 				"每當你學會一個新的四象法門，你也可以將其中一個你已知的四象法門替換成另一個不同的法門。",
 				{
 					"type": "entries",
 					"name": "施放元素法術",
 					"entries": [
-						"有些四象法門會允許你施放法術。請參閱{@book 第十章|PHB|10}以了解關於施法的通用規則。要施放其中一個這些法術，你使用該法術的施法時間和其他規則，但你不需要為其提供材料構材。",
-						"一旦你在本職業升至5級時，你可以消耗額外的氣以提升你透過四象法門所施放的法術的環階，只要該法術在以更高法術位施放時具有升階效果，例如{@spell 燃燒之手}。你每額外消耗1點氣，就可以使該法術的環階提升1環。舉例來說，若你是一個5級武僧並使用飛焰擊以施放{@spell 燃燒之手}，你可以消耗3點氣以將此法術做為2環法術施放（該法門的基本消耗為2點氣，加上額外的1點）。",
-						"你透過這個方式施放法術時所能消耗的氣的最大值（包括它的基本消耗以及任何你用以提升其環階所消耗的氣）由你的武僧等級決定，如下列的法術與氣表格所示。在5級時，你可以消耗最多3點氣；這個數值會在9級時增加到4點氣；13級時5點；和17級時6點。",
+						"有些四象法門會允許你施放法術。請參閱{@book 第十章|PHB|10}以瞭解關於施法的通用規則。要施放其中一個這些法術，你使用該法術的施法時間和其他規則，但你不需要爲其提供材料構材。",
+						"一旦你在本職業升至5級時，你可以消耗額外的氣以提升你通過四象法門所施放的法術的環階，只要該法術在以更高法術位施放時具有升階效果，例如{@spell 燃燒之手}。你每額外消耗1點氣，就可以使該法術的環階提升1環。舉例來說，若你是一個5級武僧並使用飛焰擊以施放{@spell 燃燒之手}，你可以消耗3點氣以將此法術作爲2環法術施放（該法門的基本消耗爲2點氣，加上額外的1點）。",
+						"你通過這個方式施放法術時所能消耗的氣的最大值（包括它的基本消耗以及任何你用以提升其環階所消耗的氣）由你的武僧等級決定，如下列的法術與氣表格所示。在5級時，你可以消耗最多3點氣；這個數值會在9級時增加到4點氣；13級時5點；和17級時6點。",
 						{
 							"type": "table",
 							"caption": "法術與氣",
@@ -1688,6 +1697,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
+				"{@i 3級四象宗特性}",
 				"這些四象法門將在以下按照等級需求（然後按照字母順序）排列呈現。若某個法門要求特定等級，則你必須在此職業中達到該等級才能夠學習這個法門。",
 				{
 					"type": "options",
@@ -1696,12 +1706,12 @@
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "寒冬之息",
-							"name": "Breath of Winter (17th Level Required)"
+							"name": "寒冬之息（需要 17 級）"
 						},
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "北風之握",
-							"name": "Clench of the North Wind (6th Level Required)"
+							"name": "北風之握（需要 6 級）"
 						},
 						{
 							"type": "refOptionalfeature",
@@ -1713,7 +1723,7 @@
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "蒼山庇佑",
-							"name": "Eternal Mountain Defense (17th Level Required)"
+							"name": "蒼山庇佑（需要 17 級）"
 						},
 						{
 							"type": "refOptionalfeature",
@@ -1725,32 +1735,32 @@
 						},
 						{
 							"type": "refOptionalfeature",
-							"optionalfeature": "Unbroken Air"
+							"optionalfeature": "凝氣剛拳"
 						},
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "鳳凰火",
-							"name": "Flames of the Phoenix (11th Level Required)"
+							"name": "鳳凰火（需要 11 級）"
 						},
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "獅吼功",
-							"name": "Gong of the Summit (6th Level Required)"
+							"name": "獅吼功（需要 6 級）"
 						},
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "雲霧式",
-							"name": "Mist Stance (11th Level Required)"
+							"name": "雲霧式（需要 11 級）"
 						},
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "攀雲步",
-							"name": "Ride the Wind (11th Level Required)"
+							"name": "攀雲步（需要 11 級）"
 						},
 						{
 							"type": "refOptionalfeature",
-							"optionalfeature": "噬燄流",
-							"name": "River of Hungry Flame (17th Level Required)"
+							"optionalfeature": "噬焰流",
+							"name": "噬焰流（需要 17 級）"
 						},
 						{
 							"type": "refOptionalfeature",
@@ -1771,7 +1781,7 @@
 						{
 							"type": "refOptionalfeature",
 							"optionalfeature": "滾石浪",
-							"name": "Wave of Rolling Earth (17th Level Required)"
+							"name": "滾石浪（需要 17 級）"
 						}
 					]
 				}
@@ -1789,7 +1799,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"在6級時，你學會一個你所選擇的額外四象法門。",
+				"{@i 6級四象宗特性}",
+				"你學會一個你所選擇的額外四象法門。",
 				"每當你學會一個新的四象法門，你也可以將其中一個你已知的四象法門替換成另一個不同的法門。"
 			]
 		},
@@ -1805,7 +1816,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你學會一個你所選擇的額外四象法門。",
+				"{@i 11級四象宗特性}",
+				"你學會一個你所選擇的額外四象法門。",
 				"每當你學會一個新的四象法門，你也可以將其中一個你已知的四象法門替換成另一個不同的法門。"
 			]
 		},
@@ -1821,7 +1833,8 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"在17級時，你學會一個你所選擇的額外四象法門。",
+				"{@i 17級四象宗特性}",
+				"你學會一個你所選擇的額外四象法門。",
 				"每當你學會一個新的四象法門，你也可以將其中一個你已知的四象法門替換成另一個不同的法門。"
 			]
 		},
@@ -1857,12 +1870,13 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"從你在3級時選擇此宗派開始，你可以在你駕馭你自己體內氣的同時操作你敵人的氣。當你使用你疾風連擊所賦予的其中一次攻擊命中一個生物時，你可以對該目標強加下列其中一個效果。",
+				"{@i 3級散打宗特性}",
+				"你可以在你駕馭你自己體內氣的同時操作你敵人的氣。當你使用你疾風連擊所賦予的其中一次攻擊命中一個生物時，你可以對該目標強加下列其中一個效果。",
 				{
 					"type": "list",
 					"items": [
 						"它必須成功通過一次敏捷豁免，否則被擊倒{@condition 伏地}。",
-						"它必須進行一次力量豁免。若它豁免失敗，則你可以將它推離你最多15呎距離。",
+						"它必須進行一次力量豁免。若它豁免失敗，則你可以將它推離你最多15尺距離。",
 						"它直到你的下個回合結束前都不能採取反應。"
 					]
 				}
@@ -1881,7 +1895,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"從6級起，你獲得治療你自己的能力。以一個動作，你可以回復等同於你武僧等級三倍的生命值。你必須完成一次長休之後才能再次使用此能力。"
+				"{@i 6級散打宗特性}",
+				"你獲得治療你自己的能力。以一個動作，你可以回覆等同於你武僧等級三倍的生命值。你必須完成一次長休之後才能再次使用此能力。"
 			]
 		},
 		{
@@ -1897,8 +1912,9 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"從11級起，你可以進入一種特別的冥想以使你周遭環繞著一道和平靈光。在一次長休結束時，你將獲得{@spell 聖域術}法術的效果，持續直到你的下一次長休開始（此法術可以和原本一樣被提早結束）。此法術的豁免檢定DC等同於8+你的睿知調整值+你的熟練加值。",
-				"{@spell 聖域術}的效果如下：你守護射程內一個生物不受攻擊。直到法術結束前，以被守護生物為目標進行攻擊或施放危害法術的任何生物都必須先進行一次睿知豁免。若豁免失敗，該生物必須選擇另一個目標，否則該次攻擊或法術失敗。此法術並不會從範圍效果中保護被守護的生物，像是{@spell 火球術}。",
+				"{@i 11級散打宗特性}",
+				"你可以進入一種特別的冥想以使你周遭環繞着一道和平靈光。在一次長休結束時，你將獲得{@spell 聖域術}法術的效果，持續直到你的下一次長休開始（此法術可以和原本一樣被提早結束）。此法術的豁免檢定DC等同於8 + 你的感知調整值 + 你的熟練加值。",
+				"{@spell 聖域術}的效果如下：你守護射程內一個生物不受攻擊。直到法術結束前，以被守護生物爲目標進行攻擊或施放危害法術的任何生物都必須先進行一次感知豁免。若豁免失敗，該生物必須選擇另一個目標，否則該次攻擊或法術失敗。此法術並不會從範圍效果中保護被守護的生物，像是{@spell 火球術}。",
 				"若被守護的生物進行一次攻擊、施放一個會影響敵人的法術、或對另一個生物造成傷害，則此法術結束。"
 			]
 		},
@@ -1915,7 +1931,8 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"從17級起，你獲得在某人體內製造致命震顫的能力。當你以徒手打擊命中一個生物時，你可以消耗3點氣以讓這陣難以察覺的震動在目標體內開始鼓動，持續等同於你武僧等級的天數。這陣震動是無害的，直到你使用你的動作以結束它。若要這麼做，你與目標必須處於相同的存在位面。當你使用這個動作時，該生物必須進行一次體質豁免。若豁免失敗，則它的生命值歸零。若豁免成功，則它將受到{@dice 10d10}死靈傷害。",
+				"{@i 17級散打宗特性}",
+				"你獲得在某人體內製造致命震顫的能力。當你以徒手打擊命中一個生物時，你可以消耗3點氣以讓這陣難以察覺的震動在目標體內開始鼓動，持續等同於你武僧等級的天數。這陣震動是無害的，直到你使用你的動作以結束它。若要這麼做，你與目標必須處於相同的存在位面。當你使用這個動作時，該生物必須進行一次體質豁免。若豁免失敗，則它的生命值歸零。若豁免成功，則它將受到{@dice 10d10}黯蝕傷害。",
 				"你只能同時讓一個生物處於此能力的效果之下。你也可以選擇無害的結束這陣震動，而無須使用動作。"
 			]
 		},
@@ -1930,7 +1947,7 @@
 			"subclassSource": "PHB",
 			"level": 3,
 			"entries": [
-				"暗影宗的武僧們遵循著崇尚隱匿和詭計的傳統。這些武僧也可以被稱作忍者或是影舞者，並擔當間諜和刺客的工作。有時一個忍者宗派的成員彼此都是家族成員，他們形成一個氏族，誓言將他們技藝與任務隱藏於黑暗中。至於其他宗派則可能更像是盜賊公會，提供他們的服務給貴族、富商、或任何付得起價格的對象。無論他們方式如何，這些宗派的首領都要求下屬無條件的服從他們。",
+				"暗影宗的武僧們遵循着崇尚隱匿和詭計的傳統。這些武僧也可以被稱作忍者或是影舞者，並擔當間諜和刺客的工作。有時一個忍者宗派的成員彼此都是家族成員，他們形成一個氏族，誓言將他們技藝與任務隱藏於黑暗中。至於其他宗派則可能更像是盜賊公會，提供他們的服務給貴族、富商、或任何付得起價格的對象。無論他們方式如何，這些宗派的首領都要求下屬無條件的服從他們。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "影之技藝|Monk||Shadow||3"
@@ -1949,7 +1966,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"從你在3級時選擇此宗派開始，你可以使用你的氣以複製特定法術的效果。以一個動作，你可以消耗2點氣以施放{@spell 黑暗術}、{@spell 黑暗視覺}、{@spell 行蹤無跡}、或{@spell 沉默術}，且無須提供材料構材。此外，若你尚未知曉{@spell 次級幻象}戲法，則你將習得它。"
+				"{@i 3級暗影宗特性}",
+				"你可以使用你的氣以拷貝特定法術的效果。以一個動作，你可以消耗2點氣以施放{@spell 黑暗術}、{@spell 黑暗視覺}、{@spell 行蹤無跡}或{@spell 沉默術}，且無須提供材料構材。此外，若你尚未知曉{@spell 次級幻象}戲法，則你將習得它。"
 			]
 		},
 		{
@@ -1964,7 +1982,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"從6級開始，你獲得穿梭於陰影之間的能力。當你處於微光光照或黑暗環境時，以一個附贈動作，你可以傳送最多60呎距離到一處你所能看見，且同樣處於微光光照或黑暗環境的未被佔據空間。接著你在該回合結束前所進行的第一次近戰攻擊檢定中具有優勢。"
+				"{@i 6級暗影宗特性}",
+				"你獲得穿梭於陰影之間的能力。當你處於微光光照或黑暗環境時，以一個附贈動作，你可以傳送最多60尺距離到一處你所能看見，且同樣處於微光光照或黑暗環境的未被佔據空間。接着你在該回合結束前所進行的第一次近戰攻擊檢定中具有優勢。"
 			]
 		},
 		{
@@ -1979,7 +1998,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"從11級起，你學會如何與陰影融為一體。當你處於微光光照或黑暗環境時，你可以使用你的動作以變得{@condition 隱形}。你保持{@condition 隱形}狀態直到你進行一次攻擊、施放法術、或處於明亮光照的區域。"
+				"{@i 11級暗影宗特性}",
+				"你學會如何與陰影融爲一體。當你處於微光光照或黑暗環境時，你可以使用你的動作以變得{@condition 隱形}。你保持{@condition 隱形}狀態直到你進行一次攻擊、施放法術、或處於明亮光照的區域。"
 			]
 		},
 		{
@@ -1994,7 +2014,8 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"在17級時，你可以利用一個生物被攻擊命中時所產生的瞬間分神。當一個距離你5呎內的生物被除你以外的另一個生物的攻擊命中，你可以使用你的反應以對該生物進行一次近戰攻擊。"
+				"{@i 17級暗影宗特性}",
+				"你可以利用一個生物被攻擊命中時所產生的瞬間分神。當一個距離你5尺內的生物被除你以外的另一個生物的攻擊命中，你可以使用你的反應以對該生物進行一次近戰攻擊。"
 			]
 		},
 		{
@@ -2027,7 +2048,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"從你在3級時選擇此宗派開始，你對於死亡的研究讓你得以在另一個生物瀕臨死亡時抽取它的生命力。當你將一個距離你5呎內的生物的生命值歸零時，你將獲得等同於你睿知調整值+你武僧等級的臨時生命值（最少1點臨時生命值）。"
+				"{@i 3級永亡宗特性}",
+				"你對於死亡的研究讓你得以在另一個生物瀕臨死亡時抽取它的生命力。當你將一個距離你5尺內的生物的生命值歸零時，你將獲得等同於你感知調整值 + 你武僧等級的臨時生命值（最少1點臨時生命值）。"
 			]
 		},
 		{
@@ -2042,7 +2064,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"在6級時，由於你的靈魂已經被死亡的陰影所影響，你得到以一個動作讓你周遭人們動搖或恐懼的能力。當你採取這個動作時，每個距離你30呎內且能看見你的生物必須成功通過一次睿知豁免，否則被你{@condition 恐懼}直到你的下個回合結束。"
+				"{@i 6級永亡宗特性}",
+				"由於你的靈魂已經被死亡的陰影所影響，你得到以一個動作讓你周遭人們動搖或恐懼的能力。當你採取這個動作時，每個距離你30尺內且能看見你的生物必須成功通過一次感知豁免，否則被你{@condition 恐懼}直到你的下個回合結束。"
 			]
 		},
 		{
@@ -2057,7 +2080,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"從11級開始，你利用你對死亡的熟悉以逃離它的魔掌。當你的生命值被歸零時，你可以消耗1點氣（無須動作）以改為保有1點生命值。"
+				"{@i 11級永亡宗特性}",
+				"你利用你對死亡的熟悉以逃離它的魔掌。當你的生命值被歸零時，你可以消耗1點氣（無須動作）以改爲保有1點生命值。"
 			]
 		},
 		{
@@ -2072,7 +2096,8 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"從17級開始，你的觸碰可以將死亡的能量導入一個生物體內。以一個動作，你觸碰一個距離你5呎內的生物，且你消耗1到10點氣。目標必須進行一次體質豁免，若該豁免失敗則受到每一點被消耗的氣{@dice 2d10}的死靈傷害，豁免成功則只受到一半的傷害。."
+				"{@i 17級永亡宗特性}",
+				"你的觸碰可以將死亡的能量導入一個生物體內。以一個動作，你觸碰一個距離你5尺內的生物，且你消耗1到10點氣。目標必須進行一次體質豁免，若該豁免失敗則受到每一點被消耗的氣{@dice 2d10}的黯蝕傷害，豁免成功則只受到一半的傷害。."
 			]
 		},
 		{
@@ -2086,7 +2111,7 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"entries": [
-				"一個遵循星我宗的武僧相信他們的肉身只是一種幻像，他們把氣視為他們真實形態的代表，即為星我。星我這個形態，用之以善則正，用之以惡則邪，一些宗派訓練學徒使用他們的力量來保護弱者，還有的宗派則教導那些欲追名逐利的學徒在為上位者服務時，能展現他們的真我。",
+				"一個遵循星我宗的武僧相信他們的身體是一種幻覺，他們把氣視爲他們真實形態的代表，即爲星我。星我這個形態，用之以善則正，用之以惡則邪，一些宗派訓練學徒使用他們的力量來保護弱者，還有的宗派則教導那些欲追名逐利的學徒在爲上位者服務時，能展現他們的真我。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "你的星我形態|Monk||Astral Self|TCE|3"
@@ -2109,16 +2134,16 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3等星我宗職業能力}",
-				"你對氣的掌握允許你召喚出星我的一部分。以一個附贈動作，你可以花費 1 點氣來召喚你的星我之臂，當你這麼做時，你選擇的每一個你所見的 10 呎範圍內的生物必須進行一次敏捷豁免檢定，如果失敗則受到相當於你兩倍武藝骰的力場傷害。",
-				"在 10 分鐘內，這些幽光般的手臂會盤旋在你的肩膀附近或環繞著你的手臂（由你選擇），你來決定手臂們的外觀，如果你陷入{@condition 無力}狀態或死亡，它們就會立即消失。",
+				"{@i 3級星我宗特性}",
+				"你對氣的掌握允許你召喚出星我的一部分。以一個附贈動作，你可以花費1點氣來召喚你的星我之臂，當你這麼做時，你選擇的每一個你所見的10尺範圍內的生物必須進行一次敏捷豁免檢定，如果失敗則受到相當於你兩倍武藝骰的力場傷害。",
+				"在10分鐘內，這些幽光般的手臂會盤旋在你的肩膀附近或環繞着你的手臂（由你選擇），你來決定手臂們的外觀，如果你{@condition 無力}或死亡，它們就會立即消失。",
 				"當星我之臂出現時，你將獲得如下增益：",
 				{
 					"type": "list",
 					"items": [
-						"你進行力量檢定和力量豁免檢定時，可以用你的感知調整值來代替力量調整值。",
+						"你進行力量檢定和力量豁免檢定時，可以用你的感知調整值來代替力量力量調整值。",
 						"你可以用星我之臂進行徒手攻擊。",
-						"當你在自己回合用星我之臂進行徒手攻擊時，你的觸及範圍增加 5 尺。",
+						"當你在自己回合用星我之臂進行徒手攻擊時，你的觸及範圍增加5尺。",
 						"當你用星我之臂進行徒手攻擊時，可以用感知調整值代替力量或敏捷調整值來進行攻擊檢定和傷害檢定，它們的傷害類型是力場。"
 					]
 				}
@@ -2137,7 +2162,7 @@
 			"header": 1,
 			"type": "inset",
 			"entries": [
-				"星我是武僧精神與靈魂的半透明化身。因此，星我的形態會展現出武僧的背景、理想、牽絆和缺點，而且星我並不一定看起來像武僧一樣。例如，一個瘦長的人的星我可能會讓人聯想到牛頭人，這代表著那名武僧內心所感受到的力量；同樣，一個獸人武僧可能會表現出絲般嫩滑的手臂和精緻的面容，這代表著獸人內心深處的溫柔。每一個星我都是獨一無二的，而這一宗派的武僧們更為人所知的是他們的星我外表，而非他們自己的外表。",
+				"星我是武僧精神與靈魂的半透明化身。因此，星我的形態會展現出武僧的背景、理想、牽絆和缺點，而且星我並不一定看起來像武僧一樣。例如，一個瘦長的人的星我可能會讓人聯想到牛頭人\u2014\u2014這代表着武僧內心所感受到的力量；同樣，一個獸人武僧可能會表現出絲般嫩滑的手臂和精緻的面容\u2014\u2014這代表着獸人內心深處的溫柔。每一個星我都是獨一無二的，而這一宗派的武僧們更爲人所知的是他們的星我外表，而非他們自己的外表。",
 				"當你選擇這一宗派時，仔細考慮一下能定義你武僧特質的怪癖。他們是否對某種東西充滿迷戀？驅使你的動力是正義還是私慾？所有這些特質都可以在你的星我形態上有所體現。"
 			]
 		},
@@ -2153,16 +2178,16 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"{@i 6等星我宗職業能力}",
-				"你可以召喚你的星我之容，以一個附贈動作，或者作為你召喚星我之臂時的附贈動作中的一部分，你可以花費 1 點氣來召喚星我之容，持續 10 分鐘，如果你陷入{@condition 無力}狀態或死亡，它們就會立即消失。",
-				"幽光般的頭盔或面具遮擋著你的臉，你來決定它的外觀。",
-				"當星我之容存在時，你將獲得如下增益：",
+				"{@i 6級星我宗特性}",
+				"你可以召喚你的星我之容，以一個附贈動作，或者作爲你召喚星我之臂時的附贈動作中的一部分，你可以花費1點氣來召喚星我之容，持續10分鐘，如果你失能或死亡，則它會立即消失。",
+				"幽光般的頭盔或面具遮擋着你的臉，你來決定它的外觀。",
+				" 當星我之容存在時，你將獲得如下增益：",
 				{
 					"type": "entries",
 					"name": "星之視覺",
 					"ENG_name": "Astral Sight",
 					"entries": [
-						"你在黑暗中擁有 120 尺的可視距離，無論其屬於魔法黑暗還是非魔法黑暗。"
+						"你在黑暗中擁有120尺的可視距離，而無論其屬於魔法黑暗還是非魔法黑暗。"
 					]
 				},
 				{
@@ -2170,7 +2195,7 @@
 					"name": "靈魂感知",
 					"ENG_name": "Wisdom of the Spirit",
 					"entries": [
-						"你的睿智（{@skill 感知}）和魅力（{@skill 威嚇}）檢定具有優勢。"
+						"你的感知（{@skill 洞悉}）和魅力（{@skill 威嚇}）檢定具有優勢。"
 					]
 				},
 				{
@@ -2178,7 +2203,7 @@
 					"name": "靈魂之語",
 					"ENG_name": "Word of the Spirit",
 					"entries": [
-						"當你說話時，你可以將你的話語指向你選擇的一個 60 呎範圍內的可視生物，這種情況下只有這個生物才能聽到你的聲音。或者你可以放大你的聲音，這種情況下 600 尺內的所有生物都能聽到你的聲音。"
+						"當你說話時，你可以將你的話語指向你選擇的一個60尺範圍內的可視生物，這種情況下只有這個生物才能聽到你的聲音。 或者你可以放大你的聲音，這種情況下600尺內的所有生物都能聽到你的聲音。"
 					]
 				}
 			]
@@ -2195,23 +2220,21 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"{@i 11等星我宗職業能力}",
-				"當你同時召喚星我之臂和星我之容時，你可以讓你的星我之軀出現（不需要任何動作），這個幽光般的軀體如同一件盔甲般覆蓋著你的身體，與星我之臂和星我之容相連。你來決定它的外觀。",
+				"{@i 11級星我宗特性}",
+				"當你同時召喚星我之臂和星我之容時，你可以讓你的星我之軀出現（不需要任何動作），這個幽光般的軀體如同一件盔甲般覆蓋着你的身體，與星我之臂和星我之容相連。你來決定它的外觀。",
 				"當星我之軀出現時，你將獲得如下增益：",
 				{
 					"type": "entries",
 					"name": "撥擋能量",
-					"ENG_name": "Deflect Energy",
 					"entries": [
-						"當你受到強酸、冷凍、火焰、力場、閃電或雷鳴傷害時，你可以用你的反應來偏轉它，如果你這麼做，則你所受的該次傷害減少 {@dice 1d10} + 你的睿智調整值（最低減少 1 點）。"
+						"當你受到強酸、冷凍、火焰、力場、閃電或雷鳴傷害時，你可以用你的反應來偏轉它，如果你這麼做，則你所受的該次傷害減少{@dice 1d10} + 你的感知調整值（最小減少1）。"
 					]
 				},
 				{
 					"type": "entries",
 					"name": "注能之臂",
-					"ENG_name": "Empowered Arms",
 					"entries": [
-						"你的每回合中有一次機會，當你用星我之臂攻擊命中目標時，你可以對目標造成額外傷害，相當於你的武藝骰。"
+						"你的每回閤中有一次機會，當你用星我之臂攻擊命中目標時，你可以對目標造成等同於你的武藝骰的額外傷害。"
 					]
 				}
 			]
@@ -2228,23 +2251,21 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"{@i 17等星我宗職業能力}",
-				"你與星我之間的連接趨近完美，你能夠釋放它的全部潛能。以一個附贈動作，你可以花費 5 點氣同時召喚你的星我之臂、星我之容和星我之軀，這種星我覺醒狀態持續 10 分鐘，如果你陷入{@condition 無力}狀態或死亡，這種覺醒狀態會提前結束。",
+				"{@i 17級星我宗特性}",
+				"你與星我之間的連接趨近完美，你能夠釋放它的全部潛能。以一個附贈動作，你可以花費5點氣召喚你的星我之臂、星我之容和星我之軀，這種星我覺醒狀態持續10分鐘，如果你{@condition 無力}或死亡，這種覺醒狀態會提前結束。",
 				"當你處於星我覺醒時，你將獲得如下增益：",
 				{
 					"type": "entries",
-					"name": "靈魂護甲",
-					"ENG_name": "Armor of the Spirit",
+					"name": "靈魂盔甲",
 					"entries": [
-						"你的 AC 獲得+2加值。"
+						"你的AC獲得+2加值。"
 					]
 				},
 				{
 					"type": "entries",
 					"name": "星之連擊",
-					"ENG_name": "Astral Barrage",
 					"entries": [
-						"當你使用額外攻擊特性進行兩次攻擊時，可以改為三次攻擊，所有的攻擊必須都是星我之臂進行的。"
+						"當你使用額外攻擊特性進行兩次攻擊時，可以改爲三次攻擊，所有的攻擊必須都是星我之臂進行的。"
 					]
 				}
 			]
@@ -2260,9 +2281,9 @@
 			"subclassSource": "TCE",
 			"level": 3,
 			"entries": [
-				"命流宗的武僧們習得了如何操縱他人的生命能量來幫助那些需要幫助的人。他們四處流浪，為窮人和傷員提供醫療。然而，對於那些無可救藥之人——無論是生性邪惡，還是病入膏肓——他們施予仁慈的方式會改變為給個痛快。",
-				"那些遵循命流之道的人可能是一名謙卑的教會成員，施予他人最需要的幫助，做出植根於現實而非理想的嚴峻抉擇。可能是和顏悅色的治療師，受到所住社區的喜愛。而還有一些可能是帶來痛快之死的蒙面人。",
-				"命流宗的人通常穿著簡單的長袍，戴著厚厚的頭巾，常常用面具遮住自己的臉，把自己表現成一名無貌的生死判官。如果你戴著面具，請選擇它的外觀，或利用命流面具表格通過擲骰來決定。",
+				"命流宗的武僧們習得了如何操縱他人的生命能量來幫助那些需要幫助的人。他們四處流浪，爲窮人和傷員提供醫療。然而，對於那些無可救藥之人\u2014\u2014無論是生性邪惡，還是病入膏肓\u2014\u2014他們施予仁慈的方式會改變爲給個痛快。",
+				"那些遵循命流之道的人可能是一名謙卑的教會成員，施予他人最需要的幫助，做出植根於現實而非理想的嚴峻抉擇。一些T人可能是和顏悅色的治療師，受到所住社區的喜愛，而另一些可能是帶來痛快之死的蒙面人。",
+				"命流宗的人通常穿着簡單的長袍，戴着厚厚的頭巾，常常用面具遮住自己的臉，把自己表現成一名無貌的生死判官。如果你戴着面具，請選擇它的外觀，或利用命流面具表格通過擲骰來決定。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "命流之器|Monk||Mercy|TCE|3"
@@ -2289,8 +2310,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3等命流宗職業能力}",
-				"你能用氣來造成傷害。當你用徒手攻擊命中一個生物時，可以花費 1 點氣來額外造成等於 1 個你的武藝骰+睿智調整值的黯蝕傷害。每回合你只能使用此特性一次。"
+				"{@i 3級命流宗特性}",
+				"你能用氣來造成傷害。當你用徒手攻擊命中一個生物時，可以花費1點氣來額外造成等於1個你的武藝骰 + 你的感知調整值的黯蝕傷害。每回合你能使用該特性一次。"
 			]
 		},
 		{
@@ -2305,9 +2326,9 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3等命流宗職業能力}",
-				"你的玄秘之觸能夠癒合傷口。以一個動作，你能花費 1 點氣來接觸一個生物，恢複目標 1 個你的武藝骰+睿智調整值數量的生命值。",
-				"當你使用疾風連擊時，你能在不消耗氣的情況下用此特性替代其中一次徒手攻擊。"
+				"{@i 3級命流宗特性}",
+				"你的玄祕之觸能夠癒合傷口。以一個動作，你能花費1點氣來接觸一個生物，恢復目標1個你的武藝骰 + 你的感知調整值數量的生命值。",
+				"當你使用疾風連擊時，你能在不消耗氣的情況下用此特性替換一次徒手攻擊。"
 			]
 		},
 		{
@@ -2322,15 +2343,15 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3等命流宗職業能力}",
-				"你獲得{@skill 感知}和{@skill 醫藥}的技能熟練，而且你獲得{@item 藥草師工具組|PHB}的熟練。",
-				"你還會獲得一個特殊的面具，當你使用這個宗派的特性時，你通常會戴著它。你可以自由決定它的外觀，或者通過命流面具表來擲骰隨機決定。",
+				"{@i 3級命流宗特性}",
+				"你獲得{@skill 洞悉}和{@skill 醫藥}技能熟練項，以及你獲得{@item 草藥工具|PHB}的熟練項。",
+				"你還可以獲得一個特殊的面具，當你使用這個子職的特性時，你通常會戴着它。你可以自由決定它的外觀，或者通過命流面具表來投骰隨機決定。",
 				{
 					"type": "table",
-					"caption": "Merciful Mask",
+					"caption": "命流面具",
 					"colLabels": [
 						"d6",
-						"命流面具"
+						"面具外形"
 					],
 					"colStyles": [
 						"col-2 text-center",
@@ -2377,9 +2398,9 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"{@i 6等命流宗職業能力}",
+				"{@i 6級命流宗特性}",
 				"你可以通過接觸來進行更有效的治療，你也可以利用你的知識來造成傷害。",
-				"當你對一個生物使用予命之手時，你還可以結束一種疾病或影響該生物的下列狀態之一：{@condition 目盲}, {@condition 耳聾}, {@condition 麻痺}, {@condition 中毒} 或 {@condition 震懾}。",
+				"當你對一個生物使用予命之手時，你還可以結束一種疾病或影響該生物的下列狀態之一： {@condition 目盲}，{@condition 耳聾}，{@condition 麻痹}，{@condition 中毒}或{@condition 震懾}。",
 				"當你對一個生物使用奪命之手時，你可以使該生物處於{@condition 中毒}狀態，直到你的下一回合結束。"
 			]
 		},
@@ -2395,9 +2416,9 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"{@i 11等命流宗職業能力}",
+				"{@i 11級命流宗特性}",
 				"你現在能施以疾風般的治療與傷害。當你使用疾風連擊時，你現在可以用你的予命之手代替每一次徒手打擊，而不用花費氣來治療。",
-				"另外，當你進行疾風連擊的徒手攻擊時，你可以使用奪命之手進行攻擊，而不必花費奪命之手所需的氣，你仍然在每回合只能使用奪命之手一次。"
+				"另外，當你用疾風連擊進行徒手攻擊時，你可以使用奪命之手進行攻擊，而不必花費奪命之手所須的氣，你仍然在每回合只能使用奪命之手一次。"
 			]
 		},
 		{
@@ -2412,9 +2433,9 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"{@i 17等命流宗職業能力}",
-				"你對生命能量的掌握打開了通往命流奧義的大門，以一個動作，你可以接觸一個在過去 24 小時內死亡生物的屍體並消耗 5 點氣，該生物則會復活，恢復相當於 {@dice 4d10} + 你的感知調整值的生命值。如果該生物是在以下{@condition 麻痺}, {@condition 目盲}, {@condition 耳聾}, {@condition 中毒} 和 {@condition 震懾}狀態時死亡，它會在移除這些狀態後復活。",
-				"一旦你使用了這個特性，直至你完成一次長休之前你都不能再使用它。"
+				"{@i 17級命流宗特性}",
+				" 你對生命能量的掌握打開了通往命流奧義的大門，以一個動作，你可以接觸一個在過去24小時內死亡生物的屍體並消耗5點氣，該生物則會復活，恢復相當於{@dice 4d10} + 你的感知調整值的生命值。如果該生物是在以下這些狀態時死亡，它會在移除這些狀態後復活：{@condition 目盲}，{@condition 耳聾}，{@condition 麻痹}，{@condition 中毒}和{@condition 震懾}。",
+				"一旦你使用了這個特性，你就不能再使用它，直至你完成一次長休。"
 			]
 		},
 		{
@@ -2492,8 +2513,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3等命流宗職業能力}",
-				"You use your ki to inflict wounds. When you hit a creature with an unarmed strike, you can spend 1 ki point to deal extra necrotic damage equal to one roll of your Martial Arts die. If the creature is {@condition incapacitated} or {@condition poisoned}, the creature instead takes necrotic damage equal to three rolls of your Martial Arts die instead. You can use this feature only once on each of your turns."
+				"{@i 3rd-level Way of Mercy feature}",
+				"You use your ki to inflict wounds. When you hit a creature with an unarmed strike, you can spend 1 ki point to deal extra necrotic damage equal to one roll of your Martial Arts die. If the creature is {@condition 無力} or {@condition 中毒}, the creature instead takes necrotic damage equal to three rolls of your Martial Arts die instead. You can use this feature only once on each of your turns."
 			]
 		},
 		{
@@ -2507,7 +2528,7 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3等命流宗職業能力}",
+				"{@i 3rd-level Way of Mercy feature}",
 				"Your mystical touch can mend wounds. As an action, you can spend 1 ki point to touch a creature and restore a number of hit points equal to a roll of your Martial Arts die + your Wisdom modifier.",
 				"When you use your Flurry of Blows, you can replace one of the unarmed strikes with a use of this feature without spending its ki cost."
 			]
@@ -2523,8 +2544,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"{@i 3等命流宗職業能力}",
-				"You gain proficiency in the {@skill Insight} or {@skill Medicine} skill (your choice), and you gain proficiency with the {@item herbalism kit|phb} and the {@item poisoner's kit|phb}."
+				"{@i 3rd-level Way of Mercy feature}",
+				"You gain proficiency in the {@skill 洞悉} or {@skill 醫療} skill (your choice), and you gain proficiency with the {@item herbalism kit|phb} and the {@item poisoner's kit|phb}."
 			]
 		},
 		{
@@ -2538,9 +2559,9 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"{@i 6等命流宗職業能力}",
-				"As a bonus action, you spend 1 ki point to turn your ki into an aura of toxic miasma. The aura extends 5 feet from you in every direction, but not through total cover. It lasts for 1 minute, until you're {@condition incapacitated}, or you dismiss it (no action required).",
-				"While your aura is active, ranged attacks have disadvantage against you. Any other creature that starts its turn in the aura must succeed on a Constitution saving throw or become {@condition poisoned} until the end of your next turn and take poison damage equal to your Wisdom modifier (minimum of 0 damage)."
+				"{@i 6th-level Way of Mercy feature}",
+				"As a bonus action, you spend 1 ki point to turn your ki into an aura of toxic miasma. The aura extends 5 feet from you in every direction, but not through total cover. It lasts for 1 minute, until you're {@condition 無力}, or you dismiss it (no action required).",
+				"While your aura is active, ranged attacks have disadvantage against you. Any other creature that starts its turn in the aura must succeed on a Constitution saving throw or become {@condition 中毒} until the end of your next turn and take poison damage equal to your Wisdom modifier (minimum of 0 damage)."
 			]
 		},
 		{
@@ -2554,8 +2575,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"{@i 11等命流宗職業能力}",
-				"Your skill in manipulating your ki to heal increases. When you restore hit points to a creature using your Hands of Healing, you can also end one disease or a condition from the following list affecting the target: {@condition blinded}, {@condition deafened}, {@condition paralyzed}, or {@condition poisoned}."
+				"{@i 11th-level Way of Mercy feature}",
+				"Your skill in manipulating your ki to heal increases. When you restore hit points to a creature using your Hands of Healing, you can also end one disease or a condition from the following list affecting the target: {@condition 目盲}, {@condition 耳聾}, {@condition 麻痹}, or {@condition 中毒}."
 			]
 		},
 		{
@@ -2569,8 +2590,8 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"{@i 17等命流宗職業能力}",
-				"Your mastery of life energy opens the door to the ultimate respite technique. As an action, you can touch a creature, expend 4 ki points, and force the creature to make a Constitution saving throw (a creature can willingly fail this save). Unless the save succeeds, the creature enters a state of suspended animation for a number of days equal to your monk level or until you end the effect early (no action required). During this time, the creature is {@condition paralyzed}, has immunity to all damage, and any curse, disease, or poison affecting it is suspended. The creature appears dead to all outward inspection and to spells used to determine the creature's status.",
+				"{@i 17th-level Way of Mercy feature}",
+				"Your mastery of life energy opens the door to the ultimate respite technique. As an action, you can touch a creature, expend 4 ki points, and force the creature to make a Constitution saving throw (a creature can willingly fail this save). Unless the save succeeds, the creature enters a state of suspended animation for a number of days equal to your monk level or until you end the effect early (no action required). During this time, the creature is {@condition 麻痹}, has immunity to all damage, and any curse, disease, or poison affecting it is suspended. The creature appears dead to all outward inspection and to spells used to determine the creature's status.",
 				"You can have only one creature under the effect of this feature at a time."
 			]
 		},
@@ -2616,7 +2637,7 @@
 						],
 						[
 							"5",
-							"You found a scroll written in Draconic that contained inspiring new techniques."
+							"You found a scroll written in {@language Draconic} that contained inspiring new techniques."
 						],
 						[
 							"6",
@@ -2646,7 +2667,7 @@
 			"header": 1,
 			"entries": [
 				"{@i 3rd-level Way of the Ascendant Dragon feature}",
-				"You can channel your ki into destructive waves of energy like the dragons you emulate. When you take the {@action Attack} action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in the area must make a Dexterity saving throw against your ki save DC, taking damage of the chosen type equal to two rolls of your Martial Arts die on a failure, or half as much damage on a success.",
+				"You can channel your ki into destructive waves of energy like the dragons you emulate. When you take the {@action 攻擊} action on your turn, you can replace one of the attacks with an exhalation of draconic energy in either a 20-foot cone or a 30-foot line that is 5 feet wide (your choice). Choose a damage type: acid, cold, fire, lightning, or poison. Each creature in the area must make a Dexterity saving throw against your ki save DC, taking damage of the chosen type equal to two rolls of your Martial Arts die on a failure, or half as much damage on a success.",
 				"At 11th level, the damage of your breath increases to three rolls of your Martial Arts die.",
 				"You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. While you have no uses available, you can spend 1 ki point to use this feature again."
 			]
@@ -2669,7 +2690,7 @@
 					"items": [
 						"When you damage a target with an unarmed strike, you can change the damage type to acid, cold, fire, lightning, or poison.",
 						"If you can't already, you learn to speak, read, and write {@language Draconic}.",
-						"If you fail a Charisma ({@skill Intimidation}) or Charisma ({@skill Persuasion}) check, you can use your reaction to reroll the check, as you tap into the mighty presence of dragons. Once this feature turns a failure into a success, you can't use it again until you finish a long rest."
+						"If you fail a Charisma ({@skill 威嚇}) or Charisma ({@skill Persuasion}) check, you can use your reaction to reroll the check, as you tap into the mighty presence of dragons. Once this feature turns a failure into a success, you can't use it again until you finish a long rest."
 					]
 				}
 			]
@@ -2729,7 +2750,7 @@
 				{
 					"type": "list",
 					"items": [
-						"You gain {@sense blindsight} out to 30 feet. Within that range, you can effectively see anything that isn't behind total cover, even if you're {@condition blinded} or in darkness. Moreover, you can see an {@condition invisible} creature within that range, unless the creature successfully hides from you.",
+						"You gain {@sense blindsight} out to 30 feet. Within that range, you can effectively see anything that isn't behind total cover, even if you're {@condition 目盲} or in darkness. Moreover, you can see an {@condition 隱形} creature within that range, unless the creature successfully hides from you.",
 						"When you damage a creature with your Breath of the Dragon, the energy clings to the target. At the start of each of the creature's turns, it takes damage of the type your breath dealt equal to one roll of your Martial Arts die. At the end of its turn, the creature can repeat the save, ending the effect on itself on a success.",
 						"When you activate your Aspect of the Wyrm, draconic fury explodes from you. Choose any number of creatures you can see within your aura. Those creatures each take {@damage 4d10} acid, cold, fire, lightning, or poison damage (your choice)."
 					]
@@ -2764,8 +2785,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"When you choose this tradition at 3rd level, you gain proficiency in the {@skill Performance} skill if you don't already have it; your martial arts technique mixes martial training with the precision of a dancer and the antics of a jester.",
-				"You also learn how to twist and turn quickly as part of your Flurry of Blows. Whenever you use Flurry of Blows, you gain the benefit of the {@action Disengage} action, and your walking speed increases by 10 feet until the end of the current turn."
+				"When you choose this tradition at 3rd level, you gain proficiency in the {@skill 表演} skill if you don't already have it; your martial arts technique mixes martial training with the precision of a dancer and the antics of a jester.",
+				"You also learn how to twist and turn quickly as part of your Flurry of Blows. Whenever you use Flurry of Blows, you gain the benefit of the {@action 撤離} action, and your walking speed increases by 10 feet until the end of the current turn."
 			]
 		},
 		{
@@ -2849,7 +2870,7 @@
 					"items": [
 						"You can use your Wisdom modifier in place of your Strength modifier when making Strength checks and Strength saving throws.",
 						"The arms are monk weapons and have a reach of 10 feet. The arms deal radiant or necrotic damage (your choice). When you attack with the arms, you can use your Wisdom modifier instead of your Strength or Dexterity modifier for the attack and damage rolls.",
-						"Immediately after you use the {@action Attack} action with your astral arms on your turn, you can make one extra attack with your astral arms as a bonus action. The number of extra attacks increases when you reach certain levels in this class, increasing to two at 11th level and three at 17th level."
+						"Immediately after you use the {@action 攻擊} action with your astral arms on your turn, you can make one extra attack with your astral arms as a bonus action. The number of extra attacks increases when you reach certain levels in this class, increasing to two at 11th level and three at 17th level."
 					]
 				}
 			]
@@ -2887,7 +2908,7 @@
 					"type": "entries",
 					"name": "Wisdom of the Spirit",
 					"entries": [
-						"You have advantage on Wisdom ({@skill Insight}) and Charisma ({@skill Intimidation}) checks."
+						"You have advantage on Wisdom ({@skill 洞悉}) and Charisma ({@skill 威嚇}) checks."
 					]
 				},
 				{
@@ -2964,7 +2985,7 @@
 					"type": "entries",
 					"name": "Armor of the Spirit",
 					"entries": [
-						"You gain a +2 bonus to AC while you aren't {@condition incapacitated}."
+						"You gain a +2 bonus to AC while you aren't {@condition 無力}."
 					]
 				},
 				{
@@ -3032,8 +3053,8 @@
 					"items": [
 						"You gain proficiency with three martial weapons of your choice. A martial weapon is considered a kensei weapon for you if you're proficient with it.",
 						"Whenever you wield a kensei weapon, you choose whether to use Dexterity or Strength for the attack and damage rolls of the weapon, and you choose whether to use your Martial Arts damage die in place of the weapon's damage die.",
-						"When you take the {@action Attack} action on your turn and hit a target with a kensei weapon, you can use a bonus action to pummel the target, dealing an additional {@damage 1d4} bludgeoning damage to that target and to any other target you hit with the weapon as part of the {@action Attack}.",
-						"If you make an unarmed strike as part of the {@action Attack} action on your turn and are holding a kensei weapon, you can use that weapon to defend yourself. You gain a +2 bonus to AC until the start of your next turn while you are not {@condition incapacitated} and the weapon is in your hand."
+						"When you take the {@action 攻擊} action on your turn and hit a target with a kensei weapon, you can use a bonus action to pummel the target, dealing an additional {@damage 1d4} bludgeoning damage to that target and to any other target you hit with the weapon as part of the {@action 攻擊}.",
+						"If you make an unarmed strike as part of the {@action 攻擊} action on your turn and are holding a kensei weapon, you can use that weapon to defend yourself. You gain a +2 bonus to AC until the start of your next turn while you are not {@condition 無力} and the weapon is in your hand."
 					]
 				}
 			]
@@ -3169,8 +3190,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"At 6th level, you gain the ability to diffuse violent situations. Whenever you make a Charisma check to calm violent emotions or to counsel peace, you have advantage on the roll. You must make this entreaty in good faith; it doesn't apply if proficiency in the {@skill Deception} or {@skill Intimidation} skill applies to your check.",
-				"You also gain proficiency in the {@skill Performance} or {@skill Persuasion} skill (choose one)."
+				"At 6th level, you gain the ability to diffuse violent situations. Whenever you make a Charisma check to calm violent emotions or to counsel peace, you have advantage on the roll. You must make this entreaty in good faith; it doesn't apply if proficiency in the {@skill 欺瞞} or {@skill 威嚇} skill applies to your check.",
+				"You also gain proficiency in the {@skill 表演} or {@skill Persuasion} skill (choose one)."
 			]
 		},
 		{
@@ -3237,7 +3258,7 @@
 					"type": "list",
 					"items": [
 						"Choose two types of weapons to be your kensei weapons: one melee weapon and one ranged weapon. Each of these weapons can be any simple or martial weapon that lacks the heavy and special properties. The longbow is also a valid choice. You gain proficiency with these weapons if you don't already have it. Weapons of the chosen types are monk weapons for you. Many of this tradition's features work only with your kensei weapons. When you reach 6th, 11th, and 17th level in this class, you can choose another type of weapon\u2014melee or ranged\u2014to be a kensei weapon for you, following the criteria above.",
-						"If you make an unarmed strike as part of the {@action Attack} action on your turn and are holding a kensei weapon, you can use it to defend yourself if it is a melee weapon. You gain a +2 bonus to AC until the start of your next turn, while the weapon is in your hand and you aren't {@condition incapacitated}.",
+						"If you make an unarmed strike as part of the {@action 攻擊} action on your turn and are holding a kensei weapon, you can use it to defend yourself if it is a melee weapon. You gain a +2 bonus to AC until the start of your next turn, while the weapon is in your hand and you aren't {@condition 無力}.",
 						"You can use a bonus action on your turn to make your ranged attacks with a kensei weapon more deadly. When you do so, any target you hit with a ranged attack using a kensei weapon takes an extra {@damage 1d4} damage of the weapon's type. You retain this benefit until the end of the current turn."
 					]
 				}
@@ -3320,8 +3341,8 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"entries": [
-				"醉拳宗教導其學徒以醉漢那愚蠢、不可預測的行動方式來進行移動。一個醉拳大師總是搖搖晃晃、蹣跚搖擺著他的雙腳，以呈現出一個不盡人意，看似無能的戰鬥者。 然而在他們飄忽不定的跌撞之下，實則隱藏著一段被精心執行的舞蹈，揉合了阻擋、招架、推進、攻擊、和撤退等動作。",
-				"醉拳大師常常喜歡裝瘋賣傻，為沮喪者帶來歡樂，或對傲慢者展現出謙卑。但當他們加入戰鬥時，醉拳大師將會是一名令人惱怒、無比狡詐的敵人。",
+				"醉拳宗教導其學徒以醉漢那愚蠢、不可預測的行動方式來進行移動。一個醉拳大師總是搖搖晃晃、蹣跚搖擺着他的雙腳，以呈現出一個不盡人意，看似無能的戰鬥者。 然而在他們飄忽不定的跌撞之下，實則隱藏着一段被精心運行的舞蹈，揉合了阻擋、招架、推進、攻擊、和撤退等動作。",
+				"醉拳大師常常喜歡裝瘋賣傻，爲沮喪者帶來歡樂，或對傲慢者展現出謙卑。但當他們加入戰鬥時，醉拳大師將會是一名令人惱怒、無比狡詐的敵人。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "額外熟練|Monk||Drunken Master|XGE|3"
@@ -3344,7 +3365,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"當你在3級時選擇此宗派時，若你尚未熟練於{@skill 表演}技能，你將獲得它的熟練。你的武術技巧將戰鬥訓練混合了舞者的精確和小丑的滑稽。同時，若你尚未熟練於{@item 釀酒師設備|phb}，你也將獲得它的熟練。"
+				"{@i 3級醉拳宗特性}",
+				"若你尚未熟練於{@skill 表演}技能，你將獲得它的熟練。你的武術技巧將戰鬥訓練混合了舞者的精確和小丑的滑稽。同時，若你尚未熟練於{@item 釀酒師設備|phb}，你也將獲得它的熟練。"
 			]
 		},
 		{
@@ -3359,7 +3381,8 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"在3級時，你學會如何在疾風連擊中快速的翻轉扭動。每當你使用疾風連擊時，你將獲得{@action 撤離}動作的好處，且直到該回合結束前，你的步行速度將增加10呎。"
+				"{@i 3級醉拳宗特性}",
+				"你學會如何在疾風連擊中快速的翻轉扭動。每當你使用疾風連擊時，你將獲得{@action 撤離}動作的好處，且直到該回合結束前，你的步行速度將增加10尺。"
 			]
 		},
 		{
@@ -3374,7 +3397,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"從6級開始，你可以透過突然地擺動來移動。你獲得下列好處：",
+				"{@i 6級醉拳宗特性}",
+				"你可以通過突然地擺動來移動。你獲得下列好處：",
 				{
 					"type": "options",
 					"entries": [
@@ -3402,7 +3426,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"從11級開始，你似乎總是能在最正確的時刻突然獲得好運。當你進行一次屬性檢定、攻擊檢定、或豁免檢定，且在該檢定中具有劣勢時，你可以消耗2點氣以取消該檢定中的劣勢。"
+				"{@i 11級醉拳宗特性}",
+				"你似乎總是能在最正確的時刻突然獲得好運。當你進行一次屬性檢定、攻擊檢定、或豁免檢定，且在該檢定中具有劣勢時，你可以消耗2點氣以取消該檢定中的劣勢。"
 			]
 		},
 		{
@@ -3417,7 +3442,8 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"在17級時，你獲得對一群敵人進行驚人數量的攻擊的能力。當你使用疾風連擊時，只要該回合的每次疾風連擊都以一個不同的生物做為目標，你就可以進行最多三次的額外攻擊（最多總共五次的疾風連擊攻擊）。"
+				"{@i 17級醉拳宗特性}",
+				"你獲得對一羣敵人進行驚人數量的攻擊的能力。當你使用疾風連擊時，只要該回合的每次疾風連擊都以一個不同的生物作爲目標，你就可以進行最多三次的額外攻擊（最多總共五次的疾風連擊攻擊）。"
 			]
 		},
 		{
@@ -3431,8 +3457,8 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"entries": [
-				"劍聖宗的武僧持續於他們武器的訓練，甚至達到了「武器即為身體的延伸」這一境界。在精通劍術的基礎上，這個宗派也涉獵了諸多不同的武器。",
-				"武器之於劍聖，就如同畫筆之於畫家、筆墨之於文人。劍聖將其視為用來展現武道之美的工具。這樣的信念使劍聖成為了無與倫比的武者，但這也不過只是他們那專注投入、鍛鍊、和鑽研的副作用罷了。",
+				"劍聖宗的武僧持續於他們武器的訓練，甚至達到了「武器即爲身體的延伸」這一境界。在精通劍術的基礎上，這個宗派也涉獵了諸多不同的武器。",
+				"武器之於劍聖，就如同畫筆之於畫家、筆墨之於文人。劍聖將其視爲用來展現武道之美的工具。這樣的信念使劍聖成爲了無與倫比的武者，但這也不過只是他們那專注投入、鍛鍊、和鑽研的副作用罷了。",
 				{
 					"type": "refSubclassFeature",
 					"subclassFeature": "劍聖之途|Monk||Kensei|XGE|3"
@@ -3451,13 +3477,14 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"當你在3級時選擇此宗派時，你特殊的武術訓練讓精通於你特定武器的使用。這條道途同時也包括了書畫技藝的指導。你獲得下列好處。",
+				"{@i 3級劍聖宗特性}",
+				"你特殊的武術訓練讓精通於你特定武器的使用。這條道途同時也包括了書畫技藝的指導。你獲得下列好處。",
 				{
 					"type": "entries",
 					"name": "劍聖武器",
 					"ENG_name": "Kensei Weapons",
 					"entries": [
-						"選擇二種武器做為你的劍聖武器：一種近戰武器和一種遠程武器。這些武器可以是任何沒有重型或特殊屬性的簡易或軍用武器，包括長弓也是可選選項之一。若你尚未熟練於這些武器，則你獲得它們的熟練。所選的武器種類對你而言將被視為武僧武器。這個宗派的許多能力都只會作用於你的劍聖武器。當你在此職業升至6級、11級、和17級時，你可以遵循上述的條件，再選擇另一種武器種類\u2014近戰或遠程皆可\u2014做為你的劍聖武器。"
+						"選擇二種武器作爲你的劍聖武器：一種近戰武器和一種遠程武器。這些武器可以是任何沒有重型或特殊屬性的簡易或軍用武器，包括長弓也是可選選項之一。若你尚未熟練於這些武器，則你獲得它們的熟練。所選的武器種類對你而言將被視爲武僧武器。這個宗派的許多能力都只會作用於你的劍聖武器。當你在此職業升至6級、11級、和17級時，你可以遵循上述的條件，再選擇另一種武器種類\u2014近戰或遠程皆可\u2014作爲你的劍聖武器。"
 					]
 				},
 				{
@@ -3494,7 +3521,8 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"在6級時，你將你的氣延展至你的劍聖武器中，賦予你下列好處。",
+				"{@i 6級劍聖宗特性}",
+				"你將你的氣延展至你的劍聖武器中，賦予你下列好處。",
 				{
 					"type": "entries",
 					"name": "魔法劍聖武器",
@@ -3525,7 +3553,8 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你獲得以你的氣進一步增強你武器的能力。以一個附贈動作，你可以消耗最多3點氣並觸碰一把劍聖武器，以讓你在使用它進行攻擊時的攻擊檢定和傷害骰中獲得加值。這個加值等同於你所消耗的氣的數量。這個加值將持續1分鐘，或直到你再次使用這個能力。這個能力對已經具有攻擊檢定和傷害骰加值的魔法武器沒有任何效果。"
+				"{@i 11級劍聖宗特性}",
+				"你獲得以你的氣進一步增強你武器的能力。以一個附贈動作，你可以消耗最多3點氣並觸碰一把劍聖武器，以讓你在使用它進行攻擊時的攻擊檢定和傷害骰中獲得加值。這個加值等同於你所消耗的氣的數量。這個加值將持續1分鐘，或直到你再次使用這個能力。這個能力對已經具有攻擊檢定和傷害骰加值的魔法武器沒有任何效果。"
 			]
 		},
 		{
@@ -3540,7 +3569,8 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"在17級時，你在武器上的精熟賦予你超凡的準確度。若你在你的回合以一把武僧武器所進行的攻擊檢定失手，你可以重骰該檢定。你只能在你的每個回合使用這個能力一次。"
+				"{@i 17級劍聖宗特性}",
+				"你在武器上的精熟賦予你超凡的準確度。若你在你的回合以一把武僧武器所進行的攻擊檢定失手，你可以重骰該檢定。你只能在你的每個回合使用這個能力一次。"
 			]
 		},
 		{
@@ -3573,10 +3603,11 @@
 			"level": 3,
 			"header": 1,
 			"entries": [
-				"從你在3級時選擇此宗派開始，你可以投擲出灼熱的魔法光輝箭矢。",
-				"你獲得可以在採取{@action 攻擊}動作時使用的新的攻擊選項。這種特殊攻擊是一個射程為30呎的遠程法術攻擊。你熟練於此攻擊，且你將你的敏捷調整值加入它的攻擊檢定和傷害骰。它的傷害類型為光耀傷害，且它的傷害骰為一顆{@dice d4}。這顆骰子會隨著你提升武僧等級時變化，參見武僧表中的武藝欄位。",
-				"當你在你的回合採取{@action 攻擊}動作並使用此特殊攻擊做為攻擊動作的一部份，你可以消耗1點氣以使用一個附贈動作進行二次此特殊攻擊。",
-				"當你獲得額外攻擊能力，此特殊攻擊可以被用於任何你做為{@action 攻擊}動作一部份所進行的攻擊中。"
+				"{@i 3級日魂宗特性}",
+				"你可以投擲出灼熱的魔法光輝箭矢。",
+				"你獲得可以在採取{@action 攻擊}動作時使用的新的攻擊選項。這種特殊攻擊是一個射程爲30尺的遠程法術攻擊。你熟練於此攻擊，且你將你的敏捷調整值加入它的攻擊檢定和傷害骰。它的傷害類型爲光耀傷害，且它的傷害骰爲一顆{@dice d4}。這顆骰子會隨着你提升武僧等級時變化，參見武僧表中的武藝字段。",
+				"當你在你的回合採取{@action 攻擊}動作並使用此特殊攻擊作爲攻擊動作的一部份，你可以消耗1點氣以使用一個附贈動作進行二次此特殊攻擊。",
+				"當你獲得額外攻擊能力，此特殊攻擊可以被用於任何你作爲{@action 攻擊}動作一部份所進行的攻擊中。"
 			]
 		},
 		{
@@ -3591,8 +3622,9 @@
 			"level": 6,
 			"header": 2,
 			"entries": [
-				"在6級時，你獲得將你的氣引導轉換成灼熱能量波的能力。緊接在你在你的回合採取{@action 攻擊}動作之後，你可以消耗2點氣以一個附贈動作施放{@spell 燃燒之手}法術。",
-				"你可以消耗額外的氣以將{@spell 燃燒之手}做為更高環階的法術施放。你每額外消耗1點氣，就可以使該法術的環階提升1環。你在該法術上所能消耗的氣的最大值（2+任意額外點氣）等同於你武僧等級的一半。"
+				"{@i 6級日魂宗特性}",
+				"你獲得將你的氣引導轉換成灼熱能量波的能力。緊接在你在你的回合採取{@action 攻擊}動作之後，你可以消耗2點氣以一個附贈動作施放{@spell 燃燒之手}法術。",
+				"你可以消耗額外的氣以將{@spell 燃燒之手}作爲更高環階的法術施放。你每額外消耗1點氣，就可以使該法術的環階提升1環。你在該法術上所能消耗的氣的最大值（2 + 任意額外點氣）等同於你武僧等級的一半。"
 			]
 		},
 		{
@@ -3607,8 +3639,9 @@
 			"level": 11,
 			"header": 2,
 			"entries": [
-				"在11級時，你獲得創造出一個將爆發出毀滅爆炸的光球的能力。以一個動作，你將用魔法創造出一個光球，並將它投擲到150呎內你所選擇的一點，它將在該處爆發成一個瞬間而致命的光輝球體。",
-				"每個處於該20呎半徑球體範圍內的生物都必須成功通過一次體質豁免，否則受到{@dice 2d6}光耀傷害。一個生物若處於不透光全掩護後方，則它將不需要進行此豁免檢定。",
+				"{@i 11級日魂宗特性}",
+				"你獲得創造出一個將爆發出毀滅爆炸的光球的能力。以一個動作，你將用魔法創造出一個光球，並將它投擲到150尺內你所選擇的一點，它將在該處爆發成一個瞬間而致命的光輝球體。",
+				"每個處於該20尺半徑球體範圍內的生物都必須成功通過一次體質豁免，否則受到{@damage 2d6}光耀傷害。一個生物若處於不透光全掩護後方，則它將不需要進行此豁免檢定。",
 				"你可以藉由消耗額外的氣以增加這個球體的傷害。你每消耗1點氣就可以增加{@dice 2d6}傷害，最多消耗3點。"
 			]
 		},
@@ -3624,8 +3657,9 @@
 			"level": 17,
 			"header": 2,
 			"entries": [
-				"在17級時，你被一道散發光芒的魔法靈光給環繞。你將散發出30呎半徑的明亮光照以及再延伸30呎半徑的微光光照。你能夠以一個附贈動作熄滅或恢復這道光芒。",
-				"若一個生物在這道光芒照耀時以一次近戰攻擊命中你，你可以使用你的反應以對該生物造成光耀傷害。這個光耀傷害等同於5+你的睿知調整值。"
+				"{@i 17級日魂宗特性}",
+				"你被一道散發光芒的魔法靈光給環繞。你將散發出30尺半徑的明亮光照以及再延伸30尺半徑的微光光照。你能夠以一個附贈動作熄滅或恢復這道光芒。",
+				"若一個生物在這道光芒照耀時以一次近戰攻擊命中你，你可以使用你的反應以對該生物造成光耀傷害。這個光耀傷害等同於5 + 你的感知調整值。"
 			]
 		},
 		{
@@ -3639,7 +3673,7 @@
 			"subclassSource": "XGE",
 			"level": 6,
 			"entries": [
-				"當你處於{@condition 伏地}狀態時，你可以藉由消耗5呎移動速度力來起身，而非消耗你移動速度的一半。"
+				"當你處於{@condition 伏地}狀態時，你可以藉由消耗5尺移動速度力來起身，而非消耗你移動速度的一半。"
 			]
 		},
 		{
@@ -3653,7 +3687,7 @@
 			"subclassSource": "XGE",
 			"level": 6,
 			"entries": [
-				"當一個生物對你進行的一次近戰攻擊檢定失手時，你能夠以一個反應消耗1點氣以使該攻擊命中一個你所選擇的，距離你5呎內且你所能看見的攻擊者以外的生物。"
+				"當一個生物對你進行的一次近戰攻擊檢定失手時，你能夠以一個反應消耗1點氣以使該攻擊命中一個你所選擇的，距離你5尺內且你所能看見的攻擊者以外的生物。"
 			]
 		},
 		{
@@ -3681,7 +3715,7 @@
 			"subclassSource": "XGE",
 			"level": 3,
 			"entries": [
-				"你可以在你的回合使用一個附贈動作讓你透過劍聖武器所進行遠程攻擊變得更加致命。當你這麼做時，任何被你以劍聖武器所進行的遠程攻擊命中的目標將會受到額外的{@dice 1d4}該武器傷害類型的傷害。你保留這個好處直到該回合結束。"
+				"你可以在你的回合使用一個附贈動作讓你通過劍聖武器所進行遠程攻擊變得更加致命。當你這麼做時，任何被你以劍聖武器所進行的遠程攻擊命中的目標將會受到額外的{@dice 1d4}該武器傷害類型的傷害。你保留這個好處直到該回合結束。"
 			]
 		}
 	]
