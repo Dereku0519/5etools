@@ -1105,7 +1105,475 @@
 					"entries": [
 						"組成費倫萬神殿的諸神就如同國度中大城市裡的居民一樣，都是來自不同地方的不同個體。神系成員隨時代變遷而變化，這同時也反映了國度本身及其居民的變化（或是反過來，因這些變化而引致諸神成員的變動，學術界同時存在著這兩種論點）。以下幾頁內容為神系裡一些最主要成員的描述。",
 						"費倫神系諸神祇並不是國度內唯一受崇拜的勢力。各非人類種族還各自具有其自己的神系存在（在第3章中描述），而費倫各處還散佈著一些地方性的其他宗教和神力存在。",
-						"諸神表格祥見{@deities SCAG}",
+						{
+							"type": "entries",
+							"name": "The Dwarven Pantheon",
+							"page": 22,
+							"entries": [
+								{
+									"type": "table",
+									"colLabels": [
+										"Deity",
+										"Alignment",
+										"Domains",
+										"Symbol"
+									],
+									"colStyles": [
+										"col-4",
+										"col-1 text-center",
+										"col-2",
+										"col-5"
+									],
+									"rows": [
+										[
+											"Abbathor, god of greed",
+											"NE",
+											"Trickery",
+											"Jeweled dagger, point-down"
+										],
+										[
+											"Berronar Truesilver, goddess of hearth and home",
+											"LG",
+											"Life, Light",
+											"Intertwined silver rings"
+										],
+										[
+											"Clangeddin Silverbeard, god of war",
+											"LG",
+											"War",
+											"Crossed silver battleaxes"
+										],
+										[
+											"Deep Duerra, duergar goddess of conquest and psionics",
+											"LE",
+											"Arcana, War",
+											"Mind flayer skull"
+										],
+										[
+											"Dugmaren Brightmantle, god of discovery",
+											"CG",
+											"Knowledge",
+											"Open book"
+										],
+										[
+											"Dumathoin, god of buried secrets",
+											"N",
+											"Death, Knowledge",
+											"Mountain silhouette with a central gemstone"
+										],
+										[
+											"Gorm Gulthyn, god of vigilance",
+											"LG",
+											"War",
+											"Bronze half-mask"
+										],
+										[
+											"Haela Brightaxe, goddess of war-luck",
+											"CG",
+											"War",
+											"Upright sword whose blade is spiraled in flame"
+										],
+										[
+											"Laduguer, duergar god of magic and slavery",
+											"LE",
+											"Arcana, Death",
+											"Broken arrow"
+										],
+										[
+											"Marthammor Duin, god of wanderers",
+											"NG",
+											"Nature, Trickery",
+											"Upright mace in front of a tall boot"
+										],
+										[
+											"Moradin, god of creation",
+											"LG",
+											"Knowledge",
+											"Hammer and anvil"
+										],
+										[
+											"Sharindlar, goddess of healing",
+											"CG",
+											"Life",
+											"Burning needle"
+										],
+										[
+											"Vergadain, god of luck and wealth",
+											"N",
+											"Trickery",
+											"Gold coin with the face of a dwarf"
+										]
+									]
+								}
+							],
+							"id": "05b"
+						},
+						{
+							"type": "entries",
+							"name": "The Elven Pantheon",
+							"page": 23,
+							"entries": [
+								{
+									"type": "table",
+									"colLabels": [
+										"Deity",
+										"Alignment",
+										"Domains",
+										"Symbol"
+									],
+									"colStyles": [
+										"col-4",
+										"col-1 text-center",
+										"col-2",
+										"col-5"
+									],
+									"rows": [
+										[
+											"Aerdrie Faenya, goddess of the sky",
+											"CG",
+											"Tempest, Trickery",
+											"Bird silhouetted against a cloud"
+										],
+										[
+											"Angharradh, triple goddess of wisdom and protection",
+											"CG",
+											"Knowledge, Life",
+											"Triangle with three interlocking circles within"
+										],
+										[
+											"Corellon Larethian, god of art and magic",
+											"CG",
+											"Arcana, Light",
+											"Crescent moon"
+										],
+										[
+											"Deep Sashelas, god of the sea",
+											"CG",
+											"Nature",
+											"Dolphin"
+										],
+										[
+											"Erevan Ilesere, god of mischief",
+											"CN",
+											"Trickery",
+											"Asymmetrical eight-armed star"
+										],
+										[
+											"Fenmarel Mestarine, god of outcasts",
+											"CN",
+											"Trickery",
+											"Two peering elven eyes"
+										],
+										[
+											"Hanali Celanil, goddess of love and beauty",
+											"CG",
+											"Life",
+											"Golden heart"
+										],
+										[
+											"Labelas Enoreth, god of time, history, and philosophy",
+											"CG",
+											"Arcana, Knowledge",
+											"Setting sun"
+										],
+										[
+											"Rillifane Rallathil, god of nature",
+											"CG",
+											"Nature",
+											"Oak"
+										],
+										[
+											"Sehanine Moonbow, goddess of divination, dreams, travel, and death",
+											"CG",
+											"Knowledge",
+											"Full moon under a moonbow"
+										],
+										[
+											"Shevarash, god of vengeance",
+											"CN",
+											"War",
+											"Broken arrow over a tear"
+										],
+										[
+											"Solonor Thelandira, god of archery",
+											"CG",
+											"War",
+											"Silver arrow with green fletching"
+										]
+									]
+								}
+							],
+							"id": "05c"
+						},
+						{
+							"type": "entries",
+							"name": "The Drow Pantheon",
+							"page": 23,
+							"entries": [
+								{
+									"type": "table",
+									"colLabels": [
+										"Deity",
+										"Alignment",
+										"Domains",
+										"Symbol"
+									],
+									"colStyles": [
+										"col-4",
+										"col-1 text-center",
+										"col-2",
+										"col-5"
+									],
+									"rows": [
+										[
+											"Eilistraee, goddess of song and moonlight",
+											"CG",
+											"Light, Nature",
+											"Sword-wielding dancing drow female silhouetted against the full moon"
+										],
+										[
+											"Kiaransalee, goddess of necromancy",
+											"CE",
+											"Arcana",
+											"Female drow hand wearing many silver rings"
+										],
+										[
+											"Lolth, goddess of spiders",
+											"CE",
+											"Trickery",
+											"Spider"
+										],
+										[
+											"Selvetarm, god of warriors",
+											"CE",
+											"War",
+											"Spider over crossed sword-and-mace"
+										],
+										[
+											"Vhaeraun, god of thieves",
+											"CE",
+											"Trickery",
+											"Black mask with blue glass lenses inset over eyes"
+										]
+									]
+								}
+							],
+							"id": "05d"
+						},
+						{
+							"type": "entries",
+							"name": "The Halfling Pantheon",
+							"page": 23,
+							"entries": [
+								{
+									"type": "table",
+									"colLabels": [
+										"Deity",
+										"Alignment",
+										"Domains",
+										"Symbol"
+									],
+									"colStyles": [
+										"col-4",
+										"col-1 text-center",
+										"col-2",
+										"col-5"
+									],
+									"rows": [
+										[
+											"Arvoreen, god of vigilance and war",
+											"LG",
+											"War",
+											"Crossed short swords"
+										],
+										[
+											"Brandobaris, god of thievery and adventure",
+											"N",
+											"Trickery",
+											"Halfling footprint"
+										],
+										[
+											"Cyrrollalee, goddess of hearth and home",
+											"LG",
+											"Life",
+											"An open door"
+										],
+										[
+											"Sheela Peryroyl, goddess of agriculture and weather",
+											"N",
+											"Nature, Tempest",
+											"Flower"
+										],
+										[
+											"Urogalan, god of earth and death",
+											"LN",
+											"Death, Knowledge",
+											"Silhouette of a dog's head"
+										],
+										[
+											"Yondalla, goddess of fertility and protection",
+											"LG",
+											"Life",
+											"Cornucopia on a shield"
+										]
+									]
+								}
+							],
+							"id": "05e"
+						},
+						{
+							"type": "entries",
+							"name": "The Gnomish Pantheon",
+							"page": 24,
+							"entries": [
+								{
+									"type": "table",
+									"colLabels": [
+										"Deity",
+										"Alignment",
+										"Domains",
+										"Symbol"
+									],
+									"colStyles": [
+										"col-4",
+										"col-1 text-center",
+										"col-2",
+										"col-5"
+									],
+									"rows": [
+										[
+											"Baervan Wildwanderer, god of woodlands",
+											"NG",
+											"Nature",
+											"Face of a raccoon"
+										],
+										[
+											"Baravar Cloakshadow, god of illusion and deception",
+											"NG",
+											"Arcana, Trickery",
+											"Dagger against a hooded cloak"
+										],
+										[
+											"Callarduran Smoothhands, god of mining and carving stone",
+											"N",
+											"Knowledge, Nature",
+											"Golden signet ring with six-pointed star"
+										],
+										[
+											"Flandal Steelskin, god of metalwork",
+											"NG",
+											"Knowledge",
+											"Flaming hammer"
+										],
+										[
+											"Gaerdal Ironhand, god of protection",
+											"LG",
+											"War",
+											"Iron band"
+										],
+										[
+											"Garl Glittergold, god of trickery and gems",
+											"LG",
+											"Trickery",
+											"Gold nugget"
+										],
+										[
+											"Nebelun, god of invention and luck",
+											"CG",
+											"Knowledge, Trickery",
+											"Bellows and a lizard tail"
+										],
+										[
+											"Segojan Earthcaller, god of earth and the dead",
+											"NG",
+											"Light",
+											"Glowing gemstone"
+										],
+										[
+											"Urdlen, god of greed and murder",
+											"CE",
+											"Death, War",
+											"White clawed mole emerging from ground"
+										]
+									]
+								}
+							],
+							"id": "05f"
+						},
+						{
+							"type": "entries",
+							"name": "The Orc Pantheon",
+							"page": 24,
+							"entries": [
+								{
+									"type": "table",
+									"colLabels": [
+										"Deity",
+										"Alignment",
+										"Domains",
+										"Symbol"
+									],
+									"colStyles": [
+										"col-4",
+										"col-1 text-center",
+										"col-2",
+										"col-5"
+									],
+									"rows": [
+										[
+											"Bahgtru, god of strength",
+											"LE",
+											"War",
+											"Broken thigh bone"
+										],
+										[
+											"Gruumsh, god of storms and war",
+											"CE",
+											"Tempest, War",
+											"Unblinking eye"
+										],
+										[
+											"Ilneval, god of strategy and hordes",
+											"LE",
+											"War",
+											"Upright blood-spattered sword"
+										],
+										[
+											"Luthic, mother-goddess of fertility and healing",
+											"LE",
+											"Life, Nature",
+											"Orcish rune meaning \"cave entrance\""
+										],
+										[
+											"Shargaas, god of stealth and darkness",
+											"NE",
+											"Trickery",
+											"Red crescent moon with a skull between the moon's horns"
+										],
+										[
+											"Yurtrus, god of death and disease",
+											"NE",
+											"Death",
+											"White hand, palm outward"
+										]
+									]
+								},
+								{
+									"type": "inset",
+									"name": "The Gods of Mulhorand",
+									"entries": [
+										"People of Faerûn refer to Mulhorand as one of the Old Empires, but most don't know that Mulhorand is in fact the oldest human empire still in existence on the continent. Mulhorand's pantheon of deities, sometimes called god-kings or pharaohs, can trace their lineage even farther back.",
+										"According to the demigods enthroned in Mulhorand, the ancestors of the Mulhorandi people were brought from another world and enslaved by the Imaskari in an ancient empire deep in what is now Raurin, the Dust Desert. When the gods of those ancestors heard the pleas of their distant faithful, they set out in a great celestial ark guided by the entity known as Ptah. Upon arriving in the world, two of the deities, Re and Enlil, set about empowering the slaves and fomenting rebellion.",
+										"The revolt succeeded, but Re and Enlil couldn't keep peace with one another. Each then founded a separate dynasty of divine mortals, Re in Mulhorand, and Enlil (father of Gilgeam) in Unther. Re and his related deities ruled Mulhorand through mortal incarnations for thousands of years.",
+										"Time took its toll, and the attention the deities of Mulhorand paid to their followers wavered and diminished. Each new incarnation of Isis, Osiris, and Thoth was a little more human and a little less divine. When the magically powerful Imaskari returned with a vengeance a little over a century ago, they stole the scepter of rulership from a grasp so weak it barely had any strength left.",
+										"Although Mulhorand's conquerors outlawed slavery in the area they now called High Imaskar, the Mulhorandi people recognized the yoke they now bore. The Imaskari were the new coming of the slavemasters of old, as depicted in the carvings in the pharaohs' tombs. Many prayed that the vanished gods would return and once again free them from Imaskari rule, and during the Sundering, that is what happened. What were referred to as Chosen in other lands were recognized in Mulhorand as living gods, come to lead the Mulhorandi in an uprising.",
+										"Today Mulhorand is ruled by demigods that call themselves by such names as Re, Anhur, Horus, Isis, Nephthys, Set, and Thoth. They take different forms, some human and others tieflings or aasimar, but all speak and act like the gods of legend come to life, which they must be. This family of deities bears the scars of all the past loves, rivalries, and wars between them, but for now they have set their differences aside for the betterment of Mulhorand and its people, and the people of Mulhorand love them for it."
+									],
+									"id": "061"
+								}
+							],
+							"id": "060"
+						},
 						{
 							"type": "entries",
 							"name": "Amaunator",
