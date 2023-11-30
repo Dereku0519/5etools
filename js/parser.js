@@ -247,6 +247,16 @@ Parser.getSpeedString = (it) => {
 		return it.speed + (it.speed === "Varies" ? "" : " 尺");
 	}
 };
+Parser._getSpeedString_getVal = ({prop, speed, isMetric})=>{
+    if (speed === true && prop !== "walk")
+        return "equal to your walking speed";
+    const num = speed === true ? 0 : speed.number != null ? speed.number : speed;
+    return isMetric ? Parser.metric.getMetricNumber({
+        originalValue: num,
+        originalUnit: Parser.UNT_FEET
+    }) : num;
+}
+;
 
 Parser.SPEED_TO_PROGRESSIVE = {
 	"walk": "walking",
