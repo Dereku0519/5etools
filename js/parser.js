@@ -232,14 +232,6 @@ Parser.getSpeedString = (ent) => {
 	const stack = [];
 	if (typeof ent.speed === "object") {
 		let joiner = ", ";
-        Parser.SPEED_MODES.filter(mode=>!ent.speed.hidden?.includes(mode)).forEach(mode=>Parser._getSpeedString_addSpeedMode({
-            ent,
-            prop: mode,
-            stack,
-            isMetric,
-            isSkipZeroWalk,
-            unit
-        }));
 		procSpeed("walk");
 		procSpeed("burrow");
 		procSpeed("climb");
