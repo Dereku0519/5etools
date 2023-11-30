@@ -2452,7 +2452,6 @@ Parser.SOURCE_JSON_TO_FULL[SRC_TYP_THSoT] = `${TftYP_NAME}：隱祕聖壇`;
 Parser.SOURCE_JSON_TO_FULL[SRC_TYP_TSC] = `${TftYP_NAME}：暗無天日`;
 Parser.SOURCE_JSON_TO_FULL[SRC_TYP_ToH] = `${TftYP_NAME}：恐怖墓穴`;
 Parser.SOURCE_JSON_TO_FULL[SRC_TYP_WPM] = `${TftYP_NAME}：白羽山`;
-Parser.SOURCE_JSON_TO_FULL[SRC_FTD] = "費茲本的巨龍寶庫";
 Parser.SOURCE_JSON_TO_FULL[SRC_VGM] = "瓦羅的怪物指南";
 Parser.SOURCE_JSON_TO_FULL[SRC_XGE] = "姍納薩的萬事指南";
 Parser.SOURCE_JSON_TO_FULL[SRC_OGA] = "一蛙之上";
