@@ -1,5 +1,14 @@
 // PARSING =============================================================================================================
 Parser = {};
+Parser._getSpeedString_getVal = ({prop, speed, isMetric})=>{
+    if (speed === true && prop !== "walk")
+        return "等同於你的步行速度";
+    const num = speed === true ? 0 : speed.number != null ? speed.number : speed;
+    return isMetric ? Parser.metric.getMetricNumber({
+        originalValue: num,
+        originalUnit: Parser.UNT_FEET
+    }) : num;
+};
 Parser._parse_aToB = function (abMap, a, fallback) {
 	if (a === undefined || a === null) throw new TypeError("undefined or null object passed to parser");
 	if (typeof a === "string") a = a.trim();
