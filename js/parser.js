@@ -219,20 +219,20 @@ Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
 		if (ent.speed[propName] || propName === "walk") addSpeed(ent.speed[propName] || 0);
 		if (ent.speed.alternate && ent.speed.alternate[propName]) ent.speed.alternate[propName].forEach(addSpeed);
 		}
-		if (typeof it.speed === "object") {
+		if (typeof ent.speed === "object") {
 			let joiner = ", ";
 			procSpeed("walk");
 			procSpeed("burrow");
 			procSpeed("climb");
 			procSpeed("fly");
 			procSpeed("swim");
-			if (it.speed.choose) {
+			if (ent.speed.choose) {
 				joiner = "; ";
-				stack.push(`${it.speed.choose.from.sort().joinConjunct("、", "或")} ${it.speed.choose.amount} ft.${it.speed.choose.note ? ` ${it.speed.choose.note}` : ""}`);
+				stack.push(`${ent.speed.choose.from.sort().joinConjunct("、", "或")} ${ent.speed.choose.amount} ft.${ent.speed.choose.note ? ` ${ent.speed.choose.note}` : ""}`);
 			}
-			return stack.join(joiner) + (it.speed.note ? ` ${it.speed.note}` : "");
+			return stack.join(joiner) + (ent.speed.note ? ` ${ent.speed.note}` : "");
 		} else {
-			return it.speed + (it.speed === "Varies" ? "" : " 尺");
+			return ent.speed + (ent.speed === "Varies" ? "" : " 尺");
 		}
 }
 ;
