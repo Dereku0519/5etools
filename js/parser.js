@@ -1,14 +1,5 @@
 // PARSING =============================================================================================================
 Parser = {};
-Parser._getSpeedString_getVal = ({prop, speed, isMetric})=>{
-    if (speed === true && prop !== "walk")
-        return "等同於你的步行速度";
-    const num = speed === true ? 0 : speed.number != null ? speed.number : speed;
-    return isMetric ? Parser.metric.getMetricNumber({
-        originalValue: num,
-        originalUnit: Parser.UNT_FEET
-    }) : num;
-};
 Parser._parse_aToB = function (abMap, a, fallback) {
 	if (a === undefined || a === null) throw new TypeError("undefined or null object passed to parser");
 	if (typeof a === "string") a = a.trim();
@@ -219,36 +210,43 @@ Parser.getAbilityModifier = function (abilityScore) {
 	return `${modifier}`;
 };
 
-Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
-    if (ent.speed == null)
-        return "\u2014";
-    const unit = isMetric ? Parser.metric.getMetricUnit({
-        originalUnit: "ft.",
-        isShortForm: true
-    }) : "ft.";
-    if (typeof ent.speed === "object") {
-        const stack = [];
-        let joiner = ", ";
-        Parser.SPEED_MODES.filter(mode=>!ent.speed.hidden?.includes(mode)).forEach(mode=>Parser._getSpeedString_addSpeedMode({
-            ent,
-            prop: mode,
-            stack,
-            isMetric,
-            isSkipZeroWalk,
-            unit
-        }));
-        if (ent.speed.choose && !ent.speed.hidden?.includes("choose")) {
-            joiner = "; ";
-            stack.push(`${ent.speed.choose.from.sort().joinConjunct(", ", " or ")} ${ent.speed.choose.amount} ${unit}${ent.speed.choose.note ? ` ${ent.speed.choose.note}` : ""}`);
-        }
-        return stack.join(joiner) + (ent.speed.note ? ` ${ent.speed.note}` : "");
-    }
-    return (isMetric ? Parser.metric.getMetricNumber({
-        originalValue: ent.speed,
-        originalUnit: Parser.UNT_FEET
-    }) : ent.speed) + (ent.speed === "Varies" ? "" : ` ${unit} `);
-}
-;
+Parser.getSpeedString = (it) => {
+	if (it.speed == null) return "\u2014";
+
+	function procSpeed (propName) {
+		function addSpeed (s) {
+			stack.push(`${propName === "walk" ? "" : `${Parser.SpeedToDisplay(propName)} `}${getVal(s)} 尺${getCond(s)}`);
+		}
+
+		if (it.speed[propName] || propName === "walk") addSpeed(it.speed[propName] || 0);
+		if (it.speed.alternate && it.speed.alternate[propName]) it.speed.alternate[propName].forEach(addSpeed);
+	}
+
+	function getVal (speedProp) {
+		return speedProp.number != null ? speedProp.number : speedProp;
+	}
+
+	function getCond (speedProp) {
+		return speedProp.condition ? ` ${Renderer.get().render(speedProp.condition)}` : "";
+	}
+
+	const stack = [];
+	if (typeof it.speed === "object") {
+		let joiner = ", ";
+		procSpeed("walk");
+		procSpeed("burrow");
+		procSpeed("climb");
+		procSpeed("fly");
+		procSpeed("swim");
+		if (it.speed.choose) {
+			joiner = "; ";
+			stack.push(`${it.speed.choose.from.sort().joinConjunct("、", "或")} ${it.speed.choose.amount} ft.${it.speed.choose.note ? ` ${it.speed.choose.note}` : ""}`);
+		}
+		return stack.join(joiner) + (it.speed.note ? ` ${it.speed.note}` : "");
+	} else {
+		return it.speed + (it.speed === "Varies" ? "" : " 尺");
+	}
+};
 
 Parser.SPEED_TO_PROGRESSIVE = {
 	"walk": "walking",
@@ -2260,8 +2258,6 @@ Parser.vehicleTypeToFull = function (vehicleType) {
 
 SRC_5ETOOLS_TMP = "SRC_5ETOOLS_TMP"; // Temp source, used as a placeholder value
 
-SRC_MPMM = "MPMM";
-SRC_FTD = "FTD";
 SRC_CoS = "CoS";
 SRC_DMG = "DMG";
 SRC_EEPC = "EEPC";
@@ -2430,8 +2426,6 @@ UA_PREFIX_SHORT = "UA: ";
 TftYP_NAME = "深水龍門陣";
 
 Parser.SOURCE_JSON_TO_FULL = {};
-Parser.SOURCE_JSON_TO_FULL[SRC_MPMM] = "魔鄧肯鉅獻：多元宇宙的怪物";
-Parser.SOURCE_JSON_TO_FULL[SRC_FTD] = "菲茲班的龍之寶庫";
 Parser.SOURCE_JSON_TO_FULL[SRC_CoS] = "施特拉德的詛咒";
 Parser.SOURCE_JSON_TO_FULL[SRC_DMG] = "地下城主指南";
 Parser.SOURCE_JSON_TO_FULL[SRC_EEPC] = "邪惡元素玩家指南";
@@ -2581,8 +2575,6 @@ Parser.SOURCE_JSON_TO_FULL[SRC_UA2021FF] = `${UA_PREFIX}2021 Folk of the Feywild
 Parser.SOURCE_JSON_TO_FULL[SRC_UA2021DO] = `${UA_PREFIX}2021 Draconic Options`;
 
 Parser.SOURCE_JSON_TO_ABV = {};
-Parser.SOURCE_JSON_TO_ABV[SRC_MPMM] = "MPMM";
-Parser.SOURCE_JSON_TO_ABV[SRC_FTD] = "FTD";
 Parser.SOURCE_JSON_TO_ABV[SRC_CoS] = "CoS";
 Parser.SOURCE_JSON_TO_ABV[SRC_DMG] = "DMG";
 Parser.SOURCE_JSON_TO_ABV[SRC_EEPC] = "EEPC";
@@ -2877,7 +2869,6 @@ Parser.SOURCE_JSON_TO_DATE[SRC_UA2020F] = "2020-07-13";
 Parser.SOURCE_JSON_TO_DATE[SRC_UA2021GL] = "2020-01-26";
 Parser.SOURCE_JSON_TO_DATE[SRC_UA2021FF] = "2020-03-12";
 Parser.SOURCE_JSON_TO_DATE[SRC_UA2021DO] = "2020-04-14";
-Parser.SOURCE_JSON_TO_DATE[SRC_MPMM] = "2022-01-25";
 
 Parser.SOURCES_ADVENTURES = new Set([
 	SRC_LMoP,
@@ -2937,8 +2928,6 @@ Parser.SOURCES_NON_STANDARD_WOTC = new Set([
 	SRC_MFF,
 ]);
 Parser.SOURCES_VANILLA = new Set([ // An opinionated set of source that could be considered "core-core"
-	SRC_MPMM,
-	SRC_FTD,
 	SRC_DMG,
 	SRC_MM,
 	SRC_PHB,
@@ -2956,7 +2945,6 @@ Parser.SOURCES_VANILLA = new Set([ // An opinionated set of source that could be
 ]);
 Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 [
-	SRC_FTD,
 	SRC_PHB,
 	SRC_MM,
 	SRC_DMG,
