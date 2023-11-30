@@ -209,43 +209,87 @@ Parser.getAbilityModifier = function (abilityScore) {
 	if (modifier >= 0) modifier = `+${modifier}`;
 	return `${modifier}`;
 };
-
-Parser.getSpeedString = (it) => {
-	if (it.speed == null) return "\u2014";
-
-	function procSpeed (propName) {
-		function addSpeed (s) {
-			stack.push(`${propName === "walk" ? "" : `${Parser.SpeedToDisplay(propName)} `}${getVal(s)} 尺${getCond(s)}`);
-		}
-
-		if (it.speed[propName] || propName === "walk") addSpeed(it.speed[propName] || 0);
-		if (it.speed.alternate && it.speed.alternate[propName]) it.speed.alternate[propName].forEach(addSpeed);
-	}
-
-	function getVal (speedProp) {
-		return speedProp.number != null ? speedProp.number : speedProp;
-	}
-
-	function getCond (speedProp) {
-		return speedProp.condition ? ` ${Renderer.get().render(speedProp.condition)}` : "";
-	}
-
-	const stack = [];
-	if (typeof it.speed === "object") {
-		let joiner = ", ";
-		procSpeed("walk");
-		procSpeed("burrow");
-		procSpeed("climb");
-		procSpeed("fly");
-		procSpeed("swim");
-		if (it.speed.choose) {
-			joiner = "; ";
-			stack.push(`${it.speed.choose.from.sort().joinConjunct("、", "或")} ${it.speed.choose.amount} ft.${it.speed.choose.note ? ` ${it.speed.choose.note}` : ""}`);
-		}
-		return stack.join(joiner) + (it.speed.note ? ` ${it.speed.note}` : "");
-	} else {
-		return it.speed + (it.speed === "Varies" ? "" : " 尺");
-	}
+Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
+    if (ent.speed == null)
+        return "\u2014";
+    const unit = isMetric ? Parser.metric.getMetricUnit({
+        originalUnit: "ft.",
+        isShortForm: true
+    }) : "ft.";
+    if (typeof ent.speed === "object") {
+        const stack = [];
+        let joiner = ", ";
+        Parser.SPEED_MODES.filter(mode=>!ent.speed.hidden?.includes(mode)).forEach(mode=>Parser._getSpeedString_addSpeedMode({
+            ent,
+            prop: mode,
+            stack,
+            isMetric,
+            isSkipZeroWalk,
+            unit
+        }));
+        if (ent.speed.choose && !ent.speed.hidden?.includes("choose")) {
+            joiner = "; ";
+            stack.push(`${ent.speed.choose.from.sort().joinConjunct(", ", " or ")} ${ent.speed.choose.amount} ${unit}${ent.speed.choose.note ? ` ${ent.speed.choose.note}` : ""}`);
+        }
+        return stack.join(joiner) + (ent.speed.note ? ` ${ent.speed.note}` : "");
+    }
+    return (isMetric ? Parser.metric.getMetricNumber({
+        originalValue: ent.speed,
+        originalUnit: Parser.UNT_FEET
+    }) : ent.speed) + (ent.speed === "Varies" ? "" : ` ${unit} `);
+}
+;
+Parser._getSpeedString_addSpeedMode = ({ent, prop, stack, isMetric, isSkipZeroWalk, unit})=>{
+    if (ent.speed[prop] || (!isSkipZeroWalk && prop === "walk"))
+        Parser._getSpeedString_addSpeed({
+            prop,
+            speed: ent.speed[prop] || 0,
+            isMetric,
+            unit,
+            stack
+        });
+    if (ent.speed.alternate && ent.speed.alternate[prop])
+        ent.speed.alternate[prop].forEach(speed=>Parser._getSpeedString_addSpeed({
+            prop,
+            speed,
+            isMetric,
+            unit,
+            stack
+        }));
+}
+;
+Parser._getSpeedString_addSpeed = ({prop, speed, isMetric, unit, stack})=>{
+    const ptName = prop === "walk" ? "" : `${prop} `;
+    const ptValue = Parser._getSpeedString_getVal({
+        prop,
+        speed,
+        isMetric
+    });
+    const ptUnit = speed === true ? "" : ` ${unit}`;
+    const ptCondition = Parser._getSpeedString_getCondition({
+        speed
+    });
+    stack.push([ptName, ptValue, ptUnit, ptCondition].join(""));
+}
+;
+Parser._getSpeedString_getVal = ({prop, speed, isMetric})=>{
+    if (speed === true && prop !== "walk")
+        return "equal to your walking speed";
+    const num = speed === true ? 0 : speed.number != null ? speed.number : speed;
+    return isMetric ? Parser.metric.getMetricNumber({
+        originalValue: num,
+        originalUnit: Parser.UNT_FEET
+    }) : num;
+}
+;
+Parser._getSpeedString_getCondition = ({speed})=>speed.condition ? ` ${Renderer.get().render(speed.condition)}` : "";
+Parser.SPEED_MODES = ["walk", "burrow", "climb", "fly", "swim"];
+Parser.SPEED_TO_PROGRESSIVE = {
+    "walk": "walking",
+    "burrow": "burrowing",
+    "climb": "climbing",
+    "fly": "flying",
+    "swim": "swimming",
 };
 
 Parser.SPEED_TO_PROGRESSIVE = {
