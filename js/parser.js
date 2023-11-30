@@ -2258,6 +2258,7 @@ Parser.vehicleTypeToFull = function (vehicleType) {
 
 SRC_5ETOOLS_TMP = "SRC_5ETOOLS_TMP"; // Temp source, used as a placeholder value
 
+SRC_FTD = "FTD";
 SRC_CoS = "CoS";
 SRC_DMG = "DMG";
 SRC_EEPC = "EEPC";
@@ -2426,6 +2427,7 @@ UA_PREFIX_SHORT = "UA: ";
 TftYP_NAME = "深水龍門陣";
 
 Parser.SOURCE_JSON_TO_FULL = {};
+Parser.SOURCE_JSON_TO_FULL[SRC_FTD] = "菲茲班的龍之寶庫";
 Parser.SOURCE_JSON_TO_FULL[SRC_CoS] = "施特拉德的詛咒";
 Parser.SOURCE_JSON_TO_FULL[SRC_DMG] = "地下城主指南";
 Parser.SOURCE_JSON_TO_FULL[SRC_EEPC] = "邪惡元素玩家指南";
@@ -2575,6 +2577,7 @@ Parser.SOURCE_JSON_TO_FULL[SRC_UA2021FF] = `${UA_PREFIX}2021 Folk of the Feywild
 Parser.SOURCE_JSON_TO_FULL[SRC_UA2021DO] = `${UA_PREFIX}2021 Draconic Options`;
 
 Parser.SOURCE_JSON_TO_ABV = {};
+Parser.SOURCE_JSON_TO_ABV[SRC_FTD] = SRC_FTD;
 Parser.SOURCE_JSON_TO_ABV[SRC_CoS] = "CoS";
 Parser.SOURCE_JSON_TO_ABV[SRC_DMG] = "DMG";
 Parser.SOURCE_JSON_TO_ABV[SRC_EEPC] = "EEPC";
@@ -2928,6 +2931,7 @@ Parser.SOURCES_NON_STANDARD_WOTC = new Set([
 	SRC_MFF,
 ]);
 Parser.SOURCES_VANILLA = new Set([ // An opinionated set of source that could be considered "core-core"
+	SRC_FTD,
 	SRC_DMG,
 	SRC_MM,
 	SRC_PHB,
@@ -2945,6 +2949,7 @@ Parser.SOURCES_VANILLA = new Set([ // An opinionated set of source that could be
 ]);
 Parser.SOURCES_AVAILABLE_DOCS_BOOK = {};
 [
+	SRC_FTD,
 	SRC_PHB,
 	SRC_MM,
 	SRC_DMG,
