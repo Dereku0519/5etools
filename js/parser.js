@@ -274,7 +274,7 @@ Parser._getSpeedString_addSpeed = ({prop, speed, isMetric, unit, stack})=>{
 ;
 Parser._getSpeedString_getVal = ({prop, speed, isMetric})=>{
     if (speed === true && prop !== "walk")
-        return "equal to your walking speed";
+        return "等同你的步行速度";
     const num = speed === true ? 0 : speed.number != null ? speed.number : speed;
     return isMetric ? Parser.metric.getMetricNumber({
         originalValue: num,
