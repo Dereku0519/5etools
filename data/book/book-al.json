@@ -2,6 +2,40 @@
 	"data": [
 		{
 			"type": "section",
+			"name": "冒險者聯盟玩家手冊",
+			"entries": [
+				"本文件為您提供了在 D&D冒險者聯盟中創建和升級角色的規則，D&D冒險者聯盟為龍與地下城的官方組織遊戲項目。",
+				"請注意，本文件並不是所有可能裁決的全面指南；更多信息請參閱{@bool 冒險者聯盟地下城主指南|AL|1|冒險者聯盟地下城主指南}",
+				"本文件涵蓋了參與 D&D 冒險者聯盟在以下戰役世界的冒險活動：被遺忘的領域、艾伯倫、鴉閣魔域和龍槍。",
+				{
+					"type": "section",
+					"name": "創造一個角色",
+					"entries": [
+						"使用{@book 玩家手冊|PHB|0|簡介}中的角色創建規則，並按下述說明。您從1級開始遊戲。",
+						{
+							"type": "section",
+							"name": "步驟1：選擇你的戰役",
+							"entries": [
+								"你可以選擇將你的角色附屬於被遺忘國度、艾伯倫、鴉閣魔域或龍槍戰役。你的選擇會影響到你可用的一些規則書選項，並將你的冒險限制在那些附屬於特定戰役的冒險或可用於多個戰役的冒險。一旦你做出了選擇，在你進行了第一次冒險之後，你就不能為該角色改變它。"
+							],
+							"id": "002"
+						},
+						{
+							"type": "section",
+							"name": "步驟2：選擇一個種族或族系",
+							"entries": [
+								"請參閱邊欄中的可選規則。在{@book 塔莎的萬象坩鍋|TCE|0|Using This Book}中能找到的自定義族系是可用的。"
+							],
+							"id": "003"
+						}
+					],
+					"id": "001"
+				}
+			],
+			"id": "000"
+		},
+		{
+			"type": "section",
 			"name": "Faction Guide",
 			"entries": [
 				"Factions are an important part of the D&D Adventurers League experience. Belonging to a faction sometimes means having responsibilities, but it also carries with it support and rewards for service. If you ever switch factions or leave a faction, you lose all ranks and renown with the old faction, and must start at the lowest rank with zero renown with your new faction.",
