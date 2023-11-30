@@ -2258,6 +2258,7 @@ Parser.vehicleTypeToFull = function (vehicleType) {
 
 SRC_5ETOOLS_TMP = "SRC_5ETOOLS_TMP"; // Temp source, used as a placeholder value
 
+SRC_MPMM = "MPMM";
 SRC_FTD = "FTD";
 SRC_CoS = "CoS";
 SRC_DMG = "DMG";
@@ -2427,6 +2428,7 @@ UA_PREFIX_SHORT = "UA: ";
 TftYP_NAME = "深水龍門陣";
 
 Parser.SOURCE_JSON_TO_FULL = {};
+Parser.SOURCE_JSON_TO_FULL[SRC_MPMM] = "魔鄧肯鉅獻：多元宇宙的怪物";
 Parser.SOURCE_JSON_TO_FULL[SRC_FTD] = "菲茲班的龍之寶庫";
 Parser.SOURCE_JSON_TO_FULL[SRC_CoS] = "施特拉德的詛咒";
 Parser.SOURCE_JSON_TO_FULL[SRC_DMG] = "地下城主指南";
@@ -2577,7 +2579,8 @@ Parser.SOURCE_JSON_TO_FULL[SRC_UA2021FF] = `${UA_PREFIX}2021 Folk of the Feywild
 Parser.SOURCE_JSON_TO_FULL[SRC_UA2021DO] = `${UA_PREFIX}2021 Draconic Options`;
 
 Parser.SOURCE_JSON_TO_ABV = {};
-Parser.SOURCE_JSON_TO_ABV[SRC_FTD] = SRC_FTD;
+Parser.SOURCE_JSON_TO_ABV[SRC_MPMM] = "MPMM";
+Parser.SOURCE_JSON_TO_ABV[SRC_FTD] = "FTD";
 Parser.SOURCE_JSON_TO_ABV[SRC_CoS] = "CoS";
 Parser.SOURCE_JSON_TO_ABV[SRC_DMG] = "DMG";
 Parser.SOURCE_JSON_TO_ABV[SRC_EEPC] = "EEPC";
@@ -2872,6 +2875,7 @@ Parser.SOURCE_JSON_TO_DATE[SRC_UA2020F] = "2020-07-13";
 Parser.SOURCE_JSON_TO_DATE[SRC_UA2021GL] = "2020-01-26";
 Parser.SOURCE_JSON_TO_DATE[SRC_UA2021FF] = "2020-03-12";
 Parser.SOURCE_JSON_TO_DATE[SRC_UA2021DO] = "2020-04-14";
+Parser.SOURCE_JSON_TO_DATE[SRC_MPMM] = "2022-01-25";
 
 Parser.SOURCES_ADVENTURES = new Set([
 	SRC_LMoP,
@@ -2931,6 +2935,7 @@ Parser.SOURCES_NON_STANDARD_WOTC = new Set([
 	SRC_MFF,
 ]);
 Parser.SOURCES_VANILLA = new Set([ // An opinionated set of source that could be considered "core-core"
+	SRC_MPMM,
 	SRC_FTD,
 	SRC_DMG,
 	SRC_MM,
