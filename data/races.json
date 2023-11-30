@@ -162,7 +162,7 @@
 			],
 			"speed": {
 				"walk": 30,
-				"fly": "等同於你的步行速度"
+				"fly": true
 			},
 			"traitTags": [
 				"Natural Weapon"
