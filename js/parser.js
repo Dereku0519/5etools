@@ -288,7 +288,7 @@ Parser.SPEED_TO_PROGRESSIVE = {
     "walk": "walking",
     "burrow": "burrowing",
     "climb": "climbing",
-    "飛行": "flying",
+    "fly": "flying",
     "swim": "swimming",
 };
 
