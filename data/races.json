@@ -62,6 +62,9 @@
 			"name": "阿蘭寇拉鷹人",
 			"source": "EEPC",
 			"page": 5,
+			"reprintedAs": [
+				"阿蘭寇拉鷹人|MPMM"
+			],
 			"otherSources": [
 				{
 					"source": "EGW",
@@ -148,6 +151,64 @@
 			"hasFluff": true,
 			"hasFluffImages": true,
 			"ENG_name": "Aarakocra"
+		},
+		{
+			"name": "阿蘭寇拉鷹人",
+			"source": "MPMM",
+			"page": 5,
+			"lineage": "VRGR",
+			"size": [
+				"M"
+			],
+			"speed": {
+				"walk": 30,
+				"fly": true
+			},
+			"traitTags": [
+				"Natural Weapon"
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": [
+							"gust of wind"
+						]
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "飛行",
+					"entries": [
+						"因為你的雙翼，你擁有等同於你步行速度的飛行速度。如果你穿戴中甲和重甲，則你不能使用此飛行速度。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "禽爪",
+					"entries": [
+						"你可以使用你的禽爪進行徒手打擊。當你使用它們命中，這次打擊會造成1d6+你力量調整值的揮砍傷害，代替徒手打擊原本的鈍擊傷害。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "呼風者",
+					"entries": [
+						"從3級開始，你可以施展{@spell 造風術}，且無需材料成分。一旦你使用了該特質施展法術，直到完成一次長休前你不能再次使用。你也可以使用你擁有的2環或更高的法術位施展該法術。",
+						"當你使用該特質施展造風術時，智力，感知或魅力是你的施法關鍵屬性（當你選擇該種族時進行決定）。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "阿斯莫",
