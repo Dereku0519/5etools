@@ -209,16 +209,29 @@ Parser.getAbilityModifier = function (abilityScore) {
 	if (modifier >= 0) modifier = `+${modifier}`;
 	return `${modifier}`;
 };
-Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
-    if (ent.speed == null)
-        return "\u2014";
-    const unit = isMetric ? Parser.metric.getMetricUnit({
-        originalUnit: "ft.",
-        isShortForm: true
-    }) : "ft.";
-    if (typeof ent.speed === "object") {
-        const stack = [];
-        let joiner = ", ";
+Parser.getSpeedString = (ent) => {
+	if (ent.speed == null) return "\u2014";
+
+	function procSpeed (propName) {
+		function addSpeed (s) {
+			stack.push(`${propName === "walk" ? "" : `${Parser.SpeedToDisplay(propName)} `}${getVal(s)} 尺${getCond(s)}`);
+		}
+
+		if (ent.speed[propName] || propName === "walk") addSpeed(ent.speed[propName] || 0);
+		if (ent.speed.alternate && ent.speed.alternate[propName]) ent.speed.alternate[propName].forEach(addSpeed);
+	}
+
+	function getVal (speedProp) {
+		return speedProp.number != null ? speedProp.number : speedProp;
+	}
+
+	function getCond (speedProp) {
+		return speedProp.condition ? ` ${Renderer.get().render(speedProp.condition)}` : "";
+	}
+
+	const stack = [];
+	if (typeof ent.speed === "object") {
+		let joiner = ", ";
         Parser.SPEED_MODES.filter(mode=>!ent.speed.hidden?.includes(mode)).forEach(mode=>Parser._getSpeedString_addSpeedMode({
             ent,
             prop: mode,
@@ -227,18 +240,20 @@ Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
             isSkipZeroWalk,
             unit
         }));
-        if (ent.speed.choose && !ent.speed.hidden?.includes("choose")) {
-            joiner = "; ";
-            stack.push(`${ent.speed.choose.from.sort().joinConjunct(", ", " or ")} ${ent.speed.choose.amount} ${unit}${ent.speed.choose.note ? ` ${ent.speed.choose.note}` : ""}`);
-        }
-        return stack.join(joiner) + (ent.speed.note ? ` ${ent.speed.note}` : "");
-    }
-    return (isMetric ? Parser.metric.getMetricNumber({
-        originalValue: ent.speed,
-        originalUnit: Parser.UNT_FEET
-    }) : ent.speed) + (ent.speed === "Varies" ? "" : ` ${unit} `);
-}
-;
+		procSpeed("walk");
+		procSpeed("burrow");
+		procSpeed("climb");
+		procSpeed("fly");
+		procSpeed("swim");
+		if (ent.speed.choose) {
+			joiner = "; ";
+			stack.push(`${ent.speed.choose.from.sort().joinConjunct("、", "或")} ${ent.speed.choose.amount} ft.${ent.speed.choose.note ? ` ${ent.speed.choose.note}` : ""}`);
+		}
+		return stack.join(joiner) + (ent.speed.note ? ` ${ent.speed.note}` : "");
+	} else {
+		return ent.speed + (ent.speed === "Varies" ? "" : " 尺");
+	}
+};
 Parser._getSpeedString_addSpeedMode = ({ent, prop, stack, isMetric, isSkipZeroWalk, unit})=>{
     if (ent.speed[prop] || (!isSkipZeroWalk && prop === "walk"))
         Parser._getSpeedString_addSpeed({
