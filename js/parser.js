@@ -213,7 +213,7 @@ Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
     if (ent.speed == null)
         return "\u2014";
     const unit = isMetric ? Parser.metric.getMetricUnit({
-        originalUnit: "ft.",
+        originalUnit: "尺",
         isShortForm: true
     }) : "ft.";
     if (typeof ent.speed === "object") {
