@@ -209,16 +209,16 @@ Parser.getAbilityModifier = function (abilityScore) {
 	if (modifier >= 0) modifier = `+${modifier}`;
 	return `${modifier}`;
 };
-Parser.getSpeedString = (it) => {
-	if (it.speed == null) return "\u2014";
+Parser.getSpeedString = (ent) => {
+	if (ent.speed == null) return "\u2014";
 
 	function procSpeed (propName) {
 		function addSpeed (s) {
 			stack.push(`${propName === "walk" ? "" : `${Parser.SpeedToDisplay(propName)} `}${getVal(s)} 尺${getCond(s)}`);
 		}
 
-		if (it.speed[propName] || propName === "walk") addSpeed(it.speed[propName] || 0);
-		if (it.speed.alternate && it.speed.alternate[propName]) it.speed.alternate[propName].forEach(addSpeed);
+		if (ent.speed[propName] || propName === "walk") addSpeed(ent.speed[propName] || 0);
+		if (ent.speed.alternate && ent.speed.alternate[propName]) ent.speed.alternate[propName].forEach(addSpeed);
 	}
 
 	function getVal (speedProp) {
@@ -230,20 +230,20 @@ Parser.getSpeedString = (it) => {
 	}
 
 	const stack = [];
-	if (typeof it.speed === "object") {
+	if (typeof ent.speed === "object") {
 		let joiner = ", ";
 		procSpeed("walk");
 		procSpeed("burrow");
 		procSpeed("climb");
 		procSpeed("fly");
 		procSpeed("swim");
-		if (it.speed.choose) {
+		if (ent.speed.choose) {
 			joiner = "; ";
-			stack.push(`${it.speed.choose.from.sort().joinConjunct("、", "或")} ${it.speed.choose.amount} ft.${it.speed.choose.note ? ` ${it.speed.choose.note}` : ""}`);
+			stack.push(`${ent.speed.choose.from.sort().joinConjunct("、", "或")} ${ent.speed.choose.amount} ft.${ent.speed.choose.note ? ` ${ent.speed.choose.note}` : ""}`);
 		}
-		return stack.join(joiner) + (it.speed.note ? ` ${it.speed.note}` : "");
+		return stack.join(joiner) + (ent.speed.note ? ` ${ent.speed.note}` : "");
 	} else {
-		return it.speed + (it.speed === "Varies" ? "" : " 尺");
+		return ent.speed + (ent.speed === "Varies" ? "" : " 尺");
 	}
 };
 Parser._getSpeedString_addSpeedMode = ({ent, prop, stack, isMetric, isSkipZeroWalk, unit})=>{
