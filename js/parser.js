@@ -283,7 +283,7 @@ Parser._getSpeedString_getVal = ({prop, speed, isMetric})=>{
 }
 ;
 Parser._getSpeedString_getCondition = ({speed})=>speed.condition ? ` ${Renderer.get().render(speed.condition)}` : "";
-Parser.SPEED_MODES = ["walk", "burrow", "climb", "fly", "swim"];
+Parser.SPEED_MODES = ["步行", "burrow", "攀爬", "飛行", "游泳"];
 Parser.SPEED_TO_PROGRESSIVE = {
     "walk": "walking",
     "burrow": "burrowing",
