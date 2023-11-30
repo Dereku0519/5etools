@@ -215,7 +215,7 @@ Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
     const unit = isMetric ? Parser.metric.getMetricUnit({
         originalUnit: "尺",
         isShortForm: true
-    }) : "ft.";
+    }) : "尺";
     if (typeof ent.speed === "object") {
         const stack = [];
         let joiner = ", ";
