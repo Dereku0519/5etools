@@ -569,6 +569,12 @@
 			"published": "2016-08-26",
 			"contents": [
 				{
+					"name": "冒險者聯盟玩家手冊",
+					"headers": [
+						"創造一個角色"
+					]
+				},
+				{
 					"name": "Faction Guide",
 					"headers": [
 						"Faction Advancement and Benefits",
