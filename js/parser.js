@@ -234,9 +234,9 @@ Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
         return stack.join(joiner) + (ent.speed.note ? ` ${ent.speed.note}` : "");
     }
     return (isMetric ? Parser.metric.getMetricNumber({
-        originalValue: "111",
+        originalValue: ent.speed,
         originalUnit: Parser.UNT_FEET
-    }) : ent.speed) + (ent.speed === "Varies" ? "" : ` ${unit} `);
+    }) : "111") + (ent.speed === "Varies" ? "" : ` ${unit} `);
 }
 ;
 Parser._getSpeedString_addSpeedMode = ({ent, prop, stack, isMetric, isSkipZeroWalk, unit})=>{
