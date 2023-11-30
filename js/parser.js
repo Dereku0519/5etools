@@ -229,7 +229,7 @@ Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
         }));
         if (ent.speed.choose && !ent.speed.hidden?.includes("choose")) {
             joiner = "; ";
-            stack.push(`${ent.speed.choose.from.sort().joinConjunct(", ", " or ")} ${Parser.SpeedToDisplay(ent.speed.choose.amount)} ${unit}${ent.speed.choose.note ? ` ${ent.speed.choose.note}` : ""}`);
+            stack.push(`${ent.speed.choose.from.sort().joinConjunct(", ", " or ")} ${ent.speed.choose.amount} ${ent.speed.choose.amount}${ent.speed.choose.note ? ` ${ent.speed.choose.note}` : ""}`);
         }
         return stack.join(joiner) + (ent.speed.note ? ` ${ent.speed.note}` : "");
     }
