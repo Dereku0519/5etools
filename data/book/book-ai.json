@@ -372,6 +372,7 @@
 			"name": "第二章：發展你的加盟公司",
 			"page": 9,
 			"entries": [
+				"譯by.",
 				{
 					"type": "image",
 					"href": {
@@ -562,7 +563,7 @@
 											"name": "職位和福利",
 											"page": 11,
 											"entries": [
-												"What the {@book Player's Handbook|PHB} calls untrained hirelings are often referred to as \"subemployees\" within an Acquisitions Incorporated franchise, while skilled hirelings typically gain the more prestigious title of \"intern.\" It's entirely up to individual franchisees what awesome titles they bestow upon their staff members in addition to (or, indeed, in lieu of) perks such as an occasional wage."
+												"在Acquisitions Incorporated特許經營權中，{@book 玩家手冊|PHB}中提到的未訓練僱員通常都被稱為“下級僱員“，而熟練僱員則會獲得更高級的“實習”頭銜。每間特許經營店都可以為自己的員工提供額外花紅或頭銜或兩者兼施。"
 											],
 											"id": "016"
 										}
@@ -633,19 +634,19 @@
 							"name": "總部特色",
 							"page": 12,
 							"entries": [
-								"Acquisitions Incorporated Head Office provides the members of each franchise with a place to call their own. It might not be initially impressive (cleaning any old blood stains is the franchisees' responsibility). But over time, characters in an Acq Inc campaign are granted resources to help construct the headquarters of their dreams! Each franchise rank affords the characters a number of choices, allowing customization and creativity. Sample features are provided as guidelines, but a franchise's features can include literally anything decided on and agreed to by the players and the DM.",
+								"Acquisitions Incorporated總部會為每一間特許經營店提供一個店址。雖然這個地方剛開始也許不會很讓人驚艷（清理商店的老問題是特許經營店自己的責任）。但是隨著時間的經過，在Acq Inc戰役內的角色會慢慢獲得各種幫助他們建造理想中的商店的資源！每一個特許經營權階級都會提供玩家不同的選擇，增加了更多客製性和創造性。書內會提供一些特性例子作為參考，但是只要在玩家和dm都讚同的情況之下特許經營店的特性可以是任何東西。",
 								{
 									"type": "entries",
-									"name": "Group Design",
+									"name": "團隊設計",
 									"page": 12,
 									"entries": [
-										"When selecting a feature, the characters must make decisions together\u2014meaning the players must do the same. Deciding on the features of a headquarters should be a team effort, both in game and around the table. What should a headquarters look like initially? Do the characters prefer to travel by land or by sea, or to operate from a fixed location? Is a ruined keep more interesting than an old vine-covered wizard's tower in the woods? Is the headquarters remote or within a settlement\u2014perhaps an old tavern or caravansary the characters can restore?",
-										"It can be helpful to think ahead as well. Acquisitions Incorporated is known for mobile franchises, helping to bring goods and adventuring services to distant locations. When a franchise headquarters becomes mobile, will it fly or sail? Will it gain the power to teleport across the land? Will it sprout legs and walk?",
-										"Everything depends on the type of headquarters. The top of a wizard's tower might detach and shoot skyward like a missile. Or a franchise's headquarters might be contained within a giant statue, which over time gains the power to move farther and faster. A castle or other stationary structure could contain a portal or teleportation circle, allowing the characters to travel to distant locations while the stronghold remains behind.",
+										"選擇功能的時候，角色們必須一起做出決定-也就是全部玩家必須達成共識。無論是在遊戲內還是場外，決定總部這件事一定要全體參與。一開始總部看起來長得如何？角色們傾向於通過陸路還是海路，或者是在固定地點運行？廢墟會比森林中長滿青苔的巫師塔有趣嗎？總部是處於偏遠地區還是處於一個鄉鎮-也許是一個角色們自行修復的破舊酒館或者商店？",
+										"如果可以提前預想未來就更棒了。Acquisitions Incorporated以到處提供貨品和冒險服務的移動特許經營店聞名。如果特許經營店是可移動型的，那麼它是飛著的還是航行的？它有能力在各個地區間傳送嗎？還是它會長腳跑起來呢？",
+										"總部類型決定著一切。巫師塔的頂部也許可以分離並像一顆導彈般飛向空中。或者總部處於一個巨大的雕像內，隨著時間的經過它會或者更強更快的移動能力。一個無法移動的建築例如城堡也許會有一個傳送法陣，讓角色可以在不移動據點的情況下去到很遠的地方。",
 										{
 											"type": "quote",
 											"entries": [
-												"There are a lot of perks to being an intern that people overlook. The hours are very flexible, you get a 20 percent discount in the gift shop, you get a bathroom break every four hours as long as you ask your supervisor first. And sometimes if you go into the conference room after a meeting, there will be a bunch of soda and leftover subs. You can just take as much as you want! As long as nobody sees you."
+												"很多人都會忽視實習生的好處。工時充滿彈性，禮品店的20%折扣，只要向上司詢問就可以每四個小時獲得一次廁所時間。有時候在會議結束之後可以在會議室內找到一些零食汽水。想拿多少就拿多少！前提是沒被任何人發現"
 											],
 											"by": "Viari"
 										}
@@ -654,10 +655,10 @@
 								},
 								{
 									"type": "entries",
-									"name": "Incorporating Benefits",
+									"name": "入職好處",
 									"page": 13,
 									"entries": [
-										"The characters' collective skill proficiencies, tool proficiencies, backgrounds, and positions within their franchise could all impact the design and construction of a headquarters. A glassblower might make beautiful stained-glass windows, while a herbalist fills the headquarters with pleasing or mysterious scents. An acolyte could outfit a small area of the headquarters as a chapel, while a sage sources a unique desk at which to work. Such features are cosmetic or limited in impact, but enable players to feel more interested and invested in their headquarters."
+										"角色的技能和道具熟練，背景以及職位都會影響到總部的設計和建築。玻璃吹製工可以製作出美麗的彩色玻璃，草藥師著可以讓整個總部充滿神秘而舒適的氣味。聖職者可以把總部的一小部分佈置成禮拜堂，而學者可能有自己獨特的工作台。雖然這些可能只是裝飾性的並且充滿限制，但是可以讓玩家更有興趣來發展他們的總部。"
 									],
 									"id": "01d"
 								},
@@ -698,7 +699,7 @@
 												{
 													"type": "quote",
 													"entries": [
-														"I don't have rivals. I have partners who simply don't know it yet."
+														"我沒有競爭對手。我只有不自知的夥伴"
 													],
 													"by": "Omin Dran"
 												}
@@ -812,7 +813,7 @@
 												{
 													"type": "quote",
 													"entries": [
-														"A good idea is to swim in the wake of an existing business. Somebody else did the market research and decided this was a good location? Awesome! Now use that decision against them. Set up direct competition. Then spread rumors about them until they're forced to leave the area in shame. Now the market is yours. That's how you business."
+														"我有一個好主意就是在一個現有市場橫插一腳。你說已經有人這麼做了？讚啦！現在對他們做同樣的事情。準備一樣的貨物。然後散播他們的謠言讓他們在羞愧中離開。現在這個市場是你的了。這就是生意"
 													],
 													"by": "Donaar Blit'zen"
 												}
@@ -1134,10 +1135,10 @@
 						"每個公司職位都有自己獨特的風格，並帶來一系列意想不到的好處。其中一些好處是以總公司授予的物質獎勵的形式出現的，包括只有Acquisitions Incorporated加盟商才能獲得的特殊魔法物品。其他人則是由你的職位和特權等級的微妙力量塑造的。",
 						{
 							"type": "entries",
-							"name": "Joint Effort",
+							"name": "共同努力",
 							"page": 18,
 							"entries": [
-								"Players\u2014and especially new players\u2014should keep in mind the amount of creativity and collaboration a company position requires when determining which position is the best fit for their character. In addition to their various mechanical benefits, the features of each company position are intended to offer players and DMs the opportunity to collaborate on crafting campaign narrative. Sometimes this is straightforward, as when a feature allows a character to learn useful information about enemies or allies, as with the obviator's Read the Opposition feature. Sometimes this calls for a focused collaborative effort between player and DM, as with the cartographer's Tale of Safe Travel. Where the narrative options in a position's features lend themselves to interpretation, the DM works with the players to determine how those options play out, as is the baseline model of every Acquisitions Incorporated campaign."
+								"玩家們-尤其是新玩家-一定要記得決定角色定位的時候一定要把創造力和公司需求帶入考量。除了機制上的好處以外，公司職位的特性應該要讓玩家和DM可以聯合創作出一個故事。有時候可以很直接，例如一個特性可以讓玩家知道敵人或者夥伴的情報，如同觀察者的“觀察對方”特性。有時候這需要玩家和DM之間的緊密配合，如同製圖師的“安全旅程的故事”特性。當一個職位特性的選項描述符合解釋的時候，dm和玩家們一起決定這個選項如何發揮作用，如同每一個Acquisitions Incorporated戰役的基礎模型。"
 							],
 							"id": "046"
 						},
