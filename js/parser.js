@@ -283,20 +283,13 @@ Parser._getSpeedString_getVal = ({prop, speed, isMetric})=>{
 }
 ;
 Parser._getSpeedString_getCondition = ({speed})=>speed.condition ? ` ${Renderer.get().render(speed.condition)}` : "";
+Parser.SPEED_MODES = ["walk", "burrow", "climb", "飛行", "swim"];
 Parser.SPEED_TO_PROGRESSIVE = {
     "walk": "walking",
     "burrow": "burrowing",
     "climb": "climbing",
     "fly": "flying",
     "swim": "swimming",
-};
-
-Parser.SPEED_TO_PROGRESSIVE = {
-	"walk": "walking",
-	"burrow": "burrowing",
-	"climb": "climbing",
-	"fly": "flying",
-	"swim": "swimming",
 };
 
 Parser.speedToProgressive = function (prop) {
