@@ -15,7 +15,7 @@
 				"con"
 			],
 			"startingProficiencies": {
-				"armor": [
+				"default": [
 					"light",
 					"medium",
 					"{@item shield|phb|盾牌}"
