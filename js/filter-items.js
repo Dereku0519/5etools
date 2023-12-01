@@ -6,12 +6,28 @@ class PageFilterEquipment extends PageFilter {
 
 		this._typeFilter = new Filter({header: "Type", headerName: "類型", deselFn: (it) => PageFilterItems._DEFAULT_HIDDEN_TYPES.has(it), displayFn: Parser.ItemTypeToDisplay});
 		this._propertyFilter = new Filter({header: "Property", headerName: "物品屬性", displayFn: StrUtil.uppercaseFirst});
+		this._categoryFilter = new Filter({
+			header: "Category",
+			headerName: "類別",
+			items: ["Basic", "Generic Variant", "Specific Variant", "Other"],
+			deselFn: (it) => it === "Specific Variant",
+			itemSortFn: null,
+			displayFn: function (str) {
+				switch (str) {
+					case "Basic": return "基本";
+					case "Generic Variant": return "通用變體";
+					case "Specific Variant": return "特定變體";
+					case "Other": return "其他";
+					default: return str;
+				}
+			},
+		});
 		this._costFilter = new RangeFilter({header: "Cost", headerName: "價值", min: 0, max: 100, isAllowGreater: true, suffix: " gp"});
-		this._weightFilter = new RangeFilter({header: "Weight", headerName: "重量",min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
-		this._focusFilter = new Filter({header: "Spellcasting Focus",  headerName: "施法法器",items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES], displayFn: Parser.ClassToDisplay});
-		this._damageTypeFilter = new Filter({header: "Weapon Damage Type",  headerName: "武器傷害類型", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a), Parser.dmgTypeToFull(b))});
+		this._weightFilter = new RangeFilter({header: "Weight", headerName: "質量", min: 0, max: 100, isAllowGreater: true, suffix: " lb."});
+		this._focusFilter = new Filter({header: "Spellcasting Focus", headerName: "施法法器", items: [...Parser.ITEM_SPELLCASTING_FOCUS_CLASSES], displayFn: Parser.ClassToDisplay});
+		this._damageTypeFilter = new Filter({header: "Weapon Damage Type", headerName: "武器傷害類型", displayFn: it => Parser.dmgTypeToFull(it).uppercaseFirst(), itemSortFn: (a, b) => SortUtil.ascSortLower(Parser.dmgTypeToFull(a), Parser.dmgTypeToFull(b))});
 		this._miscFilter = new Filter({header: "Miscellaneous", items: ["Item Group", "SRD", "Has Images", "Has Info"], isSrdFilter: true});
-		this._poisonTypeFilter = new Filter({header: "Poison Type", headerName:"藥水類型", items: ["ingested", "injury", "inhaled", "contact"], displayFn: Parser.PosisonTypeToDisplay});
+		this._poisonTypeFilter = new Filter({header: "Poison Type", headerName: "毒藥類型", items: ["ingested", "injury", "inhaled", "contact"], displayFn: StrUtil.toTitleCase});
 	}
 
 	static mutateForFilters (item) {
@@ -51,6 +67,7 @@ class PageFilterEquipment extends PageFilter {
 	addToFilters (item, isExcluded) {
 		if (isExcluded) return;
 
+		this._sourceFilter.addItem(item.source);
 		this._typeFilter.addItem(item._typeListText);
 		this._propertyFilter.addItem(item._fProperties);
 		this._damageTypeFilter.addItem(item.dmgType);
@@ -59,8 +76,10 @@ class PageFilterEquipment extends PageFilter {
 
 	async _pPopulateBoxOptions (opts) {
 		opts.filters = [
+			this._sourceFilter,
 			this._typeFilter,
 			this._propertyFilter,
+			this._categoryFilter,
 			this._costFilter,
 			this._weightFilter,
 			this._focusFilter,
@@ -73,8 +92,10 @@ class PageFilterEquipment extends PageFilter {
 	toDisplay (values, it) {
 		return this._filterBox.toDisplay(
 			values,
+			it.source,
 			it._typeListText,
 			it._fProperties,
+			it._category,
 			it._fValue,
 			it.weight,
 			it._fFocus,
@@ -94,9 +115,9 @@ class PageFilterItems extends PageFilterEquipment {
 			case "uncommon": case "非常見": return 2;
 			case "rare": case "珍稀": return 3;
 			case "very rare": case "非常珍稀": return 4;
-			case "legendary":case "傳說": return 5;
-			case "artifact":case "神器": return 6;
-			case "varies":  case "可變": return 7;
+			case "legendary": case "傳說": return 5;
+			case "artifact": case "神器": return 6;
+			case "varies": case "可變": return 7;
 			case "unknown (magic)": return 8;
 			case "unknown": return 9;
 			default: return 10;
@@ -113,6 +134,15 @@ class PageFilterItems extends PageFilterEquipment {
 		else if (o.sortBy === "weight") return SortUtil.ascSort(a.values.weight, b.values.weight) || SortUtil.compareListNames(a, b);
 		else if (o.sortBy === "cost") return SortUtil.ascSort(a.values.cost, b.values.cost) || SortUtil.compareListNames(a, b);
 		else return 0;
+	}
+
+	static _getBaseItemDisplay (baseItem) {
+		if (!baseItem) return null;
+		let [name, source] = baseItem.split("|");
+		name = name.toTitleCase();
+		source = source || SRC_DMG;
+		if (source.toLowerCase() === SRC_PHB.toLowerCase()) return name;
+		return `${name} (${Parser.sourceJsonToAbv(source)})`;
 	}
 
 	// endregion
@@ -137,33 +167,24 @@ class PageFilterItems extends PageFilterEquipment {
 			itemSortFn: null,
 			displayFn: Parser.translateItemKeyToDisplay,
 		});
-		this._attunementFilter = new Filter({header: "Attunement", headerName: "同調", items: ["Requires Attunement", "Requires Attunement By...", "Attunement Optional", VeCt.STR_NO_ATTUNEMENT], itemSortFn: null, displayFn: function(str)
-		{
-			switch(str){
-			case "Requires Attunement": return "需要";
-			case "Requires Attunement By...": return "限定...";
-			case "Attunement Optional": return "可選";
-			case VeCt.STR_NO_ATTUNEMENT: return "不須";
-			default: return str;
-		};}});
-		this._categoryFilter = new Filter({
-			header: "Category",
-			headerName: "分類",
-			items: ["Basic", "Generic Variant", "Specific Variant", "Other"],
-			deselFn: (it) => it === "Specific Variant",
+		this._attunementFilter = new Filter({
+			header: "Attunement",
+			headerName: "同調",
+			items: ["Requires Attunement", "Requires Attunement By...", "Attunement Optional", VeCt.STR_NO_ATTUNEMENT],
 			itemSortFn: null,
-			displayFn: function(str){
-				switch(str){
-				case "Basic": return "基本";
-				case "Generic Variant": return "通用變體";
-				case "Specific Variant": return "特定變體";
-				case "Other": return "其他";
-				default: return str;
-			};}
-		});
-		this._bonusFilter = new Filter({header: "Bonus", items: ["Armor Class", "Proficiency Bonus", "Spell Attacks", "Spell Save DC", "Saving Throws", "Weapon Attack and Damage Rolls", "Weapon Attack Rolls", "Weapon Damage Rolls"]});
-		this._miscFilter = new Filter({header: "Miscellaneous", headerName: "雜項",items: ["Ability Score Adjustment", "Charges", "Cursed", "Grants Proficiency", "Has Images", "Has Info", "Item Group", "Magic", "Mundane", "Sentient", "SRD"], isSrdFilter: true, displayFn: Parser.ItemMiscToDisplay});
-		this._baseSourceFilter = new SourceFilter({header: "Base Source", selFn: null});
+			displayFn: function (str) {
+				switch (str) {
+					case "Requires Attunement": return "需要同調";
+					case "Requires Attunement By...": return "需...同調";
+					case "Attunement Optional": return "可同調";
+					case VeCt.STR_NO_ATTUNEMENT: return "無須同調";
+					default: return str;
+				}
+			}});
+		this._bonusFilter = new Filter({header: "Bonus", headerName: "加值", items: ["Armor Class", "Proficiency Bonus", "Spell Attacks", "Spell Save DC", "Saving Throws", "Weapon Attack and Damage Rolls", "Weapon Attack Rolls", "Weapon Damage Rolls"]});
+		this._miscFilter = new Filter({header: "Miscellaneous", headerName: "雜項", items: ["Ability Score Adjustment", "Charges", "Cursed", "Grants Proficiency", "Has Images", "Has Info", "Item Group", "Magic", "Mundane", "Sentient", "SRD"], isSrdFilter: true});
+		this._baseSourceFilter = new SourceFilter({header: "Base Source", headerName: "基礎資源", selFn: null});
+		this._baseItemFilter = new Filter({header: "Base Item", headerName: "基礎物品", displayFn: this.constructor._getBaseItemDisplay.bind(this.constructor)});
 	}
 
 	static mutateForFilters (item) {
@@ -179,6 +200,13 @@ class PageFilterItems extends PageFilterEquipment {
 		if (item.charges) item._fMisc.push("Charges");
 		if (item.sentient) item._fMisc.push("Sentient");
 		if (item.grantsProficiency) item._fMisc.push("Grants Proficiency");
+
+		item._fBaseItemSelf = item._isBaseItem ? `${item.name}|${item.source}`.toLowerCase() : null;
+		item._fBaseItem = [
+			item.baseItem ? (item.baseItem.includes("|") ? item.baseItem : `${item.baseItem}|${SRC_DMG}`).toLowerCase() : null,
+			item._baseName ? `${item._baseName}|${item._baseSource || item.source}`.toLowerCase() : null,
+		].filter(Boolean);
+		item._fBaseItemAll = item._fBaseItemSelf ? [item._fBaseItemSelf, ...item._fBaseItem] : item._fBaseItem;
 
 		item._fBonus = [];
 		if (item.bonusAc) item._fBonus.push("Armor Class");
@@ -200,6 +228,7 @@ class PageFilterItems extends PageFilterEquipment {
 		this._tierFilter.addItem(item._fTier)
 		this._attachedSpellsFilter.addItem(item.attachedSpells);
 		this._lootTableFilter.addItem(item.lootTables);
+		this._baseItemFilter.addItem(item._fBaseItem);
 		this._baseSourceFilter.addItem(item._baseSource);
 	}
 
@@ -221,6 +250,7 @@ class PageFilterItems extends PageFilterEquipment {
 			this._bonusFilter,
 			this._miscFilter,
 			this._lootTableFilter,
+			this._baseItemFilter,
 			this._baseSourceFilter,
 			this._poisonTypeFilter,
 			this._attachedSpellsFilter,
@@ -244,13 +274,14 @@ class PageFilterItems extends PageFilterEquipment {
 			it._fBonus,
 			it._fMisc,
 			it.lootTables,
+			it._fBaseItemAll,
 			it._baseSource,
 			it.poisonTypes,
 			it.attachedSpells,
 		);
 	}
 }
-PageFilterItems._DEFAULT_HIDDEN_TYPES = new Set(["Treasure", "Futuristic", "Modern", "Renaissance"]);
+PageFilterItems._DEFAULT_HIDDEN_TYPES = new Set(["treasure", "futuristic", "modern", "renaissance"]);
 
 class ModalFilterItems extends ModalFilter {
 	/**
@@ -263,15 +294,15 @@ class ModalFilterItems extends ModalFilter {
 		opts = opts || {};
 		super({
 			...opts,
-			modalTitle: "Items",
+			modalTitle: `Item${opts.isRadio ? "" : "s"}`,
 			pageFilter: new PageFilterItems(),
 		})
 	}
 
 	_$getColumnHeaders () {
 		const btnMeta = [
-			{sort: "name", text: "Name", width: "5"},
-			{sort: "type", text: "Type", width: "5"},
+			{sort: "name", text: "Name", width: "4"},
+			{sort: "type", text: "Type", width: "6"},
 			{sort: "source", text: "Source", width: "1"},
 		];
 		return ModalFilter._$getFilterColumnHeaders(btnMeta);
@@ -284,7 +315,7 @@ class ModalFilterItems extends ModalFilter {
 	async _pLoadAllData () {
 		const brew = await BrewUtil.pAddBrewData();
 		const fromData = await Renderer.item.pBuildList({isAddGroups: true, isBlacklistVariants: true});
-		const fromBrew = await Renderer.item.getItemsFromHomebrew(brew);
+		const fromBrew = await Renderer.item.pGetItemsFromHomebrew(brew);
 		return [...fromData, ...fromBrew];
 	}
 
@@ -294,31 +325,47 @@ class ModalFilterItems extends ModalFilter {
 		Renderer.item.enhanceItem(item);
 		pageFilter.mutateAndAddToFilters(item);
 
-		const eleLabel = document.createElement("label");
-		eleLabel.className = "w-100 flex-vh-center lst--border no-select lst__wrp-cells";
+		const eleRow = document.createElement("div");
+		eleRow.className = "px-0 w-100 flex-col no-shrink";
 
 		const hash = UrlUtil.URL_TO_HASH_BUILDER[UrlUtil.PG_ITEMS](item);
 		const source = Parser.sourceJsonToAbv(item.source);
 		const type = item._typeListText.join(", ");
 
-		eleLabel.innerHTML = `<div class="col-1 pl-0 flex-vh-center"><input type="checkbox" class="no-events"></div>
-		<div class="col-5 bold">${item.name}</div>
-		<div class="col-5">${type.uppercaseFirst()}</div>
-		<div class="col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0" title="${Parser.sourceJsonToFull(item.source)}" ${BrewUtil.sourceJsonToStyle(item.source)}>${source}</div>`;
+		eleRow.innerHTML = `<div class="w-100 flex-vh-center lst--border no-select lst__wrp-cells">
+			<div class="col-0-5 pl-0 flex-vh-center">${this._isRadio ? `<input type="radio" name="radio" class="no-events">` : `<input type="checkbox" class="no-events">`}</div>
 
-		return new ListItem(
+			<div class="col-0-5 px-1 flex-vh-center">
+				<div class="ui-list__btn-inline px-2" title="Toggle Preview">[+]</div>
+			</div>
+
+			<div class="col-5 ${this._getNameStyle()}">${item.name}</div>
+			<div class="col-5">${type.uppercaseFirst()}</div>
+			<div class="col-1 text-center ${Parser.sourceJsonToColor(item.source)} pr-0" title="${Parser.sourceJsonToFull(item.source)}" ${BrewUtil.sourceJsonToStyle(item.source)}>${source}</div>
+		</div>`;
+
+		const btnShowHidePreview = eleRow.firstElementChild.children[1].firstElementChild;
+
+		const listItem = new ListItem(
 			itI,
-			eleLabel,
+			eleRow,
 			item.name,
 			{
 				hash,
 				source,
 				sourceJson: item.source,
 				type,
+				ENG_name: item.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(item),
 			},
 			{
-				cbSel: eleLabel.firstElementChild.firstElementChild,
+				cbSel: eleRow.firstElementChild.firstElementChild.firstElementChild,
+				btnShowHidePreview,
 			},
 		);
+
+		ListUiUtil.bindPreviewButton(UrlUtil.PG_ITEMS, this._allData, listItem, btnShowHidePreview);
+
+		return listItem;
 	}
 }
