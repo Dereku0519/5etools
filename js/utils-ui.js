@@ -56,12 +56,7 @@ class ProxyBase {
 	_getProxy (hookProp, toProxy) {
 		return new Proxy(toProxy, {
 			set: (object, prop, value) => {
-				if (object[prop] === value) return true;
-				const prevValue = object[prop];
-				object[prop] = value;
-				if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hook => hook(prop, value, prevValue));
-				if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, value, prevValue));
-				return true;
+				return this._doProxySet(hookProp, object, prop, value);
 			},
 			deleteProperty: (object, prop) => {
 				if (!(prop in object)) return true;
@@ -72,6 +67,25 @@ class ProxyBase {
 				return true;
 			},
 		});
+	}
+
+	_doProxySet (hookProp, object, prop, value) {
+		if (object[prop] === value) return true;
+		const prevValue = object[prop];
+		object[prop] = value;
+		if (this.__hooksAll[hookProp]) this.__hooksAll[hookProp].forEach(hook => hook(prop, value, prevValue));
+		if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) this.__hooks[hookProp][prop].forEach(hook => hook(prop, value, prevValue));
+		return true;
+	}
+
+	/** As per `_doProxySet`, but the hooks are run strictly in serial. */
+	async _pDoProxySet (hookProp, object, prop, value) {
+		if (object[prop] === value) return true;
+		const prevValue = object[prop];
+		object[prop] = value;
+		if (this.__hooksAll[hookProp]) for (const hook of this.__hooksAll[hookProp]) await hook(prop, value, prevValue);
+		if (this.__hooks[hookProp] && this.__hooks[hookProp][prop]) for (const hook of this.__hooks[hookProp][prop]) await hook(prop, value, prevValue);
+		return true;
 	}
 
 	/**
@@ -234,7 +248,7 @@ class UiUtil {
 		return string === "true" ? true : string === "false" ? false : opts.fallbackOnNaB;
 	}
 
-	static intToBonus (int) { return `${int >= 0 ? "+" : ""}${int}`; }
+	static intToBonus (int) { return `${int >= 0 ? "+" : int < 0 ? "\u2012" : ""}${Math.abs(int)}`; }
 
 	static getEntriesAsText (entryArray) {
 		if (!entryArray || !entryArray.length) return "";
@@ -379,7 +393,7 @@ class UiUtil {
 
 		const modal = e_({
 			tag: "div",
-			clazz: `ui-modal__inner flex-col dropdown-menu ${modalWindowClasses.join(" ")}`,
+			clazz: `ui-modal__inner flex-col ${modalWindowClasses.join(" ")}`,
 			children: [
 				!opts.isEmpty && opts.title
 					? e_({
@@ -588,11 +602,13 @@ class ListUiUtil {
 		evt.preventDefault();
 		evt.stopPropagation();
 
+		const cb = this._getCb(item, opts);
+		if (cb.disabled) return true;
+
 		if (evt && evt.shiftKey && list.__firstListSelection) {
 			if (list.__lastListSelection === item) {
 				// on double-tapping the end of the selection, toggle it on/off
 
-				const cb = this._getCb(item, opts);
 				this._updateCb(item, opts, !cb.checked);
 			} else if (list.__firstListSelection === item && list.__lastListSelection) {
 				// If the item matches the last clicked, clear all checkboxes from our last selection
@@ -639,7 +655,6 @@ class ListUiUtil {
 			list.__lastListSelection = item;
 		} else {
 			// on a normal click, or if there's been no initial selection, just toggle the checkbox
-
 
 			const cbMaster = this._getCb(item, opts);
 			if (cbMaster) {
@@ -715,7 +730,75 @@ class ListUiUtil {
 			});
 		});
 	}
+
+	static bindPreviewButton (page, allData, item, btnShowHidePreview) {
+		btnShowHidePreview.addEventListener("click", evt => {
+			const entity = allData[item.ix];
+
+			const elePreviewWrp = this.getOrAddListItemPreviewLazy(item);
+
+			this.handleClickBtnShowHideListPreview(evt, page, entity, btnShowHidePreview, elePreviewWrp);
+		});
+	}
+
+	static handleClickBtnShowHideListPreview (evt, page, entity, btnShowHidePreview, elePreviewWrp, nxtText = null) {
+		evt.stopPropagation();
+
+		nxtText = nxtText ?? btnShowHidePreview.innerHTML.trim() === this.HTML_GLYPHICON_EXPAND ? this.HTML_GLYPHICON_CONTRACT : this.HTML_GLYPHICON_EXPAND;
+
+		elePreviewWrp.classList.toggle("ve-hidden", nxtText === this.HTML_GLYPHICON_EXPAND);
+		btnShowHidePreview.innerHTML = nxtText;
+
+		const elePreviewWrpInner = elePreviewWrp.lastElementChild;
+
+		if (elePreviewWrpInner.innerHTML) return;
+
+		elePreviewWrpInner.addEventListener("click", evt => { evt.stopPropagation(); });
+		$(elePreviewWrpInner).empty();
+		Renderer.hover.$getHoverContent_stats(page, entity).appendTo(elePreviewWrpInner);
+	}
+
+	static getOrAddListItemPreviewLazy (item) {
+		// We lazily add the preview UI, to mitigate rendering performance issues
+		let elePreviewWrp;
+		if (item.ele.children.length === 1) {
+			elePreviewWrp = e_({
+				ag: "div",
+				clazz: "ve-hidden flex",
+				children: [
+					e_({tag: "div", clazz: "col-0-5"}),
+					e_({tag: "div", clazz: "col-11-5 ui-list__wrp-preview py-2 pr-2"}),
+				],
+			}).appendTo(item.ele);
+		} else elePreviewWrp = item.ele.lastElementChild;
+		return elePreviewWrp;
+	}
+
+	static bindPreviewAllButton ($btnAll, list) {
+		$btnAll
+			.click(async () => {
+				const nxtHtml = $btnAll.html() === ListUiUtil.HTML_GLYPHICON_EXPAND
+					? ListUiUtil.HTML_GLYPHICON_CONTRACT
+					: ListUiUtil.HTML_GLYPHICON_EXPAND;
+
+				if (nxtHtml === ListUiUtil.HTML_GLYPHICON_CONTRACT && list.visibleItems.length > 500) {
+					const isSure = await InputUiUtil.pGetUserBoolean({
+						title: "Are You Sure?",
+						htmlDescription: `You are about to expand ${list.visibleItems.length} rows. This may seriously degrade performance.<br>Are you sure you want to continue?`,
+					})
+					if (!isSure) return;
+				}
+
+				$btnAll.html(nxtHtml);
+
+				list.visibleItems.forEach(listItem => {
+					if (listItem.data.btnShowHidePreview.innerHTML !== nxtHtml) listItem.data.btnShowHidePreview.click();
+				});
+			});
+	}
 }
+ListUiUtil.HTML_GLYPHICON_EXPAND = `[+]`;
+ListUiUtil.HTML_GLYPHICON_CONTRACT = `[\u2012]`;
 
 class ProfUiUtil {
 	/**
@@ -908,14 +991,16 @@ class TabUiUtilSide extends TabUiUtilBase {
 	static decorate (obj) {
 		super.decorate();
 
+		/** Render a collection of tabs. An alternative to `_getTab`. */
 		obj._renderTabs = function ($parent, proxyProp, tabMetas) {
 			if (!tabMetas.length) throw new Error(`One or more tab meta must be specified!`);
+			const isSingleTab = tabMetas.length === 1;
 
 			const _proxyProp = `_${proxyProp}`;
 			const __proxyProp = `__${proxyProp}`;
 			this[__proxyProp].ixActiveTab = this[__proxyProp].ixActiveTab || 0;
 
-			const $dispTabTitle = $(`<div class="ui-tab-side__disp-active-tab-name bold"></div>`);
+			const $dispTabTitle = $(`<div class="ui-tab-side__disp-active-tab-name ${isSingleTab ? `ui-tab-side__disp-active-tab-name--single` : ""} bold"></div>`);
 
 			const renderTabMeta_buttons = (it) => {
 				const $btns = it.buttons.map((meta, j) => {
@@ -936,7 +1021,7 @@ class TabUiUtilSide extends TabUiUtilBase {
 			};
 
 			const renderTabMetas_standard = (it, i) => {
-				const $btnTab = $(`<button class="btn btn-default btn-sm ui-tab-side__btn-tab mb-2 br-0 btr-0 bbr-0 text-left flex-v-center" title="${it.name.qq()}"><div class="${it.icon} ui-tab-side__icon-tab mr-2 mobile-ish__mr-0 text-center"></div><div class="mobile-ish__hidden">${it.name.qq()}</div></button>`)
+				const $btnTab = isSingleTab ? null : $(`<button class="btn btn-default btn-sm ui-tab-side__btn-tab mb-2 br-0 btr-0 bbr-0 text-left flex-v-center" title="${it.name.qq()}"><div class="${it.icon} ui-tab-side__icon-tab mr-2 mobile-ish__mr-0 text-center"></div><div class="mobile-ish__hidden">${it.name.qq()}</div></button>`)
 					.click(() => this[_proxyProp].ixActiveTab = i);
 
 				const $wrpTab = $(`<div class="flex-col w-100 min-h-100 h-100 ui-tab-side__wrp-tab px-3 py-2 overflow-y-auto"></div>`);
@@ -969,8 +1054,8 @@ class TabUiUtilSide extends TabUiUtilBase {
 					if (it.type) return; // For specially typed tabs (e.g. buttons), do nothing
 
 					const isActive = it.ix === this[_proxyProp].ixActiveTab;
-					if (isActive) $dispTabTitle.text(it.name);
-					it.$btnTab.toggleClass("active", isActive);
+					if (isActive) $dispTabTitle.text(isSingleTab ? "" : it.name);
+					if (it.$btnTab) it.$btnTab.toggleClass("active", isActive);
 					it.$wrpTab.toggleVe(isActive);
 				});
 			};
@@ -981,6 +1066,7 @@ class TabUiUtilSide extends TabUiUtilBase {
 		};
 
 		/**
+		 * Render a single tab.
 		 * @param ix The tabs ordinal index.
 		 * @param name The name to display on the tab.
 		 * @param opts Options object.
@@ -1063,7 +1149,9 @@ class SearchUiUtil {
 		const fromDeepIndex = (d) => d.d; // flag for "deep indexed" content that refers to the same item
 
 		availContent.ALL = elasticlunr(function () {
+			this.use(lunr.ja);
 			this.addField("n");
+			this.addField("cn");
 			this.addField("s");
 			this.setRef("id");
 		});
@@ -1075,7 +1163,9 @@ class SearchUiUtil {
 		const initIndexForFullCat = (doc) => {
 			if (!availContent[doc.cf]) {
 				availContent[doc.cf] = elasticlunr(function () {
+					this.use(lunr.ja);
 					this.addField("n");
+					this.addField("cn");
 					this.addField("s");
 					this.setRef("id");
 				});
@@ -1085,7 +1175,7 @@ class SearchUiUtil {
 
 		const handleDataItem = (d, isAlternate) => {
 			if (SearchUiUtil._isNoHoverCat(d.c) || fromDeepIndex(d)) return;
-			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物(Creature)" : Parser.pageCategoryToFull(d.c);
+			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物" : Parser.pageCategoryToFull(d.c);
 			if (isAlternate) d.cf = `alt_${d.cf}`;
 			initIndexForFullCat(d);
 			if (!isAlternate) availContent.ALL.addDoc(d);
@@ -1105,7 +1195,7 @@ class SearchUiUtil {
 		brewIndex.forEach(d => {
 			if (SearchUiUtil._isNoHoverCat(d.c) || fromDeepIndex(d)) return;
 			d.cf = Parser.pageCategoryToFull(d.c);
-			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物(Creature)" : Parser.pageCategoryToFull(d.c);
+			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物" : Parser.pageCategoryToFull(d.c);
 			initIndexForFullCat(d);
 			availContent.ALL.addDoc(d);
 			availContent[d.cf].addDoc(d);
@@ -1268,6 +1358,7 @@ class SearchWidget {
 		return this._searchOptions || {
 			fields: {
 				n: {boost: 5, expand: true},
+				cn: {boost: 5, expand: true},
 				s: {expand: true},
 			},
 			bool: "AND",
@@ -1277,7 +1368,7 @@ class SearchWidget {
 
 	__$getRow (r) {
 		return $(`<div class="ui-search__row" tabindex="0">
-			<span>${r.doc.n}</span>
+			<span>${r.doc.cn || r.doc.n}</span>
 			<span>${r.doc.s ? `<i title="${Parser.sourceJsonToFull(r.doc.s)}">${Parser.sourceJsonToAbv(r.doc.s)}${r.doc.p ? ` p${r.doc.p}` : ""}</i>` : ""}</span>
 		</div>`);
 	}
@@ -1402,7 +1493,7 @@ class SearchWidget {
 					this.__doSearch();
 				});
 
-			this._$iptSearch = $(`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="Search...">`).appendTo($wrpControls);
+			this._$iptSearch = $(`<input class="ui-search__ipt-search search form-control" autocomplete="off" placeholder="搜索...">`).appendTo($wrpControls);
 			this._$wrpResults = $(`<div class="ui-search__wrp-results"></div>`).appendTo(this._$rendered);
 
 			let lastSearchTerm = "";
@@ -1446,7 +1537,7 @@ class SearchWidget {
 
 		const toAdd = Omnidexer.decompressIndex(indexer.getIndex());
 		toAdd.forEach(d => {
-			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物(Creature)" : Parser.pageCategoryToFull(d.c);
+			d.cf = d.c === Parser.CAT_ID_CREATURE ? "生物" : Parser.pageCategoryToFull(d.c);
 			SearchWidget.CONTENT_INDICES.ALL.addDoc(d);
 			SearchWidget.CONTENT_INDICES[d.cf].addDoc(d);
 		});
@@ -1569,7 +1660,7 @@ class SearchWidget {
 
 	static async pGetUserAdventureSearch (opts) {
 		await SearchWidget.pLoadCustomIndex("entity_Adventures", `${Renderer.get().baseUrl}data/adventures.json`, "adventure", Parser.CAT_ID_ADVENTURE, UrlUtil.PG_ADVENTURE, "adventures");
-		return SearchWidget.pGetUserEntitySearch("Select Adventure", "entity_Adventures", opts);
+		return SearchWidget.pGetUserEntitySearch("選擇冒險", "entity_Adventures", opts);
 	}
 
 	static async pGetUserCreatureSearch () {
@@ -1695,6 +1786,7 @@ class SearchWidget {
 
 	static async _pGetIndex (dataSource, prop, catId, page) {
 		const index = elasticlunr(function () {
+			this.use(lunr.ja);
 			this.addField("n");
 			this.addField("s");
 			this.setRef("id");
@@ -1721,7 +1813,7 @@ class SearchWidget {
 
 	static _showLoadingModal () {
 		const {$modalInner, doClose} = UiUtil.getShowModal({isPermanent: true});
-		$(`<div class="flex-vh-center w-100 h-100"><span class="dnd-font italic ve-muted">Loading...</span></div>`).appendTo($modalInner);
+		$(`<div class="flex-vh-center w-100 h-100"><span class="dnd-font italic ve-muted">加載中...</span></div>`).appendTo($modalInner);
 		return doClose;
 	}
 	// endregion
@@ -2614,8 +2706,8 @@ class SourceUiUtil {
 
 		const $btnUseExisting = $(`<button class="btn btn-default">Use an Existing Source</button>`)
 			.click(() => {
-				$stageInitial.hide();
-				$stageExisting.show();
+				$stageInitial.hideVe();
+				$stageExisting.showVe();
 
 				// cleanup
 				[$iptName, $iptAbv, $iptJson].forEach($ipt => $ipt.removeClass("form-control--error"));
@@ -2668,19 +2760,19 @@ class SourceUiUtil {
 
 					// cleanup
 					$selExisting[0].selectedIndex = 0;
-					$stageExisting.hide();
-					$stageInitial.show();
+					$stageExisting.hideVe();
+					$stageInitial.showVe();
 				} else $selExisting.addClass("form-control--error");
 			});
 
 		const $btnBackExisting = $(`<button class="btn btn-default btn-sm mr-2">Back</button>`)
 			.click(() => {
 				$selExisting[0].selectedIndex = 0;
-				$stageExisting.hide();
-				$stageInitial.show();
+				$stageExisting.hideVe();
+				$stageInitial.showVe();
 			});
 
-		const $stageExisting = $$`<div class="h-100 w-100 flex-vh-center" style="display: none;"><div>
+		const $stageExisting = $$`<div class="h-100 w-100 flex-vh-center ve-hidden"><div>
 			<h3 class="text-center">Select a Homebrew Source</h3>
 			<div class="mb-2"><div class="col-12 flex-vh-center">${$selExisting}</div></div>
 			<div class="col-12 flex-vh-center">${$btnBackExisting}${$btnConfirmExisting}</div>
@@ -2949,6 +3041,8 @@ class BaseComponent extends ProxyBase {
 			lockMeta.unlock();
 		}
 	}
+
+	async _pDoProxySetBase (prop, value) { return this._pDoProxySet("state", this.__state, prop, value); }
 
 	_triggerCollectionUpdate (prop) {
 		if (!this._state[prop]) return;
@@ -3352,10 +3446,21 @@ class ComponentUiUtil {
 		opts = opts || {};
 		opts.offset = opts.offset || 0;
 
+		const setIptVal = () => {
+			if (opts.isAllowNull && component._state[prop] == null) {
+				return $ipt.val(null);
+			}
+
+			const num = (component._state[prop] || 0) + opts.offset;
+			const val = opts.padLength ? `${num}`.padStart(opts.padLength, "0") : num;
+			$ipt.val(val);
+		};
+
 		const $ipt = (opts.$ele || $(opts.html || `<input class="form-control input-xs form-control--minimal text-right">`)).disableSpellcheck()
 			.keydown(evt => { if (evt.key === "Escape") $ipt.blur(); })
 			.change(() => {
 				const raw = $ipt.val().trim();
+				const cur = component._state[prop];
 
 				if (opts.isAllowNull && !raw) return component._state[prop] = null;
 
@@ -3368,7 +3473,6 @@ class ComponentUiUtil {
 						? /^[+/*^]/.exec(raw) // If the previous value was `-X`, then treat minuses as normal values
 						: /^[-+/*^]/.exec(raw);
 					if (mUnary) {
-						const cur = component._state[prop];
 						let proc = raw;
 						proc = proc.slice(1).trim();
 						const mod = fnConvert(proc, fallbackEmpty, opts);
@@ -3378,18 +3482,15 @@ class ComponentUiUtil {
 						component._state[prop] = fnConvert(raw, fallbackEmpty, opts) - opts.offset;
 					}
 				}
+
+				// Ensure the input visually reflects the state
+				if (cur === component._state[prop]) setIptVal();
 			});
+
 		let prevValue;
 		const hook = () => {
-			if (opts.isAllowNull && component._state[prop] == null) {
-				prevValue = null;
-				return $ipt.val(null);
-			}
-
-			const num = (component._state[prop] || 0) + opts.offset;
-			const val = opts.padLength ? `${num}`.padStart(opts.padLength, "0") : num;
-			prevValue = val;
-			$ipt.val(val);
+			prevValue = component._state[prop];
+			setIptVal();
 		};
 		if (opts.hookTracker) ComponentUiUtil.trackHook(opts.hookTracker, prop, hook);
 		component._addHookBase(prop, hook);
@@ -3553,6 +3654,56 @@ class ComponentUiUtil {
 	 * @param component An instance of a class which extends BaseComponent.
 	 * @param prop Component to hook on.
 	 * @param [opts] Options Object.
+	 * @param [opts.ele] Element to use.
+	 * @param [opts.html] HTML to convert to element to use.
+	 * @param [opts.text] Button text, if element is not specified.
+	 * @param [opts.fnHookPost] Function to run after primary hook.
+	 * @param [opts.stateName] State name.
+	 * @param [opts.stateProp] State prop.
+	 * @param [opts.isInverted] If the toggle display should be inverted.
+	 * @param [opts.activeClass] CSS class to use when setting the button as "active."
+	 * @param [opts.title]
+	 * @param [opts.activeTitle] Title to use when setting the button as "active."
+	 * @param [opts.inactiveTitle] Title to use when setting the button as "active."
+	 * @return *
+	 */
+	static getBtnBool (component, prop, opts) {
+		opts = opts || {};
+
+		let ele = opts.ele;
+		if (opts.html) ele = e_({outer: opts.html});
+
+		const activeClass = opts.activeClass || "active";
+		const stateName = opts.stateName || "state";
+		const stateProp = opts.stateProp || "_state";
+
+		const btn = (ele ? e_({ele}) : e_({
+			ele: ele,
+			tag: "button",
+			clazz: "btn btn-xs btn-default",
+			text: opts.text || "Toggle",
+		}))
+			.onClick(() => component[stateProp][prop] = !component[stateProp][prop])
+			.onContextmenu(evt => {
+				evt.preventDefault();
+				component[stateProp][prop] = !component[stateProp][prop];
+			});
+
+		const hk = () => {
+			btn.toggleClass(activeClass, opts.isInverted ? !component[stateProp][prop] : !!component[stateProp][prop]);
+			if (opts.activeTitle || opts.inactiveTitle) btn.title(component[stateProp][prop] ? (opts.activeTitle || opts.title || "") : (opts.inactiveTitle || opts.title || ""));
+			if (opts.fnHookPost) opts.fnHookPost(component[stateProp][prop]);
+		};
+		component._addHook(stateName, prop, hk);
+		hk();
+
+		return btn
+	}
+
+	/**
+	 * @param component An instance of a class which extends BaseComponent.
+	 * @param prop Component to hook on.
+	 * @param [opts] Options Object.
 	 * @param [opts.$ele] Element to use.
 	 * @param [opts.html] HTML to convert to element to use.
 	 * @param [opts.text] Button text, if element is not specified.
@@ -3561,33 +3712,18 @@ class ComponentUiUtil {
 	 * @param [opts.stateProp] State prop.
 	 * @param [opts.isInverted] If the toggle display should be inverted.
 	 * @param [opts.activeClass] CSS class to use when setting the button as "active."
+	 * @param [opts.title]
 	 * @param [opts.activeTitle] Title to use when setting the button as "active."
 	 * @param [opts.inactiveTitle] Title to use when setting the button as "active."
 	 * @return {JQuery}
 	 */
 	static $getBtnBool (component, prop, opts) {
-		opts = opts || {};
-
-		if (opts.html) opts.$ele = $(opts.html);
-
-		const activeClass = opts.activeClass || "active";
-		const stateName = opts.stateName || "state";
-		const stateProp = opts.stateProp || "_state";
-
-		const $btn = (opts.$ele || $(`<button class="btn btn-xs btn-default">${opts.text || "Toggle"}</button>`))
-			.click(() => component[stateProp][prop] = !component[stateProp][prop])
-			.contextmenu(evt => {
-				evt.preventDefault();
-				component[stateProp][prop] = !component[stateProp][prop];
-			});
-		const hook = () => {
-			$btn.toggleClass(activeClass, opts.isInverted ? !component[stateProp][prop] : !!component[stateProp][prop]);
-			if (opts.activeTitle || opts.inactiveTitle) $btn.title(component[stateProp][prop] ? (opts.activeTitle || "") : (opts.inactiveTitle || ""));
-			if (opts.fnHookPost) opts.fnHookPost(component[stateProp][prop]);
-		};
-		component._addHook(stateName, prop, hook);
-		hook();
-		return $btn
+		const nxtOpts = {...opts};
+		if (nxtOpts.$ele) {
+			nxtOpts.ele = nxtOpts.$ele[0];
+			delete nxtOpts.$ele;
+		}
+		return $(this.getBtnBool(component, prop, nxtOpts));
 	}
 
 	/**
@@ -3626,6 +3762,7 @@ class ComponentUiUtil {
 	 * @param [opts.fnDisplay] Value display function.
 	 * @param [opts.displayNullAs] If null values are allowed, display them as this string.
 	 * @param [opts.asMeta] If a meta-object should be returned containing the hook and the select.
+	 * @param [opts.isDisabled] If the selector should be display-only
 	 * @return {JQuery}
 	 */
 	static $getSelSearchable (comp, prop, opts) {
@@ -3634,7 +3771,11 @@ class ComponentUiUtil {
 		const $iptDisplay = (opts.$ele || $(opts.html || `<input class="form-control input-xs form-control--minimal">`))
 			.addClass("ui-sel2__ipt-display pr-1")
 			.attr("tabindex", "-1")
-			.click(() => $iptSearch.focus().select())
+			.click(() => {
+				if (opts.isDisabled) return;
+				$iptSearch.focus().select();
+			})
+			.prop("disabled", !!opts.isDisabled)
 			.disableSpellcheck();
 
 		const handleSearchChange = () => {
@@ -3649,6 +3790,8 @@ class ComponentUiUtil {
 		const $iptSearch = (opts.$ele || $(opts.html || `<input class="form-control input-xs form-control--minimal">`))
 			.addClass("absolute ui-sel2__ipt-search")
 			.keydown(evt => {
+				if (opts.isDisabled) return;
+
 				switch (evt.key) {
 					case "Escape": evt.stopPropagation(); return $iptSearch.blur();
 
@@ -3671,7 +3814,11 @@ class ComponentUiUtil {
 				}
 			})
 			.change(() => handleSearchChangeDebounced())
-			.click(() => $iptSearch.focus().select())
+			.click(() => {
+				if (opts.isDisabled) return;
+				$iptSearch.focus().select();
+			})
+			.prop("disabled", !!opts.isDisabled)
 			.disableSpellcheck();
 
 		const $wrpChoices = $(`<div class="absolute ui-sel2__wrp-options overflow-y-scroll"></div>`);
@@ -3688,6 +3835,8 @@ class ComponentUiUtil {
 
 			const $ele = $(`<div class="flex-v-center py-1 px-1 clickable ui-sel2__disp-option ${v == null ? `italic` : ""}" tabindex="${i}">${display}</div>`)
 				.click(() => {
+					if (opts.isDisabled) return;
+
 					comp._state[prop] = v;
 					$(document.activeElement).blur();
 					// Temporarily remove pointer events from the dropdown, so it collapses thanks to its :hover CSS
@@ -3695,6 +3844,8 @@ class ComponentUiUtil {
 					setTimeout(() => $wrp.removeClass("no-events"), 50);
 				})
 				.keydown(evt => {
+					if (opts.isDisabled) return;
+
 					switch (evt.key) {
 						case "Escape": evt.stopPropagation(); return $ele.blur();
 
@@ -3754,8 +3905,8 @@ class ComponentUiUtil {
 		};
 
 		const hk = () => {
-			if (comp._state[prop] == null) $iptDisplay.addClass("italic").val(opts.displayNullAs || "\u2014");
-			else $iptDisplay.removeClass("italic").val(opts.fnDisplay ? opts.fnDisplay(comp._state[prop]) : comp._state[prop]);
+			if (comp._state[prop] == null) $iptDisplay.addClass("italic").addClass("ve-muted").val(opts.displayNullAs || "\u2014");
+			else $iptDisplay.removeClass("italic").removeClass("ve-muted").val(opts.fnDisplay ? opts.fnDisplay(comp._state[prop]) : comp._state[prop]);
 
 			metaOptions.forEach(it => it.$ele.removeClass("active"))
 			const metaActive = metaOptions.find(it => it.value == null ? comp._state[prop] == null : it.value === comp._state[prop]);
@@ -3874,9 +4025,10 @@ class ComponentUiUtil {
 		opts = opts || {};
 
 		const initialValuesArray = (opts.values || []).concat(opts.isFreeText ? MiscUtil.copy((component._state[prop] || [])) : []);
+		const initialValsCompWith = opts.isCaseInsensitive ? component._state[prop].map(it => it.toLowerCase()) : component._state[prop];
 		const initialVals = initialValuesArray
 			.map(v => opts.isCaseInsensitive ? v.toLowerCase() : v)
-			.mergeMap(v => ({[v]: component._state[prop] && component._state[prop].includes(v)}));
+			.mergeMap(v => ({[v]: component._state[prop] && initialValsCompWith.includes(v)}));
 
 		let $btnAdd;
 		if (opts.isFreeText) {
@@ -3973,11 +4125,14 @@ class ComponentUiUtil {
 	 * @param opts Options.
 	 * @param [opts.values] Array of values. Mutually incompatible with "valueGroups".
 	 * @param [opts.valueGroups] Array of value groups (of the form `{name: "Group Name", values: [...]}`). Mutually incompatible with "values".
+	 * @param [opts.valueGroupSplitControlsLookup] A lookup of `<value group name> -> header controls` to embed in the UI.
 	 * @param [opts.count] Number of choices the user can make (cannot be used with min/max).
 	 * @param [opts.min] Minimum number of choices the user can make (cannot be used with count).
 	 * @param [opts.max] Maximum number of choices the user can make (cannot be used with count).
 	 * @param [opts.isResolveItems] True if the promise should resolve to an array of the items instead of the indices. // TODO maybe remove?
 	 * @param [opts.fnDisplay] Function which takes a value and returns display text.
+	 * @param [opts.required] Values which are required.
+	 * @param [opts.ixsRequired] Indexes of values which are required.
 	 */
 	static getMetaWrpMultipleChoice (comp, prop, opts) {
 		opts = opts || {};
@@ -3991,13 +4146,24 @@ class ComponentUiUtil {
 		const propPulse = this.getMetaWrpMultipleChoice_getPropPulse(prop);
 		const propIxMax = this._getMetaWrpMultipleChoice_getPropValuesLength(prop);
 
+		const cntRequired = ((opts.required || []).length) + ((opts.ixsRequired || []).length);
+		const count = opts.count != null ? opts.count - cntRequired : null;
+		const min = opts.min != null ? opts.min - cntRequired : null;
+		const max = opts.max != null ? opts.max - cntRequired : null;
+
 		const valueGroups = opts.valueGroups || [{values: opts.values}];
 
 		let ixValue = 0;
 		valueGroups.forEach((group, i) => {
 			if (i !== 0) $eles.push($(`<hr class="w-100 hr-1 hr--dotted">`));
 
-			if (group.name) $eles.push($(`<div class="flex-v-center py-1"><span class="mr-2">‒</span><span>${group.name}</span></div>`));
+			if (group.name) {
+				const $wrpName = $$`<div class="split-v-center py-1">
+					<div class="flex-v-center"><span class="mr-2">‒</span><span>${group.name}</span></div>
+					${opts.valueGroupSplitControlsLookup?.[group.name]}
+				</div>`
+				$eles.push($wrpName);
+			}
 
 			if (group.text) $eles.push($(`<div class="flex-v-center py-1"><div class="ml-1 mr-3"></div><i>${group.text}</i></div>`));
 
@@ -4007,52 +4173,59 @@ class ComponentUiUtil {
 				const propIsActive = this.getMetaWrpMultipleChoice_getPropIsActive(prop, ixValueFrozen);
 				const propIsRequired = this.getMetaWrpMultipleChoice_getPropIsRequired(prop, ixValueFrozen);
 
+				const isHardRequired = (opts.required && opts.required.includes(v))
+					|| (opts.ixsRequired && opts.ixsRequired.includes(ixValueFrozen));
+				const isRequired = isHardRequired || comp._state[propIsRequired];
+
 				// In the case of pre-existing selections, add these to our selection order tracking as they appear
 				if (comp._state[propIsActive] && !comp._state[propIsRequired]) ixsSelectionOrder.push(ixValueFrozen);
 
-				const $cb = comp._state[propIsRequired]
-					? $(`<input type="checkbox" disabled checked>`)
+				let hk;
+				const $cb = isRequired
+					? $(`<input type="checkbox" disabled checked title="This option is required.">`)
 					: ComponentUiUtil.$getCbBool(comp, propIsActive);
-				const hk = () => {
-					// region Selection order
-					const ixIx = ixsSelectionOrder.findIndex(it => it === ixValueFrozen);
-					if (~ixIx) ixsSelectionOrder.splice(ixIx, 1);
-					if (comp._state[propIsActive]) ixsSelectionOrder.push(ixValueFrozen);
-					// endregion
+				if (!isRequired) {
+					hk = () => {
+						// region Selection order
+						const ixIx = ixsSelectionOrder.findIndex(it => it === ixValueFrozen);
+						if (~ixIx) ixsSelectionOrder.splice(ixIx, 1);
+						if (comp._state[propIsActive]) ixsSelectionOrder.push(ixValueFrozen);
+						// endregion
 
-					// region Enable/disable
-					const activeRows = rowMetas.filter(it => comp._state[it.propIsActive]);
+						// region Enable/disable
+						const activeRows = rowMetas.filter(it => comp._state[it.propIsActive]);
 
-					if (opts.count != null) {
-						// If we're above the max allowed count, deselect a checkbox in FIFO order
-						if (activeRows.length > opts.count) {
-							// FIFO (`.shift`) makes logical sense, but FILO (`.splice` second-from-last) _feels_ better
-							const ixFirstSelected = ixsSelectionOrder.splice(ixsSelectionOrder.length - 2, 1)[0];
-							if (ixFirstSelected != null) {
-								const propIsActiveOther = this.getMetaWrpMultipleChoice_getPropIsActive(prop, ixFirstSelected);
-								comp._state[propIsActiveOther] = false;
+						if (count != null) {
+							// If we're above the max allowed count, deselect a checkbox in FIFO order
+							if (activeRows.length > count) {
+								// FIFO (`.shift`) makes logical sense, but FILO (`.splice` second-from-last) _feels_ better
+								const ixFirstSelected = ixsSelectionOrder.splice(ixsSelectionOrder.length - 2, 1)[0];
+								if (ixFirstSelected != null) {
+									const propIsActiveOther = this.getMetaWrpMultipleChoice_getPropIsActive(prop, ixFirstSelected);
+									comp._state[propIsActiveOther] = false;
 
-								comp._state[propPulse] = !comp._state[propPulse];
+									comp._state[propPulse] = !comp._state[propPulse];
+								}
+								return;
 							}
-							return;
 						}
-					}
 
-					let isAcceptable = false;
-					if (opts.count != null) {
-						if (activeRows.length === opts.count) isAcceptable = true;
-					} else {
-						if (activeRows.length >= (opts.min || 0) && activeRows.length <= (opts.max || Number.MAX_SAFE_INTEGER)) isAcceptable = true;
-					}
+						let isAcceptable = false;
+						if (count != null) {
+							if (activeRows.length === count) isAcceptable = true;
+						} else {
+							if (activeRows.length >= (min || 0) && activeRows.length <= (max || Number.MAX_SAFE_INTEGER)) isAcceptable = true;
+						}
 
-					// Save this to a flag in the state object that external code can read
-					comp._state[propIsAcceptable] = isAcceptable;
-					// endregion
+						// Save this to a flag in the state object that external code can read
+						comp._state[propIsAcceptable] = isAcceptable;
+						// endregion
 
-					comp._state[propPulse] = !comp._state[propPulse];
-				};
-				comp._addHookBase(propIsActive, hk);
-				hk();
+						comp._state[propPulse] = !comp._state[propPulse];
+					};
+					comp._addHookBase(propIsActive, hk);
+					hk();
+				}
 
 				const displayValue = opts.fnDisplay ? opts.fnDisplay(v, ixValueFrozen) : v;
 
@@ -4061,7 +4234,9 @@ class ComponentUiUtil {
 					displayValue,
 					value: v,
 					propIsActive,
-					unhook: () => comp._removeHookBase(propIsActive, hk),
+					unhook: () => {
+						if (hk) comp._removeHookBase(propIsActive, hk);
+					},
 				});
 
 				$eles.push($$`<label class="flex-v-center py-1 stripe-even">
@@ -4143,7 +4318,7 @@ class ComponentUiUtil {
 	 * @param opts.propMin
 	 * @param opts.propMax
 	 * @param opts.propCurMin
-	 * @param opts.propCurMax
+	 * @param [opts.propCurMax]
 	 * @param [opts.fnDisplay] Value display function.
 	 */
 	static $getSliderRange (comp, opts) {
@@ -4170,20 +4345,24 @@ ComponentUiUtil.RangeSlider = class {
 		this._propCurMax = propCurMax;
 		this._fnDisplay = fnDisplay;
 
+		this._isSingle = !this._propCurMax;
+
 		// region Make a copy of the interesting bits of the parent component, so we can freely change them without
 		//   outside performance implications
-		this._compCpy = BaseComponent.fromObject({
+		const compCpyState = {
 			[this._propMin]: this._comp._state[this._propMin],
-			[this._propMax]: this._comp._state[this._propMax],
 			[this._propCurMin]: this._comp._state[this._propCurMin],
-			[this._propCurMax]: this._comp._state[this._propCurMax],
-		});
+			[this._propMax]: this._comp._state[this._propMax],
+		};
+		if (!this._isSingle) compCpyState[this._propCurMax] = this._comp._state[this._propCurMax];
+		this._compCpy = BaseComponent.fromObject(compCpyState);
 
 		// Sync parent changes to our state
 		this._comp._addHook("state", this._propMin, () => this._compCpy._state[this._propMin] = this._comp._state[this._propMin]);
-		this._comp._addHook("state", this._propMax, () => this._compCpy._state[this._propMax] = this._comp._state[this._propMax]);
 		this._comp._addHook("state", this._propCurMin, () => this._compCpy._state[this._propCurMin] = this._comp._state[this._propCurMin]);
-		this._comp._addHook("state", this._propCurMax, () => this._compCpy._state[this._propCurMax] = this._comp._state[this._propCurMax]);
+		this._comp._addHook("state", this._propMax, () => this._compCpy._state[this._propMax] = this._comp._state[this._propMax]);
+
+		if (!this._isSingle) this._comp._addHook("state", this._propCurMax, () => this._compCpy._state[this._propCurMax] = this._comp._state[this._propCurMax]);
 		// endregion
 
 		this._cacheRendered = null;
@@ -4206,16 +4385,16 @@ ComponentUiUtil.RangeSlider = class {
 		if (this._cacheRendered) return this._cacheRendered;
 
 		// region Top part
-		const dispValueLeft = this._getDispValue({isBorder: true, side: "left"});
-		const dispValueRight = this._getDispValue({isBorder: true, side: "right"});
+		const dispValueLeft = this._isSingle ? this._getSpcSingleValue() : this._getDispValue({isVisible: true, side: "left"});
+		const dispValueRight = this._getDispValue({isVisible: true, side: "right"});
 
-		this._dispTrackInner = e_({
+		this._dispTrackInner = this._isSingle ? null : e_({
 			tag: "div",
 			clazz: "ui-slidr__track-inner h-100 absolute",
 		});
 
 		this._thumbLow = this._getThumb();
-		this._thumbHigh = this._getThumb();
+		this._thumbHigh = this._isSingle ? null : this._getThumb();
 
 		this._dispTrackOuter = e_({
 			tag: "div",
@@ -4224,12 +4403,12 @@ ComponentUiUtil.RangeSlider = class {
 				this._dispTrackInner,
 				this._thumbLow,
 				this._thumbHigh,
-			],
+			].filter(Boolean),
 		});
 
 		const wrpTrack = e_({
 			tag: "div",
-			clazz: `flex-v-center w-100 h-100 ui-slidr__wrp-track`,
+			clazz: `flex-v-center w-100 h-100 ui-slidr__wrp-track clickable`,
 			mousedown: evt => {
 				const thumb = this._getClosestThumb(evt);
 				this._handleMouseDown(evt, thumb);
@@ -4246,7 +4425,7 @@ ComponentUiUtil.RangeSlider = class {
 				dispValueLeft,
 				wrpTrack,
 				dispValueRight,
-			],
+			].filter(Boolean),
 		});
 		// endregion
 
@@ -4264,28 +4443,34 @@ ComponentUiUtil.RangeSlider = class {
 			tag: "div",
 			clazz: "w-100 flex-vh-center ui-slidr__wrp-bottom",
 			children: [
-				this._getDispValue({side: "left"}), // Pad the start
+				this._isSingle ? this._getSpcSingleValue() : this._getDispValue({side: "left"}), // Pad the start
 				wrpPips,
 				this._getDispValue({side: "right"}), // and the end
-			],
+			].filter(Boolean),
 		});
 		// endregion
 
 		// region Hooks
 		const hkChangeValue = () => {
 			const min = this._compCpy._state[this._propMin]; const max = this._compCpy._state[this._propMax];
-			const curMin = this._compCpy._state[this._propCurMin]; const curMax = this._compCpy._state[this._propCurMax];
 
-			const pctMin = ((curMin - min) / (max - min)) * 100; const pctMax = ((curMax - min) / (max - min)) * 100;
-
-			this._dispTrackInner.style.left = `${pctMin}%`;
-			this._dispTrackInner.style.right = `${100 - pctMax}%`;
-
+			const curMin = this._compCpy._state[this._propCurMin];
+			const pctMin = ((curMin - min) / (max - min)) * 100;
 			this._thumbLow.style.left = `calc(${pctMin}% - ${this.constructor._W_THUMB_PX / 2}px)`;
-			this._thumbHigh.style.left = `calc(${pctMax}% - ${this.constructor._W_THUMB_PX / 2}px)`;
+			const toDisplayLeft = this._fnDisplay ? `${this._fnDisplay(curMin)}`.qq() : curMin;
+			if (!this._isSingle) dispValueLeft.html(toDisplayLeft);
 
-			dispValueLeft.html(this._fnDisplay ? `${this._fnDisplay(curMin)}`.qq() : curMin);
-			dispValueRight.html(this._fnDisplay ? `${this._fnDisplay(curMax)}`.qq() : curMax);
+			if (!this._isSingle) {
+				this._dispTrackInner.style.left = `${pctMin}%`;
+
+				const curMax = this._compCpy._state[this._propCurMax];
+				const pctMax = ((curMax - min) / (max - min)) * 100;
+				this._dispTrackInner.style.right = `${100 - pctMax}%`;
+				this._thumbHigh.style.left = `calc(${pctMax}% - ${this.constructor._W_THUMB_PX / 2}px)`;
+				dispValueRight.html(this._fnDisplay ? `${this._fnDisplay(curMax)}`.qq() : curMax);
+			} else {
+				dispValueRight.html(toDisplayLeft);
+			}
 		};
 
 		const hkChangeLimit = () => {
@@ -4323,7 +4508,7 @@ ComponentUiUtil.RangeSlider = class {
 		this._compCpy._addHook("state", this._propMin, hkChangeLimit);
 		this._compCpy._addHook("state", this._propMax, hkChangeLimit);
 		this._compCpy._addHook("state", this._propCurMin, hkChangeValue);
-		this._compCpy._addHook("state", this._propCurMax, hkChangeValue);
+		if (!this._isSingle) this._compCpy._addHook("state", this._propCurMax, hkChangeValue);
 
 		hkChangeLimit();
 		// endregion
@@ -4341,21 +4526,28 @@ ComponentUiUtil.RangeSlider = class {
 	}
 
 	destroy () {
-		this.constructor._ALL_SLIDERS.remove(this);
+		this.constructor._ALL_SLIDERS.delete(this);
 		if (this._cacheRendered) this._cacheRendered.remove();
 	}
 
-	_getDispValue ({isBorder, side}) {
+	_getDispValue ({isVisible, side}) {
 		return e_({
 			tag: "div",
-			clazz: `overflow-hidden ui-slidr__disp-value no-shrink no-grow flex-vh-center bold no-select ${isBorder ? `ui-slidr__disp-value--border` : ""} ui-slidr__disp-value--${side}`,
+			clazz: `overflow-hidden ui-slidr__disp-value no-shrink no-grow flex-vh-center bold no-select ${isVisible ? `ui-slidr__disp-value--visible` : ""} ui-slidr__disp-value--${side}`,
+		});
+	}
+
+	_getSpcSingleValue () {
+		return e_({
+			tag: "div",
+			clazz: `px-2`,
 		});
 	}
 
 	_getThumb () {
 		const thumb = e_({
 			tag: "div",
-			clazz: "ui-slidr__thumb absolute not-clickable",
+			clazz: "ui-slidr__thumb absolute clickable",
 			mousedown: evt => this._handleMouseDown(evt, thumb),
 		}).attr("draggable", true);
 
@@ -4414,6 +4606,8 @@ ComponentUiUtil.RangeSlider = class {
 	}
 
 	_getClosestThumb (evt) {
+		if (this._isSingle) return this._thumbLow;
+
 		const {x: trackOriginX, width: trackWidth} = this._dispTrackOuter.getBoundingClientRect();
 		const value = this._getRelativeValue(evt, {trackOriginX, trackWidth});
 
@@ -4426,6 +4620,8 @@ ComponentUiUtil.RangeSlider = class {
 	}
 
 	_getDistsToCurrentMinAndMax (value) {
+		if (this._isSingle) throw new Error(`Can not get distance to max value for singleton slider!`);
+
 		// Move the closest slider to this pip's location
 		const distToMin = Math.abs(this._compCpy._state[this._propCurMin] - value);
 		const distToMax = Math.abs(this._compCpy._state[this._propCurMax] - value);
@@ -4464,6 +4660,8 @@ ComponentUiUtil.RangeSlider = class {
 			thumb,
 		};
 		// endregion
+
+		this._handleMouseMove(evt)
 	}
 
 	_handleMouseUp () {
@@ -4471,15 +4669,14 @@ ComponentUiUtil.RangeSlider = class {
 
 		// On finishing a slide, push our state to the parent comp
 		if (wasActive) {
-			this._comp._proxyAssignSimple(
-				"state",
-				{
-					[this._propMin]: this._compCpy._state[this._propMin],
-					[this._propMax]: this._compCpy._state[this._propMax],
-					[this._propCurMin]: this._compCpy._state[this._propCurMin],
-					[this._propCurMax]: this._compCpy._state[this._propCurMax],
-				},
-			);
+			const nxtState = {
+				[this._propMin]: this._compCpy._state[this._propMin],
+				[this._propMax]: this._compCpy._state[this._propMax],
+				[this._propCurMin]: this._compCpy._state[this._propCurMin],
+			};
+			if (!this._isSingle) nxtState[this._propCurMax] = this._compCpy._state[this._propCurMax];
+
+			this._comp._proxyAssignSimple("state", nxtState);
 		}
 	}
 
