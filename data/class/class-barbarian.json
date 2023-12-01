@@ -15,6 +15,7 @@
 				"con"
 			],
 			"startingProficiencies": {
+				"additionalFromBackground": true,
 				"armor": [
 					"light",
 					"medium",
