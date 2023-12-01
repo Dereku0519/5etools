@@ -209,6 +209,7 @@ Parser.getAbilityModifier = function (abilityScore) {
 	if (modifier >= 0) modifier = `+${modifier}`;
 	return `${modifier}`;
 };
+
 Parser.getSpeedString = (ent,{isMetric=false, isSkipZeroWalk=false}={})=>{
     if (ent.speed == null)
         return "\u2014";
