@@ -8,13 +8,14 @@ class ClassesPage extends BaseComponent {
 	static _fnSortSubclassFilterItems (a, b) {
 		if (a.values.isAlwaysVisible) return 1;
 		else if (b.values.isAlwaysVisible) return -1;
+		else if (a.data.entity.ENG_shortName && b.data.entity.ENG_shortName) return SortUtil.ascSort(a.data.entity["ENG_shortName"], b.data.entity["ENG_shortName"]);
 		else return SortUtil.listSort(a, b, {sortBy: "shortName"});
 	}
 
 	static getBtnTitleSubclass (sc) {
 		const titlePartReprint = sc.isReprinted ? " (this subclass has been reprinted in a more recent source)" : "";
 		const sourcePart = Renderer.utils.getSourceAndPageText(sc);
-		return `${sc.name}; Source: ${sourcePart}${titlePartReprint}`;
+		return `${sc.name}; 資源：${sourcePart}${titlePartReprint}`;
 	}
 
 	static getBaseShortName (sc) {
@@ -67,13 +68,13 @@ class ClassesPage extends BaseComponent {
 		Omnisearch.addScrollTopFloat();
 		const data = await DataUtil.class.loadJSON();
 
-		this._list = ListUtil.initList({listClass: "classes", isUseJquery: true});
+		this._list = ListUtil.initList({listClass: "classes", isUseJquery: true, isBindFindHotkey: true});
 		ListUtil.setOptions({primaryLists: [this._list]});
 		SortUtil.initBtnSortHandlers($("#filtertools"), this._list);
 
 		await this._pageFilter.pInitFilterBox({
 			$iptSearch: $(`#lst__search`),
-			$wrpFormTop: $(`#filter-search-group`).title("Hotkey: f"),
+			$wrpFormTop: $(`#filter-search-group`),
 			$btnReset: $(`#reset`),
 		});
 
@@ -433,6 +434,8 @@ class ClassesPage extends BaseComponent {
 			{
 				hash,
 				source,
+				ENG_name: cls.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(cls),
 			},
 			{
 				$lnk,
@@ -476,7 +479,7 @@ class ClassesPage extends BaseComponent {
 						) ? obj : null;
 					},
 					array: (arr) => {
-						return arr.filter(Boolean);
+						return arr.filter(it => it != null);
 					},
 				},
 			);
@@ -503,7 +506,7 @@ class ClassesPage extends BaseComponent {
 							) ? obj : null;
 						},
 						array: (arr) => {
-							return arr.filter(Boolean);
+							return arr.filter(it => it != null);
 						},
 					},
 				);
@@ -617,7 +620,7 @@ class ClassesPage extends BaseComponent {
 		this._addHookBase("feature", hkScrollToFeature);
 		hkScrollToFeature();
 
-		const hkDisplayFluff = () => $(`.cls-main__cls-fluff`).toggleClass("hidden", !this._state.isShowFluff);
+		const hkDisplayFluff = () => $(`.cls-main__cls-fluff`).toggleVe(!!this._state.isShowFluff);
 		this._addHookBase("isShowFluff", hkDisplayFluff);
 		MiscUtil.pDefer(hkDisplayFluff);
 
@@ -627,38 +630,55 @@ class ClassesPage extends BaseComponent {
 
 			if (this._state.isHideFeatures) {
 				if (this._isAnySubclassActive()) {
-					this._$wrpOutline.toggleClass("hidden", false);
-					this._$trNoContent.toggleClass("hidden", true);
-					$dispClassFeatures.toggleClass("hidden", true);
-					$dispFeaturesSubclassHeader.toggleClass("hidden", false);
+					this._$wrpOutline.toggleVe(true);
+					this._$trNoContent.toggleVe(false);
+					$dispClassFeatures.toggleVe(false);
+					$dispFeaturesSubclassHeader.toggleVe(true);
 				} else {
-					this._$wrpOutline.toggleClass("hidden", true);
-					this._$trNoContent.toggleClass("hidden", false);
-					$dispClassFeatures.toggleClass("hidden", true);
-					$dispFeaturesSubclassHeader.toggleClass("hidden", true);
+					this._$wrpOutline.toggleVe(false);
+					this._$trNoContent.toggleVe(true);
+					$dispClassFeatures.toggleVe(false);
+					$dispFeaturesSubclassHeader.toggleVe(false);
 				}
 			} else {
-				this._$wrpOutline.toggleClass("hidden", false);
-				this._$trNoContent.toggleClass("hidden", true);
-				$dispClassFeatures.toggleClass("hidden", false);
-				$dispFeaturesSubclassHeader.toggleClass("hidden", false);
+				this._$wrpOutline.toggleVe(true);
+				this._$trNoContent.toggleVe(false);
+				$dispClassFeatures.toggleVe(true);
+				$dispFeaturesSubclassHeader.toggleVe(true);
 			}
 		};
 		this._addHookBase("isHideFeatures", hkDisplayFeatures);
 		MiscUtil.pDefer(hkDisplayFeatures);
 
 		const cls = this.activeClass;
-		cls.subclasses.forEach(sc => {
-			const stateKey = UrlUtil.getStateKeySubclass(sc);
-			const hkDisplaySubclass = () => {
-				const isVisible = this._state[stateKey];
-				$(`[data-subclass-id="${stateKey}"]`).toggleClass("hidden", !isVisible);
-			};
-			this._addHookBase(stateKey, hkDisplaySubclass);
-			// Check/update main feature display here, as if there are no subclasses active we can hide more
-			this._addHookBase(stateKey, hkDisplayFeatures);
-			MiscUtil.pDefer(hkDisplaySubclass);
-		});
+
+		// If multiple subclasses are displayed, show name prefixes
+		const hkIsShowNamePrefixes = () => {
+			const cntDisplayedSubclasses = cls.subclasses.map(sc => Number(this._state[UrlUtil.getStateKeySubclass(sc)] || false)).sum();
+			$(`[data-subclass-name-prefix]`).toggleVe(cntDisplayedSubclasses > 1);
+		};
+		const hkIsShowNamePrefixesThrottled = MiscUtil.throttle(hkIsShowNamePrefixes, 50);
+		MiscUtil.pDefer(() => hkIsShowNamePrefixesThrottled);
+
+		cls.subclasses
+			.map(sc => {
+				let isFirstRun = true;
+				const stateKey = UrlUtil.getStateKeySubclass(sc);
+
+				const hkDisplaySubclass = () => {
+					isFirstRun = false;
+
+					const isVisible = this._state[stateKey];
+					$(`[data-subclass-id="${stateKey}"]`).toggleVe(!!isVisible);
+
+					if (!isFirstRun) hkIsShowNamePrefixes();
+				};
+				this._addHookBase(stateKey, hkDisplaySubclass);
+
+				// Check/update main feature display here, as if there are no subclasses active we can hide more
+				this._addHookBase(stateKey, hkDisplayFeatures);
+				MiscUtil.pDefer(hkDisplaySubclass);
+			});
 		// endregion
 
 		this._handleFilterChange(false);
@@ -705,8 +725,8 @@ class ClassesPage extends BaseComponent {
 			// If there is a state key, this is a subclass table group, and may therefore need to be hidden
 			if (!stateKey) return;
 			const hkShowHide = () => {
-				$thGroupHeader.toggleClass("hidden", !this._state[stateKey]);
-				$tblHeadersGroup.forEach($tblHeader => $tblHeader.toggleClass("hidden", !this._state[stateKey]))
+				$thGroupHeader.toggleVe(!!this._state[stateKey]);
+				$tblHeadersGroup.forEach($tblHeader => $tblHeader.toggleVe(!!this._state[stateKey]))
 			};
 			this._addHookBase(stateKey, hkShowHide);
 			MiscUtil.pDefer(hkShowHide);
@@ -770,7 +790,7 @@ class ClassesPage extends BaseComponent {
 
 				// If there is a state key, this is a subclass table group, and may therefore need to be hidden
 				if (!stateKey) return;
-				const hkShowHide = () => $cells.forEach($cell => $cell.toggleClass("hidden", !this._state[stateKey]));
+				const hkShowHide = () => $cells.forEach($cell => $cell.toggleVe(!!this._state[stateKey]));
 				this._addHookBase(stateKey, hkShowHide);
 				MiscUtil.pDefer(hkShowHide); // saves ~10ms
 			};
@@ -811,13 +831,13 @@ class ClassesPage extends BaseComponent {
 							},
 						);
 						metaFeatureLink.isHidden = isHidden;
-						metaFeatureLink.$wrpLink.toggleClass("hidden", isHidden);
+						metaFeatureLink.$wrpLink.toggleVe(!isHidden);
 					}
 				});
 
-				metaTblRow.metasFeatureLinks.forEach(metaFeatureLink => metaFeatureLink.$dispComma.toggleClass("hidden", false));
+				metaTblRow.metasFeatureLinks.forEach(metaFeatureLink => metaFeatureLink.$dispComma.toggleVe(true));
 				const lastVisible = metaTblRow.metasFeatureLinks.filter(metaFeatureLink => !metaFeatureLink.isHidden).last();
-				if (lastVisible) lastVisible.$dispComma.addClass("hidden");
+				if (lastVisible) lastVisible.$dispComma.hideVe();
 			});
 		};
 
@@ -830,8 +850,8 @@ class ClassesPage extends BaseComponent {
 				${$tblGroupHeaders}
 			</tr>
 			<tr>
-				<th class="cls-tbl__col-level">等級</th>
-				<th class="cls-tbl__col-prof-bonus">熟練加值</th>
+				<th class="cls-tbl__col-level" style="white-space:nowrap;">等級</th>
+				<th class="cls-tbl__col-prof-bonus" style="white-space:nowrap;">熟練加值</th>
 				<th>能力</th>
 				${$tblHeaders}
 			</tr>
@@ -839,7 +859,7 @@ class ClassesPage extends BaseComponent {
 			<tr><th class="border" colspan="15"></th></tr>
 			</tbody>
 		</table>`.appendTo($wrpTblClass);
-		$wrpTblClass.show();
+		$wrpTblClass.showVe();
 	}
 
 	_render_renderSidebar () {
@@ -886,25 +906,20 @@ class ClassesPage extends BaseComponent {
 		// region HP/hit dice
 		let $ptHp = null;
 		if (cls.hd) {
-			const hdEntry = {toRoll: `${cls.hd.number}d${cls.hd.faces}`, rollable: true};
+			const hdEntry = Renderer.class.getHitDiceEntry(cls.hd);
 
 			$ptHp = `<tr class="cls-side__show-hide">
 				<td colspan="6" class="cls-side__section">
 					<h5 class="cls-side__section-head">生命值</h5>
 					<div><strong>生命骰：</strong> ${Renderer.getEntryDice(hdEntry, "Hit die")}</div>
-					<div><strong>首級生命值：</strong> ${cls.hd.number * cls.hd.faces} + 你的體質調整值</div>
-					<div><strong>其後生命值：</strong> ${Renderer.getEntryDice(hdEntry, "Hit die")} (or ${((cls.hd.number * cls.hd.faces) / 2 + 1)}) + 你的體質調整值， 一級之後每 ${cls.name} 等級</div>
+					<div><strong>首級生命值：</strong> ${Renderer.class.getHitPointsAtFirstLevel(cls.hd)}</div>
+					<div><strong>其後生命值：</strong> ${Renderer.class.getHitPointsAtHigherLevels(cls.name, cls.hd, hdEntry)}</div>
 				</td>
 			</tr>`
 		}
 		// endregion
 
 		// region Starting proficiencies
-		const renderArmorProfs = armorProfs => armorProfs.map(a => a.full ? a.full : a === "light" || a === "medium" || a === "heavy" ? `${Parser.ArmorToDisplay(a)}甲` : Parser.ArmorToDisplay(a)).join(", ");
-		const renderWeaponsProfs = weaponProfs => weaponProfs.map(w => w === "simple" || w === "martial" ? `${Parser.translateKeyToDisplay(w) }武器` : w).join(", ");
-		const renderToolProfs = toolProfs => toolProfs.map(it => Renderer.get().render(it)).join(", ")
-		const renderSkillsProfs = skills => `${Parser.skillProficienciesToFull(skills).uppercaseFirst()}.`;
-
 		const profs = cls.startingProficiencies || {};
 		// endregion
 
@@ -956,13 +971,13 @@ class ClassesPage extends BaseComponent {
 			if (mc.proficienciesGained) {
 				$ptMcProfsIntro = $(`<div ${mc.requirements || mc.requirementsSpecial ? `class="cls-side__mc-prof-intro--requirements"` : ""}>當你不是以起始等級獲得新職業的等級，你只會獲得該職業一部分的起始熟練項目。</div>`);
 
-				if (mc.proficienciesGained.armor) $ptMcProfsArmor = $(`<div><b>護甲：</b> ${Parser.ItemTypeToDisplay(renderArmorProfs(mc.proficienciesGained.armor))}</div>`);
+				if (mc.proficienciesGained.armor) $ptMcProfsArmor = $(`<div><b>護甲：</b> ${Renderer.class.getRenderedArmorProfs(mc.proficienciesGained.armor)}</div>`);
 
-				if (mc.proficienciesGained.weapons) $ptMcProfsWeapons = $(`<div><b>武器：</b> ${renderWeaponsProfs(mc.proficienciesGained.weapons)}</div>`);
+				if (mc.proficienciesGained.weapons) $ptMcProfsWeapons = $(`<div><b>武器：</b> ${Renderer.class.getRenderedWeaponProfs(mc.proficienciesGained.weapons)}</div>`);
 
-				if (mc.proficienciesGained.tools) $ptMcProfsTools = $(`<div><b>工具：</b> ${renderToolProfs(mc.proficienciesGained.tools)}</div>`);
+				if (mc.proficienciesGained.tools) $ptMcProfsTools = $(`<div><b>工具：</b> ${Renderer.class.getRenderedToolProfs(mc.proficienciesGained.tools)}</div>`);
 
-				if (mc.proficienciesGained.skills) $ptMcProfsSkills = $(`<div><b>技能：</b> ${renderSkillsProfs(mc.proficienciesGained.skills)}</div>`);
+				if (mc.proficienciesGained.skills) $ptMcProfsSkills = $(`<div><b>技能：</b> ${Renderer.class.getRenderedSkillProfs(mc.proficienciesGained.skills)}</div>`);
 			}
 
 			let $ptMcEntries = null;
@@ -998,11 +1013,11 @@ class ClassesPage extends BaseComponent {
 			<tr class="cls-side__show-hide">
 				<td colspan="6" class="cls-side__section">
 					<h5 class="cls-side__section-head">熟練</h5>
-					<div><b>護甲：</b> <span>${profs.armor ? renderArmorProfs(profs.armor) : "無"}</span></div>
-					<div><b>武器： </b> <span>${profs.weapons ? renderWeaponsProfs(profs.weapons) : "無"}</span></div>
-					<div><b>工具：</b> <span>${profs.tools ? renderToolProfs(profs.tools) : "無"}</span></div>
-					<div><b>豁免：</b> <span>${cls.proficiency ? cls.proficiency.map(p => Parser.attAbvToFull(p)).join(", ") : "無"}</span></div>
-					<div><b>技能：</b> <span>${profs.skills ? renderSkillsProfs(profs.skills) : "無"}</span></div>
+					<div><b>護甲：</b> <span>${profs.armor ? Renderer.class.getRenderedArmorProfs(profs.armor) : "無"}</span></div>
+					<div><b>武器：</b> <span>${profs.weapons ? Renderer.class.getRenderedWeaponProfs(profs.weapons) : "無"}</span></div>
+					<div><b>工具：</b> <span>${profs.tools ? Renderer.class.getRenderedToolProfs(profs.tools) : "無"}</span></div>
+					<div><b>豁免：</b> <span>${cls.proficiency ? cls.proficiency.map(p => Parser.attAbvToFull(p)).join("、") : "無"}</span></div>
+					<div><b>技能：</b> <span>${profs.skills ? Renderer.class.getRenderedSkillProfs(profs.skills) : "無"}</span></div>
 				</td>
 			</tr>
 
@@ -1012,7 +1027,7 @@ class ClassesPage extends BaseComponent {
 
 			<tr><th class="border" colspan="6"></th></tr>
 		</table>`.appendTo($wrpSidebar);
-		$wrpSidebar.show();
+		$wrpSidebar.showVe();
 
 		MiscUtil.pDefer(hkSidebarHidden);
 	}
@@ -1028,9 +1043,9 @@ class ClassesPage extends BaseComponent {
 		const cls = this.activeClass;
 
 		// region features/fluff
-		const $btnToggleFeatures = ComponentUiUtil.$getBtnBool(this, "isHideFeatures", {text: "職業能力", activeClass: "cls__btn-cf--active", isInverted: true}).title("Toggle Class Features");
+		const $btnToggleFeatures = ComponentUiUtil.$getBtnBool(this, "isHideFeatures", {text: "特性", activeClass: "cls__btn-cf--active", isInverted: true}).title("切換職業特性");
 
-		const $btnToggleFeatureVariants = $(`<button class="btn btn-xs btn-default" title="Toggle Class Feature Options/Variants">變體</button>`)
+		const $btnToggleFeatureVariants = $(`<button class="btn btn-xs btn-default" title="切換職業特性選項/變體">變體</button>`)
 			.click(() => {
 				const f = this.filterBox.getValues();
 				const isClassFeatureVariantsDisplayed = f[this._pageFilter.optionsFilter.header].isClassFeatureVariant;
@@ -1045,7 +1060,7 @@ class ClassesPage extends BaseComponent {
 		this.filterBox.on(FilterBox.EVNT_VALCHANGE, () => hkUpdateBtnFeatureVariants());
 		hkUpdateBtnFeatureVariants();
 
-		const $btnToggleFluff = ComponentUiUtil.$getBtnBool(this, "isShowFluff", {text: "資訊"}).title("Toggle Class Info");
+		const $btnToggleFluff = ComponentUiUtil.$getBtnBool(this, "isShowFluff", {text: "信息"}).title("切換職業信息");
 
 		$$`<div class="flex-v-center m-1 btn-group mr-3 no-shrink">${$btnToggleFeatures}${$btnToggleFeatureVariants}${$btnToggleFluff}</div>`.appendTo($wrp);
 		// endregion
@@ -1072,9 +1087,9 @@ class ClassesPage extends BaseComponent {
 			$dispCount.off("click");
 			if (this._listSubclass.visibleItems.length) {
 				const cntNotShown = this._listSubclass.items.length - this._listSubclass.visibleItems.length;
-				$dispCount.html(cntNotShown ? `<i class="clickable" title="Adjust your filters to see more.">(${cntNotShown} more not shown)</i>` : "").click(() => this._doSelectAllSubclasses());
+				$dispCount.html(cntNotShown ? `<i class="clickable" title="調整篩選器以查看更多。">(${cntNotShown}個條目未顯示)</i>` : "").click(() => this._doSelectAllSubclasses());
 			} else if (this._listSubclass.items.length > 1) {
-				$dispCount.html(`<i class="clickable" title="Adjust your filters to see more.">(${this._listSubclass.items.length - 1} subclasses not shown)</i>`).click(() => this._doSelectAllSubclasses());
+				$dispCount.html(`<i class="clickable" title="調整篩選器以查看更多。">(${this._listSubclass.items.length - 1}個子職未顯示)</i>`).click(() => this._doSelectAllSubclasses());
 			} else $dispCount.html("");
 		});
 
@@ -1119,9 +1134,9 @@ class ClassesPage extends BaseComponent {
 			});
 
 		const filterSets = [
-			{name: "View Official", subHashes: [], isClearSources: false},
-			{name: "View Most Recent", subHashes: [], isClearSources: true},
-			{name: "View All", subHashes: ["flstmiscellaneous:reprinted=0"], isClearSources: true},
+			{name: "查看官方", subHashes: [], isClearSources: false},
+			{name: "查看最新", subHashes: [], isClearSources: true},
+			{name: "查看全部", subHashes: ["flstmiscellaneous:reprinted=0"], isClearSources: true},
 		];
 		const setFilterSet = ix => {
 			const filterSet = filterSets[ix];
@@ -1143,7 +1158,7 @@ class ClassesPage extends BaseComponent {
 			].filter(Boolean), true);
 			$selFilterPreset.val("-1");
 		};
-		const $selFilterPreset = $(`<select class="input-xs form-control cls-tabs__sel-preset"><option value="-1" disabled>Filter...</option></select>`)
+		const $selFilterPreset = $(`<select class="input-xs form-control cls-tabs__sel-preset"><option value="-1" disabled>篩選...</option></select>`)
 			.change(() => {
 				const val = Number($selFilterPreset.val());
 				if (val == null) return;
@@ -1160,7 +1175,7 @@ class ClassesPage extends BaseComponent {
 		this.filterBox.on(FilterBox.EVNT_VALCHANGE, this._handleSubclassFilterChange.bind(this));
 		this._handleSubclassFilterChange();
 		// Remove the temporary "hidden" class used to prevent popping
-		this._listSubclass.items.forEach(it => it.ele.removeClass("hidden"));
+		this._listSubclass.items.forEach(it => it.ele.showVe());
 
 		const $btnToggleSources = ComponentUiUtil.$getBtnBool(this, "isShowScSources", {$ele: $(`<button class="btn btn-xs btn-default flex-1" title="Show Subclass Sources"><span class="glyphicon glyphicon-book"/></button>`)});
 
@@ -1219,13 +1234,13 @@ class ClassesPage extends BaseComponent {
 		const $dispSource = $(`<div class="ml-1" title="${Parser.sourceJsonToFull(sc.source)}">(${Parser.sourceJsonToAbv(sc.source)})</div>`);
 		const hkSourcesVisible = () => {
 			$dispName.text(this._state.isShowScSources ? ClassesPage.getBaseShortName(sc) : sc.shortName);
-			$dispSource.toggleClass("hidden", !this._state.isShowScSources);
+			$dispSource.toggleVe(!!this._state.isShowScSources);
 		};
 		this._addHookBase("isShowScSources", hkSourcesVisible);
 		MiscUtil.pDefer(hkSourcesVisible);
 
 		// Initially have these "hidden," to prevent them popping out when we filter them
-		const $btn = $$`<button class="btn btn-default btn-xs flex-v-center m-1 hidden ${sc.isReprinted ? "cls__btn-sc--reprinted" : ""}">
+		const $btn = $$`<button class="btn btn-default btn-xs flex-v-center m-1 ve-hidden ${sc.isReprinted ? "cls__btn-sc--reprinted" : ""}">
 				${$dispName}
 				${$dispSource}
 			</button>`
@@ -1247,6 +1262,8 @@ class ClassesPage extends BaseComponent {
 				shortName: sc.shortName,
 				stateKey,
 				mod,
+				ENG_name: sc.ENG_name,
+				ENG_hash: UrlUtil.autoEncodeEngHash(sc),
 			},
 			{
 				isExcluded,
@@ -1291,7 +1308,7 @@ class ClassesPage extends BaseComponent {
 
 		const hkShowHide = () => {
 			$wrpHead.toggleClass("cls-nav__head--active", !this._state.isHideOutline);
-			$wrpBody.toggleClass("hidden", !!this._state.isHideOutline);
+			$wrpBody.toggleVe(!this._state.isHideOutline);
 			$dispShowHide.toggleClass("cls-nav__disp-toggle--active", !this._state.isHideOutline);
 		};
 		this._addHookBase("isHideOutline", hkShowHide);
@@ -1485,11 +1502,11 @@ class ClassesPage extends BaseComponent {
 						const key = UrlUtil.getStateKeySubclass(sc);
 
 						if (!this._state[key]) {
-							$wrpContent.find(`[data-cls-comp-sc-ix="${i}"]`).hide();
+							$wrpContent.find(`[data-cls-comp-sc-ix="${i}"]`).hideVe();
 						} else numShown++;
 					});
 
-				if (!numShown) $wrpContent.find(".cls-comp__hr-level").addClass("hidden");
+				if (!numShown) $wrpContent.find(".cls-comp__hr-level").hideVe();
 
 				return numShown;
 			},
@@ -1613,17 +1630,18 @@ class ClassesPage extends BaseComponent {
 	}
 
 	_render_renderClassContent () {
-		const $content = $(`#pagecontent`).empty();
+		const $content = $(document.getElementById("pagecontent")).empty();
 		const cls = this.activeClass;
 		this._outlineData = {};
 
 		// Add extra classses to our features as we render them
-		Renderer.get().setFnGetStyleClasses(UrlUtil.PG_CLASSES, (entry) => {
-			if (!entry.source) return null;
-			if (!entry.isClassFeatureVariant) return null;
-			if (!SourceUtil.isNonstandardSource(entry.source) && entry.isClassFeatureVariant) return ["cls__variant-feature"];
-			return null;
-		});
+		Renderer.get()
+			.setFnGetStyleClasses(UrlUtil.PG_CLASSES, (entry) => {
+				if (!entry.source) return null;
+				if (!entry.isClassFeatureVariant) return null;
+				if (!SourceUtil.isNonstandardSource(entry.source) && entry.isClassFeatureVariant) return ["cls__variant-feature"];
+				return null;
+			});
 
 		$content.append(Renderer.utils.getBorderTr());
 
@@ -1672,14 +1690,31 @@ class ClassesPage extends BaseComponent {
 							const ptDate = ixScLvl === 0 && SourceUtil.isNonstandardSource(sc.source) && Parser.sourceJsonToDate(sc.source)
 								? Renderer.get().render(`{@note This subclass was published on ${MiscUtil.dateToStr(new Date(Parser.sourceJsonToDate(sc.source)))}.}`)
 								: "";
-							const ptSources = ixScLvl === 0 && sc.otherSources ? `{@note {@b Subclass source:} ${Renderer.utils.getSourceAndPageHtml(sc)}}` : "";
+							const ptSources = ixScLvl === 0 && sc.otherSources ? `{@note {@b 子職資源：} ${Renderer.utils.getSourceAndPageHtml(sc)}}` : "";
 							const toRender = (ptDate || ptSources) && scFeature.entries ? MiscUtil.copy(scFeature) : scFeature;
 							if (ptDate && toRender.entries) toRender.entries.unshift(ptDate);
 							if (ptSources && toRender.entries) toRender.entries.push(ptSources);
 
+							// region Prefix subclass feature names with the subclass name, which can be shown if multiple
+							//   subclasses are shown.
+							let hasNamePluginRun = false;
+							Renderer.get()
+								.addPlugin("entries", "namePrefix", function (entry) {
+									if (ixScLvl === 0 || !entry.name) return;
+
+									if (hasNamePluginRun) return;
+									hasNamePluginRun = true;
+
+									Renderer.get().removePlugins("entries", "namePrefix")
+									return `<span class="ve-hidden" data-subclass-name-prefix="true">${sc.name.qq()}:</span> `;
+								});
+							// endregion
+
 							const $trSubclassFeature = $(`<tr class="cls-main__sc-feature ${cssMod}" data-subclass-id="${UrlUtil.getStateKeySubclass(sc)}"><td colspan="6"/></tr>`)
 								.fastSetHtml(Renderer.get().setDepthTracker(depthArr, {additionalPropsInherited: ["isClassFeatureVariant"]}).render(toRender))
 								.appendTo($content);
+
+							Renderer.get().removePlugins("entries", "namePrefix");
 
 							this._trackOutlineScData(stateKey, ixScLvl, ixScFeature, depthArr);
 						});
@@ -1693,13 +1728,17 @@ class ClassesPage extends BaseComponent {
 		if (cls.otherSources) {
 			const text = Renderer.utils.getSourceAndPageHtml(cls);
 			const $trClassFeature = $(`<tr data-feature-type="class"><td colspan="6"/></tr>`)
-				.fastSetHtml(`<hr class="hr-1"><b>Class source:</b> ${text}`)
+				.fastSetHtml(`<hr class="hr-1"><b>職業資源：</b> ${text}`)
 				.appendTo($content);
 		}
 
 		this._$trNoContent = ClassesPage._render_$getTrNoContent().appendTo($content);
 
 		$content.append(Renderer.utils.getBorderTr());
+
+		Renderer.get()
+			.setFnGetStyleClasses(UrlUtil.PG_CLASSES, null)
+			.removePlugins("entries", "namePrefix");
 	}
 
 	async pDeleteSubclassBrew (uniqueId, sc) {
@@ -1725,7 +1764,7 @@ class ClassesPage extends BaseComponent {
 	}
 
 	static _render_$getTrNoContent () {
-		return $(`<tr class="cls-main__msg-no-content"><td colspan="6">Toggle a button to view class and subclass information</td></tr>`);
+		return $(`<tr class="cls-main__msg-no-content"><td colspan="6">切換任一按鈕來查看職業和子職信息</td></tr>`);
 	}
 
 	_getDefaultState () { return MiscUtil.copy(ClassesPage._DEFAULT_STATE); }
@@ -1831,10 +1870,10 @@ ClassesPage.ClassBookView = class {
 		$tblBook.append(renderStack.join(""));
 
 		// Menu panel
-		const $btnToggleCf = $(`<span class="cls-bkmv__btn-tab">職業能力</span>`).on("click", () => {
+		const $btnToggleCf = $(`<span class="cls-bkmv__btn-tab">Features</span>`).on("click", () => {
 			this._parent.set("isHideFeatures", !this._parent.get("isHideFeatures"));
 		});
-		const $btnToggleInfo = $(`<span class="cls-bkmv__btn-tab">資訊</span>`).on("click", () => {
+		const $btnToggleInfo = $(`<span class="cls-bkmv__btn-tab">Info</span>`).on("click", () => {
 			this._parent.set("isShowFluff", !this._parent.get("isShowFluff"));
 		});
 
@@ -1855,13 +1894,13 @@ ClassesPage.ClassBookView = class {
 				const $btnToggleSc = $(`<span class="cls-bkmv__btn-tab ${sc.isReprinted ? "cls__btn-sc--reprinted" : ""}" title="${ClassesPage.getBtnTitleSubclass(sc)}">${name}</span>`)
 					.on("click", () => this._parent.set(stateKey, !this._parent.get(stateKey)));
 				const isVisible = this._classPage.filterBox.toDisplay(filterValues, sc.source, sc._fMisc, null);
-				if (!isVisible) $btnToggleSc.addClass("hidden");
+				if (!isVisible) $btnToggleSc.hideVe();
 
 				const hkShowHide = () => {
 					const $dispFeatures = this._$wrpBook.find(`[data-cls-book-sc-ix="${i}"]`);
 					const isActive = !!this._parent.get(stateKey);
 					$btnToggleSc.toggleClass(`cls__btn-sc--active-${mod}`, isActive);
-					$dispFeatures.toggleClass("hidden", !isActive);
+					$dispFeatures.toggleVe(!!isActive);
 				};
 				(this._hooks[stateKey] = this._hooks[stateKey] || []).push(hkShowHide);
 				this._parent.addHook(stateKey, hkShowHide);
@@ -1874,7 +1913,7 @@ ClassesPage.ClassBookView = class {
 			const $dispFeatures = this._$wrpBook.find(`[data-cls-book-cf="true"]`);
 			const isActive = !this._parent.get("isHideFeatures");
 			$btnToggleCf.toggleClass("cls__btn-cf--active", isActive);
-			$dispFeatures.toggleClass("hidden", !isActive);
+			$dispFeatures.toggleVe(!!isActive);
 		};
 		(this._hooks["isHideFeatures"] = this._hooks["isHideFeatures"] || []).push(hkFeatures);
 		this._parent.addHook("isHideFeatures", hkFeatures);
@@ -1883,8 +1922,8 @@ ClassesPage.ClassBookView = class {
 		const hkFluff = () => {
 			const $dispFluff = this._$wrpBook.find(`[data-cls-book-fluff="true"]`);
 			const isHidden = !this._parent.get("isShowFluff");
-			$btnToggleInfo.toggleClass("active", !isHidden);
-			$dispFluff.toggleClass("hidden", !!isHidden);
+			$btnToggleInfo.toggleVe(!!isHidden);
+			$dispFluff.toggleVe(!isHidden);
 		};
 		(this._hooks["isShowFluff"] = this._hooks["isShowFluff"] || []).push(hkFluff);
 		this._parent.addHook("isShowFluff", hkFluff);
