@@ -10001,16 +10001,16 @@
 					],
 					"entries": [
 						{
-							"name": "Skills",
+							"name": "技能",
 							"entries": [
-								"You gain proficiency in one skill of your choice."
+								"你獲得一項你選擇的技能熟練度。"
 							],
 							"type": "entries"
 						},
 						{
-							"name": "Feat",
+							"name": "專長",
 							"entries": [
-								"You gain one {@5etools feat|feats.html} of your choice."
+								"你獲得一項你選擇的{@5etools 專長|feats.html}"
 							],
 							"type": "entries"
 						}
