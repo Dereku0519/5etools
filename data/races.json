@@ -6607,10 +6607,9 @@
 					]
 				},
 				{
-					"name": "語言",
-					"ENG_name": "Languages",
+					"name": "Languages",
 					"entries": [
-						"你可以說、讀、寫通用語和吉斯語。"
+						"You can speak, read, and write Common and Gith."
 					],
 					"type": "entries"
 				}
