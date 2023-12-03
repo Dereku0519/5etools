@@ -1569,7 +1569,7 @@
 					"type": "entries",
 					"name": "自然親和",
 					"entries": [
-						"你的精類血統連線著自然，這給予了你與自然界與其中的動物有著一種直覺上的聯絡。因此，你擁有以下一項自選技能的熟練項：{@skill 醫療}、{@skill 自然}，或{@skill 生存}。"
+						"你的精類血統連線著自然，這給予了你與自然界與其中的動物有著一種直覺上的聯繫。因此，你擁有以下一項自選技能的熟練項：{@skill 醫療}、{@skill 自然}，或{@skill 生存}。"
 					]
 				}
 			],
@@ -1836,7 +1836,7 @@
 					"type": "entries",
 					"name": "幻身靈本能",
 					"entries": [
-						"多虧了你與妖精國度的聯絡，你可以獲得以下兩項自選技能的熟練：{@skill 欺瞞}、{@skill 洞悉}、{@skill 威嚇}、{@skill 表演}或{@skill 說服}。"
+						"多虧了你與妖精國度的聯繫，你可以獲得以下兩項自選技能的熟練：{@skill 欺瞞}、{@skill 洞悉}、{@skill 威嚇}、{@skill 表演}或{@skill 說服}。"
 					]
 				},
 				{
@@ -4233,6 +4233,9 @@
 					"ENG_name": "Sea",
 					"source": "MTF",
 					"page": 62,
+					"reprintedAs": [
+						"海精靈|MPMM"
+					],
 					"otherSources": [
 						{
 							"source": "EGW",
@@ -4362,6 +4365,9 @@
 					"ENG_name": "Shadar-kai",
 					"source": "MTF",
 					"page": 62,
+					"reprintedAs": [
+						"影靈|MPMM"
+					],
 					"ability": [
 						{
 							"con": 1
@@ -4606,6 +4612,94 @@
 			"ENG_name": "Elf"
 		},
 		{
+			"name": "影靈",
+			"source": "MPMM",
+			"page": 31,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"creatureTypeTags": [
+				"elf"
+			],
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"age": {
+				"max": 750
+			},
+			"darkvision": 60,
+			"traitTags": [
+				"Improved Resting",
+				"Tool Proficiency",
+				"Weapon Proficiency"
+			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"resist": [
+				"necrotic"
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是類人生物。如果有任何前提或效果需要你作為一個精靈，你也被視作精靈。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "鴉後的祝福",
+					"entries": [
+						"用一個附贈動作，你可以魔法地傳送到一處30尺內且未被佔據的可見空間。你可以使用該特質的次數等於你的熟練加值，當你完成一次長休後，你重新獲得所有消耗的次數。",
+						"當你到達3級時，當你使用該特質進行傳送，你獲得所有傷害的抗性。該抗性直到你的下一個回合開始前。在此期間，你的身體呈現出如幽魂般的半透明。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "精類血統",
+					"entries": [
+						"你在為自己避免或結束{@condition 魅惑}狀態的豁免檢定時具有優勢。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "敏銳感官",
+					"entries": [
+						"你擁有{@skill 察覺}技能的熟練項。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黯蝕抗性",
+					"entries": [
+						"你具有黯蝕傷害的抗性。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "傳思",
+					"entries": [
+						"你不需要睡眠，並且不會因魔法效應而陷入睡眠。你能夠以4小時的時間完成長休，前提是如果你將這些時間花在一次傳思冥想中，在此期間你保留意識。",
+						"當你結束這段冥想時，你能夠獲得兩項你未擁有的熟練項，其中每一項都是你從《玩家手冊》中選擇的一個武器或是工具項。你透過抽取精靈共有記憶來神秘的獲得這些熟練項，並且你保留他們直到你完成下次長休。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"name": "雅靈",
 			"source": "MPMM",
 			"page": 13,
@@ -4704,6 +4798,104 @@
 					"entries": [
 						"你不需要睡眠，並且不會因魔法效應而陷入睡眠。你能夠以4小時的時間完成長休，前提是如果你將這些時間花在一次傳思冥想中，在此期間你保留意識。",
 						"當你結束這段冥想時，你可以改變你的季節，並且你能夠獲得兩項你未擁有的熟練項，其中每一項都是你從《玩家手冊》中選擇的一個武器或是工具項。你透過抽取精靈共有記憶來神秘的獲得這些熟練項，並且你保留他們直到你完成下次長休。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "海精靈",
+			"source": "MPMM",
+			"page": 30,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"creatureTypeTags": [
+				"elf"
+			],
+			"size": [
+				"M"
+			],
+			"speed": {
+				"walk": 30,
+				"swim": true
+			},
+			"age": {
+				"max": 750
+			},
+			"darkvision": 60,
+			"traitTags": [
+				"Amphibious",
+				"Improved Resting",
+				"Tool Proficiency",
+				"Weapon Proficiency"
+			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"resist": [
+				"cold"
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是類人生物。如果有任何前提或效果需要你作為一個精靈，你也被視作精靈。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "速度",
+					"entries": [
+						"你的步行速度為30尺，同時你擁有等同於你步行速度的游泳速度。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "海之子",
+					"entries": [
+						"你可以在空氣和水中呼吸，同時你具有冷凍傷害的抗性。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "精類血統",
+					"entries": [
+						"你在為自己避免或結束{@condition 魅惑}狀態的豁免檢定時具有優勢。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "海之友",
+					"entries": [
+						"你的族人與水生動物擁有非凡的親和力。你可以向任何擁有游泳速度的野獸傳達簡單的想法。它們可以理解你的話的意思，雖然你沒有特殊的能力來明白它們的迴應。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "敏銳感官",
+					"entries": [
+						"你擁有{@skill 察覺}技能的熟練項。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "傳思",
+					"entries": [
+						"你不需要睡眠，並且不會因魔法效應而陷入睡眠。你能夠以4小時的時間完成長休，前提是如果你將這些時間花在一次傳思冥想中，在此期間你保留意識。",
+						"當你結束這段冥想時，你能夠獲得兩項你未擁有的熟練項，其中每一項都是你從《玩家手冊》中選擇的一個武器或是工具項。你透過抽取精靈共有記憶來神秘的獲得這些熟練項，並且你保留他們直到你完成下次長休。"
 					]
 				}
 			],
@@ -12679,7 +12871,7 @@
 					"type": "entries",
 					"name": "狗頭人遺產",
 					"entries": [
-						"狗頭人與龍的聯絡能夠以一種不可思議的方式在一個狗頭人的身上顯現。從下列遺產選項中為你的狗頭人選擇一項：",
+						"狗頭人與龍的聯繫能夠以一種不可思議的方式在一個狗頭人的身上顯現。從下列遺產選項中為你的狗頭人選擇一項：",
 						{
 							"type": "list",
 							"items": [
@@ -13075,6 +13267,59 @@
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "蜥蜴人",
+			"source": "MPMM",
+			"size": [
+				"M"
+			],
+			"speed": {
+				"walk": 30,
+				"swim": true
+			},
+			"lineage": "VRGR",
+			"traitTags": [
+				"Natural Armor"
+			],
+			"entries": [
+				{
+					"name": "啃咬",
+					"entries": [
+						"你有一張佈滿尖牙的嘴，你可以使用它進行徒手打擊。當你使用它命中目標時，該打擊造成{@dice 1d6}+力量調整值的揮砍傷害，而非一次通常徒手打擊的鈍擊傷害。"
+					],
+					"type": "entries"
+				},
+				{
+					"name": "屏息",
+					"entries": [
+						"你每次可以屏住呼吸至多15分鐘。"
+					],
+					"type": "entries"
+				},
+				{
+					"name": "飢渴之喉",
+					"entries": [
+						"你可以讓你自己進入一種兇狠的暴食狀態。用一個附贈動作，你能使用你的啃咬進行一次特殊攻擊，如果該攻擊命中，它會造成正常傷害，同時你獲得等同於你熟練加值的臨時生命值。 你可以使用此特質的次數等於你的熟練加值，當你完成一次長休後，你重新獲得所有消耗的次數。"
+					],
+					"type": "entries"
+				},
+				{
+					"name": "天生護甲",
+					"entries": [
+						"你擁有堅韌的鱗片面板，在未著裝護甲時，你的基礎AC為13+你的敏捷調整值。如果你著裝護甲的AC較之更低，你可以用你的天生護甲來確定你的AC。當你使用你的天生護甲時，你可以正常獲得盾牌提供的加值。"
+					],
+					"type": "entries"
+				},
+				{
+					"name": "自然直覺",
+					"entries": [
+						"由於你與大自然的神聯繫，擁有以下兩項自選技能的熟練項：{@skill 醫療}，{@skill 自然}，{@skill 察覺}，{@skill 隱匿}，或{@skill 生存}。"
+					],
+					"type": "entries"
+				}
+			],
+			"ENG_name": "Lizardfolk"
 		},
 		{
 			"name": "蜥蜴人",
@@ -14089,6 +14334,9 @@
 			"ENG_name": "Minotaur",
 			"source": "GGR",
 			"page": 18,
+			"reprintedAs": [
+				"Minotaur|MPMM"
+			],
 			"size": [
 				"M"
 			],
@@ -14198,9 +14446,57 @@
 		},
 		{
 			"name": "米諾陶",
+			"source": "MPMM",
+			"page": 27,
+			"lineage": "VRGR",
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"traitTags": [
+				"Natural Weapon"
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "角擊",
+					"entries": [
+						"你可以使用你的雙角進行徒手打擊。當你使用它命中目標時，該打擊造成{@damage 1d6}+力量調整值的穿刺傷害，而非一次通常徒手打擊的鈍擊傷害。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "猛抵衝撞",
+					"entries": [
+						"當你在自己的回合中執行{@action 疾走}動作，並至少移動了20尺後，你可以用附贈動作以你的角擊進行一次近戰攻擊。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "角錘",
+					"entries": [
+						"在你的回合中，當你用近戰攻擊去作為{@action 攻擊}動作的一部分命中一個生物時，你可以用附贈動作以牛角嘗試推撞他。目標生物必須在你的5尺範圍內，且體型不能比你大超過一級。除非該生物在進行對抗DC為8+你的熟練加值+你的力量調整值的力量豁免中成功。否則，你將其從你的身邊推離10尺。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "迷宮追憶",
+					"entries": [
+						"你總是能知道哪個方向是北方， 同時你在任何為導航和追蹤所進行的感知（{@skill 生存}）檢定具有優勢。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "米諾陶",
 			"ENG_name": "Minotaur",
 			"source": "MOT",
 			"page": 22,
+			"reprintedAs": [
+				"Minotaur|MPMM"
+			],
 			"_copy": {
 				"name": "Minotaur",
 				"source": "GGR",
@@ -14767,6 +15063,9 @@
 			"ENG_name": "Orc",
 			"source": "ERLW",
 			"page": 31,
+			"reprintedAs": [
+				"獸人|MPMM"
+			],
 			"size": [
 				"M"
 			],
@@ -14874,9 +15173,59 @@
 		},
 		{
 			"name": "獸人",
+			"source": "MPMM",
+			"page": 28,
+			"lineage": "VRGR",
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"traitTags": [
+				"Powerful Build"
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "應激衝刺",
+					"entries": [
+						"你可以用附贈動作進行{@action 疾走}動作。你可以使用此特質的次數等於你的熟練加值，當你完成一次長休後，你重新獲得所有消耗的次數。並且你一回合不能使用該特質超過一次。",
+						"每當你使用該特質時，你獲得等於你熟練加值的臨時生命值。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "強健體格",
+					"entries": [
+						"在決定你的載重、和你可以推、拉及抬的重量時，你視作為體型大一級的生物。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "堅韌不屈",
+					"entries": [
+						"當你生命值降至0 而沒有立即死亡時，可以改為使生命值降至1。此特質生效後必須完成一次長休後才能再次生效。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "獸人",
 			"ENG_name": "Orc",
 			"source": "VGM",
 			"page": 120,
+			"reprintedAs": [
+				"獸人|MPMM"
+			],
 			"size": [
 				"M"
 			],
@@ -15453,9 +15802,79 @@
 			]
 		},
 		{
-			"name": "Satyr",
+			"name": "半羊人",
+			"source": "MPMM",
+			"page": 29,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"fey"
+			],
+			"size": [
+				"M"
+			],
+			"speed": 35,
+			"traitTags": [
+				"Magic Resistance",
+				"Natural Weapon"
+			],
+			"skillProficiencies": [
+				{
+					"performance": true,
+					"persuasion": true
+				}
+			],
+			"toolProficiencies": [
+				{
+					"musical instrument": true
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是精類生物。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "頂撞",
+					"entries": [
+						"你可以使用你頭與的雙角進行徒手打擊。當你使用它命中目標時，該打擊造成{@damage 1d6}+力量調整值的鈍擊傷害，而非一次通常徒手打擊的鈍擊傷害。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "魔法抗性",
+					"entries": [
+						"你對抗法術的豁免檢定具有優勢。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "歡喜之躍",
+					"entries": [
+						"無論何時你進行一次跳遠或跳高時，你可以擲一枚{@dice d8}，並將擲骰結果的數字加到你所跳躍的尺數——即使是進行一次立定跳遠。這段額外的距離像通常的情況一樣花費移動力。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "貪歡者",
+					"entries": [
+						"作為狂歡的化身，你擁有{@skill 表演}和{@skill 說服}技能的熟練項，並且你擁有一項自選樂器的熟練項。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "半羊人",
 			"source": "MOT",
 			"page": 24,
+			"reprintedAs": [
+				"半羊人|MPMM"
+			],
 			"creatureTypes": [
 				"fey"
 			],
@@ -15566,9 +15985,87 @@
 			"hasFluffImages": true
 		},
 		{
-			"name": "Shifter",
+			"name": "化獸者",
+			"source": "MPMM",
+			"page": 32,
+			"lineage": "VRGR",
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"acrobatics",
+							"athletics",
+							"intimidation",
+							"survival"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "野獸本能",
+					"entries": [
+						"由於和內在獸性的聯繫，你擁有以下一項自選技能的熟練項：{@skill 體操}，{@skill 運動}，{@skill 威嚇}，或{@skill 生存}。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "化形",
+					"entries": [
+						"用一個附贈動作，你可以展現出更加野獸的姿態。這此變形持續一分鐘，直到你死亡，或你用一附贈動作變回正常形態。當你化形時，你獲得等同於2x熟練加值的臨時生命值。你可以使用此特質的次數等於你的熟練加值。當你完成一次長休後，你重新獲得所有消耗的次數。",
+						"當你處於化形狀態時，你從下列選項中額外獲得一項好處（當你選擇該種族時進行決定）：",
+						{
+							"type": "list",
+							"items": [
+								{
+									"type": "item",
+									"name": "獸皮",
+									"entry": "你獲得{@dice 1d6}點的額外臨時生命值。當你處於化形狀態時，你的AC額外+1。"
+								},
+								{
+									"type": "item",
+									"name": "長牙",
+									"entry": "當你使用化形時，以及在其後的每個處於化形形態的其他回合裡，作為一個附贈動作，你可以使用用你的長牙進行徒手打擊。當你使用它命中目標時，該打擊造成{@dice 1d6}+力量調整值的穿刺傷害，而非一次通常徒手打擊的鈍擊傷害。"
+								},
+								{
+									"type": "item",
+									"name": "迅捷",
+									"entry": "當你處於化形狀態時，你的移動速度增加10尺。另外，當一生物在其回合進入你的5尺範圍內時，你可以用反應移動最多10尺，且這樣的移動不會觸發藉機攻擊。"
+								},
+								{
+									"type": "item",
+									"name": "獵食",
+									"entry": "當你處於化形狀態時，你的感知檢定具有優勢。且除非你處於{@condition 無力}狀態，否則任何在你30尺範圍內的生物無法在對你進行的攻擊檢定中具有優勢。"
+								}
+							],
+							"style": "list-hang-notitle"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "化獸者",
 			"source": "ERLW",
 			"page": 33,
+			"reprintedAs": [
+				"化獸者|MPMM"
+			],
 			"otherSources": [
 				{
 					"source": "UAWGE",
@@ -16597,8 +17094,81 @@
 		},
 		{
 			"name": "斑貓人",
+			"source": "MPMM",
+			"page": 33,
+			"lineage": "VRGR",
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": {
+				"walk": 30,
+				"climb": true
+			},
+			"darkvision": 60,
+			"traitTags": [
+				"Natural Weapon"
+			],
+			"skillProficiencies": [
+				{
+					"perception": true,
+					"stealth": true
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "體型",
+					"entries": [
+						"你的體型為中型或小型。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "速度",
+					"entries": [
+						"你的步行速度為30尺，並且擁有等於你行走速度的攀爬速度。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "貓之利爪",
+					"entries": [
+						"你能夠以爪子進行徒手攻擊。當你使用它命中目標時，該打擊造成{@damage 1d6}+力量調整值的揮砍傷害，而非一次通常徒手打擊的鈍擊傷害。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "貓之天性",
+					"entries": [
+						"你擁有{@skill 察覺}和{@skill 隱匿}技能的熟練項。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "貓之迅捷",
+					"entries": [
+						"你的反應和敏捷允許你能以爆發性的速度移動。當你在戰鬥中移動時，你可以讓你的速度直到回合結束翻倍。一旦你使用了這個特性，除非你在你的一個回合移動了0尺，否則你不能再使用它。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "斑貓人",
 			"source": "VGM",
 			"page": 113,
+			"reprintedAs": [
+				"斑貓人|MPMM"
+			],
 			"otherSources": [
 				{
 					"source": "EGW",
@@ -18037,8 +18607,86 @@
 		},
 		{
 			"name": "龜人",
+			"source": "MPMM",
+			"page": 34,
+			"lineage": "VRGR",
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"traitTags": [
+				"Natural Armor",
+				"Natural Weapon"
+			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"animal handling",
+							"medicine",
+							"nature",
+							"perception",
+							"stealth",
+							"survival"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "體型",
+					"entries": [
+						"你的體型為中型或小型。你的體型是中型或小型。在你選擇該種族時選擇體型。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "利爪",
+					"entries": [
+						"你能夠以爪子進行徒手打擊。當你使用它命中目標時，該打擊造成{@damage 1d6}+力量調整值的揮砍傷害，代替徒手打擊原本的鈍擊傷害。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "屏息",
+					"entries": [
+						"你能屏住呼吸長達1小時。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "天生護甲",
+					"entries": [
+						"Your 你的外殼提供充足的防禦，你的基礎AC是17（你的敏捷調整值不會影響這個數字）。你無法穿戴輕甲、中甲和重甲，但你在使用盾牌時，仍能獲得盾牌的AC加值。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "自然直覺",
+					"entries": [
+						"由於你與自然的神秘聯繫，擁有以下一項自選技能的熟練項：{@skill 馴獸}、{@skill 醫療}、{@skill 自然}、{@skill 察覺}、{@skill 隱匿}或{@skill Animal 生存}。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "龜殼防禦",
+					"entries": [
+						"你能用一個動作縮回殼內。直到你出殼，你獲得+4的AC加值， 在力量豁免與體質豁免具有優勢。當你在龜殼內時，你處於{@condition 伏地}狀態，速度為0且不能增加。你的敏捷豁免具有劣勢，你不能執行反應，你唯一能執行的動作是以一個附贈動作從殼中出來。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "龜人",
 			"source": "TTP",
 			"page": 3,
+			"reprintedAs": [
+				"龜人|MPMM"
+			],
 			"otherSources": [
 				{
 					"source": "EGW",
@@ -18173,8 +18821,112 @@
 		},
 		{
 			"name": "梭螺魚人",
+			"source": "MPMM",
+			"page": 35,
+			"lineage": "VRGR",
+			"size": [
+				"M"
+			],
+			"speed": {
+				"walk": 30,
+				"swim": true
+			},
+			"darkvision": 60,
+			"traitTags": [
+				"Amphibious"
+			],
+			"resist": [
+				"cold"
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": {
+							"daily": {
+								"1": [
+									"fog cloud"
+								]
+							}
+						},
+						"3": {
+							"daily": {
+								"1": [
+									"gust of wind"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"water walk"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "速度",
+					"entries": [
+						"你的步行速度為30尺，並且擁有等於你行走速度的游泳速度。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "兩棲",
+					"entries": [
+						"你能在水和空氣中呼吸。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "控風操水",
+					"entries": [
+						"你可以用該特質施展{@spell 雲霧術}。從3級開始，你能用它施展{@spell 造風術}，從5級開始，你也能用它施展{@spell 水面行走}。一旦你使用了該特質施展了這些中的任意法術，直到完成一次長休前，你不能再次使用該特質再施展那個法術。你也能用你擁有的相應法術環階的法術位來施展這些法術。",
+						"當你使用該特質施展這些法術時，智力、感知或魅力是你的施法關鍵屬性（當你選擇該種族時進行決定）。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "海之使者",
+					"entries": [
+						"你可以與具有游泳速度的野獸、元素或怪獸溝通。它們能夠理解你的話的意思，雖然你沒有特殊的能力來明白它們的迴應。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "海淵守衛",
+					"entries": [
+						"你具有冷凍傷害的抗性，能夠適應海洋深處的嚴寒。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "梭螺魚人",
 			"source": "VGM",
 			"page": 115,
+			"reprintedAs": [
+				"Triton|MPMM"
+			],
 			"size": [
 				"M"
 			],
@@ -19442,9 +20194,98 @@
 			]
 		},
 		{
+			"name": "原體蛇人",
+			"source": "MPMM",
+			"page": 36,
+			"lineage": "VRGR",
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"traitTags": [
+				"Magic Resistance"
+			],
+			"resist": [
+				"poison"
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"1": [
+							"animal friendship"
+						],
+						"3": {
+							"daily": {
+								"1": [
+									"suggestion"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"1": [
+							"poison spray#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "體型",
+					"entries": [
+						"你的體型為中型或小型。在你選擇該種族時選擇體型。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "魔法抗性",
+					"entries": [
+						"你對抗法術的豁免檢定具有優勢。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "毒素抗性",
+					"entries": [
+						"你在避免或結束自己的{@condition 中毒}狀態的豁免檢定中具有優勢。你也具有對毒素傷害的抗性。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "毒蛇魔法",
+					"entries": [
+						"你知曉戲法{@spell 毒氣噴灑}。你能夠無限次施展{@spell 化獸為友}，不過目標只能是蛇。從3級開始，你能夠施展{@spell 暗示術}，一但你施展了它，在你完成一次長休息前無法再次使用。你也能用你擁有的相應法術環階的法術位來施展這些法術。",
+						"當你使用該特質施展這些法術時，智力、感知或魅力是你的施法關鍵屬性（當你選擇該種族時進行決定）。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
 			"name": "純血蛇人",
 			"source": "VGM",
 			"page": 120,
+			"reprintedAs": [
+				"原體蛇人|MPMM"
+			],
 			"size": [
 				"M"
 			],
