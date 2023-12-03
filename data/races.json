@@ -6333,6 +6333,9 @@
 			"ENG_name": "Gith",
 			"source": "MTF",
 			"page": 96,
+			"reprintedAs": [
+				"吉斯人|MPMM"
+			],
 			"size": [
 				"M"
 			],
@@ -6379,6 +6382,9 @@
 					"name": "吉斯洋基",
 					"ENG_name": "Githyanki",
 					"page": 96,
+					"reprintedAs": [
+						"吉斯洋基人|MPMM"
+					],
 					"ability": [
 						{
 							"str": 2
@@ -6498,6 +6504,9 @@
 					"name": "吉斯澤萊",
 					"ENG_name": "Githzerai",
 					"page": 96,
+					"reprintedAs": [
+						"吉斯澤萊|MPMM"
+					],
 					"ability": [
 						{
 							"wis": 2
@@ -6561,6 +6570,192 @@
 						}
 					],
 					"hasFluff": true
+				}
+			],
+			"hasFluff": true
+		},
+		{
+			"name": "吉斯人",
+			"ENG_name": "Gith",
+			"source": "MPMM",
+			"lineage": "VRGR",
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"entries": [
+				{
+					"name": "年齡",
+					"ENG_name": "Age",
+					"type": "entries",
+					"entries": [
+						"吉斯人在近二十歲時成年，且可活約一個世紀。"
+					]
+				},
+				{
+					"name": "體型",
+					"ENG_name": "Size",
+					"type": "entries",
+					"entries": [
+						"吉斯人相較人類而言更高而纖瘦，身高大多爲6尺。"
+					]
+				},
+				{
+					"name": "語言",
+					"ENG_name": "Languages",
+					"entries": [
+						"你可以說、讀、寫通用語和吉斯語。"
+					],
+					"type": "entries"
+				}
+			],
+			"subraces": [
+				{
+					"name": "吉斯洋基",
+					"ENG_name": "Githyanki",
+					"page": 18,
+					"traitTags": [
+						"Weapon Proficiency"
+					],
+					"skillProficiencies": [
+						{
+							"any": 1
+						}
+					],
+					"toolProficiencies": [
+						{
+							"any": 1
+						}
+					],
+					"resist": [
+						"psychic"
+					],
+					"additionalSpells": [
+						{
+							"innate": {
+								"3": {
+									"daily": {
+										"1": [
+											"jump"
+										]
+									}
+								},
+								"5": {
+									"daily": {
+										"1": [
+											"misty step"
+										]
+									}
+								}
+							},
+							"ability": {
+								"choose": [
+									"int",
+									"wis",
+									"cha"
+								]
+							},
+							"known": {
+								"1": [
+									"mage hand#c"
+								]
+							}
+						}
+					],
+					"entries": [
+						{
+							"type": "entries",
+							"name": "星界知識",
+							"entries": [
+								"你可以神秘地進入一個與星界位面相連線的實體經驗儲存池。當你完成一次長休後，你能夠獲得一項你選擇技能的熟練項，和一項你從《玩家手冊》中選擇的一個武器或工具的熟練項，如同你短暫地將自己的意識投影到了星界位面。你保留這些熟練項直到你完成下次長休。"
+							]
+						},
+						{
+							"type": "entries",
+							"name": "吉斯洋基靈能",
+							"entries": [
+								"你知曉戲法{@spell 法師之手}，當你使用該特質施展該戲法時，這隻手是{@condition 隱形}的。",
+								"從3級開始，你可以使用該特質施展{@spell 跳躍術}。從5級開始，你可以使用該特質施展{@spell 迷蹤步}，且無需材料成分。一旦你使用了該特質施展了跳躍術或迷蹤步，直到完成一次長休前，你不能再次使用該特質再施展那個法術。你也能用你擁有的相應法術環階的法術位來施展這些法術。",
+								"當你使用該特質施展這些法術時，智力、感知或魅力是你的施法關鍵屬性（當你選擇該種族時進行決定）。當你使用該特質施展這些法術時，無需法術成分。"
+							]
+						},
+						{
+							"type": "entries",
+							"name": "心靈抗性",
+							"entries": [
+								"你具有心靈傷害的抗性。"
+							]
+						}
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
+				},
+				{
+					"name": "吉斯澤萊",
+					"ENG_name": "Githzerai",
+					"page": 96,
+					"resist": [
+						"psychic"
+					],
+					"additionalSpells": [
+						{
+							"innate": {
+								"3": {
+									"daily": {
+										"1": [
+											"shield"
+										]
+									}
+								},
+								"5": {
+									"daily": {
+										"1": [
+											"detect thoughts"
+										]
+									}
+								}
+							},
+							"ability": {
+								"choose": [
+									"int",
+									"wis",
+									"cha"
+								]
+							},
+							"known": {
+								"1": [
+									"mage hand#c"
+								]
+							}
+						}
+					],
+					"entries": [
+						{
+							"type": "entries",
+							"name": "Githzerai Psionics",
+							"entries": [
+								"You know the {@spell mage hand} cantrip, and the hand is {@condition invisible} when you cast the cantrip with this trait.",
+								"Starting at 3rd level, you can cast the {@spell shield} spell with this trait. Starting at 5th level, you can also cast the {@spell detect thoughts} spell with it. Once you cast {@spell shield} or {@spell detect thoughts} spell with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.",
+								"Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race). None of these spells require spell components when you cast them with this trait."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Mental Discipline",
+							"entries": [
+								"Your innate psychic defenses grant you advantage on saving throws you make to avoid or end the {@condition charmed} and {@condition frightened} conditions on yourself."
+							]
+						},
+						{
+							"type": "entries",
+							"name": "Psychic Resilience",
+							"entries": [
+								"You have resistance to psychic damage."
+							]
+						}
+					],
+					"hasFluff": true,
+					"hasFluffImages": true
 				}
 			],
 			"hasFluff": true
