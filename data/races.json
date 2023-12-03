@@ -6619,6 +6619,7 @@
 					"name": "吉斯洋基",
 					"ENG_name": "Githyanki",
 					"page": 18,
+					"lineage": "VRGR",
 					"traitTags": [
 						"Weapon Proficiency"
 					],
@@ -6699,6 +6700,7 @@
 					"name": "吉斯澤萊",
 					"ENG_name": "Githzerai",
 					"page": 96,
+					"lineage": "VRGR",
 					"resist": [
 						"psychic"
 					],
