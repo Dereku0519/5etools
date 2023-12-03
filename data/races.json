@@ -7706,6 +7706,63 @@
 		},
 		{
 			"name": "地精",
+			"source": "MPMM",
+			"page": 20,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"creatureTypeTags": [
+				"goblinoid"
+			],
+			"size": [
+				"S"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"entries": [
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是類人生物。如果有任何前提或效果需要你作為一個類地精生物，你也被視作類地精生物。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "精類血統",
+					"entries": [
+						"你在為自己避免或結束{@condition 魅惑}狀態的豁免檢定時具有優勢。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "小型生物的怒火",
+					"entries": [
+						"當你使用攻擊或法術對一個生物造成傷害時，如果該生物的體型大於你，你可以使該攻擊或法術對這個生物造成額外的傷害。該額外傷害等於你的熟練加值。",
+						"你可以使用此特質的次數等於你的熟練加值，當你完成一次長休後，你重新獲得所有消耗的次數。並且你一回合不能使用該特質超過一次。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "迅捷逃生",
+					"entries": [
+						"你在每個自己的回合，可以以一個附贈動作來執行{@action 撤離}或{@action 躲藏}動作。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "地精",
 			"source": "DMG",
 			"page": 282,
 			"size": [
@@ -7906,6 +7963,9 @@
 					"source": "EGW",
 					"page": 174
 				}
+			],
+			"reprintedAs": [
+				"地精|MPMM"
 			],
 			"size": [
 				"S"
