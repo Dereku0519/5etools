@@ -6492,6 +6492,7 @@
 				"M"
 			],
 			"speed": 30,
+			"lineage": "VRGR",
 			"languageProficiencies": [
 				{
 					"common": true,
