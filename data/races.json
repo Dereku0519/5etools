@@ -966,6 +966,9 @@
 			"ENG_name": "Bugbear",
 			"source": "ERLW",
 			"page": 25,
+			"reprintedAs": [
+				"熊地精|MPMM"
+			],
 			"size": [
 				"M"
 			],
@@ -1066,6 +1069,84 @@
 					"type": "entries"
 				}
 			]
+		},
+		{
+			"name": "熊地精",
+			"source": "MPMM",
+			"page": 8,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"creatureTypeTags": [
+				"goblinoid"
+			],
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"traitTags": [
+				"Powerful Build"
+			],
+			"skillProficiencies": [
+				{
+					"stealth": true
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是類人生物。如果有任何前提或效果需要你作為一個類地精生物，你也被視作類地精生物。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "精類血統",
+					"entries": [
+						"你在為自己避免或結束魅惑狀態的豁免檢定時具有優勢。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "長肢",
+					"entries": [
+						"當你在你的回合使用近戰攻擊時，你的觸及範圍比通常範圍多5尺。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "強健體格",
+					"entries": [
+						"在決定你的載重、和你可以推、拉及抬的重量時，你視作為體型大一級的生物。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "隱匿",
+					"entries": [
+						"你獲得{@skill 隱匿}技能的熟練項。此外，不需要擠身，你可以在小型生物剛好佔據的空間中透過和停留。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "突襲攻擊",
+					"entries": [
+						"如果你的攻擊檢定命中了一個戰鬥開始後還沒開始過自己回合的生物，該生物受到額外{@damage 2d6}的傷害。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "熊地精",
