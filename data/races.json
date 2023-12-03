@@ -19703,6 +19703,119 @@
 			],
 			"hasFluff": true,
 			"hasFluffImages": true
+		},
+		{
+			"name": "Harengon",
+			"source": "WBtW",
+			"page": 13,
+			"reprintedAs": [
+				"兔人|MPMM"
+			],
+			"lineage": "VRGR",
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Size",
+					"entries": [
+						"You are Medium or Small. You choose the size when you select this race."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Hare-Trigger",
+					"entries": [
+						"You can add your proficiency bonus to your initiative rolls."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Leporine Senses",
+					"entries": [
+						"You have proficiency in the {@skill Perception} skill."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Lucky Footwork",
+					"entries": [
+						"When you fail a Dexterity saving throw, you can use your reaction to roll a {@dice d4} and add it to the save, potentially turning the failure into a success. You can't use this reaction if you're {@condition prone} or your speed is 0."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Rabbit Hop",
+					"entries": [
+						"As a bonus action, you can jump a number of feet equal to five times your proficiency bonus, without provoking opportunity attacks. You can use this trait only if your speed is greater than 0. You can use it a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest."
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "兔人",
+			"source": "MPMM",
+			"page": 22,
+			"lineage": "VRGR",
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "體型",
+					"entries": [
+						"你的體型為中型或小型。你的體型是中型或小型。在你選擇該種族時選擇體型。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "野兔敏銳",
+					"entries": [
+						"你可以將你的熟練加值加入你的先攻數值。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "野兔感官",
+					"entries": [
+						"你擁有{@skill 察覺}技能的熟練項。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "幸運步法",
+					"entries": [
+						"當你的敏捷豁免檢定失敗時，你可以用反應投擲一粒{@dice d4}並將其加入到結果中，這樣做可能會將失敗轉變為成功。當你的速度為0或處於{@condition 伏地}狀態時，你不能使用該反應。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "兔子跳",
+					"entries": [
+						"作為一個附贈動作，你能夠跳躍一段距離，距離長度為你的熟練加值的五倍，並且不會觸發藉機攻擊。你只能在你的速度高於0時才能使用該特質。你可以使用此特質的次數等於你的熟練加值，當你完成一次長休後，你重新獲得所有消耗的次數。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		}
 	]
 }
