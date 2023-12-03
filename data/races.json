@@ -2904,6 +2904,9 @@
 							"page": 104
 						}
 					],
+					"reprintedAs": [
+						"矮人(灰)|MPMM"
+					],
 					"ability": [
 						{
 							"str": 1
@@ -3176,6 +3179,96 @@
 			"hasFluff": true,
 			"hasFluffImages": true,
 			"ENG_name": "Dwarf"
+		},
+		{
+			"name": "矮人(灰)",
+			"source": "MPMM",
+			"page": 12,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"creatureTypeTags": [
+				"dwarf"
+			],
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"age": {
+				"max": 350
+			},
+			"darkvision": 120,
+			"resist": [
+				"poison"
+			],
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"enlarge/reduce"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"invisibility"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是類人生物。如果有任何前提或效果需要你作為一個矮人，你也被視作矮人。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊120尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "灰矮人魔法",
+					"entries": [
+						"從3級開始，你可以使用該特質對你自己施展{@spell 變巨/縮小術}，且無需材料成分。從5級開始，你同樣可以使用該特質對你自己施展術{@spell 隱形術}，且無需材料成分。一旦你使用了該特質施展了這些法術中的任何一個，直到完成一次長休前，你不能再次使用該特質施展那個法術。你也能用你擁有的相應法術環階的法術位來施展這些法術。",
+						"當你使用此特質施展法術時、智力、感知或魅力是你的施法關鍵屬性（當你選擇該種族時進行決定）。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "矮人抗性",
+					"entries": [
+						"你在為自己避免或結束{@condition 中毒}狀態的豁免檢定時具有優勢。你同樣具有毒素傷害的抗性。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "靈能堅韌",
+					"entries": [
+						"你在為自己避免或結束{@condition 魅惑}和{@condition 震懾}狀態的豁免檢定時具有優勢。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dwarf (Kaladesh)",
@@ -3546,10 +3639,223 @@
 					]
 				},
 				{
+			"name": "Eladrin",
+			"source": "MPMM",
+			"page": 13,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"creatureTypeTags": [
+				"elf"
+			],
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"age": {
+				"max": 750
+			},
+			"darkvision": 60,
+			"traitTags": [
+				"Improved Resting",
+				"Tool Proficiency",
+				"Weapon Proficiency"
+			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"entries": [
+				"{@i Choose your eladrin's season: autumn, winter, spring, or summer. When finishing a long rest, you can change your season. See the \"Info\" tab for more information.}",
+				{
+					"type": "entries",
+					"name": "Creature Type",
+					"entries": [
+						"You are a Humanoid. You are also considered an elf for any prerequisite or effect that requires you to be an elf."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Darkvision",
+					"entries": [
+						"You can see in dim light within 60 feet of you as if it were bright light and in darkness as if it were dim light. You discern colors in that darkness only as shades of gray."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fey Ancestry",
+					"entries": [
+						"You have advantage on saving throws you make to avoid or end the {@condition charmed} condition on yourself."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fey Step",
+					"entries": [
+						"As a bonus action, you can magically teleport up to 30 feet to an unoccupied space you can see. You can use this trait a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.",
+						"When you reach 3rd level, your Fey Step gain an additional effect based on your season; if the effect requires a saving throw, the DC equals 8 + your proficiency bonus + your Intelligence, Wisdom, or Charisma modifier (choose when you select this race):",
+						{
+							"type": "list",
+							"items": [
+								{
+									"type": "item",
+									"name": "Autumn",
+									"entry": "Immediately after you use your Fey Step, up to two creatures of your choice that you can see within 10 feet of you must succeed on a Wisdom saving throw or be {@condition charmed} by you for 1 minute, or until you or your companions deal any damage to the creatures."
+								},
+								{
+									"type": "item",
+									"name": "Winter",
+									"entry": "When you use your Fey Step, one creature of your choice that you can see within 5 feet of you before you teleport must succeed on a Wisdom saving throw or be {@condition frightened} of you until the end of your next turn."
+								},
+								{
+									"type": "item",
+									"name": "Spring",
+									"entry": "When you use your Fey Step, you can touch one willing creature within 5 feet of you. That creature then teleports instead of you, appearing in an unoccupied space of your choice that you can see within 30 feet of you."
+								},
+								{
+									"type": "item",
+									"name": "Summer",
+									"entry": "Immediately after you use your Fey Step, each creature of your choice that you can see within 5 feet of you takes fire damage equal to your proficiency bonus."
+								}
+							],
+							"style": "list-hang-notitle"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Keen Senses",
+					"entries": [
+						"You have proficiency in the {@skill Perception} skill."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Trance",
+					"entries": [
+						"You don't need to sleep, and magic can't put you to sleep. You can finish a long rest in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness.",
+						"Whenever you finish this trance, you can change your season, and you can gain two proficiencies that you don't have, each one with a weapon or a tool of your choice selected from the Player's Handbook. You mystically acquire these proficiencies by drawing them from shared elven memory, and you retain them until you finish your next long rest."
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "雅靈",
+			"source": "MPMM",
+			"page": 13,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"creatureTypeTags": [
+				"elf"
+			],
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"age": {
+				"max": 750
+			},
+			"darkvision": 60,
+			"traitTags": [
+				"Improved Resting",
+				"Tool Proficiency",
+				"Weapon Proficiency"
+			],
+			"skillProficiencies": [
+				{
+					"perception": true
+				}
+			],
+			"entries": [
+				"{@i 從春天、夏天、秋天或冬天中選擇你的季節。你的出神特質能讓你轉換季節。}",
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是類人生物。如果有任何前提或效果需要你作為一個精靈，你也被視作精靈。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "精類血統",
+					"entries": [
+						"你在為自己避免或結束{@condition 魅惑}狀態的豁免檢定時具有優勢。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "精類步伐",
+					"entries": [
+						"用一個附贈動作，你可以魔法地傳送到一處30尺內且未被佔據的可見空間。你可以使用該特質的次數等於你的熟練加值，當你完成一次長休後，你重新獲得所有消耗的次數。",
+						"當你到達3級時，你的精類步會根據你的季節獲得額外的效果；如果該效果需要進行一次豁免，該DC等於8+你的熟練加值+你的智力，感知或魅力調整值（當你選擇該種族時進行決定）：",
+						{
+							"type": "list",
+							"items": [
+								{
+									"type": "item",
+									"name": "秋",
+									"entry": "在你使用精類步伐後，你可以立即選擇兩個10尺內的可見生物，這些生物必須進行一次感知豁免，如果豁免失敗則被你{@condition 魅惑}1分鐘，或者直到你或你的同伴對他做出傷害行為為止。"
+								},
+								{
+									"type": "item",
+									"name": "冬",
+									"entry": "在你使用精類步伐時，你可以選擇傳送前位於你5尺內的一個可見生物，這些生物必須進行一次感知豁免，如果失敗則對你陷入{@condition 恐懼}，該效應持續至你的下一回合結束。"
+								},
+								{
+									"type": "item",
+									"name": "春",
+									"entry": "在你使用精類步伐時，你可以碰觸5尺內的一個自願的生物。這個生物代替你進行傳送，出現在你選擇的一處在你30尺範圍內且未被佔據的可見空間。"
+								},
+								{
+									"type": "item",
+									"name": "夏",
+									"entry": "在你使用精類步伐後，你立即選擇的5尺範圍內的每個可見生物，將受到等同於你熟練加值的火焰傷害。"
+								}
+							],
+							"style": "list-hang-notitle"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "敏銳感官",
+					"entries": [
+						"你擁有{@skill 察覺}技能的熟練項。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "出神",
+					"entries": [
+						"你不需要睡眠，並且不會因魔法效應而陷入睡眠。你能夠以4小時的時間完成長休，前提是如果你將這些時間花在一次出神冥想中，在此期間你保留意識。",
+						"當你結束這段冥想時，你可以改變你的季節，並且你能夠獲得兩項你未擁有的熟練項，其中每一項都是你從《玩家手冊》中選擇的一個武器或是工具項。你透過抽取精靈共有記憶來神秘的獲得這些熟練項，並且你保留他們直到你完成下次長休。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+				{
 					"name": "雅靈",
 					"ENG_name": "Eladrin",
 					"source": "MTF",
 					"page": 61,
+					"reprintedAs": [
+						"雅靈|MPMM"
+					],
 					"ability": [
 						{
 							"cha": 1
@@ -4933,9 +5239,86 @@
 			"ENG_name": "Elf (Zendikar)"
 		},
 		{
-			"name": "Fairy",
+			"name": "仙靈",
+			"source": "MPMM",
+			"page": 14,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"fey"
+			],
+			"size": [
+				"S"
+			],
+			"speed": {
+				"walk": 30,
+				"fly": true
+			},
+			"additionalSpells": [
+				{
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"faerie fire"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"enlarge/reduce"
+								]
+							}
+						}
+					},
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"1": [
+							"druidcraft#c"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是精類生物。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "仙靈魔法",
+					"entries": [
+						"你知曉{@spell druidcraft}戲法。從3級開始，你能用該特質施展{@spell 妖火}。從5級開始，你能使用該特質施展。一旦你使用了該特特質施展了{@spell 妖火}或{@spell 變巨/縮小術}，直到完成一次長休前，你不能再次使用該特質施展那個法術。你也能用你擁有的相應法術環階的法術位來施展這些法術。",
+						"當你使用該特質施展這些法術時，智力、感知或魅力是你的施法關鍵屬性（當你選擇該種族時進行決定）。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "飛行",
+					"entries": [
+						"因為你的翅膀，你擁有等於你步行速度的飛行速度。如果你穿戴中甲和重甲，則你不能使用此飛行速度。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "仙靈",
 			"source": "UA2021FolkOfTheFeywild",
 			"page": 2,
+			"reprintedAs": [
+				"仙靈|WBtW"
+			],
 			"lineage": "VRGR",
 			"creatureTypes": [
 				"fey"
@@ -4995,6 +5378,84 @@
 				}
 			],
 			"hasFluff": true
+		},
+		{
+			"name": "仙靈",
+			"source": "WBtW",
+			"page": 12,
+			"reprintedAs": [
+				"仙靈|MPMM"
+			],
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"fey"
+			],
+			"size": [
+				"S"
+			],
+			"speed": {
+				"walk": 30,
+				"fly": true
+			},
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"1": [
+							"druidcraft#c"
+						]
+					},
+					"innate": {
+						"3": {
+							"daily": {
+								"1": [
+									"faerie fire"
+								]
+							}
+						},
+						"5": {
+							"daily": {
+								"1": [
+									"enlarge/reduce"
+								]
+							}
+						}
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Creature Type",
+					"entries": [
+						"You are a Fey."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Flight",
+					"entries": [
+						"Because of your wings, you have a flying speed equal to your walking speed. You can't use this flying speed if you're wearing medium or heavy armor."
+					]
+				},
+				{
+					"type": "entries",
+					"name": "Fairy Magic",
+					"entries": [
+						"You know the {@spell druidcraft} cantrip.",
+						"Starting at 3rd level, you can cast the {@spell faerie fire} spell with this trait. Starting at 5th level, you can also cast the {@spell enlarge/reduce} spell with this trait. Once you cast {@spell faerie fire} or {@spell enlarge/reduce} with this trait, you can't cast that spell with it again until you finish a long rest. You can also cast either of those spells using any spell slots you have of the appropriate level.",
+						"Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "費爾伯格",
