@@ -10452,6 +10452,9 @@
 			"ENG_name": "Hobgoblin",
 			"source": "UA2021FolkOfTheFeywild",
 			"page": 2,
+			"reprintedAs": [
+				"大地精|MPMM"
+			],
 			"lineage": "VRGR",
 			"size": [
 				"M"
@@ -10521,6 +10524,84 @@
 		},
 		{
 			"name": "大地精",
+			"source": "MPMM",
+			"page": 23,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"humanoid"
+			],
+			"creatureTypeTags": [
+				"goblinoid"
+			],
+			"size": [
+				"M"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"entries": [
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是類人生物。如果有任何前提或效果需要你作為一個類地精生物，你也被視作類地精生物。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "精類血統",
+					"entries": [
+						"你在為自己避免或結束魅惑狀態的豁免檢定時具有優勢。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "精類贈禮",
+					"entries": [
+						"你可以使用該特質以一個附贈動作進行{@action 協助}動作，而你可以使用此特質的次數等於你的熟練加值。當你完成一次長休後，你重新獲得所有消耗的次數。",
+						"從3級開始，每當你使用該特質進行{@action 協助}動作時，從下列選項中選擇一項：",
+						{
+							"type": "list",
+							"items": [
+								{
+									"type": "item",
+									"name": "好客",
+									"entry": "你與受你協助的生物都獲得等於{@dice 1d6}加你的熟練加值的臨時生命值。"
+								},
+								{
+									"type": "item",
+									"name": "通行",
+									"entry": "你與受你協助的生物的步行速度都增加10尺，直到你下一個的回合開始。"
+								},
+								{
+									"type": "item",
+									"name": "惡意",
+									"entry": "直到你下一個的回合開始，當受你協助的生物首次使用攻擊檢定命中目標，該目標在下一分鐘內的下一次攻擊檢定具有劣勢。"
+								}
+							],
+							"style": "list-hang-notitle"
+						}
+					]
+				},
+				{
+					"type": "entries",
+					"name": "集眾之運",
+					"entries": [
+						"如果你在一次攻擊檢定沒有命中，或是在一次屬性檢定或豁免檢定中失敗，你可以利用互相幫助的紐帶獲得骰值的加值，該加值等於30尺內所有你可見的盟友的數量（最多+3加值）。你可以使用此特質的次數等於你的熟練加值，當你完成一次長休後，你重新獲得所有消耗的次數。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "大地精",
 			"source": "VGM",
 			"page": 119,
 			"otherSources": [
@@ -10528,6 +10609,9 @@
 					"source": "EGW",
 					"page": 175
 				}
+			],
+			"reprintedAs": [
+				"大地精|MPMM"
 			],
 			"size": [
 				"M"
@@ -12192,6 +12276,55 @@
 		},
 		{
 			"name": "天狗",
+			"source": "MPMM",
+			"page": 24,
+			"lineage": "VRGR",
+			"size": [
+				"S",
+				"M"
+			],
+			"speed": 30,
+			"skillProficiencies": [
+				{
+					"any": 2
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "體型",
+					"entries": [
+						"你的體型為中型或小型。在你選擇該種族時選擇體型。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "複製專家",
+					"entries": [
+						"當你抄寫，或仿造自己或其他人制作的工藝品時，你在用以製造一個一模一樣複製品的屬性檢定中具有優勢。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "天狗回想",
+					"entries": [
+						"多虧了你超自然的記憶力，你獲得兩項自選技能的熟練項。",
+						"此外，當你使用任何你具有熟練的技能進行一次屬性檢定時，在你投擲{@dice d20}前，你可以讓該檢定具有優勢。你可以使用這種方式給予自身優勢的次數等於你的熟練加值，當你完成一次長休後，你重新獲得所有消耗的次數。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "擬聲",
+					"entries": [
+						"你可以確切地模仿你曾聽到過的聲音，包括嗓音。一個生物只有在進行一次成功的對抗DC為8+你熟練加值+你魅力調整值的感知（{@skill 洞悉}）檢定後，才能聽出你發出的聲音是模仿的。"
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "天狗",
 			"source": "VGM",
 			"page": 109,
 			"otherSources": [
@@ -12199,6 +12332,9 @@
 					"source": "EGW",
 					"page": 177
 				}
+			],
+			"reprintedAs": [
+				"天狗|MPMM"
 			],
 			"size": [
 				"M"
@@ -12433,6 +12569,9 @@
 			"ENG_name": "Kobold",
 			"source": "UA2021DraconicOptions",
 			"page": 3,
+			"reprintedAs": [
+				"狗頭人|MPMM"
+			],
 			"lineage": "VRGR",
 			"size": [
 				"S"
@@ -12481,9 +12620,101 @@
 		},
 		{
 			"name": "狗頭人",
+			"source": "MPMM",
+			"page": 25,
+			"lineage": "VRGR",
+			"size": [
+				"S"
+			],
+			"speed": 30,
+			"darkvision": 60,
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"arcana",
+							"investigation",
+							"medicine",
+							"sleight of hand",
+							"survival"
+						]
+					}
+				}
+			],
+			"additionalSpells": [
+				{
+					"ability": {
+						"choose": [
+							"int",
+							"wis",
+							"cha"
+						]
+					},
+					"known": {
+						"_": [
+							{
+								"choose": "level=0|class=Sorcerer",
+								"count": 1
+							}
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "黑暗視覺",
+					"entries": [
+						"在微光光照下，你身邊60尺內可以視為等同於明亮光照。而在黑暗中，該範圍內可視為等同於微光光照。你無法在黑暗中分辨顏色，只能看到有灰度的黑白畫面。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "龍嚎",
+					"entries": [
+						"用一個附贈動作，你向在你周圍10尺內的敵人發出吼叫。直到你的下一個回合開始前，你和你的盟友對所有能聽見你的敵人進行的攻擊檢定具有優勢。你可以使用此特質的次數等於你的熟練加值，當你完成一次長休後，你重新獲得所有消耗的次數。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "狗頭人遺產",
+					"entries": [
+						"狗頭人與龍的聯絡能夠以一種不可思議的方式在一個狗頭人的身上顯現。從下列遺產選項中為你的狗頭人選擇一項：",
+						{
+							"type": "list",
+							"items": [
+								{
+									"type": "item",
+									"name": "狡猾",
+									"entry": "你擁有以下一項自選技能的熟練項：{@skill 奧秘}、{@skill 調查}、{@skill 醫療}、{@skill 巧手}或{@skill 生存}。"
+								},
+								{
+									"type": "item",
+									"name": "反抗",
+									"entry": "你在為自己避免或結束{@condition 恐懼}狀態的豁免檢定時具有優勢。"
+								},
+								{
+									"type": "item",
+									"name": "龍族術法",
+									"entry": "你知曉一項你從{@filter 術士法術列表|spells|level=0|class=術士}中選擇的戲法。智力、感知或魅力是你的施展該戲法的施法關鍵屬性（當你選擇該種族時進行決定）。"
+								}
+							],
+							"style": "list-hang-notitle"
+						}
+					]
+				}
+			],
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "狗頭人",
 			"ENG_name": "Kobold",
 			"source": "VGM",
 			"page": 119,
+			"reprintedAs": [
+				"狗頭人|MPMM"
+			],
 			"size": [
 				"S"
 			],
