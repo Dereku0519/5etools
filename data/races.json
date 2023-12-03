@@ -6118,7 +6118,7 @@
 							"type": "entries",
 							"name": "魔息",
 							"entries": [
-								"只要你未陷入{@condition 失能}，就可以一直保持閉氣。"
+								"只要你未陷入{@condition 無力}，就可以一直保持閉氣。"
 							]
 						},
 						{
@@ -6159,11 +6159,6 @@
 									"int",
 									"wis",
 									"cha"
-								]
-							},
-							"known": {
-								"1": [
-									"blade ward#c"
 								]
 							}
 						}
