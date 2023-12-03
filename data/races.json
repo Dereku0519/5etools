@@ -1334,6 +1334,9 @@
 			"name": "半人馬",
 			"source": "GGR",
 			"page": 15,
+			"reprintedAs": [
+				"半人馬|MPMM"
+			],
 			"creatureTypes": [
 				"fey"
 			],
@@ -1454,6 +1457,9 @@
 			"ENG_name": "Centaur",
 			"source": "MOT",
 			"page": 18,
+			"reprintedAs": [
+				"半人馬|MPMM"
+			],
 			"_copy": {
 				"name": "Centaur",
 				"source": "GGR",
@@ -1498,6 +1504,75 @@
 					]
 				}
 			},
+			"hasFluff": true,
+			"hasFluffImages": true
+		},
+		{
+			"name": "半人馬",
+			"source": "MPMM",
+			"page": 9,
+			"lineage": "VRGR",
+			"creatureTypes": [
+				"fey"
+			],
+			"size": [
+				"M"
+			],
+			"speed": 40,
+			"traitTags": [
+				"Natural Weapon",
+				"Powerful Build"
+			],
+			"skillProficiencies": [
+				{
+					"choose": {
+						"from": [
+							"animal handling",
+							"medicine",
+							"nature",
+							"survival"
+						]
+					}
+				}
+			],
+			"entries": [
+				{
+					"type": "entries",
+					"name": "生物種類",
+					"entries": [
+						"你是精類生物。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "衝鋒",
+					"entries": [
+						"如果你向著目標直線移動了至少30尺，並在同一輪內以近戰武器攻擊命中了目標，你可以在此攻擊後立即使用附贈動作，用你的蹄擊對目標進行一次攻擊。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "馬體構造",
+					"entries": [
+						"在決定你的載重、和你可以推、和拉的重量時，你視作為體型大一級的生物。",
+						" 另外，因為你的馬腿，任何需要手腳並用的攀爬對你而言尤其困難。當你進行攀爬時，每移動1尺需要花費額外4尺移動力，而非往常的額外1尺。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "蹄擊",
+					"entries": [
+						"你的馬蹄視作天生近戰武器，你可以用來做徒手打擊。如果你以蹄擊中目標，將造成1d6+力量調整值的鈍擊傷害，替代你通常的徒手打擊傷害。"
+					]
+				},
+				{
+					"type": "entries",
+					"name": "自然親和",
+					"entries": [
+						"你的精類血統連線著自然，這給予了你與自然界與其中的動物有著一種直覺上的聯絡。因此，你擁有以下一項自選技能的熟練項：{@skill 醫藥}、{@skill 自然}，或{@skill 求生}。"
+					]
+				}
+			],
 			"hasFluff": true,
 			"hasFluffImages": true
 		},
