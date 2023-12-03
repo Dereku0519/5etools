@@ -6578,7 +6578,6 @@
 			"name": "吉斯人",
 			"ENG_name": "Gith",
 			"source": "MPMM",
-			"lineage": "VRGR",
 			"size": [
 				"M"
 			],
@@ -6607,9 +6606,10 @@
 					]
 				},
 				{
-					"name": "Languages",
+					"name": "語言",
+					"ENG_name": "Languages",
 					"entries": [
-						"You can speak, read, and write Common and Gith."
+						"你可以說、讀、寫通用語和吉斯語。"
 					],
 					"type": "entries"
 				}
