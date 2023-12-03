@@ -6583,6 +6583,12 @@
 				"M"
 			],
 			"speed": 30,
+			"languageProficiencies": [
+				{
+					"common": true,
+					"other": true
+				}
+			],
 			"entries": [
 				{
 					"name": "年齡",
