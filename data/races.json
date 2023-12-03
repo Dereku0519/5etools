@@ -6150,9 +6150,9 @@
 					"additionalSpells": [
 						{
 							"innate": {
-								"5": {
+								"5": [
 									"pass without trace"
-								}
+								]
 							},
 							"ability": {
 								"choose": [
